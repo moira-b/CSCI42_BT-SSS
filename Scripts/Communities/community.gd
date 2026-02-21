@@ -1,5 +1,5 @@
 # This will be the base community script
-# inherited by all character classes.
+# inherited by all community classes.
 class_name Community
 extends Node
 
