@@ -1,6 +1,6 @@
 # This will be the base character class script
 # inherited by all character classes.
-class_name character_class
+class_name CharacterClass
 extends Node
 
 
