@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="AncestryFeature" load_steps=2 format=3 uid="uid://dcuop0a1jstqs"]
+
+[ext_resource type="Script" uid="uid://bppcd4k2rsxbx" path="res://Scripts/Ancestries/ancestry_feature.gd" id="1_4ytdg"]
+
+[resource]
+script = ExtResource("1_4ytdg")
+feature_name = "Purposeful Design"
+feature_description = "Decide who made you and for what purpose. At character creation, choose one of your Experiences that best aligns with this purpose and gain a permanent +1 bonus to it."
+metadata/_custom_type_script = "uid://bppcd4k2rsxbx"

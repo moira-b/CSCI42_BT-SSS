@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Ancestry" load_steps=4 format=3 uid="uid://dxilb48kkm0he"]
+
+[ext_resource type="Script" uid="uid://c5wd1842qiju3" path="res://Scripts/Ancestries/ancestry.gd" id="1_djryt"]
+[ext_resource type="Resource" uid="uid://yt8vefvck6vb" path="res://Resources/Ancestries/Dwarf/thick_skin.tres" id="1_jhq13"]
+[ext_resource type="Resource" uid="uid://bill0agiwimja" path="res://Resources/Ancestries/Dwarf/increased_fortitude.tres" id="2_u576g"]
+
+[resource]
+script = ExtResource("1_djryt")
+ancestry_name = "Dwarf"
+description = "Dwarves are most easily recognized as short humanoids with square frames, dense musculature, and thick hair. Their average height ranges from 4 to 5 ½ feet, and they are often broad in proportion to their stature."
+feature1 = ExtResource("1_jhq13")
+feature2 = ExtResource("2_u576g")
+metadata/_custom_type_script = "uid://c5wd1842qiju3"

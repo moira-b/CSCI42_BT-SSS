@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="AncestryFeature" load_steps=2 format=3 uid="uid://cdu14h8ytddh1"]
+
+[ext_resource type="Script" uid="uid://bppcd4k2rsxbx" path="res://Scripts/Ancestries/ancestry_feature.gd" id="1_q8k30"]
+
+[resource]
+script = ExtResource("1_q8k30")
+feature_name = "Efficient"
+feature_description = "When you take a short rest, you can choose a long rest move instead of a short rest move."
+metadata/_custom_type_script = "uid://bppcd4k2rsxbx"

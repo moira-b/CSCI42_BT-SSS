@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="AncestryFeature" load_steps=2 format=3 uid="uid://cqynkc4n0n7yt"]
+
+[ext_resource type="Script" uid="uid://bppcd4k2rsxbx" path="res://Scripts/Ancestries/ancestry_feature.gd" id="1_n7pu2"]
+
+[resource]
+script = ExtResource("1_n7pu2")
+feature_name = "Nimble"
+metadata/_custom_type_script = "uid://bppcd4k2rsxbx"

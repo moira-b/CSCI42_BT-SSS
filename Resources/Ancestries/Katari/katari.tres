@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Ancestry" load_steps=4 format=3 uid="uid://dioye80konngb"]
+
+[ext_resource type="Script" uid="uid://c5wd1842qiju3" path="res://Scripts/Ancestries/ancestry.gd" id="1_rclob"]
+[ext_resource type="Resource" uid="uid://d4l85crmebetd" path="res://Resources/Ancestries/Katari/feline_instincts.tres" id="1_y7y6g"]
+[ext_resource type="Resource" uid="uid://cvrbbo64q0cyw" path="res://Resources/Ancestries/Katari/retracting_claws.tres" id="2_6cqlu"]
+
+[resource]
+script = ExtResource("1_rclob")
+ancestry_name = "Katari"
+feature1 = ExtResource("1_y7y6g")
+feature2 = ExtResource("2_6cqlu")
+metadata/_custom_type_script = "uid://c5wd1842qiju3"
