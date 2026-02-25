@@ -1,5 +1,5 @@
 # This will be the base character subclass script
-# inherited by all character subclass features
+# inherited by all character subclasses
 class_name CharacterSubclass
 extends CharacterClass
 
