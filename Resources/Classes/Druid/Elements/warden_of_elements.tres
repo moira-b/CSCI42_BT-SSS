@@ -2,8 +2,16 @@
 
 [ext_resource type="Script" uid="uid://ckqlyqdo4cyhe" path="res://Scripts/CharacterClasses/character_class_feature.gd" id="1_tmdjn"]
 [ext_resource type="Script" uid="uid://cxymexx6bno82" path="res://Scripts/CharacterClasses/character_subclass.gd" id="2_ju2rp"]
+[ext_resource type="Resource" uid="uid://py8x5a4wl4x1" path="res://Resources/Classes/Druid/Elements/elemental_incarnation.tres" id="2_wmxql"]
+[ext_resource type="Resource" uid="uid://cq2urg34iaxeo" path="res://Resources/Classes/Druid/Elements/elemental_dominion.tres" id="3_qsbo3"]
+[ext_resource type="Resource" uid="uid://bsyxnmv70lstw" path="res://Resources/Classes/Druid/Elements/elemental_aura.tres" id="5_0uc71"]
+[ext_resource type="Resource" uid="uid://de0wkyxy48irt" path="res://Resources/GeneralUseAttributes/CharacterTraits/instinct.tres" id="6_uuiqy"]
 
 [resource]
 script = ExtResource("2_ju2rp")
 subclass_name = "Warden of the Elements"
+foundation_feature = Array[ExtResource("1_tmdjn")]([ExtResource("2_wmxql")])
+specialization_feature = Array[ExtResource("1_tmdjn")]([ExtResource("5_0uc71")])
+mastery_feature = Array[ExtResource("1_tmdjn")]([ExtResource("3_qsbo3")])
+spellcast_trait = ExtResource("6_uuiqy")
 metadata/_custom_type_script = "uid://cxymexx6bno82"

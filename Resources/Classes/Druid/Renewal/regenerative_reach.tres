@@ -4,4 +4,6 @@
 
 [resource]
 script = ExtResource("1_wk07f")
+feature_name = "Regenerative Reach"
+feature_description = "You can target creatures within Very Close range with your “Regeneration” feature."
 metadata/_custom_type_script = "uid://ckqlyqdo4cyhe"

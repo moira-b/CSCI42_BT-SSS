@@ -1,7 +1,9 @@
 [gd_resource type="Resource" script_class="CharacterClassFeature" format=3 uid="uid://bt45f1pggwdy5"]
 
-[ext_resource type="Script" uid="uid://ckqlyqdo4cyhe" path="res://Scripts/CharacterClasses/character_class_feature.gd" id="1_402fi"]
+[ext_resource type="Script" uid="uid://ckqlyqdo4cyhe" path="res://Scripts/CharacterClasses/character_class_feature.gd" id="1_6bjac"]
 
 [resource]
-script = ExtResource("1_402fi")
+script = ExtResource("1_6bjac")
+feature_name = "Warden's Protection"
+feature_description = "Once per long rest, spend 2 Hope to clear 2 Hit Points on 1d4 allies within Close range."
 metadata/_custom_type_script = "uid://ckqlyqdo4cyhe"

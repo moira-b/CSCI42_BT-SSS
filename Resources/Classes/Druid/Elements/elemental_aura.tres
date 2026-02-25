@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_oqepl")
-feature_name = "Elemental Incarnation"
-feature_description = "Mark a Stress to Channel one of the following elements until you take Severe damage or until your next rest:\\n• Fire: When an adversary within Melee range deals damage to you, they take 1d10 magic damage.\\n• Earth: Gain a bonus to your damage thresholds equal to your Proficiency.\\n• Water: When you deal damage to an adversary within Melee range, all other adversaries within Very Close range must mark a Stress.\\n• Air: You can hover, gaining advantage on Agility Rolls"
+feature_name = "Elemental Aura"
+feature_description = "Once per rest while Channeling, you can assume an aura matching your element. The aura affects targets within Close range until your Channeling ends.\\n• Fire: When an adversary marks 1 or more Hit Points, they must also mark a Stress.\\n• Earth: Your allies gain a +1 bonus to Strength.\\n• Water: When an adversary deals damage to you, you can mark a Stress to move them anywhere within Very Close range of where they are.\\n• Air: When you or an ally takes damage from an attack beyond Melee range, reduce the damage by 1d8."
 metadata/_custom_type_script = "uid://ckqlyqdo4cyhe"
