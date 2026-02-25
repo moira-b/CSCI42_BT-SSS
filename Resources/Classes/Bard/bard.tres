@@ -2,16 +2,22 @@
 
 [ext_resource type="Script" uid="uid://cxymexx6bno82" path="res://Scripts/CharacterClasses/character_subclass.gd" id="1_dl7py"]
 [ext_resource type="Resource" uid="uid://d1wkgjldxvatj" path="res://Resources/Classes/Bard/Troubadour/troubadour.tres" id="2_vl0j2"]
+[ext_resource type="Resource" uid="uid://c4cs2mdindhv8" path="res://Resources/Classes/Bard/Wordsmith/wordsmith.tres" id="3_ttml8"]
 [ext_resource type="Script" uid="uid://bw1ppfeo5ccfb" path="res://Scripts/GeneralUseAttributes/domain.gd" id="3_vgyq3"]
+[ext_resource type="Script" uid="uid://ckqlyqdo4cyhe" path="res://Scripts/CharacterClasses/character_class_feature.gd" id="4_phr6e"]
 [ext_resource type="Resource" uid="uid://bkaxx4rook7xg" path="res://Resources/GeneralUseAttributes/Domains/grace.tres" id="4_qkc4b"]
+[ext_resource type="Resource" uid="uid://1r5w7qo06t8x" path="res://Resources/Classes/Bard/rally.tres" id="5_15anh"]
 [ext_resource type="Resource" uid="uid://cmljimuj2hq5l" path="res://Resources/GeneralUseAttributes/Domains/codex.tres" id="5_ttml8"]
 [ext_resource type="Script" uid="uid://c6daeo616vuo3" path="res://Scripts/CharacterClasses/character_class.gd" id="6_phr6e"]
+[ext_resource type="Resource" uid="uid://cmnsb25lrbald" path="res://Resources/Classes/Bard/make_a_scene.tres" id="9_5soxa"]
 
 [resource]
 script = ExtResource("6_phr6e")
 name = "Bard"
 domains = Array[ExtResource("3_vgyq3")]([ExtResource("4_qkc4b"), ExtResource("5_ttml8")])
 starting_evasion = 10
+hope_feature = ExtResource("9_5soxa")
+class_feature = Array[ExtResource("4_phr6e")]([ExtResource("5_15anh")])
 class_items = Array[String](["A romance novel", "A letter never opened"])
-character_subclasses = Array[ExtResource("1_dl7py")]([ExtResource("2_vl0j2")])
+character_subclasses = Array[ExtResource("1_dl7py")]([ExtResource("2_vl0j2"), ExtResource("3_ttml8")])
 metadata/_custom_type_script = "uid://c6daeo616vuo3"
