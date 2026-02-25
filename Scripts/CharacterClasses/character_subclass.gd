@@ -7,3 +7,4 @@ extends CharacterClass
 @export var foundation_feature: Array[CharacterClassFeature]
 @export var specialization_feature: Array[CharacterClassFeature]
 @export var mastery_feature: Array[CharacterClassFeature]
+@export var spellcast_trait: CharacterTraits
