@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="CharacterTraits" format=3 uid="uid://dgtlfkrc1f7c2"]
+
+[ext_resource type="Script" uid="uid://d2ayhntnquqxr" path="res://Scripts/GeneralUseAttributes/character_traits.gd" id="1_58hgu"]
+
+[resource]
+script = ExtResource("1_58hgu")
+metadata/_custom_type_script = "uid://d2ayhntnquqxr"
