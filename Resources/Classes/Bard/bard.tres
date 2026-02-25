@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="CharacterClass" format=3 uid="uid://cyaupb2xa2jvp"]
+
+[ext_resource type="Script" uid="uid://cxymexx6bno82" path="res://Scripts/CharacterClasses/character_subclass.gd" id="1_dl7py"]
+[ext_resource type="Resource" uid="uid://d1wkgjldxvatj" path="res://Resources/Classes/Bard/Troubadour/troubadour.tres" id="2_vl0j2"]
+[ext_resource type="Script" uid="uid://bw1ppfeo5ccfb" path="res://Scripts/GeneralUseAttributes/domain.gd" id="3_vgyq3"]
+[ext_resource type="Resource" uid="uid://bkaxx4rook7xg" path="res://Resources/GeneralUseAttributes/Domains/grace.tres" id="4_qkc4b"]
+[ext_resource type="Resource" uid="uid://cmljimuj2hq5l" path="res://Resources/GeneralUseAttributes/Domains/codex.tres" id="5_ttml8"]
+[ext_resource type="Script" uid="uid://c6daeo616vuo3" path="res://Scripts/CharacterClasses/character_class.gd" id="6_phr6e"]
+
+[resource]
+script = ExtResource("6_phr6e")
+name = "Bard"
+domains = Array[ExtResource("3_vgyq3")]([ExtResource("4_qkc4b"), ExtResource("5_ttml8")])
+starting_evasion = 10
+class_items = Array[String](["A romance novel", "A letter never opened"])
+character_subclasses = Array[ExtResource("1_dl7py")]([ExtResource("2_vl0j2")])
+metadata/_custom_type_script = "uid://c6daeo616vuo3"

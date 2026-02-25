@@ -10,6 +10,7 @@ extends Resource
 @export var hope_feature: CharacterClassFeature
 @export var class_feature: CharacterClassFeature
 @export var class_items: Array[String]
+@export var character_subclasses: Array[CharacterSubclass]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
