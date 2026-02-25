@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="CharacterSubclass" format=3 uid="uid://nxqxs5r26qgg"]
+
+[ext_resource type="Script" uid="uid://ckqlyqdo4cyhe" path="res://Scripts/CharacterClasses/character_class_feature.gd" id="1_rrq3f"]
+[ext_resource type="Script" uid="uid://cxymexx6bno82" path="res://Scripts/CharacterClasses/character_subclass.gd" id="2_v7wld"]
+
+[resource]
+script = ExtResource("2_v7wld")
+subclass_name = "Warden of Renewal"
+metadata/_custom_type_script = "uid://cxymexx6bno82"

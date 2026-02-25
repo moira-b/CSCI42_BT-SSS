@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="CharacterSubclass" format=3 uid="uid://dct2r4yh5qm85"]
+
+[ext_resource type="Script" uid="uid://ckqlyqdo4cyhe" path="res://Scripts/CharacterClasses/character_class_feature.gd" id="1_tmdjn"]
+[ext_resource type="Script" uid="uid://cxymexx6bno82" path="res://Scripts/CharacterClasses/character_subclass.gd" id="2_ju2rp"]
+
+[resource]
+script = ExtResource("2_ju2rp")
+subclass_name = "Warden of the Elements"
+metadata/_custom_type_script = "uid://cxymexx6bno82"

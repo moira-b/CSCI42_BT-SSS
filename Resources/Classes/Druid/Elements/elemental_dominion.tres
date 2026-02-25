@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="CharacterClassFeature" format=3 uid="uid://cq2urg34iaxeo"]
+
+[ext_resource type="Script" uid="uid://ckqlyqdo4cyhe" path="res://Scripts/CharacterClasses/character_class_feature.gd" id="1_8r4da"]
+
+[resource]
+script = ExtResource("1_8r4da")
+feature_name = "Elemental Incarnation"
+feature_description = "Mark a Stress to Channel one of the following elements until you take Severe damage or until your next rest:\\n• Fire: When an adversary within Melee range deals damage to you, they take 1d10 magic damage.\\n• Earth: Gain a bonus to your damage thresholds equal to your Proficiency.\\n• Water: When you deal damage to an adversary within Melee range, all other adversaries within Very Close range must mark a Stress.\\n• Air: You can hover, gaining advantage on Agility Rolls"
+metadata/_custom_type_script = "uid://ckqlyqdo4cyhe"

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="CharacterClassFeature" format=3 uid="uid://lxm0esxlw1m"]
+
+[ext_resource type="Script" uid="uid://ckqlyqdo4cyhe" path="res://Scripts/CharacterClasses/character_class_feature.gd" id="1_lylsa"]
+
+[resource]
+script = ExtResource("1_lylsa")
+feature_name = "Wildtouch"
+feature_description = "You can perform harmless, subtle effects that involve nature—such as causing a flower to rapidly grow, summoning a slight gust of wind, or starting a campfire—at will."
+metadata/_custom_type_script = "uid://ckqlyqdo4cyhe"
