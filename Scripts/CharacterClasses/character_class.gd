@@ -8,6 +8,7 @@ extends Resource
 @export var domains: Array[Domain]
 @export var starting_evasion: int
 @export var hope_feature: CharacterClassFeature
+@export var class_feature: CharacterClassFeature
 @export var class_items: Array[String]
 
 # Called when the node enters the scene tree for the first time.
