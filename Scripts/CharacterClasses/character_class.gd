@@ -5,9 +5,9 @@ extends Resource
 
 
 @export var name: String
-# TODO: Make domains
+@export var domains: Array[Domain]
 @export var starting_evasion: int
-# TODO: Make hope feature
+@export var hope_feature: CharacterClassFeature
 @export var class_items: Array[String]
 
 # Called when the node enters the scene tree for the first time.
