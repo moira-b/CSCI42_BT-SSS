@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Domain" format=3 uid="uid://cipt8olru4ebc"]
+
+[ext_resource type="Script" uid="uid://bw1ppfeo5ccfb" path="res://Scripts/Domains/domain.gd" id="1_sns2g"]
+
+[resource]
+script = ExtResource("1_sns2g")
+name = "Bone"
+metadata/_custom_type_script = "uid://bw1ppfeo5ccfb"

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Domain" format=3 uid="uid://262js7hopg4i"]
+
+[ext_resource type="Script" uid="uid://bw1ppfeo5ccfb" path="res://Scripts/Domains/domain.gd" id="1_skqqo"]
+
+[resource]
+script = ExtResource("1_skqqo")
+name = "Arcana"
+metadata/_custom_type_script = "uid://bw1ppfeo5ccfb"
