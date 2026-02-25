@@ -7,8 +7,9 @@ extends Resource
 @export var name: String
 @export var domains: Array[Domain]
 @export var starting_evasion: int
+@export var starting_hp: int
 @export var hope_feature: CharacterClassFeature
-@export var class_feature: CharacterClassFeature
+@export var class_feature: Array[CharacterClassFeature]
 @export var class_items: Array[String]
 @export var character_subclasses: Array[CharacterSubclass]
 
