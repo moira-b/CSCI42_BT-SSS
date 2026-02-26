@@ -20,7 +20,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	_handle_back_button_visibility()
 	
-	if active_option_tab.is_anything_selected():
+	if active_option_tab is ItemList && active_option_tab.is_anything_selected():
 		confirm_button.disabled = false
 
 
@@ -28,11 +28,11 @@ func _set_active_option_tab(_index: int):
 	'''
 		Sets active item list by hiding or showing visibility of given item lists
 	'''
-	if option_tab_array[_index] is ItemList:
+	if option_tab_array[_index]:
 		active_option_tab = option_tab_array[_index]
 		active_option_tab.visible = true	
 
-	for option_tab:ItemList in option_tab_array:
+	for option_tab in option_tab_array:
 		if option_tab != active_option_tab:
 			option_tab.visible = false
 
@@ -42,7 +42,7 @@ func _load_option_tabs():
 		Initializes item list by loading each child of
 		OptionLists into an array
 	'''
-	for child:ItemList in option_lists.get_children():
+	for child in option_lists.get_children():
 		option_tab_array.append(child)
 
 

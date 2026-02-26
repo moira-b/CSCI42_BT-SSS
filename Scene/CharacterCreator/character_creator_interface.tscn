@@ -5,6 +5,7 @@
 [ext_resource type="Resource" uid="uid://cyaupb2xa2jvp" path="res://Resources/Classes/Bard/bard.tres" id="3_alotr"]
 [ext_resource type="Script" uid="uid://c6daeo616vuo3" path="res://Scripts/CharacterClasses/character_class.gd" id="3_g85pg"]
 [ext_resource type="Resource" uid="uid://blgr70q7oa266" path="res://Resources/Classes/Druid/druid.tres" id="4_g85pg"]
+[ext_resource type="Script" uid="uid://01ybmxp5mmus" path="res://Scripts/CharacterCreation/trait_modifier_container.gd" id="6_g85pg"]
 
 [node name="CharacterCreatorInterface" type="Control" unique_id=1505700201]
 layout_mode = 3
@@ -27,6 +28,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="CharacterClassList" type="ItemList" parent="OptionLists" unique_id=2126518489 node_paths=PackedStringArray("subclasses_list")]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -139,6 +141,243 @@ item_6/text = "Underborne"
 item_7/text = "Wanderborne"
 item_8/text = "Wildborne"
 
+[node name="TraitAssignmentContainer" type="HBoxContainer" parent="OptionLists" unique_id=1249625595]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TraitNameContainer" type="VBoxContainer" parent="OptionLists/TraitAssignmentContainer" unique_id=1226407445]
+layout_mode = 2
+
+[node name="Agility" type="Panel" parent="OptionLists/TraitAssignmentContainer/TraitNameContainer" unique_id=253040051]
+custom_minimum_size = Vector2(90, 40)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="OptionLists/TraitAssignmentContainer/TraitNameContainer/Agility" unique_id=1620017397]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -11.5
+offset_right = 24.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Agility"
+
+[node name="Strength" type="Panel" parent="OptionLists/TraitAssignmentContainer/TraitNameContainer" unique_id=469901981]
+custom_minimum_size = Vector2(90, 40)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="OptionLists/TraitAssignmentContainer/TraitNameContainer/Strength" unique_id=1353670876]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -11.5
+offset_right = 24.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Strength"
+
+[node name="Finesse" type="Panel" parent="OptionLists/TraitAssignmentContainer/TraitNameContainer" unique_id=2124586667]
+custom_minimum_size = Vector2(90, 40)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="OptionLists/TraitAssignmentContainer/TraitNameContainer/Finesse" unique_id=1082853850]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -11.5
+offset_right = 24.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Finesse"
+
+[node name="Instinct" type="Panel" parent="OptionLists/TraitAssignmentContainer/TraitNameContainer" unique_id=1273343647]
+custom_minimum_size = Vector2(90, 40)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="OptionLists/TraitAssignmentContainer/TraitNameContainer/Instinct" unique_id=59403801]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -11.5
+offset_right = 24.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Instinct"
+
+[node name="Presence" type="Panel" parent="OptionLists/TraitAssignmentContainer/TraitNameContainer" unique_id=1761132627]
+custom_minimum_size = Vector2(90, 40)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="OptionLists/TraitAssignmentContainer/TraitNameContainer/Presence" unique_id=1581463351]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -11.5
+offset_right = 24.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Presence"
+
+[node name="Knowledge" type="Panel" parent="OptionLists/TraitAssignmentContainer/TraitNameContainer" unique_id=772199192]
+custom_minimum_size = Vector2(90, 40)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="OptionLists/TraitAssignmentContainer/TraitNameContainer/Knowledge" unique_id=990819575]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -11.5
+offset_right = 24.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Knowledge"
+
+[node name="ModifierContainer" type="VBoxContainer" parent="OptionLists/TraitAssignmentContainer" unique_id=1798246451]
+layout_mode = 2
+script = ExtResource("6_g85pg")
+
+[node name="AgiModifierOptions" type="OptionButton" parent="OptionLists/TraitAssignmentContainer/ModifierContainer" unique_id=759425485]
+custom_minimum_size = Vector2(60, 40)
+layout_mode = 2
+item_count = 6
+popup/item_0/text = "+2"
+popup/item_0/id = 0
+popup/item_1/text = "+1"
+popup/item_1/id = 1
+popup/item_2/text = "+1"
+popup/item_2/id = 2
+popup/item_3/text = "0"
+popup/item_3/id = 3
+popup/item_4/text = "0"
+popup/item_4/id = 4
+popup/item_5/text = "-1"
+popup/item_5/id = 5
+
+[node name="StrModifierOptions" type="OptionButton" parent="OptionLists/TraitAssignmentContainer/ModifierContainer" unique_id=1641788049]
+custom_minimum_size = Vector2(60, 40)
+layout_mode = 2
+item_count = 6
+popup/item_0/text = "+2"
+popup/item_0/id = 0
+popup/item_1/text = "+1"
+popup/item_1/id = 1
+popup/item_2/text = "+1"
+popup/item_2/id = 2
+popup/item_3/text = "0"
+popup/item_3/id = 3
+popup/item_4/text = "0"
+popup/item_4/id = 4
+popup/item_5/text = "-1"
+popup/item_5/id = 5
+
+[node name="FinModifierOptions" type="OptionButton" parent="OptionLists/TraitAssignmentContainer/ModifierContainer" unique_id=578226674]
+custom_minimum_size = Vector2(60, 40)
+layout_mode = 2
+item_count = 6
+popup/item_0/text = "+2"
+popup/item_0/id = 0
+popup/item_1/text = "+1"
+popup/item_1/id = 1
+popup/item_2/text = "+1"
+popup/item_2/id = 2
+popup/item_3/text = "0"
+popup/item_3/id = 3
+popup/item_4/text = "0"
+popup/item_4/id = 4
+popup/item_5/text = "-1"
+popup/item_5/id = 5
+
+[node name="InsModifierOptions" type="OptionButton" parent="OptionLists/TraitAssignmentContainer/ModifierContainer" unique_id=1063521614]
+custom_minimum_size = Vector2(60, 40)
+layout_mode = 2
+item_count = 6
+popup/item_0/text = "+2"
+popup/item_0/id = 0
+popup/item_1/text = "+1"
+popup/item_1/id = 1
+popup/item_2/text = "+1"
+popup/item_2/id = 2
+popup/item_3/text = "0"
+popup/item_3/id = 3
+popup/item_4/text = "0"
+popup/item_4/id = 4
+popup/item_5/text = "-1"
+popup/item_5/id = 5
+
+[node name="PrecModifierOptions" type="OptionButton" parent="OptionLists/TraitAssignmentContainer/ModifierContainer" unique_id=1463798445]
+custom_minimum_size = Vector2(60, 40)
+layout_mode = 2
+item_count = 6
+popup/item_0/text = "+2"
+popup/item_0/id = 0
+popup/item_1/text = "+1"
+popup/item_1/id = 1
+popup/item_2/text = "+1"
+popup/item_2/id = 2
+popup/item_3/text = "0"
+popup/item_3/id = 3
+popup/item_4/text = "0"
+popup/item_4/id = 4
+popup/item_5/text = "-1"
+popup/item_5/id = 5
+
+[node name="KnowModifierOptions" type="OptionButton" parent="OptionLists/TraitAssignmentContainer/ModifierContainer" unique_id=678088379]
+custom_minimum_size = Vector2(60, 40)
+layout_mode = 2
+item_count = 6
+popup/item_0/text = "+2"
+popup/item_0/id = 0
+popup/item_1/text = "+1"
+popup/item_1/id = 1
+popup/item_2/text = "+1"
+popup/item_2/id = 2
+popup/item_3/text = "0"
+popup/item_3/id = 3
+popup/item_4/text = "0"
+popup/item_4/id = 4
+popup/item_5/text = "-1"
+popup/item_5/id = 5
+
 [node name="ButtonContainer" type="HBoxContainer" parent="." unique_id=632243963]
 layout_mode = 1
 anchors_preset = 7
@@ -166,5 +405,11 @@ size_flags_horizontal = 4
 disabled = true
 text = "Confirm"
 
+[connection signal="item_selected" from="OptionLists/TraitAssignmentContainer/ModifierContainer/AgiModifierOptions" to="OptionLists/TraitAssignmentContainer/ModifierContainer" method="_on_agi_modifier_options_item_selected"]
+[connection signal="item_selected" from="OptionLists/TraitAssignmentContainer/ModifierContainer/StrModifierOptions" to="OptionLists/TraitAssignmentContainer/ModifierContainer" method="_on_str_modifier_options_item_selected"]
+[connection signal="item_selected" from="OptionLists/TraitAssignmentContainer/ModifierContainer/FinModifierOptions" to="OptionLists/TraitAssignmentContainer/ModifierContainer" method="_on_fin_modifier_options_item_selected"]
+[connection signal="item_selected" from="OptionLists/TraitAssignmentContainer/ModifierContainer/InsModifierOptions" to="OptionLists/TraitAssignmentContainer/ModifierContainer" method="_on_ins_modifier_options_item_selected"]
+[connection signal="item_selected" from="OptionLists/TraitAssignmentContainer/ModifierContainer/PrecModifierOptions" to="OptionLists/TraitAssignmentContainer/ModifierContainer" method="_on_prec_modifier_options_item_selected"]
+[connection signal="item_selected" from="OptionLists/TraitAssignmentContainer/ModifierContainer/KnowModifierOptions" to="OptionLists/TraitAssignmentContainer/ModifierContainer" method="_on_know_modifier_options_item_selected"]
 [connection signal="pressed" from="ButtonContainer/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="ButtonContainer/ConfirmButton" to="." method="_on_confirm_button_pressed"]
