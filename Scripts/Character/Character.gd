@@ -4,9 +4,10 @@ class_name Character
 extends Node
 
 # Objects from local scene
-@onready var bio_edit: TextEdit = $"../Bio/BioEdit"
+@onready var bio_edit = $"../Bio/BioEdit"
+@onready var name_edit = $"../Names/NameC/NameEdit"
 
-var bio: String
+@export var bio: String
 @export var character_name: String
 @export var pronouns: String
 @export var level: int
@@ -27,18 +28,25 @@ var bio: String
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	agility = 10
-	strength = 10
-	finesse = 10
-	instinct = 10
-	presence = 10
-
-
+	print_character_details()
+	update_edit_fields()
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta) -> void:
 	pass
 
+func _on_name_edit_text_changed(new_text) -> void:
+	pass
 
+
+func _on_bio_text_changed() -> void:
+	bio = bio_edit.get_text()
+	if(bio == "Im Cool"):
+		print(bio)
+		print_character_details()
+		bio_edit.set_text("hi")
+
+		
 func take_damage(dmg: int) -> void:
 	current_hp -= dmg
 	
@@ -54,16 +62,14 @@ func print_character_details() -> void:
 	print("instinct: " + str(instinct))
 	print("presence: " + str(presence))
 	print("knowledge: " + str(knowledge))
+	print(bio)
+	
+	
+func update_edit_fields() -> void:
+	name_edit.set_text(character_name)
+	bio_edit.set_text(bio)
 
 
-func _on_name_edit_text_changed(new_text) -> void:
+func _on_name_edit_text_submitted(new_text):
 	character_name = new_text
-	if(character_name == "Quian"):
-		print(bio)
-
-
-func _on_bio_text_changed() -> void:
-	bio = bio_edit.get_text()
-	if(bio == "Im Cool"):
-		print(bio)
-		print_character_details()
+	print(character_name)# Replace with function body.
