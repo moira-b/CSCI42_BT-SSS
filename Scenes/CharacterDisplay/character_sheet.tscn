@@ -2,6 +2,20 @@
 
 [ext_resource type="PackedScene" uid="uid://c76krhgbjyotx" path="res://Scenes/Characters/character.tscn" id="1_dg7yu"]
 
+[sub_resource type="GDScript" id="GDScript_dg7yu"]
+script/source = "extends LineEdit
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
 [node name="CharacterSheet" type="Control" unique_id=1820753171]
 layout_mode = 3
 anchors_preset = 15
@@ -13,6 +27,21 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="Character" parent="." unique_id=1371470097 instance=ExtResource("1_dg7yu")]
+bio = "Hi guys, its me!"
+character_name = "Quian"
+pronouns = "He/Him"
+level = 10
+agility = 10
+strength = 10
+finesse = 10
+instinct = 10
+presence = 10
+knowledge = 10
+max_hp = 20
+current_hp = 20
+current_stress = 4
+max_hope = 2
+current_hope = 2
 
 [node name="Names" type="HBoxContainer" parent="." unique_id=1837796638]
 layout_mode = 1
@@ -31,11 +60,12 @@ layout_mode = 2
 size_flags_horizontal = 2
 size_flags_vertical = 0
 
-[node name="Name" type="LineEdit" parent="Names/NameC" unique_id=1389927954]
+[node name="NameEdit" type="LineEdit" parent="Names/NameC" unique_id=1389927954]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 size_flags_horizontal = 2
 placeholder_text = "What is your name?"
+script = SubResource("GDScript_dg7yu")
 
 [node name="AncestryC" type="BoxContainer" parent="Names" unique_id=1029556489]
 layout_mode = 2
@@ -192,4 +222,6 @@ layout_mode = 2
 [connection signal="text_submitted" from="TraitModifiers/Instinct/LineEdit" to="Character" method="_on_instinct_text_submitted"]
 [connection signal="text_submitted" from="TraitModifiers/Prescence/LineEdit" to="Character" method="_on_presence_text_submitted"]
 [connection signal="text_submitted" from="TraitModifiers/Knowledge/LineEdit" to="Character" method="_on_knowledge_text_submitted"]
+[connection signal="text_changed" from="Names/NameC/NameEdit" to="Character" method="_on_name_edit_text_changed"]
+[connection signal="text_submitted" from="Names/NameC/NameEdit" to="Character" method="_on_name_edit_text_submitted"]
 [connection signal="text_changed" from="Bio/BioEdit" to="Character" method="_on_bio_text_changed"]
