@@ -20,6 +20,7 @@ extends Node
 @export var items: Array[String]
 @export var max_armor_slots: int
 @export var used_armor_slots: int
+@export var experiences: Array[String] = ["", ""]
 
 var ancestry: Ancestry
 var community: Community
