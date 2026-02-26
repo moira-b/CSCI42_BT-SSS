@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://8ae1l60px6kp"]
 
 [ext_resource type="Script" uid="uid://cov4ve07sd236" path="res://Scripts/CharacterCreation/character_creator_interface.gd" id="1_ofddw"]
+[ext_resource type="Script" uid="uid://drswrpv4328vh" path="res://Scripts/CharacterCreation/character_class_list.gd" id="2_ngsr7"]
+[ext_resource type="Resource" uid="uid://cyaupb2xa2jvp" path="res://Resources/Classes/Bard/bard.tres" id="3_alotr"]
+[ext_resource type="Script" uid="uid://c6daeo616vuo3" path="res://Scripts/CharacterClasses/character_class.gd" id="3_g85pg"]
+[ext_resource type="Resource" uid="uid://blgr70q7oa266" path="res://Resources/Classes/Druid/druid.tres" id="4_g85pg"]
 
 [node name="CharacterCreatorInterface" type="Control" unique_id=1505700201]
 layout_mode = 3
@@ -22,7 +26,7 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ClassList" type="ItemList" parent="OptionLists" unique_id=2126518489]
+[node name="CharacterClassList" type="ItemList" parent="OptionLists" unique_id=2126518489 node_paths=PackedStringArray("subclasses_list")]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -39,19 +43,33 @@ allow_search = false
 auto_width = true
 auto_height = true
 text_overrun_behavior = 0
-item_count = 9
 same_column_width = true
-item_0/text = "Bard"
-item_1/text = "Druid"
-item_2/text = "Guardian"
-item_3/text = "Ranger"
-item_4/text = "Rogue"
-item_5/text = "Seraph"
-item_6/text = "Sorcerer"
-item_7/text = "Warrior"
-item_8/text = "Wizard"
+script = ExtResource("2_ngsr7")
+classes_array = Array[ExtResource("3_g85pg")]([ExtResource("3_alotr"), ExtResource("4_g85pg")])
+subclasses_list = NodePath("../CharacterSubclassList")
+
+[node name="CharacterSubclassList" type="ItemList" parent="OptionLists" unique_id=1066625141]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+allow_search = false
+auto_width = true
+auto_height = true
+text_overrun_behavior = 0
+same_column_width = true
 
 [node name="HeritageList" type="ItemList" parent="OptionLists" unique_id=1334920310]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -91,6 +109,7 @@ item_16/text = "Ribbet"
 item_17/text = "Simiah"
 
 [node name="CommunityList" type="ItemList" parent="OptionLists" unique_id=594952364]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -135,6 +154,7 @@ grow_vertical = 0
 alignment = 1
 
 [node name="BackButton" type="Button" parent="ButtonContainer" unique_id=1380963083]
+visible = false
 custom_minimum_size = Vector2(75, 40)
 layout_mode = 2
 text = "Back"
