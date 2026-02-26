@@ -75,18 +75,17 @@ func print_character_details() -> void:
 func update_edit_fields() -> void:
 	name_edit.set_text(character_name)
 	bio_edit.set_text(bio)
+	agility_field.set_text(str(agility))
+	strength_field.set_text(str(strength))
+	instinct_field.set_text(str(instinct))
+	finesse_field.set_text(str(finesse))
+	presence_field.set_text(str(presence))
+	knowledge_field.set_text(str(knowledge))
 
 
 func _on_name_edit_text_submitted(new_text):
 	character_name = new_text
 	print(character_name)
-
-
-func _on_bio_text_changed() -> void:
-	bio = bio_edit.get_text()
-	if(bio == "Im Cool"):
-		print(bio)
-		print_character_details()
 
 
 func _on_agility_text_submitted(new_text: String) -> void:
