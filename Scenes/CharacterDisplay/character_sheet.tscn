@@ -1,0 +1,137 @@
+[gd_scene format=3 uid="uid://dhouly0p8fe4p"]
+
+[ext_resource type="PackedScene" uid="uid://c76krhgbjyotx" path="res://Scenes/Characters/character.tscn" id="1_dg7yu"]
+
+[node name="CharacterSheet" type="Control" unique_id=1820753171]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Character" parent="." unique_id=1371470097 instance=ExtResource("1_dg7yu")]
+
+[node name="Names" type="HBoxContainer" parent="." unique_id=1837796638]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -546.0
+offset_top = 22.0
+offset_right = 552.0
+offset_bottom = 95.0
+grow_horizontal = 2
+
+[node name="NameC" type="BoxContainer" parent="Names" unique_id=570684203]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 0
+
+[node name="TextEdit" type="TextEdit" parent="Names/NameC" unique_id=935571592]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "PLACEHOLDER"
+
+[node name="Name" type="Label" parent="Names/NameC" unique_id=1653467271]
+layout_mode = 2
+text = "Bob Otalaga"
+
+[node name="AncestryC" type="BoxContainer" parent="Names" unique_id=1029556489]
+layout_mode = 2
+
+[node name="Ancestry" type="Label" parent="Names/AncestryC" unique_id=1577264572]
+layout_mode = 2
+size_flags_vertical = 0
+text = "some ancestry idfk"
+
+[node name="TraitModifiers" type="HBoxContainer" parent="." unique_id=1219526404]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.089
+anchor_right = 0.5
+anchor_bottom = 0.089
+offset_left = -483.0
+offset_top = 33.328
+offset_right = 480.0
+offset_bottom = 133.328
+grow_horizontal = 2
+
+[node name="Agility" type="BoxContainer" parent="TraitModifiers" unique_id=1577777243]
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="Label" type="Label" parent="TraitModifiers/Agility" unique_id=1999482983]
+layout_mode = 2
+text = "10"
+
+[node name="Label2" type="Label" parent="TraitModifiers/Agility" unique_id=282414516]
+layout_mode = 2
+text = "Agility"
+
+[node name="Strength" type="BoxContainer" parent="TraitModifiers" unique_id=546099669]
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="Label" type="Label" parent="TraitModifiers/Strength" unique_id=600530667]
+layout_mode = 2
+text = "10"
+
+[node name="Label2" type="Label" parent="TraitModifiers/Strength" unique_id=270208455]
+layout_mode = 2
+text = "Strength"
+
+[node name="Finesse" type="BoxContainer" parent="TraitModifiers" unique_id=1194059882]
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="Label" type="Label" parent="TraitModifiers/Finesse" unique_id=357828943]
+layout_mode = 2
+text = "10"
+
+[node name="Label2" type="Label" parent="TraitModifiers/Finesse" unique_id=2135928192]
+layout_mode = 2
+text = "Finesse"
+
+[node name="Instinct" type="BoxContainer" parent="TraitModifiers" unique_id=1848782649]
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="Label" type="Label" parent="TraitModifiers/Instinct" unique_id=922969513]
+layout_mode = 2
+text = "10"
+
+[node name="Label2" type="Label" parent="TraitModifiers/Instinct" unique_id=1221245103]
+layout_mode = 2
+text = "Instinct"
+
+[node name="Prescence" type="BoxContainer" parent="TraitModifiers" unique_id=1511671395]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="TraitModifiers/Prescence" unique_id=1878353708]
+layout_mode = 2
+text = "10"
+
+[node name="Label2" type="Label" parent="TraitModifiers/Prescence" unique_id=515719497]
+layout_mode = 2
+text = "Prescence"
+
+[node name="Knowledge" type="BoxContainer" parent="TraitModifiers" unique_id=959325206]
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="Label" type="Label" parent="TraitModifiers/Knowledge" unique_id=2047397255]
+layout_mode = 2
+text = "10"
+
+[node name="Label2" type="Label" parent="TraitModifiers/Knowledge" unique_id=14507721]
+layout_mode = 2
+text = "Knowledge"
+
+[node name="HealthHope" type="VBoxContainer" parent="." unique_id=1671798450]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
