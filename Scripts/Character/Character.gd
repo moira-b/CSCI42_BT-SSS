@@ -6,6 +6,13 @@ extends Node
 # Objects from local scene
 @onready var bio_edit: TextEdit = $"../Bio/BioEdit"
 
+@onready var agility_field: LineEdit = $"../TraitModifiers/Agility/LineEdit"
+@onready var strength_field: LineEdit = $"../TraitModifiers/Strength/LineEdit"
+@onready var finesse_field: LineEdit = $"../TraitModifiers/Finesse/LineEdit"
+@onready var instinct_field: LineEdit = $"../TraitModifiers/Instinct/LineEdit"
+@onready var presence_field: LineEdit = $"../TraitModifiers/Prescence/LineEdit"
+@onready var knowledge_field: LineEdit = $"../TraitModifiers/Knowledge/LineEdit"
+
 var bio: String
 @export var character_name: String
 @export var pronouns: String
@@ -27,12 +34,8 @@ var bio: String
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	agility = 10
-	strength = 10
-	finesse = 10
-	instinct = 10
-	presence = 10
-
+	pass
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta) -> void:
@@ -67,3 +70,57 @@ func _on_bio_text_changed() -> void:
 	if(bio == "Im Cool"):
 		print(bio)
 		print_character_details()
+
+
+func _on_agility_text_submitted(new_text: String) -> void:
+	if (int(new_text) == 0):
+		print("Invalid input")
+	else:
+		agility = int(new_text)
+		agility_field.text = str(agility)
+		print("Agility: " + str(agility))
+
+
+func _on_strength_text_submitted(new_text: String) -> void:
+	if (int(new_text) == 0):
+		print("Invalid input")
+	else:
+		strength = int(new_text)
+		strength_field.text = str(strength)
+		print("Strength: " + str(strength))
+
+
+func _on_finesse_text_submitted(new_text: String) -> void:
+		if (int(new_text) == 0):
+			print("Invalid input")
+		else:
+			finesse = int(new_text)
+			finesse_field.text = str(finesse)
+			print("Finesse: " + str(finesse))
+
+
+func _on_instinct_text_submitted(new_text: String) -> void:
+		if (int(new_text) == 0):
+			print("Invalid input")
+		else:
+			instinct = int(new_text)
+			instinct_field.text = str(instinct)
+			print("Instinct: " + str(instinct))
+
+
+func _on_presence_text_submitted(new_text: String) -> void:
+		if (int(new_text) == 0):
+			print("Invalid input")
+		else:
+			presence = int(new_text)
+			presence_field.text = str(presence)
+			print("Presence: " + str(presence))
+
+
+func _on_knowledge_text_submitted(new_text: String) -> void:
+		if (int(new_text) == 0):
+			print("Invalid input")
+		else:
+			knowledge = int(new_text)
+			knowledge_field.text = str(knowledge)
+			print("knowledge: " + str(knowledge))
