@@ -24,18 +24,16 @@ offset_bottom = 95.0
 grow_horizontal = 2
 
 [node name="NameC" type="BoxContainer" parent="Names" unique_id=570684203]
+custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 size_flags_horizontal = 2
 size_flags_vertical = 0
 
-[node name="TextEdit" type="TextEdit" parent="Names/NameC" unique_id=935571592]
+[node name="LineEdit" type="LineEdit" parent="Names/NameC" unique_id=1389927954]
+custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
-size_flags_horizontal = 3
-placeholder_text = "PLACEHOLDER"
-
-[node name="Name" type="Label" parent="Names/NameC" unique_id=1653467271]
-layout_mode = 2
-text = "Bob Otalaga"
+size_flags_horizontal = 2
+placeholder_text = "What is your name?"
 
 [node name="AncestryC" type="BoxContainer" parent="Names" unique_id=1029556489]
 layout_mode = 2
@@ -135,3 +133,11 @@ text = "Knowledge"
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="BoxContainer" type="BoxContainer" parent="." unique_id=406554082]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextEdit" type="TextEdit" parent="BoxContainer" unique_id=424562564]
+layout_mode = 2
