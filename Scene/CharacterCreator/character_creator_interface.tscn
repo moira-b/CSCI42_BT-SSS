@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://8ae1l60px6kp"]
 
 [ext_resource type="Script" uid="uid://cov4ve07sd236" path="res://Scripts/CharacterCreation/character_creator_interface.gd" id="1_ofddw"]
+[ext_resource type="PackedScene" uid="uid://c76krhgbjyotx" path="res://Scenes/Characters/character.tscn" id="2_foxel"]
 [ext_resource type="Script" uid="uid://drswrpv4328vh" path="res://Scripts/CharacterCreation/character_class_list.gd" id="2_ngsr7"]
 [ext_resource type="Resource" uid="uid://cyaupb2xa2jvp" path="res://Resources/Classes/Bard/bard.tres" id="3_alotr"]
 [ext_resource type="Script" uid="uid://c6daeo616vuo3" path="res://Scripts/CharacterClasses/character_class.gd" id="3_g85pg"]
@@ -47,6 +48,8 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 script = ExtResource("1_ofddw")
+
+[node name="Character" parent="." unique_id=1371470097 instance=ExtResource("2_foxel")]
 
 [node name="OptionLists" type="Control" parent="." unique_id=1737252042]
 layout_mode = 1
