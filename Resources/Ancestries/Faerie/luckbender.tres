@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="AncestryFeature" load_steps=2 format=3 uid="uid://cd1sbiotxywi3"]
+
+[ext_resource type="Script" uid="uid://bppcd4k2rsxbx" path="res://Scripts/Ancestries/ancestry_feature.gd" id="1_xx53b"]
+
+[resource]
+script = ExtResource("1_xx53b")
+feature_name = "Luckbender"
+metadata/_custom_type_script = "uid://bppcd4k2rsxbx"

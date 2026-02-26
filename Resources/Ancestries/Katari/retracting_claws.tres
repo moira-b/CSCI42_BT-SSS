@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="AncestryFeature" load_steps=2 format=3 uid="uid://cvrbbo64q0cyw"]
+
+[ext_resource type="Script" uid="uid://bppcd4k2rsxbx" path="res://Scripts/Ancestries/ancestry_feature.gd" id="1_0ry67"]
+
+[resource]
+script = ExtResource("1_0ry67")
+feature_name = "Retracting Claws"
+metadata/_custom_type_script = "uid://bppcd4k2rsxbx"

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Ancestry" load_steps=4 format=3 uid="uid://hugrpddm5tbc"]
+
+[ext_resource type="Script" uid="uid://c5wd1842qiju3" path="res://Scripts/Ancestries/ancestry.gd" id="1_k3ap3"]
+[ext_resource type="Resource" uid="uid://o8u61bwohekc" path="res://Resources/Ancestries/Galapa/shell.tres" id="1_r71pm"]
+[ext_resource type="Resource" uid="uid://cg8te2lgt55ey" path="res://Resources/Ancestries/Galapa/retract.tres" id="2_rrioj"]
+
+[resource]
+script = ExtResource("1_k3ap3")
+ancestry_name = "Galapa"
+feature1 = ExtResource("1_r71pm")
+feature2 = ExtResource("2_rrioj")
+metadata/_custom_type_script = "uid://c5wd1842qiju3"

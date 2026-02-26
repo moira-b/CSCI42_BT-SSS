@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Ancestry" load_steps=4 format=3 uid="uid://d15nhe8pe1rl0"]
+
+[ext_resource type="Resource" uid="uid://dxma85hiwdp2k" path="res://Resources/Ancestries/Simiah/natural_climber.tres" id="1_54neu"]
+[ext_resource type="Script" uid="uid://c5wd1842qiju3" path="res://Scripts/Ancestries/ancestry.gd" id="1_w4t61"]
+[ext_resource type="Resource" uid="uid://cqynkc4n0n7yt" path="res://Resources/Ancestries/Simiah/nimble.tres" id="2_jayoo"]
+
+[resource]
+script = ExtResource("1_w4t61")
+ancestry_name = "Simiah"
+feature1 = ExtResource("1_54neu")
+feature2 = ExtResource("2_jayoo")
+metadata/_custom_type_script = "uid://c5wd1842qiju3"

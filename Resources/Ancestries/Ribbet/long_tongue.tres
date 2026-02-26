@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="AncestryFeature" load_steps=2 format=3 uid="uid://btc2ebq05dop3"]
+
+[ext_resource type="Script" uid="uid://bppcd4k2rsxbx" path="res://Scripts/Ancestries/ancestry_feature.gd" id="1_grm5v"]
+
+[resource]
+script = ExtResource("1_grm5v")
+feature_name = "Long Tongue"
+metadata/_custom_type_script = "uid://bppcd4k2rsxbx"

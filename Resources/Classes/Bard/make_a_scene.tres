@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="CharacterClassFeature" format=3 uid="uid://cmnsb25lrbald"]
+
+[ext_resource type="Script" uid="uid://ckqlyqdo4cyhe" path="res://Scripts/CharacterClasses/character_class_feature.gd" id="1_qb0sy"]
+
+[resource]
+script = ExtResource("1_qb0sy")
+feature_name = "Make a Scene"
+feature_description = "Spend 3 Hope to temporarily Distract a target within Close range, giving them a -2 penalty to their Difficulty."
+metadata/_custom_type_script = "uid://ckqlyqdo4cyhe"

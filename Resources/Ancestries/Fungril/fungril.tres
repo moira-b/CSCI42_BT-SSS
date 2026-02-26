@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Ancestry" load_steps=4 format=3 uid="uid://cg5gpu3uujs3l"]
+
+[ext_resource type="Resource" uid="uid://g5l8b85867di" path="res://Resources/Ancestries/Fungril/fungril_network.tres" id="1_a77by"]
+[ext_resource type="Script" uid="uid://c5wd1842qiju3" path="res://Scripts/Ancestries/ancestry.gd" id="1_mq2ky"]
+[ext_resource type="Resource" uid="uid://cr46d3cjngf4w" path="res://Resources/Ancestries/Fungril/death_connection.tres" id="2_6qehy"]
+
+[resource]
+script = ExtResource("1_mq2ky")
+ancestry_name = "Fungril"
+feature1 = ExtResource("1_a77by")
+feature2 = ExtResource("2_6qehy")
+metadata/_custom_type_script = "uid://c5wd1842qiju3"

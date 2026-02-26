@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="CharacterClassFeature" format=3 uid="uid://dwtewcpq1v4d"]
+
+[ext_resource type="Script" uid="uid://ckqlyqdo4cyhe" path="res://Scripts/CharacterClasses/character_class_feature.gd" id="1_4k3dm"]
+
+[resource]
+script = ExtResource("1_4k3dm")
+feature_name = "Maestro"
+feature_description = "Your rallying songs steel the courage of those who listen. When you give a Rally Die to an ally, they can gain a Hope or clear a Stress."
+metadata/_custom_type_script = "uid://ckqlyqdo4cyhe"

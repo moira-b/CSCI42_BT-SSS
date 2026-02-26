@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="CharacterSubclass" format=3 uid="uid://nxqxs5r26qgg"]
+
+[ext_resource type="Script" uid="uid://ckqlyqdo4cyhe" path="res://Scripts/CharacterClasses/character_class_feature.gd" id="1_rrq3f"]
+[ext_resource type="Resource" uid="uid://fsfvcho015mc" path="res://Resources/Classes/Druid/Renewal/clarity_nature.tres" id="2_c70p3"]
+[ext_resource type="Script" uid="uid://cxymexx6bno82" path="res://Scripts/CharacterClasses/character_subclass.gd" id="2_v7wld"]
+[ext_resource type="Resource" uid="uid://x4q0c1np5pk5" path="res://Resources/Classes/Druid/Renewal/regeneration.tres" id="3_ili0c"]
+[ext_resource type="Resource" uid="uid://cby4trdtsuhve" path="res://Resources/Classes/Druid/Renewal/defender.tres" id="4_gtk8r"]
+[ext_resource type="Resource" uid="uid://b8ddko4ktk3rg" path="res://Resources/Classes/Druid/Renewal/regenerative_reach.tres" id="6_erl8f"]
+[ext_resource type="Resource" uid="uid://bt45f1pggwdy5" path="res://Resources/Classes/Druid/Renewal/wardens_protection.tres" id="7_6w4ib"]
+[ext_resource type="Resource" uid="uid://de0wkyxy48irt" path="res://Resources/GeneralUseAttributes/CharacterTraits/instinct.tres" id="8_t7dfs"]
+
+[resource]
+script = ExtResource("2_v7wld")
+subclass_name = "Warden of Renewal"
+foundation_feature = Array[ExtResource("1_rrq3f")]([ExtResource("2_c70p3"), ExtResource("3_ili0c")])
+specialization_feature = Array[ExtResource("1_rrq3f")]([ExtResource("6_erl8f"), ExtResource("7_6w4ib")])
+mastery_feature = Array[ExtResource("1_rrq3f")]([ExtResource("4_gtk8r")])
+spellcast_trait = ExtResource("8_t7dfs")
+metadata/_custom_type_script = "uid://cxymexx6bno82"

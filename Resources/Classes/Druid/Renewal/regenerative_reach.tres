@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="CharacterClassFeature" format=3 uid="uid://b8ddko4ktk3rg"]
+
+[ext_resource type="Script" uid="uid://ckqlyqdo4cyhe" path="res://Scripts/CharacterClasses/character_class_feature.gd" id="1_wk07f"]
+
+[resource]
+script = ExtResource("1_wk07f")
+feature_name = "Regenerative Reach"
+feature_description = "You can target creatures within Very Close range with your “Regeneration” feature."
+metadata/_custom_type_script = "uid://ckqlyqdo4cyhe"

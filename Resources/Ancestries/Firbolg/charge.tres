@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="AncestryFeature" load_steps=2 format=3 uid="uid://dotk8wlyyd2h8"]
+
+[ext_resource type="Script" uid="uid://bppcd4k2rsxbx" path="res://Scripts/Ancestries/ancestry_feature.gd" id="1_78v5w"]
+
+[resource]
+script = ExtResource("1_78v5w")
+feature_name = "Charge"
+metadata/_custom_type_script = "uid://bppcd4k2rsxbx"

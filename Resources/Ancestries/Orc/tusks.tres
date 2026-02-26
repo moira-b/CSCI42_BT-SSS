@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="AncestryFeature" load_steps=2 format=3 uid="uid://t03ih4vqfsc4"]
+
+[ext_resource type="Script" uid="uid://bppcd4k2rsxbx" path="res://Scripts/Ancestries/ancestry_feature.gd" id="1_u0q2b"]
+
+[resource]
+script = ExtResource("1_u0q2b")
+feature_name = "Tusks"
+metadata/_custom_type_script = "uid://bppcd4k2rsxbx"

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Ancestry" load_steps=4 format=3 uid="uid://dw4b4h5kfq4o5"]
+
+[ext_resource type="Resource" uid="uid://dcuop0a1jstqs" path="res://Resources/Ancestries/Clank/purposeful_design.tres" id="1_q2e0l"]
+[ext_resource type="Resource" uid="uid://cdu14h8ytddh1" path="res://Resources/Ancestries/Clank/efficient.tres" id="2_ba48j"]
+[ext_resource type="Script" uid="uid://c5wd1842qiju3" path="res://Scripts/Ancestries/ancestry.gd" id="3_0v5m3"]
+
+[resource]
+script = ExtResource("3_0v5m3")
+ancestry_name = "Clank"
+description = "Clanks are sentient mechanical beings built from a variety of materials, including metal, wood, and stone. They can resemble humanoids, animals, or even inanimate objects."
+feature1 = ExtResource("1_q2e0l")
+feature2 = ExtResource("2_ba48j")
+metadata/_custom_type_script = "uid://c5wd1842qiju3"

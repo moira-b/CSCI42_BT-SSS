@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="AncestryFeature" load_steps=2 format=3 uid="uid://djfcvc7a703cl"]
+
+[ext_resource type="Script" uid="uid://bppcd4k2rsxbx" path="res://Scripts/Ancestries/ancestry_feature.gd" id="1_4gck0"]
+
+[resource]
+script = ExtResource("1_4gck0")
+feature_name = "Fearless"
+metadata/_custom_type_script = "uid://bppcd4k2rsxbx"

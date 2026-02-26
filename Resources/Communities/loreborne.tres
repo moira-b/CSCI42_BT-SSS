@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Community" format=3 uid="uid://dmv6rfjcdiwyw"]
+
+[ext_resource type="Script" uid="uid://dme6t6o4thnj4" path="res://Scripts/Communities/community.gd" id="1_q3fyl"]
+
+[resource]
+script = ExtResource("1_q3fyl")
+community_name = "Loreborne"
+metadata/_custom_type_script = "uid://dme6t6o4thnj4"

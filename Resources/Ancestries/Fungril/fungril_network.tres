@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="AncestryFeature" load_steps=2 format=3 uid="uid://g5l8b85867di"]
+
+[ext_resource type="Script" uid="uid://bppcd4k2rsxbx" path="res://Scripts/Ancestries/ancestry_feature.gd" id="1_hhkw8"]
+
+[resource]
+script = ExtResource("1_hhkw8")
+feature_name = "Fungril Network"
+metadata/_custom_type_script = "uid://bppcd4k2rsxbx"

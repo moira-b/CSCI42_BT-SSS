@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Ancestry" load_steps=4 format=3 uid="uid://sjd7uiyr7shy"]
+
+[ext_resource type="Resource" uid="uid://cd1sbiotxywi3" path="res://Resources/Ancestries/Faerie/luckbender.tres" id="1_3wiat"]
+[ext_resource type="Script" uid="uid://c5wd1842qiju3" path="res://Scripts/Ancestries/ancestry.gd" id="1_wjc34"]
+[ext_resource type="Resource" uid="uid://ih32vbepk1r1" path="res://Resources/Ancestries/Faerie/wings.tres" id="2_8dpts"]
+
+[resource]
+script = ExtResource("1_wjc34")
+ancestry_name = "Faerie"
+feature1 = ExtResource("1_3wiat")
+feature2 = ExtResource("2_8dpts")
+metadata/_custom_type_script = "uid://c5wd1842qiju3"

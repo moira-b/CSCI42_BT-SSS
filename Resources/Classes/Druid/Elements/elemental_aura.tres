@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="CharacterClassFeature" format=3 uid="uid://bsyxnmv70lstw"]
+
+[ext_resource type="Script" uid="uid://ckqlyqdo4cyhe" path="res://Scripts/CharacterClasses/character_class_feature.gd" id="1_oqepl"]
+
+[resource]
+script = ExtResource("1_oqepl")
+feature_name = "Elemental Aura"
+feature_description = "Once per rest while Channeling, you can assume an aura matching your element. The aura affects targets within Close range until your Channeling ends.\\n• Fire: When an adversary marks 1 or more Hit Points, they must also mark a Stress.\\n• Earth: Your allies gain a +1 bonus to Strength.\\n• Water: When an adversary deals damage to you, you can mark a Stress to move them anywhere within Very Close range of where they are.\\n• Air: When you or an ally takes damage from an attack beyond Melee range, reduce the damage by 1d8."
+metadata/_custom_type_script = "uid://ckqlyqdo4cyhe"

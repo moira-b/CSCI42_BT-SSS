@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="CharacterClassFeature" format=3 uid="uid://bie8i4p6xh4t7"]
+
+[ext_resource type="Script" uid="uid://ckqlyqdo4cyhe" path="res://Scripts/CharacterClasses/character_class_feature.gd" id="1_ut4xa"]
+
+[resource]
+script = ExtResource("1_ut4xa")
+feature_name = "Heart of a Poet"
+feature_description = "After you make an action roll to impress, persuade, or offend someone, you can spend a Hope to add a d4 to the roll."
+metadata/_custom_type_script = "uid://ckqlyqdo4cyhe"
