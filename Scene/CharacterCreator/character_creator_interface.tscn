@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://bek5i1ljq64xm" path="res://Scene/CharacterCreator/heritage_list.gd" id="6_mcmx4"]
 [ext_resource type="Script" uid="uid://bvxjrl3llb0pf" path="res://Scene/CharacterCreator/community_list.gd" id="6_n175s"]
 [ext_resource type="Script" uid="uid://c5wd1842qiju3" path="res://Scripts/Ancestries/ancestry.gd" id="7_5fs0t"]
+[ext_resource type="Script" uid="uid://cew4uesnilxw4" path="res://Scene/CharacterCreator/character_subclass_list.gd" id="7_68bmj"]
 [ext_resource type="Script" uid="uid://dme6t6o4thnj4" path="res://Scripts/Communities/community.gd" id="7_qaets"]
 [ext_resource type="Resource" uid="uid://dw4b4h5kfq4o5" path="res://Resources/Ancestries/Clank/clank.tres" id="8_52ple"]
 [ext_resource type="Resource" uid="uid://dl5y4a17n5keq" path="res://Resources/Ancestries/Drakona/drakona.tres" id="9_2lmdd"]
@@ -102,6 +103,7 @@ auto_width = true
 auto_height = true
 text_overrun_behavior = 0
 same_column_width = true
+script = ExtResource("7_68bmj")
 
 [node name="HeritageList" type="ItemList" parent="OptionLists" unique_id=1334920310]
 visible = false

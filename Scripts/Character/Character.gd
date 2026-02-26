@@ -21,6 +21,11 @@ extends Node
 @export var max_armor_slots: int
 @export var used_armor_slots: int
 
+var ancestry: Ancestry
+var community: Community
+var character_class: CharacterClass
+var subclass: CharacterSubclass
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
