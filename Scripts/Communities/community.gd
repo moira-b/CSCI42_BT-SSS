@@ -58,13 +58,16 @@ var options: Array = ["Highborne", "Loreborne", "Orderborne", "Ridgeborne", "Sea
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	description = set_description()
+	self.set_description()
 	feature_name = set_feature()
 	all_features_descriptions = set_feature_description()
 
-func set_description() -> String:	
+func get_description() -> String:	
 	return all_descriptions[community_name]
-	
+
+func set_description() -> void:
+	self.description = all_descriptions[community_name]
+
 func set_feature() -> String:
 	return all_features[community_name]
 	

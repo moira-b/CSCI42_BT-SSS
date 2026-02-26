@@ -14,6 +14,5 @@ func _ready() -> void:
 	
 func _on_item_selected(_index: int):
 	var desc_of_selected: String = heritage_array[_index].description
-	print(str(_index) + ": " + desc_of_selected)
 	self.get_parent().get_parent().show_description(desc_of_selected)
 	character.ancestry = heritage_array[_index]
