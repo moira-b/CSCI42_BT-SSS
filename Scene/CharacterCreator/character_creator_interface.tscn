@@ -6,6 +6,37 @@
 [ext_resource type="Script" uid="uid://c6daeo616vuo3" path="res://Scripts/CharacterClasses/character_class.gd" id="3_g85pg"]
 [ext_resource type="Resource" uid="uid://blgr70q7oa266" path="res://Resources/Classes/Druid/druid.tres" id="4_g85pg"]
 [ext_resource type="Script" uid="uid://01ybmxp5mmus" path="res://Scripts/CharacterCreation/trait_modifier_container.gd" id="6_g85pg"]
+[ext_resource type="Script" uid="uid://bek5i1ljq64xm" path="res://Scene/CharacterCreator/heritage_list.gd" id="6_mcmx4"]
+[ext_resource type="Script" uid="uid://bvxjrl3llb0pf" path="res://Scene/CharacterCreator/community_list.gd" id="6_n175s"]
+[ext_resource type="Script" uid="uid://c5wd1842qiju3" path="res://Scripts/Ancestries/ancestry.gd" id="7_5fs0t"]
+[ext_resource type="Script" uid="uid://dme6t6o4thnj4" path="res://Scripts/Communities/community.gd" id="7_qaets"]
+[ext_resource type="Resource" uid="uid://dw4b4h5kfq4o5" path="res://Resources/Ancestries/Clank/clank.tres" id="8_52ple"]
+[ext_resource type="Resource" uid="uid://dl5y4a17n5keq" path="res://Resources/Ancestries/Drakona/drakona.tres" id="9_2lmdd"]
+[ext_resource type="Resource" uid="uid://dxilb48kkm0he" path="res://Resources/Ancestries/Dwarf/dwarf.tres" id="10_5u6jw"]
+[ext_resource type="Resource" uid="uid://cdnsv4wu34i87" path="res://Resources/Ancestries/Elf/elf.tres" id="11_q2xl0"]
+[ext_resource type="Resource" uid="uid://sjd7uiyr7shy" path="res://Resources/Ancestries/Faerie/faerie.tres" id="12_oy6pj"]
+[ext_resource type="Resource" uid="uid://m4wq2iui8b6v" path="res://Resources/Ancestries/Faun/faun.tres" id="13_pjow7"]
+[ext_resource type="Resource" uid="uid://bux1lqf6bx2dj" path="res://Resources/Ancestries/Firbolg/firbolg.tres" id="14_ued7e"]
+[ext_resource type="Resource" uid="uid://cg5gpu3uujs3l" path="res://Resources/Ancestries/Fungril/fungril.tres" id="15_82lxq"]
+[ext_resource type="Resource" uid="uid://hugrpddm5tbc" path="res://Resources/Ancestries/Galapa/galapa.tres" id="16_m83jt"]
+[ext_resource type="Resource" uid="uid://bib1x01vminlw" path="res://Resources/Ancestries/Giant/giant.tres" id="17_m0yc4"]
+[ext_resource type="Resource" uid="uid://cjulp7854vp8m" path="res://Resources/Ancestries/Goblin/goblin.tres" id="18_wr6of"]
+[ext_resource type="Resource" uid="uid://cu2lqif26xoeh" path="res://Resources/Ancestries/Halfing/halfing.tres" id="19_8w0ob"]
+[ext_resource type="Resource" uid="uid://bjeb2pkl6u1ij" path="res://Resources/Ancestries/Human/human.tres" id="20_2piwr"]
+[ext_resource type="Resource" uid="uid://b1013j06tqafb" path="res://Resources/Ancestries/Infernis/infernis.tres" id="21_0gim5"]
+[ext_resource type="Resource" uid="uid://dioye80konngb" path="res://Resources/Ancestries/Katari/katari.tres" id="22_gdl6n"]
+[ext_resource type="Resource" uid="uid://jgnhq30wt2ef" path="res://Resources/Ancestries/Orc/orc.tres" id="23_rli2i"]
+[ext_resource type="Resource" uid="uid://bahexfsvlmweo" path="res://Resources/Ancestries/Ribbet/ribbet.tres" id="24_foxel"]
+[ext_resource type="Resource" uid="uid://d15nhe8pe1rl0" path="res://Resources/Ancestries/Simiah/simiah.tres" id="25_68bmj"]
+[ext_resource type="Resource" uid="uid://b3hbtpthan878" path="res://Resources/Communities/highborne.tres" id="28_82lxq"]
+[ext_resource type="Resource" uid="uid://dmv6rfjcdiwyw" path="res://Resources/Communities/loreborne.tres" id="29_rli2i"]
+[ext_resource type="Resource" uid="uid://dhw5vtg5x7u34" path="res://Resources/Communities/orderborne.tres" id="30_foxel"]
+[ext_resource type="Resource" uid="uid://de0pd7ot2pg3c" path="res://Resources/Communities/ridgeborne.tres" id="31_68bmj"]
+[ext_resource type="Resource" uid="uid://cmt5xelpb33ek" path="res://Resources/Communities/seaborne.tres" id="32_7s5p1"]
+[ext_resource type="Resource" uid="uid://dxyahicuhl502" path="res://Resources/Communities/slyborne.tres" id="33_m6swa"]
+[ext_resource type="Resource" uid="uid://cwdy3l8hipbch" path="res://Resources/Communities/underborne.tres" id="34_a5r2x"]
+[ext_resource type="Resource" uid="uid://bim57d7ua65p6" path="res://Resources/Communities/wanderborne.tres" id="35_5asme"]
+[ext_resource type="Resource" uid="uid://s12git0i5oci" path="res://Resources/Communities/wildborne.tres" id="36_m83la"]
 
 [node name="CharacterCreatorInterface" type="Control" unique_id=1505700201]
 layout_mode = 3
@@ -87,27 +118,10 @@ allow_search = false
 auto_width = true
 auto_height = true
 text_overrun_behavior = 0
-item_count = 18
 max_columns = 3
 same_column_width = true
-item_0/text = "Clank"
-item_1/text = "Drakona"
-item_2/text = "Dwarf"
-item_3/text = "Elf"
-item_4/text = "Faerie"
-item_5/text = "Faun"
-item_6/text = "Firbolg"
-item_7/text = "Fungril"
-item_8/text = "Galapa"
-item_9/text = "Giant"
-item_10/text = "Goblin"
-item_11/text = "Halfling"
-item_12/text = "Human"
-item_13/text = "Infernis"
-item_14/text = "Katari"
-item_15/text = "Orc"
-item_16/text = "Ribbet"
-item_17/text = "Simiah"
+script = ExtResource("6_mcmx4")
+heritage_array = Array[ExtResource("7_5fs0t")]([ExtResource("8_52ple"), ExtResource("9_2lmdd"), ExtResource("10_5u6jw"), ExtResource("11_q2xl0"), ExtResource("12_oy6pj"), ExtResource("13_pjow7"), ExtResource("14_ued7e"), ExtResource("15_82lxq"), ExtResource("16_m83jt"), ExtResource("17_m0yc4"), ExtResource("18_wr6of"), ExtResource("19_8w0ob"), ExtResource("20_2piwr"), ExtResource("21_0gim5"), ExtResource("22_gdl6n"), ExtResource("23_rli2i"), ExtResource("24_foxel"), ExtResource("25_68bmj")])
 
 [node name="CommunityList" type="ItemList" parent="OptionLists" unique_id=594952364]
 visible = false
@@ -127,18 +141,10 @@ allow_search = false
 auto_width = true
 auto_height = true
 text_overrun_behavior = 0
-item_count = 9
 max_columns = 3
 same_column_width = true
-item_0/text = "Highborne"
-item_1/text = "Loreborne"
-item_2/text = "Orderborne"
-item_3/text = "Ridgeborne"
-item_4/text = "Seaborne"
-item_5/text = "Slyborne"
-item_6/text = "Underborne"
-item_7/text = "Wanderborne"
-item_8/text = "Wildborne"
+script = ExtResource("6_n175s")
+community_array = Array[ExtResource("7_qaets")]([ExtResource("28_82lxq"), ExtResource("29_rli2i"), ExtResource("30_foxel"), ExtResource("31_68bmj"), ExtResource("32_7s5p1"), ExtResource("33_m6swa"), ExtResource("34_a5r2x"), ExtResource("35_5asme"), ExtResource("36_m83la")])
 
 [node name="TraitAssignmentContainer" type="HBoxContainer" parent="OptionLists" unique_id=1249625595]
 visible = false
