@@ -28,7 +28,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="CharacterClassList" type="ItemList" parent="OptionLists" unique_id=2126518489 node_paths=PackedStringArray("subclasses_list")]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -142,6 +141,7 @@ item_7/text = "Wanderborne"
 item_8/text = "Wildborne"
 
 [node name="TraitAssignmentContainer" type="HBoxContainer" parent="OptionLists" unique_id=1249625595]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
