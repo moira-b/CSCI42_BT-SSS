@@ -10,15 +10,17 @@
 [ext_resource type="Script" uid="uid://bek5i1ljq64xm" path="res://Scene/CharacterCreator/heritage_list.gd" id="6_mcmx4"]
 [ext_resource type="Script" uid="uid://bvxjrl3llb0pf" path="res://Scene/CharacterCreator/community_list.gd" id="6_n175s"]
 [ext_resource type="Script" uid="uid://c5wd1842qiju3" path="res://Scripts/Ancestries/ancestry.gd" id="7_5fs0t"]
+[ext_resource type="Script" uid="uid://cew4uesnilxw4" path="res://Scene/CharacterCreator/character_subclass_list.gd" id="7_68bmj"]
 [ext_resource type="Script" uid="uid://dme6t6o4thnj4" path="res://Scripts/Communities/community.gd" id="7_qaets"]
 [ext_resource type="Resource" uid="uid://dw4b4h5kfq4o5" path="res://Resources/Ancestries/Clank/clank.tres" id="8_52ple"]
 [ext_resource type="Resource" uid="uid://dl5y4a17n5keq" path="res://Resources/Ancestries/Drakona/drakona.tres" id="9_2lmdd"]
 [ext_resource type="Resource" uid="uid://dxilb48kkm0he" path="res://Resources/Ancestries/Dwarf/dwarf.tres" id="10_5u6jw"]
-[ext_resource type="Resource" uid="uid://cdnsv4wu34i87" path="res://Resources/Ancestries/Elf/elf.tres" id="11_q2xl0"]
 [ext_resource type="Resource" uid="uid://sjd7uiyr7shy" path="res://Resources/Ancestries/Faerie/faerie.tres" id="12_oy6pj"]
 [ext_resource type="Resource" uid="uid://m4wq2iui8b6v" path="res://Resources/Ancestries/Faun/faun.tres" id="13_pjow7"]
+[ext_resource type="Resource" uid="uid://bc3a0t043sjnd" path="res://Resources/Ancestries/Elf/quick_reactions.tres" id="14_m83la"]
 [ext_resource type="Resource" uid="uid://bux1lqf6bx2dj" path="res://Resources/Ancestries/Firbolg/firbolg.tres" id="14_ued7e"]
 [ext_resource type="Resource" uid="uid://cg5gpu3uujs3l" path="res://Resources/Ancestries/Fungril/fungril.tres" id="15_82lxq"]
+[ext_resource type="Resource" uid="uid://b38r61h3xmbf1" path="res://Resources/Ancestries/Elf/celestial_trance.tres" id="15_xjw6o"]
 [ext_resource type="Resource" uid="uid://hugrpddm5tbc" path="res://Resources/Ancestries/Galapa/galapa.tres" id="16_m83jt"]
 [ext_resource type="Resource" uid="uid://bib1x01vminlw" path="res://Resources/Ancestries/Giant/giant.tres" id="17_m0yc4"]
 [ext_resource type="Resource" uid="uid://cjulp7854vp8m" path="res://Resources/Ancestries/Goblin/goblin.tres" id="18_wr6of"]
@@ -39,6 +41,13 @@
 [ext_resource type="Resource" uid="uid://bim57d7ua65p6" path="res://Resources/Communities/wanderborne.tres" id="35_5asme"]
 [ext_resource type="Resource" uid="uid://s12git0i5oci" path="res://Resources/Communities/wildborne.tres" id="36_m83la"]
 [ext_resource type="Script" uid="uid://bwg57k6ymdiig" path="res://Scripts/CharacterCreation/description_display.gd" id="39_68bmj"]
+
+[sub_resource type="Resource" id="Resource_7bny4"]
+script = ExtResource("7_5fs0t")
+ancestry_name = "Elf"
+feature1 = ExtResource("14_m83la")
+feature2 = ExtResource("15_xjw6o")
+metadata/_custom_type_script = "uid://c5wd1842qiju3"
 
 [node name="CharacterCreatorInterface" type="Control" unique_id=1505700201]
 layout_mode = 3
@@ -103,6 +112,7 @@ auto_width = true
 auto_height = true
 text_overrun_behavior = 0
 same_column_width = true
+script = ExtResource("7_68bmj")
 
 [node name="HeritageList" type="ItemList" parent="OptionLists" unique_id=1334920310]
 visible = false
@@ -125,7 +135,7 @@ text_overrun_behavior = 0
 max_columns = 3
 same_column_width = true
 script = ExtResource("6_mcmx4")
-heritage_array = Array[ExtResource("7_5fs0t")]([ExtResource("8_52ple"), ExtResource("9_2lmdd"), ExtResource("10_5u6jw"), ExtResource("11_q2xl0"), ExtResource("12_oy6pj"), ExtResource("13_pjow7"), ExtResource("14_ued7e"), ExtResource("15_82lxq"), ExtResource("16_m83jt"), ExtResource("17_m0yc4"), ExtResource("18_wr6of"), ExtResource("19_8w0ob"), ExtResource("20_2piwr"), ExtResource("21_0gim5"), ExtResource("22_gdl6n"), ExtResource("23_rli2i"), ExtResource("24_foxel"), ExtResource("25_68bmj")])
+heritage_array = Array[ExtResource("7_5fs0t")]([ExtResource("8_52ple"), ExtResource("9_2lmdd"), ExtResource("10_5u6jw"), SubResource("Resource_7bny4"), ExtResource("12_oy6pj"), ExtResource("13_pjow7"), ExtResource("14_ued7e"), ExtResource("15_82lxq"), ExtResource("16_m83jt"), ExtResource("17_m0yc4"), ExtResource("18_wr6of"), ExtResource("19_8w0ob"), ExtResource("20_2piwr"), ExtResource("21_0gim5"), ExtResource("22_gdl6n"), ExtResource("23_rli2i"), ExtResource("24_foxel"), ExtResource("25_68bmj")])
 
 [node name="CommunityList" type="ItemList" parent="OptionLists" unique_id=594952364]
 visible = false

@@ -13,6 +13,8 @@ extends Resource
 @export var class_items: Array[String]
 @export var character_subclasses: Array[CharacterSubclass]
 
+var description: String
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.

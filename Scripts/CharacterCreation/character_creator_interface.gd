@@ -4,6 +4,7 @@ extends Control
 @onready var confirm_button = $ButtonContainer/ConfirmButton
 @onready var back_button = $ButtonContainer/BackButton
 @onready var description_display = $DescriptionContainer
+@onready var character = $Character
 
 var option_tab_array: Array[Control]
 var option_tab_index: int
@@ -66,8 +67,5 @@ func _on_back_button_pressed() -> void:
 	option_tab_index -= 1
 	_set_active_option_tab(option_tab_index)
 	
-func show_description(category: String, option_selected: String) -> void:
-	var message: String = ("Placeholder for description of " + category + " " + option_selected)
+func show_description(message: String) -> void:
 	description_display.display_message(message)
-	
-	pass

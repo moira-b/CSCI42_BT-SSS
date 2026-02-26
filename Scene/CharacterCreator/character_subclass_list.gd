@@ -1,17 +1,15 @@
 extends ItemList
 
-@export var community_array: Array[Community]
-
 var character: Character
+var subclass_array: Array[CharacterSubclass]
 
 func _ready() -> void:
-	for option in community_array:
-		add_item(option.community_name)
-	
 	self.item_selected.connect(_on_item_selected)
 	character = self.get_parent().get_parent().get_child(0)
-
+	
 func _on_item_selected(_index: int):
 	var option_selected: String = self.get_item_text(_index)
-	self.get_parent().get_parent().show_description("Community temp description")
-	character.community = community_array[_index]
+	self.get_parent().get_parent().show_description("Character Subclass temp description")
+	
+	subclass_array = character.character_class.character_subclasses
+	character.subclass = subclass_array[_index]
