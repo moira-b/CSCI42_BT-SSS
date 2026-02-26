@@ -18,7 +18,7 @@ func set_description() -> void:
 	self.description = self.get_description()
 
 # descriptions are taken from
-# https://daggerheart.org/reference/classes
+# https://app.demiplane.com/nexus/daggerheart/classes
 func get_description() -> String:
 	var all_descriptions: Dictionary = {
 		"Assasin": "Assassins are masters in the art of slipping past their opponents’ defenses to inflict terrible pain and deadly strikes.",
