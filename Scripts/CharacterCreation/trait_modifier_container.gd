@@ -15,6 +15,18 @@ func _ready() -> void:
 		option_button_array.append(child)
 
 
+func is_all_items_complete() -> bool:
+	var completed = 0
+	for option_button in option_button_array:
+		if option_button.selected > -1:
+			completed += 1
+		
+	if completed == option_button_array.size():
+		return true
+	else:
+		return false
+
+
 func _add_item_to_array(prev_index: int,index: int):
 	if(prev_index>=0):
 		for option_button in option_button_array:

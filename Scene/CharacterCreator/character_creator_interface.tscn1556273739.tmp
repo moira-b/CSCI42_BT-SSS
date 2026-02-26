@@ -38,7 +38,6 @@
 [ext_resource type="Resource" uid="uid://cwdy3l8hipbch" path="res://Resources/Communities/underborne.tres" id="34_a5r2x"]
 [ext_resource type="Resource" uid="uid://bim57d7ua65p6" path="res://Resources/Communities/wanderborne.tres" id="35_5asme"]
 [ext_resource type="Resource" uid="uid://s12git0i5oci" path="res://Resources/Communities/wildborne.tres" id="36_m83la"]
-[ext_resource type="Script" uid="uid://clmxkh4im6n7f" path="res://Scripts/CharacterCreation/text_fill_container.gd" id="39_68bmj"]
 
 [node name="CharacterCreatorInterface" type="Control" unique_id=1505700201]
 layout_mode = 3
@@ -63,7 +62,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="CharacterClassList" type="ItemList" parent="OptionLists" unique_id=2126518489 node_paths=PackedStringArray("subclasses_list")]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -389,119 +387,6 @@ popup/item_4/id = 4
 popup/item_5/text = "-1"
 popup/item_5/id = 5
 
-[node name="ExperiencesContainer" type="VBoxContainer" parent="OptionLists" unique_id=791843489]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("39_68bmj")
-
-[node name="Experience1" type="HBoxContainer" parent="OptionLists/ExperiencesContainer" unique_id=1881330300]
-layout_mode = 2
-
-[node name="LineEdit" type="LineEdit" parent="OptionLists/ExperiencesContainer/Experience1" unique_id=177615176]
-custom_minimum_size = Vector2(200, 40)
-layout_mode = 2
-max_length = 255
-
-[node name="ModifierPanel" type="Panel" parent="OptionLists/ExperiencesContainer/Experience1" unique_id=2127389027]
-custom_minimum_size = Vector2(50, 40)
-layout_mode = 2
-
-[node name="Label" type="Label" parent="OptionLists/ExperiencesContainer/Experience1/ModifierPanel" unique_id=1482373349]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 20
-text = "+2"
-horizontal_alignment = 1
-
-[node name="Experience2" type="HBoxContainer" parent="OptionLists/ExperiencesContainer" unique_id=230253938]
-layout_mode = 2
-
-[node name="LineEdit" type="LineEdit" parent="OptionLists/ExperiencesContainer/Experience2" unique_id=1293875386]
-custom_minimum_size = Vector2(200, 40)
-layout_mode = 2
-max_length = 255
-
-[node name="ModifierPanel" type="Panel" parent="OptionLists/ExperiencesContainer/Experience2" unique_id=1393244708]
-custom_minimum_size = Vector2(50, 40)
-layout_mode = 2
-
-[node name="Label" type="Label" parent="OptionLists/ExperiencesContainer/Experience2/ModifierPanel" unique_id=161986817]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 20
-text = "+2"
-horizontal_alignment = 1
-
-[node name="NamePronounContainer" type="HBoxContainer" parent="OptionLists" unique_id=989217177]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -100.0
-offset_top = -20.0
-offset_right = 100.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("39_68bmj")
-
-[node name="NameContainer" type="VBoxContainer" parent="OptionLists/NamePronounContainer" unique_id=1026008846]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="OptionLists/NamePronounContainer/NameContainer" unique_id=1318768721]
-layout_mode = 2
-text = "Name:"
-
-[node name="LineEdit" type="LineEdit" parent="OptionLists/NamePronounContainer/NameContainer" unique_id=1879252262]
-custom_minimum_size = Vector2(250, 40)
-layout_mode = 2
-max_length = 255
-
-[node name="PronounContainer" type="VBoxContainer" parent="OptionLists/NamePronounContainer" unique_id=1986893804]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="OptionLists/NamePronounContainer/PronounContainer" unique_id=1848392476]
-layout_mode = 2
-text = "Pronouns:"
-
-[node name="LineEdit" type="LineEdit" parent="OptionLists/NamePronounContainer/PronounContainer" unique_id=1741312588]
-custom_minimum_size = Vector2(100, 40)
-layout_mode = 2
-max_length = 255
-
 [node name="ButtonContainer" type="HBoxContainer" parent="." unique_id=632243963]
 layout_mode = 1
 anchors_preset = 7
@@ -517,6 +402,7 @@ grow_vertical = 0
 alignment = 1
 
 [node name="BackButton" type="Button" parent="ButtonContainer" unique_id=1380963083]
+visible = false
 custom_minimum_size = Vector2(75, 40)
 layout_mode = 2
 text = "Back"
@@ -527,11 +413,6 @@ layout_mode = 2
 size_flags_horizontal = 4
 disabled = true
 text = "Confirm"
-
-[node name="CompleteButton" type="Button" parent="ButtonContainer" unique_id=389272728]
-visible = false
-layout_mode = 2
-text = "Complete"
 
 [connection signal="item_selected" from="OptionLists/TraitAssignmentContainer/ModifierContainer/AgiModifierOptions" to="OptionLists/TraitAssignmentContainer/ModifierContainer" method="_on_agi_modifier_options_item_selected"]
 [connection signal="item_selected" from="OptionLists/TraitAssignmentContainer/ModifierContainer/StrModifierOptions" to="OptionLists/TraitAssignmentContainer/ModifierContainer" method="_on_str_modifier_options_item_selected"]
