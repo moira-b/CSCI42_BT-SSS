@@ -38,6 +38,7 @@
 [ext_resource type="Resource" uid="uid://cwdy3l8hipbch" path="res://Resources/Communities/underborne.tres" id="34_a5r2x"]
 [ext_resource type="Resource" uid="uid://bim57d7ua65p6" path="res://Resources/Communities/wanderborne.tres" id="35_5asme"]
 [ext_resource type="Resource" uid="uid://s12git0i5oci" path="res://Resources/Communities/wildborne.tres" id="36_m83la"]
+[ext_resource type="Script" uid="uid://bwg57k6ymdiig" path="res://Scripts/CharacterCreation/description_display.gd" id="39_68bmj"]
 
 [node name="CharacterCreatorInterface" type="Control" unique_id=1505700201]
 layout_mode = 3
@@ -413,6 +414,26 @@ layout_mode = 2
 size_flags_horizontal = 4
 disabled = true
 text = "Confirm"
+
+[node name="DescriptionContainer" type="PanelContainer" parent="." unique_id=1439688923]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.50200003
+anchor_bottom = 0.768
+offset_left = -505.0
+offset_top = 505.0
+offset_right = 513.696
+offset_bottom = 65.336
+script = ExtResource("39_68bmj")
+
+[node name="DescriptionMarginContainer" type="MarginContainer" parent="DescriptionContainer" unique_id=1566083001]
+layout_mode = 2
+
+[node name="DescriptionLabel" type="Label" parent="DescriptionContainer/DescriptionMarginContainer" unique_id=615693993]
+layout_mode = 2
+text = "TESTERRRRR"
+horizontal_alignment = 1
 
 [connection signal="item_selected" from="OptionLists/TraitAssignmentContainer/ModifierContainer/AgiModifierOptions" to="OptionLists/TraitAssignmentContainer/ModifierContainer" method="_on_agi_modifier_options_item_selected"]
 [connection signal="item_selected" from="OptionLists/TraitAssignmentContainer/ModifierContainer/StrModifierOptions" to="OptionLists/TraitAssignmentContainer/ModifierContainer" method="_on_str_modifier_options_item_selected"]

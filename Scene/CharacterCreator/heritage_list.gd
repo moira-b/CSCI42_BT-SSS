@@ -12,4 +12,5 @@ func _ready() -> void:
 	self.item_selected.connect(_on_item_selected)
 
 func _on_item_selected(_index: int):
-	pass
+	var option_selected: String = self.get_item_text(_index)
+	self.get_parent().get_parent().show_description("Ancestry", option_selected)
