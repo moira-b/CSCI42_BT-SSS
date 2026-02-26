@@ -1,0 +1,150 @@
+[gd_scene format=3 uid="uid://8ae1l60px6kp"]
+
+[ext_resource type="Script" uid="uid://cov4ve07sd236" path="res://Scripts/CharacterCreation/character_creator_interface.gd" id="1_ofddw"]
+
+[node name="CharacterCreatorInterface" type="Control" unique_id=1505700201]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+script = ExtResource("1_ofddw")
+
+[node name="OptionLists" type="Control" parent="." unique_id=1737252042]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ClassList" type="ItemList" parent="OptionLists" unique_id=2126518489]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -42.0
+offset_top = -125.5
+offset_right = 42.0
+offset_bottom = 125.5
+grow_horizontal = 2
+grow_vertical = 2
+allow_search = false
+auto_width = true
+auto_height = true
+text_overrun_behavior = 0
+item_count = 9
+same_column_width = true
+item_0/text = "Bard"
+item_1/text = "Druid"
+item_2/text = "Guardian"
+item_3/text = "Ranger"
+item_4/text = "Rogue"
+item_5/text = "Seraph"
+item_6/text = "Sorcerer"
+item_7/text = "Warrior"
+item_8/text = "Wizard"
+
+[node name="HeritageList" type="ItemList" parent="OptionLists" unique_id=1334920310]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -110.5
+offset_top = -85.0
+offset_right = 110.5
+offset_bottom = 85.0
+grow_horizontal = 2
+grow_vertical = 2
+allow_search = false
+auto_width = true
+auto_height = true
+text_overrun_behavior = 0
+item_count = 18
+max_columns = 3
+same_column_width = true
+item_0/text = "Clank"
+item_1/text = "Drakona"
+item_2/text = "Dwarf"
+item_3/text = "Elf"
+item_4/text = "Faerie"
+item_5/text = "Faun"
+item_6/text = "Firbolg"
+item_7/text = "Fungril"
+item_8/text = "Galapa"
+item_9/text = "Giant"
+item_10/text = "Goblin"
+item_11/text = "Halfling"
+item_12/text = "Human"
+item_13/text = "Infernis"
+item_14/text = "Katari"
+item_15/text = "Orc"
+item_16/text = "Ribbet"
+item_17/text = "Simiah"
+
+[node name="CommunityList" type="ItemList" parent="OptionLists" unique_id=594952364]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -170.5
+offset_top = -44.5
+offset_right = 170.5
+offset_bottom = 44.5
+grow_horizontal = 2
+grow_vertical = 2
+allow_search = false
+auto_width = true
+auto_height = true
+text_overrun_behavior = 0
+item_count = 9
+max_columns = 3
+same_column_width = true
+item_0/text = "Highborne"
+item_1/text = "Loreborne"
+item_2/text = "Orderborne"
+item_3/text = "Ridgeborne"
+item_4/text = "Seaborne"
+item_5/text = "Slyborne"
+item_6/text = "Underborne"
+item_7/text = "Wanderborne"
+item_8/text = "Wildborne"
+
+[node name="ButtonContainer" type="HBoxContainer" parent="." unique_id=632243963]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -35.5
+offset_top = -40.0
+offset_right = 35.5
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="BackButton" type="Button" parent="ButtonContainer" unique_id=1380963083]
+custom_minimum_size = Vector2(75, 40)
+layout_mode = 2
+text = "Back"
+
+[node name="ConfirmButton" type="Button" parent="ButtonContainer" unique_id=1735369079]
+custom_minimum_size = Vector2(75, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+disabled = true
+text = "Confirm"
+
+[connection signal="pressed" from="ButtonContainer/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="ButtonContainer/ConfirmButton" to="." method="_on_confirm_button_pressed"]
