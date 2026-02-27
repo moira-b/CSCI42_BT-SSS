@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="AncestryFeature" load_steps=2 format=3 uid="uid://c82ojdyt7f4xg"]
+
+[ext_resource type="Script" uid="uid://bppcd4k2rsxbx" path="res://Scripts/Ancestries/ancestry_feature.gd" id="1_xjtfb"]
+
+[resource]
+script = ExtResource("1_xjtfb")
+feature_name = "Internal Compass"
+metadata/_custom_type_script = "uid://bppcd4k2rsxbx"

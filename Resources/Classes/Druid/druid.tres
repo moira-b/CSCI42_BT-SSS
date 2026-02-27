@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="CharacterClass" format=3 uid="uid://blgr70q7oa266"]
+
+[ext_resource type="Script" uid="uid://cxymexx6bno82" path="res://Scripts/CharacterClasses/character_subclass.gd" id="1_uvekm"]
+[ext_resource type="Script" uid="uid://ckqlyqdo4cyhe" path="res://Scripts/CharacterClasses/character_class_feature.gd" id="2_f26b2"]
+[ext_resource type="Resource" uid="uid://dct2r4yh5qm85" path="res://Resources/Classes/Druid/Elements/warden_of_elements.tres" id="2_n6d7d"]
+[ext_resource type="Script" uid="uid://bw1ppfeo5ccfb" path="res://Scripts/GeneralUseAttributes/domain.gd" id="2_vpwf5"]
+[ext_resource type="Script" uid="uid://c6daeo616vuo3" path="res://Scripts/CharacterClasses/character_class.gd" id="3_3uinb"]
+[ext_resource type="Resource" uid="uid://bcjbrdit6r4j3" path="res://Resources/Classes/Druid/beastform.tres" id="3_p5lup"]
+[ext_resource type="Resource" uid="uid://nxqxs5r26qgg" path="res://Resources/Classes/Druid/Renewal/warden_of_renewal.tres" id="3_wx0rx"]
+[ext_resource type="Resource" uid="uid://lxm0esxlw1m" path="res://Resources/Classes/Druid/wildtouch.tres" id="4_vay2a"]
+[ext_resource type="Resource" uid="uid://fxlyornoayfi" path="res://Resources/GeneralUseAttributes/Domains/sage.tres" id="4_wo4ms"]
+[ext_resource type="Resource" uid="uid://262js7hopg4i" path="res://Resources/GeneralUseAttributes/Domains/arcana.tres" id="5_2txop"]
+[ext_resource type="Resource" uid="uid://cvugsg0vwtocu" path="res://Resources/Classes/Druid/evolution.tres" id="8_n6d7d"]
+
+[resource]
+script = ExtResource("3_3uinb")
+name = "Druid"
+domains = Array[ExtResource("2_vpwf5")]([ExtResource("4_wo4ms"), ExtResource("5_2txop")])
+starting_evasion = 10
+starting_hp = 6
+hope_feature = ExtResource("8_n6d7d")
+class_feature = Array[ExtResource("2_f26b2")]([ExtResource("3_p5lup"), ExtResource("4_vay2a")])
+class_items = Array[String](["A small bag of rocks and bones", "a strange pendant found in the dirt"])
+character_subclasses = Array[ExtResource("1_uvekm")]([ExtResource("2_n6d7d"), ExtResource("3_wx0rx")])
+metadata/_custom_type_script = "uid://c6daeo616vuo3"

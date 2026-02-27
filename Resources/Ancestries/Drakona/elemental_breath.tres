@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="AncestryFeature" load_steps=2 format=3 uid="uid://cw32wwknpc332"]
+
+[ext_resource type="Script" uid="uid://bppcd4k2rsxbx" path="res://Scripts/Ancestries/ancestry_feature.gd" id="1_le7dk"]
+
+[resource]
+script = ExtResource("1_le7dk")
+feature_name = "Elemental Breath"
+feature_description = "Choose an element for your breath (such as electricity, fire, or ice). You can use this breath against a target or group of targets within Very Close range, treating it as an Instinct weapon that deals **d8** magic damage using your Proficiency."
+metadata/_custom_type_script = "uid://bppcd4k2rsxbx"

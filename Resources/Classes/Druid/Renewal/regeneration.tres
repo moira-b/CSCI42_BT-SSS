@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="CharacterClassFeature" format=3 uid="uid://x4q0c1np5pk5"]
+
+[ext_resource type="Script" uid="uid://ckqlyqdo4cyhe" path="res://Scripts/CharacterClasses/character_class_feature.gd" id="1_60sgr"]
+
+[resource]
+script = ExtResource("1_60sgr")
+feature_name = "Regeneration"
+feature_description = "Touch a creature and spend 3 Hope. That creature clears 1d4 Hit Points."
+metadata/_custom_type_script = "uid://ckqlyqdo4cyhe"

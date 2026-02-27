@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="CharacterClassFeature" format=3 uid="uid://cby4trdtsuhve"]
+
+[ext_resource type="Script" uid="uid://ckqlyqdo4cyhe" path="res://Scripts/CharacterClasses/character_class_feature.gd" id="1_rnp4u"]
+
+[resource]
+script = ExtResource("1_rnp4u")
+feature_name = "Defender"
+feature_description = "Your animal transformation embodies a healing guardian spirit. When you’re in Beastform and an ally within Close range marks 2 or more Hit Points, you can mark a Stress to reduce the number of Hit Points they mark by 1."
+metadata/_custom_type_script = "uid://ckqlyqdo4cyhe"

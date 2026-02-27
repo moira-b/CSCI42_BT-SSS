@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="CharacterTraits" format=3 uid="uid://boeplttdl6mfd"]
+
+[ext_resource type="Script" uid="uid://d2ayhntnquqxr" path="res://Scripts/GeneralUseAttributes/character_trait.gd" id="1_uk2r7"]
+
+[resource]
+script = ExtResource("1_uk2r7")
+trait_name = "Knowledge"
+description = "A high Knowledge means you know information others don’t and understand how to apply your mind through deduction and inference. You’ll make a Knowledge Roll to interpret facts, see the patterns clearly, or remember important information."
+metadata/_custom_type_script = "uid://d2ayhntnquqxr"

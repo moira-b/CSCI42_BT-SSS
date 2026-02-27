@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Ancestry" load_steps=4 format=3 uid="uid://m4wq2iui8b6v"]
+
+[ext_resource type="Resource" uid="uid://bg8nr4fk33yug" path="res://Resources/Ancestries/Faun/caprine_leap.tres" id="1_tpqqh"]
+[ext_resource type="Script" uid="uid://c5wd1842qiju3" path="res://Scripts/Ancestries/ancestry.gd" id="1_yat1l"]
+[ext_resource type="Resource" uid="uid://icjwwwwwar50" path="res://Resources/Ancestries/Faun/kick.tres" id="2_06r5n"]
+
+[resource]
+script = ExtResource("1_yat1l")
+ancestry_name = "Faun"
+feature1 = ExtResource("1_tpqqh")
+feature2 = ExtResource("2_06r5n")
+metadata/_custom_type_script = "uid://c5wd1842qiju3"

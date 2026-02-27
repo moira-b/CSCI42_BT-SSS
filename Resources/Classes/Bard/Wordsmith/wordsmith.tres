@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="CharacterSubclass" format=3 uid="uid://c4cs2mdindhv8"]
+
+[ext_resource type="Script" uid="uid://ckqlyqdo4cyhe" path="res://Scripts/CharacterClasses/character_class_feature.gd" id="1_s4qrr"]
+[ext_resource type="Script" uid="uid://cxymexx6bno82" path="res://Scripts/CharacterClasses/character_subclass.gd" id="2_nyg7q"]
+[ext_resource type="Resource" uid="uid://cg4d140toq3m2" path="res://Resources/Classes/Bard/Wordsmith/rousing_speech.tres" id="2_qdp3w"]
+[ext_resource type="Resource" uid="uid://bie8i4p6xh4t7" path="res://Resources/Classes/Bard/Wordsmith/heart_of_a_poet.tres" id="3_43rkj"]
+[ext_resource type="Resource" uid="uid://d25rcfwfmrfbu" path="res://Resources/Classes/Bard/Wordsmith/epic_poetry.tres" id="4_o2int"]
+[ext_resource type="Resource" uid="uid://nrnyr7x6ktge" path="res://Resources/Classes/Bard/Wordsmith/eloquent.tres" id="6_xob5p"]
+[ext_resource type="Resource" uid="uid://bpd7roqdtthmr" path="res://Resources/GeneralUseAttributes/CharacterTraits/presence.tres" id="7_m8a3h"]
+
+[resource]
+script = ExtResource("2_nyg7q")
+subclass_name = "Wordsmith"
+foundation_feature = Array[ExtResource("1_s4qrr")]([ExtResource("2_qdp3w"), ExtResource("3_43rkj")])
+specialization_feature = Array[ExtResource("1_s4qrr")]([ExtResource("6_xob5p")])
+mastery_feature = Array[ExtResource("1_s4qrr")]([ExtResource("4_o2int")])
+spellcast_trait = ExtResource("7_m8a3h")
+metadata/_custom_type_script = "uid://cxymexx6bno82"

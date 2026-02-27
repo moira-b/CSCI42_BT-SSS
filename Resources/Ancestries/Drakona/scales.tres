@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="AncestryFeature" load_steps=2 format=3 uid="uid://bux18o2hf3q14"]
+
+[ext_resource type="Script" uid="uid://bppcd4k2rsxbx" path="res://Scripts/Ancestries/ancestry_feature.gd" id="1_3rjmv"]
+
+[resource]
+script = ExtResource("1_3rjmv")
+feature_name = "Scales"
+feature_description = "Your scales act as natural protection. When you would take Severe damage, you can **mark a Stress** to mark 1 fewer Hit Points."
+metadata/_custom_type_script = "uid://bppcd4k2rsxbx"

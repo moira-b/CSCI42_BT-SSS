@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="CharacterClassFeature" format=3 uid="uid://cq2urg34iaxeo"]
+
+[ext_resource type="Script" uid="uid://ckqlyqdo4cyhe" path="res://Scripts/CharacterClasses/character_class_feature.gd" id="1_8r4da"]
+
+[resource]
+script = ExtResource("1_8r4da")
+feature_name = "Elemental Dominion"
+feature_description = "You further embody your element. While Channeling, you gain the following benefit:\\n• Fire: You gain a +1 bonus to your Proficiency for attacks and spells that deal damage.\\n• Earth: When you would mark Hit Points, roll a d6 per Hit Point marked. For each result of 6, reduce the number of Hit Points you mark by 1.\\n• Water: When an attack against you succeeds, you can mark a Stress to make the attacker temporarily Vulnerable.\\n• Air: You gain a +1 bonus to your Evasion and can fly."
+metadata/_custom_type_script = "uid://ckqlyqdo4cyhe"

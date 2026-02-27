@@ -1,0 +1,576 @@
+[gd_scene format=3 uid="uid://8ae1l60px6kp"]
+
+[ext_resource type="Script" uid="uid://cov4ve07sd236" path="res://Scripts/CharacterCreation/character_creator_interface.gd" id="1_ofddw"]
+[ext_resource type="PackedScene" uid="uid://c76krhgbjyotx" path="res://Scenes/Characters/character.tscn" id="2_foxel"]
+[ext_resource type="Script" uid="uid://drswrpv4328vh" path="res://Scripts/CharacterCreation/character_class_list.gd" id="2_ngsr7"]
+[ext_resource type="Resource" uid="uid://cyaupb2xa2jvp" path="res://Resources/Classes/Bard/bard.tres" id="3_alotr"]
+[ext_resource type="Script" uid="uid://c6daeo616vuo3" path="res://Scripts/CharacterClasses/character_class.gd" id="3_g85pg"]
+[ext_resource type="Resource" uid="uid://blgr70q7oa266" path="res://Resources/Classes/Druid/druid.tres" id="4_g85pg"]
+[ext_resource type="Script" uid="uid://01ybmxp5mmus" path="res://Scripts/CharacterCreation/trait_modifier_container.gd" id="6_g85pg"]
+[ext_resource type="Script" uid="uid://bek5i1ljq64xm" path="res://Scenes/CharacterCreator/heritage_list.gd" id="6_mcmx4"]
+[ext_resource type="Script" uid="uid://bvxjrl3llb0pf" path="res://Scenes/CharacterCreator/community_list.gd" id="6_n175s"]
+[ext_resource type="Script" uid="uid://c5wd1842qiju3" path="res://Scripts/Ancestries/ancestry.gd" id="7_5fs0t"]
+[ext_resource type="Script" uid="uid://cew4uesnilxw4" path="res://Scenes/CharacterCreator/character_subclass_list.gd" id="7_68bmj"]
+[ext_resource type="Script" uid="uid://dme6t6o4thnj4" path="res://Scripts/Communities/community.gd" id="7_qaets"]
+[ext_resource type="Resource" uid="uid://dw4b4h5kfq4o5" path="res://Resources/Ancestries/Clank/clank.tres" id="8_52ple"]
+[ext_resource type="Resource" uid="uid://dl5y4a17n5keq" path="res://Resources/Ancestries/Drakona/drakona.tres" id="9_2lmdd"]
+[ext_resource type="Resource" uid="uid://dxilb48kkm0he" path="res://Resources/Ancestries/Dwarf/dwarf.tres" id="10_5u6jw"]
+[ext_resource type="Resource" uid="uid://sjd7uiyr7shy" path="res://Resources/Ancestries/Faerie/faerie.tres" id="12_oy6pj"]
+[ext_resource type="Resource" uid="uid://m4wq2iui8b6v" path="res://Resources/Ancestries/Faun/faun.tres" id="13_pjow7"]
+[ext_resource type="Resource" uid="uid://bc3a0t043sjnd" path="res://Resources/Ancestries/Elf/quick_reactions.tres" id="14_m83la"]
+[ext_resource type="Resource" uid="uid://bux1lqf6bx2dj" path="res://Resources/Ancestries/Firbolg/firbolg.tres" id="14_ued7e"]
+[ext_resource type="Resource" uid="uid://cg5gpu3uujs3l" path="res://Resources/Ancestries/Fungril/fungril.tres" id="15_82lxq"]
+[ext_resource type="Resource" uid="uid://b38r61h3xmbf1" path="res://Resources/Ancestries/Elf/celestial_trance.tres" id="15_xjw6o"]
+[ext_resource type="Resource" uid="uid://hugrpddm5tbc" path="res://Resources/Ancestries/Galapa/galapa.tres" id="16_m83jt"]
+[ext_resource type="Resource" uid="uid://bib1x01vminlw" path="res://Resources/Ancestries/Giant/giant.tres" id="17_m0yc4"]
+[ext_resource type="Resource" uid="uid://cjulp7854vp8m" path="res://Resources/Ancestries/Goblin/goblin.tres" id="18_wr6of"]
+[ext_resource type="Resource" uid="uid://cu2lqif26xoeh" path="res://Resources/Ancestries/Halfing/halfing.tres" id="19_8w0ob"]
+[ext_resource type="Resource" uid="uid://bjeb2pkl6u1ij" path="res://Resources/Ancestries/Human/human.tres" id="20_2piwr"]
+[ext_resource type="Resource" uid="uid://b1013j06tqafb" path="res://Resources/Ancestries/Infernis/infernis.tres" id="21_0gim5"]
+[ext_resource type="Resource" uid="uid://dioye80konngb" path="res://Resources/Ancestries/Katari/katari.tres" id="22_gdl6n"]
+[ext_resource type="Resource" uid="uid://jgnhq30wt2ef" path="res://Resources/Ancestries/Orc/orc.tres" id="23_rli2i"]
+[ext_resource type="Resource" uid="uid://bahexfsvlmweo" path="res://Resources/Ancestries/Ribbet/ribbet.tres" id="24_foxel"]
+[ext_resource type="Resource" uid="uid://d15nhe8pe1rl0" path="res://Resources/Ancestries/Simiah/simiah.tres" id="25_68bmj"]
+[ext_resource type="Resource" uid="uid://b3hbtpthan878" path="res://Resources/Communities/highborne.tres" id="28_82lxq"]
+[ext_resource type="Resource" uid="uid://dmv6rfjcdiwyw" path="res://Resources/Communities/loreborne.tres" id="29_rli2i"]
+[ext_resource type="Resource" uid="uid://dhw5vtg5x7u34" path="res://Resources/Communities/orderborne.tres" id="30_foxel"]
+[ext_resource type="Resource" uid="uid://de0pd7ot2pg3c" path="res://Resources/Communities/ridgeborne.tres" id="31_68bmj"]
+[ext_resource type="Resource" uid="uid://cmt5xelpb33ek" path="res://Resources/Communities/seaborne.tres" id="32_7s5p1"]
+[ext_resource type="Resource" uid="uid://dxyahicuhl502" path="res://Resources/Communities/slyborne.tres" id="33_m6swa"]
+[ext_resource type="Resource" uid="uid://cwdy3l8hipbch" path="res://Resources/Communities/underborne.tres" id="34_a5r2x"]
+[ext_resource type="Resource" uid="uid://bim57d7ua65p6" path="res://Resources/Communities/wanderborne.tres" id="35_5asme"]
+[ext_resource type="Resource" uid="uid://s12git0i5oci" path="res://Resources/Communities/wildborne.tres" id="36_m83la"]
+[ext_resource type="Script" uid="uid://clmxkh4im6n7f" path="res://Scripts/CharacterCreation/text_fill_container.gd" id="39_68bmj"]
+[ext_resource type="Script" uid="uid://bwg57k6ymdiig" path="res://Scripts/CharacterCreation/description_display.gd" id="42_a5r2x"]
+
+[sub_resource type="Resource" id="Resource_7bny4"]
+script = ExtResource("7_5fs0t")
+ancestry_name = "Elf"
+feature1 = ExtResource("14_m83la")
+feature2 = ExtResource("15_xjw6o")
+metadata/_custom_type_script = "uid://c5wd1842qiju3"
+
+[node name="CharacterCreatorInterface" type="Control" unique_id=1505700201]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+script = ExtResource("1_ofddw")
+
+[node name="Character" parent="." unique_id=1371470097 instance=ExtResource("2_foxel")]
+
+[node name="OptionLists" type="Control" parent="." unique_id=1737252042]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CharacterClassList" type="ItemList" parent="OptionLists" unique_id=2126518489 node_paths=PackedStringArray("subclasses_list")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -42.0
+offset_top = -125.5
+offset_right = 42.0
+offset_bottom = 125.5
+grow_horizontal = 2
+grow_vertical = 2
+allow_search = false
+auto_width = true
+auto_height = true
+text_overrun_behavior = 0
+same_column_width = true
+script = ExtResource("2_ngsr7")
+classes_array = Array[ExtResource("3_g85pg")]([ExtResource("3_alotr"), ExtResource("4_g85pg")])
+subclasses_list = NodePath("../CharacterSubclassList")
+
+[node name="CharacterSubclassList" type="ItemList" parent="OptionLists" unique_id=1066625141]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+allow_search = false
+auto_width = true
+auto_height = true
+text_overrun_behavior = 0
+same_column_width = true
+script = ExtResource("7_68bmj")
+
+[node name="HeritageList" type="ItemList" parent="OptionLists" unique_id=1334920310]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -110.5
+offset_top = -85.0
+offset_right = 110.5
+offset_bottom = 85.0
+grow_horizontal = 2
+grow_vertical = 2
+allow_search = false
+auto_width = true
+auto_height = true
+text_overrun_behavior = 0
+max_columns = 3
+same_column_width = true
+script = ExtResource("6_mcmx4")
+heritage_array = Array[ExtResource("7_5fs0t")]([ExtResource("8_52ple"), ExtResource("9_2lmdd"), ExtResource("10_5u6jw"), SubResource("Resource_7bny4"), ExtResource("12_oy6pj"), ExtResource("13_pjow7"), ExtResource("14_ued7e"), ExtResource("15_82lxq"), ExtResource("16_m83jt"), ExtResource("17_m0yc4"), ExtResource("18_wr6of"), ExtResource("19_8w0ob"), ExtResource("20_2piwr"), ExtResource("21_0gim5"), ExtResource("22_gdl6n"), ExtResource("23_rli2i"), ExtResource("24_foxel"), ExtResource("25_68bmj")])
+
+[node name="CommunityList" type="ItemList" parent="OptionLists" unique_id=594952364]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -170.5
+offset_top = -44.5
+offset_right = 170.5
+offset_bottom = 44.5
+grow_horizontal = 2
+grow_vertical = 2
+allow_search = false
+auto_width = true
+auto_height = true
+text_overrun_behavior = 0
+max_columns = 3
+same_column_width = true
+script = ExtResource("6_n175s")
+community_array = Array[ExtResource("7_qaets")]([ExtResource("28_82lxq"), ExtResource("29_rli2i"), ExtResource("30_foxel"), ExtResource("31_68bmj"), ExtResource("32_7s5p1"), ExtResource("33_m6swa"), ExtResource("34_a5r2x"), ExtResource("35_5asme"), ExtResource("36_m83la")])
+
+[node name="TraitAssignmentContainer" type="HBoxContainer" parent="OptionLists" unique_id=1249625595]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TraitNameContainer" type="VBoxContainer" parent="OptionLists/TraitAssignmentContainer" unique_id=1226407445]
+layout_mode = 2
+
+[node name="Agility" type="Panel" parent="OptionLists/TraitAssignmentContainer/TraitNameContainer" unique_id=253040051]
+custom_minimum_size = Vector2(90, 40)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="OptionLists/TraitAssignmentContainer/TraitNameContainer/Agility" unique_id=1620017397]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -11.5
+offset_right = 24.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Agility"
+
+[node name="Strength" type="Panel" parent="OptionLists/TraitAssignmentContainer/TraitNameContainer" unique_id=469901981]
+custom_minimum_size = Vector2(90, 40)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="OptionLists/TraitAssignmentContainer/TraitNameContainer/Strength" unique_id=1353670876]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -11.5
+offset_right = 24.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Strength"
+
+[node name="Finesse" type="Panel" parent="OptionLists/TraitAssignmentContainer/TraitNameContainer" unique_id=2124586667]
+custom_minimum_size = Vector2(90, 40)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="OptionLists/TraitAssignmentContainer/TraitNameContainer/Finesse" unique_id=1082853850]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -11.5
+offset_right = 24.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Finesse"
+
+[node name="Instinct" type="Panel" parent="OptionLists/TraitAssignmentContainer/TraitNameContainer" unique_id=1273343647]
+custom_minimum_size = Vector2(90, 40)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="OptionLists/TraitAssignmentContainer/TraitNameContainer/Instinct" unique_id=59403801]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -11.5
+offset_right = 24.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Instinct"
+
+[node name="Presence" type="Panel" parent="OptionLists/TraitAssignmentContainer/TraitNameContainer" unique_id=1761132627]
+custom_minimum_size = Vector2(90, 40)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="OptionLists/TraitAssignmentContainer/TraitNameContainer/Presence" unique_id=1581463351]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -11.5
+offset_right = 24.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Presence"
+
+[node name="Knowledge" type="Panel" parent="OptionLists/TraitAssignmentContainer/TraitNameContainer" unique_id=772199192]
+custom_minimum_size = Vector2(90, 40)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="OptionLists/TraitAssignmentContainer/TraitNameContainer/Knowledge" unique_id=990819575]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -11.5
+offset_right = 24.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Knowledge"
+
+[node name="ModifierContainer" type="VBoxContainer" parent="OptionLists/TraitAssignmentContainer" unique_id=1798246451]
+layout_mode = 2
+script = ExtResource("6_g85pg")
+
+[node name="AgiModifierOptions" type="OptionButton" parent="OptionLists/TraitAssignmentContainer/ModifierContainer" unique_id=759425485]
+custom_minimum_size = Vector2(60, 40)
+layout_mode = 2
+item_count = 6
+popup/item_0/text = "+2"
+popup/item_0/id = 0
+popup/item_1/text = "+1"
+popup/item_1/id = 1
+popup/item_2/text = "+1"
+popup/item_2/id = 2
+popup/item_3/text = "0"
+popup/item_3/id = 3
+popup/item_4/text = "0"
+popup/item_4/id = 4
+popup/item_5/text = "-1"
+popup/item_5/id = 5
+
+[node name="StrModifierOptions" type="OptionButton" parent="OptionLists/TraitAssignmentContainer/ModifierContainer" unique_id=1641788049]
+custom_minimum_size = Vector2(60, 40)
+layout_mode = 2
+item_count = 6
+popup/item_0/text = "+2"
+popup/item_0/id = 0
+popup/item_1/text = "+1"
+popup/item_1/id = 1
+popup/item_2/text = "+1"
+popup/item_2/id = 2
+popup/item_3/text = "0"
+popup/item_3/id = 3
+popup/item_4/text = "0"
+popup/item_4/id = 4
+popup/item_5/text = "-1"
+popup/item_5/id = 5
+
+[node name="FinModifierOptions" type="OptionButton" parent="OptionLists/TraitAssignmentContainer/ModifierContainer" unique_id=578226674]
+custom_minimum_size = Vector2(60, 40)
+layout_mode = 2
+item_count = 6
+popup/item_0/text = "+2"
+popup/item_0/id = 0
+popup/item_1/text = "+1"
+popup/item_1/id = 1
+popup/item_2/text = "+1"
+popup/item_2/id = 2
+popup/item_3/text = "0"
+popup/item_3/id = 3
+popup/item_4/text = "0"
+popup/item_4/id = 4
+popup/item_5/text = "-1"
+popup/item_5/id = 5
+
+[node name="InsModifierOptions" type="OptionButton" parent="OptionLists/TraitAssignmentContainer/ModifierContainer" unique_id=1063521614]
+custom_minimum_size = Vector2(60, 40)
+layout_mode = 2
+item_count = 6
+popup/item_0/text = "+2"
+popup/item_0/id = 0
+popup/item_1/text = "+1"
+popup/item_1/id = 1
+popup/item_2/text = "+1"
+popup/item_2/id = 2
+popup/item_3/text = "0"
+popup/item_3/id = 3
+popup/item_4/text = "0"
+popup/item_4/id = 4
+popup/item_5/text = "-1"
+popup/item_5/id = 5
+
+[node name="PrecModifierOptions" type="OptionButton" parent="OptionLists/TraitAssignmentContainer/ModifierContainer" unique_id=1463798445]
+custom_minimum_size = Vector2(60, 40)
+layout_mode = 2
+item_count = 6
+popup/item_0/text = "+2"
+popup/item_0/id = 0
+popup/item_1/text = "+1"
+popup/item_1/id = 1
+popup/item_2/text = "+1"
+popup/item_2/id = 2
+popup/item_3/text = "0"
+popup/item_3/id = 3
+popup/item_4/text = "0"
+popup/item_4/id = 4
+popup/item_5/text = "-1"
+popup/item_5/id = 5
+
+[node name="KnowModifierOptions" type="OptionButton" parent="OptionLists/TraitAssignmentContainer/ModifierContainer" unique_id=678088379]
+custom_minimum_size = Vector2(60, 40)
+layout_mode = 2
+item_count = 6
+popup/item_0/text = "+2"
+popup/item_0/id = 0
+popup/item_1/text = "+1"
+popup/item_1/id = 1
+popup/item_2/text = "+1"
+popup/item_2/id = 2
+popup/item_3/text = "0"
+popup/item_3/id = 3
+popup/item_4/text = "0"
+popup/item_4/id = 4
+popup/item_5/text = "-1"
+popup/item_5/id = 5
+
+[node name="ExperiencesContainer" type="VBoxContainer" parent="OptionLists" unique_id=791843489]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("39_68bmj")
+
+[node name="Experience1" type="HBoxContainer" parent="OptionLists/ExperiencesContainer" unique_id=1881330300]
+layout_mode = 2
+
+[node name="LineEdit" type="LineEdit" parent="OptionLists/ExperiencesContainer/Experience1" unique_id=177615176]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+max_length = 255
+
+[node name="ModifierPanel" type="Panel" parent="OptionLists/ExperiencesContainer/Experience1" unique_id=2127389027]
+custom_minimum_size = Vector2(50, 40)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="OptionLists/ExperiencesContainer/Experience1/ModifierPanel" unique_id=1482373349]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "+2"
+horizontal_alignment = 1
+
+[node name="Experience2" type="HBoxContainer" parent="OptionLists/ExperiencesContainer" unique_id=230253938]
+layout_mode = 2
+
+[node name="LineEdit" type="LineEdit" parent="OptionLists/ExperiencesContainer/Experience2" unique_id=1293875386]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+max_length = 255
+
+[node name="ModifierPanel" type="Panel" parent="OptionLists/ExperiencesContainer/Experience2" unique_id=1393244708]
+custom_minimum_size = Vector2(50, 40)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="OptionLists/ExperiencesContainer/Experience2/ModifierPanel" unique_id=161986817]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "+2"
+horizontal_alignment = 1
+
+[node name="NamePronounContainer" type="HBoxContainer" parent="OptionLists" unique_id=989217177]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -20.0
+offset_right = 100.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("39_68bmj")
+
+[node name="NameContainer" type="VBoxContainer" parent="OptionLists/NamePronounContainer" unique_id=1026008846]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="OptionLists/NamePronounContainer/NameContainer" unique_id=1318768721]
+layout_mode = 2
+text = "Name:"
+
+[node name="LineEdit" type="LineEdit" parent="OptionLists/NamePronounContainer/NameContainer" unique_id=1879252262]
+custom_minimum_size = Vector2(250, 40)
+layout_mode = 2
+max_length = 255
+
+[node name="PronounContainer" type="VBoxContainer" parent="OptionLists/NamePronounContainer" unique_id=1986893804]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="OptionLists/NamePronounContainer/PronounContainer" unique_id=1848392476]
+layout_mode = 2
+text = "Pronouns:"
+
+[node name="LineEdit" type="LineEdit" parent="OptionLists/NamePronounContainer/PronounContainer" unique_id=1741312588]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 2
+max_length = 255
+
+[node name="ButtonContainer" type="HBoxContainer" parent="." unique_id=632243963]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -35.5
+offset_top = -40.0
+offset_right = 35.5
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="BackButton" type="Button" parent="ButtonContainer" unique_id=1380963083]
+custom_minimum_size = Vector2(75, 40)
+layout_mode = 2
+text = "Back"
+
+[node name="ConfirmButton" type="Button" parent="ButtonContainer" unique_id=1735369079]
+custom_minimum_size = Vector2(75, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+disabled = true
+text = "Confirm"
+
+[node name="CompleteButton" type="Button" parent="ButtonContainer" unique_id=389272728]
+visible = false
+layout_mode = 2
+text = "Complete"
+
+[node name="DescriptionContainer" type="PanelContainer" parent="." unique_id=1439688923]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.50200003
+anchor_bottom = 0.768
+offset_left = -505.0
+offset_top = 505.0
+offset_right = 513.696
+offset_bottom = 65.336
+script = ExtResource("42_a5r2x")
+
+[node name="DescriptionMarginContainer" type="MarginContainer" parent="DescriptionContainer" unique_id=1566083001]
+layout_mode = 2
+
+[node name="DescriptionLabel" type="Label" parent="DescriptionContainer/DescriptionMarginContainer" unique_id=615693993]
+layout_mode = 2
+horizontal_alignment = 1
+
+[connection signal="item_selected" from="OptionLists/TraitAssignmentContainer/ModifierContainer/AgiModifierOptions" to="OptionLists/TraitAssignmentContainer/ModifierContainer" method="_on_agi_modifier_options_item_selected"]
+[connection signal="item_selected" from="OptionLists/TraitAssignmentContainer/ModifierContainer/StrModifierOptions" to="OptionLists/TraitAssignmentContainer/ModifierContainer" method="_on_str_modifier_options_item_selected"]
+[connection signal="item_selected" from="OptionLists/TraitAssignmentContainer/ModifierContainer/FinModifierOptions" to="OptionLists/TraitAssignmentContainer/ModifierContainer" method="_on_fin_modifier_options_item_selected"]
+[connection signal="item_selected" from="OptionLists/TraitAssignmentContainer/ModifierContainer/InsModifierOptions" to="OptionLists/TraitAssignmentContainer/ModifierContainer" method="_on_ins_modifier_options_item_selected"]
+[connection signal="item_selected" from="OptionLists/TraitAssignmentContainer/ModifierContainer/PrecModifierOptions" to="OptionLists/TraitAssignmentContainer/ModifierContainer" method="_on_prec_modifier_options_item_selected"]
+[connection signal="item_selected" from="OptionLists/TraitAssignmentContainer/ModifierContainer/KnowModifierOptions" to="OptionLists/TraitAssignmentContainer/ModifierContainer" method="_on_know_modifier_options_item_selected"]
+[connection signal="pressed" from="ButtonContainer/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="ButtonContainer/ConfirmButton" to="." method="_on_confirm_button_pressed"]
+[connection signal="pressed" from="ButtonContainer/ConfirmButton" to="OptionLists/ExperiencesContainer" method="_on_confirm_button_pressed"]
+[connection signal="pressed" from="ButtonContainer/CompleteButton" to="." method="_on_complete_button_pressed"]
+[connection signal="pressed" from="ButtonContainer/CompleteButton" to="OptionLists/NamePronounContainer" method="_on_complete_button_pressed"]
