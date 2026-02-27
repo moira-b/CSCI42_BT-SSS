@@ -4,6 +4,8 @@ extends Control
 @onready var confirm_button = $ButtonContainer/ConfirmButton
 @onready var complete_button = $ButtonContainer/CompleteButton
 @onready var back_button = $ButtonContainer/BackButton
+@onready var description_display = $DescriptionContainer
+@onready var character = $Character
 
 var option_tab_array: Array[Control]
 var option_tab_index: int
@@ -78,11 +80,14 @@ func _on_confirm_button_pressed() -> void:
 	option_tab_index += 1
 	_set_active_option_tab(option_tab_index)
 	confirm_button.disabled = true
-
+	description_display.clear_message()
 
 func _on_back_button_pressed() -> void:
 	option_tab_index -= 1
 	_set_active_option_tab(option_tab_index)
+	
+func show_description(message: String) -> void:
+	description_display.display_message(message)
 
 
 func _on_complete_button_pressed() -> void:
