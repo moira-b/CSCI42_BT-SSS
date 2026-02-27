@@ -1,0 +1,211 @@
+[gd_scene format=3 uid="uid://dhouly0p8fe4p"]
+
+[ext_resource type="PackedScene" uid="uid://c76krhgbjyotx" path="res://Scenes/Characters/character.tscn" id="1_dg7yu"]
+
+[sub_resource type="GDScript" id="GDScript_dg7yu"]
+script/source = "extends LineEdit
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[node name="CharacterSheet" type="Control" unique_id=1820753171]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Character" parent="." unique_id=1371470097 instance=ExtResource("1_dg7yu")]
+
+[node name="Names" type="HBoxContainer" parent="." unique_id=1837796638]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -546.0
+offset_top = 22.0
+offset_right = 552.0
+offset_bottom = 95.0
+grow_horizontal = 2
+
+[node name="NameC" type="BoxContainer" parent="Names" unique_id=570684203]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 0
+
+[node name="NameEdit" type="LineEdit" parent="Names/NameC" unique_id=1389927954]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 2
+placeholder_text = "What is your name?"
+script = SubResource("GDScript_dg7yu")
+
+[node name="AncestryC" type="BoxContainer" parent="Names" unique_id=1029556489]
+layout_mode = 2
+
+[node name="Ancestry" type="LineEdit" parent="Names/AncestryC" unique_id=1573686438]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 0
+placeholder_text = "Ancestry"
+
+[node name="TraitModifiers" type="HBoxContainer" parent="." unique_id=1219526404]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.089
+anchor_right = 0.5
+anchor_bottom = 0.089
+offset_left = -482.0
+offset_top = 33.328
+offset_right = 480.0
+offset_bottom = 86.328
+grow_horizontal = 2
+
+[node name="Agility" type="BoxContainer" parent="TraitModifiers" unique_id=1577777243]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="TraitModifiers/Agility" unique_id=282414516]
+layout_mode = 2
+text = "Agility:"
+
+[node name="LineEdit" type="LineEdit" parent="TraitModifiers/Agility" unique_id=1420901994]
+custom_minimum_size = Vector2(50, 25)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Strength" type="BoxContainer" parent="TraitModifiers" unique_id=546099669]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="TraitModifiers/Strength" unique_id=270208455]
+layout_mode = 2
+text = "Strength:"
+
+[node name="LineEdit" type="LineEdit" parent="TraitModifiers/Strength" unique_id=1916158857]
+custom_minimum_size = Vector2(50, 25)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Finesse" type="BoxContainer" parent="TraitModifiers" unique_id=1194059882]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="TraitModifiers/Finesse" unique_id=2135928192]
+layout_mode = 2
+text = "Finesse:"
+
+[node name="LineEdit" type="LineEdit" parent="TraitModifiers/Finesse" unique_id=400501315]
+custom_minimum_size = Vector2(50, 25)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Instinct" type="BoxContainer" parent="TraitModifiers" unique_id=1848782649]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="TraitModifiers/Instinct" unique_id=1221245103]
+layout_mode = 2
+text = "Instinct:"
+
+[node name="LineEdit" type="LineEdit" parent="TraitModifiers/Instinct" unique_id=711950248]
+custom_minimum_size = Vector2(50, 25)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Prescence" type="BoxContainer" parent="TraitModifiers" unique_id=1511671395]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="TraitModifiers/Prescence" unique_id=515719497]
+layout_mode = 2
+text = "Prescence:"
+
+[node name="LineEdit" type="LineEdit" parent="TraitModifiers/Prescence" unique_id=918780444]
+custom_minimum_size = Vector2(50, 25)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Knowledge" type="BoxContainer" parent="TraitModifiers" unique_id=959325206]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="TraitModifiers/Knowledge" unique_id=14507721]
+layout_mode = 2
+text = "Knowledge:"
+
+[node name="LineEdit" type="LineEdit" parent="TraitModifiers/Knowledge" unique_id=445053709]
+custom_minimum_size = Vector2(50, 25)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="HealthStress" type="VBoxContainer" parent="." unique_id=1671798450]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.208
+anchor_top = 0.289
+anchor_right = 0.208
+anchor_bottom = 0.289
+offset_left = -201.616
+offset_top = -0.27200317
+offset_right = 201.384
+offset_bottom = 123.728
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HealthStress" unique_id=820844553]
+layout_mode = 2
+
+[node name="Health" type="Label" parent="HealthStress/HBoxContainer" unique_id=1654680755]
+layout_mode = 2
+text = "Health: "
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HealthStress" unique_id=1254795536]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HealthStress/HBoxContainer2" unique_id=1788949092]
+layout_mode = 2
+text = "Stress:"
+
+[node name="Bio" type="VBoxContainer" parent="." unique_id=561844215]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.79800004
+anchor_top = 0.45800003
+anchor_right = 0.79800004
+anchor_bottom = 0.45800003
+offset_left = -192.29602
+offset_top = 0.2159729
+offset_right = 192.70398
+offset_bottom = 340.21597
+
+[node name="Label" type="Label" parent="Bio" unique_id=986580117]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Bio"
+
+[node name="BioEdit" type="TextEdit" parent="Bio" unique_id=1791306647]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[connection signal="text_changed" from="Names/NameC/NameEdit" to="Character" method="_on_name_edit_text_changed"]
+[connection signal="text_submitted" from="Names/NameC/NameEdit" to="Character" method="_on_name_edit_text_submitted"]
+[connection signal="text_submitted" from="TraitModifiers/Agility/LineEdit" to="Character" method="_on_agility_text_submitted"]
+[connection signal="text_submitted" from="TraitModifiers/Strength/LineEdit" to="Character" method="_on_strength_text_submitted"]
+[connection signal="text_submitted" from="TraitModifiers/Finesse/LineEdit" to="Character" method="_on_finesse_text_submitted"]
+[connection signal="text_submitted" from="TraitModifiers/Instinct/LineEdit" to="Character" method="_on_instinct_text_submitted"]
+[connection signal="text_submitted" from="TraitModifiers/Prescence/LineEdit" to="Character" method="_on_presence_text_submitted"]
+[connection signal="text_submitted" from="TraitModifiers/Knowledge/LineEdit" to="Character" method="_on_knowledge_text_submitted"]
+[connection signal="text_changed" from="Bio/BioEdit" to="Character" method="_on_bio_text_changed"]

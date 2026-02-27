@@ -3,6 +3,9 @@
 .nomedia
 /android/
 
+# scene temp files
+*.tmp
+
 # Godot-specific ignores
 .import/
 export.cfg

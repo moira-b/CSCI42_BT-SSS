@@ -2,6 +2,7 @@ extends Control
 
 @onready var option_lists = $OptionLists
 @onready var confirm_button = $ButtonContainer/ConfirmButton
+@onready var complete_button = $ButtonContainer/CompleteButton
 @onready var back_button = $ButtonContainer/BackButton
 @onready var description_display = $DescriptionContainer
 @onready var character = $Character
@@ -15,6 +16,8 @@ func _ready() -> void:
 	confirm_button.disabled = true
 	back_button.disabled = true
 	back_button.visible = false
+	complete_button.disabled = true
+	complete_button.visible = false
 	_load_option_tabs()
 	_set_active_option_tab(0)
 
@@ -24,7 +27,14 @@ func _process(_delta: float) -> void:
 	
 	if active_option_tab is ItemList && active_option_tab.is_anything_selected():
 		confirm_button.disabled = false
-
+	elif active_option_tab.name == "TraitAssignmentContainer":
+		if active_option_tab.get_child(1).is_all_items_complete():
+			confirm_button.disabled = false
+	elif active_option_tab.name == "ExperiencesContainer" and active_option_tab.is_all_textboxes_filled():
+			confirm_button.disabled = false
+	elif active_option_tab.name == "NamePronounContainer" and active_option_tab.is_all_textboxes_filled():
+			complete_button.disabled = false
+			
 
 func _set_active_option_tab(_index: int):
 	'''
@@ -32,11 +42,20 @@ func _set_active_option_tab(_index: int):
 	'''
 	if option_tab_array[_index]:
 		active_option_tab = option_tab_array[_index]
-		active_option_tab.visible = true	
+		active_option_tab.visible = true
 
 	for option_tab in option_tab_array:
 		if option_tab != active_option_tab:
 			option_tab.visible = false
+	
+	if active_option_tab.name == "NamePronounContainer":
+		confirm_button.visible = false
+		complete_button.disabled = true
+		complete_button.visible = true
+	else:
+		confirm_button.visible = true
+		complete_button.disabled = true
+		complete_button.visible = false
 
 
 func _load_option_tabs():
@@ -69,3 +88,7 @@ func _on_back_button_pressed() -> void:
 	
 func show_description(message: String) -> void:
 	description_display.display_message(message)
+
+
+func _on_complete_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/CharacterDisplay/character_sheet.tscn")
