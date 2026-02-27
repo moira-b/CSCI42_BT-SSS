@@ -27,21 +27,6 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="Character" parent="." unique_id=1371470097 instance=ExtResource("1_dg7yu")]
-bio = "Hi guys, its me!"
-character_name = "Quian"
-pronouns = "He/Him"
-level = 10
-agility = 10
-strength = 10
-finesse = 10
-instinct = 10
-presence = 10
-knowledge = 10
-max_hp = 20
-current_hp = 20
-current_stress = 4
-max_hope = 2
-current_hope = 2
 
 [node name="Names" type="HBoxContainer" parent="." unique_id=1837796638]
 layout_mode = 1
