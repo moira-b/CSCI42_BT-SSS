@@ -561,7 +561,6 @@ layout_mode = 2
 
 [node name="DescriptionLabel" type="Label" parent="DescriptionContainer/DescriptionMarginContainer" unique_id=615693993]
 layout_mode = 2
-text = "TESTERRRRR"
 horizontal_alignment = 1
 
 [connection signal="item_selected" from="OptionLists/TraitAssignmentContainer/ModifierContainer/AgiModifierOptions" to="OptionLists/TraitAssignmentContainer/ModifierContainer" method="_on_agi_modifier_options_item_selected"]
