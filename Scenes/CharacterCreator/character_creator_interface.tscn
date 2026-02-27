@@ -12,42 +12,154 @@
 [ext_resource type="Script" uid="uid://c5wd1842qiju3" path="res://Scripts/Ancestries/ancestry.gd" id="7_5fs0t"]
 [ext_resource type="Script" uid="uid://cew4uesnilxw4" path="res://Scenes/CharacterCreator/character_subclass_list.gd" id="7_68bmj"]
 [ext_resource type="Script" uid="uid://dme6t6o4thnj4" path="res://Scripts/Communities/community.gd" id="7_qaets"]
-[ext_resource type="Resource" uid="uid://dw4b4h5kfq4o5" path="res://Resources/Ancestries/Clank/clank.tres" id="8_52ple"]
-[ext_resource type="Resource" uid="uid://dl5y4a17n5keq" path="res://Resources/Ancestries/Drakona/drakona.tres" id="9_2lmdd"]
-[ext_resource type="Resource" uid="uid://dxilb48kkm0he" path="res://Resources/Ancestries/Dwarf/dwarf.tres" id="10_5u6jw"]
-[ext_resource type="Resource" uid="uid://sjd7uiyr7shy" path="res://Resources/Ancestries/Faerie/faerie.tres" id="12_oy6pj"]
-[ext_resource type="Resource" uid="uid://m4wq2iui8b6v" path="res://Resources/Ancestries/Faun/faun.tres" id="13_pjow7"]
+[ext_resource type="Resource" uid="uid://dcuop0a1jstqs" path="res://Resources/Ancestries/Clank/purposeful_design.tres" id="10_q4mme"]
+[ext_resource type="Resource" uid="uid://cdu14h8ytddh1" path="res://Resources/Ancestries/Clank/efficient.tres" id="11_r4lgg"]
+[ext_resource type="Resource" uid="uid://bux18o2hf3q14" path="res://Resources/Ancestries/Drakona/scales.tres" id="12_buxby"]
+[ext_resource type="Resource" uid="uid://cw32wwknpc332" path="res://Resources/Ancestries/Drakona/elemental_breath.tres" id="13_vkfsn"]
+[ext_resource type="Resource" uid="uid://yt8vefvck6vb" path="res://Resources/Ancestries/Dwarf/thick_skin.tres" id="14_5yjqs"]
 [ext_resource type="Resource" uid="uid://bc3a0t043sjnd" path="res://Resources/Ancestries/Elf/quick_reactions.tres" id="14_m83la"]
-[ext_resource type="Resource" uid="uid://bux1lqf6bx2dj" path="res://Resources/Ancestries/Firbolg/firbolg.tres" id="14_ued7e"]
+[ext_resource type="Resource" uid="uid://bill0agiwimja" path="res://Resources/Ancestries/Dwarf/increased_fortitude.tres" id="15_5qhi0"]
 [ext_resource type="Resource" uid="uid://cg5gpu3uujs3l" path="res://Resources/Ancestries/Fungril/fungril.tres" id="15_82lxq"]
 [ext_resource type="Resource" uid="uid://b38r61h3xmbf1" path="res://Resources/Ancestries/Elf/celestial_trance.tres" id="15_xjw6o"]
 [ext_resource type="Resource" uid="uid://hugrpddm5tbc" path="res://Resources/Ancestries/Galapa/galapa.tres" id="16_m83jt"]
-[ext_resource type="Resource" uid="uid://bib1x01vminlw" path="res://Resources/Ancestries/Giant/giant.tres" id="17_m0yc4"]
-[ext_resource type="Resource" uid="uid://cjulp7854vp8m" path="res://Resources/Ancestries/Goblin/goblin.tres" id="18_wr6of"]
-[ext_resource type="Resource" uid="uid://cu2lqif26xoeh" path="res://Resources/Ancestries/Halfing/halfing.tres" id="19_8w0ob"]
-[ext_resource type="Resource" uid="uid://bjeb2pkl6u1ij" path="res://Resources/Ancestries/Human/human.tres" id="20_2piwr"]
-[ext_resource type="Resource" uid="uid://b1013j06tqafb" path="res://Resources/Ancestries/Infernis/infernis.tres" id="21_0gim5"]
-[ext_resource type="Resource" uid="uid://dioye80konngb" path="res://Resources/Ancestries/Katari/katari.tres" id="22_gdl6n"]
-[ext_resource type="Resource" uid="uid://jgnhq30wt2ef" path="res://Resources/Ancestries/Orc/orc.tres" id="23_rli2i"]
-[ext_resource type="Resource" uid="uid://bahexfsvlmweo" path="res://Resources/Ancestries/Ribbet/ribbet.tres" id="24_foxel"]
+[ext_resource type="Resource" uid="uid://cd1sbiotxywi3" path="res://Resources/Ancestries/Faerie/luckbender.tres" id="18_jmofs"]
+[ext_resource type="Resource" uid="uid://ih32vbepk1r1" path="res://Resources/Ancestries/Faerie/wings.tres" id="19_1uxrl"]
+[ext_resource type="Resource" uid="uid://bg8nr4fk33yug" path="res://Resources/Ancestries/Faun/caprine_leap.tres" id="20_xxxvn"]
+[ext_resource type="Resource" uid="uid://icjwwwwwar50" path="res://Resources/Ancestries/Faun/kick.tres" id="21_jknak"]
+[ext_resource type="Resource" uid="uid://dotk8wlyyd2h8" path="res://Resources/Ancestries/Firbolg/charge.tres" id="22_f3lpk"]
+[ext_resource type="Resource" uid="uid://bsa21j0lq4bft" path="res://Resources/Ancestries/Firbolg/unshakeable.tres" id="23_gcsva"]
 [ext_resource type="Resource" uid="uid://d15nhe8pe1rl0" path="res://Resources/Ancestries/Simiah/simiah.tres" id="25_68bmj"]
+[ext_resource type="Resource" uid="uid://b0iqcspblbfqd" path="res://Resources/Ancestries/Giant/endurance.tres" id="26_yfh3p"]
+[ext_resource type="Resource" uid="uid://bpjvqh2fgh2jt" path="res://Resources/Ancestries/Giant/reach.tres" id="27_vksnw"]
+[ext_resource type="Resource" uid="uid://cyel713p1vxkn" path="res://Resources/Ancestries/Goblin/surefooted.tres" id="28_4rfml"]
 [ext_resource type="Resource" uid="uid://b3hbtpthan878" path="res://Resources/Communities/highborne.tres" id="28_82lxq"]
+[ext_resource type="Resource" uid="uid://dkmd3dcsx8ola" path="res://Resources/Ancestries/Goblin/danger_sense.tres" id="29_dceuo"]
 [ext_resource type="Resource" uid="uid://dmv6rfjcdiwyw" path="res://Resources/Communities/loreborne.tres" id="29_rli2i"]
 [ext_resource type="Resource" uid="uid://dhw5vtg5x7u34" path="res://Resources/Communities/orderborne.tres" id="30_foxel"]
+[ext_resource type="Resource" uid="uid://g1rqkl1ro6wa" path="res://Resources/Ancestries/Halfing/luckbringer.tres" id="30_p3lem"]
 [ext_resource type="Resource" uid="uid://de0pd7ot2pg3c" path="res://Resources/Communities/ridgeborne.tres" id="31_68bmj"]
+[ext_resource type="Resource" uid="uid://c82ojdyt7f4xg" path="res://Resources/Ancestries/Halfing/internal_compass.tres" id="31_qlaul"]
+[ext_resource type="Resource" uid="uid://ck0a24qjvnfsn" path="res://Resources/Ancestries/Human/high_stamina.tres" id="32_2tolh"]
 [ext_resource type="Resource" uid="uid://cmt5xelpb33ek" path="res://Resources/Communities/seaborne.tres" id="32_7s5p1"]
 [ext_resource type="Resource" uid="uid://dxyahicuhl502" path="res://Resources/Communities/slyborne.tres" id="33_m6swa"]
+[ext_resource type="Resource" uid="uid://dxk0qfssce8w3" path="res://Resources/Ancestries/Human/adaptability.tres" id="33_vc3wl"]
 [ext_resource type="Resource" uid="uid://cwdy3l8hipbch" path="res://Resources/Communities/underborne.tres" id="34_a5r2x"]
+[ext_resource type="Resource" uid="uid://djfcvc7a703cl" path="res://Resources/Ancestries/Infernis/fearless.tres" id="34_cadvk"]
 [ext_resource type="Resource" uid="uid://bim57d7ua65p6" path="res://Resources/Communities/wanderborne.tres" id="35_5asme"]
+[ext_resource type="Resource" uid="uid://dtpvumkn20lnb" path="res://Resources/Ancestries/Infernis/dread_visage.tres" id="35_yf6o6"]
 [ext_resource type="Resource" uid="uid://s12git0i5oci" path="res://Resources/Communities/wildborne.tres" id="36_m83la"]
+[ext_resource type="Resource" uid="uid://d4l85crmebetd" path="res://Resources/Ancestries/Katari/feline_instincts.tres" id="36_vulnr"]
+[ext_resource type="Resource" uid="uid://cvrbbo64q0cyw" path="res://Resources/Ancestries/Katari/retracting_claws.tres" id="37_gv3lv"]
+[ext_resource type="Resource" uid="uid://cifbsifhh8uys" path="res://Resources/Ancestries/Orc/sturdy.tres" id="38_3mv0p"]
 [ext_resource type="Script" uid="uid://clmxkh4im6n7f" path="res://Scripts/CharacterCreation/text_fill_container.gd" id="39_68bmj"]
+[ext_resource type="Resource" uid="uid://t03ih4vqfsc4" path="res://Resources/Ancestries/Orc/tusks.tres" id="39_qssnk"]
+[ext_resource type="Resource" uid="uid://d376augy3yuum" path="res://Resources/Ancestries/Ribbet/amphibious.tres" id="40_vw86q"]
+[ext_resource type="Resource" uid="uid://btc2ebq05dop3" path="res://Resources/Ancestries/Ribbet/long_tongue.tres" id="41_2w0hu"]
 [ext_resource type="Script" uid="uid://bwg57k6ymdiig" path="res://Scripts/CharacterCreation/description_display.gd" id="42_a5r2x"]
 
-[sub_resource type="Resource" id="Resource_7bny4"]
+[sub_resource type="Resource" id="Resource_iy2pt"]
+script = ExtResource("7_5fs0t")
+ancestry_name = "Clank"
+feature1 = ExtResource("10_q4mme")
+feature2 = ExtResource("11_r4lgg")
+metadata/_custom_type_script = "uid://c5wd1842qiju3"
+
+[sub_resource type="Resource" id="Resource_2tu4b"]
+script = ExtResource("7_5fs0t")
+ancestry_name = "Drakona"
+feature1 = ExtResource("12_buxby")
+feature2 = ExtResource("13_vkfsn")
+metadata/_custom_type_script = "uid://c5wd1842qiju3"
+
+[sub_resource type="Resource" id="Resource_55lws"]
+script = ExtResource("7_5fs0t")
+ancestry_name = "Dwarf"
+feature1 = ExtResource("14_5yjqs")
+feature2 = ExtResource("15_5qhi0")
+metadata/_custom_type_script = "uid://c5wd1842qiju3"
+
+[sub_resource type="Resource" id="Resource_y607l"]
 script = ExtResource("7_5fs0t")
 ancestry_name = "Elf"
 feature1 = ExtResource("14_m83la")
 feature2 = ExtResource("15_xjw6o")
+metadata/_custom_type_script = "uid://c5wd1842qiju3"
+
+[sub_resource type="Resource" id="Resource_cck1h"]
+script = ExtResource("7_5fs0t")
+ancestry_name = "Faerie"
+feature1 = ExtResource("18_jmofs")
+feature2 = ExtResource("19_1uxrl")
+metadata/_custom_type_script = "uid://c5wd1842qiju3"
+
+[sub_resource type="Resource" id="Resource_js22v"]
+script = ExtResource("7_5fs0t")
+ancestry_name = "Faun"
+feature1 = ExtResource("20_xxxvn")
+feature2 = ExtResource("21_jknak")
+metadata/_custom_type_script = "uid://c5wd1842qiju3"
+
+[sub_resource type="Resource" id="Resource_lb1uj"]
+script = ExtResource("7_5fs0t")
+ancestry_name = "Firbolg"
+feature1 = ExtResource("22_f3lpk")
+feature2 = ExtResource("23_gcsva")
+metadata/_custom_type_script = "uid://c5wd1842qiju3"
+
+[sub_resource type="Resource" id="Resource_ht2f8"]
+script = ExtResource("7_5fs0t")
+ancestry_name = "Giant"
+feature1 = ExtResource("26_yfh3p")
+feature2 = ExtResource("27_vksnw")
+metadata/_custom_type_script = "uid://c5wd1842qiju3"
+
+[sub_resource type="Resource" id="Resource_07u81"]
+script = ExtResource("7_5fs0t")
+ancestry_name = "Goblin"
+feature1 = ExtResource("28_4rfml")
+feature2 = ExtResource("29_dceuo")
+metadata/_custom_type_script = "uid://c5wd1842qiju3"
+
+[sub_resource type="Resource" id="Resource_3bxo8"]
+script = ExtResource("7_5fs0t")
+ancestry_name = "Halfling"
+feature1 = ExtResource("30_p3lem")
+feature2 = ExtResource("31_qlaul")
+metadata/_custom_type_script = "uid://c5wd1842qiju3"
+
+[sub_resource type="Resource" id="Resource_qegdp"]
+script = ExtResource("7_5fs0t")
+ancestry_name = "Human"
+feature1 = ExtResource("32_2tolh")
+feature2 = ExtResource("33_vc3wl")
+metadata/_custom_type_script = "uid://c5wd1842qiju3"
+
+[sub_resource type="Resource" id="Resource_vq2e4"]
+script = ExtResource("7_5fs0t")
+ancestry_name = "Infernis"
+feature1 = ExtResource("34_cadvk")
+feature2 = ExtResource("35_yf6o6")
+metadata/_custom_type_script = "uid://c5wd1842qiju3"
+
+[sub_resource type="Resource" id="Resource_rge5c"]
+script = ExtResource("7_5fs0t")
+ancestry_name = "Katari"
+feature1 = ExtResource("36_vulnr")
+feature2 = ExtResource("37_gv3lv")
+metadata/_custom_type_script = "uid://c5wd1842qiju3"
+
+[sub_resource type="Resource" id="Resource_smsvi"]
+script = ExtResource("7_5fs0t")
+ancestry_name = "Orc"
+feature1 = ExtResource("38_3mv0p")
+feature2 = ExtResource("39_qssnk")
+metadata/_custom_type_script = "uid://c5wd1842qiju3"
+
+[sub_resource type="Resource" id="Resource_7all7"]
+script = ExtResource("7_5fs0t")
+ancestry_name = "Ribbet"
+feature1 = ExtResource("40_vw86q")
+feature2 = ExtResource("41_2w0hu")
 metadata/_custom_type_script = "uid://c5wd1842qiju3"
 
 [node name="CharacterCreatorInterface" type="Control" unique_id=1505700201]
@@ -137,7 +249,7 @@ text_overrun_behavior = 0
 max_columns = 3
 same_column_width = true
 script = ExtResource("6_mcmx4")
-heritage_array = Array[ExtResource("7_5fs0t")]([ExtResource("8_52ple"), ExtResource("9_2lmdd"), ExtResource("10_5u6jw"), SubResource("Resource_7bny4"), ExtResource("12_oy6pj"), ExtResource("13_pjow7"), ExtResource("14_ued7e"), ExtResource("15_82lxq"), ExtResource("16_m83jt"), ExtResource("17_m0yc4"), ExtResource("18_wr6of"), ExtResource("19_8w0ob"), ExtResource("20_2piwr"), ExtResource("21_0gim5"), ExtResource("22_gdl6n"), ExtResource("23_rli2i"), ExtResource("24_foxel"), ExtResource("25_68bmj")])
+ancestry_array = Array[ExtResource("7_5fs0t")]([SubResource("Resource_iy2pt"), SubResource("Resource_2tu4b"), SubResource("Resource_55lws"), SubResource("Resource_y607l"), SubResource("Resource_cck1h"), SubResource("Resource_js22v"), SubResource("Resource_lb1uj"), ExtResource("15_82lxq"), ExtResource("16_m83jt"), SubResource("Resource_ht2f8"), SubResource("Resource_07u81"), SubResource("Resource_3bxo8"), SubResource("Resource_qegdp"), SubResource("Resource_vq2e4"), SubResource("Resource_rge5c"), SubResource("Resource_smsvi"), SubResource("Resource_7all7"), ExtResource("25_68bmj")])
 
 [node name="CommunityList" type="ItemList" parent="OptionLists" unique_id=594952364]
 visible = false

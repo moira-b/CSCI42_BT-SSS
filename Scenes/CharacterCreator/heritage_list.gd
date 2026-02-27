@@ -1,11 +1,11 @@
 extends ItemList
 
-@export var heritage_array: Array[Ancestry]
+@export var ancestry_array: Array[Ancestry]
 
 var character: Character
 
 func _ready() -> void:
-	for option in heritage_array:
+	for option in ancestry_array:
 		add_item(option.ancestry_name)
 		option.set_description()
 	
@@ -13,6 +13,6 @@ func _ready() -> void:
 	character = self.get_parent().get_parent().get_child(0)
 	
 func _on_item_selected(_index: int):
-	var desc_of_selected: String = heritage_array[_index].description
+	var desc_of_selected: String = ancestry_array[_index].description
 	self.get_parent().get_parent().show_description(desc_of_selected)
-	character.ancestry = heritage_array[_index]
+	character.ancestry = ancestry_array[_index]
