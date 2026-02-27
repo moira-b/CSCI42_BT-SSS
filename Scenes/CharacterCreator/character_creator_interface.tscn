@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://c6daeo616vuo3" path="res://Scripts/CharacterClasses/character_class.gd" id="3_g85pg"]
 [ext_resource type="Resource" uid="uid://blgr70q7oa266" path="res://Resources/Classes/Druid/druid.tres" id="4_g85pg"]
 [ext_resource type="Script" uid="uid://01ybmxp5mmus" path="res://Scripts/CharacterCreation/trait_modifier_container.gd" id="6_g85pg"]
-[ext_resource type="Script" uid="uid://bek5i1ljq64xm" path="res://Scenes/CharacterCreator/heritage_list.gd" id="6_mcmx4"]
+[ext_resource type="Script" uid="uid://bek5i1ljq64xm" path="res://Scenes/CharacterCreator/ancestry_list.gd" id="6_mcmx4"]
 [ext_resource type="Script" uid="uid://bvxjrl3llb0pf" path="res://Scenes/CharacterCreator/community_list.gd" id="6_n175s"]
 [ext_resource type="Script" uid="uid://c5wd1842qiju3" path="res://Scripts/Ancestries/ancestry.gd" id="7_5fs0t"]
 [ext_resource type="Script" uid="uid://cew4uesnilxw4" path="res://Scenes/CharacterCreator/character_subclass_list.gd" id="7_68bmj"]
@@ -228,7 +228,7 @@ text_overrun_behavior = 0
 same_column_width = true
 script = ExtResource("7_68bmj")
 
-[node name="HeritageList" type="ItemList" parent="OptionLists" unique_id=1334920310]
+[node name="AncestryList" type="ItemList" parent="OptionLists" unique_id=1334920310]
 visible = false
 layout_mode = 1
 anchors_preset = 8
