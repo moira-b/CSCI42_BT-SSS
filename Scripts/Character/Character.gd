@@ -40,9 +40,11 @@ var subclass: CharacterSubclass
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	pass
+	
+func enter_character_sheet() -> void:
 	print_character_details()
 	update_edit_fields()
-	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta) -> void:
