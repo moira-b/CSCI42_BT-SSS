@@ -94,7 +94,7 @@ func show_description(message: String) -> void:
 func _on_complete_button_pressed() -> void:
 	var new_scene = sheet_scene.instantiate()
 	character.reparent(new_scene)
-	character.enter_character_sheet()
+	new_scene.enter()
 	self.get_parent().add_child(new_scene)
 	self.queue_free()
 	#get_tree().change_scene_to_packed(sheet_scene)

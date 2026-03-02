@@ -61,6 +61,9 @@ func _process(delta) -> void:
 func _on_name_edit_text_changed(new_text) -> void:
 	pass
 
+func take_damage(dmg: int) -> void:
+	current_hp -= dmg
+	
 
 func _on_bio_text_changed() -> void:
 	bio = bio_edit.get_text()
@@ -69,10 +72,6 @@ func _on_bio_text_changed() -> void:
 		print_character_details()
 		bio_edit.set_text("hi")
 
-		
-func take_damage(dmg: int) -> void:
-	current_hp -= dmg
-	
 
 func print_character_details() -> void:
 	print("Character Details:")

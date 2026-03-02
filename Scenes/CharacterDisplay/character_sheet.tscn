@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://dhouly0p8fe4p"]
 
+[ext_resource type="Script" uid="uid://cmt4mu51iv5vw" path="res://Scenes/CharacterDisplay/character_sheet.gd" id="1_dg7yu"]
+
 [sub_resource type="GDScript" id="GDScript_dg7yu"]
 script/source = "extends LineEdit
 
@@ -23,6 +25,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+script = ExtResource("1_dg7yu")
 
 [node name="Names" type="HBoxContainer" parent="." unique_id=1837796638]
 layout_mode = 1
