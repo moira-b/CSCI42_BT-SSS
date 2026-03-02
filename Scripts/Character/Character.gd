@@ -4,14 +4,14 @@ class_name Character
 extends Node
 
 # Objects from local scene
-@onready var bio_edit = $"../Bio/BioEdit"
-@onready var name_edit = $"../Names/NameC/NameEdit"
-@onready var agility_field: LineEdit = $"../TraitModifiers/Agility/LineEdit"
-@onready var strength_field: LineEdit = $"../TraitModifiers/Strength/LineEdit"
-@onready var finesse_field: LineEdit = $"../TraitModifiers/Finesse/LineEdit"
-@onready var instinct_field: LineEdit = $"../TraitModifiers/Instinct/LineEdit"
-@onready var presence_field: LineEdit = $"../TraitModifiers/Prescence/LineEdit"
-@onready var knowledge_field: LineEdit = $"../TraitModifiers/Knowledge/LineEdit"
+var bio_edit 
+var name_edit 
+var agility_field: LineEdit 
+var strength_field: LineEdit 
+var finesse_field: LineEdit 
+var instinct_field: LineEdit
+var presence_field: LineEdit 
+var knowledge_field: LineEdit 
 
 @export var bio: String
 @export var character_name: String
@@ -43,6 +43,14 @@ func _ready() -> void:
 	pass
 	
 func enter_character_sheet() -> void:
+	bio_edit = $"../Bio/BioEdit"
+	name_edit = $"../Names/NameC/NameEdit"
+	agility_field = $"../TraitModifiers/Agility/LineEdit"
+	strength_field = $"../TraitModifiers/Strength/LineEdit"
+	finesse_field = $"../TraitModifiers/Finesse/LineEdit"
+	instinct_field = $"../TraitModifiers/Instinct/LineEdit"
+	presence_field = $"../TraitModifiers/Prescence/LineEdit"
+	knowledge_field = $"../TraitModifiers/Knowledge/LineEdit"
 	print_character_details()
 	update_edit_fields()
 

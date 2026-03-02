@@ -1,7 +1,5 @@
 [gd_scene format=3 uid="uid://dhouly0p8fe4p"]
 
-[ext_resource type="PackedScene" uid="uid://c76krhgbjyotx" path="res://Scenes/Characters/character.tscn" id="1_dg7yu"]
-
 [sub_resource type="GDScript" id="GDScript_dg7yu"]
 script/source = "extends LineEdit
 
@@ -25,8 +23,6 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-
-[node name="Character" parent="." unique_id=1371470097 instance=ExtResource("1_dg7yu")]
 
 [node name="Names" type="HBoxContainer" parent="." unique_id=1837796638]
 layout_mode = 1
@@ -199,13 +195,3 @@ text = "Bio"
 [node name="BioEdit" type="TextEdit" parent="Bio" unique_id=1791306647]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
-
-[connection signal="text_changed" from="Names/NameC/NameEdit" to="Character" method="_on_name_edit_text_changed"]
-[connection signal="text_submitted" from="Names/NameC/NameEdit" to="Character" method="_on_name_edit_text_submitted"]
-[connection signal="text_submitted" from="TraitModifiers/Agility/LineEdit" to="Character" method="_on_agility_text_submitted"]
-[connection signal="text_submitted" from="TraitModifiers/Strength/LineEdit" to="Character" method="_on_strength_text_submitted"]
-[connection signal="text_submitted" from="TraitModifiers/Finesse/LineEdit" to="Character" method="_on_finesse_text_submitted"]
-[connection signal="text_submitted" from="TraitModifiers/Instinct/LineEdit" to="Character" method="_on_instinct_text_submitted"]
-[connection signal="text_submitted" from="TraitModifiers/Prescence/LineEdit" to="Character" method="_on_presence_text_submitted"]
-[connection signal="text_submitted" from="TraitModifiers/Knowledge/LineEdit" to="Character" method="_on_knowledge_text_submitted"]
-[connection signal="text_changed" from="Bio/BioEdit" to="Character" method="_on_bio_text_changed"]
