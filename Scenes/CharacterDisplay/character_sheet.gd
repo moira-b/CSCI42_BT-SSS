@@ -14,7 +14,7 @@ func enter() -> void:
 	character = $Character
 	update_edit_fields()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if(updated==false and character.character_name!=""):
 		updated=true
 		update_edit_fields()
