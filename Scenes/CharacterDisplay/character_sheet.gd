@@ -12,21 +12,17 @@ extends Control
 var character:Character
 func enter() -> void:
 	character = $Character
-	character.enter_character_sheet()
 	update_edit_fields()
 
 func update_edit_fields() -> void:
-	name_edit.set_text(character.character_name)
-	bio_edit.set_text(character.bio)
+	name_edit.set_text(str(character.character_name))
+	bio_edit.set_text(str(character.bio))
 	agility_field.set_text(str(character.agility))
 	strength_field.set_text(str(character.strength))
 	instinct_field.set_text(str(character.instinct))
 	finesse_field.set_text(str(character.finesse))
 	presence_field.set_text(str(character.presence))
 	knowledge_field.set_text(str(character.knowledge))
-	
-
-
 
 func print_character_details() -> void:
 	print("Character Details:")
