@@ -10,6 +10,7 @@ func _ready() -> void:
 	
 	character = self.get_parent().get_parent().get_node("Character")
 
+
 func is_all_textboxes_filled() -> bool:
 	var complete = 0
 	for line_edit in line_edit_array:

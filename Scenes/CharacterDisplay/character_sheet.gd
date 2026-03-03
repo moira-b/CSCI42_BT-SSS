@@ -8,11 +8,17 @@ extends Control
 @onready var instinct_field: LineEdit = $"TraitModifiers/Instinct/LineEdit"
 @onready var presence_field: LineEdit = $"TraitModifiers/Prescence/LineEdit"
 @onready var knowledge_field: LineEdit = $"TraitModifiers/Knowledge/LineEdit"
-
+var updated = false
 var character:Character
 func enter() -> void:
 	character = $Character
 	update_edit_fields()
+
+func _process(delta: float) -> void:
+	if(updated==false and character.character_name!=""):
+		updated=true
+		update_edit_fields()
+		
 
 func update_edit_fields() -> void:
 	name_edit.set_text(str(character.character_name))
