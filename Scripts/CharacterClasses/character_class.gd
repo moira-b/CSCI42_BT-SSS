@@ -34,9 +34,7 @@ func get_description() -> String:
 		"Warlock": "As a warlock, you've pledged your life to a patron in exchange for great power.",
 		"Warrior": "As a warrior, you run into battle without hesitation or caution, knowing you can strike down whatever enemy stands in your path.",
 		"Witch": "As a witch, you communte with the forces of nature and entities from realms beyond.",
-		"Wizard": "As a wizard, you’ve become familiar with the arcane through the relentless study of grimoires and other tools of magic.
-
-",
+		"Wizard": "As a wizard, you’ve become familiar with the arcane through the relentless study of grimoires and other tools of magic.",
 	}
 	
 	return all_descriptions[self.name]

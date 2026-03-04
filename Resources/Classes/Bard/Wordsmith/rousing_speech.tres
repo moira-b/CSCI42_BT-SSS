@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="CharacterClassFeature" format=3 uid="uid://cg4d140toq3m2"]
-
-[ext_resource type="Script" uid="uid://ckqlyqdo4cyhe" path="res://Scripts/CharacterClasses/character_class_feature.gd" id="1_48vug"]
-
-[resource]
-script = ExtResource("1_48vug")
-feature_name = "Rousing Speech"
-feature_description = "Once per long rest, you can give a heartfelt, inspiring speech. All allies within Far range clear 2 Stress."
-metadata/_custom_type_script = "uid://ckqlyqdo4cyhe"

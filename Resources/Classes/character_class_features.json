@@ -1,0 +1,11 @@
+{
+	"Make a Scene":"Spend 3 Hope to temporarily Distract a target within Close range, giving them a -2 penalty to their Difficulty.",
+	"Rally":"Once per session, describe how you rally the party and give yourself and each of your allies a Rally Die. At level 1, your Rally Die is a d6. A PC can spend their Rally Die to roll it, adding the result to their action roll, reaction roll, damage roll, or to clear a number of Stress equal to the result. At the end of each session, clear all unspent Rally Dice.\n At level 5, your Rally Die increases to a d8.",
+	"Gifted Performer":"Describe how you perform for others. You can play each song once per long rest:\n • Relaxing Song: You and all allies within Close range clear a Hit Point.\n • Epic Song: Make a target within Close range temporarily Vulnerable.\n • Heartbreaking Song: You and all allies within Close range gain a Hope.",
+	"Maestro":"Your rallying songs steel the courage of those who  listen. When you give a Rally Die to an ally, they can gain a Hope or clear a Stress.",
+	"Virtuoso:":"You are among the greatest of your craft and your skill is boundless. You can perform each of your “Gifted Performer” feature’s songs twice instead of once per long rest.",
+	"Rousing Speech":"Once per long rest, you can give a heartfelt, inspiring speech. All allies within Far range clear 2 Stress.",
+	"Heart of a Poet":"After you make an action roll to impress, persuade, or offend someone, you can spend a Hope to add a d4 to the roll.",
+	"Eloquent":"Your moving words boost morale. Once per session, when you encourage an ally, you can do one of the following: - Allow them to find a mundane object or tool they need. - Help an Ally without spending Hope. - Give them an additional downtime move during their next rest.",
+	"Epic Poetry":"Your Rally Die increases to a d10. Additionally, when you Help an Ally, you can narrate the moment as if you were writing the tale of their heroism in a memoir. When you do, roll a d10 as your advantage die."
+}

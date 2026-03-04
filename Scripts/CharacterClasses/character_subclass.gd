@@ -4,6 +4,7 @@ class_name CharacterSubclass
 extends Resource
 
 @export var subclass_name: String
+@export var description: String
 @export var foundation_feature: Array[CharacterClassFeature]
 @export var specialization_feature: Array[CharacterClassFeature]
 @export var mastery_feature: Array[CharacterClassFeature]

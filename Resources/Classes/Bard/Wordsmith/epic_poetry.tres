@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="CharacterClassFeature" format=3 uid="uid://d25rcfwfmrfbu"]
-
-[ext_resource type="Script" uid="uid://ckqlyqdo4cyhe" path="res://Scripts/CharacterClasses/character_class_feature.gd" id="1_5bo1e"]
-
-[resource]
-script = ExtResource("1_5bo1e")
-feature_name = "Epic Poetry"
-feature_description = "Your Rally Die increases to a d10. Additionally, when you Help an Ally, you can narrate the moment as if you were writing the tale of their heroism in a memoir. When you do, roll a d10 as your advantage die."
-metadata/_custom_type_script = "uid://ckqlyqdo4cyhe"

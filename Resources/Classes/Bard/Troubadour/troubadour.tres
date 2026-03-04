@@ -1,17 +1,10 @@
 [gd_resource type="Resource" script_class="CharacterSubclass" format=3 uid="uid://d1wkgjldxvatj"]
 
 [ext_resource type="Script" uid="uid://ckqlyqdo4cyhe" path="res://Scripts/CharacterClasses/character_class_feature.gd" id="2_772p4"]
-[ext_resource type="Resource" uid="uid://ccb4kn7sj7u7x" path="res://Resources/Classes/Bard/Troubadour/gifted_performer.tres" id="2_slsym"]
-[ext_resource type="Resource" uid="uid://la33n44tsbf" path="res://Resources/Classes/Bard/Troubadour/virtuoso.tres" id="3_ld7xc"]
 [ext_resource type="Script" uid="uid://cxymexx6bno82" path="res://Scripts/CharacterClasses/character_subclass.gd" id="3_slsym"]
-[ext_resource type="Resource" uid="uid://bpd7roqdtthmr" path="res://Resources/GeneralUseAttributes/CharacterTraits/presence.tres" id="4_ld7xc"]
-[ext_resource type="Resource" uid="uid://dwtewcpq1v4d" path="res://Resources/Classes/Bard/Troubadour/maestro.tres" id="5_mr5pl"]
 
 [resource]
 script = ExtResource("3_slsym")
 subclass_name = "Troubadour"
-foundation_feature = Array[ExtResource("2_772p4")]([ExtResource("2_slsym")])
-specialization_feature = Array[ExtResource("2_772p4")]([ExtResource("5_mr5pl")])
-mastery_feature = Array[ExtResource("2_772p4")]([ExtResource("3_ld7xc")])
-spellcast_trait = ExtResource("4_ld7xc")
+description = "Play the Troubadour if you want to play music to bolster your allies"
 metadata/_custom_type_script = "uid://cxymexx6bno82"

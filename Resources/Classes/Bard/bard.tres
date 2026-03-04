@@ -16,6 +16,7 @@ script = ExtResource("6_phr6e")
 name = "Bard"
 domains = Array[ExtResource("3_vgyq3")]([ExtResource("4_qkc4b"), ExtResource("5_ttml8")])
 starting_evasion = 10
+starting_hp = 5
 hope_feature = ExtResource("9_5soxa")
 class_feature = Array[ExtResource("4_phr6e")]([ExtResource("5_15anh")])
 class_items = Array[String](["A romance novel", "A letter never opened"])
