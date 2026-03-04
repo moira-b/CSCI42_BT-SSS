@@ -12,6 +12,9 @@ func _ready():
 	decrement_button.pressed.connect(_on_decrement_button_pressed)
 
 func set_current_value(new_value: String) -> void:
+	'''
+	Sets the stat's current value label to be the specified string.
+	'''
 	self.value_label.text = new_value
 	#print("DEBUG: changed display of the " + self.name + " stat's current value.")
 	
