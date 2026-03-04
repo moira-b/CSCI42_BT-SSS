@@ -73,13 +73,30 @@ func set_maximum_armor_slots() -> void:
 	# (i.e. consider chosen character features)
 	
 func set_used_armor_slots(value: int) -> bool:
-	if(0 <= value && value <= self.max_hp):
+	if(0 <= value && value <= self.max_armor_slots):
 		used_armor_slots = value
-		print("DEBUG: " + self.character_name + " has used " + str(current_hp) + " armor slots.")
+		print("DEBUG: " + self.character_name + " has used " + str(used_armor_slots) + " armor slots.")
 		return true
 	elif(value < 0):
 		print("Cannot set used armor slots to be less than 0.")
 	else:
 		print("Cannot set used armor slots to be greater than max armor slots.")
+	
+	return false
+
+func set_maximum_hope() -> void:
+	self.max_hope = 6 # ACTUAL DEFAULT
+	# TODO: set maximum health based on character creation options
+	# (i.e. consider chosen character features)
+	
+func set_current_hope(value: int) -> bool:
+	if(0 <= value && value <= self.max_hope):
+		current_hope = value
+		print("DEBUG: " + self.character_name + " currently has " + str(current_hope) + " hope.")
+		return true
+	elif(value < 0):
+		print("Cannot set hope counter s to be less than 0.")
+	else:
+		print("Cannot set hope counter to be greater than max hope.")
 	
 	return false

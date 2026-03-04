@@ -265,6 +265,44 @@ layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_c8oo5")
 text = "-"
 
+[node name="Hope" type="PanelContainer" parent="MarkableStats" unique_id=431121348]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dg7yu")
+script = ExtResource("2_5rpyy")
+
+[node name="FieldContainer" type="HBoxContainer" parent="MarkableStats/Hope" unique_id=135152164]
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="Labels" type="HBoxContainer" parent="MarkableStats/Hope/FieldContainer" unique_id=1661390057]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="FieldName" type="Label" parent="MarkableStats/Hope/FieldContainer/Labels" unique_id=1034984974]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "Hope:"
+
+[node name="FieldValue" type="Label" parent="MarkableStats/Hope/FieldContainer/Labels" unique_id=1200812551]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="Buttons" type="HBoxContainer" parent="MarkableStats/Hope/FieldContainer" unique_id=101616658]
+layout_mode = 2
+
+[node name="IncrementButton" type="Button" parent="MarkableStats/Hope/FieldContainer/Buttons" unique_id=1858314804]
+custom_minimum_size = Vector2(40, 30)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_5rpyy")
+text = "+"
+
+[node name="DecrementButton" type="Button" parent="MarkableStats/Hope/FieldContainer/Buttons" unique_id=2041295477]
+custom_minimum_size = Vector2(40, 30)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_c8oo5")
+text = "-"
+
 [node name="Armor" type="PanelContainer" parent="MarkableStats" unique_id=592864428]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_dg7yu")
