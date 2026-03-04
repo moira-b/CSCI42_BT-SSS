@@ -9,13 +9,20 @@
 [ext_resource type="Script" uid="uid://01ybmxp5mmus" path="res://Scripts/CharacterCreation/trait_modifier_container.gd" id="6_g85pg"]
 [ext_resource type="Script" uid="uid://bek5i1ljq64xm" path="res://Scenes/CharacterCreator/heritage_list.gd" id="6_mcmx4"]
 [ext_resource type="Script" uid="uid://bvxjrl3llb0pf" path="res://Scenes/CharacterCreator/community_list.gd" id="6_n175s"]
+[ext_resource type="Resource" uid="uid://b77s47x5y88rn" path="res://Resources/Classes/Guardian/guardian.tres" id="7_3gb7y"]
 [ext_resource type="Script" uid="uid://c5wd1842qiju3" path="res://Scripts/Ancestries/ancestry.gd" id="7_5fs0t"]
 [ext_resource type="Script" uid="uid://cew4uesnilxw4" path="res://Scenes/CharacterCreator/character_subclass_list.gd" id="7_68bmj"]
 [ext_resource type="Script" uid="uid://dme6t6o4thnj4" path="res://Scripts/Communities/community.gd" id="7_qaets"]
 [ext_resource type="Resource" uid="uid://dw4b4h5kfq4o5" path="res://Resources/Ancestries/Clank/clank.tres" id="8_52ple"]
+[ext_resource type="Resource" uid="uid://cuy8gd8ecs5j2" path="res://Resources/Classes/Ranger/ranger.tres" id="8_g2o8p"]
 [ext_resource type="Resource" uid="uid://dl5y4a17n5keq" path="res://Resources/Ancestries/Drakona/drakona.tres" id="9_2lmdd"]
+[ext_resource type="Resource" uid="uid://bnehy1ghhj8ml" path="res://Resources/Classes/Rogue/rogue.tres" id="9_deb4u"]
 [ext_resource type="Resource" uid="uid://dxilb48kkm0he" path="res://Resources/Ancestries/Dwarf/dwarf.tres" id="10_5u6jw"]
+[ext_resource type="Resource" uid="uid://ccwu6ewcynypd" path="res://Resources/Classes/Seraph/seraph.tres" id="10_7mc0y"]
+[ext_resource type="Resource" uid="uid://hywukpwyumtp" path="res://Resources/Classes/Sorcerer/sorcerer.tres" id="11_v3iga"]
+[ext_resource type="Resource" uid="uid://cfbttvs0d6csq" path="res://Resources/Classes/Warrior/warrior.tres" id="12_kdp8w"]
 [ext_resource type="Resource" uid="uid://sjd7uiyr7shy" path="res://Resources/Ancestries/Faerie/faerie.tres" id="12_oy6pj"]
+[ext_resource type="Resource" uid="uid://dac4f4ifpjnla" path="res://Resources/Classes/Wizard/wizard.tres" id="13_cu4qg"]
 [ext_resource type="Resource" uid="uid://m4wq2iui8b6v" path="res://Resources/Ancestries/Faun/faun.tres" id="13_pjow7"]
 [ext_resource type="Resource" uid="uid://bc3a0t043sjnd" path="res://Resources/Ancestries/Elf/quick_reactions.tres" id="14_m83la"]
 [ext_resource type="Resource" uid="uid://bux1lqf6bx2dj" path="res://Resources/Ancestries/Firbolg/firbolg.tres" id="14_ued7e"]
@@ -92,7 +99,7 @@ auto_height = true
 text_overrun_behavior = 0
 same_column_width = true
 script = ExtResource("2_ngsr7")
-classes_array = Array[ExtResource("3_g85pg")]([ExtResource("3_alotr"), ExtResource("4_g85pg")])
+classes_array = Array[ExtResource("3_g85pg")]([ExtResource("3_alotr"), ExtResource("4_g85pg"), ExtResource("7_3gb7y"), ExtResource("8_g2o8p"), ExtResource("9_deb4u"), ExtResource("10_7mc0y"), ExtResource("11_v3iga"), ExtResource("12_kdp8w"), ExtResource("13_cu4qg")])
 subclasses_list = NodePath("../CharacterSubclassList")
 
 [node name="CharacterSubclassList" type="ItemList" parent="OptionLists" unique_id=1066625141]
