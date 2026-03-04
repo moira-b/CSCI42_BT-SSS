@@ -8,11 +8,24 @@ extends Control
 @onready var instinct_field: LineEdit = $"TraitModifiers/Instinct/LineEdit"
 @onready var presence_field: LineEdit = $"TraitModifiers/Prescence/LineEdit"
 @onready var knowledge_field: LineEdit = $"TraitModifiers/Knowledge/LineEdit"
+
+@onready var health_field = $MarkableStats/Health
+@onready var stress_field
+@onready var armor_field
+@onready var hope_field
+
 var updated = false
 var character:Character
+
 func enter() -> void:
 	character = $Character
 	update_edit_fields()
+	
+	character.set_maximum_health()
+	character.set_current_health(5)
+	
+	health_field.stat_increment_pressed.connect(_on_stat_increment_pressed)
+	health_field.stat_decrement_pressed.connect(_on_stat_decrement_pressed)
 
 func _process(_delta: float) -> void:
 	if(updated==false and character.character_name!=""):
@@ -109,3 +122,19 @@ func _on_knowledge_text_submitted(new_text: String) -> void:
 			character.knowledge = int(new_text)
 			knowledge_field.text = str(character.knowledge)
 			print("knowledge: " + str(character.knowledge))
+			
+func _on_stat_increment_pressed(stat_name: String) -> void:
+	if(stat_name=="Health"):
+		if character.current_hp + 1 <= character.max_hp:
+			character.set_current_health(character.current_hp + 1)
+			health_field.set_current_value(str(character.current_hp))
+		else:
+			print(character.character_name + " is already at max health.")
+	
+func _on_stat_decrement_pressed(stat_name: String) -> void:
+	if(stat_name=="Health"):
+		if character.current_hp - 1 >= 0:
+			character.set_current_health(character.current_hp - 1)
+			health_field.set_current_value(str(character.current_hp))
+		else:
+			print(character.character_name + "'s health cannot go down any further.")
