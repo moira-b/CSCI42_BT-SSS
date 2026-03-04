@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="CharacterClass" format=3 uid="uid://cfbttvs0d6csq"]
+
+[ext_resource type="Script" uid="uid://cxymexx6bno82" path="res://Scripts/CharacterClasses/character_subclass.gd" id="1_vsol8"]
+[ext_resource type="Resource" uid="uid://cw05p56ev40ru" path="res://Resources/Classes/Guardian/Stalwart/stalwart.tres" id="2_vgma0"]
+[ext_resource type="Resource" uid="uid://cavi816hwbmuv" path="res://Resources/Classes/Guardian/Vengeance/vengeance.tres" id="3_7thrm"]
+[ext_resource type="Script" uid="uid://ckqlyqdo4cyhe" path="res://Scripts/CharacterClasses/character_class_feature.gd" id="4_hk0lx"]
+[ext_resource type="Resource" uid="uid://cqa178oxdmhen" path="res://Resources/Classes/Guardian/unstoppable.tres" id="5_msaw4"]
+[ext_resource type="Script" uid="uid://bw1ppfeo5ccfb" path="res://Scripts/GeneralUseAttributes/domain.gd" id="6_wxpn5"]
+[ext_resource type="Resource" uid="uid://npw0dmr64u2c" path="res://Resources/GeneralUseAttributes/Domains/valor.tres" id="7_pdm83"]
+[ext_resource type="Resource" uid="uid://4kwnrkuutit6" path="res://Resources/GeneralUseAttributes/Domains/blade.tres" id="8_uk6vv"]
+[ext_resource type="Resource" uid="uid://mdrfaogq0kte" path="res://Resources/Classes/Guardian/frontline_tank.tres" id="9_n4eap"]
+[ext_resource type="Script" uid="uid://c6daeo616vuo3" path="res://Scripts/CharacterClasses/character_class.gd" id="10_maq0a"]
+
+[resource]
+script = ExtResource("10_maq0a")
+name = "Guardian"
+domains = Array[ExtResource("6_wxpn5")]([ExtResource("7_pdm83"), ExtResource("8_uk6vv")])
+starting_evasion = 9
+starting_hp = 7
+hope_feature = ExtResource("9_n4eap")
+class_feature = Array[ExtResource("4_hk0lx")]([ExtResource("5_msaw4")])
+class_items = Array[String](["A totem from your mentor", "A secret key"])
+character_subclasses = Array[ExtResource("1_vsol8")]([ExtResource("2_vgma0"), ExtResource("3_7thrm")])
+metadata/_custom_type_script = "uid://c6daeo616vuo3"

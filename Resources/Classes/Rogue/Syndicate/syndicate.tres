@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="CharacterSubclass" format=3 uid="uid://c08p2wsiov4n4"]
+
+[ext_resource type="Script" uid="uid://ckqlyqdo4cyhe" path="res://Scripts/CharacterClasses/character_class_feature.gd" id="1_sc68j"]
+[ext_resource type="Script" uid="uid://cxymexx6bno82" path="res://Scripts/CharacterClasses/character_subclass.gd" id="2_hchkt"]
+
+[resource]
+script = ExtResource("2_hchkt")
+metadata/_custom_type_script = "uid://cxymexx6bno82"

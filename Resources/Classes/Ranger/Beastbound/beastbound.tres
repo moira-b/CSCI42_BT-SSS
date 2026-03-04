@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="CharacterSubclass" format=3 uid="uid://bc0vcvodn53fx"]
+
+[ext_resource type="Script" uid="uid://ckqlyqdo4cyhe" path="res://Scripts/CharacterClasses/character_class_feature.gd" id="1_13qlg"]
+[ext_resource type="Resource" uid="uid://cuyn3t1gpmtx6" path="res://Resources/Classes/Ranger/Beastbound/companion.tres" id="2_uu4lk"]
+[ext_resource type="Script" uid="uid://cxymexx6bno82" path="res://Scripts/CharacterClasses/character_subclass.gd" id="2_wsp2h"]
+[ext_resource type="Resource" uid="uid://bllmvk7gm3nqf" path="res://Resources/Classes/Ranger/Beastbound/advanced_training.tres" id="3_lqiq1"]
+[ext_resource type="Resource" uid="uid://kdxh0jn4qucn" path="res://Resources/Classes/Ranger/Beastbound/loyal_friend.tres" id="4_pe1st"]
+[ext_resource type="Resource" uid="uid://dr742hx4lcnfx" path="res://Resources/Classes/Ranger/Beastbound/expert_training.tres" id="6_tsmux"]
+[ext_resource type="Resource" uid="uid://cy0s6ulw5qcp5" path="res://Resources/Classes/Ranger/Beastbound/battle_bonded.tres" id="7_mmiqa"]
+
+[resource]
+script = ExtResource("2_wsp2h")
+subclass_name = "Beastbound"
+foundation_feature = Array[ExtResource("1_13qlg")]([ExtResource("2_uu4lk")])
+specialization_feature = Array[ExtResource("1_13qlg")]([ExtResource("6_tsmux"), ExtResource("7_mmiqa")])
+mastery_feature = Array[ExtResource("1_13qlg")]([ExtResource("3_lqiq1"), ExtResource("4_pe1st")])
+metadata/_custom_type_script = "uid://cxymexx6bno82"
