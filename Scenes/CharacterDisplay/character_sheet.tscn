@@ -208,8 +208,8 @@ layout_mode = 2
 text = "Health:"
 
 [node name="FieldValue" type="Label" parent="MarkableStats/Health/FieldContainer/Labels" unique_id=934834431]
+custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
-text = "5 / 10"
 
 [node name="Buttons" type="HBoxContainer" parent="MarkableStats/Health/FieldContainer" unique_id=788903875]
 layout_mode = 2
@@ -222,6 +222,44 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_5rpyy")
 text = "+"
 
 [node name="DecrementButton" type="Button" parent="MarkableStats/Health/FieldContainer/Buttons" unique_id=1471146276]
+custom_minimum_size = Vector2(40, 30)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_c8oo5")
+text = "-"
+
+[node name="Stress" type="PanelContainer" parent="MarkableStats" unique_id=2030183416]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dg7yu")
+script = ExtResource("2_5rpyy")
+
+[node name="FieldContainer" type="HBoxContainer" parent="MarkableStats/Stress" unique_id=1848188292]
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="Labels" type="HBoxContainer" parent="MarkableStats/Stress/FieldContainer" unique_id=781890519]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="FieldName" type="Label" parent="MarkableStats/Stress/FieldContainer/Labels" unique_id=1888500388]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+text = "Stress:"
+
+[node name="FieldValue" type="Label" parent="MarkableStats/Stress/FieldContainer/Labels" unique_id=870010703]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="Buttons" type="HBoxContainer" parent="MarkableStats/Stress/FieldContainer" unique_id=1839278276]
+layout_mode = 2
+
+[node name="IncrementButton" type="Button" parent="MarkableStats/Stress/FieldContainer/Buttons" unique_id=476777845]
+custom_minimum_size = Vector2(40, 30)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_5rpyy")
+text = "+"
+
+[node name="DecrementButton" type="Button" parent="MarkableStats/Stress/FieldContainer/Buttons" unique_id=212254171]
 custom_minimum_size = Vector2(40, 30)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_c8oo5")

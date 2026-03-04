@@ -10,7 +10,7 @@ extends Control
 @onready var knowledge_field: LineEdit = $"TraitModifiers/Knowledge/LineEdit"
 
 @onready var health_field = $MarkableStats/Health
-@onready var stress_field
+@onready var stress_field = $MarkableStats/Stress
 @onready var armor_field
 @onready var hope_field
 
@@ -23,15 +23,25 @@ func enter() -> void:
 	
 	character.set_maximum_health()
 	character.set_current_health(5)
+	character.set_maximum_stress()
+	character.set_current_stress(5)
+	
+	self.update_markable_fields()
 	
 	health_field.stat_increment_pressed.connect(_on_stat_increment_pressed)
 	health_field.stat_decrement_pressed.connect(_on_stat_decrement_pressed)
+	stress_field.stat_increment_pressed.connect(_on_stat_increment_pressed)
+	stress_field.stat_decrement_pressed.connect(_on_stat_decrement_pressed)
 
 func _process(_delta: float) -> void:
 	if(updated==false and character.character_name!=""):
 		updated=true
 		update_edit_fields()
 		
+
+func update_markable_fields() -> void:
+	health_field.set_current_value(str(character.current_hp))
+	stress_field.set_current_value(str(character.current_stress))
 
 func update_edit_fields() -> void:
 	name_edit.set_text(str(character.character_name))
@@ -125,16 +135,16 @@ func _on_knowledge_text_submitted(new_text: String) -> void:
 			
 func _on_stat_increment_pressed(stat_name: String) -> void:
 	if(stat_name=="Health"):
-		if character.current_hp + 1 <= character.max_hp:
-			character.set_current_health(character.current_hp + 1)
+		if character.set_current_health(character.current_hp+1):
 			health_field.set_current_value(str(character.current_hp))
-		else:
-			print(character.character_name + " is already at max health.")
+	elif(stat_name=="Stress"):
+		if character.set_current_stress(character.current_stress+1):
+			stress_field.set_current_value(str(character.current_stress))
 	
 func _on_stat_decrement_pressed(stat_name: String) -> void:
 	if(stat_name=="Health"):
-		if character.current_hp - 1 >= 0:
-			character.set_current_health(character.current_hp - 1)
+		if character.set_current_health(character.current_hp-1):
 			health_field.set_current_value(str(character.current_hp))
-		else:
-			print(character.character_name + "'s health cannot go down any further.")
+	elif(stat_name=="Stress"):
+		if character.set_current_stress(character.current_stress-1):
+			stress_field.set_current_value(str(character.current_stress))
