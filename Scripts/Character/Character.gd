@@ -36,6 +36,7 @@ func _ready() -> void:
 func set_maximum_health() -> void:
 	self.max_hp = 12 # PLACEHOLDER
 	# TODO: set maximum health based on character creation options
+	# (i.e. consider chosen character features)
 
 func set_current_health(value: int) -> bool:
 	if(0 <= value && value <= self.max_hp):
@@ -52,15 +53,33 @@ func set_current_health(value: int) -> bool:
 func set_maximum_stress() -> void:
 	self.max_stress = 12 # PLACEHOLDER
 	# TODO: set maximum health based on character creation options
+	# (i.e. consider chosen character features)
 
 func set_current_stress(value: int) -> bool:
 	if(0 <= value && value <= self.max_stress):
 		current_stress = value
-		print("DEBUG: " + self.character_name + "'s current stress is " + str(current_hp) + ".")
+		print("DEBUG: " + self.character_name + "'s current stress is " + str(self.current_stress) + ".")
 		return true
 	elif(value < 0):
 		print("Cannot set current stress to be less than 0.")
 	else:
 		print("Cannot set current stress to be greater than max stress.")
 		
+	return false
+
+func set_maximum_armor_slots() -> void:
+	self.max_armor_slots = 12 # ACTUAL DEFAULT
+	# TODO: set maximum health based on character creation options
+	# (i.e. consider chosen character features)
+	
+func set_used_armor_slots(value: int) -> bool:
+	if(0 <= value && value <= self.max_hp):
+		used_armor_slots = value
+		print("DEBUG: " + self.character_name + " has used " + str(current_hp) + " armor slots.")
+		return true
+	elif(value < 0):
+		print("Cannot set used armor slots to be less than 0.")
+	else:
+		print("Cannot set used armor slots to be greater than max armor slots.")
+	
 	return false
