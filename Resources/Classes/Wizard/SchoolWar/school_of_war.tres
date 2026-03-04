@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CharacterSubclass" format=3 uid="uid://cabpl4el0fsfm"]
+
+[ext_resource type="Script" uid="uid://ckqlyqdo4cyhe" path="res://Scripts/CharacterClasses/character_class_feature.gd" id="1_pvnda"]
+[ext_resource type="Resource" uid="uid://b8pagwvxemya8" path="res://Resources/Classes/Wizard/SchoolWar/battlemage.tres" id="2_4o3gw"]
+[ext_resource type="Script" uid="uid://cxymexx6bno82" path="res://Scripts/CharacterClasses/character_subclass.gd" id="2_73owt"]
+[ext_resource type="Resource" uid="uid://dlvk3mq1gcxdi" path="res://Resources/Classes/Wizard/SchoolWar/face_your_fear.tres" id="3_hus4k"]
+[ext_resource type="Resource" uid="uid://c848216xgyrt0" path="res://Resources/Classes/Wizard/SchoolWar/thrive_in_chaos.tres" id="4_qdyw6"]
+[ext_resource type="Resource" uid="uid://tx0dinrifx3s" path="res://Resources/Classes/Wizard/SchoolWar/have_no_fear.tres" id="5_em3yt"]
+[ext_resource type="Resource" uid="uid://x7fhehhl4hud" path="res://Resources/Classes/Wizard/SchoolWar/conjure_shield.tres" id="7_vbux6"]
+[ext_resource type="Resource" uid="uid://di4t7wvwrf43i" path="res://Resources/Classes/Wizard/SchoolWar/fueled_by_fear.tres" id="8_odu4b"]
+[ext_resource type="Resource" uid="uid://boeplttdl6mfd" path="res://Resources/GeneralUseAttributes/CharacterTraits/knowledge.tres" id="9_1ap5p"]
+
+[resource]
+script = ExtResource("2_73owt")
+subclass_name = "School of War"
+foundation_feature = Array[ExtResource("1_pvnda")]([ExtResource("2_4o3gw"), ExtResource("3_hus4k")])
+specialization_feature = Array[ExtResource("1_pvnda")]([ExtResource("7_vbux6"), ExtResource("8_odu4b")])
+mastery_feature = Array[ExtResource("1_pvnda")]([ExtResource("4_qdyw6"), ExtResource("5_em3yt")])
+spellcast_trait = ExtResource("9_1ap5p")
+metadata/_custom_type_script = "uid://cxymexx6bno82"

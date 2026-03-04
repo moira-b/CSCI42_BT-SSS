@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="CharacterSubclass" format=3 uid="uid://bfmbwqdm14x17"]
+
+[ext_resource type="Script" uid="uid://ckqlyqdo4cyhe" path="res://Scripts/CharacterClasses/character_class_feature.gd" id="1_1vjrk"]
+[ext_resource type="Resource" uid="uid://dv5pd8p0x4go4" path="res://Resources/Classes/Sorcerer/PrimalOrigin/manipulate_magic.tres" id="2_81yol"]
+[ext_resource type="Script" uid="uid://cxymexx6bno82" path="res://Scripts/CharacterClasses/character_subclass.gd" id="2_da7bq"]
+[ext_resource type="Resource" uid="uid://b2usp7obuuuoh" path="res://Resources/Classes/Sorcerer/PrimalOrigin/arcane_charge.tres" id="3_rrh4f"]
+[ext_resource type="Resource" uid="uid://b83c7ih5g4jda" path="res://Resources/Classes/Sorcerer/PrimalOrigin/enchanted_aid.tres" id="5_v650x"]
+[ext_resource type="Resource" uid="uid://de0wkyxy48irt" path="res://Resources/GeneralUseAttributes/CharacterTraits/instinct.tres" id="6_e0xvu"]
+
+[resource]
+script = ExtResource("2_da7bq")
+subclass_name = "Primal Origin"
+foundation_feature = Array[ExtResource("1_1vjrk")]([ExtResource("2_81yol")])
+specialization_feature = Array[ExtResource("1_1vjrk")]([ExtResource("5_v650x")])
+mastery_feature = Array[ExtResource("1_1vjrk")]([ExtResource("3_rrh4f")])
+spellcast_trait = ExtResource("6_e0xvu")
+metadata/_custom_type_script = "uid://cxymexx6bno82"

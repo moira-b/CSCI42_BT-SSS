@@ -4,4 +4,5 @@
 
 [resource]
 script = ExtResource("1_dbjb0")
+feature_name = "Rogue's Dodge"
 metadata/_custom_type_script = "uid://ckqlyqdo4cyhe"

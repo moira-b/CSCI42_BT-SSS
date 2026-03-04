@@ -4,4 +4,5 @@
 
 [resource]
 script = ExtResource("1_ldkrp")
+feature_name = "Unwavering"
 metadata/_custom_type_script = "uid://ckqlyqdo4cyhe"

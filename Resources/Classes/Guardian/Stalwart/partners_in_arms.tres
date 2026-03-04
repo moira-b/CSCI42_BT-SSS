@@ -4,4 +4,5 @@
 
 [resource]
 script = ExtResource("1_n5eon")
+feature_name = "Partners-in-Arms"
 metadata/_custom_type_script = "uid://ckqlyqdo4cyhe"

@@ -4,4 +4,5 @@
 
 [resource]
 script = ExtResource("1_4wp5v")
+feature_name = "Iron Will"
 metadata/_custom_type_script = "uid://ckqlyqdo4cyhe"

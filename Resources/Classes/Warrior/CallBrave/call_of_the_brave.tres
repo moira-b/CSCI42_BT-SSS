@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CharacterSubclass" format=3 uid="uid://qij7eqymaorx"]
+
+[ext_resource type="Script" uid="uid://ckqlyqdo4cyhe" path="res://Scripts/CharacterClasses/character_class_feature.gd" id="1_u7xh5"]
+[ext_resource type="Script" uid="uid://cxymexx6bno82" path="res://Scripts/CharacterClasses/character_subclass.gd" id="2_7sojq"]
+[ext_resource type="Resource" uid="uid://bcb4c760g686o" path="res://Resources/Classes/Warrior/CallBrave/courage.tres" id="2_h64p3"]
+[ext_resource type="Resource" uid="uid://du2b6qggoxntv" path="res://Resources/Classes/Warrior/CallBrave/battle_ritual.tres" id="3_7ki8k"]
+[ext_resource type="Resource" uid="uid://choral6ikrs8b" path="res://Resources/Classes/Warrior/CallBrave/camaraderie.tres" id="4_b1yhp"]
+[ext_resource type="Resource" uid="uid://kkxdf4ehsge" path="res://Resources/Classes/Warrior/CallBrave/rise_to_the_challenge.tres" id="6_d7f55"]
+
+[resource]
+script = ExtResource("2_7sojq")
+subclass_name = "Call of the Brave"
+foundation_feature = Array[ExtResource("1_u7xh5")]([ExtResource("2_h64p3"), ExtResource("3_7ki8k")])
+specialization_feature = Array[ExtResource("1_u7xh5")]([ExtResource("6_d7f55")])
+mastery_feature = Array[ExtResource("1_u7xh5")]([ExtResource("4_b1yhp")])
+metadata/_custom_type_script = "uid://cxymexx6bno82"

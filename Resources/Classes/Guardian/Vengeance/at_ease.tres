@@ -4,4 +4,5 @@
 
 [resource]
 script = ExtResource("1_608br")
+feature_name = "At Ease"
 metadata/_custom_type_script = "uid://ckqlyqdo4cyhe"

@@ -2,7 +2,16 @@
 
 [ext_resource type="Script" uid="uid://ckqlyqdo4cyhe" path="res://Scripts/CharacterClasses/character_class_feature.gd" id="1_sc68j"]
 [ext_resource type="Script" uid="uid://cxymexx6bno82" path="res://Scripts/CharacterClasses/character_subclass.gd" id="2_hchkt"]
+[ext_resource type="Resource" uid="uid://rokvv7oerssw" path="res://Resources/Classes/Rogue/Syndicate/well_connected.tres" id="2_vswbn"]
+[ext_resource type="Resource" uid="uid://bqehcsifvtifl" path="res://Resources/Classes/Rogue/Syndicate/reliable_backup.tres" id="3_qle7h"]
+[ext_resource type="Resource" uid="uid://dtyixymam8bja" path="res://Resources/Classes/Rogue/Syndicate/contacts_everywhere.tres" id="5_nevh4"]
+[ext_resource type="Resource" uid="uid://dei8ejpaex5mh" path="res://Resources/GeneralUseAttributes/CharacterTraits/finesse.tres" id="6_llkjt"]
 
 [resource]
 script = ExtResource("2_hchkt")
+subclass_name = "Syndicate"
+foundation_feature = Array[ExtResource("1_sc68j")]([ExtResource("2_vswbn")])
+specialization_feature = Array[ExtResource("1_sc68j")]([ExtResource("5_nevh4")])
+mastery_feature = Array[ExtResource("1_sc68j")]([ExtResource("3_qle7h")])
+spellcast_trait = ExtResource("6_llkjt")
 metadata/_custom_type_script = "uid://cxymexx6bno82"

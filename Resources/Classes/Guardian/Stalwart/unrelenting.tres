@@ -4,4 +4,5 @@
 
 [resource]
 script = ExtResource("1_fiuwa")
+feature_name = "Unrelenting"
 metadata/_custom_type_script = "uid://ckqlyqdo4cyhe"

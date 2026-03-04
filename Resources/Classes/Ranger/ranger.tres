@@ -1,24 +1,24 @@
 [gd_resource type="Resource" script_class="CharacterClass" format=3 uid="uid://cuy8gd8ecs5j2"]
 
 [ext_resource type="Script" uid="uid://cxymexx6bno82" path="res://Scripts/CharacterClasses/character_subclass.gd" id="1_hnihq"]
-[ext_resource type="Resource" uid="uid://cw05p56ev40ru" path="res://Resources/Classes/Guardian/Stalwart/stalwart.tres" id="2_7838a"]
-[ext_resource type="Resource" uid="uid://cavi816hwbmuv" path="res://Resources/Classes/Guardian/Vengeance/vengeance.tres" id="3_cod54"]
+[ext_resource type="Resource" uid="uid://bc0vcvodn53fx" path="res://Resources/Classes/Ranger/Beastbound/beastbound.tres" id="2_phfat"]
+[ext_resource type="Resource" uid="uid://b5prsqv3otvg4" path="res://Resources/Classes/Ranger/Wayfinder/wayfinder.tres" id="3_6npfl"]
+[ext_resource type="Resource" uid="uid://s5d5nxy4f222" path="res://Resources/Classes/Ranger/rangers_focus.tres" id="3_ne3jx"]
 [ext_resource type="Script" uid="uid://ckqlyqdo4cyhe" path="res://Scripts/CharacterClasses/character_class_feature.gd" id="4_u3tpr"]
-[ext_resource type="Resource" uid="uid://cqa178oxdmhen" path="res://Resources/Classes/Guardian/unstoppable.tres" id="5_lufwd"]
+[ext_resource type="Resource" uid="uid://cipt8olru4ebc" path="res://Resources/GeneralUseAttributes/Domains/bone.tres" id="5_8ylj4"]
 [ext_resource type="Script" uid="uid://bw1ppfeo5ccfb" path="res://Scripts/GeneralUseAttributes/domain.gd" id="6_gmqsc"]
-[ext_resource type="Resource" uid="uid://npw0dmr64u2c" path="res://Resources/GeneralUseAttributes/Domains/valor.tres" id="7_ocaal"]
-[ext_resource type="Resource" uid="uid://4kwnrkuutit6" path="res://Resources/GeneralUseAttributes/Domains/blade.tres" id="8_n48f2"]
-[ext_resource type="Resource" uid="uid://mdrfaogq0kte" path="res://Resources/Classes/Guardian/frontline_tank.tres" id="9_a4ba1"]
+[ext_resource type="Resource" uid="uid://fxlyornoayfi" path="res://Resources/GeneralUseAttributes/Domains/sage.tres" id="6_phfat"]
+[ext_resource type="Resource" uid="uid://c852mqpujlobm" path="res://Resources/Classes/Ranger/hold_them_off.tres" id="7_6npfl"]
 [ext_resource type="Script" uid="uid://c6daeo616vuo3" path="res://Scripts/CharacterClasses/character_class.gd" id="10_c7pxc"]
 
 [resource]
 script = ExtResource("10_c7pxc")
-name = "Guardian"
-domains = Array[ExtResource("6_gmqsc")]([ExtResource("7_ocaal"), ExtResource("8_n48f2")])
-starting_evasion = 9
+name = "Ranger"
+domains = Array[ExtResource("6_gmqsc")]([ExtResource("5_8ylj4"), ExtResource("6_phfat")])
+starting_evasion = 12
 starting_hp = 7
-hope_feature = ExtResource("9_a4ba1")
-class_feature = Array[ExtResource("4_u3tpr")]([ExtResource("5_lufwd")])
-class_items = Array[String](["A totem from your mentor", "A secret key"])
-character_subclasses = Array[ExtResource("1_hnihq")]([ExtResource("2_7838a"), ExtResource("3_cod54")])
+hope_feature = ExtResource("7_6npfl")
+class_feature = Array[ExtResource("4_u3tpr")]([ExtResource("3_ne3jx")])
+class_items = Array[String](["A trophy from your first kill", "A seemingly broken compass"])
+character_subclasses = Array[ExtResource("1_hnihq")]([ExtResource("2_phfat"), ExtResource("3_6npfl")])
 metadata/_custom_type_script = "uid://c6daeo616vuo3"

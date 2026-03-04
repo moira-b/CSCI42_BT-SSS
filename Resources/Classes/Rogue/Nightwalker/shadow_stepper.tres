@@ -4,4 +4,5 @@
 
 [resource]
 script = ExtResource("1_osbs5")
+feature_name = "Shadow Stepper"
 metadata/_custom_type_script = "uid://ckqlyqdo4cyhe"

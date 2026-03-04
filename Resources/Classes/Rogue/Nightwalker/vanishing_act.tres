@@ -4,4 +4,5 @@
 
 [resource]
 script = ExtResource("1_ylkp7")
+feature_name = "Vanishing Act"
 metadata/_custom_type_script = "uid://ckqlyqdo4cyhe"

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CharacterSubclass" format=3 uid="uid://bveqp6fcrugdd"]
+
+[ext_resource type="Script" uid="uid://ckqlyqdo4cyhe" path="res://Scripts/CharacterClasses/character_class_feature.gd" id="1_fh6xo"]
+[ext_resource type="Script" uid="uid://cxymexx6bno82" path="res://Scripts/CharacterClasses/character_subclass.gd" id="2_qwp0o"]
+[ext_resource type="Resource" uid="uid://deugivwsh3u1y" path="res://Resources/Classes/Warrior/CallSlayer/slayer.tres" id="2_u52j8"]
+[ext_resource type="Resource" uid="uid://dngh3yprd4y04" path="res://Resources/Classes/Warrior/CallSlayer/martial_preparation.tres" id="3_a46mn"]
+[ext_resource type="Resource" uid="uid://bw525yabgakdg" path="res://Resources/Classes/Warrior/CallSlayer/weapon_specialist.tres" id="5_lg55s"]
+
+[resource]
+script = ExtResource("2_qwp0o")
+subclass_name = "Call of the Slayer"
+foundation_feature = Array[ExtResource("1_fh6xo")]([ExtResource("2_u52j8")])
+specialization_feature = Array[ExtResource("1_fh6xo")]([ExtResource("5_lg55s")])
+mastery_feature = Array[ExtResource("1_fh6xo")]([ExtResource("3_a46mn")])
+metadata/_custom_type_script = "uid://cxymexx6bno82"
