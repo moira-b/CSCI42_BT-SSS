@@ -41,7 +41,7 @@ func set_maximum_health() -> void:
 func set_current_health(value: int) -> bool:
 	if(0 <= value && value <= self.max_hp):
 		current_hp = value
-		print("DEBUG: " + self.character_name + "'s current health is " + str(current_hp) + ".")
+		#print("DEBUG: " + self.character_name + "'s current health is " + str(current_hp) + ".")
 		return true
 	elif(value < 0):
 		print("Cannot set current health to be less than 0.")
@@ -58,7 +58,7 @@ func set_maximum_stress() -> void:
 func set_current_stress(value: int) -> bool:
 	if(0 <= value && value <= self.max_stress):
 		current_stress = value
-		print("DEBUG: " + self.character_name + "'s current stress is " + str(self.current_stress) + ".")
+		#print("DEBUG: " + self.character_name + "'s current stress is " + str(self.current_stress) + ".")
 		return true
 	elif(value < 0):
 		print("Cannot set current stress to be less than 0.")
@@ -75,7 +75,7 @@ func set_maximum_armor_slots() -> void:
 func set_used_armor_slots(value: int) -> bool:
 	if(0 <= value && value <= self.max_armor_slots):
 		used_armor_slots = value
-		print("DEBUG: " + self.character_name + " has used " + str(used_armor_slots) + " armor slots.")
+		#print("DEBUG: " + self.character_name + " has used " + str(used_armor_slots) + " armor slots.")
 		return true
 	elif(value < 0):
 		print("Cannot set used armor slots to be less than 0.")
@@ -92,7 +92,7 @@ func set_maximum_hope() -> void:
 func set_current_hope(value: int) -> bool:
 	if(0 <= value && value <= self.max_hope):
 		current_hope = value
-		print("DEBUG: " + self.character_name + " currently has " + str(current_hope) + " hope.")
+		#print("DEBUG: " + self.character_name + " currently has " + str(current_hope) + " hope.")
 		return true
 	elif(value < 0):
 		print("Cannot set hope counter s to be less than 0.")
