@@ -225,61 +225,93 @@ size_flags_horizontal = 0
 size_flags_vertical = 6
 text = "Short Rest"
 
-[node name="Window" type="Window" parent="RestButtons/ShortRest" unique_id=2095986794]
-oversampling_override = 1.0
-title = "Short Rest Actions"
-initial_position = 2
-size = Vector2i(500, 400)
-
-[node name="Control" type="Control" parent="RestButtons/ShortRest/Window" unique_id=165973256]
-custom_minimum_size = Vector2(500, 400)
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="ShortRestActions" type="BoxContainer" parent="RestButtons/ShortRest/Window/Control" unique_id=758890024]
-custom_minimum_size = Vector2(500, 400)
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-alignment = 1
-vertical = true
-
-[node name="TendWounds" type="Button" parent="RestButtons/ShortRest/Window/Control/ShortRestActions" unique_id=168250359]
-custom_minimum_size = Vector2(150, 0)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-text = "Tend to Wounds"
-
-[node name="ClearStress" type="Button" parent="RestButtons/ShortRest/Window/Control/ShortRestActions" unique_id=1310024872]
-custom_minimum_size = Vector2(150, 0)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-text = "Clear Stress"
-
-[node name="RepairArmor" type="Button" parent="RestButtons/ShortRest/Window/Control/ShortRestActions" unique_id=1397972852]
-custom_minimum_size = Vector2(150, 0)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-text = "Repair Armor"
-
-[node name="Prepare" type="Button" parent="RestButtons/ShortRest/Window/Control/ShortRestActions" unique_id=1961129668]
-custom_minimum_size = Vector2(150, 0)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-text = "Prepare"
-
 [node name="LongRest" type="Button" parent="RestButtons" unique_id=1429046138]
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 6
 text = "Long Rest"
+
+[node name="RestWindow" type="Window" parent="RestButtons" unique_id=2095986794]
+oversampling_override = 1.0
+title = "Rest Actions"
+initial_position = 1
+size = Vector2i(500, 400)
+
+[node name="RestUI" type="Control" parent="RestButtons/RestWindow" unique_id=165973256]
+custom_minimum_size = Vector2(500, 400)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -200.0
+offset_right = 250.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="RestActions" type="VBoxContainer" parent="RestButtons/RestWindow/RestUI" unique_id=335220932]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -85.5
+offset_right = 220.0
+offset_bottom = 85.5
+grow_vertical = 2
+alignment = 1
+
+[node name="TendWounds" type="CheckButton" parent="RestButtons/RestWindow/RestUI/RestActions" unique_id=996454089]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_vertical = 4
+text = "Tend to Wounds"
+
+[node name="ClearStress" type="CheckButton" parent="RestButtons/RestWindow/RestUI/RestActions" unique_id=794885834]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_vertical = 4
+text = "Clear Stress"
+
+[node name="RepairArmor" type="CheckButton" parent="RestButtons/RestWindow/RestUI/RestActions" unique_id=1231113641]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_vertical = 4
+text = "Repair Armor"
+
+[node name="Prepare" type="CheckButton" parent="RestButtons/RestWindow/RestUI/RestActions" unique_id=775912072]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_vertical = 4
+text = "Prepare"
+
+[node name="Project" type="CheckButton" parent="RestButtons/RestWindow/RestUI/RestActions" unique_id=1777724042]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_vertical = 4
+text = "Work on a Project"
+
+[node name="ConfirmButton" type="Button" parent="RestButtons/RestWindow/RestUI" unique_id=1063158913]
+custom_minimum_size = Vector2(75, 40)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -37.5
+offset_top = -56.0
+offset_right = 37.5
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Confirm"
 
 [connection signal="text_changed" from="Names/NameC/NameEdit" to="." method="_on_name_edit_text_changed"]
 [connection signal="text_submitted" from="Names/NameC/NameEdit" to="." method="_on_name_edit_text_submitted"]
@@ -291,3 +323,4 @@ text = "Long Rest"
 [connection signal="text_submitted" from="TraitModifiers/Knowledge/LineEdit" to="." method="_on_knowledge_text_submitted"]
 [connection signal="text_changed" from="Bio/BioEdit" to="." method="_on_bio_text_changed"]
 [connection signal="pressed" from="RestButtons/ShortRest" to="." method="_on_short_rest_pressed"]
+[connection signal="pressed" from="RestButtons/LongRest" to="." method="_on_long_rest_pressed"]

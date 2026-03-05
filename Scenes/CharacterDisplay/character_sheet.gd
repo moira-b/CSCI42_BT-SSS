@@ -10,6 +10,8 @@ extends Control
 @onready var knowledge_field: LineEdit = $"TraitModifiers/Knowledge/LineEdit"
 @onready var short_rest: Button = $RestButtons/ShortRest
 @onready var long_rest: Button = $RestButtons/LongRest
+@onready var rest_window: Window = $RestButtons/RestWindow
+@onready var project_action: CheckButton = $RestButtons/RestWindow/RestUI/RestActions/Project
 
 
 var updated = false
@@ -124,8 +126,15 @@ func _on_knowledge_text_submitted(new_text: String) -> void:
 
 
 func _on_short_rest_pressed() -> void:
-	var shortRestWindow: Window = $RestButtons/ShortRest/Window
 	long_rest.disabled = true
+	project_action.visible = false
 	if shortRestCounter < 2:
 		shortRestCounter += 1
-		shortRestWindow.visible = true
+		rest_window.visible = true
+
+
+func _on_long_rest_pressed() -> void:
+	short_rest.disabled = true
+	project_action.visible = true
+	shortRestCounter = 0
+	rest_window.visible = true
