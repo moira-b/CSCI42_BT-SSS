@@ -91,6 +91,36 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 
+[node name="Community" type="HBoxContainer" parent="NamePronounsAncestry" unique_id=743414857]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="NamePronounsAncestry/Community" unique_id=760379478]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "Community:"
+
+[node name="ColorRect" type="ColorRect" parent="NamePronounsAncestry/Community" unique_id=1812518552]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+color = Color(0.1728327, 0.17283267, 0.17283267, 1)
+
+[node name="Community" type="Label" parent="NamePronounsAncestry/Community/ColorRect" unique_id=2021481224]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -94.5
+offset_top = -24.0
+offset_right = 94.5
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="Ancestry" type="VBoxContainer" parent="NamePronounsAncestry" unique_id=128667637]
 layout_mode = 2
 

@@ -12,6 +12,7 @@ extends Control
 
 @onready var health_field = $MarkableStats/Health
 @onready var ancestry_field = $NamePronounsAncestry/Ancestry/ColorRect/Ancestry
+@onready var community_field = $NamePronounsAncestry/Community/ColorRect/Community
 @onready var class_field = $ClassSubclass/ClassRect/Class
 @onready var subclass_field = $ClassSubclass/SubclassRect/Label
 @onready var stress_field
@@ -33,6 +34,7 @@ func enter() -> void:
 	ancestry_field.set_text("Ancestry: " + character.ancestry.ancestry_name)
 	class_field.set_text(character.character_class.name)
 	subclass_field.set_text(character.subclass.subclass_name)
+	community_field.set_text(character.community.community_name)
 
 func _process(_delta: float) -> void:
 	if(updated==false and character.character_name!=""):
