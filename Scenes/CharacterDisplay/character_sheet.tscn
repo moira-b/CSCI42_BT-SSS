@@ -27,22 +27,22 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_dg7yu")
 
-[node name="Names" type="HBoxContainer" parent="." unique_id=1837796638]
+[node name="Names" type="GridContainer" parent="." unique_id=2028990123]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -546.0
+offset_left = -547.0
 offset_top = 22.0
-offset_right = 552.0
-offset_bottom = 95.0
+offset_right = 551.0
+offset_bottom = 161.0
 grow_horizontal = 2
+columns = 3
 
 [node name="NameC" type="BoxContainer" parent="Names" unique_id=570684203]
-custom_minimum_size = Vector2(200, 50)
+custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
-size_flags_horizontal = 2
-size_flags_vertical = 0
+size_flags_horizontal = 4
 
 [node name="NameEdit" type="LineEdit" parent="Names/NameC" unique_id=1389927954]
 custom_minimum_size = Vector2(400, 0)
@@ -51,8 +51,19 @@ size_flags_horizontal = 2
 placeholder_text = "What is your name?"
 script = SubResource("GDScript_dg7yu")
 
+[node name="PronounsC" type="BoxContainer" parent="Names" unique_id=2112197612]
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="PronounsEdit" type="LineEdit" parent="Names/PronounsC" unique_id=1422691170]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+placeholder_text = "Pronouns"
+
 [node name="AncestryC" type="BoxContainer" parent="Names" unique_id=1029556489]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="Ancestry" type="LineEdit" parent="Names/AncestryC" unique_id=1573686438]
 custom_minimum_size = Vector2(300, 50)
@@ -69,9 +80,9 @@ anchor_top = 0.089
 anchor_right = 0.5
 anchor_bottom = 0.089
 offset_left = -482.0
-offset_top = 33.328
+offset_top = 95.328
 offset_right = 480.0
-offset_bottom = 86.328
+offset_bottom = 148.328
 grow_horizontal = 2
 
 [node name="Agility" type="BoxContainer" parent="TraitModifiers" unique_id=1577777243]
@@ -160,9 +171,9 @@ anchor_top = 0.289
 anchor_right = 0.208
 anchor_bottom = 0.289
 offset_left = -201.616
-offset_top = -0.27200317
+offset_top = 62.727997
 offset_right = 201.384
-offset_bottom = 123.728
+offset_bottom = 186.728
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HealthStress" unique_id=820844553]
 layout_mode = 2

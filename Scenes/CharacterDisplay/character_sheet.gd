@@ -8,11 +8,14 @@ extends Control
 @onready var instinct_field: LineEdit = $"TraitModifiers/Instinct/LineEdit"
 @onready var presence_field: LineEdit = $"TraitModifiers/Prescence/LineEdit"
 @onready var knowledge_field: LineEdit = $"TraitModifiers/Knowledge/LineEdit"
+
 var updated = false
-var character:Character
+var character: Character
+
 func enter() -> void:
 	character = $Character
 	update_edit_fields()
+
 
 func _process(_delta: float) -> void:
 	if(updated==false and character.character_name!=""):
@@ -30,6 +33,7 @@ func update_edit_fields() -> void:
 	presence_field.set_text(str(character.presence))
 	knowledge_field.set_text(str(character.knowledge))
 
+
 func print_character_details() -> void:
 	print("Character Details:")
 	print("name: " + character.character_name)
@@ -43,6 +47,7 @@ func print_character_details() -> void:
 	print("knowledge: " + str(character.knowledge))
 	print(character.bio)
 
+
 func _on_bio_text_changed() -> void:
 	character.bio = bio_edit.get_text()
 	if(character.bio == "Im Cool"):
@@ -50,12 +55,15 @@ func _on_bio_text_changed() -> void:
 		print_character_details()
 		bio_edit.set_text("hi")
 
+
 func _on_name_edit_text_submitted(new_text):
 	character.character_name = new_text
 	print(character.character_name)
 
+
 func _on_name_edit_text_changed(new_text: String) -> void:
 	character.character_name = new_text
+
 
 func _on_agility_text_submitted(new_text: String) -> void:
 	if (int(new_text) == 0):
