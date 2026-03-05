@@ -210,6 +210,77 @@ text = "Bio"
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 
+[node name="RestButtons" type="VBoxContainer" parent="." unique_id=1953046344]
+custom_minimum_size = Vector2(100, 110)
+layout_mode = 0
+offset_left = 40.0
+offset_top = 490.0
+offset_right = 80.0
+offset_bottom = 530.0
+
+[node name="ShortRest" type="Button" parent="RestButtons" unique_id=375690570]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 6
+text = "Short Rest"
+
+[node name="Window" type="Window" parent="RestButtons/ShortRest" unique_id=2095986794]
+oversampling_override = 1.0
+title = "Short Rest Actions"
+initial_position = 2
+size = Vector2i(500, 400)
+
+[node name="Control" type="Control" parent="RestButtons/ShortRest/Window" unique_id=165973256]
+custom_minimum_size = Vector2(500, 400)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ShortRestActions" type="BoxContainer" parent="RestButtons/ShortRest/Window/Control" unique_id=758890024]
+custom_minimum_size = Vector2(500, 400)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+alignment = 1
+vertical = true
+
+[node name="TendWounds" type="Button" parent="RestButtons/ShortRest/Window/Control/ShortRestActions" unique_id=168250359]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Tend to Wounds"
+
+[node name="ClearStress" type="Button" parent="RestButtons/ShortRest/Window/Control/ShortRestActions" unique_id=1310024872]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Clear Stress"
+
+[node name="RepairArmor" type="Button" parent="RestButtons/ShortRest/Window/Control/ShortRestActions" unique_id=1397972852]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Repair Armor"
+
+[node name="Prepare" type="Button" parent="RestButtons/ShortRest/Window/Control/ShortRestActions" unique_id=1961129668]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Prepare"
+
+[node name="LongRest" type="Button" parent="RestButtons" unique_id=1429046138]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 6
+text = "Long Rest"
+
 [connection signal="text_changed" from="Names/NameC/NameEdit" to="." method="_on_name_edit_text_changed"]
 [connection signal="text_submitted" from="Names/NameC/NameEdit" to="." method="_on_name_edit_text_submitted"]
 [connection signal="text_submitted" from="TraitModifiers/Agility/LineEdit" to="." method="_on_agility_text_submitted"]
@@ -219,3 +290,4 @@ layout_mode = 2
 [connection signal="text_submitted" from="TraitModifiers/Prescence/LineEdit" to="." method="_on_presence_text_submitted"]
 [connection signal="text_submitted" from="TraitModifiers/Knowledge/LineEdit" to="." method="_on_knowledge_text_submitted"]
 [connection signal="text_changed" from="Bio/BioEdit" to="." method="_on_bio_text_changed"]
+[connection signal="pressed" from="RestButtons/ShortRest" to="." method="_on_short_rest_pressed"]

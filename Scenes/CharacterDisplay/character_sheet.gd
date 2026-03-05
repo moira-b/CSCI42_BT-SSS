@@ -8,8 +8,12 @@ extends Control
 @onready var instinct_field: LineEdit = $"TraitModifiers/Instinct/LineEdit"
 @onready var presence_field: LineEdit = $"TraitModifiers/Prescence/LineEdit"
 @onready var knowledge_field: LineEdit = $"TraitModifiers/Knowledge/LineEdit"
+@onready var short_rest: Button = $RestButtons/ShortRest
+@onready var long_rest: Button = $RestButtons/LongRest
+
 
 var updated = false
+var shortRestCounter = 0
 var character: Character
 
 func enter() -> void:
@@ -117,3 +121,11 @@ func _on_knowledge_text_submitted(new_text: String) -> void:
 			character.knowledge = int(new_text)
 			knowledge_field.text = str(character.knowledge)
 			print("knowledge: " + str(character.knowledge))
+
+
+func _on_short_rest_pressed() -> void:
+	var shortRestWindow: Window = $RestButtons/ShortRest/Window
+	long_rest.disabled = true
+	if shortRestCounter < 2:
+		shortRestCounter += 1
+		shortRestWindow.visible = true
