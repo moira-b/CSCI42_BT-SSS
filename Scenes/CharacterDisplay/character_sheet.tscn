@@ -52,7 +52,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_dg7yu")
 
-[node name="Names" type="HBoxContainer" parent="." unique_id=1837796638]
+[node name="NamePronounsAncestry" type="HBoxContainer" parent="." unique_id=1837796638]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -63,28 +63,58 @@ offset_right = 552.0
 offset_bottom = 95.0
 grow_horizontal = 2
 
-[node name="NameC" type="BoxContainer" parent="Names" unique_id=570684203]
+[node name="NameC" type="BoxContainer" parent="NamePronounsAncestry" unique_id=570684203]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 size_flags_horizontal = 2
 size_flags_vertical = 0
 
-[node name="NameEdit" type="LineEdit" parent="Names/NameC" unique_id=1389927954]
+[node name="NameEdit" type="LineEdit" parent="NamePronounsAncestry/NameC" unique_id=1389927954]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 size_flags_horizontal = 2
 placeholder_text = "What is your name?"
 script = SubResource("GDScript_dg7yu")
 
-[node name="AncestryC" type="BoxContainer" parent="Names" unique_id=1029556489]
+[node name="Pronouns" type="HBoxContainer" parent="NamePronounsAncestry" unique_id=1818981251]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="NamePronounsAncestry/Pronouns" unique_id=449473121]
+layout_mode = 2
+text = "Pronouns:"
+
+[node name="Pronouns" type="LineEdit" parent="NamePronounsAncestry/Pronouns" unique_id=1102215493]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="Ancestry" type="VBoxContainer" parent="NamePronounsAncestry" unique_id=128667637]
 layout_mode = 2
 
-[node name="Ancestry" type="LineEdit" parent="Names/AncestryC" unique_id=1573686438]
-custom_minimum_size = Vector2(300, 50)
+[node name="ColorRect" type="ColorRect" parent="NamePronounsAncestry/Ancestry" unique_id=612125050]
+custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
-size_flags_horizontal = 10
-size_flags_vertical = 0
-placeholder_text = "Ancestry"
+color = Color(0.1728327, 0.17283267, 0.17283267, 1)
+
+[node name="Ancestry" type="Label" parent="NamePronounsAncestry/Ancestry/ColorRect" unique_id=33290907]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -25.0
+offset_right = 100.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 8
+size_flags_vertical = 2
 
 [node name="TraitModifiers" type="HBoxContainer" parent="." unique_id=1219526404]
 layout_mode = 1
@@ -227,6 +257,65 @@ layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_c8oo5")
 text = "-"
 
+[node name="ClassSubclass" type="VBoxContainer" parent="." unique_id=162208600]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.795
+anchor_top = 0.289
+anchor_right = 0.795
+anchor_bottom = 0.289
+offset_left = -102.84003
+offset_top = -0.27200317
+offset_right = 102.15997
+offset_bottom = 61.727997
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="ClassSubclass" unique_id=1249334898]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Class & Subclass"
+
+[node name="ClassRect" type="ColorRect" parent="ClassSubclass" unique_id=1089273435]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+color = Color(0.19793725, 0.19793722, 0.19793722, 1)
+
+[node name="Class" type="Label" parent="ClassSubclass/ClassRect" unique_id=1672109693]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -102.5
+offset_top = -18.25
+offset_right = 102.5
+offset_bottom = 18.25
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+
+[node name="SubclassRect" type="ColorRect" parent="ClassSubclass" unique_id=885645139]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+color = Color(0.19607843, 0.19607843, 0.19607843, 1)
+
+[node name="Label" type="Label" parent="ClassSubclass/SubclassRect" unique_id=1350163337]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -102.5
+offset_top = -16.75
+offset_right = 102.5
+offset_bottom = 16.75
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+
 [node name="Bio" type="VBoxContainer" parent="." unique_id=561844215]
 layout_mode = 1
 anchors_preset = -1
@@ -248,8 +337,10 @@ text = "Bio"
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 
-[connection signal="text_changed" from="Names/NameC/NameEdit" to="." method="_on_name_edit_text_changed"]
-[connection signal="text_submitted" from="Names/NameC/NameEdit" to="." method="_on_name_edit_text_submitted"]
+[connection signal="text_changed" from="NamePronounsAncestry/NameC/NameEdit" to="." method="_on_name_edit_text_changed"]
+[connection signal="text_submitted" from="NamePronounsAncestry/NameC/NameEdit" to="." method="_on_name_edit_text_submitted"]
+[connection signal="text_changed" from="NamePronounsAncestry/Pronouns/Pronouns" to="." method="_on_pronouns_text_changed"]
+[connection signal="text_submitted" from="NamePronounsAncestry/Pronouns/Pronouns" to="." method="_on_pronouns_text_submitted"]
 [connection signal="text_submitted" from="TraitModifiers/Agility/LineEdit" to="." method="_on_agility_text_submitted"]
 [connection signal="text_submitted" from="TraitModifiers/Strength/LineEdit" to="." method="_on_strength_text_submitted"]
 [connection signal="text_submitted" from="TraitModifiers/Finesse/LineEdit" to="." method="_on_finesse_text_submitted"]
