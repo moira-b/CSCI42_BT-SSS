@@ -126,9 +126,9 @@ func _on_knowledge_text_submitted(new_text: String) -> void:
 
 
 func _on_short_rest_pressed() -> void:
-	long_rest.disabled = true
 	project_action.visible = false
-	if shortRestCounter < 2:
+	if shortRestCounter < 3:
+		long_rest.disabled = true
 		shortRestCounter += 1
 		rest_window.visible = true
 
@@ -138,3 +138,10 @@ func _on_long_rest_pressed() -> void:
 	project_action.visible = true
 	shortRestCounter = 0
 	rest_window.visible = true
+
+
+func _on_rest_window_close_requested() -> void:
+	rest_window.hide()
+	short_rest.disabled = false
+	long_rest.disabled = false
+	

@@ -237,6 +237,7 @@ oversampling_override = 1.0
 title = "Rest Actions"
 initial_position = 1
 size = Vector2i(500, 400)
+visible = false
 
 [node name="RestUI" type="Control" parent="RestButtons/RestWindow" unique_id=165973256]
 custom_minimum_size = Vector2(500, 400)
@@ -324,3 +325,4 @@ text = "Confirm"
 [connection signal="text_changed" from="Bio/BioEdit" to="." method="_on_bio_text_changed"]
 [connection signal="pressed" from="RestButtons/ShortRest" to="." method="_on_short_rest_pressed"]
 [connection signal="pressed" from="RestButtons/LongRest" to="." method="_on_long_rest_pressed"]
+[connection signal="close_requested" from="RestButtons/RestWindow" to="." method="_on_rest_window_close_requested"]
