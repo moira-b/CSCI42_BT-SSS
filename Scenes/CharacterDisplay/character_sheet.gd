@@ -1,18 +1,23 @@
 extends Control
 
 @onready var bio_edit = $"Bio/BioEdit"
-@onready var name_edit = $"Names/NameC/NameEdit"
+@onready var name_edit = $"NamePronounsAncestry/NameC/NameEdit"
 @onready var agility_field: LineEdit = $"TraitModifiers/Agility/LineEdit"
 @onready var strength_field: LineEdit = $"TraitModifiers/Strength/LineEdit"
 @onready var finesse_field: LineEdit = $"TraitModifiers/Finesse/LineEdit"
 @onready var instinct_field: LineEdit = $"TraitModifiers/Instinct/LineEdit"
 @onready var presence_field: LineEdit = $"TraitModifiers/Prescence/LineEdit"
 @onready var knowledge_field: LineEdit = $"TraitModifiers/Knowledge/LineEdit"
+@onready var pronouns_field: LineEdit = $NamePronounsAncestry/Pronouns/Pronouns
 
 @onready var health_field = $MarkableStats/Health
 @onready var stress_field = $MarkableStats/Stress
 @onready var armor_field = $MarkableStats/Armor
 @onready var hope_field = $MarkableStats/Hope
+@onready var ancestry_field = $NamePronounsAncestry/Ancestry/ColorRect/Ancestry
+@onready var community_field = $NamePronounsAncestry/Community/ColorRect/Community
+@onready var class_field = $ClassSubclass/ClassRect/Class
+@onready var subclass_field = $ClassSubclass/SubclassRect/Label
 
 var updated = false
 var character:Character
@@ -40,6 +45,10 @@ func enter() -> void:
 	armor_field.stat_decrement_pressed.connect(_on_stat_decrement_pressed)
 	hope_field.stat_increment_pressed.connect(_on_stat_increment_pressed)
 	hope_field.stat_decrement_pressed.connect(_on_stat_decrement_pressed)
+	ancestry_field.set_text("Ancestry: " + character.ancestry.ancestry_name)
+	class_field.set_text(character.character_class.name)
+	subclass_field.set_text(character.subclass.subclass_name)
+	community_field.set_text(character.community.community_name)
 
 func _process(_delta: float) -> void:
 	if(updated==false and character.character_name!=""):
@@ -62,6 +71,7 @@ func update_edit_fields() -> void:
 	finesse_field.set_text(str(character.finesse))
 	presence_field.set_text(str(character.presence))
 	knowledge_field.set_text(str(character.knowledge))
+	pronouns_field.set_text(str(character.pronouns))
 
 func print_character_details() -> void:
 	print("Character Details:")
@@ -170,3 +180,10 @@ func _on_stat_decrement_pressed(stat_name: String) -> void:
 	elif(stat_name=="Hope"):
 		if character.set_current_hope(character.current_hope-1):
 			hope_field.set_current_value(str(character.current_hope))
+
+func _on_pronouns_text_changed(new_text):
+	character.pronouns = new_text
+
+func _on_pronouns_text_submitted(new_text):
+	character.pronouns = new_text
+	print(new_text)
