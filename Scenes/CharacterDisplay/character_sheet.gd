@@ -1,7 +1,7 @@
 extends Control
 
 @onready var bio_edit = $"Bio/BioEdit"
-@onready var name_edit = $"NamePronounsAncestry/NameC/NameEdit"
+@onready var name_edit = $HeaderInformation/NamePronouns/NameC/NameEdit
 @onready var agility_field: LineEdit = $"TraitModifiers/Agility/LineEdit"
 @onready var strength_field: LineEdit = $"TraitModifiers/Strength/LineEdit"
 @onready var finesse_field: LineEdit = $"TraitModifiers/Finesse/LineEdit"
@@ -14,13 +14,13 @@ extends Control
 @onready var stress_field = $MarkableStats/Stress
 @onready var armor_field = $MarkableStats/Armor
 @onready var hope_field = $MarkableStats/Hope
-@onready var ancestry_field = $NamePronounsAncestry/Ancestry/ColorRect/Ancestry
-@onready var community_field = $NamePronounsAncestry/Community/ColorRect/Community
+@onready var ancestry_field = $Header/CommnityAncestry/Ancestry/ColorRect/Ancestry
+@onready var community_field = $Header/CommnityAncestry/Community/ColorRect/Community
 @onready var class_field = $ClassSubclass/ClassRect/Class
 @onready var subclass_field = $ClassSubclass/SubclassRect/Label
 
 var updated = false
-var character:Character
+var character: Character
 
 func enter() -> void:
 	character = $Character
@@ -50,6 +50,7 @@ func enter() -> void:
 	subclass_field.set_text(character.subclass.subclass_name)
 	community_field.set_text(character.community.community_name)
 
+
 func _process(_delta: float) -> void:
 	if(updated==false and character.character_name!=""):
 		updated=true
@@ -73,6 +74,7 @@ func update_edit_fields() -> void:
 	knowledge_field.set_text(str(character.knowledge))
 	pronouns_field.set_text(str(character.pronouns))
 
+
 func print_character_details() -> void:
 	print("Character Details:")
 	print("name: " + character.character_name)
@@ -86,6 +88,7 @@ func print_character_details() -> void:
 	print("knowledge: " + str(character.knowledge))
 	print(character.bio)
 
+
 func _on_bio_text_changed() -> void:
 	character.bio = bio_edit.get_text()
 	if(character.bio == "Im Cool"):
@@ -93,12 +96,15 @@ func _on_bio_text_changed() -> void:
 		print_character_details()
 		bio_edit.set_text("hi")
 
+
 func _on_name_edit_text_submitted(new_text):
 	character.character_name = new_text
 	print(character.character_name)
 
+
 func _on_name_edit_text_changed(new_text: String) -> void:
 	character.character_name = new_text
+
 
 func _on_agility_text_submitted(new_text: String) -> void:
 	if (int(new_text) == 0):

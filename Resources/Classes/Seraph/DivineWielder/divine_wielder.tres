@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="CharacterSubclass" format=3 uid="uid://ehb6n7pg0rey"]
+
+[ext_resource type="Script" uid="uid://ckqlyqdo4cyhe" path="res://Scripts/CharacterClasses/character_class_feature.gd" id="1_ldxwf"]
+[ext_resource type="Resource" uid="uid://b7it8d8dig2rq" path="res://Resources/Classes/Seraph/DivineWielder/spirit_weapon.tres" id="2_0fhfc"]
+[ext_resource type="Resource" uid="uid://v3jge8ylurn0" path="res://Resources/Classes/Seraph/DivineWielder/sparing_touch.tres" id="3_sjlmj"]
+[ext_resource type="Resource" uid="uid://d4buylsh0klqd" path="res://Resources/Classes/Seraph/DivineWielder/sacred_resonance.tres" id="4_v8to2"]
+[ext_resource type="Script" uid="uid://cxymexx6bno82" path="res://Scripts/CharacterClasses/character_subclass.gd" id="5_hesr8"]
+[ext_resource type="Resource" uid="uid://b1dc7mitx1vjs" path="res://Resources/Classes/Seraph/DivineWielder/devout.tres" id="6_r3w3e"]
+[ext_resource type="Resource" uid="uid://dgtlfkrc1f7c2" path="res://Resources/GeneralUseAttributes/CharacterTraits/strength.tres" id="7_8vjir"]
+
+[resource]
+script = ExtResource("5_hesr8")
+subclass_name = "Divine Wielder"
+foundation_feature = Array[ExtResource("1_ldxwf")]([ExtResource("2_0fhfc"), ExtResource("3_sjlmj")])
+specialization_feature = Array[ExtResource("1_ldxwf")]([ExtResource("6_r3w3e")])
+mastery_feature = Array[ExtResource("1_ldxwf")]([ExtResource("4_v8to2")])
+spellcast_trait = ExtResource("7_8vjir")
+metadata/_custom_type_script = "uid://cxymexx6bno82"

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="CharacterClassFeature" format=3 uid="uid://tx0dinrifx3s"]
+
+[ext_resource type="Script" uid="uid://ckqlyqdo4cyhe" path="res://Scripts/CharacterClasses/character_class_feature.gd" id="1_8g7pi"]
+
+[resource]
+script = ExtResource("1_8g7pi")
+feature_name = "Have No Fear"
+metadata/_custom_type_script = "uid://ckqlyqdo4cyhe"

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="CharacterSubclass" format=3 uid="uid://bsebwyh5wknli"]
+
+[ext_resource type="Script" uid="uid://ckqlyqdo4cyhe" path="res://Scripts/CharacterClasses/character_class_feature.gd" id="1_w37oa"]
+[ext_resource type="Script" uid="uid://cxymexx6bno82" path="res://Scripts/CharacterClasses/character_subclass.gd" id="2_8rh4c"]
+[ext_resource type="Resource" uid="uid://8422nw35wgn2" path="res://Resources/Classes/Sorcerer/ElementalOrigin/elementalist.tres" id="2_a0b30"]
+[ext_resource type="Resource" uid="uid://couyowhvwn0f7" path="res://Resources/Classes/Sorcerer/ElementalOrigin/transcendence.tres" id="3_nwd6h"]
+[ext_resource type="Resource" uid="uid://bkmfawk6mg6v6" path="res://Resources/Classes/Sorcerer/ElementalOrigin/natural_evasion.tres" id="5_64glf"]
+[ext_resource type="Resource" uid="uid://de0wkyxy48irt" path="res://Resources/GeneralUseAttributes/CharacterTraits/instinct.tres" id="6_276yu"]
+
+[resource]
+script = ExtResource("2_8rh4c")
+subclass_name = "Elemental Origin"
+foundation_feature = Array[ExtResource("1_w37oa")]([ExtResource("2_a0b30")])
+specialization_feature = Array[ExtResource("1_w37oa")]([ExtResource("5_64glf")])
+mastery_feature = Array[ExtResource("1_w37oa")]([ExtResource("3_nwd6h")])
+spellcast_trait = ExtResource("6_276yu")
+metadata/_custom_type_script = "uid://cxymexx6bno82"

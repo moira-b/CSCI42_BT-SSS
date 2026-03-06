@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="CharacterSubclass" format=3 uid="uid://b5prsqv3otvg4"]
+
+[ext_resource type="Script" uid="uid://ckqlyqdo4cyhe" path="res://Scripts/CharacterClasses/character_class_feature.gd" id="1_84k40"]
+[ext_resource type="Resource" uid="uid://bxsb17s8bearg" path="res://Resources/Classes/Ranger/Wayfinder/elusive_predator.tres" id="2_p6def"]
+[ext_resource type="Resource" uid="uid://cyq3xhdcd7jnv" path="res://Resources/Classes/Ranger/Wayfinder/ruthless_predator.tres" id="3_oghmm"]
+[ext_resource type="Script" uid="uid://cxymexx6bno82" path="res://Scripts/CharacterClasses/character_subclass.gd" id="5_vkhyb"]
+[ext_resource type="Resource" uid="uid://blfvf74nl2duu" path="res://Resources/Classes/Ranger/Wayfinder/apex_predator.tres" id="6_tk0js"]
+[ext_resource type="Resource" uid="uid://c7fgttr2v8iti" path="res://Resources/Classes/Ranger/Wayfinder/path_forward.tres" id="7_nwcaj"]
+[ext_resource type="Resource" uid="uid://cmkewuqjdn1e2" path="res://Resources/GeneralUseAttributes/CharacterTraits/agility.tres" id="7_s3av5"]
+
+[resource]
+script = ExtResource("5_vkhyb")
+subclass_name = "Wayfinder"
+foundation_feature = Array[ExtResource("1_84k40")]([ExtResource("3_oghmm"), ExtResource("7_nwcaj")])
+specialization_feature = Array[ExtResource("1_84k40")]([ExtResource("2_p6def")])
+mastery_feature = Array[ExtResource("1_84k40")]([ExtResource("6_tk0js")])
+spellcast_trait = ExtResource("7_s3av5")
+metadata/_custom_type_script = "uid://cxymexx6bno82"

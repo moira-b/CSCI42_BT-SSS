@@ -52,62 +52,72 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_dg7yu")
 
-[node name="NamePronounsAncestry" type="HBoxContainer" parent="." unique_id=1837796638]
+[node name="Header" type="VBoxContainer" parent="." unique_id=440971976]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -546.0
-offset_top = 22.0
-offset_right = 552.0
-offset_bottom = 95.0
+offset_left = -528.5
+offset_right = 528.5
+offset_bottom = 104.0
 grow_horizontal = 2
 
-[node name="NameC" type="BoxContainer" parent="NamePronounsAncestry" unique_id=570684203]
+[node name="NamePronouns" type="HBoxContainer" parent="Header" unique_id=1837796638]
+layout_mode = 2
+
+[node name="NameC" type="HBoxContainer" parent="Header/NamePronouns" unique_id=1593906295]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
-size_flags_horizontal = 2
-size_flags_vertical = 0
+size_flags_horizontal = 4
 
-[node name="NameEdit" type="LineEdit" parent="NamePronounsAncestry/NameC" unique_id=1389927954]
+[node name="Name" type="Label" parent="Header/NamePronouns/NameC" unique_id=1793497501]
+layout_mode = 2
+text = "Name: "
+
+[node name="NameEdit" type="LineEdit" parent="Header/NamePronouns/NameC" unique_id=1389927954]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 size_flags_horizontal = 2
 placeholder_text = "What is your name?"
 script = SubResource("GDScript_dg7yu")
 
-[node name="Pronouns" type="HBoxContainer" parent="NamePronounsAncestry" unique_id=1818981251]
+[node name="Pronouns" type="HBoxContainer" parent="Header/NamePronouns" unique_id=1818981251]
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 0
 
-[node name="Label" type="Label" parent="NamePronounsAncestry/Pronouns" unique_id=449473121]
+[node name="Label" type="Label" parent="Header/NamePronouns/Pronouns" unique_id=449473121]
 layout_mode = 2
 text = "Pronouns:"
 
-[node name="Pronouns" type="LineEdit" parent="NamePronounsAncestry/Pronouns" unique_id=1102215493]
+[node name="Pronouns" type="LineEdit" parent="Header/NamePronouns/Pronouns" unique_id=1102215493]
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 
-[node name="Community" type="HBoxContainer" parent="NamePronounsAncestry" unique_id=743414857]
+[node name="CommnityAncestry" type="HBoxContainer" parent="Header" unique_id=174565721]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="NamePronounsAncestry/Community" unique_id=760379478]
+[node name="Community" type="HBoxContainer" parent="Header/CommnityAncestry" unique_id=743414857]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="Header/CommnityAncestry/Community" unique_id=760379478]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 text = "Community:"
 
-[node name="ColorRect" type="ColorRect" parent="NamePronounsAncestry/Community" unique_id=1812518552]
+[node name="ColorRect" type="ColorRect" parent="Header/CommnityAncestry/Community" unique_id=1812518552]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 color = Color(0.1728327, 0.17283267, 0.17283267, 1)
 
-[node name="Community" type="Label" parent="NamePronounsAncestry/Community/ColorRect" unique_id=2021481224]
+[node name="Community" type="Label" parent="Header/CommnityAncestry/Community/ColorRect" unique_id=2021481224]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -121,15 +131,21 @@ offset_bottom = 24.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Ancestry" type="VBoxContainer" parent="NamePronounsAncestry" unique_id=128667637]
+[node name="Ancestry" type="HBoxContainer" parent="Header/CommnityAncestry" unique_id=400480339]
 layout_mode = 2
 
-[node name="ColorRect" type="ColorRect" parent="NamePronounsAncestry/Ancestry" unique_id=612125050]
+[node name="Label" type="Label" parent="Header/CommnityAncestry/Ancestry" unique_id=1081074418]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "Ancestry:"
+
+[node name="ColorRect" type="ColorRect" parent="Header/CommnityAncestry/Ancestry" unique_id=612125050]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 color = Color(0.1728327, 0.17283267, 0.17283267, 1)
 
-[node name="Ancestry" type="Label" parent="NamePronounsAncestry/Ancestry/ColorRect" unique_id=33290907]
+[node name="Ancestry" type="Label" parent="Header/CommnityAncestry/Ancestry/ColorRect" unique_id=33290907]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 1
 anchors_preset = 8
@@ -154,9 +170,9 @@ anchor_top = 0.089
 anchor_right = 0.5
 anchor_bottom = 0.089
 offset_left = -482.0
-offset_top = 33.328
+offset_top = 95.328
 offset_right = 480.0
-offset_bottom = 86.328
+offset_bottom = 148.328
 grow_horizontal = 2
 
 [node name="Agility" type="BoxContainer" parent="TraitModifiers" unique_id=1577777243]
@@ -245,9 +261,9 @@ anchor_top = 0.289
 anchor_right = 0.208
 anchor_bottom = 0.289
 offset_left = -201.616
-offset_top = -0.27200317
+offset_top = 62.727997
 offset_right = 201.384
-offset_bottom = 123.728
+offset_bottom = 186.728
 
 [node name="Health" type="PanelContainer" parent="MarkableStats" unique_id=898166146]
 layout_mode = 2
@@ -400,6 +416,7 @@ custom_minimum_size = Vector2(40, 30)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_c8oo5")
 text = "-"
+
 [node name="ClassSubclass" type="VBoxContainer" parent="." unique_id=162208600]
 layout_mode = 1
 anchors_preset = -1
@@ -408,9 +425,9 @@ anchor_top = 0.289
 anchor_right = 0.795
 anchor_bottom = 0.289
 offset_left = -102.84003
-offset_top = -0.27200317
+offset_top = 63.227997
 offset_right = 102.15997
-offset_bottom = 61.727997
+offset_bottom = 164.228
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -467,9 +484,9 @@ anchor_top = 0.45800003
 anchor_right = 0.79800004
 anchor_bottom = 0.45800003
 offset_left = -192.29602
-offset_top = 0.2159729
+offset_top = 103.21597
 offset_right = 192.70398
-offset_bottom = 340.21597
+offset_bottom = 317.21597
 
 [node name="Label" type="Label" parent="Bio" unique_id=986580117]
 layout_mode = 2
@@ -480,10 +497,10 @@ text = "Bio"
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 
-[connection signal="text_changed" from="NamePronounsAncestry/NameC/NameEdit" to="." method="_on_name_edit_text_changed"]
-[connection signal="text_submitted" from="NamePronounsAncestry/NameC/NameEdit" to="." method="_on_name_edit_text_submitted"]
-[connection signal="text_changed" from="NamePronounsAncestry/Pronouns/Pronouns" to="." method="_on_pronouns_text_changed"]
-[connection signal="text_submitted" from="NamePronounsAncestry/Pronouns/Pronouns" to="." method="_on_pronouns_text_submitted"]
+[connection signal="text_changed" from="Header/NamePronouns/NameC/NameEdit" to="." method="_on_name_edit_text_changed"]
+[connection signal="text_submitted" from="Header/NamePronouns/NameC/NameEdit" to="." method="_on_name_edit_text_submitted"]
+[connection signal="text_changed" from="Header/NamePronouns/Pronouns/Pronouns" to="." method="_on_pronouns_text_changed"]
+[connection signal="text_submitted" from="Header/NamePronouns/Pronouns/Pronouns" to="." method="_on_pronouns_text_submitted"]
 [connection signal="text_submitted" from="TraitModifiers/Agility/LineEdit" to="." method="_on_agility_text_submitted"]
 [connection signal="text_submitted" from="TraitModifiers/Strength/LineEdit" to="." method="_on_strength_text_submitted"]
 [connection signal="text_submitted" from="TraitModifiers/Finesse/LineEdit" to="." method="_on_finesse_text_submitted"]

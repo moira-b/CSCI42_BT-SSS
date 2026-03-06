@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="CharacterClassFeature" format=3 uid="uid://cyq3xhdcd7jnv"]
+
+[ext_resource type="Script" uid="uid://ckqlyqdo4cyhe" path="res://Scripts/CharacterClasses/character_class_feature.gd" id="1_3t8bt"]
+
+[resource]
+script = ExtResource("1_3t8bt")
+feature_name = "Ruthless Predator"
+metadata/_custom_type_script = "uid://ckqlyqdo4cyhe"

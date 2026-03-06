@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="CharacterClassFeature" format=3 uid="uid://c2vcucpg718ft"]
+
+[ext_resource type="Script" uid="uid://ckqlyqdo4cyhe" path="res://Scripts/CharacterClasses/character_class_feature.gd" id="1_bu1op"]
+
+[resource]
+script = ExtResource("1_bu1op")
+feature_name = "Wings of Light"
+metadata/_custom_type_script = "uid://ckqlyqdo4cyhe"

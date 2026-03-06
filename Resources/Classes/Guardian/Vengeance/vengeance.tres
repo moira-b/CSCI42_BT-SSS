@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CharacterSubclass" format=3 uid="uid://cavi816hwbmuv"]
+
+[ext_resource type="Script" uid="uid://ckqlyqdo4cyhe" path="res://Scripts/CharacterClasses/character_class_feature.gd" id="1_tckmt"]
+[ext_resource type="Script" uid="uid://cxymexx6bno82" path="res://Scripts/CharacterClasses/character_subclass.gd" id="2_eyvn7"]
+[ext_resource type="Resource" uid="uid://ccobm3irhoycm" path="res://Resources/Classes/Guardian/Vengeance/at_ease.tres" id="2_lob0q"]
+[ext_resource type="Resource" uid="uid://3qx4ivu21jnk" path="res://Resources/Classes/Guardian/Vengeance/revenge.tres" id="3_la1gd"]
+[ext_resource type="Resource" uid="uid://bl4drx41h73h" path="res://Resources/Classes/Guardian/Vengeance/nemesis.tres" id="4_ekjwi"]
+[ext_resource type="Resource" uid="uid://cuxte8x3rtmc1" path="res://Resources/Classes/Guardian/Vengeance/act_of_reprisal.tres" id="6_hnudv"]
+
+[resource]
+script = ExtResource("2_eyvn7")
+subclass_name = "Vengeance"
+foundation_feature = Array[ExtResource("1_tckmt")]([ExtResource("2_lob0q"), ExtResource("3_la1gd")])
+specialization_feature = Array[ExtResource("1_tckmt")]([ExtResource("6_hnudv")])
+mastery_feature = Array[ExtResource("1_tckmt")]([ExtResource("4_ekjwi")])
+metadata/_custom_type_script = "uid://cxymexx6bno82"

@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_qb0sy")
+class_features_file = "res://Resources/Classes/Bard/bard_features.json"
 feature_name = "Make a Scene"
-feature_description = "Spend 3 Hope to temporarily Distract a target within Close range, giving them a -2 penalty to their Difficulty."
 metadata/_custom_type_script = "uid://ckqlyqdo4cyhe"

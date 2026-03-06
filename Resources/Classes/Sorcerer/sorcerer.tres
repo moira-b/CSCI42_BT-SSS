@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="CharacterClass" format=3 uid="uid://hywukpwyumtp"]
+
+[ext_resource type="Script" uid="uid://cxymexx6bno82" path="res://Scripts/CharacterClasses/character_subclass.gd" id="1_wggh3"]
+[ext_resource type="Resource" uid="uid://bsebwyh5wknli" path="res://Resources/Classes/Sorcerer/ElementalOrigin/elemental_origin.tres" id="2_4gv7v"]
+[ext_resource type="Resource" uid="uid://bfmbwqdm14x17" path="res://Resources/Classes/Sorcerer/PrimalOrigin/primal_origin.tres" id="3_i4w76"]
+[ext_resource type="Script" uid="uid://ckqlyqdo4cyhe" path="res://Scripts/CharacterClasses/character_class_feature.gd" id="4_rk7n1"]
+[ext_resource type="Resource" uid="uid://ddabnaw40vjm4" path="res://Resources/Classes/Sorcerer/arcane_sense.tres" id="5_qmn6r"]
+[ext_resource type="Resource" uid="uid://do5qgi7gprdbw" path="res://Resources/Classes/Sorcerer/minor_illusion.tres" id="6_3jwrq"]
+[ext_resource type="Script" uid="uid://bw1ppfeo5ccfb" path="res://Scripts/GeneralUseAttributes/domain.gd" id="6_vj8ep"]
+[ext_resource type="Resource" uid="uid://l1fhssq1yncu" path="res://Resources/Classes/Sorcerer/channel_raw_power.tres" id="7_plse1"]
+[ext_resource type="Resource" uid="uid://262js7hopg4i" path="res://Resources/GeneralUseAttributes/Domains/arcana.tres" id="9_e1l7q"]
+[ext_resource type="Script" uid="uid://c6daeo616vuo3" path="res://Scripts/CharacterClasses/character_class.gd" id="10_3sf6c"]
+[ext_resource type="Resource" uid="uid://s07ymkguanej" path="res://Resources/GeneralUseAttributes/Domains/midnight.tres" id="10_vdcy1"]
+[ext_resource type="Resource" uid="uid://cjbc68ae3wxrw" path="res://Resources/Classes/Sorcerer/volatile_magic.tres" id="11_utfg3"]
+
+[resource]
+script = ExtResource("10_3sf6c")
+name = "Sorcerer"
+domains = Array[ExtResource("6_vj8ep")]([ExtResource("9_e1l7q"), ExtResource("10_vdcy1")])
+starting_evasion = 10
+starting_hp = 6
+hope_feature = ExtResource("11_utfg3")
+class_feature = Array[ExtResource("4_rk7n1")]([ExtResource("5_qmn6r"), ExtResource("6_3jwrq"), ExtResource("7_plse1")])
+class_items = Array[String](["A whispering orb", "A family heirloom"])
+character_subclasses = Array[ExtResource("1_wggh3")]([ExtResource("2_4gv7v"), ExtResource("3_i4w76")])
+metadata/_custom_type_script = "uid://c6daeo616vuo3"

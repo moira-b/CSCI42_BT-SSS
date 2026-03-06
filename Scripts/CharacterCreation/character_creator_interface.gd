@@ -83,10 +83,12 @@ func _on_confirm_button_pressed() -> void:
 	confirm_button.disabled = true
 	description_display.clear_message()
 
+
 func _on_back_button_pressed() -> void:
 	option_tab_index -= 1
 	_set_active_option_tab(option_tab_index)
-	
+
+
 func show_description(message: String) -> void:
 	description_display.display_message(message)
 
@@ -98,4 +100,3 @@ func _on_complete_button_pressed() -> void:
 	new_scene.enter()
 	self.queue_free()
 	#get_tree().change_scene_to_packed(sheet_scene)
-	

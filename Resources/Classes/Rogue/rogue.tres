@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="CharacterClass" format=3 uid="uid://bnehy1ghhj8ml"]
+
+[ext_resource type="Script" uid="uid://cxymexx6bno82" path="res://Scripts/CharacterClasses/character_subclass.gd" id="1_8688n"]
+[ext_resource type="Script" uid="uid://ckqlyqdo4cyhe" path="res://Scripts/CharacterClasses/character_class_feature.gd" id="2_c6ro3"]
+[ext_resource type="Resource" uid="uid://basphotuadyul" path="res://Resources/Classes/Rogue/Nightwalker/nightwalker.tres" id="2_q7ruq"]
+[ext_resource type="Resource" uid="uid://c08p2wsiov4n4" path="res://Resources/Classes/Rogue/Syndicate/syndicate.tres" id="3_dnofn"]
+[ext_resource type="Script" uid="uid://bw1ppfeo5ccfb" path="res://Scripts/GeneralUseAttributes/domain.gd" id="3_rkyv3"]
+[ext_resource type="Script" uid="uid://c6daeo616vuo3" path="res://Scripts/CharacterClasses/character_class.gd" id="4_u4ona"]
+[ext_resource type="Resource" uid="uid://dmbh0sltlny7b" path="res://Resources/Classes/Rogue/cloaked.tres" id="5_jkc2l"]
+[ext_resource type="Resource" uid="uid://bo52i8fi2ts68" path="res://Resources/Classes/Rogue/sneak_attack.tres" id="6_t5k5n"]
+[ext_resource type="Resource" uid="uid://s07ymkguanej" path="res://Resources/GeneralUseAttributes/Domains/midnight.tres" id="8_accit"]
+[ext_resource type="Resource" uid="uid://bkaxx4rook7xg" path="res://Resources/GeneralUseAttributes/Domains/grace.tres" id="9_lvpu2"]
+[ext_resource type="Resource" uid="uid://der4j2opq77xk" path="res://Resources/Classes/Rogue/rogues_dodge.tres" id="10_1d4it"]
+
+[resource]
+script = ExtResource("4_u4ona")
+name = "Rogue"
+domains = Array[ExtResource("3_rkyv3")]([ExtResource("8_accit"), ExtResource("9_lvpu2")])
+starting_evasion = 12
+starting_hp = 6
+hope_feature = ExtResource("10_1d4it")
+class_feature = Array[ExtResource("2_c6ro3")]([ExtResource("5_jkc2l"), ExtResource("6_t5k5n")])
+class_items = Array[String](["A set of forgery tools", "A grappling hook"])
+character_subclasses = Array[ExtResource("1_8688n")]([ExtResource("2_q7ruq"), ExtResource("3_dnofn")])
+metadata/_custom_type_script = "uid://c6daeo616vuo3"

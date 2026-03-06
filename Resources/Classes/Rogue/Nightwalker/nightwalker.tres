@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="CharacterSubclass" format=3 uid="uid://basphotuadyul"]
+
+[ext_resource type="Script" uid="uid://ckqlyqdo4cyhe" path="res://Scripts/CharacterClasses/character_class_feature.gd" id="1_2ytmp"]
+[ext_resource type="Script" uid="uid://cxymexx6bno82" path="res://Scripts/CharacterClasses/character_subclass.gd" id="2_gymjv"]
+[ext_resource type="Resource" uid="uid://bdba8d2qey5go" path="res://Resources/Classes/Rogue/Nightwalker/shadow_stepper.tres" id="2_nf61h"]
+[ext_resource type="Resource" uid="uid://d3icb7626csnn" path="res://Resources/Classes/Rogue/Nightwalker/fleeting_shadow.tres" id="3_wu3na"]
+[ext_resource type="Resource" uid="uid://g4i6o8tao7de" path="res://Resources/Classes/Rogue/Nightwalker/vanishing_act.tres" id="4_loy23"]
+[ext_resource type="Resource" uid="uid://biu333n6whhlr" path="res://Resources/Classes/Rogue/Nightwalker/dark_cloud.tres" id="6_5yjou"]
+[ext_resource type="Resource" uid="uid://bmre67ck4jlef" path="res://Resources/Classes/Rogue/Nightwalker/adrenaline.tres" id="7_l8es2"]
+[ext_resource type="Resource" uid="uid://dei8ejpaex5mh" path="res://Resources/GeneralUseAttributes/CharacterTraits/finesse.tres" id="8_xbr2u"]
+
+[resource]
+script = ExtResource("2_gymjv")
+subclass_name = "Nightwalker"
+foundation_feature = Array[ExtResource("1_2ytmp")]([ExtResource("2_nf61h")])
+specialization_feature = Array[ExtResource("1_2ytmp")]([ExtResource("6_5yjou"), ExtResource("7_l8es2")])
+mastery_feature = Array[ExtResource("1_2ytmp")]([ExtResource("3_wu3na"), ExtResource("4_loy23")])
+spellcast_trait = ExtResource("8_xbr2u")
+metadata/_custom_type_script = "uid://cxymexx6bno82"
