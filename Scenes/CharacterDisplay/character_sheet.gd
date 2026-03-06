@@ -1,21 +1,21 @@
 extends Control
 
 @onready var bio_edit = $"Bio/BioEdit"
-@onready var name_edit = $HeaderInformation/NamePronouns/NameC/NameEdit
+@onready var name_edit = $Header/NamePronouns/NamePanelContainer/NameC/NameEdit
 @onready var agility_field: LineEdit = $"TraitModifiers/Agility/LineEdit"
 @onready var strength_field: LineEdit = $"TraitModifiers/Strength/LineEdit"
 @onready var finesse_field: LineEdit = $"TraitModifiers/Finesse/LineEdit"
 @onready var instinct_field: LineEdit = $"TraitModifiers/Instinct/LineEdit"
 @onready var presence_field: LineEdit = $"TraitModifiers/Prescence/LineEdit"
 @onready var knowledge_field: LineEdit = $"TraitModifiers/Knowledge/LineEdit"
-@onready var pronouns_field: LineEdit = $NamePronounsAncestry/Pronouns/Pronouns
+@onready var pronouns_field: LineEdit = $Header/NamePronouns/PronounsPanelContainer/Pronouns/Pronouns
 
 @onready var health_field = $MarkableStats/Health
 @onready var stress_field = $MarkableStats/Stress
 @onready var armor_field = $MarkableStats/Armor
 @onready var hope_field = $MarkableStats/Hope
-@onready var ancestry_field = $Header/CommnityAncestry/Ancestry/ColorRect/Ancestry
-@onready var community_field = $Header/CommnityAncestry/Community/ColorRect/Community
+@onready var ancestry_field = $Header/CommnityAncestry/AncestryPanelContainer/Ancestry/ColorRect/Ancestry
+@onready var community_field = $Header/CommnityAncestry/PanelContainer/Community/ColorRect/Community
 @onready var class_field = $ClassSubclass/ClassRect/Class
 @onready var subclass_field = $ClassSubclass/SubclassRect/Label
 
