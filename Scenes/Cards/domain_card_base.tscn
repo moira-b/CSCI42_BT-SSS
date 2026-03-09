@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://cknxpivnpwbxd"]
 
+[ext_resource type="Script" uid="uid://df48s1uusquv0" path="res://Scripts/Cards/domain_card_base.gd" id="1_yvsxo"]
+
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_a0nth"]
 size = Vector2(250, 175)
 
@@ -16,6 +18,7 @@ offset_right = -900.0
 offset_bottom = -296.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_yvsxo")
 
 [node name="CardBG" type="ColorRect" parent="." unique_id=1050426630]
 custom_minimum_size = Vector2(250, 350)
@@ -31,7 +34,6 @@ position = Vector2(125, 88)
 texture = SubResource("PlaceholderTexture2D_a0nth")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=711908716]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=792588916]
 position = Vector2(125, 175)
