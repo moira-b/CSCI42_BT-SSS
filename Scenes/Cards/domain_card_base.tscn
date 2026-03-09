@@ -19,6 +19,7 @@ offset_bottom = -296.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_yvsxo")
+card_name = "Rune Ward"
 
 [node name="CardBG" type="ColorRect" parent="." unique_id=1050426630]
 custom_minimum_size = Vector2(250, 350)
