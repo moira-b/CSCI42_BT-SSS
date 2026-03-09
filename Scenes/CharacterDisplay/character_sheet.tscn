@@ -528,12 +528,14 @@ text = "Experiences"
 layout_mode = 2
 
 [node name="LineEdit" type="LineEdit" parent="Experiences/Experience1" unique_id=1020765395]
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 
 [node name="Experience2" type="HBoxContainer" parent="Experiences" unique_id=281734232]
 layout_mode = 2
 
 [node name="LineEdit" type="LineEdit" parent="Experiences/Experience2" unique_id=1768669913]
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 
 [node name="Experience3" type="HBoxContainer" parent="Experiences" unique_id=517739238]
