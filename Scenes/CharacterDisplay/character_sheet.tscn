@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://cmt4mu51iv5vw" path="res://Scenes/CharacterDisplay/character_sheet.gd" id="1_dg7yu"]
 [ext_resource type="Script" uid="uid://dnjp24h6b6fc2" path="res://Scripts/CharacterDisplay/markable_stat.gd" id="2_5rpyy"]
 [ext_resource type="StyleBox" uid="uid://dic645d200g74" path="res://Resources/GUIStyles/character_sheet_stylebox.tres" id="2_c8oo5"]
-[ext_resource type="Script" uid="uid://crk3xo30ncl2b" path="res://Scripts/CharacterDisplay/experiences.gd" id="4_qgeia"]
 
 [sub_resource type="GDScript" id="GDScript_dg7yu"]
 script/source = "extends LineEdit
@@ -519,7 +518,6 @@ offset_left = -201.616
 offset_top = -214.20807
 offset_right = 202.384
 offset_bottom = -0.20806885
-script = ExtResource("4_qgeia")
 
 [node name="Label" type="Label" parent="Experiences" unique_id=908732964]
 layout_mode = 2

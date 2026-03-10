@@ -9,6 +9,11 @@ extends Control
 @onready var presence_field: LineEdit = $"TraitModifiers/Prescence/LineEdit"
 @onready var knowledge_field: LineEdit = $"TraitModifiers/Knowledge/LineEdit"
 @onready var pronouns_field: LineEdit = $Header/NamePronouns/PronounsPanelContainer/Pronouns/Pronouns
+@onready var experience1 : LineEdit = $Experiences/Experience1/LineEdit
+@onready var experience2 : LineEdit = $Experiences/Experience2/LineEdit
+@onready var experience3 : LineEdit = $Experiences/Experience3/LineEdit
+@onready var experience4 : LineEdit = $Experiences/Experience4/LineEdit
+@onready var experience5 : LineEdit = $Experiences/Experience5/LineEdit
 
 @onready var health_field = $MarkableStats/Health
 @onready var stress_field = $MarkableStats/Stress
@@ -55,6 +60,7 @@ func _process(_delta: float) -> void:
 	if(updated==false and character.character_name!=""):
 		updated=true
 		update_edit_fields()
+		check_tier_achievements_threshold(character.level)
 		
 
 func update_markable_fields() -> void:
@@ -87,6 +93,14 @@ func print_character_details() -> void:
 	print("presence: " + str(character.presence))
 	print("knowledge: " + str(character.knowledge))
 	print(character.bio)
+	
+func check_tier_achievements_threshold(lvl: int) -> void:
+	if lvl < 2:
+		experience3.hide()
+	if lvl < 5:
+		experience4.hide()
+	if lvl < 8:
+		experience5.hide()
 
 
 func _on_bio_text_changed() -> void:
