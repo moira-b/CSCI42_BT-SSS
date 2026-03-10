@@ -7,6 +7,7 @@ extends Node
 @export var character_name: String
 @export var pronouns: String
 @export var level: int
+@export var max_level: int = 10
 @export var agility: int
 @export var strength: int
 @export var finesse: int
@@ -24,6 +25,7 @@ extends Node
 @export var max_armor_slots: int
 @export var used_armor_slots: int
 @export var experiences: Array[String] = ["", "", "", "", ""]
+@export var damage_thresholds: Array[int]
 
 var ancestry: Ancestry
 var community: Community
@@ -99,5 +101,17 @@ func set_current_hope(value: int) -> bool:
 		print("Cannot set hope counter s to be less than 0.")
 	else:
 		print("Cannot set hope counter to be greater than max hope.")
+	
+	return false
+
+func set_level(value: int) -> bool:
+	if(0 <= value && value <= self.max_level):
+		level = value
+		#print("DEBUG: " + self.character_name + " currently has " + str(level) + " level.")
+		return true
+	elif(value < 0):
+		print("Cannot set level counter s to be less than 0.")
+	else:
+		print("Cannot set level counter to be greater than max level.")
 	
 	return false

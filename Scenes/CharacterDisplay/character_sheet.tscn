@@ -556,6 +556,47 @@ layout_mode = 2
 [node name="LineEdit" type="LineEdit" parent="Experiences/Experience5" unique_id=1875908754]
 layout_mode = 2
 
+[node name="Level" type="HBoxContainer" parent="." unique_id=730789895]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.98700005
+anchor_right = 0.98700005
+offset_left = -178.02405
+offset_right = -0.024047852
+offset_bottom = 56.0
+
+[node name="Level" type="PanelContainer" parent="Level" unique_id=1090331652]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+script = ExtResource("2_5rpyy")
+
+[node name="FieldContainer" type="HBoxContainer" parent="Level/Level" unique_id=85699320]
+layout_mode = 2
+
+[node name="Labels" type="HBoxContainer" parent="Level/Level/FieldContainer" unique_id=1083387291]
+layout_mode = 2
+
+[node name="FieldName" type="Label" parent="Level/Level/FieldContainer/Labels" unique_id=304716378]
+layout_mode = 2
+text = "Level: "
+
+[node name="FieldValue" type="Label" parent="Level/Level/FieldContainer/Labels" unique_id=1825855031]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="Buttons" type="HBoxContainer" parent="Level/Level/FieldContainer" unique_id=555968749]
+layout_mode = 2
+
+[node name="IncrementButton" type="Button" parent="Level/Level/FieldContainer/Buttons" unique_id=1727927263]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+text = "+"
+
+[node name="DecrementButton" type="Button" parent="Level/Level/FieldContainer/Buttons" unique_id=1783854800]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+text = "-"
+
 [connection signal="text_changed" from="Header/NamePronouns/NamePanelContainer/NameC/NameEdit" to="." method="_on_name_edit_text_changed"]
 [connection signal="text_submitted" from="Header/NamePronouns/NamePanelContainer/NameC/NameEdit" to="." method="_on_name_edit_text_submitted"]
 [connection signal="text_changed" from="Header/NamePronouns/PronounsPanelContainer/Pronouns/Pronouns" to="." method="_on_pronouns_text_changed"]

@@ -19,6 +19,7 @@ extends Control
 @onready var stress_field = $MarkableStats/Stress
 @onready var armor_field = $MarkableStats/Armor
 @onready var hope_field = $MarkableStats/Hope
+@onready var level_field = $Level/Level
 @onready var ancestry_field = $Header/CommnityAncestry/AncestryPanelContainer/Ancestry/ColorRect/Ancestry
 @onready var community_field = $Header/CommnityAncestry/PanelContainer/Community/ColorRect/Community
 @onready var class_field = $ClassSubclass/ClassRect/Class
@@ -39,6 +40,7 @@ func enter() -> void:
 	character.set_used_armor_slots(5)
 	character.set_maximum_hope()
 	character.set_current_hope(3)
+	character.set_level(1)
 	
 	self.update_markable_fields()
 	
@@ -50,6 +52,8 @@ func enter() -> void:
 	armor_field.stat_decrement_pressed.connect(_on_stat_decrement_pressed)
 	hope_field.stat_increment_pressed.connect(_on_stat_increment_pressed)
 	hope_field.stat_decrement_pressed.connect(_on_stat_decrement_pressed)
+	level_field.stat_increment_pressed.connect(_on_stat_increment_pressed)
+	level_field.stat_decrement_pressed.connect(_on_stat_decrement_pressed)
 	ancestry_field.set_text("Ancestry: " + character.ancestry.ancestry_name)
 	class_field.set_text(character.character_class.name)
 	subclass_field.set_text(character.subclass.subclass_name)
@@ -60,7 +64,7 @@ func _process(_delta: float) -> void:
 	if(updated==false and character.character_name!=""):
 		updated=true
 		update_edit_fields()
-		check_tier_achievements_threshold(character.level)
+		check_tier_achievements_threshold()
 		
 
 func update_markable_fields() -> void:
@@ -93,15 +97,21 @@ func print_character_details() -> void:
 	print("presence: " + str(character.presence))
 	print("knowledge: " + str(character.knowledge))
 	print(character.bio)
-	
-func check_tier_achievements_threshold(lvl: int) -> void:
-	if lvl < 2:
-		experience3.hide()
-	if lvl < 5:
-		experience4.hide()
-	if lvl < 8:
-		experience5.hide()
 
+#TODO: fix this, it is not showing and hiding dependding on level	
+func check_tier_achievements_threshold() -> void:
+	if character.level < 2:
+		experience3.hide()
+	else:
+		experience3.show()
+	if character.level < 5:
+		experience4.hide()
+	else:
+		experience4.show()
+	if character.level < 8:
+		experience5.hide()
+	else:
+		experience5.show()
 
 func _on_bio_text_changed() -> void:
 	character.bio = bio_edit.get_text()
@@ -186,6 +196,9 @@ func _on_stat_increment_pressed(stat_name: String) -> void:
 	elif(stat_name=="Hope"):
 		if character.set_current_hope(character.current_hope+1):
 			hope_field.set_current_value(str(character.current_hope))
+	elif(stat_name=="Level"):
+		if character.set_level(character.level+1):
+			level_field.set_current_value(str(character.level))
 	
 func _on_stat_decrement_pressed(stat_name: String) -> void:
 	if(stat_name=="Health"):
@@ -200,6 +213,9 @@ func _on_stat_decrement_pressed(stat_name: String) -> void:
 	elif(stat_name=="Hope"):
 		if character.set_current_hope(character.current_hope-1):
 			hope_field.set_current_value(str(character.current_hope))
+	elif(stat_name=="Level"):
+		if character.set_level(character.level-1):
+			level_field.set_current_value(str(character.level))
 
 func _on_pronouns_text_changed(new_text):
 	character.pronouns = new_text
