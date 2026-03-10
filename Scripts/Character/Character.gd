@@ -13,6 +13,7 @@ extends Node
 @export var instinct: int
 @export var presence: int
 @export var knowledge: int
+@export var proficiency: int
 @export var max_hp: int
 @export var current_hp: int
 @export var max_stress: int
