@@ -125,6 +125,7 @@ func _on_knowledge_text_submitted(new_text: String) -> void:
 
 
 func _on_short_rest_pressed() -> void:
+	rest_window.set_rest_Length("short")
 	rest_window.disable_Project()
 	if shortRestCounter < 3:
 		long_rest.disabled = true
@@ -133,6 +134,7 @@ func _on_short_rest_pressed() -> void:
 
 
 func _on_long_rest_pressed() -> void:
+	rest_window.set_rest_Length("long")
 	short_rest.disabled = true
 	rest_window.enable_Project()
 	shortRestCounter = 0
@@ -143,4 +145,9 @@ func _on_rest_window_close_requested() -> void:
 	rest_window.hide()
 	short_rest.disabled = false
 	long_rest.disabled = false
-	
+
+
+func _on_confirm_button_pressed() -> void:
+	rest_window.hide()
+	short_rest.disabled = false
+	long_rest.disabled = false

@@ -333,4 +333,5 @@ text = "Confirm"
 [connection signal="toggled" from="RestButtons/RestWindow/RestUI/RestActions/RepairArmor" to="RestButtons/RestWindow" method="_on_repair_armor_toggled"]
 [connection signal="toggled" from="RestButtons/RestWindow/RestUI/RestActions/Prepare" to="RestButtons/RestWindow" method="_on_prepare_toggled"]
 [connection signal="toggled" from="RestButtons/RestWindow/RestUI/RestActions/Project" to="RestButtons/RestWindow" method="_on_project_toggled"]
+[connection signal="pressed" from="RestButtons/RestWindow/RestUI/ConfirmButton" to="." method="_on_confirm_button_pressed"]
 [connection signal="pressed" from="RestButtons/RestWindow/RestUI/ConfirmButton" to="RestButtons/RestWindow" method="_on_confirm_button_pressed"]

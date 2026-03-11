@@ -97,6 +97,7 @@ func _on_project_toggled(toggled_on: bool) -> void:
 
 
 func _on_confirm_button_pressed() -> void:
+	self.hide()
 	if rest_length == "short":
 		for s in selected:
 			var clear: int
