@@ -9,11 +9,11 @@ extends Control
 @onready var presence_field: LineEdit = $"TraitModifiers/Prescence/LineEdit"
 @onready var knowledge_field: LineEdit = $"TraitModifiers/Knowledge/LineEdit"
 @onready var pronouns_field: LineEdit = $Header/NamePronouns/PronounsPanelContainer/Pronouns/Pronouns
-@onready var experience1 : LineEdit = $Experiences/Experience1/LineEdit
-@onready var experience2 : LineEdit = $Experiences/Experience2/LineEdit
-@onready var experience3 : LineEdit = $Experiences/Experience3/LineEdit
-@onready var experience4 : LineEdit = $Experiences/Experience4/LineEdit
-@onready var experience5 : LineEdit = $Experiences/Experience5/LineEdit
+@onready var experience1 : LineEdit = $Experiences/Experience1/Experience1
+@onready var experience2 : LineEdit = $Experiences/Experience2/Experience2
+@onready var experience3 : LineEdit = $Experiences/Experience3/Experience3
+@onready var experience4 : LineEdit = $Experiences/Experience4/Experience4
+@onready var experience5 : LineEdit = $Experiences/Experience5/Experience5
 
 @onready var health_field = $MarkableStats/Health
 @onready var stress_field = $MarkableStats/Stress
@@ -83,6 +83,15 @@ func update_edit_fields() -> void:
 	presence_field.set_text(str(character.presence))
 	knowledge_field.set_text(str(character.knowledge))
 	pronouns_field.set_text(str(character.pronouns))
+	experience1.set_text(str(character.experiences[0]))
+	experience2.set_text(str(character.experiences[1]))
+	experience3.set_text(str(character.experiences[2]))
+	experience4.set_text(str(character.experiences[3]))
+	experience5.set_text(str(character.experiences[4]))
+
+#TODO: use this to display proficiency and damage treshold modifiers
+func update_dependent_stats() -> void:
+	pass
 
 
 func print_character_details() -> void:
@@ -98,7 +107,6 @@ func print_character_details() -> void:
 	print("knowledge: " + str(character.knowledge))
 	print(character.bio)
 
-#TODO: fix this, it is not showing and hiding dependding on level	
 func check_tier_achievements_threshold() -> void:
 	if character.level < 2:
 		experience3.hide()
@@ -223,3 +231,37 @@ func _on_pronouns_text_changed(new_text):
 func _on_pronouns_text_submitted(new_text):
 	character.pronouns = new_text
 	print(new_text)
+	
+func change_experience(i: int, s: String):
+	character.experiences[i] = s
+	print(character.experiences[i])
+
+func _on_experience_1_text_changed(new_text):
+	change_experience(1, new_text)
+
+func _on_experience_1_text_submitted(new_text):
+	change_experience(1, new_text)
+
+func _on_experience_2_text_changed(new_text):
+	change_experience(2, new_text)
+
+func _on_experience_2_text_submitted(new_text):
+	change_experience(2, new_text)
+
+func _on_experience_3_text_changed(new_text):
+	change_experience(3, new_text)
+
+func _on_experience_3_text_submitted(new_text):
+	change_experience(3, new_text)
+
+func _on_experience_4_text_changed(new_text):
+	change_experience(4, new_text)
+
+func _on_experience_4_text_submitted(new_text):
+	change_experience(4, new_text)
+
+func _on_experience_5_text_changed(new_text):
+	change_experience(5, new_text)
+
+func _on_experience_5_text_submitted(new_text):
+	change_experience(5, new_text)

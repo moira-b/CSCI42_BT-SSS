@@ -527,33 +527,36 @@ text = "Experiences"
 [node name="Experience1" type="HBoxContainer" parent="Experiences" unique_id=1280858404]
 layout_mode = 2
 
-[node name="LineEdit" type="LineEdit" parent="Experiences/Experience1" unique_id=1020765395]
+[node name="Experience1" type="LineEdit" parent="Experiences/Experience1" unique_id=1020765395]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 
 [node name="Experience2" type="HBoxContainer" parent="Experiences" unique_id=281734232]
 layout_mode = 2
 
-[node name="LineEdit" type="LineEdit" parent="Experiences/Experience2" unique_id=1768669913]
+[node name="Experience2" type="LineEdit" parent="Experiences/Experience2" unique_id=1768669913]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 
 [node name="Experience3" type="HBoxContainer" parent="Experiences" unique_id=517739238]
 layout_mode = 2
 
-[node name="LineEdit" type="LineEdit" parent="Experiences/Experience3" unique_id=321112575]
+[node name="Experience3" type="LineEdit" parent="Experiences/Experience3" unique_id=321112575]
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 
 [node name="Experience4" type="HBoxContainer" parent="Experiences" unique_id=1618166217]
 layout_mode = 2
 
-[node name="LineEdit" type="LineEdit" parent="Experiences/Experience4" unique_id=57808382]
+[node name="Experience4" type="LineEdit" parent="Experiences/Experience4" unique_id=57808382]
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 
 [node name="Experience5" type="HBoxContainer" parent="Experiences" unique_id=1984229138]
 layout_mode = 2
 
-[node name="LineEdit" type="LineEdit" parent="Experiences/Experience5" unique_id=1875908754]
+[node name="Experience5" type="LineEdit" parent="Experiences/Experience5" unique_id=1875908754]
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 
 [node name="Level" type="HBoxContainer" parent="." unique_id=730789895]
@@ -608,3 +611,13 @@ text = "-"
 [connection signal="text_submitted" from="TraitModifiers/Prescence/LineEdit" to="." method="_on_presence_text_submitted"]
 [connection signal="text_submitted" from="TraitModifiers/Knowledge/LineEdit" to="." method="_on_knowledge_text_submitted"]
 [connection signal="text_changed" from="Bio/BioEdit" to="." method="_on_bio_text_changed"]
+[connection signal="text_changed" from="Experiences/Experience1/Experience1" to="." method="_on_experience_1_text_changed"]
+[connection signal="text_submitted" from="Experiences/Experience1/Experience1" to="." method="_on_experience_1_text_submitted"]
+[connection signal="text_changed" from="Experiences/Experience2/Experience2" to="." method="_on_experience_2_text_changed"]
+[connection signal="text_submitted" from="Experiences/Experience2/Experience2" to="." method="_on_experience_2_text_submitted"]
+[connection signal="text_changed" from="Experiences/Experience3/Experience3" to="." method="_on_experience_3_text_changed"]
+[connection signal="text_submitted" from="Experiences/Experience3/Experience3" to="." method="_on_experience_3_text_submitted"]
+[connection signal="text_changed" from="Experiences/Experience4/Experience4" to="." method="_on_experience_4_text_changed"]
+[connection signal="text_submitted" from="Experiences/Experience4/Experience4" to="." method="_on_experience_4_text_submitted"]
+[connection signal="text_changed" from="Experiences/Experience5/Experience5" to="." method="_on_experience_5_text_changed"]
+[connection signal="text_submitted" from="Experiences/Experience5/Experience5" to="." method="_on_experience_5_text_submitted"]

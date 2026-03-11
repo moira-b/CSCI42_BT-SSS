@@ -14,7 +14,7 @@ extends Node
 @export var instinct: int
 @export var presence: int
 @export var knowledge: int
-@export var proficiency: int
+@export var proficiency_modifier: int
 @export var max_hp: int
 @export var current_hp: int
 @export var max_stress: int
@@ -115,3 +115,9 @@ func set_level(value: int) -> bool:
 		print("Cannot set level counter to be greater than max level.")
 	
 	return false
+
+func set_proficiency_modifier() -> void:
+	proficiency_modifier = 0
+	if level > 1: proficiency_modifier = 1
+	if level > 4: proficiency_modifier = 2
+	if level > 7: proficiency_modifier = 3
