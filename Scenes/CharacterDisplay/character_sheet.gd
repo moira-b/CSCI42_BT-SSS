@@ -64,7 +64,7 @@ func _process(_delta: float) -> void:
 	if(updated==false and character.character_name!=""):
 		updated=true
 		update_edit_fields()
-		check_tier_achievements_threshold()
+	check_tier_achievements_threshold()
 		
 
 func update_markable_fields() -> void:
