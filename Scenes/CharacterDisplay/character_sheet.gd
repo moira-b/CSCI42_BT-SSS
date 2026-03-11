@@ -11,7 +11,6 @@ extends Control
 @onready var short_rest: Button = $RestButtons/ShortRest
 @onready var long_rest: Button = $RestButtons/LongRest
 @onready var rest_window: Window = $RestButtons/RestWindow
-@onready var project_action: CheckButton = $RestButtons/RestWindow/RestUI/RestActions/Project
 
 
 var updated = false
@@ -126,7 +125,7 @@ func _on_knowledge_text_submitted(new_text: String) -> void:
 
 
 func _on_short_rest_pressed() -> void:
-	project_action.visible = false
+	rest_window.disable_Project()
 	if shortRestCounter < 3:
 		long_rest.disabled = true
 		shortRestCounter += 1
@@ -135,7 +134,7 @@ func _on_short_rest_pressed() -> void:
 
 func _on_long_rest_pressed() -> void:
 	short_rest.disabled = true
-	project_action.visible = true
+	rest_window.enable_Project()
 	shortRestCounter = 0
 	rest_window.visible = true
 

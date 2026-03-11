@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dhouly0p8fe4p"]
 
 [ext_resource type="Script" uid="uid://cmt4mu51iv5vw" path="res://Scenes/CharacterDisplay/character_sheet.gd" id="1_dg7yu"]
+[ext_resource type="Script" uid="uid://dfs5rt0xu3vuj" path="res://Scenes/CharacterDisplay/rest.gd" id="2_5rpyy"]
 
 [sub_resource type="GDScript" id="GDScript_dg7yu"]
 script/source = "extends LineEdit
@@ -238,6 +239,7 @@ title = "Rest Actions"
 initial_position = 1
 size = Vector2i(500, 400)
 visible = false
+script = ExtResource("2_5rpyy")
 
 [node name="RestUI" type="Control" parent="RestButtons/RestWindow" unique_id=165973256]
 custom_minimum_size = Vector2(500, 400)
@@ -326,3 +328,9 @@ text = "Confirm"
 [connection signal="pressed" from="RestButtons/ShortRest" to="." method="_on_short_rest_pressed"]
 [connection signal="pressed" from="RestButtons/LongRest" to="." method="_on_long_rest_pressed"]
 [connection signal="close_requested" from="RestButtons/RestWindow" to="." method="_on_rest_window_close_requested"]
+[connection signal="toggled" from="RestButtons/RestWindow/RestUI/RestActions/TendWounds" to="RestButtons/RestWindow" method="_on_tend_wounds_toggled"]
+[connection signal="toggled" from="RestButtons/RestWindow/RestUI/RestActions/ClearStress" to="RestButtons/RestWindow" method="_on_clear_stress_toggled"]
+[connection signal="toggled" from="RestButtons/RestWindow/RestUI/RestActions/RepairArmor" to="RestButtons/RestWindow" method="_on_repair_armor_toggled"]
+[connection signal="toggled" from="RestButtons/RestWindow/RestUI/RestActions/Prepare" to="RestButtons/RestWindow" method="_on_prepare_toggled"]
+[connection signal="toggled" from="RestButtons/RestWindow/RestUI/RestActions/Project" to="RestButtons/RestWindow" method="_on_project_toggled"]
+[connection signal="pressed" from="RestButtons/RestWindow/RestUI/ConfirmButton" to="RestButtons/RestWindow" method="_on_confirm_button_pressed"]
