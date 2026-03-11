@@ -57,6 +57,7 @@ func _on_swap_button_pressed() -> void:
 	swap()
 	
 func swap():
+	character.mark_stress($DisplayedCard/DomainCard.recall_cost)
 	var selected_active_name = selected.card_name
 	var selected_vaulted_name = $DisplayedCard/DomainCard.card_name
 	$DisplayedCard/DomainCard.change_card(selected_active_name)

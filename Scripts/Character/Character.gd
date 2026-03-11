@@ -52,10 +52,15 @@ func set_current_health(value: int) -> bool:
 	return false
 
 func set_maximum_stress() -> void:
-	self.max_stress = 12 # PLACEHOLDER
+	self.max_stress = 6 # PLACEHOLDER
 	# TODO: set maximum health based on character creation options
 	# (i.e. consider chosen character features)
-
+	
+func mark_stress(stress_taken: int):
+	var new_stress= current_stress+stress_taken
+	if( not set_current_stress(new_stress)):
+		set_current_health(current_hp-(new_stress-current_stress))
+		
 func set_current_stress(value: int) -> bool:
 	if(0 <= value && value <= self.max_stress):
 		current_stress = value
