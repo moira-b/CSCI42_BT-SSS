@@ -1,5 +1,5 @@
 class_name Card
-extends Control
+extends Node
 
 @export var card_name: String
 var description: String

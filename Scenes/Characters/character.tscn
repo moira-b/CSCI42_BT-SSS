@@ -16,3 +16,7 @@ visible = false
 [node name="DomainCard" parent="VaultedDomainCards" unique_id=1634826437 instance=ExtResource("2_eu1pv")]
 visible = false
 card_name = "Unleash Chaos"
+
+[node name="DomainCard2" parent="VaultedDomainCards" unique_id=1612279721 instance=ExtResource("2_eu1pv")]
+visible = false
+card_name = "Wall Walk"

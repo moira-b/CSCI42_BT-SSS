@@ -10,12 +10,11 @@ size = Vector2(250, 350)
 
 [node name="DomainCard" type="Control" unique_id=1871884780]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_right = 0.21900001
+anchor_bottom = 0.54300004
 offset_top = 1.0
-offset_right = -900.0
-offset_bottom = -296.0
+offset_right = -0.28800964
+offset_bottom = 0.13598633
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_yvsxo")

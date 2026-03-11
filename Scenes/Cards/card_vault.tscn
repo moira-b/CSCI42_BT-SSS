@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dfbxwl184hc6o"]
 
 [ext_resource type="Script" uid="uid://d1jdm4hdlps4l" path="res://Scripts/Cards/card_vault.gd" id="1_7vdci"]
+[ext_resource type="PackedScene" uid="uid://cknxpivnpwbxd" path="res://Scenes/Cards/domain_card_base.tscn" id="3_n8krj"]
 
 [node name="CardVault" type="Control" unique_id=1159311945]
 layout_mode = 3
@@ -18,4 +19,63 @@ offset_top = 600.0
 offset_right = 48.83908
 offset_bottom = 640.0
 
+[node name="SwapButtons" type="Node" parent="." unique_id=1510631232]
+
+[node name="Swap1" type="Button" parent="SwapButtons" unique_id=254744388]
+offset_left = 24.0
+offset_top = 37.0
+offset_right = 42.0
+offset_bottom = 68.0
+disabled = true
+text = "1"
+
+[node name="Swap2" type="Button" parent="SwapButtons" unique_id=193126164]
+offset_left = 56.0
+offset_top = 37.0
+offset_right = 74.0
+offset_bottom = 68.0
+disabled = true
+text = "2"
+
+[node name="Swap3" type="Button" parent="SwapButtons" unique_id=2041744059]
+offset_left = 90.0
+offset_top = 36.0
+offset_right = 108.0
+offset_bottom = 67.0
+disabled = true
+text = "3"
+
+[node name="Swap4" type="Button" parent="SwapButtons" unique_id=1202364094]
+offset_left = 126.0
+offset_top = 34.0
+offset_right = 144.0
+offset_bottom = 65.0
+disabled = true
+text = "4"
+
+[node name="Swap5" type="Button" parent="SwapButtons" unique_id=126405947]
+offset_left = 153.0
+offset_top = 31.0
+offset_right = 171.0
+offset_bottom = 62.0
+disabled = true
+text = "5"
+
+[node name="Vault" type="ItemList" parent="." unique_id=1421851333]
+layout_mode = 0
+offset_left = 68.0
+offset_top = 319.0
+offset_right = 592.0
+offset_bottom = 596.0
+
+[node name="DisplayedCard" type="Marker2D" parent="." unique_id=492823156]
+position = Vector2(949, 400)
+
+[node name="DomainCard" parent="DisplayedCard" unique_id=1871884780 instance=ExtResource("3_n8krj")]
+offset_left = -124.0
+offset_top = -176.0
+offset_right = 127.0
+offset_bottom = 174.0
+
 [connection signal="pressed" from="SheetButton" to="." method="_on_sheet_button_pressed"]
+[connection signal="item_selected" from="Vault" to="." method="_on_vault_item_selected"]

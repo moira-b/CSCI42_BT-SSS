@@ -11,6 +11,13 @@
 		"type":"Spell",
 		"domain":"Arcana",
 		"recall_cost":1,
-		"description":"You have a deeply personal trinket that can be infused with protective magic and held as a ward by you or an ally. Describe what it is and why it’s important to you. The ward’s holder can spend a Hope to reduce incoming damage by 1d8.\n If the Ward Die result is 8, the ward’s power ends after it reduces damage this turn. It can be recharged for free on your next rest."
+		"description":"At the beginning of a session, place a number of tokens equal to your Spellcast trait on this card.\nMake a Spellcast Roll against a target within Far range and spend any number of tokens to channel raw energy from within yourself to unleash against them. On a success, roll a number of d10s equal to the tokens you spent and deal that much magic damage to the target. Mark a Stress to replenish this card with tokens (up to your Spellcast trait).\nAt the end of each session, clear all unspent tokens."
+	},
+	"Wall Walk":{
+		"level": 1,
+		"type":"Spell",
+		"domain":"Arcana",
+		"recall_cost":1,
+		"description":"Spend a Hope to allow a creature you can touch to climb on walls and ceilings as easily as walking on the ground. This lasts until the end of the scene or you cast Wall Walk again."
 	}
 }
