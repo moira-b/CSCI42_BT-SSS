@@ -4,6 +4,7 @@ var character: Character
 var sheet_scene: PackedScene = load("res://Scenes/CharacterDisplay/character_sheet.tscn")
 @onready var vault = $Vault
 @onready var displayed_card = $DisplayedCard
+@onready var active_cards = $ActiveCards
 
 func enter():
 	character= $Character
@@ -11,9 +12,9 @@ func enter():
 	
 func display_cards():
 	print("active")
-	var swap_buttons = $SwapButtons
 	for card in character.get_child(0).get_children() :
-		swap_buttons.get_child(card.get_index()).disabled=false	
+		active_cards.get_child(card.get_index()).get_child(0).visible=true
+		active_cards.get_child(card.get_index()).get_child(0).change_card(card.card_name)
 		print(card.card_name)
 		
 	print("vaulted")
@@ -31,6 +32,6 @@ func _on_sheet_button_pressed() -> void:
 
 
 func _on_vault_item_selected(index: int) -> void:
-	displayed_card.get_child(0).card_name=character.get_child(1).get_child(index).card_name
-	displayed_card.get_child(0).set_details()
-	displayed_card.get_child(0).display_details()
+	displayed_card.get_child(0).visible=true
+	displayed_card.get_child(0).change_card(character.get_child(1).get_child(index).card_name)
+	

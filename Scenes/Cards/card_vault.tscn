@@ -5,9 +5,9 @@
 
 [node name="CardVault" type="Control" unique_id=1159311945]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_right = 1.125
+anchor_bottom = 1.136
+offset_bottom = -0.12805176
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7vdci")
@@ -19,59 +19,72 @@ offset_top = 600.0
 offset_right = 48.83908
 offset_bottom = 640.0
 
-[node name="SwapButtons" type="Node" parent="." unique_id=1510631232]
-
-[node name="Swap1" type="Button" parent="SwapButtons" unique_id=254744388]
-offset_left = 24.0
-offset_top = 37.0
-offset_right = 42.0
-offset_bottom = 68.0
-disabled = true
-text = "1"
-
-[node name="Swap2" type="Button" parent="SwapButtons" unique_id=193126164]
-offset_left = 56.0
-offset_top = 37.0
-offset_right = 74.0
-offset_bottom = 68.0
-disabled = true
-text = "2"
-
-[node name="Swap3" type="Button" parent="SwapButtons" unique_id=2041744059]
-offset_left = 90.0
-offset_top = 36.0
-offset_right = 108.0
-offset_bottom = 67.0
-disabled = true
-text = "3"
-
-[node name="Swap4" type="Button" parent="SwapButtons" unique_id=1202364094]
-offset_left = 126.0
-offset_top = 34.0
-offset_right = 144.0
-offset_bottom = 65.0
-disabled = true
-text = "4"
-
-[node name="Swap5" type="Button" parent="SwapButtons" unique_id=126405947]
-offset_left = 153.0
-offset_top = 31.0
-offset_right = 171.0
-offset_bottom = 62.0
-disabled = true
-text = "5"
-
 [node name="Vault" type="ItemList" parent="." unique_id=1421851333]
 layout_mode = 0
-offset_left = 68.0
-offset_top = 319.0
-offset_right = 592.0
-offset_bottom = 596.0
+offset_left = 76.0
+offset_top = 399.0
+offset_right = 783.0
+offset_bottom = 638.0
 
 [node name="DisplayedCard" type="Marker2D" parent="." unique_id=492823156]
-position = Vector2(949, 400)
+position = Vector2(1064, 552)
 
 [node name="DomainCard" parent="DisplayedCard" unique_id=1871884780 instance=ExtResource("3_n8krj")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -125.0
+offset_top = -176.0
+offset_right = 126.0
+offset_bottom = 174.0
+
+[node name="ActiveCards" type="Node" parent="." unique_id=275394708]
+
+[node name="Active1" type="Marker2D" parent="ActiveCards" unique_id=1190472425]
+position = Vector2(128, 192)
+
+[node name="DomainCard" parent="ActiveCards/Active1" unique_id=1517906148 instance=ExtResource("3_n8krj")]
+visible = false
+offset_left = -124.0
+offset_top = -176.0
+offset_right = 127.0
+offset_bottom = 174.0
+
+[node name="Active2" type="Marker2D" parent="ActiveCards" unique_id=1868711514]
+position = Vector2(384, 192)
+
+[node name="DomainCard" parent="ActiveCards/Active2" unique_id=1673304716 instance=ExtResource("3_n8krj")]
+visible = false
+offset_left = -124.0
+offset_top = -176.0
+offset_right = 127.0
+offset_bottom = 174.0
+
+[node name="Active3" type="Marker2D" parent="ActiveCards" unique_id=352820160]
+position = Vector2(640, 192)
+
+[node name="DomainCard" parent="ActiveCards/Active3" unique_id=1753074884 instance=ExtResource("3_n8krj")]
+visible = false
+offset_left = -124.0
+offset_top = -176.0
+offset_right = 127.0
+offset_bottom = 174.0
+
+[node name="Active4" type="Marker2D" parent="ActiveCards" unique_id=250561029]
+position = Vector2(896, 192)
+
+[node name="DomainCard" parent="ActiveCards/Active4" unique_id=97961481 instance=ExtResource("3_n8krj")]
+visible = false
+offset_left = -124.0
+offset_top = -176.0
+offset_right = 127.0
+offset_bottom = 174.0
+
+[node name="Active5" type="Marker2D" parent="ActiveCards" unique_id=181080250]
+position = Vector2(1152, 192)
+
+[node name="DomainCard" parent="ActiveCards/Active5" unique_id=1205141949 instance=ExtResource("3_n8krj")]
+visible = false
 offset_left = -124.0
 offset_top = -176.0
 offset_right = 127.0

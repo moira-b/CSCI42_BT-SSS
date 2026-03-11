@@ -25,3 +25,8 @@ func display_details() -> void:
 	domain_label.text = domain
 	recall_cost_label.text = str(recall_cost)
 	type_label.text = type
+	
+func change_card(name: String):
+	card_name = name
+	set_details()
+	display_details()
