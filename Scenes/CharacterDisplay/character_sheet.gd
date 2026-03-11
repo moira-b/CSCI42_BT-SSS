@@ -21,6 +21,7 @@ extends Control
 
 var updated = false
 var character: Character
+var card_scene: PackedScene = load("res://Scenes/Cards/card_vault.tscn")
 
 func enter() -> void:
 	character = $Character
@@ -193,3 +194,11 @@ func _on_pronouns_text_changed(new_text):
 func _on_pronouns_text_submitted(new_text):
 	character.pronouns = new_text
 	print(new_text)
+
+
+func _on_cards_button_pressed() -> void:
+	var new_scene = card_scene.instantiate()
+	character.reparent(new_scene)
+	self.get_parent().add_child(new_scene)
+	new_scene.enter()
+	self.queue_free()

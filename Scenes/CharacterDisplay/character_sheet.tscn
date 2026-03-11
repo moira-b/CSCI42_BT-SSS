@@ -507,6 +507,13 @@ text = "Bio"
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 
+[node name="CardsButton" type="Button" parent="." unique_id=2032869381]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 600.0
+offset_right = 48.83908
+offset_bottom = 640.0
+
 [connection signal="text_changed" from="Header/NamePronouns/NamePanelContainer/NameC/NameEdit" to="." method="_on_name_edit_text_changed"]
 [connection signal="text_submitted" from="Header/NamePronouns/NamePanelContainer/NameC/NameEdit" to="." method="_on_name_edit_text_submitted"]
 [connection signal="text_changed" from="Header/NamePronouns/PronounsPanelContainer/Pronouns/Pronouns" to="." method="_on_pronouns_text_changed"]
@@ -518,3 +525,4 @@ layout_mode = 2
 [connection signal="text_submitted" from="TraitModifiers/Prescence/LineEdit" to="." method="_on_presence_text_submitted"]
 [connection signal="text_submitted" from="TraitModifiers/Knowledge/LineEdit" to="." method="_on_knowledge_text_submitted"]
 [connection signal="text_changed" from="Bio/BioEdit" to="." method="_on_bio_text_changed"]
+[connection signal="pressed" from="CardsButton" to="." method="_on_cards_button_pressed"]

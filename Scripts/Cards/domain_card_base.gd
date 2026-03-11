@@ -14,10 +14,10 @@ var recall_cost: int
 
 func set_details() -> void:
 	super.set_details()
-	level = int(selected_card.get("level"))
+	level = selected_card.get("level")
 	type = selected_card.get("type")
 	domain = selected_card.get("domain")
-	recall_cost = int(selected_card.get("recall_cost"))
+	recall_cost = selected_card.get("recall_cost")
 
 func display_details() -> void:
 	super.display_details()
