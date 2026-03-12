@@ -45,7 +45,7 @@ func _on_sheet_button_pressed() -> void:
 func _on_vault_item_selected(index: int) -> void:
 	displayed_card.get_child(0).visible=true
 	displayed_card.get_child(0).change_card(character.get_child(1).get_child(index).card_name)
-	
+	selected_vaulted_index = index
 
 
 func _on_domain_card_selected(card: DomainCard) -> void:

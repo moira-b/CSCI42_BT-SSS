@@ -50,22 +50,27 @@ offset_bottom = 380.0
 scale = Vector2(0.8940905, 0.8940905)
 
 [node name="DomainCard" parent="ActiveCards" unique_id=1517906148 instance=ExtResource("3_n8krj")]
+visible = false
 custom_minimum_size = Vector2(250, 350)
 layout_mode = 2
 
 [node name="DomainCard2" parent="ActiveCards" unique_id=1197342788 instance=ExtResource("3_n8krj")]
+visible = false
 custom_minimum_size = Vector2(250, 350)
 layout_mode = 2
 
 [node name="DomainCard3" parent="ActiveCards" unique_id=2010156359 instance=ExtResource("3_n8krj")]
+visible = false
 custom_minimum_size = Vector2(250, 350)
 layout_mode = 2
 
 [node name="DomainCard4" parent="ActiveCards" unique_id=547194531 instance=ExtResource("3_n8krj")]
+visible = false
 custom_minimum_size = Vector2(250, 350)
 layout_mode = 2
 
 [node name="DomainCard5" parent="ActiveCards" unique_id=1363607818 instance=ExtResource("3_n8krj")]
+visible = false
 custom_minimum_size = Vector2(250, 350)
 layout_mode = 2
 
