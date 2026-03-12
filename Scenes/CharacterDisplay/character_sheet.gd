@@ -19,7 +19,7 @@ extends Control
 @onready var stress_field = $MarkableStats/Stress
 @onready var armor_field = $MarkableStats/Armor
 @onready var hope_field = $MarkableStats/Hope
-@onready var level_field = $Header/Level/Level
+#@onready var level_field = $Header/Level/Level
 @onready var ancestry_field = $Header/HeaderInfo/CommnityAncestry/AncestryPanelContainer/Ancestry/ColorRect/Ancestry
 @onready var community_field = $Header/HeaderInfo/CommnityAncestry/PanelContainer/Community/ColorRect/Community
 @onready var class_field = $ClassSubclass/ClassRect/Class
@@ -33,6 +33,12 @@ extends Control
 @onready var dice_button: Button = $ActionButtons/DiceButtons/Dice
 @onready var fearhope_button: Button = $ActionButtons/DiceButtons/FHDice
 
+@onready var levelup_button: Button = $Header/Level/FieldContainer/PanelContainer/LevelUpButton
+@onready var levelup_confirmation_panel = $LevelUpConfirmation
+@onready var levelup_confirmation_button: Button = $LevelUpConfirmation/VBoxContainer/ConfirmButton
+@onready var levelup_cancel_button: Button = $LevelUpConfirmation/VBoxContainer/CancelButton
+@onready var level_field = $Header/Level/FieldContainer/MarginContainer/HSplitContainer/LevelDisplay
+
 var updated = false
 var shortRestCounter = 0
 var character: Character
@@ -41,6 +47,8 @@ func enter() -> void:
 	character = $Character
 	rest_window.get_character(character)
 	dice_roll_window.visible = false
+	fh_roll_window.visible = false
+	levelup_confirmation_panel.visible = false
 	update_edit_fields()
 	
 	character.set_maximum_health()
@@ -61,7 +69,7 @@ func enter() -> void:
 	class_field.set_text(character.character_class.name)
 	subclass_field.set_text(character.subclass.subclass_name)
 	community_field.set_text(character.community.community_name)
-
+	level_field.text = str(character.level)
 
 func _process(_delta: float) -> void:
 	if(updated==false and character.character_name!=""):
@@ -207,9 +215,10 @@ func _on_stat_increment_pressed(stat_name: String) -> void:
 	elif(stat_name=="Hope"):
 		if character.set_current_hope(character.current_hope+1):
 			hope_field.set_current_value(str(character.current_hope))
-	elif(stat_name=="Level"):
-		if character.set_level(character.level+1):
-			level_field.set_current_value(str(character.level))
+	# OLD CODE, can delete
+	#elif(stat_name=="Level"):
+		#if character.set_level(character.level+1):
+			#level_field.set_current_value(str(character.level))
 	
 func _on_stat_decrement_pressed(stat_name: String) -> void:
 	if(stat_name=="Health"):
@@ -224,9 +233,10 @@ func _on_stat_decrement_pressed(stat_name: String) -> void:
 	elif(stat_name=="Hope"):
 		if character.set_current_hope(character.current_hope-1):
 			hope_field.set_current_value(str(character.current_hope))
-	elif(stat_name=="Level"):
-		if character.set_level(character.level-1):
-			level_field.set_current_value(str(character.level))
+	# OLD CODE, can delete
+	#elif(stat_name=="Level"):
+		#if character.set_level(character.level-1):
+			#level_field.set_current_value(str(character.level))
 
 func _on_pronouns_text_changed(new_text):
 	character.pronouns = new_text
@@ -268,7 +278,6 @@ func _on_experience_5_text_changed(new_text):
 
 func _on_experience_5_text_submitted(new_text):
 	change_experience(5, new_text)
-
 
 func _on_short_rest_pressed() -> void:
 	rest_window.set_rest_Length("short")
@@ -312,6 +321,23 @@ func _on_confirm_button_pressed() -> void:
 	print(character.current_hp)
 	update_markable_fields()
 	
+func _on_levelup_button_pressed() -> void:
+	if character.level < 10:
+		#levelup_confirmation_panel.global_position = levelup_button.global_position
+		levelup_confirmation_button.pressed.connect(_on_levelup_confirm_pressed)
+		levelup_cancel_button.pressed.connect(_on_levelup_cancel_pressed)
+		levelup_confirmation_panel.visible = true
+
+func _on_levelup_confirm_pressed() -> void:
+	character.set_level(character.level + 1)
+	level_field.text = str(character.level)
+	levelup_confirmation_button.pressed.disconnect(_on_levelup_confirm_pressed)
+	levelup_cancel_button.pressed.disconnect(_on_levelup_cancel_pressed)
+	levelup_confirmation_panel.visible = false
+
+func _on_levelup_cancel_pressed() -> void:
+	levelup_confirmation_panel.visible = false
+
 func connect_signals() -> void:
 	health_field.stat_increment_pressed.connect(_on_stat_increment_pressed)
 	health_field.stat_decrement_pressed.connect(_on_stat_decrement_pressed)
@@ -321,8 +347,9 @@ func connect_signals() -> void:
 	armor_field.stat_decrement_pressed.connect(_on_stat_decrement_pressed)
 	hope_field.stat_increment_pressed.connect(_on_stat_increment_pressed)
 	hope_field.stat_decrement_pressed.connect(_on_stat_decrement_pressed)
-	level_field.stat_increment_pressed.connect(_on_stat_increment_pressed)
-	level_field.stat_decrement_pressed.connect(_on_stat_decrement_pressed)
+	# OLD CODE, can delete
+	#level_field.stat_increment_pressed.connect(_on_stat_increment_pressed)
+	#level_field.stat_decrement_pressed.connect(_on_stat_decrement_pressed)
 	
 	short_rest_button.pressed.connect(_on_short_rest_pressed)
 	long_rest_button.pressed.connect(_on_long_rest_pressed)
@@ -330,6 +357,8 @@ func connect_signals() -> void:
 	fearhope_button.pressed.connect(_on_fh_dice_button_pressed)
 	
 	rest_window.close_requested.connect(_on_rest_window_close_requested)
+
+	levelup_button.pressed.connect(_on_levelup_button_pressed)
 
 func disable_button_selection(b: bool) -> void:
 	short_rest_button.disabled = b
