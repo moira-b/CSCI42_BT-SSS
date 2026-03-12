@@ -5,7 +5,7 @@ signal stat_decrement_pressed(stat_name: String)
 
 var count: int
 const MAXIMUM: int = 99 # maximum rollable die
-const MINIMUM: int = 1 # minimum rollable die
+const MINIMUM: int = 0 # minimum rollable die
 @export var num_sides: int = 0
 @onready var value_label = $FieldContainer/Labels/FieldValue
 @onready var increment_button = $FieldContainer/Buttons/IncrementButton

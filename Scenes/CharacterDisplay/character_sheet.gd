@@ -1,3 +1,4 @@
+class_name Character_Sheet
 extends Control
 
 @onready var bio_edit = $"Bio/BioEdit"
@@ -61,6 +62,7 @@ var selected_advance: Array[Button] = []
 var updated = false
 var shortRestCounter = 0
 var character: Character
+var card_scene: PackedScene = load("res://Scenes/Cards/card_vault.tscn")
 
 func enter() -> void:
 	character = $Character
@@ -76,7 +78,6 @@ func enter() -> void:
 	character.set_current_stress(5)
 	character.set_maximum_armor_slots()
 	character.set_used_armor_slots(5)
-	character.set_maximum_hope()
 	character.set_current_hope(3)
 	character.set_level(1)
 	
@@ -333,9 +334,20 @@ func _on_dice_roll_window_close_requested() -> void:
 func _on_fh_roll_window_close_requested() -> void:
 	fh_roll_window.visible = false
 	disable_button_selection(false)
+	
+	# handle the FH result
+	if fh_roll_window.latest_outcome=="Hope":
+		character.set_current_hope(character.current_hope + 1)
+		hope_field.set_current_value(str(character.current_hope))
+	elif fh_roll_window.latest_outcome=="Crit":
+		character.set_current_hope(character.current_hope + 1)
+		hope_field.set_current_value(str(character.current_hope))
+		character.set_current_stress(character.current_stress - 1)
+		stress_field.set_current_value(str(character.current_stress))
 
 func _on_confirm_button_pressed() -> void:
 	rest_window.hide()
+	rest_window.set_buttons_down()
 	disable_button_selection(false)
 	print(character.current_hp)
 	update_markable_fields()
@@ -376,7 +388,9 @@ func connect_signals() -> void:
 	fearhope_button.pressed.connect(_on_fh_dice_button_pressed)
 	
 	rest_window.close_requested.connect(_on_rest_window_close_requested)
-
+	dice_roll_window.close_requested.connect(_on_dice_roll_window_close_requested)
+	fh_roll_window.close_requested.connect(_on_fh_roll_window_close_requested)
+	
 	levelup_button.pressed.connect(_on_levelup_button_pressed)
 
 func disable_button_selection(b: bool) -> void:
@@ -528,3 +542,11 @@ func _on_experience_5_advance_button_toggled(toggled_on: bool) -> void:
 			oldest.set_pressed_no_signal(false)
 	else:
 		selected_advance.erase(experience5_advance)
+
+
+func _on_cards_button_pressed() -> void:
+	var new_scene = card_scene.instantiate()
+	character.reparent(new_scene)
+	self.get_parent().add_child(new_scene)
+	new_scene.enter()
+	self.queue_free()

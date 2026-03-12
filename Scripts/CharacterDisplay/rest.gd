@@ -14,7 +14,14 @@ var character: Character
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	self.visible = false
-
+	
+	# connect signals
+	tend_wounds.toggled.connect(_on_tend_wounds_toggled)
+	clear_stress.toggled.connect(_on_clear_stress_toggled)
+	repair_armor.toggled.connect(_on_repair_armor_toggled)
+	prepare.toggled.connect(_on_prepare_toggled)
+	project.toggled.connect(_on_project_toggled)
+	confirm_button.pressed.connect(_on_confirm_button_pressed)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -142,4 +149,11 @@ func _on_confirm_button_pressed() -> void:
 				0, character.max_hope)
 			#if s == project:
 				#print("Worked on a project")
-			
+
+func set_buttons_down()  -> void:
+	tend_wounds.toggle_mode = false
+	clear_stress.toggle_mode = false
+	repair_armor.toggle_mode = false
+	prepare.toggle_mode = false
+	project.toggle_mode = false
+	

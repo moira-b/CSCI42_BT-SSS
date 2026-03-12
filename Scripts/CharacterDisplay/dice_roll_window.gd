@@ -8,7 +8,7 @@ extends Window
 var dice_array: Array
 
 func _ready() -> void:
-	self.visible = false
+	#self.visible = false
 	dice_array = dice.get_children()
 	
 func _on_roll_button_pressed() -> void:
@@ -19,7 +19,7 @@ func _on_roll_button_pressed() -> void:
 	
 	for dice_type in dice_array:
 		for i in range(dice_type.count):
-			roll = randi_range(0, dice_type.num_sides)
+			roll = randi_range(1, dice_type.num_sides)
 			results_array.append(roll)
 			sum += roll
 		#print("DEBUG: " + str(dice_type.count) + "d" + str(dice_type.num_sides))
