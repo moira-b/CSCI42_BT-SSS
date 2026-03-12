@@ -358,7 +358,9 @@ func connect_signals() -> void:
 	fearhope_button.pressed.connect(_on_fh_dice_button_pressed)
 	
 	rest_window.close_requested.connect(_on_rest_window_close_requested)
-
+	dice_roll_window.close_requested.connect(_on_dice_roll_window_close_requested)
+	fh_roll_window.close_requested.connect(_on_fh_roll_window_close_requested)
+	
 	levelup_button.pressed.connect(_on_levelup_button_pressed)
 
 func disable_button_selection(b: bool) -> void:
