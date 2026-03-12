@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dhouly0p8fe4p"]
 
 [ext_resource type="Script" uid="uid://cmt4mu51iv5vw" path="res://Scenes/CharacterDisplay/character_sheet.gd" id="1_dg7yu"]
-[ext_resource type="Script" uid="uid://dfs5rt0xu3vuj" path="res://Scenes/CharacterDisplay/rest.gd" id="2_5rpyy"]
+[ext_resource type="Script" uid="uid://dfs5rt0xu3vuj" path="res://Scripts/CharacterDisplay/rest.gd" id="2_5rpyy"]
 [ext_resource type="StyleBox" uid="uid://dic645d200g74" path="res://Resources/GUIStyles/character_sheet_stylebox.tres" id="2_c8oo5"]
 [ext_resource type="Script" uid="uid://dnjp24h6b6fc2" path="res://Scripts/CharacterDisplay/markable_stat.gd" id="4_qgeia"]
 
@@ -727,5 +727,5 @@ text = "Confirm"
 [connection signal="toggled" from="RestButtons/RestWindow/RestUI/RestActions/RepairArmor" to="RestButtons/RestWindow" method="_on_repair_armor_toggled"]
 [connection signal="toggled" from="RestButtons/RestWindow/RestUI/RestActions/Prepare" to="RestButtons/RestWindow" method="_on_prepare_toggled"]
 [connection signal="toggled" from="RestButtons/RestWindow/RestUI/RestActions/Project" to="RestButtons/RestWindow" method="_on_project_toggled"]
-[connection signal="pressed" from="RestButtons/RestWindow/RestUI/ConfirmButton" to="." method="_on_confirm_button_pressed"]
+[connection signal="pressed" from="RestButtons/RestWindow/RestUI/ConfirmButton" to="." method="_on_confirm_button_pressed" flags=3]
 [connection signal="pressed" from="RestButtons/RestWindow/RestUI/ConfirmButton" to="RestButtons/RestWindow" method="_on_confirm_button_pressed"]

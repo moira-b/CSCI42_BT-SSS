@@ -299,3 +299,5 @@ func _on_confirm_button_pressed() -> void:
 	rest_window.hide()
 	short_rest.disabled = false
 	long_rest.disabled = false
+	print(character.current_hp)
+	update_markable_fields()
