@@ -31,62 +31,41 @@ position = Vector2(1064, 552)
 
 [node name="DomainCard" parent="DisplayedCard" unique_id=1871884780 instance=ExtResource("3_n8krj")]
 visible = false
+anchors_preset = 0
 offset_left = -120.0
 offset_top = -176.0
 offset_right = 130.0
 offset_bottom = 176.0
+grow_horizontal = 1
+grow_vertical = 1
 
-[node name="ActiveCards" type="Node" parent="." unique_id=275394708]
+[node name="ActiveCards" type="HBoxContainer" parent="." unique_id=520518874]
+layout_mode = 0
 
-[node name="Active1" type="Marker2D" parent="ActiveCards" unique_id=1190472425]
-position = Vector2(128, 192)
-
-[node name="DomainCard" parent="ActiveCards/Active1" unique_id=1517906148 instance=ExtResource("3_n8krj")]
+[node name="DomainCard" parent="ActiveCards" unique_id=1517906148 instance=ExtResource("3_n8krj")]
 visible = false
-offset_left = -120.0
-offset_top = -176.0
-offset_right = 130.0
-offset_bottom = 176.0
+custom_minimum_size = Vector2(250, 350)
+layout_mode = 2
 
-[node name="Active2" type="Marker2D" parent="ActiveCards" unique_id=1868711514]
-position = Vector2(384, 192)
-
-[node name="DomainCard" parent="ActiveCards/Active2" unique_id=1197342788 instance=ExtResource("3_n8krj")]
+[node name="DomainCard2" parent="ActiveCards" unique_id=1197342788 instance=ExtResource("3_n8krj")]
 visible = false
-offset_left = -120.0
-offset_top = -176.0
-offset_right = 130.0
-offset_bottom = 176.0
+custom_minimum_size = Vector2(250, 350)
+layout_mode = 2
 
-[node name="Active3" type="Marker2D" parent="ActiveCards" unique_id=352820160]
-position = Vector2(640, 192)
-
-[node name="DomainCard" parent="ActiveCards/Active3" unique_id=2010156359 instance=ExtResource("3_n8krj")]
+[node name="DomainCard3" parent="ActiveCards" unique_id=2010156359 instance=ExtResource("3_n8krj")]
 visible = false
-offset_left = -120.0
-offset_top = -176.0
-offset_right = 130.0
-offset_bottom = 176.0
+custom_minimum_size = Vector2(250, 350)
+layout_mode = 2
 
-[node name="Active4" type="Marker2D" parent="ActiveCards" unique_id=250561029]
-position = Vector2(896, 192)
-
-[node name="DomainCard" parent="ActiveCards/Active4" unique_id=547194531 instance=ExtResource("3_n8krj")]
+[node name="DomainCard4" parent="ActiveCards" unique_id=547194531 instance=ExtResource("3_n8krj")]
 visible = false
-offset_left = -120.0
-offset_top = -176.0
-offset_right = 130.0
-offset_bottom = 176.0
+custom_minimum_size = Vector2(250, 350)
+layout_mode = 2
 
-[node name="Active5" type="Marker2D" parent="ActiveCards" unique_id=181080250]
-position = Vector2(1152, 192)
-
-[node name="DomainCard" parent="ActiveCards/Active5" unique_id=1363607818 instance=ExtResource("3_n8krj")]
+[node name="DomainCard5" parent="ActiveCards" unique_id=1363607818 instance=ExtResource("3_n8krj")]
 visible = false
-offset_left = -120.0
-offset_top = -176.0
-offset_right = 130.0
-offset_bottom = 176.0
+custom_minimum_size = Vector2(250, 350)
+layout_mode = 2
 
 [node name="SwapButton" type="Button" parent="." unique_id=161227211]
 layout_mode = 0
@@ -99,9 +78,9 @@ text = "Swap"
 
 [connection signal="pressed" from="SheetButton" to="." method="_on_sheet_button_pressed"]
 [connection signal="item_selected" from="Vault" to="." method="_on_vault_item_selected"]
-[connection signal="selected" from="ActiveCards/Active1/DomainCard" to="." method="_on_domain_card_selected"]
-[connection signal="selected" from="ActiveCards/Active2/DomainCard" to="." method="_on_domain_card_selected"]
-[connection signal="selected" from="ActiveCards/Active3/DomainCard" to="." method="_on_domain_card_selected"]
-[connection signal="selected" from="ActiveCards/Active4/DomainCard" to="." method="_on_domain_card_selected"]
-[connection signal="selected" from="ActiveCards/Active5/DomainCard" to="." method="_on_domain_card_selected"]
+[connection signal="selected" from="ActiveCards/DomainCard" to="." method="_on_domain_card_selected"]
+[connection signal="selected" from="ActiveCards/DomainCard2" to="." method="_on_domain_card_selected"]
+[connection signal="selected" from="ActiveCards/DomainCard3" to="." method="_on_domain_card_selected"]
+[connection signal="selected" from="ActiveCards/DomainCard4" to="." method="_on_domain_card_selected"]
+[connection signal="selected" from="ActiveCards/DomainCard5" to="." method="_on_domain_card_selected"]
 [connection signal="pressed" from="SwapButton" to="." method="_on_swap_button_pressed"]

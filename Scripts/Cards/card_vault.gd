@@ -24,8 +24,8 @@ func _process(_delta):
 func display_cards():
 	print("active")
 	for card in character.get_child(0).get_children() :
-		active_cards.get_child(card.get_index()).get_child(0).visible=true
-		active_cards.get_child(card.get_index()).get_child(0).change_card(card.card_name)
+		active_cards.get_child(card.get_index()).visible=true
+		active_cards.get_child(card.get_index()).change_card(card.card_name)
 		print(card.card_name)
 		
 	print("vaulted")
@@ -51,7 +51,7 @@ func _on_vault_item_selected(index: int) -> void:
 func _on_domain_card_selected(card: DomainCard) -> void:
 	card_selected = true
 	selected = card
-	selected_active_index = selected.get_parent().get_index()
+	selected_active_index = selected.get_index()
 
 func _on_swap_button_pressed() -> void:
 	swap()
@@ -63,7 +63,7 @@ func swap():
 	$DisplayedCard/DomainCard.change_card(selected_active_name)
 	character.get_child(1).get_child(selected_vaulted_index).change_card(selected_active_name)
 	
-	active_cards.get_child(selected_active_index).get_child(0).change_card(selected_vaulted_name)
+	active_cards.get_child(selected_active_index).change_card(selected_vaulted_name)
 	character.get_child(0).get_child(selected_active_index).change_card(selected_vaulted_name)
 	
 	vault.set_item_text(selected_vaulted_index, selected_active_name)
