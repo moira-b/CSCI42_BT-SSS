@@ -14,7 +14,8 @@ const MINIMUM: int = 0 # minimum rollable die
 func _ready():
 	increment_button.pressed.connect(_on_increment_button_pressed)
 	decrement_button.pressed.connect(_on_decrement_button_pressed)
-	value_label.text_submitted.connect(_on_value_edited)
+	value_label.text_submitted.connect(_on_value_submitted)
+	value_label.text_changed.connect(_on_value_changed)
 	
 func _on_increment_button_pressed() -> void:
 	count = clamp(int(value_label.text)+1, MINIMUM, MAXIMUM)
@@ -26,7 +27,7 @@ func _on_decrement_button_pressed() -> void:
 	value_label.text = str(count)
 	#print("DEBUG: Pressed decrement button of the " + self.name + " die.")
 	
-func _on_value_edited(new: String) -> void:
+func _on_value_submitted(new: String) -> void:
 	var current_value: int = int(value_label.text)
 	if new.is_empty():
 		count = 0
@@ -35,3 +36,14 @@ func _on_value_edited(new: String) -> void:
 		value_label.text = str(count)
 	else:
 		value_label.text = str(count)
+
+func _on_value_changed(new: String) -> void:
+	if new.is_empty():
+		count = 0
+	elif new.is_valid_int():
+		count = clamp(int(new), MINIMUM, MAXIMUM)
+		#value_label.text = str(count)
+	else:
+		value_label.text = str(count)
+	
+	print(new)
