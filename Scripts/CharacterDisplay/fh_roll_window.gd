@@ -11,6 +11,8 @@ const MAXIMUM: int = 12
 var fear_result: int = 0
 var hope_result: int = 0
 
+var latest_outcome = ""
+
 func _ready() -> void:
 	self.visible = false
 	fear_result = randi_range(MINIMUM, MAXIMUM)
@@ -26,12 +28,15 @@ func interpret_rolls() -> void:
 	if hope_result > fear_result:
 		interpretation_display.text = "Roll with Hope"
 		consequences_display.text = "You gain 1 Hope."
+		latest_outcome = "Hope"
 	elif hope_result==fear_result:
 		interpretation_display.text = "Critical Success!"
 		consequences_display.text = "You gain 1 Hope and lose 1 Stress."
+		latest_outcome = "Crit"
 	else:
 		interpretation_display.text = "Roll with Fear"
-		consequences_display.text = "The GM gain 1 Fear."
+		consequences_display.text = "The GM gains 1 Fear."
+		latest_outcome = "Fear"
 	sum_display.text = "Sum: " + str(hope_result + fear_result)
 		
 func _on_roll_again_button_pressed() -> void:

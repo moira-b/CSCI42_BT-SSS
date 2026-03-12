@@ -795,4 +795,5 @@ offset_bottom = 640.0
 [connection signal="text_submitted" from="Experiences/Experience5/Experience5" to="." method="_on_experience_5_text_submitted"]
 [connection signal="close_requested" from="ActionButtons/RestButtons/RestWindow" to="." method="_on_rest_window_close_requested"]
 [connection signal="pressed" from="ActionButtons/RestButtons/RestWindow/RestUI/ConfirmButton" to="." method="_on_confirm_button_pressed"]
+[connection signal="close_requested" from="ActionButtons/DiceButtons/DiceRollWindow" to="." method="_on_dice_roll_window_close_requested"]
 [connection signal="pressed" from="CardsButton" to="." method="_on_cards_button_pressed"]
