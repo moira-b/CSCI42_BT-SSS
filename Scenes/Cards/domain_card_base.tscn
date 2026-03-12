@@ -5,12 +5,17 @@
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_a0nth"]
 size = Vector2(250, 175)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yvsxo"]
+bg_color = Color(1.0781288e-05, 0.93776095, 0.93776095, 0.23529412)
+
 [node name="DomainCard" type="Control" unique_id=1871884780]
 layout_mode = 3
 offset_right = 250.0
 offset_bottom = 350.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_force_pass_scroll_events = false
+mouse_default_cursor_shape = 2
 script = ExtResource("1_yvsxo")
 card_name = "Rune Ward"
 
@@ -121,4 +126,16 @@ theme_override_font_sizes/font_size = 10
 text = "Lorem ipsum dolor sit amet, consecteur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 autowrap_mode = 2
 
+[node name="HighlightPanel" type="Panel" parent="." unique_id=825172429]
+visible = false
+layout_mode = 0
+offset_right = 250.0
+offset_bottom = 350.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yvsxo")
+
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="HighlightPanel" to="." method="_on_highlight_panel_mouse_entered"]
+[connection signal="mouse_exited" from="HighlightPanel" to="." method="_on_highlight_panel_mouse_exited"]
