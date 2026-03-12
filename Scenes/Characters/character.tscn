@@ -1,6 +1,22 @@
 [gd_scene format=3 uid="uid://c76krhgbjyotx"]
 
 [ext_resource type="Script" uid="uid://ccw5nekfobwy1" path="res://Scripts/Character/Character.gd" id="1_vu0vm"]
+[ext_resource type="PackedScene" uid="uid://cknxpivnpwbxd" path="res://Scenes/Cards/domain_card_base.tscn" id="2_eu1pv"]
 
 [node name="Character" type="Node" unique_id=1371470097]
 script = ExtResource("1_vu0vm")
+
+[node name="ActiveDomainCards" type="Node" parent="." unique_id=26493145]
+
+[node name="DomainCard" parent="ActiveDomainCards" unique_id=1871884780 instance=ExtResource("2_eu1pv")]
+visible = false
+
+[node name="VaultedDomainCards" type="Node" parent="." unique_id=945752835]
+
+[node name="DomainCard" parent="VaultedDomainCards" unique_id=1634826437 instance=ExtResource("2_eu1pv")]
+visible = false
+card_name = "Unleash Chaos"
+
+[node name="DomainCard2" parent="VaultedDomainCards" unique_id=1612279721 instance=ExtResource("2_eu1pv")]
+visible = false
+card_name = "Wall Walk"
