@@ -33,7 +33,6 @@ scale = Vector2(0.7760908, 0.7760908)
 
 [node name="DomainCard" parent="DisplayedCard" unique_id=1871884780 instance=ExtResource("3_n8krj")]
 visible = false
-anchors_preset = 0
 offset_left = -120.0
 offset_top = -176.0
 offset_right = 130.0
@@ -43,11 +42,12 @@ grow_vertical = 1
 
 [node name="ActiveCards" type="HBoxContainer" parent="." unique_id=520518874]
 layout_mode = 0
-offset_left = 8.0
-offset_top = 30.0
-offset_right = 1277.8785
+offset_left = 4.0
+offset_top = 29.999998
+offset_right = 1278.0
 offset_bottom = 380.0
 scale = Vector2(0.8940905, 0.8940905)
+theme_override_constants/separation = 7
 
 [node name="DomainCard" parent="ActiveCards" unique_id=1517906148 instance=ExtResource("3_n8krj")]
 visible = false
