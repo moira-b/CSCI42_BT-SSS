@@ -3,11 +3,13 @@
 class_name Character
 extends Node
 
+const max_level: int = 10
+const max_hope: int = 6
+
 @export var bio: String
 @export var character_name: String
 @export var pronouns: String
 @export var level: int
-@export var max_level: int = 10
 @export var agility: int
 @export var strength: int
 @export var finesse: int
@@ -19,7 +21,6 @@ extends Node
 @export var current_hp: int
 @export var max_stress: int
 @export var current_stress: int
-@export var max_hope: int
 @export var current_hope: int
 @export var items: Array[String]
 @export var max_armor_slots: int
@@ -86,11 +87,6 @@ func set_used_armor_slots(value: int) -> bool:
 		print("Cannot set used armor slots to be greater than max armor slots.")
 	
 	return false
-
-func set_maximum_hope() -> void:
-	self.max_hope = 6 # ACTUAL DEFAULT
-	# TODO: set maximum health based on character creation options
-	# (i.e. consider chosen character features)
 	
 func set_current_hope(value: int) -> bool:
 	if(0 <= value && value <= self.max_hope):

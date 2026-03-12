@@ -43,7 +43,6 @@ func enter() -> void:
 	character.set_current_stress(5)
 	character.set_maximum_armor_slots()
 	character.set_used_armor_slots(5)
-	character.set_maximum_hope()
 	character.set_current_hope(3)
 	character.set_level(1)
 	
