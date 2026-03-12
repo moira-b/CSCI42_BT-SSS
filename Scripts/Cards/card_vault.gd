@@ -6,6 +6,8 @@ var sheet_scene: PackedScene = load("res://Scenes/CharacterDisplay/character_she
 @onready var displayed_card = $DisplayedCard
 @onready var active_cards = $ActiveCards
 @onready var swap_button = $SwapButton
+@onready var stress = $VBoxContainer/StressValue
+@onready var health = $VBoxContainer/HealthValue
 
 var card_selected: bool = false
 var selected: DomainCard
@@ -14,6 +16,8 @@ var selected_vaulted_index : int
 func enter():
 	character= $Character
 	display_cards()
+	stress.text = (str(character.current_stress) + "/" + str(character.max_stress))
+	health.text = (str(character.current_hp) + "/" + str(character.max_hp))  
 
 func _process(_delta):
 	if(card_selected and displayed_card.get_child(0).visible):
@@ -67,3 +71,7 @@ func swap():
 	character.get_child(0).get_child(selected_active_index).change_card(selected_vaulted_name)
 	
 	vault.set_item_text(selected_vaulted_index, selected_active_name)
+	
+	stress.text = (str(character.current_stress) + "/" + str(character.max_stress))
+	health.text = (str(character.current_hp) + "/" + str(character.max_hp))  
+	
