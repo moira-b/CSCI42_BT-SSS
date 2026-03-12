@@ -49,7 +49,7 @@ func test_hope():
 func test_stress():
 	character.set_maximum_stress()
 	var max_stress = character.max_stress
-	assert_eq(max_stress, 12, "Max stress must be 12")
+	assert_eq(max_stress, 6, "Max stress must be 6")
 	# test invalid stress values
 	var invalid_stress = character.set_current_stress(-1)
 	assert_false(invalid_stress)
