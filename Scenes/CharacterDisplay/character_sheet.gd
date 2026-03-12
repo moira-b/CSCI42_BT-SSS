@@ -1,14 +1,14 @@
 extends Control
 
 @onready var bio_edit = $"Bio/BioEdit"
-@onready var name_edit = $Header/NamePronouns/NamePanelContainer/NameC/NameEdit
+@onready var name_edit = $Header/HeaderInfo/NamePronouns/NamePanelContainer/NameC/NameEdit
 @onready var agility_field: LineEdit = $"TraitModifiers/Agility/LineEdit"
 @onready var strength_field: LineEdit = $"TraitModifiers/Strength/LineEdit"
 @onready var finesse_field: LineEdit = $"TraitModifiers/Finesse/LineEdit"
 @onready var instinct_field: LineEdit = $"TraitModifiers/Instinct/LineEdit"
 @onready var presence_field: LineEdit = $"TraitModifiers/Prescence/LineEdit"
 @onready var knowledge_field: LineEdit = $"TraitModifiers/Knowledge/LineEdit"
-@onready var pronouns_field: LineEdit = $Header/NamePronouns/PronounsPanelContainer/Pronouns/Pronouns
+@onready var pronouns_field: LineEdit = $Header/HeaderInfo/NamePronouns/PronounsPanelContainer/Pronouns/PronounsEdit
 @onready var experience1 : LineEdit = $Experiences/Experience1/Experience1
 @onready var experience2 : LineEdit = $Experiences/Experience2/Experience2
 @onready var experience3 : LineEdit = $Experiences/Experience3/Experience3
@@ -19,17 +19,22 @@ extends Control
 @onready var stress_field = $MarkableStats/Stress
 @onready var armor_field = $MarkableStats/Armor
 @onready var hope_field = $MarkableStats/Hope
-@onready var level_field = $Level/Level
-@onready var ancestry_field = $Header/CommnityAncestry/AncestryPanelContainer/Ancestry/ColorRect/Ancestry
-@onready var community_field = $Header/CommnityAncestry/PanelContainer/Community/ColorRect/Community
+@onready var level_field = $Header/Level/Level
+@onready var ancestry_field = $Header/HeaderInfo/CommnityAncestry/AncestryPanelContainer/Ancestry/ColorRect/Ancestry
+@onready var community_field = $Header/HeaderInfo/CommnityAncestry/PanelContainer/Community/ColorRect/Community
 @onready var class_field = $ClassSubclass/ClassRect/Class
 @onready var subclass_field = $ClassSubclass/SubclassRect/Label
+@onready var short_rest: Button = $RestButtons/ShortRest
+@onready var long_rest: Button = $RestButtons/LongRest
+@onready var rest_window: Window = $RestButtons/RestWindow
 
 var updated = false
+var shortRestCounter = 0
 var character: Character
 
 func enter() -> void:
 	character = $Character
+	rest_window.get_character(character)
 	update_edit_fields()
 	
 	character.set_maximum_health()
@@ -54,7 +59,7 @@ func enter() -> void:
 	hope_field.stat_decrement_pressed.connect(_on_stat_decrement_pressed)
 	level_field.stat_increment_pressed.connect(_on_stat_increment_pressed)
 	level_field.stat_decrement_pressed.connect(_on_stat_decrement_pressed)
-	ancestry_field.set_text("Ancestry: " + character.ancestry.ancestry_name)
+	ancestry_field.set_text(character.ancestry.ancestry_name)
 	class_field.set_text(character.character_class.name)
 	subclass_field.set_text(character.subclass.subclass_name)
 	community_field.set_text(character.community.community_name)
@@ -265,3 +270,32 @@ func _on_experience_5_text_changed(new_text):
 
 func _on_experience_5_text_submitted(new_text):
 	change_experience(5, new_text)
+
+
+func _on_short_rest_pressed() -> void:
+	rest_window.set_rest_Length("short")
+	rest_window.disable_Project()
+	if shortRestCounter < 3:
+		long_rest.disabled = true
+		shortRestCounter += 1
+		rest_window.visible = true
+
+
+func _on_long_rest_pressed() -> void:
+	rest_window.set_rest_Length("long")
+	short_rest.disabled = true
+	rest_window.enable_Project()
+	shortRestCounter = 0
+	rest_window.visible = true
+
+
+func _on_rest_window_close_requested() -> void:
+	rest_window.hide()
+	short_rest.disabled = false
+	long_rest.disabled = false
+
+
+func _on_confirm_button_pressed() -> void:
+	rest_window.hide()
+	short_rest.disabled = false
+	long_rest.disabled = false

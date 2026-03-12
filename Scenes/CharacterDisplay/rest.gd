@@ -1,0 +1,145 @@
+extends Window
+
+@onready var tend_wounds: CheckButton = $RestUI/RestActions/TendWounds
+@onready var clear_stress: CheckButton = $RestUI/RestActions/ClearStress
+@onready var repair_armor: CheckButton = $RestUI/RestActions/RepairArmor
+@onready var prepare: CheckButton = $RestUI/RestActions/Prepare
+@onready var project: CheckButton = $RestUI/RestActions/Project
+@onready var confirm_button: Button = $RestUI/ConfirmButton
+@onready var character = $Character
+
+var selected: Array[CheckButton] = []
+var rest_length: String = ""
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	self.visible = false
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func enable_Project() -> void:
+	project.visible = true
+	selected = []
+	tend_wounds.set_pressed_no_signal(false)
+	clear_stress.set_pressed_no_signal(false)
+	repair_armor.set_pressed_no_signal(false)
+	prepare.set_pressed_no_signal(false)
+	project.set_pressed_no_signal(false)
+
+
+func disable_Project() -> void:
+	project.visible = false
+	
+
+
+func set_rest_Length(length) -> void:
+	rest_length = length
+	
+
+
+func get_character(pc) -> void:
+	character = pc
+
+
+func _on_tend_wounds_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		selected.append(tend_wounds)
+		
+		if selected.size() > 2:
+			var oldest = selected.pop_front()
+			oldest.set_pressed_no_signal(false)
+	else:
+		selected.erase(tend_wounds)
+	
+
+
+func _on_clear_stress_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		selected.append(clear_stress)
+		
+		if selected.size() > 2:
+			var oldest = selected.pop_front()
+			oldest.set_pressed_no_signal(false)
+	else:
+		selected.erase(clear_stress)
+	
+
+
+func _on_repair_armor_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		selected.append(repair_armor)
+		
+		if selected.size() > 2:
+			var oldest = selected.pop_front()
+			oldest.set_pressed_no_signal(false)
+	else:
+		selected.erase(repair_armor)
+
+
+func _on_prepare_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		selected.append(prepare)
+		
+		if selected.size() > 2:
+			var oldest = selected.pop_front()
+			oldest.set_pressed_no_signal(false)
+	else:
+		selected.erase(prepare)
+
+
+func _on_project_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		selected.append(project)
+		
+		if selected.size() > 2:
+			var oldest = selected.pop_front()
+			oldest.set_pressed_no_signal(false)
+	else:
+		selected.erase(project)
+
+
+func _on_confirm_button_pressed() -> void:
+	self.hide()
+	if rest_length == "short":
+		for s in selected:
+			var dice: int
+			if s != prepare:
+				dice = randi_range(1,4)
+				if s == tend_wounds:
+					print("Recovered " + str(dice) + " HP")
+					character.current_hp = clamp(character.current_hp + dice, 
+					0, character.max_hp)
+				if s == clear_stress:
+					print("Recovered " + str(dice) + " stress")
+					character.current_stress = clamp(character.current_stress - dice,
+					0, 12)
+				if s == repair_armor:
+					print("Recovered " + str(dice) + " armor")
+					character.used_armor_slots = clamp(character.used_armor_slots - dice,
+					0, character.max_armor_slots)
+			else:
+				print("Recovered 2 Hope")
+				character.current_hope = clamp(character.current_hope + 2,
+				0, character.max_hope)
+	else:
+		for s in selected:
+			if s == tend_wounds:
+				print("Recovered all HP")
+				character.current_hp = character.max_hp
+			if s == clear_stress:
+				print("Recovered all stress")
+				character.current_stress = 0
+			if s == repair_armor:
+				print("Recovered all armor")
+				character.used_armor_slots = 0
+			if s == prepare:
+				print("Recovered 2 Hope")
+				character.current_hope = clamp(character.current_hope + 2,
+				0, character.max_hope)
+			if s == project:
+				print("Worked on a project")
+			

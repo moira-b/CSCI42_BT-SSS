@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://dhouly0p8fe4p"]
 
 [ext_resource type="Script" uid="uid://cmt4mu51iv5vw" path="res://Scenes/CharacterDisplay/character_sheet.gd" id="1_dg7yu"]
-[ext_resource type="Script" uid="uid://dnjp24h6b6fc2" path="res://Scripts/CharacterDisplay/markable_stat.gd" id="2_5rpyy"]
+[ext_resource type="Script" uid="uid://dfs5rt0xu3vuj" path="res://Scenes/CharacterDisplay/rest.gd" id="2_5rpyy"]
 [ext_resource type="StyleBox" uid="uid://dic645d200g74" path="res://Resources/GUIStyles/character_sheet_stylebox.tres" id="2_c8oo5"]
+[ext_resource type="Script" uid="uid://dnjp24h6b6fc2" path="res://Scripts/CharacterDisplay/markable_stat.gd" id="4_qgeia"]
 
 [sub_resource type="GDScript" id="GDScript_dg7yu"]
 script/source = "extends LineEdit
@@ -45,85 +46,83 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_dg7yu")
 
-[node name="Header" type="VBoxContainer" parent="." unique_id=440971976]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -528.5
-offset_right = 528.5
-offset_bottom = 104.0
-grow_horizontal = 2
+[node name="Header" type="HSplitContainer" parent="." unique_id=1428007041]
+layout_mode = 0
+offset_right = 911.0
+offset_bottom = 112.0
 
-[node name="NamePronouns" type="HBoxContainer" parent="Header" unique_id=1837796638]
+[node name="HeaderInfo" type="VSplitContainer" parent="Header" unique_id=2099249612]
 layout_mode = 2
 
-[node name="NamePanelContainer" type="PanelContainer" parent="Header/NamePronouns" unique_id=1901304441]
+[node name="NamePronouns" type="HSplitContainer" parent="Header/HeaderInfo" unique_id=1758749744]
+layout_mode = 2
+
+[node name="NamePanelContainer" type="PanelContainer" parent="Header/HeaderInfo/NamePronouns" unique_id=1901304441]
 layout_mode = 2
 theme_override_styles/panel = ExtResource("2_c8oo5")
 
-[node name="NameC" type="HBoxContainer" parent="Header/NamePronouns/NamePanelContainer" unique_id=1593906295]
+[node name="NameC" type="HBoxContainer" parent="Header/HeaderInfo/NamePronouns/NamePanelContainer" unique_id=1593906295]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="Name" type="Label" parent="Header/NamePronouns/NamePanelContainer/NameC" unique_id=1793497501]
+[node name="Name" type="Label" parent="Header/HeaderInfo/NamePronouns/NamePanelContainer/NameC" unique_id=1793497501]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "Name: "
 
-[node name="NameEdit" type="LineEdit" parent="Header/NamePronouns/NamePanelContainer/NameC" unique_id=1389927954]
+[node name="NameEdit" type="LineEdit" parent="Header/HeaderInfo/NamePronouns/NamePanelContainer/NameC" unique_id=1389927954]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 size_flags_horizontal = 2
 placeholder_text = "What is your name?"
 script = SubResource("GDScript_dg7yu")
 
-[node name="PronounsPanelContainer" type="PanelContainer" parent="Header/NamePronouns" unique_id=619742562]
+[node name="PronounsPanelContainer" type="PanelContainer" parent="Header/HeaderInfo/NamePronouns" unique_id=619742562]
 layout_mode = 2
 theme_override_styles/panel = ExtResource("2_c8oo5")
 
-[node name="Pronouns" type="HBoxContainer" parent="Header/NamePronouns/PronounsPanelContainer" unique_id=1818981251]
+[node name="Pronouns" type="HBoxContainer" parent="Header/HeaderInfo/NamePronouns/PronounsPanelContainer" unique_id=1818981251]
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 0
 
-[node name="Label" type="Label" parent="Header/NamePronouns/PronounsPanelContainer/Pronouns" unique_id=449473121]
+[node name="Label" type="Label" parent="Header/HeaderInfo/NamePronouns/PronounsPanelContainer/Pronouns" unique_id=449473121]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "Pronouns:"
 
-[node name="Pronouns" type="LineEdit" parent="Header/NamePronouns/PronounsPanelContainer/Pronouns" unique_id=1102215493]
+[node name="PronounsEdit" type="LineEdit" parent="Header/HeaderInfo/NamePronouns/PronounsPanelContainer/Pronouns" unique_id=1102215493]
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 
-[node name="CommnityAncestry" type="HBoxContainer" parent="Header" unique_id=174565721]
+[node name="CommnityAncestry" type="HSplitContainer" parent="Header/HeaderInfo" unique_id=1615842318]
 layout_mode = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="Header/CommnityAncestry" unique_id=1597585474]
+[node name="PanelContainer" type="PanelContainer" parent="Header/HeaderInfo/CommnityAncestry" unique_id=1597585474]
 layout_mode = 2
 theme_override_styles/panel = ExtResource("2_c8oo5")
 
-[node name="Community" type="HBoxContainer" parent="Header/CommnityAncestry/PanelContainer" unique_id=743414857]
+[node name="Community" type="HBoxContainer" parent="Header/HeaderInfo/CommnityAncestry/PanelContainer" unique_id=743414857]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Header/CommnityAncestry/PanelContainer/Community" unique_id=760379478]
+[node name="Label" type="Label" parent="Header/HeaderInfo/CommnityAncestry/PanelContainer/Community" unique_id=760379478]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 text = "Community:"
 
-[node name="ColorRect" type="ColorRect" parent="Header/CommnityAncestry/PanelContainer/Community" unique_id=1812518552]
+[node name="ColorRect" type="ColorRect" parent="Header/HeaderInfo/CommnityAncestry/PanelContainer/Community" unique_id=1812518552]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 color = Color(0.12941177, 0.12941177, 0.12941177, 1)
 
-[node name="Community" type="Label" parent="Header/CommnityAncestry/PanelContainer/Community/ColorRect" unique_id=2021481224]
+[node name="Community" type="Label" parent="Header/HeaderInfo/CommnityAncestry/PanelContainer/Community/ColorRect" unique_id=2021481224]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -137,25 +136,25 @@ offset_bottom = 24.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="AncestryPanelContainer" type="PanelContainer" parent="Header/CommnityAncestry" unique_id=913894309]
+[node name="AncestryPanelContainer" type="PanelContainer" parent="Header/HeaderInfo/CommnityAncestry" unique_id=913894309]
 layout_mode = 2
 theme_override_styles/panel = ExtResource("2_c8oo5")
 
-[node name="Ancestry" type="HBoxContainer" parent="Header/CommnityAncestry/AncestryPanelContainer" unique_id=400480339]
+[node name="Ancestry" type="HBoxContainer" parent="Header/HeaderInfo/CommnityAncestry/AncestryPanelContainer" unique_id=400480339]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Header/CommnityAncestry/AncestryPanelContainer/Ancestry" unique_id=1081074418]
+[node name="Label" type="Label" parent="Header/HeaderInfo/CommnityAncestry/AncestryPanelContainer/Ancestry" unique_id=1081074418]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 text = "Ancestry:"
 
-[node name="ColorRect" type="ColorRect" parent="Header/CommnityAncestry/AncestryPanelContainer/Ancestry" unique_id=612125050]
+[node name="ColorRect" type="ColorRect" parent="Header/HeaderInfo/CommnityAncestry/AncestryPanelContainer/Ancestry" unique_id=612125050]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 color = Color(0.12941177, 0.12941177, 0.12941177, 1)
 
-[node name="Ancestry" type="Label" parent="Header/CommnityAncestry/AncestryPanelContainer/Ancestry/ColorRect" unique_id=33290907]
+[node name="Ancestry" type="Label" parent="Header/HeaderInfo/CommnityAncestry/AncestryPanelContainer/Ancestry/ColorRect" unique_id=33290907]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 1
 anchors_preset = 8
@@ -171,6 +170,41 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 8
 size_flags_vertical = 2
+
+[node name="Level" type="HBoxContainer" parent="Header" unique_id=730789895]
+layout_mode = 2
+
+[node name="Level" type="PanelContainer" parent="Header/Level" unique_id=1090331652]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+script = ExtResource("4_qgeia")
+
+[node name="FieldContainer" type="HBoxContainer" parent="Header/Level/Level" unique_id=85699320]
+layout_mode = 2
+
+[node name="Labels" type="HBoxContainer" parent="Header/Level/Level/FieldContainer" unique_id=1083387291]
+layout_mode = 2
+
+[node name="FieldName" type="Label" parent="Header/Level/Level/FieldContainer/Labels" unique_id=304716378]
+layout_mode = 2
+text = "Level: "
+
+[node name="FieldValue" type="Label" parent="Header/Level/Level/FieldContainer/Labels" unique_id=1825855031]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="Buttons" type="HBoxContainer" parent="Header/Level/Level/FieldContainer" unique_id=555968749]
+layout_mode = 2
+
+[node name="IncrementButton" type="Button" parent="Header/Level/Level/FieldContainer/Buttons" unique_id=1727927263]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+text = "+"
+
+[node name="DecrementButton" type="Button" parent="Header/Level/Level/FieldContainer/Buttons" unique_id=1783854800]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+text = "-"
 
 [node name="TraitModifiers" type="HBoxContainer" parent="." unique_id=1219526404]
 layout_mode = 1
@@ -278,7 +312,7 @@ offset_bottom = 186.728
 [node name="Health" type="PanelContainer" parent="MarkableStats" unique_id=898166146]
 layout_mode = 2
 theme_override_styles/panel = ExtResource("2_c8oo5")
-script = ExtResource("2_5rpyy")
+script = ExtResource("4_qgeia")
 
 [node name="FieldContainer" type="HBoxContainer" parent="MarkableStats/Health" unique_id=1675041664]
 layout_mode = 2
@@ -316,7 +350,7 @@ text = "-"
 [node name="Stress" type="PanelContainer" parent="MarkableStats" unique_id=2030183416]
 layout_mode = 2
 theme_override_styles/panel = ExtResource("2_c8oo5")
-script = ExtResource("2_5rpyy")
+script = ExtResource("4_qgeia")
 
 [node name="FieldContainer" type="HBoxContainer" parent="MarkableStats/Stress" unique_id=1848188292]
 layout_mode = 2
@@ -354,7 +388,7 @@ text = "-"
 [node name="Hope" type="PanelContainer" parent="MarkableStats" unique_id=431121348]
 layout_mode = 2
 theme_override_styles/panel = ExtResource("2_c8oo5")
-script = ExtResource("2_5rpyy")
+script = ExtResource("4_qgeia")
 
 [node name="FieldContainer" type="HBoxContainer" parent="MarkableStats/Hope" unique_id=135152164]
 layout_mode = 2
@@ -392,7 +426,7 @@ text = "-"
 [node name="Armor" type="PanelContainer" parent="MarkableStats" unique_id=592864428]
 layout_mode = 2
 theme_override_styles/panel = ExtResource("2_c8oo5")
-script = ExtResource("2_5rpyy")
+script = ExtResource("4_qgeia")
 
 [node name="FieldContainer" type="HBoxContainer" parent="MarkableStats/Armor" unique_id=125254012]
 layout_mode = 2
@@ -559,51 +593,115 @@ layout_mode = 2
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 
-[node name="Level" type="HBoxContainer" parent="." unique_id=730789895]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.98700005
-anchor_right = 0.98700005
-offset_left = -178.02405
-offset_right = -0.024047852
-offset_bottom = 56.0
+[node name="RestButtons" type="VBoxContainer" parent="." unique_id=1953046344]
+custom_minimum_size = Vector2(100, 110)
+layout_mode = 0
+offset_left = 350.0
+offset_top = 500.0
+offset_right = 450.0
+offset_bottom = 610.0
 
-[node name="Level" type="PanelContainer" parent="Level" unique_id=1090331652]
-custom_minimum_size = Vector2(150, 0)
+[node name="ShortRest" type="Button" parent="RestButtons" unique_id=375690570]
+custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 6
+text = "Short Rest"
+
+[node name="LongRest" type="Button" parent="RestButtons" unique_id=1429046138]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 6
+text = "Long Rest"
+
+[node name="RestWindow" type="Window" parent="RestButtons" unique_id=2095986794]
+oversampling_override = 1.0
+title = "Rest Actions"
+initial_position = 1
+size = Vector2i(500, 400)
+visible = false
 script = ExtResource("2_5rpyy")
 
-[node name="FieldContainer" type="HBoxContainer" parent="Level/Level" unique_id=85699320]
-layout_mode = 2
+[node name="RestUI" type="Control" parent="RestButtons/RestWindow" unique_id=165973256]
+custom_minimum_size = Vector2(500, 400)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -200.0
+offset_right = 250.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
-[node name="Labels" type="HBoxContainer" parent="Level/Level/FieldContainer" unique_id=1083387291]
-layout_mode = 2
+[node name="RestActions" type="VBoxContainer" parent="RestButtons/RestWindow/RestUI" unique_id=335220932]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -85.5
+offset_right = 220.0
+offset_bottom = 85.5
+grow_vertical = 2
+alignment = 1
 
-[node name="FieldName" type="Label" parent="Level/Level/FieldContainer/Labels" unique_id=304716378]
+[node name="TendWounds" type="CheckButton" parent="RestButtons/RestWindow/RestUI/RestActions" unique_id=996454089]
+custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
-text = "Level: "
+size_flags_vertical = 4
+text = "Tend to Wounds"
 
-[node name="FieldValue" type="Label" parent="Level/Level/FieldContainer/Labels" unique_id=1825855031]
-custom_minimum_size = Vector2(50, 0)
+[node name="ClearStress" type="CheckButton" parent="RestButtons/RestWindow/RestUI/RestActions" unique_id=794885834]
+custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
+size_flags_vertical = 4
+text = "Clear Stress"
 
-[node name="Buttons" type="HBoxContainer" parent="Level/Level/FieldContainer" unique_id=555968749]
+[node name="RepairArmor" type="CheckButton" parent="RestButtons/RestWindow/RestUI/RestActions" unique_id=1231113641]
+custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
+size_flags_vertical = 4
+text = "Repair Armor"
 
-[node name="IncrementButton" type="Button" parent="Level/Level/FieldContainer/Buttons" unique_id=1727927263]
-custom_minimum_size = Vector2(30, 0)
+[node name="Prepare" type="CheckButton" parent="RestButtons/RestWindow/RestUI/RestActions" unique_id=775912072]
+custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
-text = "+"
+size_flags_vertical = 4
+text = "Prepare"
 
-[node name="DecrementButton" type="Button" parent="Level/Level/FieldContainer/Buttons" unique_id=1783854800]
-custom_minimum_size = Vector2(30, 0)
+[node name="Project" type="CheckButton" parent="RestButtons/RestWindow/RestUI/RestActions" unique_id=1777724042]
+custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
-text = "-"
+size_flags_vertical = 4
+text = "Work on a Project"
 
-[connection signal="text_changed" from="Header/NamePronouns/NamePanelContainer/NameC/NameEdit" to="." method="_on_name_edit_text_changed"]
-[connection signal="text_submitted" from="Header/NamePronouns/NamePanelContainer/NameC/NameEdit" to="." method="_on_name_edit_text_submitted"]
-[connection signal="text_changed" from="Header/NamePronouns/PronounsPanelContainer/Pronouns/Pronouns" to="." method="_on_pronouns_text_changed"]
-[connection signal="text_submitted" from="Header/NamePronouns/PronounsPanelContainer/Pronouns/Pronouns" to="." method="_on_pronouns_text_submitted"]
+[node name="ConfirmButton" type="Button" parent="RestButtons/RestWindow/RestUI" unique_id=1063158913]
+custom_minimum_size = Vector2(75, 40)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -37.5
+offset_top = -56.0
+offset_right = 37.5
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Confirm"
+
+[connection signal="text_changed" from="Header/HeaderInfo/NamePronouns/NamePanelContainer/NameC/NameEdit" to="." method="_on_name_edit_text_changed"]
+[connection signal="text_submitted" from="Header/HeaderInfo/NamePronouns/NamePanelContainer/NameC/NameEdit" to="." method="_on_name_edit_text_submitted"]
+[connection signal="text_changed" from="Header/HeaderInfo/NamePronouns/PronounsPanelContainer/Pronouns/PronounsEdit" to="." method="_on_pronouns_text_changed"]
+[connection signal="text_submitted" from="Header/HeaderInfo/NamePronouns/PronounsPanelContainer/Pronouns/PronounsEdit" to="." method="_on_pronouns_text_submitted"]
 [connection signal="text_submitted" from="TraitModifiers/Agility/LineEdit" to="." method="_on_agility_text_submitted"]
 [connection signal="text_submitted" from="TraitModifiers/Strength/LineEdit" to="." method="_on_strength_text_submitted"]
 [connection signal="text_submitted" from="TraitModifiers/Finesse/LineEdit" to="." method="_on_finesse_text_submitted"]
@@ -621,3 +719,13 @@ text = "-"
 [connection signal="text_submitted" from="Experiences/Experience4/Experience4" to="." method="_on_experience_4_text_submitted"]
 [connection signal="text_changed" from="Experiences/Experience5/Experience5" to="." method="_on_experience_5_text_changed"]
 [connection signal="text_submitted" from="Experiences/Experience5/Experience5" to="." method="_on_experience_5_text_submitted"]
+[connection signal="pressed" from="RestButtons/ShortRest" to="." method="_on_short_rest_pressed"]
+[connection signal="pressed" from="RestButtons/LongRest" to="." method="_on_long_rest_pressed"]
+[connection signal="close_requested" from="RestButtons/RestWindow" to="." method="_on_rest_window_close_requested"]
+[connection signal="toggled" from="RestButtons/RestWindow/RestUI/RestActions/TendWounds" to="RestButtons/RestWindow" method="_on_tend_wounds_toggled"]
+[connection signal="toggled" from="RestButtons/RestWindow/RestUI/RestActions/ClearStress" to="RestButtons/RestWindow" method="_on_clear_stress_toggled"]
+[connection signal="toggled" from="RestButtons/RestWindow/RestUI/RestActions/RepairArmor" to="RestButtons/RestWindow" method="_on_repair_armor_toggled"]
+[connection signal="toggled" from="RestButtons/RestWindow/RestUI/RestActions/Prepare" to="RestButtons/RestWindow" method="_on_prepare_toggled"]
+[connection signal="toggled" from="RestButtons/RestWindow/RestUI/RestActions/Project" to="RestButtons/RestWindow" method="_on_project_toggled"]
+[connection signal="pressed" from="RestButtons/RestWindow/RestUI/ConfirmButton" to="." method="_on_confirm_button_pressed"]
+[connection signal="pressed" from="RestButtons/RestWindow/RestUI/ConfirmButton" to="RestButtons/RestWindow" method="_on_confirm_button_pressed"]
