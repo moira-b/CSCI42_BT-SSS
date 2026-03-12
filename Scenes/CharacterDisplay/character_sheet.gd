@@ -24,11 +24,14 @@ extends Control
 @onready var community_field = $Header/HeaderInfo/CommnityAncestry/PanelContainer/Community/ColorRect/Community
 @onready var class_field = $ClassSubclass/ClassRect/Class
 @onready var subclass_field = $ClassSubclass/SubclassRect/Label
-@onready var short_rest: Button = $ActionButtons/RestButtons/ShortRest
-@onready var long_rest: Button = $ActionButtons/RestButtons/LongRest
+@onready var short_rest_button: Button = $ActionButtons/RestButtons/ShortRest
+@onready var long_rest_button: Button = $ActionButtons/RestButtons/LongRest
 @onready var rest_window: Window = $ActionButtons/RestButtons/RestWindow
 @onready var dice_roll_window: Window = $ActionButtons/DiceButtons/DiceRollWindow
 @onready var fh_roll_window: Window = $ActionButtons/DiceButtons/FHRollWindow
+
+@onready var dice_button: Button = $ActionButtons/DiceButtons/Dice
+@onready var fearhope_button: Button = $ActionButtons/DiceButtons/FHDice
 
 var updated = false
 var shortRestCounter = 0
@@ -50,18 +53,10 @@ func enter() -> void:
 	character.set_current_hope(3)
 	character.set_level(1)
 	
+	connect_signals()
+	
 	self.update_markable_fields()
 	
-	health_field.stat_increment_pressed.connect(_on_stat_increment_pressed)
-	health_field.stat_decrement_pressed.connect(_on_stat_decrement_pressed)
-	stress_field.stat_increment_pressed.connect(_on_stat_increment_pressed)
-	stress_field.stat_decrement_pressed.connect(_on_stat_decrement_pressed)
-	armor_field.stat_increment_pressed.connect(_on_stat_increment_pressed)
-	armor_field.stat_decrement_pressed.connect(_on_stat_decrement_pressed)
-	hope_field.stat_increment_pressed.connect(_on_stat_increment_pressed)
-	hope_field.stat_decrement_pressed.connect(_on_stat_decrement_pressed)
-	level_field.stat_increment_pressed.connect(_on_stat_increment_pressed)
-	level_field.stat_decrement_pressed.connect(_on_stat_decrement_pressed)
 	ancestry_field.set_text(character.ancestry.ancestry_name)
 	class_field.set_text(character.character_class.name)
 	subclass_field.set_text(character.subclass.subclass_name)
@@ -278,33 +273,66 @@ func _on_experience_5_text_submitted(new_text):
 func _on_short_rest_pressed() -> void:
 	rest_window.set_rest_Length("short")
 	rest_window.disable_Project()
+	disable_button_selection(true)
 	if shortRestCounter < 3:
-		long_rest.disabled = true
+		long_rest_button.disabled = true
 		shortRestCounter += 1
 		rest_window.visible = true
 
-
 func _on_long_rest_pressed() -> void:
 	rest_window.set_rest_Length("long")
-	short_rest.disabled = true
+	disable_button_selection(true)
 	rest_window.enable_Project()
 	shortRestCounter = 0
 	rest_window.visible = true
 
 func _on_dice_button_pressed() -> void:
 	dice_roll_window.visible = true
+	disable_button_selection(true)
 
 func _on_fh_dice_button_pressed() -> void:
 	fh_roll_window.visible = true
+	disable_button_selection(true)
 
 func _on_rest_window_close_requested() -> void:
 	rest_window.hide()
-	short_rest.disabled = false
-	long_rest.disabled = false
+	disable_button_selection(false)
+
+func _on_dice_roll_window_close_requested() -> void:
+	dice_roll_window.visible = false
+	disable_button_selection(false)
+
+func _on_fh_roll_window_close_requested() -> void:
+	fh_roll_window.visible = false
+	disable_button_selection(false)
 
 func _on_confirm_button_pressed() -> void:
 	rest_window.hide()
-	short_rest.disabled = false
-	long_rest.disabled = false
+	disable_button_selection(false)
 	print(character.current_hp)
 	update_markable_fields()
+	
+func connect_signals() -> void:
+	health_field.stat_increment_pressed.connect(_on_stat_increment_pressed)
+	health_field.stat_decrement_pressed.connect(_on_stat_decrement_pressed)
+	stress_field.stat_increment_pressed.connect(_on_stat_increment_pressed)
+	stress_field.stat_decrement_pressed.connect(_on_stat_decrement_pressed)
+	armor_field.stat_increment_pressed.connect(_on_stat_increment_pressed)
+	armor_field.stat_decrement_pressed.connect(_on_stat_decrement_pressed)
+	hope_field.stat_increment_pressed.connect(_on_stat_increment_pressed)
+	hope_field.stat_decrement_pressed.connect(_on_stat_decrement_pressed)
+	level_field.stat_increment_pressed.connect(_on_stat_increment_pressed)
+	level_field.stat_decrement_pressed.connect(_on_stat_decrement_pressed)
+	
+	short_rest_button.pressed.connect(_on_short_rest_pressed)
+	long_rest_button.pressed.connect(_on_long_rest_pressed)
+	dice_button.pressed.connect(_on_dice_button_pressed)
+	fearhope_button.pressed.connect(_on_fh_dice_button_pressed)
+	
+	rest_window.close_requested.connect(_on_rest_window_close_requested)
+
+func disable_button_selection(b: bool) -> void:
+	short_rest_button.disabled = b
+	long_rest_button.disabled = b
+	dice_button.disabled = b
+	fearhope_button.disabled = b

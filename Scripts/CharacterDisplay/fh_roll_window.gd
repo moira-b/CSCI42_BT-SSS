@@ -41,6 +41,3 @@ func _on_roll_again_button_pressed() -> void:
 	hope_display.text = str(hope_result)
 	
 	interpret_rolls()
-
-func _on_close_requested() -> void:
-	self.visible = false

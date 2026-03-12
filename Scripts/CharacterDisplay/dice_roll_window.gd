@@ -45,7 +45,3 @@ func array_to_string(arr: Array) -> String:
 	return_me += str(arr[arr.size()-1])
 	
 	return return_me
-
-
-func _on_close_requested() -> void:
-	self.visible = false
