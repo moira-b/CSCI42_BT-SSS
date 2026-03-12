@@ -6,6 +6,7 @@ extends Window
 @onready var prepare: CheckButton = $RestUI/RestActions/Prepare
 @onready var project: CheckButton = $RestUI/RestActions/Project
 @onready var confirm_button: Button = $RestUI/ConfirmButton
+@onready var character = $Character
 
 var selected: Array[CheckButton] = []
 var rest_length: String = ""
@@ -34,9 +35,14 @@ func disable_Project() -> void:
 	project.visible = false
 	
 
+
 func set_rest_Length(length) -> void:
 	rest_length = length
 	
+
+
+func get_character(pc) -> void:
+	character = pc
 
 
 func _on_tend_wounds_toggled(toggled_on: bool) -> void:
@@ -100,27 +106,40 @@ func _on_confirm_button_pressed() -> void:
 	self.hide()
 	if rest_length == "short":
 		for s in selected:
-			var clear: int
+			var dice: int
 			if s != prepare:
-				clear = randi_range(1,4)
+				dice = randi_range(1,4)
 				if s == tend_wounds:
-					print("Recovered " + str(clear) + " HP")
+					print("Recovered " + str(dice) + " HP")
+					character.current_hp = clamp(character.current_hp + dice, 
+					0, character.max_hp)
 				if s == clear_stress:
-					print("Recovered " + str(clear) + " stress" )
+					print("Recovered " + str(dice) + " stress")
+					character.current_stress = clamp(character.current_stress - dice,
+					0, 12)
 				if s == repair_armor:
-					print("Recovered " + str(clear) + " armor")
+					print("Recovered " + str(dice) + " armor")
+					character.used_armor_slots = clamp(character.used_armor_slots - dice,
+					0, character.max_armor_slots)
 			else:
 				print("Recovered 2 Hope")
+				character.current_hope = clamp(character.current_hope + 2,
+				0, character.max_hope)
 	else:
 		for s in selected:
 			if s == tend_wounds:
 				print("Recovered all HP")
+				character.current_hp = character.max_hp
 			if s == clear_stress:
 				print("Recovered all stress")
+				character.current_stress = 0
 			if s == repair_armor:
 				print("Recovered all armor")
+				character.used_armor_slots = 0
 			if s == prepare:
 				print("Recovered 2 Hope")
+				character.current_hope = clamp(character.current_hope + 2,
+				0, character.max_hope)
 			if s == project:
 				print("Worked on a project")
 			

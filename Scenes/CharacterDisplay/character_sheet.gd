@@ -19,6 +19,7 @@ var character: Character
 
 func enter() -> void:
 	character = $Character
+	rest_window.get_character(character)
 	update_edit_fields()
 
 
