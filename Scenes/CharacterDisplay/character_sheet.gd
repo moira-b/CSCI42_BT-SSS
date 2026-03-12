@@ -325,7 +325,6 @@ func _on_fh_roll_window_close_requested() -> void:
 		hope_field.set_current_value(str(character.current_hope))
 		character.set_current_stress(character.current_stress - 1)
 		stress_field.set_current_value(str(character.current_stress))
-		pass
 
 func _on_confirm_button_pressed() -> void:
 	rest_window.hide()
