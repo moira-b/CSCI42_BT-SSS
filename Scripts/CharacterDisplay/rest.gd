@@ -6,10 +6,10 @@ extends Window
 @onready var prepare: CheckButton = $RestUI/RestActions/Prepare
 @onready var project: CheckButton = $RestUI/RestActions/Project
 @onready var confirm_button: Button = $RestUI/ConfirmButton
-@onready var character = $Character
 
 var selected: Array[CheckButton] = []
 var rest_length: String = ""
+var character: Character
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -110,36 +110,36 @@ func _on_confirm_button_pressed() -> void:
 			if s != prepare:
 				dice = randi_range(1,4)
 				if s == tend_wounds:
-					print("Recovered " + str(dice) + " HP")
+					#print("Recovered " + str(dice) + " HP")
 					character.current_hp = clamp(character.current_hp + dice, 
 					0, character.max_hp)
 				if s == clear_stress:
-					print("Recovered " + str(dice) + " stress")
+					#print("Recovered " + str(dice) + " stress")
 					character.current_stress = clamp(character.current_stress - dice,
 					0, 12)
 				if s == repair_armor:
-					print("Recovered " + str(dice) + " armor")
+					#print("Recovered " + str(dice) + " armor")
 					character.used_armor_slots = clamp(character.used_armor_slots - dice,
 					0, character.max_armor_slots)
 			else:
-				print("Recovered 2 Hope")
+				#print("Recovered 2 Hope")
 				character.current_hope = clamp(character.current_hope + 2,
 				0, character.max_hope)
 	else:
 		for s in selected:
 			if s == tend_wounds:
-				print("Recovered all HP")
+				#print("Recovered all HP")
 				character.current_hp = character.max_hp
 			if s == clear_stress:
-				print("Recovered all stress")
+				#print("Recovered all stress")
 				character.current_stress = 0
 			if s == repair_armor:
-				print("Recovered all armor")
+				#print("Recovered all armor")
 				character.used_armor_slots = 0
 			if s == prepare:
-				print("Recovered 2 Hope")
+				#print("Recovered 2 Hope")
 				character.current_hope = clamp(character.current_hope + 2,
 				0, character.max_hope)
-			if s == project:
-				print("Worked on a project")
+			#if s == project:
+				#print("Worked on a project")
 			

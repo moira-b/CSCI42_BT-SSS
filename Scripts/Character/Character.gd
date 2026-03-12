@@ -105,12 +105,12 @@ func set_current_hope(value: int) -> bool:
 	return false
 
 func set_level(value: int) -> bool:
-	if(0 <= value && value <= self.max_level):
+	if(1 <= value && value <= self.max_level):
 		level = value
 		#print("DEBUG: " + self.character_name + " currently has " + str(level) + " level.")
 		return true
-	elif(value < 0):
-		print("Cannot set level counter s to be less than 0.")
+	elif(value < 1):
+		print("Cannot set level counter s to be less than 1.")
 	else:
 		print("Cannot set level counter to be greater than max level.")
 	
