@@ -382,4 +382,5 @@ layout_mode = 2
 theme = ExtResource("1_5tshs")
 text = "Roll"
 
+[connection signal="close_requested" from="." to="." method="_on_close_requested"]
 [connection signal="pressed" from="RollButtonContainer/RollButton" to="." method="_on_roll_button_pressed"]

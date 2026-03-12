@@ -27,6 +27,7 @@ extends Control
 @onready var short_rest: Button = $ActionButtons/RestButtons/ShortRest
 @onready var long_rest: Button = $ActionButtons/RestButtons/LongRest
 @onready var rest_window: Window = $ActionButtons/RestButtons/RestWindow
+@onready var dice_roll_window: Window = $ActionButtons/DiceButtons/DiceRollWindow
 
 var updated = false
 var shortRestCounter = 0
@@ -35,6 +36,7 @@ var character: Character
 func enter() -> void:
 	character = $Character
 	rest_window.get_character(character)
+	dice_roll_window.visible = false
 	update_edit_fields()
 	
 	character.set_maximum_health()
@@ -288,12 +290,13 @@ func _on_long_rest_pressed() -> void:
 	shortRestCounter = 0
 	rest_window.visible = true
 
+func _on_dice_button_pressed() -> void:
+	dice_roll_window.visible = true
 
 func _on_rest_window_close_requested() -> void:
 	rest_window.hide()
 	short_rest.disabled = false
 	long_rest.disabled = false
-
 
 func _on_confirm_button_pressed() -> void:
 	rest_window.hide()
