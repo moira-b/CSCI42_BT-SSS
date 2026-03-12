@@ -24,12 +24,18 @@ extends Control
 @onready var community_field = $Header/CommnityAncestry/PanelContainer/Community/ColorRect/Community
 @onready var class_field = $ClassSubclass/ClassRect/Class
 @onready var subclass_field = $ClassSubclass/SubclassRect/Label
+@onready var short_rest: Button = $RestButtons/ShortRest
+@onready var long_rest: Button = $RestButtons/LongRest
+@onready var rest_window: Window = $RestButtons/RestWindow
+
 
 var updated = false
+var shortRestCounter = 0
 var character: Character
 
 func enter() -> void:
 	character = $Character
+	rest_window.get_character(character)
 	update_edit_fields()
 	
 	character.set_maximum_health()
@@ -265,3 +271,32 @@ func _on_experience_5_text_changed(new_text):
 
 func _on_experience_5_text_submitted(new_text):
 	change_experience(5, new_text)
+
+
+func _on_short_rest_pressed() -> void:
+	rest_window.set_rest_Length("short")
+	rest_window.disable_Project()
+	if shortRestCounter < 3:
+		long_rest.disabled = true
+		shortRestCounter += 1
+		rest_window.visible = true
+
+
+func _on_long_rest_pressed() -> void:
+	rest_window.set_rest_Length("long")
+	short_rest.disabled = true
+	rest_window.enable_Project()
+	shortRestCounter = 0
+	rest_window.visible = true
+
+
+func _on_rest_window_close_requested() -> void:
+	rest_window.hide()
+	short_rest.disabled = false
+	long_rest.disabled = false
+
+
+func _on_confirm_button_pressed() -> void:
+	rest_window.hide()
+	short_rest.disabled = false
+	long_rest.disabled = false

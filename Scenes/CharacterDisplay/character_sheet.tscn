@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://dhouly0p8fe4p"]
 
 [ext_resource type="Script" uid="uid://cmt4mu51iv5vw" path="res://Scenes/CharacterDisplay/character_sheet.gd" id="1_dg7yu"]
-[ext_resource type="Script" uid="uid://dnjp24h6b6fc2" path="res://Scripts/CharacterDisplay/markable_stat.gd" id="2_5rpyy"]
+[ext_resource type="Script" uid="uid://dfs5rt0xu3vuj" path="res://Scenes/CharacterDisplay/rest.gd" id="2_5rpyy"]
 [ext_resource type="StyleBox" uid="uid://dic645d200g74" path="res://Resources/GUIStyles/character_sheet_stylebox.tres" id="2_c8oo5"]
+[ext_resource type="Script" uid="uid://dnjp24h6b6fc2" path="res://Scripts/CharacterDisplay/markable_stat.gd" id="4_qgeia"]
 
 [sub_resource type="GDScript" id="GDScript_dg7yu"]
 script/source = "extends LineEdit
@@ -278,7 +279,7 @@ offset_bottom = 186.728
 [node name="Health" type="PanelContainer" parent="MarkableStats" unique_id=898166146]
 layout_mode = 2
 theme_override_styles/panel = ExtResource("2_c8oo5")
-script = ExtResource("2_5rpyy")
+script = ExtResource("4_qgeia")
 
 [node name="FieldContainer" type="HBoxContainer" parent="MarkableStats/Health" unique_id=1675041664]
 layout_mode = 2
@@ -316,7 +317,7 @@ text = "-"
 [node name="Stress" type="PanelContainer" parent="MarkableStats" unique_id=2030183416]
 layout_mode = 2
 theme_override_styles/panel = ExtResource("2_c8oo5")
-script = ExtResource("2_5rpyy")
+script = ExtResource("4_qgeia")
 
 [node name="FieldContainer" type="HBoxContainer" parent="MarkableStats/Stress" unique_id=1848188292]
 layout_mode = 2
@@ -354,7 +355,7 @@ text = "-"
 [node name="Hope" type="PanelContainer" parent="MarkableStats" unique_id=431121348]
 layout_mode = 2
 theme_override_styles/panel = ExtResource("2_c8oo5")
-script = ExtResource("2_5rpyy")
+script = ExtResource("4_qgeia")
 
 [node name="FieldContainer" type="HBoxContainer" parent="MarkableStats/Hope" unique_id=135152164]
 layout_mode = 2
@@ -392,7 +393,7 @@ text = "-"
 [node name="Armor" type="PanelContainer" parent="MarkableStats" unique_id=592864428]
 layout_mode = 2
 theme_override_styles/panel = ExtResource("2_c8oo5")
-script = ExtResource("2_5rpyy")
+script = ExtResource("4_qgeia")
 
 [node name="FieldContainer" type="HBoxContainer" parent="MarkableStats/Armor" unique_id=125254012]
 layout_mode = 2
@@ -560,6 +561,7 @@ custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 
 [node name="Level" type="HBoxContainer" parent="." unique_id=730789895]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.98700005
@@ -571,7 +573,7 @@ offset_bottom = 56.0
 [node name="Level" type="PanelContainer" parent="Level" unique_id=1090331652]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
-script = ExtResource("2_5rpyy")
+script = ExtResource("4_qgeia")
 
 [node name="FieldContainer" type="HBoxContainer" parent="Level/Level" unique_id=85699320]
 layout_mode = 2
@@ -600,6 +602,111 @@ custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
 text = "-"
 
+[node name="RestButtons" type="VBoxContainer" parent="." unique_id=1953046344]
+custom_minimum_size = Vector2(100, 110)
+layout_mode = 0
+offset_left = 40.0
+offset_top = 490.0
+offset_right = 80.0
+offset_bottom = 530.0
+
+[node name="ShortRest" type="Button" parent="RestButtons" unique_id=375690570]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 6
+text = "Short Rest"
+
+[node name="LongRest" type="Button" parent="RestButtons" unique_id=1429046138]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 6
+text = "Long Rest"
+
+[node name="RestWindow" type="Window" parent="RestButtons" unique_id=2095986794]
+oversampling_override = 1.0
+title = "Rest Actions"
+initial_position = 1
+size = Vector2i(500, 400)
+visible = false
+script = ExtResource("2_5rpyy")
+
+[node name="RestUI" type="Control" parent="RestButtons/RestWindow" unique_id=165973256]
+custom_minimum_size = Vector2(500, 400)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -200.0
+offset_right = 250.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="RestActions" type="VBoxContainer" parent="RestButtons/RestWindow/RestUI" unique_id=335220932]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -85.5
+offset_right = 220.0
+offset_bottom = 85.5
+grow_vertical = 2
+alignment = 1
+
+[node name="TendWounds" type="CheckButton" parent="RestButtons/RestWindow/RestUI/RestActions" unique_id=996454089]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_vertical = 4
+text = "Tend to Wounds"
+
+[node name="ClearStress" type="CheckButton" parent="RestButtons/RestWindow/RestUI/RestActions" unique_id=794885834]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_vertical = 4
+text = "Clear Stress"
+
+[node name="RepairArmor" type="CheckButton" parent="RestButtons/RestWindow/RestUI/RestActions" unique_id=1231113641]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_vertical = 4
+text = "Repair Armor"
+
+[node name="Prepare" type="CheckButton" parent="RestButtons/RestWindow/RestUI/RestActions" unique_id=775912072]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_vertical = 4
+text = "Prepare"
+
+[node name="Project" type="CheckButton" parent="RestButtons/RestWindow/RestUI/RestActions" unique_id=1777724042]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_vertical = 4
+text = "Work on a Project"
+
+[node name="ConfirmButton" type="Button" parent="RestButtons/RestWindow/RestUI" unique_id=1063158913]
+custom_minimum_size = Vector2(75, 40)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -37.5
+offset_top = -56.0
+offset_right = 37.5
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Confirm"
+
 [connection signal="text_changed" from="Header/NamePronouns/NamePanelContainer/NameC/NameEdit" to="." method="_on_name_edit_text_changed"]
 [connection signal="text_submitted" from="Header/NamePronouns/NamePanelContainer/NameC/NameEdit" to="." method="_on_name_edit_text_submitted"]
 [connection signal="text_changed" from="Header/NamePronouns/PronounsPanelContainer/Pronouns/Pronouns" to="." method="_on_pronouns_text_changed"]
@@ -621,3 +728,13 @@ text = "-"
 [connection signal="text_submitted" from="Experiences/Experience4/Experience4" to="." method="_on_experience_4_text_submitted"]
 [connection signal="text_changed" from="Experiences/Experience5/Experience5" to="." method="_on_experience_5_text_changed"]
 [connection signal="text_submitted" from="Experiences/Experience5/Experience5" to="." method="_on_experience_5_text_submitted"]
+[connection signal="pressed" from="RestButtons/ShortRest" to="." method="_on_short_rest_pressed"]
+[connection signal="pressed" from="RestButtons/LongRest" to="." method="_on_long_rest_pressed"]
+[connection signal="close_requested" from="RestButtons/RestWindow" to="." method="_on_rest_window_close_requested"]
+[connection signal="toggled" from="RestButtons/RestWindow/RestUI/RestActions/TendWounds" to="RestButtons/RestWindow" method="_on_tend_wounds_toggled"]
+[connection signal="toggled" from="RestButtons/RestWindow/RestUI/RestActions/ClearStress" to="RestButtons/RestWindow" method="_on_clear_stress_toggled"]
+[connection signal="toggled" from="RestButtons/RestWindow/RestUI/RestActions/RepairArmor" to="RestButtons/RestWindow" method="_on_repair_armor_toggled"]
+[connection signal="toggled" from="RestButtons/RestWindow/RestUI/RestActions/Prepare" to="RestButtons/RestWindow" method="_on_prepare_toggled"]
+[connection signal="toggled" from="RestButtons/RestWindow/RestUI/RestActions/Project" to="RestButtons/RestWindow" method="_on_project_toggled"]
+[connection signal="pressed" from="RestButtons/RestWindow/RestUI/ConfirmButton" to="." method="_on_confirm_button_pressed"]
+[connection signal="pressed" from="RestButtons/RestWindow/RestUI/ConfirmButton" to="RestButtons/RestWindow" method="_on_confirm_button_pressed"]
