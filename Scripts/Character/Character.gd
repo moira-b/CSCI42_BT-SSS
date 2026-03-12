@@ -16,6 +16,7 @@ const max_hope: int = 6
 @export var instinct: int
 @export var presence: int
 @export var knowledge: int
+@export var proficiency: int
 @export var proficiency_modifier: int
 @export var max_hp: int
 @export var current_hp: int
@@ -32,6 +33,7 @@ var ancestry: Ancestry
 var community: Community
 var character_class: CharacterClass
 var subclass: CharacterSubclass
+
 @onready var active_domain_cards = $ActiveDomainCards
 @onready var vaulted_domain_cards = $VaultedDomainCards
 # Called when the node enters the scene tree for the first time.
@@ -124,3 +126,7 @@ func set_proficiency_modifier() -> void:
 	if level > 1: proficiency_modifier = 1
 	if level > 4: proficiency_modifier = 2
 	if level > 7: proficiency_modifier = 3
+	
+func set_proficiency() -> void:
+	self.proficiency = proficiency_modifier + proficiency
+	pass
