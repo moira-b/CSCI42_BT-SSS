@@ -21,6 +21,9 @@ func _process(delta):
 	pass
 "
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8iwex"]
+bg_color = Color(0.07058824, 0.37254903, 0.007843138, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5rpyy"]
 bg_color = Color(0.07058824, 0.37254903, 0.007843138, 1)
 corner_radius_top_left = 4
@@ -52,6 +55,8 @@ script = ExtResource("1_dg7yu")
 layout_mode = 0
 offset_right = 911.0
 offset_bottom = 112.0
+split_offsets = PackedInt32Array(728)
+split_offset = 728
 
 [node name="HeaderInfo" type="VSplitContainer" parent="Header" unique_id=2099249612]
 layout_mode = 2
@@ -173,40 +178,46 @@ grow_vertical = 2
 size_flags_horizontal = 8
 size_flags_vertical = 2
 
-[node name="Level" type="HBoxContainer" parent="Header" unique_id=730789895]
-layout_mode = 2
-
-[node name="Level" type="PanelContainer" parent="Header/Level" unique_id=1090331652]
+[node name="Level" type="PanelContainer" parent="Header" unique_id=1090331652]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
-script = ExtResource("4_qgeia")
+theme_override_styles/panel = ExtResource("2_c8oo5")
 
-[node name="FieldContainer" type="HBoxContainer" parent="Header/Level/Level" unique_id=85699320]
+[node name="FieldContainer" type="VBoxContainer" parent="Header/Level" unique_id=379242002]
 layout_mode = 2
 
-[node name="Labels" type="HBoxContainer" parent="Header/Level/Level/FieldContainer" unique_id=1083387291]
+[node name="MarginContainer" type="MarginContainer" parent="Header/Level/FieldContainer" unique_id=1925828569]
 layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 5
 
-[node name="FieldName" type="Label" parent="Header/Level/Level/FieldContainer/Labels" unique_id=304716378]
+[node name="HSplitContainer" type="HSplitContainer" parent="Header/Level/FieldContainer/MarginContainer" unique_id=887078140]
 layout_mode = 2
-text = "Level: "
+size_flags_vertical = 3
 
-[node name="FieldValue" type="Label" parent="Header/Level/Level/FieldContainer/Labels" unique_id=1825855031]
-custom_minimum_size = Vector2(50, 0)
+[node name="LevelLabel" type="Label" parent="Header/Level/FieldContainer/MarginContainer/HSplitContainer" unique_id=1690346254]
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Lvl."
+vertical_alignment = 2
 
-[node name="Buttons" type="HBoxContainer" parent="Header/Level/Level/FieldContainer" unique_id=555968749]
+[node name="LevelDisplay" type="Label" parent="Header/Level/FieldContainer/MarginContainer/HSplitContainer" unique_id=304716378]
 layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "0"
+vertical_alignment = 2
 
-[node name="IncrementButton" type="Button" parent="Header/Level/Level/FieldContainer/Buttons" unique_id=1727927263]
+[node name="PanelContainer" type="PanelContainer" parent="Header/Level/FieldContainer" unique_id=1069698842]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8iwex")
+
+[node name="LevelUpButton" type="Button" parent="Header/Level/FieldContainer/PanelContainer" unique_id=1305469132]
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
-text = "+"
-
-[node name="DecrementButton" type="Button" parent="Header/Level/Level/FieldContainer/Buttons" unique_id=1783854800]
-custom_minimum_size = Vector2(30, 0)
-layout_mode = 2
-text = "-"
+text = "Level Up"
 
 [node name="TraitModifiers" type="HBoxContainer" parent="." unique_id=1219526404]
 layout_mode = 1
@@ -728,8 +739,31 @@ size_flags_vertical = 4
 text = "F/H Roll"
 
 [node name="DiceRollWindow" parent="ActionButtons/DiceButtons" unique_id=292838826 instance=ExtResource("5_glymg")]
+visible = false
 
 [node name="FHRollWindow" parent="ActionButtons/DiceButtons" unique_id=1979625603 instance=ExtResource("6_8iwex")]
+visible = false
+
+[node name="LevelUpConfirmation" type="PanelContainer" parent="." unique_id=937050480]
+visible = false
+layout_mode = 0
+offset_left = 922.0
+offset_top = 50.0
+offset_right = 1026.0
+offset_bottom = 120.0
+theme_override_styles/panel = ExtResource("2_c8oo5")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LevelUpConfirmation" unique_id=583142456]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="ConfirmButton" type="Button" parent="LevelUpConfirmation/VBoxContainer" unique_id=1173136180]
+layout_mode = 2
+text = "Confirm"
+
+[node name="CancelButton" type="Button" parent="LevelUpConfirmation/VBoxContainer" unique_id=96840819]
+layout_mode = 2
+text = "Cancel"
 
 [connection signal="text_changed" from="Header/HeaderInfo/NamePronouns/NamePanelContainer/NameC/NameEdit" to="." method="_on_name_edit_text_changed"]
 [connection signal="text_submitted" from="Header/HeaderInfo/NamePronouns/NamePanelContainer/NameC/NameEdit" to="." method="_on_name_edit_text_submitted"]
