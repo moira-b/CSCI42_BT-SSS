@@ -43,38 +43,29 @@ grow_vertical = 1
 
 [node name="ActiveCards" type="HBoxContainer" parent="." unique_id=520518874]
 layout_mode = 0
-offset_top = 81.0
-offset_right = 1520.0
-offset_bottom = 431.0
-scale = Vector2(0.75912774, 0.75912774)
+offset_left = 8.0
+offset_top = 30.0
+offset_right = 1277.8785
+offset_bottom = 380.0
+scale = Vector2(0.8940905, 0.8940905)
 
 [node name="DomainCard" parent="ActiveCards" unique_id=1517906148 instance=ExtResource("3_n8krj")]
-visible = false
 custom_minimum_size = Vector2(250, 350)
 layout_mode = 2
 
 [node name="DomainCard2" parent="ActiveCards" unique_id=1197342788 instance=ExtResource("3_n8krj")]
-visible = false
 custom_minimum_size = Vector2(250, 350)
 layout_mode = 2
 
 [node name="DomainCard3" parent="ActiveCards" unique_id=2010156359 instance=ExtResource("3_n8krj")]
-visible = false
 custom_minimum_size = Vector2(250, 350)
 layout_mode = 2
 
 [node name="DomainCard4" parent="ActiveCards" unique_id=547194531 instance=ExtResource("3_n8krj")]
-visible = false
 custom_minimum_size = Vector2(250, 350)
 layout_mode = 2
 
 [node name="DomainCard5" parent="ActiveCards" unique_id=1363607818 instance=ExtResource("3_n8krj")]
-visible = false
-custom_minimum_size = Vector2(250, 350)
-layout_mode = 2
-
-[node name="DomainCard6" parent="ActiveCards" unique_id=979684927 instance=ExtResource("3_n8krj")]
-visible = false
 custom_minimum_size = Vector2(250, 350)
 layout_mode = 2
 
@@ -94,5 +85,4 @@ text = "Swap"
 [connection signal="selected" from="ActiveCards/DomainCard3" to="." method="_on_domain_card_selected"]
 [connection signal="selected" from="ActiveCards/DomainCard4" to="." method="_on_domain_card_selected"]
 [connection signal="selected" from="ActiveCards/DomainCard5" to="." method="_on_domain_card_selected"]
-[connection signal="selected" from="ActiveCards/DomainCard6" to="." method="_on_domain_card_selected"]
 [connection signal="pressed" from="SwapButton" to="." method="_on_swap_button_pressed"]
