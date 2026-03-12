@@ -39,13 +39,11 @@ offset_bottom = 95.75
 [node name="Sum" type="Label" parent="ResultsContainer" unique_id=2019198714]
 layout_mode = 2
 theme = ExtResource("1_5tshs")
-text = "RESULT HERE"
 horizontal_alignment = 1
 
 [node name="IndividualRolls" type="Label" parent="ResultsContainer" unique_id=388726724]
 custom_minimum_size = Vector2(350, 50)
 layout_mode = 2
-text = "indiv rolls here"
 horizontal_alignment = 1
 autowrap_mode = 3
 
