@@ -8,6 +8,7 @@ extends Node
 @export var pronouns: String
 @export var level: int
 @export var max_level: int = 10
+@export var evasion: int
 @export var agility: int
 @export var strength: int
 @export var finesse: int

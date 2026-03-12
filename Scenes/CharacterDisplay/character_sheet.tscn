@@ -267,6 +267,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_qgeia")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_glymg")
+toggle_mode = true
 text = "+1
 "
 
@@ -291,6 +292,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_qgeia")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_glymg")
+toggle_mode = true
 text = "+1
 "
 
@@ -315,6 +317,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_qgeia")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_glymg")
+toggle_mode = true
 text = "+1
 "
 
@@ -339,6 +342,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_qgeia")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_glymg")
+toggle_mode = true
 text = "+1
 "
 
@@ -363,6 +367,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_qgeia")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_glymg")
+toggle_mode = true
 text = "+1
 "
 
@@ -387,6 +392,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_qgeia")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_glymg")
+toggle_mode = true
 text = "+1
 "
 
@@ -433,6 +439,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_qgeia")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_glymg")
+toggle_mode = true
 text = "+1
 "
 
@@ -480,6 +487,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_qgeia")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_glymg")
+toggle_mode = true
 text = "+1
 "
 
@@ -682,6 +690,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_qgeia")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_glymg")
+toggle_mode = true
 text = "+1
 "
 
@@ -698,6 +707,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_qgeia")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_glymg")
+toggle_mode = true
 text = "+1
 "
 
@@ -714,6 +724,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_qgeia")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_glymg")
+toggle_mode = true
 text = "+1
 "
 
@@ -730,6 +741,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_qgeia")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_glymg")
+toggle_mode = true
 text = "+1
 "
 
@@ -746,6 +758,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_qgeia")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_glymg")
+toggle_mode = true
 text = "+1
 "
 
@@ -913,21 +926,34 @@ text = "Cancel"
 [connection signal="text_changed" from="Header/HeaderInfo/NamePronouns/PronounsPanelContainer/Pronouns/PronounsEdit" to="." method="_on_pronouns_text_changed"]
 [connection signal="text_submitted" from="Header/HeaderInfo/NamePronouns/PronounsPanelContainer/Pronouns/PronounsEdit" to="." method="_on_pronouns_text_submitted"]
 [connection signal="text_submitted" from="TraitModifiers/Agility/LineEdit" to="." method="_on_agility_text_submitted"]
+[connection signal="toggled" from="TraitModifiers/Agility/AdvanceButton" to="." method="_on_agility_advance_button_toggled"]
 [connection signal="text_submitted" from="TraitModifiers/Strength/LineEdit" to="." method="_on_strength_text_submitted"]
+[connection signal="toggled" from="TraitModifiers/Strength/AdvanceButton" to="." method="_on_strength_advance_button_toggled"]
 [connection signal="text_submitted" from="TraitModifiers/Finesse/LineEdit" to="." method="_on_finesse_text_submitted"]
+[connection signal="toggled" from="TraitModifiers/Finesse/AdvanceButton" to="." method="_on_finesse_advance_button_toggled"]
 [connection signal="text_submitted" from="TraitModifiers/Instinct/LineEdit" to="." method="_on_instinct_text_submitted"]
+[connection signal="toggled" from="TraitModifiers/Instinct/AdvanceButton" to="." method="_on_instinct_advance_button_toggled"]
 [connection signal="text_submitted" from="TraitModifiers/Prescence/LineEdit" to="." method="_on_presence_text_submitted"]
+[connection signal="toggled" from="TraitModifiers/Prescence/AdvanceButton" to="." method="_on_presence_advance_button_toggled"]
 [connection signal="text_submitted" from="TraitModifiers/Knowledge/LineEdit" to="." method="_on_knowledge_text_submitted"]
+[connection signal="toggled" from="TraitModifiers/Knowledge/AdvanceButton" to="." method="_on_advance_button_toggled"]
+[connection signal="toggled" from="MarkableStats/Health/FieldContainer/Buttons/AdvanceButton" to="." method="_on_health_advance_button_toggled"]
+[connection signal="toggled" from="MarkableStats/Stress/FieldContainer/Buttons/AdvanceButton" to="." method="_on_stress_advance_button_toggled"]
 [connection signal="text_changed" from="Bio/BioEdit" to="." method="_on_bio_text_changed"]
 [connection signal="text_changed" from="Experiences/Experience1/Experience1" to="." method="_on_experience_1_text_changed"]
 [connection signal="text_submitted" from="Experiences/Experience1/Experience1" to="." method="_on_experience_1_text_submitted"]
+[connection signal="toggled" from="Experiences/Experience1/AdvanceButton" to="." method="_on_experience_1_advance_button_toggled"]
 [connection signal="text_changed" from="Experiences/Experience2/Experience2" to="." method="_on_experience_2_text_changed"]
 [connection signal="text_submitted" from="Experiences/Experience2/Experience2" to="." method="_on_experience_2_text_submitted"]
+[connection signal="toggled" from="Experiences/Experience2/AdvanceButton" to="." method="_on_experience_2_advance_button_toggled"]
 [connection signal="text_changed" from="Experiences/Experience3/Experience3" to="." method="_on_experience_3_text_changed"]
 [connection signal="text_submitted" from="Experiences/Experience3/Experience3" to="." method="_on_experience_3_text_submitted"]
+[connection signal="toggled" from="Experiences/Experience3/AdvanceButton" to="." method="_on_experience_3_advance_button_toggled"]
 [connection signal="text_changed" from="Experiences/Experience4/Experience4" to="." method="_on_experience_4_text_changed"]
 [connection signal="text_submitted" from="Experiences/Experience4/Experience4" to="." method="_on_experience_4_text_submitted"]
+[connection signal="toggled" from="Experiences/Experience4/AdvanceButton" to="." method="_on_experience_4_advance_button_toggled"]
 [connection signal="text_changed" from="Experiences/Experience5/Experience5" to="." method="_on_experience_5_text_changed"]
 [connection signal="text_submitted" from="Experiences/Experience5/Experience5" to="." method="_on_experience_5_text_submitted"]
+[connection signal="toggled" from="Experiences/Experience5/AdvanceButton" to="." method="_on_experience_5_advance_button_toggled"]
 [connection signal="close_requested" from="ActionButtons/RestButtons/RestWindow" to="." method="_on_rest_window_close_requested"]
 [connection signal="pressed" from="ActionButtons/RestButtons/RestWindow/RestUI/ConfirmButton" to="." method="_on_confirm_button_pressed"]

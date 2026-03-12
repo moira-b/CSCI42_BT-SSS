@@ -39,6 +39,25 @@ extends Control
 @onready var levelup_cancel_button: Button = $LevelUpConfirmation/VBoxContainer/CancelButton
 @onready var level_field = $Header/Level/FieldContainer/MarginContainer/HSplitContainer/LevelDisplay
 
+@onready var agility_advance: Button = $TraitModifiers/Agility/AdvanceButton
+@onready var strength_advance: Button = $TraitModifiers/Strength/AdvanceButton
+@onready var finesse_advance: Button = $TraitModifiers/Finesse/AdvanceButton
+@onready var instinct_advance: Button = $TraitModifiers/Instinct/AdvanceButton
+@onready var presence_advance: Button = $TraitModifiers/Prescence/AdvanceButton
+@onready var knowledge_advance: Button = $TraitModifiers/Knowledge/AdvanceButton
+@onready var health_advance: Button = $MarkableStats/Health/FieldContainer/Buttons/AdvanceButton
+@onready var stress_advance: Button = $MarkableStats/Stress/FieldContainer/Buttons/AdvanceButton
+@onready var experience1_advance: Button = $Experiences/Experience1/AdvanceButton
+@onready var experience2_advance: Button = $Experiences/Experience2/AdvanceButton
+@onready var experience3_advance: Button = $Experiences/Experience3/AdvanceButton
+@onready var experience4_advance: Button = $Experiences/Experience4/AdvanceButton
+@onready var experience5_advance: Button = $Experiences/Experience5/AdvanceButton
+
+var advance_buttons: Array[Button] = [agility_advance, strength_advance, finesse_advance,
+instinct_advance, presence_advance, knowledge_advance, health_advance, stress_advance,
+experience1_advance, experience2_advance,
+experience3_advance, experience4_advance, experience5_advance]
+var selected_advance: Array[Button] = []
 var updated = false
 var shortRestCounter = 0
 var character: Character
@@ -365,3 +384,147 @@ func disable_button_selection(b: bool) -> void:
 	long_rest_button.disabled = b
 	dice_button.disabled = b
 	fearhope_button.disabled = b
+	
+
+
+func _on_agility_advance_button_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		selected_advance.append(agility_advance)
+		
+		if selected_advance.size() > 2:
+			var oldest = selected_advance.pop_front()
+			oldest.set_pressed_no_signal(false)
+	else:
+		selected_advance.erase(agility_advance)
+
+
+func _on_strength_advance_button_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		selected_advance.append(strength_advance)
+		
+		if selected_advance.size() > 2:
+			var oldest = selected_advance.pop_front()
+			oldest.set_pressed_no_signal(false)
+	else:
+		selected_advance.erase(strength_advance)
+
+
+func _on_finesse_advance_button_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		selected_advance.append(finesse_advance)
+		
+		if selected_advance.size() > 2:
+			var oldest = selected_advance.pop_front()
+			oldest.set_pressed_no_signal(false)
+	else:
+		selected_advance.erase(finesse_advance)
+
+
+func _on_instinct_advance_button_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		selected_advance.append(instinct_advance)
+		
+		if selected_advance.size() > 2:
+			var oldest = selected_advance.pop_front()
+			oldest.set_pressed_no_signal(false)
+	else:
+		selected_advance.erase(instinct_advance)
+
+
+func _on_presence_advance_button_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		selected_advance.append(presence_advance)
+		
+		if selected_advance.size() > 2:
+			var oldest = selected_advance.pop_front()
+			oldest.set_pressed_no_signal(false)
+	else:
+		selected_advance.erase(presence_advance)
+
+
+func _on_advance_button_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		selected_advance.append(knowledge_advance)
+		
+		if selected_advance.size() > 2:
+			var oldest = selected_advance.pop_front()
+			oldest.set_pressed_no_signal(false)
+	else:
+		selected_advance.erase(knowledge_advance)
+
+
+func _on_health_advance_button_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		selected_advance.append(health_advance)
+		
+		if selected_advance.size() > 2:
+			var oldest = selected_advance.pop_front()
+			oldest.set_pressed_no_signal(false)
+	else:
+		selected_advance.erase(health_advance)
+
+
+func _on_stress_advance_button_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		selected_advance.append(stress_advance)
+		
+		if selected_advance.size() > 2:
+			var oldest = selected_advance.pop_front()
+			oldest.set_pressed_no_signal(false)
+	else:
+		selected_advance.erase(stress_advance)
+
+
+func _on_experience_1_advance_button_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		selected_advance.append(experience1_advance)
+		
+		if selected_advance.size() > 2:
+			var oldest = selected_advance.pop_front()
+			oldest.set_pressed_no_signal(false)
+	else:
+		selected_advance.erase(experience1_advance)
+
+
+func _on_experience_2_advance_button_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		selected_advance.append(experience2_advance)
+		
+		if selected_advance.size() > 2:
+			var oldest = selected_advance.pop_front()
+			oldest.set_pressed_no_signal(false)
+	else:
+		selected_advance.erase(experience2_advance)
+
+
+func _on_experience_3_advance_button_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		selected_advance.append(experience3_advance)
+		
+		if selected_advance.size() > 2:
+			var oldest = selected_advance.pop_front()
+			oldest.set_pressed_no_signal(false)
+	else:
+		selected_advance.erase(experience3_advance)
+
+
+func _on_experience_4_advance_button_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		selected_advance.append(experience4_advance)
+		
+		if selected_advance.size() > 2:
+			var oldest = selected_advance.pop_front()
+			oldest.set_pressed_no_signal(false)
+	else:
+		selected_advance.erase(experience4_advance)
+
+
+func _on_experience_5_advance_button_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		selected_advance.append(experience5_advance)
+		
+		if selected_advance.size() > 2:
+			var oldest = selected_advance.pop_front()
+			oldest.set_pressed_no_signal(false)
+	else:
+		selected_advance.erase(experience5_advance)
