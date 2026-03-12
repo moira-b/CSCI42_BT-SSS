@@ -1,3 +1,4 @@
+class_name Character_Sheet
 extends Control
 
 @onready var bio_edit = $"Bio/BioEdit"

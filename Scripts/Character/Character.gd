@@ -104,6 +104,7 @@ func set_level(value: int) -> bool:
 	if(1 <= value && value <= self.max_level):
 		level = value
 		#print("DEBUG: " + self.character_name + " currently has " + str(level) + " level.")
+		set_proficiency_modifier()
 		return true
 	elif(value < 1):
 		print("Cannot set level counter s to be less than 1.")
