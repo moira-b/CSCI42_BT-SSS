@@ -5,9 +5,10 @@
 
 [node name="CardVault" type="Control" unique_id=1159311945]
 layout_mode = 3
-anchor_right = 1.125
-anchor_bottom = 1.136
-offset_bottom = -0.12805176
+anchor_right = 1.0
+anchor_bottom = 1.008
+offset_right = 1.0
+offset_bottom = -0.184021
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7vdci")
@@ -23,11 +24,12 @@ offset_bottom = 640.0
 layout_mode = 0
 offset_left = 76.0
 offset_top = 399.0
-offset_right = 783.0
+offset_right = 840.0
 offset_bottom = 638.0
 
 [node name="DisplayedCard" type="Marker2D" parent="." unique_id=492823156]
-position = Vector2(1064, 552)
+position = Vector2(953.99994, 503)
+scale = Vector2(0.7760908, 0.7760908)
 
 [node name="DomainCard" parent="DisplayedCard" unique_id=1871884780 instance=ExtResource("3_n8krj")]
 visible = false
@@ -41,6 +43,10 @@ grow_vertical = 1
 
 [node name="ActiveCards" type="HBoxContainer" parent="." unique_id=520518874]
 layout_mode = 0
+offset_top = 81.0
+offset_right = 1520.0
+offset_bottom = 431.0
+scale = Vector2(0.75912774, 0.75912774)
 
 [node name="DomainCard" parent="ActiveCards" unique_id=1517906148 instance=ExtResource("3_n8krj")]
 visible = false
@@ -67,6 +73,11 @@ visible = false
 custom_minimum_size = Vector2(250, 350)
 layout_mode = 2
 
+[node name="DomainCard6" parent="ActiveCards" unique_id=979684927 instance=ExtResource("3_n8krj")]
+visible = false
+custom_minimum_size = Vector2(250, 350)
+layout_mode = 2
+
 [node name="SwapButton" type="Button" parent="." unique_id=161227211]
 layout_mode = 0
 offset_left = 9.0
@@ -83,4 +94,5 @@ text = "Swap"
 [connection signal="selected" from="ActiveCards/DomainCard3" to="." method="_on_domain_card_selected"]
 [connection signal="selected" from="ActiveCards/DomainCard4" to="." method="_on_domain_card_selected"]
 [connection signal="selected" from="ActiveCards/DomainCard5" to="." method="_on_domain_card_selected"]
+[connection signal="selected" from="ActiveCards/DomainCard6" to="." method="_on_domain_card_selected"]
 [connection signal="pressed" from="SwapButton" to="." method="_on_swap_button_pressed"]
