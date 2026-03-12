@@ -262,6 +262,7 @@ layout_mode = 2
 size_flags_vertical = 4
 
 [node name="AdvanceButton" type="Button" parent="TraitModifiers/Agility" unique_id=664161827]
+visible = false
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -287,6 +288,7 @@ layout_mode = 2
 size_flags_vertical = 4
 
 [node name="AdvanceButton" type="Button" parent="TraitModifiers/Strength" unique_id=946685690]
+visible = false
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -312,6 +314,7 @@ layout_mode = 2
 size_flags_vertical = 4
 
 [node name="AdvanceButton" type="Button" parent="TraitModifiers/Finesse" unique_id=1353375183]
+visible = false
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -337,6 +340,7 @@ layout_mode = 2
 size_flags_vertical = 4
 
 [node name="AdvanceButton" type="Button" parent="TraitModifiers/Instinct" unique_id=1344672724]
+visible = false
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -362,6 +366,7 @@ layout_mode = 2
 size_flags_vertical = 4
 
 [node name="AdvanceButton" type="Button" parent="TraitModifiers/Prescence" unique_id=1926052421]
+visible = false
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -387,6 +392,7 @@ layout_mode = 2
 size_flags_vertical = 4
 
 [node name="AdvanceButton" type="Button" parent="TraitModifiers/Knowledge" unique_id=2048896870]
+visible = false
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -434,6 +440,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="AdvanceButton" type="Button" parent="MarkableStats/Health/FieldContainer/Buttons" unique_id=1637502055]
+visible = false
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -482,6 +489,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="AdvanceButton" type="Button" parent="MarkableStats/Stress/FieldContainer/Buttons" unique_id=861303389]
+visible = false
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -685,6 +693,7 @@ custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 
 [node name="AdvanceButton" type="Button" parent="Experiences/Experience1" unique_id=1986869644]
+visible = false
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -702,6 +711,7 @@ custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 
 [node name="AdvanceButton" type="Button" parent="Experiences/Experience2" unique_id=1003584641]
+visible = false
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -719,6 +729,7 @@ custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 
 [node name="AdvanceButton" type="Button" parent="Experiences/Experience3" unique_id=1063491678]
+visible = false
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -736,6 +747,7 @@ custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 
 [node name="AdvanceButton" type="Button" parent="Experiences/Experience4" unique_id=709864554]
+visible = false
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -753,6 +765,7 @@ custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 
 [node name="AdvanceButton" type="Button" parent="Experiences/Experience5" unique_id=1340097354]
+visible = false
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -928,6 +941,55 @@ offset_top = 600.0
 offset_right = 48.83908
 offset_bottom = 640.0
 
+[node name="EvasionProficency" type="VBoxContainer" parent="." unique_id=1872226757]
+layout_mode = 0
+offset_left = 455.0
+offset_top = 250.0
+offset_right = 583.0
+offset_bottom = 323.0
+
+[node name="Evasion" type="HBoxContainer" parent="EvasionProficency" unique_id=1745427904]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="EvasionProficency/Evasion" unique_id=551798954]
+layout_mode = 2
+text = "Evasion:"
+
+[node name="Value" type="Label" parent="EvasionProficency/Evasion" unique_id=976301454]
+layout_mode = 2
+
+[node name="AdvanceButton" type="Button" parent="EvasionProficency/Evasion" unique_id=481170119]
+visible = false
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_qgeia")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_glymg")
+toggle_mode = true
+text = "+1
+"
+
+[node name="Proficiency" type="HBoxContainer" parent="EvasionProficency" unique_id=1348180779]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="EvasionProficency/Proficiency" unique_id=279680082]
+layout_mode = 2
+text = "Proficiency:"
+
+[node name="Value" type="Label" parent="EvasionProficency/Proficiency" unique_id=612684652]
+layout_mode = 2
+
+[node name="AdvanceButton" type="Button" parent="EvasionProficency/Proficiency" unique_id=143155068]
+visible = false
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_qgeia")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_glymg")
+toggle_mode = true
+text = "+1
+"
+
 [connection signal="text_changed" from="Header/HeaderInfo/NamePronouns/NamePanelContainer/NameC/NameEdit" to="." method="_on_name_edit_text_changed"]
 [connection signal="text_submitted" from="Header/HeaderInfo/NamePronouns/NamePanelContainer/NameC/NameEdit" to="." method="_on_name_edit_text_submitted"]
 [connection signal="text_changed" from="Header/HeaderInfo/NamePronouns/PronounsPanelContainer/Pronouns/PronounsEdit" to="." method="_on_pronouns_text_changed"]
@@ -965,4 +1027,7 @@ offset_bottom = 640.0
 [connection signal="close_requested" from="ActionButtons/RestButtons/RestWindow" to="." method="_on_rest_window_close_requested"]
 [connection signal="pressed" from="ActionButtons/RestButtons/RestWindow/RestUI/ConfirmButton" to="." method="_on_confirm_button_pressed"]
 [connection signal="close_requested" from="ActionButtons/DiceButtons/DiceRollWindow" to="." method="_on_dice_roll_window_close_requested"]
+[connection signal="pressed" from="LevelUpConfirmation/VBoxContainer/ConfirmButton" to="." method="_on_level_up_confirm_button_pressed"]
 [connection signal="pressed" from="CardsButton" to="." method="_on_cards_button_pressed"]
+[connection signal="toggled" from="EvasionProficency/Evasion/AdvanceButton" to="." method="_on_evasion_advance_button_toggled"]
+[connection signal="toggled" from="EvasionProficency/Proficiency/AdvanceButton" to="." method="_on_proficiency_advance_button_toggled"]

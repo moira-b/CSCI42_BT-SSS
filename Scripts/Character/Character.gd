@@ -10,7 +10,6 @@ const max_hope: int = 6
 @export var character_name: String
 @export var pronouns: String
 @export var level: int
-@export var max_level: int = 10
 @export var evasion: int
 @export var agility: int
 @export var strength: int
