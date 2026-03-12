@@ -52,11 +52,14 @@ func _on_domain_card_selected(card: DomainCard) -> void:
 	card_selected = true
 	selected = card
 	selected_active_index = selected.get_index()
+	_handle_selected_highlight()
 
 func _on_swap_button_pressed() -> void:
+	selected.toggle_highlight(false)
 	swap()
 	
 func swap():
+	selected.is_selected = false
 	character.mark_stress($DisplayedCard/DomainCard.recall_cost)
 	var selected_active_name = selected.card_name
 	var selected_vaulted_name = $DisplayedCard/DomainCard.card_name
@@ -67,3 +70,9 @@ func swap():
 	character.get_child(0).get_child(selected_active_index).change_card(selected_vaulted_name)
 	
 	vault.set_item_text(selected_vaulted_index, selected_active_name)
+
+func _handle_selected_highlight() -> void:
+	selected.toggle_highlight(true)
+	for card: DomainCard in active_cards.get_children():
+		if card != selected:
+			card.toggle_highlight(false)

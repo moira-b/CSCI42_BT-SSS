@@ -7,6 +7,7 @@ var level: int
 var type: String
 var domain: String
 var recall_cost: int
+var is_selected: bool
 
 # Display details
 @onready var level_label: Label = $Level
@@ -38,6 +39,11 @@ func change_card(name: String):
 	display_details()
 
 
+func toggle_highlight(option: bool):
+	is_selected = option
+	highlight_panel.visible = option
+
+
 func _on_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT:
@@ -50,4 +56,5 @@ func _on_mouse_entered() -> void:
 
 
 func _on_mouse_exited() -> void:
-	highlight_panel.visible = false
+	if !is_selected:
+		highlight_panel.visible = false
