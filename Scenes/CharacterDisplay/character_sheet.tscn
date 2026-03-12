@@ -46,85 +46,83 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_dg7yu")
 
-[node name="Header" type="VBoxContainer" parent="." unique_id=440971976]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -528.5
-offset_right = 528.5
-offset_bottom = 104.0
-grow_horizontal = 2
+[node name="Header" type="HSplitContainer" parent="." unique_id=1428007041]
+layout_mode = 0
+offset_right = 911.0
+offset_bottom = 112.0
 
-[node name="NamePronouns" type="HBoxContainer" parent="Header" unique_id=1837796638]
+[node name="HeaderInfo" type="VSplitContainer" parent="Header" unique_id=2099249612]
 layout_mode = 2
 
-[node name="NamePanelContainer" type="PanelContainer" parent="Header/NamePronouns" unique_id=1901304441]
+[node name="NamePronouns" type="HSplitContainer" parent="Header/HeaderInfo" unique_id=1758749744]
+layout_mode = 2
+
+[node name="NamePanelContainer" type="PanelContainer" parent="Header/HeaderInfo/NamePronouns" unique_id=1901304441]
 layout_mode = 2
 theme_override_styles/panel = ExtResource("2_c8oo5")
 
-[node name="NameC" type="HBoxContainer" parent="Header/NamePronouns/NamePanelContainer" unique_id=1593906295]
+[node name="NameC" type="HBoxContainer" parent="Header/HeaderInfo/NamePronouns/NamePanelContainer" unique_id=1593906295]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="Name" type="Label" parent="Header/NamePronouns/NamePanelContainer/NameC" unique_id=1793497501]
+[node name="Name" type="Label" parent="Header/HeaderInfo/NamePronouns/NamePanelContainer/NameC" unique_id=1793497501]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "Name: "
 
-[node name="NameEdit" type="LineEdit" parent="Header/NamePronouns/NamePanelContainer/NameC" unique_id=1389927954]
+[node name="NameEdit" type="LineEdit" parent="Header/HeaderInfo/NamePronouns/NamePanelContainer/NameC" unique_id=1389927954]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 size_flags_horizontal = 2
 placeholder_text = "What is your name?"
 script = SubResource("GDScript_dg7yu")
 
-[node name="PronounsPanelContainer" type="PanelContainer" parent="Header/NamePronouns" unique_id=619742562]
+[node name="PronounsPanelContainer" type="PanelContainer" parent="Header/HeaderInfo/NamePronouns" unique_id=619742562]
 layout_mode = 2
 theme_override_styles/panel = ExtResource("2_c8oo5")
 
-[node name="Pronouns" type="HBoxContainer" parent="Header/NamePronouns/PronounsPanelContainer" unique_id=1818981251]
+[node name="Pronouns" type="HBoxContainer" parent="Header/HeaderInfo/NamePronouns/PronounsPanelContainer" unique_id=1818981251]
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 0
 
-[node name="Label" type="Label" parent="Header/NamePronouns/PronounsPanelContainer/Pronouns" unique_id=449473121]
+[node name="Label" type="Label" parent="Header/HeaderInfo/NamePronouns/PronounsPanelContainer/Pronouns" unique_id=449473121]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "Pronouns:"
 
-[node name="Pronouns" type="LineEdit" parent="Header/NamePronouns/PronounsPanelContainer/Pronouns" unique_id=1102215493]
+[node name="PronounsEdit" type="LineEdit" parent="Header/HeaderInfo/NamePronouns/PronounsPanelContainer/Pronouns" unique_id=1102215493]
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 
-[node name="CommnityAncestry" type="HBoxContainer" parent="Header" unique_id=174565721]
+[node name="CommnityAncestry" type="HSplitContainer" parent="Header/HeaderInfo" unique_id=1615842318]
 layout_mode = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="Header/CommnityAncestry" unique_id=1597585474]
+[node name="PanelContainer" type="PanelContainer" parent="Header/HeaderInfo/CommnityAncestry" unique_id=1597585474]
 layout_mode = 2
 theme_override_styles/panel = ExtResource("2_c8oo5")
 
-[node name="Community" type="HBoxContainer" parent="Header/CommnityAncestry/PanelContainer" unique_id=743414857]
+[node name="Community" type="HBoxContainer" parent="Header/HeaderInfo/CommnityAncestry/PanelContainer" unique_id=743414857]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Header/CommnityAncestry/PanelContainer/Community" unique_id=760379478]
+[node name="Label" type="Label" parent="Header/HeaderInfo/CommnityAncestry/PanelContainer/Community" unique_id=760379478]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 text = "Community:"
 
-[node name="ColorRect" type="ColorRect" parent="Header/CommnityAncestry/PanelContainer/Community" unique_id=1812518552]
+[node name="ColorRect" type="ColorRect" parent="Header/HeaderInfo/CommnityAncestry/PanelContainer/Community" unique_id=1812518552]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 color = Color(0.12941177, 0.12941177, 0.12941177, 1)
 
-[node name="Community" type="Label" parent="Header/CommnityAncestry/PanelContainer/Community/ColorRect" unique_id=2021481224]
+[node name="Community" type="Label" parent="Header/HeaderInfo/CommnityAncestry/PanelContainer/Community/ColorRect" unique_id=2021481224]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -138,25 +136,25 @@ offset_bottom = 24.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="AncestryPanelContainer" type="PanelContainer" parent="Header/CommnityAncestry" unique_id=913894309]
+[node name="AncestryPanelContainer" type="PanelContainer" parent="Header/HeaderInfo/CommnityAncestry" unique_id=913894309]
 layout_mode = 2
 theme_override_styles/panel = ExtResource("2_c8oo5")
 
-[node name="Ancestry" type="HBoxContainer" parent="Header/CommnityAncestry/AncestryPanelContainer" unique_id=400480339]
+[node name="Ancestry" type="HBoxContainer" parent="Header/HeaderInfo/CommnityAncestry/AncestryPanelContainer" unique_id=400480339]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Header/CommnityAncestry/AncestryPanelContainer/Ancestry" unique_id=1081074418]
+[node name="Label" type="Label" parent="Header/HeaderInfo/CommnityAncestry/AncestryPanelContainer/Ancestry" unique_id=1081074418]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 text = "Ancestry:"
 
-[node name="ColorRect" type="ColorRect" parent="Header/CommnityAncestry/AncestryPanelContainer/Ancestry" unique_id=612125050]
+[node name="ColorRect" type="ColorRect" parent="Header/HeaderInfo/CommnityAncestry/AncestryPanelContainer/Ancestry" unique_id=612125050]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 color = Color(0.12941177, 0.12941177, 0.12941177, 1)
 
-[node name="Ancestry" type="Label" parent="Header/CommnityAncestry/AncestryPanelContainer/Ancestry/ColorRect" unique_id=33290907]
+[node name="Ancestry" type="Label" parent="Header/HeaderInfo/CommnityAncestry/AncestryPanelContainer/Ancestry/ColorRect" unique_id=33290907]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 1
 anchors_preset = 8
@@ -172,6 +170,41 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 8
 size_flags_vertical = 2
+
+[node name="Level" type="HBoxContainer" parent="Header" unique_id=730789895]
+layout_mode = 2
+
+[node name="Level" type="PanelContainer" parent="Header/Level" unique_id=1090331652]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+script = ExtResource("4_qgeia")
+
+[node name="FieldContainer" type="HBoxContainer" parent="Header/Level/Level" unique_id=85699320]
+layout_mode = 2
+
+[node name="Labels" type="HBoxContainer" parent="Header/Level/Level/FieldContainer" unique_id=1083387291]
+layout_mode = 2
+
+[node name="FieldName" type="Label" parent="Header/Level/Level/FieldContainer/Labels" unique_id=304716378]
+layout_mode = 2
+text = "Level: "
+
+[node name="FieldValue" type="Label" parent="Header/Level/Level/FieldContainer/Labels" unique_id=1825855031]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="Buttons" type="HBoxContainer" parent="Header/Level/Level/FieldContainer" unique_id=555968749]
+layout_mode = 2
+
+[node name="IncrementButton" type="Button" parent="Header/Level/Level/FieldContainer/Buttons" unique_id=1727927263]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+text = "+"
+
+[node name="DecrementButton" type="Button" parent="Header/Level/Level/FieldContainer/Buttons" unique_id=1783854800]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+text = "-"
 
 [node name="TraitModifiers" type="HBoxContainer" parent="." unique_id=1219526404]
 layout_mode = 1
@@ -560,55 +593,13 @@ layout_mode = 2
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 
-[node name="Level" type="HBoxContainer" parent="." unique_id=730789895]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.98700005
-anchor_right = 0.98700005
-offset_left = -178.02405
-offset_right = -0.024047852
-offset_bottom = 56.0
-
-[node name="Level" type="PanelContainer" parent="Level" unique_id=1090331652]
-custom_minimum_size = Vector2(150, 0)
-layout_mode = 2
-script = ExtResource("4_qgeia")
-
-[node name="FieldContainer" type="HBoxContainer" parent="Level/Level" unique_id=85699320]
-layout_mode = 2
-
-[node name="Labels" type="HBoxContainer" parent="Level/Level/FieldContainer" unique_id=1083387291]
-layout_mode = 2
-
-[node name="FieldName" type="Label" parent="Level/Level/FieldContainer/Labels" unique_id=304716378]
-layout_mode = 2
-text = "Level: "
-
-[node name="FieldValue" type="Label" parent="Level/Level/FieldContainer/Labels" unique_id=1825855031]
-custom_minimum_size = Vector2(50, 0)
-layout_mode = 2
-
-[node name="Buttons" type="HBoxContainer" parent="Level/Level/FieldContainer" unique_id=555968749]
-layout_mode = 2
-
-[node name="IncrementButton" type="Button" parent="Level/Level/FieldContainer/Buttons" unique_id=1727927263]
-custom_minimum_size = Vector2(30, 0)
-layout_mode = 2
-text = "+"
-
-[node name="DecrementButton" type="Button" parent="Level/Level/FieldContainer/Buttons" unique_id=1783854800]
-custom_minimum_size = Vector2(30, 0)
-layout_mode = 2
-text = "-"
-
 [node name="RestButtons" type="VBoxContainer" parent="." unique_id=1953046344]
 custom_minimum_size = Vector2(100, 110)
 layout_mode = 0
-offset_left = 40.0
-offset_top = 490.0
-offset_right = 80.0
-offset_bottom = 530.0
+offset_left = 350.0
+offset_top = 500.0
+offset_right = 450.0
+offset_bottom = 610.0
 
 [node name="ShortRest" type="Button" parent="RestButtons" unique_id=375690570]
 custom_minimum_size = Vector2(100, 50)
@@ -707,10 +698,10 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "Confirm"
 
-[connection signal="text_changed" from="Header/NamePronouns/NamePanelContainer/NameC/NameEdit" to="." method="_on_name_edit_text_changed"]
-[connection signal="text_submitted" from="Header/NamePronouns/NamePanelContainer/NameC/NameEdit" to="." method="_on_name_edit_text_submitted"]
-[connection signal="text_changed" from="Header/NamePronouns/PronounsPanelContainer/Pronouns/Pronouns" to="." method="_on_pronouns_text_changed"]
-[connection signal="text_submitted" from="Header/NamePronouns/PronounsPanelContainer/Pronouns/Pronouns" to="." method="_on_pronouns_text_submitted"]
+[connection signal="text_changed" from="Header/HeaderInfo/NamePronouns/NamePanelContainer/NameC/NameEdit" to="." method="_on_name_edit_text_changed"]
+[connection signal="text_submitted" from="Header/HeaderInfo/NamePronouns/NamePanelContainer/NameC/NameEdit" to="." method="_on_name_edit_text_submitted"]
+[connection signal="text_changed" from="Header/HeaderInfo/NamePronouns/PronounsPanelContainer/Pronouns/PronounsEdit" to="." method="_on_pronouns_text_changed"]
+[connection signal="text_submitted" from="Header/HeaderInfo/NamePronouns/PronounsPanelContainer/Pronouns/PronounsEdit" to="." method="_on_pronouns_text_submitted"]
 [connection signal="text_submitted" from="TraitModifiers/Agility/LineEdit" to="." method="_on_agility_text_submitted"]
 [connection signal="text_submitted" from="TraitModifiers/Strength/LineEdit" to="." method="_on_strength_text_submitted"]
 [connection signal="text_submitted" from="TraitModifiers/Finesse/LineEdit" to="." method="_on_finesse_text_submitted"]
