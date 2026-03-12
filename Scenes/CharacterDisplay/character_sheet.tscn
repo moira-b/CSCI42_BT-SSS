@@ -593,29 +593,37 @@ layout_mode = 2
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 
-[node name="RestButtons" type="VBoxContainer" parent="." unique_id=1953046344]
-custom_minimum_size = Vector2(100, 110)
-layout_mode = 0
-offset_left = 350.0
-offset_top = 500.0
-offset_right = 450.0
-offset_bottom = 610.0
+[node name="ActionButtons" type="HBoxContainer" parent="." unique_id=92466979]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -110.0
+grow_horizontal = 0
+grow_vertical = 0
 
-[node name="ShortRest" type="Button" parent="RestButtons" unique_id=375690570]
+[node name="RestButtons" type="VBoxContainer" parent="ActionButtons" unique_id=1953046344]
+custom_minimum_size = Vector2(100, 110)
+layout_mode = 2
+
+[node name="ShortRest" type="Button" parent="ActionButtons/RestButtons" unique_id=375690570]
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 6
 text = "Short Rest"
 
-[node name="LongRest" type="Button" parent="RestButtons" unique_id=1429046138]
+[node name="LongRest" type="Button" parent="ActionButtons/RestButtons" unique_id=1429046138]
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 6
 text = "Long Rest"
 
-[node name="RestWindow" type="Window" parent="RestButtons" unique_id=2095986794]
+[node name="RestWindow" type="Window" parent="ActionButtons/RestButtons" unique_id=2095986794]
 oversampling_override = 1.0
 title = "Rest Actions"
 initial_position = 1
@@ -623,7 +631,7 @@ size = Vector2i(500, 400)
 visible = false
 script = ExtResource("2_5rpyy")
 
-[node name="RestUI" type="Control" parent="RestButtons/RestWindow" unique_id=165973256]
+[node name="RestUI" type="Control" parent="ActionButtons/RestButtons/RestWindow" unique_id=165973256]
 custom_minimum_size = Vector2(500, 400)
 layout_mode = 3
 anchors_preset = 8
@@ -640,7 +648,7 @@ grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="RestActions" type="VBoxContainer" parent="RestButtons/RestWindow/RestUI" unique_id=335220932]
+[node name="RestActions" type="VBoxContainer" parent="ActionButtons/RestButtons/RestWindow/RestUI" unique_id=335220932]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 1
 anchors_preset = 4
@@ -652,37 +660,37 @@ offset_bottom = 85.5
 grow_vertical = 2
 alignment = 1
 
-[node name="TendWounds" type="CheckButton" parent="RestButtons/RestWindow/RestUI/RestActions" unique_id=996454089]
+[node name="TendWounds" type="CheckButton" parent="ActionButtons/RestButtons/RestWindow/RestUI/RestActions" unique_id=996454089]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 size_flags_vertical = 4
 text = "Tend to Wounds"
 
-[node name="ClearStress" type="CheckButton" parent="RestButtons/RestWindow/RestUI/RestActions" unique_id=794885834]
+[node name="ClearStress" type="CheckButton" parent="ActionButtons/RestButtons/RestWindow/RestUI/RestActions" unique_id=794885834]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 size_flags_vertical = 4
 text = "Clear Stress"
 
-[node name="RepairArmor" type="CheckButton" parent="RestButtons/RestWindow/RestUI/RestActions" unique_id=1231113641]
+[node name="RepairArmor" type="CheckButton" parent="ActionButtons/RestButtons/RestWindow/RestUI/RestActions" unique_id=1231113641]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 size_flags_vertical = 4
 text = "Repair Armor"
 
-[node name="Prepare" type="CheckButton" parent="RestButtons/RestWindow/RestUI/RestActions" unique_id=775912072]
+[node name="Prepare" type="CheckButton" parent="ActionButtons/RestButtons/RestWindow/RestUI/RestActions" unique_id=775912072]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 size_flags_vertical = 4
 text = "Prepare"
 
-[node name="Project" type="CheckButton" parent="RestButtons/RestWindow/RestUI/RestActions" unique_id=1777724042]
+[node name="Project" type="CheckButton" parent="ActionButtons/RestButtons/RestWindow/RestUI/RestActions" unique_id=1777724042]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 size_flags_vertical = 4
 text = "Work on a Project"
 
-[node name="ConfirmButton" type="Button" parent="RestButtons/RestWindow/RestUI" unique_id=1063158913]
+[node name="ConfirmButton" type="Button" parent="ActionButtons/RestButtons/RestWindow/RestUI" unique_id=1063158913]
 custom_minimum_size = Vector2(75, 40)
 layout_mode = 1
 anchors_preset = 7
@@ -697,6 +705,25 @@ offset_bottom = -16.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Confirm"
+
+[node name="DiceButtons" type="VBoxContainer" parent="ActionButtons" unique_id=164893220]
+custom_minimum_size = Vector2(100, 110)
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Dice" type="Button" parent="ActionButtons/DiceButtons" unique_id=1692544909]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+text = "Dice Roll"
+
+[node name="FHDice" type="Button" parent="ActionButtons/DiceButtons" unique_id=272697354]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+text = "F/H Roll"
 
 [connection signal="text_changed" from="Header/HeaderInfo/NamePronouns/NamePanelContainer/NameC/NameEdit" to="." method="_on_name_edit_text_changed"]
 [connection signal="text_submitted" from="Header/HeaderInfo/NamePronouns/NamePanelContainer/NameC/NameEdit" to="." method="_on_name_edit_text_submitted"]
@@ -719,13 +746,13 @@ text = "Confirm"
 [connection signal="text_submitted" from="Experiences/Experience4/Experience4" to="." method="_on_experience_4_text_submitted"]
 [connection signal="text_changed" from="Experiences/Experience5/Experience5" to="." method="_on_experience_5_text_changed"]
 [connection signal="text_submitted" from="Experiences/Experience5/Experience5" to="." method="_on_experience_5_text_submitted"]
-[connection signal="pressed" from="RestButtons/ShortRest" to="." method="_on_short_rest_pressed"]
-[connection signal="pressed" from="RestButtons/LongRest" to="." method="_on_long_rest_pressed"]
-[connection signal="close_requested" from="RestButtons/RestWindow" to="." method="_on_rest_window_close_requested"]
-[connection signal="toggled" from="RestButtons/RestWindow/RestUI/RestActions/TendWounds" to="RestButtons/RestWindow" method="_on_tend_wounds_toggled"]
-[connection signal="toggled" from="RestButtons/RestWindow/RestUI/RestActions/ClearStress" to="RestButtons/RestWindow" method="_on_clear_stress_toggled"]
-[connection signal="toggled" from="RestButtons/RestWindow/RestUI/RestActions/RepairArmor" to="RestButtons/RestWindow" method="_on_repair_armor_toggled"]
-[connection signal="toggled" from="RestButtons/RestWindow/RestUI/RestActions/Prepare" to="RestButtons/RestWindow" method="_on_prepare_toggled"]
-[connection signal="toggled" from="RestButtons/RestWindow/RestUI/RestActions/Project" to="RestButtons/RestWindow" method="_on_project_toggled"]
-[connection signal="pressed" from="RestButtons/RestWindow/RestUI/ConfirmButton" to="." method="_on_confirm_button_pressed"]
-[connection signal="pressed" from="RestButtons/RestWindow/RestUI/ConfirmButton" to="RestButtons/RestWindow" method="_on_confirm_button_pressed"]
+[connection signal="pressed" from="ActionButtons/RestButtons/ShortRest" to="." method="_on_short_rest_pressed"]
+[connection signal="pressed" from="ActionButtons/RestButtons/LongRest" to="." method="_on_long_rest_pressed"]
+[connection signal="close_requested" from="ActionButtons/RestButtons/RestWindow" to="." method="_on_rest_window_close_requested"]
+[connection signal="toggled" from="ActionButtons/RestButtons/RestWindow/RestUI/RestActions/TendWounds" to="ActionButtons/RestButtons/RestWindow" method="_on_tend_wounds_toggled"]
+[connection signal="toggled" from="ActionButtons/RestButtons/RestWindow/RestUI/RestActions/ClearStress" to="ActionButtons/RestButtons/RestWindow" method="_on_clear_stress_toggled"]
+[connection signal="toggled" from="ActionButtons/RestButtons/RestWindow/RestUI/RestActions/RepairArmor" to="ActionButtons/RestButtons/RestWindow" method="_on_repair_armor_toggled"]
+[connection signal="toggled" from="ActionButtons/RestButtons/RestWindow/RestUI/RestActions/Prepare" to="ActionButtons/RestButtons/RestWindow" method="_on_prepare_toggled"]
+[connection signal="toggled" from="ActionButtons/RestButtons/RestWindow/RestUI/RestActions/Project" to="ActionButtons/RestButtons/RestWindow" method="_on_project_toggled"]
+[connection signal="pressed" from="ActionButtons/RestButtons/RestWindow/RestUI/ConfirmButton" to="." method="_on_confirm_button_pressed"]
+[connection signal="pressed" from="ActionButtons/RestButtons/RestWindow/RestUI/ConfirmButton" to="ActionButtons/RestButtons/RestWindow" method="_on_confirm_button_pressed"]

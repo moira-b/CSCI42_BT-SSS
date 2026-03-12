@@ -24,9 +24,9 @@ extends Control
 @onready var community_field = $Header/HeaderInfo/CommnityAncestry/PanelContainer/Community/ColorRect/Community
 @onready var class_field = $ClassSubclass/ClassRect/Class
 @onready var subclass_field = $ClassSubclass/SubclassRect/Label
-@onready var short_rest: Button = $RestButtons/ShortRest
-@onready var long_rest: Button = $RestButtons/LongRest
-@onready var rest_window: Window = $RestButtons/RestWindow
+@onready var short_rest: Button = $ActionButtons/RestButtons/ShortRest
+@onready var long_rest: Button = $ActionButtons/RestButtons/LongRest
+@onready var rest_window: Window = $ActionButtons/RestButtons/RestWindow
 
 var updated = false
 var shortRestCounter = 0
