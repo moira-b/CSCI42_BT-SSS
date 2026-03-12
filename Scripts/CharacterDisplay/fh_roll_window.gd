@@ -12,7 +12,7 @@ var fear_result: int = 0
 var hope_result: int = 0
 
 func _ready() -> void:
-	self.visible = true
+	self.visible = false
 	fear_result = randi_range(MINIMUM, MAXIMUM)
 	hope_result = randi_range(MINIMUM, MAXIMUM)
 	fear_display.text = str(fear_result)

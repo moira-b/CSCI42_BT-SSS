@@ -5,6 +5,7 @@
 [ext_resource type="StyleBox" uid="uid://dic645d200g74" path="res://Resources/GUIStyles/character_sheet_stylebox.tres" id="2_c8oo5"]
 [ext_resource type="Script" uid="uid://dnjp24h6b6fc2" path="res://Scripts/CharacterDisplay/markable_stat.gd" id="4_qgeia"]
 [ext_resource type="PackedScene" uid="uid://dltyc5tel16kj" path="res://Scenes/CharacterDisplay/dice_roll_window.tscn" id="5_glymg"]
+[ext_resource type="PackedScene" uid="uid://b6t3g5gxhwopj" path="res://Scenes/CharacterDisplay/fh_roll_window.tscn" id="6_8iwex"]
 
 [sub_resource type="GDScript" id="GDScript_dg7yu"]
 script/source = "extends LineEdit
@@ -715,6 +716,8 @@ theme_override_constants/separation = 8
 [node name="DiceRollWindow" parent="ActionButtons/DiceButtons" unique_id=292838826 instance=ExtResource("5_glymg")]
 visible = false
 
+[node name="FHRollWindow" parent="ActionButtons/DiceButtons" unique_id=1979625603 instance=ExtResource("6_8iwex")]
+
 [node name="Dice" type="Button" parent="ActionButtons/DiceButtons" unique_id=1692544909]
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
@@ -761,3 +764,4 @@ text = "F/H Roll"
 [connection signal="pressed" from="ActionButtons/RestButtons/RestWindow/RestUI/ConfirmButton" to="." method="_on_confirm_button_pressed"]
 [connection signal="pressed" from="ActionButtons/RestButtons/RestWindow/RestUI/ConfirmButton" to="ActionButtons/RestButtons/RestWindow" method="_on_confirm_button_pressed"]
 [connection signal="pressed" from="ActionButtons/DiceButtons/Dice" to="." method="_on_dice_button_pressed"]
+[connection signal="pressed" from="ActionButtons/DiceButtons/FHDice" to="." method="_on_fh_dice_button_pressed"]

@@ -28,6 +28,7 @@ extends Control
 @onready var long_rest: Button = $ActionButtons/RestButtons/LongRest
 @onready var rest_window: Window = $ActionButtons/RestButtons/RestWindow
 @onready var dice_roll_window: Window = $ActionButtons/DiceButtons/DiceRollWindow
+@onready var fh_roll_window: Window = $ActionButtons/DiceButtons/FHRollWindow
 
 var updated = false
 var shortRestCounter = 0
@@ -292,6 +293,9 @@ func _on_long_rest_pressed() -> void:
 
 func _on_dice_button_pressed() -> void:
 	dice_roll_window.visible = true
+
+func _on_fh_dice_button_pressed() -> void:
+	fh_roll_window.visible = true
 
 func _on_rest_window_close_requested() -> void:
 	rest_window.hide()
