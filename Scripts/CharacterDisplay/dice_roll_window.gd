@@ -8,7 +8,7 @@ extends Window
 var dice_array: Array
 
 func _ready() -> void:
-	self.visible = true
+	self.visible = false
 	dice_array = dice.get_children()
 	
 func _on_roll_button_pressed() -> void:
