@@ -6,7 +6,7 @@
 [sub_resource type="Theme" id="Theme_k2fvo"]
 default_font_size = 24
 
-[node name="FH_roll_window" type="Window" unique_id=1979625603]
+[node name="FHRollWindow" type="Window" unique_id=1979625603]
 oversampling_override = 1.0
 initial_position = 1
 size = Vector2i(450, 300)

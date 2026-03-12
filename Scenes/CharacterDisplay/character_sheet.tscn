@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cmt4mu51iv5vw" path="res://Scenes/CharacterDisplay/character_sheet.gd" id="1_dg7yu"]
 [ext_resource type="StyleBox" uid="uid://dic645d200g74" path="res://Resources/GUIStyles/character_sheet_stylebox.tres" id="2_c8oo5"]
-[ext_resource type="Script" path="res://Scripts/CharacterDisplay/rest.gd" id="4_8iwex"]
+[ext_resource type="Script" uid="uid://dfs5rt0xu3vuj" path="res://Scripts/CharacterDisplay/rest.gd" id="4_8iwex"]
 [ext_resource type="Script" uid="uid://dnjp24h6b6fc2" path="res://Scripts/CharacterDisplay/markable_stat.gd" id="4_qgeia"]
 [ext_resource type="PackedScene" uid="uid://dltyc5tel16kj" path="res://Scenes/CharacterDisplay/dice_roll_window.tscn" id="5_glymg"]
 [ext_resource type="PackedScene" uid="uid://b6t3g5gxhwopj" path="res://Scenes/CharacterDisplay/fh_roll_window.tscn" id="6_8iwex"]
@@ -713,11 +713,6 @@ custom_minimum_size = Vector2(100, 110)
 layout_mode = 2
 theme_override_constants/separation = 8
 
-[node name="DiceRollWindow" parent="ActionButtons/DiceButtons" unique_id=292838826 instance=ExtResource("5_glymg")]
-visible = false
-
-[node name="FHRollWindow" parent="ActionButtons/DiceButtons" unique_id=1979625603 instance=ExtResource("6_8iwex")]
-
 [node name="Dice" type="Button" parent="ActionButtons/DiceButtons" unique_id=1692544909]
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
@@ -731,6 +726,10 @@ layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
 text = "F/H Roll"
+
+[node name="DiceRollWindow" parent="ActionButtons/DiceButtons" unique_id=292838826 instance=ExtResource("5_glymg")]
+
+[node name="FHRollWindow" parent="ActionButtons/DiceButtons" unique_id=1979625603 instance=ExtResource("6_8iwex")]
 
 [connection signal="text_changed" from="Header/HeaderInfo/NamePronouns/NamePanelContainer/NameC/NameEdit" to="." method="_on_name_edit_text_changed"]
 [connection signal="text_submitted" from="Header/HeaderInfo/NamePronouns/NamePanelContainer/NameC/NameEdit" to="." method="_on_name_edit_text_submitted"]
@@ -755,5 +754,3 @@ text = "F/H Roll"
 [connection signal="text_submitted" from="Experiences/Experience5/Experience5" to="." method="_on_experience_5_text_submitted"]
 [connection signal="close_requested" from="ActionButtons/RestButtons/RestWindow" to="." method="_on_rest_window_close_requested"]
 [connection signal="pressed" from="ActionButtons/RestButtons/RestWindow/RestUI/ConfirmButton" to="." method="_on_confirm_button_pressed"]
-[connection signal="close_requested" from="ActionButtons/DiceButtons/DiceRollWindow" to="." method="_on_dice_roll_window_close_requested"]
-[connection signal="close_requested" from="ActionButtons/DiceButtons/FHRollWindow" to="." method="_on_fh_roll_window_close_requested"]
