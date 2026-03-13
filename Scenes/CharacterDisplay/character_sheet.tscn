@@ -1026,7 +1026,6 @@ text = "+1
 [connection signal="toggled" from="Experiences/Experience5/AdvanceButton" to="." method="_on_experience_5_advance_button_toggled"]
 [connection signal="close_requested" from="ActionButtons/RestButtons/RestWindow" to="." method="_on_rest_window_close_requested"]
 [connection signal="pressed" from="ActionButtons/RestButtons/RestWindow/RestUI/ConfirmButton" to="." method="_on_confirm_button_pressed"]
-[connection signal="pressed" from="ActionButtons/RestButtons/RestWindow/RestUI/ConfirmButton" to="ActionButtons/RestButtons/RestWindow" method="_on_confirm_button_pressed"]
 [connection signal="close_requested" from="ActionButtons/DiceButtons/DiceRollWindow" to="." method="_on_dice_roll_window_close_requested"]
 [connection signal="pressed" from="LevelUpConfirmation/VBoxContainer/ConfirmButton" to="." method="_on_level_up_confirm_button_pressed"]
 [connection signal="pressed" from="CardsButton" to="." method="_on_cards_button_pressed"]

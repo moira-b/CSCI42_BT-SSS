@@ -352,9 +352,9 @@ func _on_fh_roll_window_close_requested() -> void:
 
 func _on_confirm_button_pressed() -> void:
 	rest_window.hide()
-	#rest_window.set_buttons_down()
+	rest_window.confirm_selection()
+	rest_window.set_buttons_down()
 	disable_button_selection(false)
-	rest_window.selected.clear()
 	print(character.current_hp)
 	update_markable_fields()
 	

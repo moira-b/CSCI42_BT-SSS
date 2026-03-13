@@ -21,7 +21,6 @@ func _ready() -> void:
 	repair_armor.toggled.connect(_on_repair_armor_toggled)
 	prepare.toggled.connect(_on_prepare_toggled)
 	project.toggled.connect(_on_project_toggled)
-	confirm_button.pressed.connect(_on_confirm_button_pressed)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -109,7 +108,7 @@ func _on_project_toggled(toggled_on: bool) -> void:
 		selected.erase(project)
 
 
-func _on_confirm_button_pressed() -> void:
+func confirm_selection() -> void:
 	self.hide()
 	if rest_length == "short":
 		for s in selected:
