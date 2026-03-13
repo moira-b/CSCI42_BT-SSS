@@ -14,6 +14,7 @@ var character: Character
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	self.visible = false
+	confirm_button.disabled = true
 	
 	# connect signals
 	tend_wounds.toggled.connect(_on_tend_wounds_toggled)
@@ -60,6 +61,10 @@ func _on_tend_wounds_toggled(toggled_on: bool) -> void:
 			oldest.set_pressed_no_signal(false)
 	else:
 		selected.erase(tend_wounds)
+	if selected.size() >= 2:
+		confirm_button.disabled = false
+	else:
+		confirm_button.disabled = true
 	
 
 
@@ -72,6 +77,10 @@ func _on_clear_stress_toggled(toggled_on: bool) -> void:
 			oldest.set_pressed_no_signal(false)
 	else:
 		selected.erase(clear_stress)
+	if selected.size() >= 2:
+		confirm_button.disabled = false
+	else:
+		confirm_button.disabled = true
 	
 
 
@@ -84,6 +93,10 @@ func _on_repair_armor_toggled(toggled_on: bool) -> void:
 			oldest.set_pressed_no_signal(false)
 	else:
 		selected.erase(repair_armor)
+	if selected.size() >= 2:
+		confirm_button.disabled = false
+	else:
+		confirm_button.disabled = true
 
 
 func _on_prepare_toggled(toggled_on: bool) -> void:
@@ -95,6 +108,10 @@ func _on_prepare_toggled(toggled_on: bool) -> void:
 			oldest.set_pressed_no_signal(false)
 	else:
 		selected.erase(prepare)
+	if selected.size() >= 2:
+		confirm_button.disabled = false
+	else:
+		confirm_button.disabled = true
 
 
 func _on_project_toggled(toggled_on: bool) -> void:
@@ -106,6 +123,10 @@ func _on_project_toggled(toggled_on: bool) -> void:
 			oldest.set_pressed_no_signal(false)
 	else:
 		selected.erase(project)
+	if selected.size() >= 2:
+		confirm_button.disabled = false
+	else:
+		confirm_button.disabled = true
 
 
 func confirm_selection() -> void:
@@ -116,14 +137,13 @@ func confirm_selection() -> void:
 			if s != prepare:
 				dice = randi_range(1,4)
 				if s == tend_wounds:
-					print("Recovered " + str(dice) + " HP")
-					print(character.current_hp + dice)
+					#print("Recovered " + str(dice) + " HP")
 					character.set_current_health(character.current_hp + dice)
 				if s == clear_stress:
-					print("Recovered " + str(dice) + " stress")
+					#print("Recovered " + str(dice) + " stress")
 					character.set_current_stress(character.current_stress - dice)
 				if s == repair_armor:
-					print("Recovered " + str(dice) + " armor")
+					#print("Recovered " + str(dice) + " armor")
 					character.used_armor_slots = clamp(character.used_armor_slots - dice,
 					0, character.max_armor_slots)
 			else:
@@ -148,6 +168,7 @@ func confirm_selection() -> void:
 			#if s == project:
 				#print("Worked on a project")
 	selected.clear()
+	confirm_button.disabled = true
 
 func set_buttons_down()  -> void:
 	tend_wounds.button_pressed = false

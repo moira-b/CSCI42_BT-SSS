@@ -355,7 +355,6 @@ func _on_confirm_button_pressed() -> void:
 	rest_window.confirm_selection()
 	rest_window.set_buttons_down()
 	disable_button_selection(false)
-	print(character.current_hp)
 	update_markable_fields()
 	
 func _on_levelup_button_pressed() -> void:
