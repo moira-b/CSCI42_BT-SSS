@@ -30,7 +30,7 @@ func _process(delta: float) -> void:
 
 func enable_Project() -> void:
 	project.visible = true
-	selected = []
+	selected.clear()
 	tend_wounds.set_pressed_no_signal(false)
 	clear_stress.set_pressed_no_signal(false)
 	repair_armor.set_pressed_no_signal(false)
@@ -149,11 +149,12 @@ func _on_confirm_button_pressed() -> void:
 				0, character.max_hope)
 			#if s == project:
 				#print("Worked on a project")
+	selected.clear()
 
 func set_buttons_down()  -> void:
-	tend_wounds.toggle_mode = false
-	clear_stress.toggle_mode = false
-	repair_armor.toggle_mode = false
-	prepare.toggle_mode = false
-	project.toggle_mode = false
+	tend_wounds.button_pressed = false
+	clear_stress.button_pressed = false
+	repair_armor.button_pressed = false
+	prepare.button_pressed = false
+	project.button_pressed = false
 	
