@@ -76,6 +76,8 @@ func swap():
 	vault.set_item_text(selected_vaulted_index, selected_active_name)
 	stress.text = (str(character.current_stress) + "/" + str(character.max_stress))
 	health.text = (str(character.current_hp) + "/" + str(character.max_hp)) 
+	
+	_handle_selected_highlight()
  
 func _handle_selected_highlight() -> void:
 	selected.toggle_highlight(true)

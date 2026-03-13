@@ -2,7 +2,7 @@
 # which holds all the character information and methods
 class_name Character
 extends Node
-
+ 
 const max_level: int = 10
 const max_hope: int = 6
 

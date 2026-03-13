@@ -117,15 +117,14 @@ func _on_confirm_button_pressed() -> void:
 			if s != prepare:
 				dice = randi_range(1,4)
 				if s == tend_wounds:
-					#print("Recovered " + str(dice) + " HP")
-					character.current_hp = clamp(character.current_hp + dice, 
-					0, character.max_hp)
+					print("Recovered " + str(dice) + " HP")
+					print(character.current_hp + dice)
+					character.set_current_health(character.current_hp + dice)
 				if s == clear_stress:
-					#print("Recovered " + str(dice) + " stress")
-					character.current_stress = clamp(character.current_stress - dice,
-					0, 12)
+					print("Recovered " + str(dice) + " stress")
+					character.set_current_stress(character.current_stress - dice)
 				if s == repair_armor:
-					#print("Recovered " + str(dice) + " armor")
+					print("Recovered " + str(dice) + " armor")
 					character.used_armor_slots = clamp(character.used_armor_slots - dice,
 					0, character.max_armor_slots)
 			else:

@@ -79,13 +79,8 @@ func enter() -> void:
 	update_edit_fields()
 	
 	character.set_maximum_health()
-	character.set_current_health(5)
 	character.set_maximum_stress()
-	character.set_current_stress(5)
 	character.set_maximum_armor_slots()
-	character.set_used_armor_slots(5)
-	character.set_current_hope(3)
-	character.set_level(1)
 	
 	connect_signals()
 	
@@ -357,7 +352,7 @@ func _on_fh_roll_window_close_requested() -> void:
 
 func _on_confirm_button_pressed() -> void:
 	rest_window.hide()
-	rest_window.set_buttons_down()
+	#rest_window.set_buttons_down()
 	disable_button_selection(false)
 	rest_window.selected.clear()
 	print(character.current_hp)
@@ -397,6 +392,7 @@ func connect_signals() -> void:
 	long_rest_button.pressed.connect(_on_long_rest_pressed)
 	dice_button.pressed.connect(_on_dice_button_pressed)
 	fearhope_button.pressed.connect(_on_fh_dice_button_pressed)
+	$ActionButtons/RestButtons/RestWindow/RestUI/ConfirmButton.pressed.connect(_on_confirm_button_pressed)
 	
 	rest_window.close_requested.connect(_on_rest_window_close_requested)
 	dice_roll_window.close_requested.connect(_on_dice_roll_window_close_requested)
