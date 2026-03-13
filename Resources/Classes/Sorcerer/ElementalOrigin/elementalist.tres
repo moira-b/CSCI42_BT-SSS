@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="CharacterClassFeature" format=3 uid="uid://8422nw35wgn2"]
+
+[ext_resource type="Script" uid="uid://ckqlyqdo4cyhe" path="res://Scripts/CharacterClasses/character_class_feature.gd" id="1_7p4vi"]
+
+[resource]
+script = ExtResource("1_7p4vi")
+feature_name = "Elementalist"
+metadata/_custom_type_script = "uid://ckqlyqdo4cyhe"

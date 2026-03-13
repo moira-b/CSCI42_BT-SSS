@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="CharacterClass" format=3 uid="uid://ccwu6ewcynypd"]
+
+[ext_resource type="Script" uid="uid://cxymexx6bno82" path="res://Scripts/CharacterClasses/character_subclass.gd" id="1_hpw48"]
+[ext_resource type="Resource" uid="uid://ehb6n7pg0rey" path="res://Resources/Classes/Seraph/DivineWielder/divine_wielder.tres" id="2_v86if"]
+[ext_resource type="Resource" uid="uid://dyha3hy0p1785" path="res://Resources/Classes/Seraph/prayer_dice.tres" id="3_73ocl"]
+[ext_resource type="Resource" uid="uid://bta8gbut4lypc" path="res://Resources/Classes/Seraph/WingedSentinel/winged_sentinel.tres" id="3_ofmpj"]
+[ext_resource type="Script" uid="uid://ckqlyqdo4cyhe" path="res://Scripts/CharacterClasses/character_class_feature.gd" id="4_svbf0"]
+[ext_resource type="Resource" uid="uid://c4re2fw8ijgdx" path="res://Resources/GeneralUseAttributes/Domains/splendor.tres" id="5_cot5w"]
+[ext_resource type="Script" uid="uid://bw1ppfeo5ccfb" path="res://Scripts/GeneralUseAttributes/domain.gd" id="6_52tsj"]
+[ext_resource type="Resource" uid="uid://npw0dmr64u2c" path="res://Resources/GeneralUseAttributes/Domains/valor.tres" id="7_7qmx8"]
+[ext_resource type="Resource" uid="uid://bboo5obxvhomw" path="res://Resources/Classes/Seraph/life_support.tres" id="7_v86if"]
+[ext_resource type="Script" uid="uid://c6daeo616vuo3" path="res://Scripts/CharacterClasses/character_class.gd" id="10_f5qk4"]
+
+[resource]
+script = ExtResource("10_f5qk4")
+name = "Seraph"
+domains = Array[ExtResource("6_52tsj")]([ExtResource("5_cot5w"), ExtResource("7_7qmx8")])
+starting_evasion = 9
+starting_hp = 7
+hope_feature = ExtResource("7_v86if")
+class_feature = Array[ExtResource("4_svbf0")]([ExtResource("3_73ocl")])
+class_items = Array[String](["A bundle of offerings", "A sigil of your god"])
+character_subclasses = Array[ExtResource("1_hpw48")]([ExtResource("2_v86if"), ExtResource("3_ofmpj")])
+metadata/_custom_type_script = "uid://c6daeo616vuo3"

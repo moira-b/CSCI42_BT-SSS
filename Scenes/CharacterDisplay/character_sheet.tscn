@@ -1,6 +1,11 @@
 [gd_scene format=3 uid="uid://dhouly0p8fe4p"]
 
-[ext_resource type="PackedScene" uid="uid://c76krhgbjyotx" path="res://Scenes/Characters/character.tscn" id="1_dg7yu"]
+[ext_resource type="Script" uid="uid://cmt4mu51iv5vw" path="res://Scenes/CharacterDisplay/character_sheet.gd" id="1_dg7yu"]
+[ext_resource type="StyleBox" uid="uid://dic645d200g74" path="res://Resources/GUIStyles/character_sheet_stylebox.tres" id="2_c8oo5"]
+[ext_resource type="Script" uid="uid://dfs5rt0xu3vuj" path="res://Scripts/CharacterDisplay/rest.gd" id="4_8iwex"]
+[ext_resource type="Script" uid="uid://dnjp24h6b6fc2" path="res://Scripts/CharacterDisplay/markable_stat.gd" id="4_qgeia"]
+[ext_resource type="PackedScene" uid="uid://dltyc5tel16kj" path="res://Scenes/CharacterDisplay/dice_roll_window.tscn" id="5_glymg"]
+[ext_resource type="PackedScene" uid="uid://b6t3g5gxhwopj" path="res://Scenes/CharacterDisplay/fh_roll_window.tscn" id="6_8iwex"]
 
 [sub_resource type="GDScript" id="GDScript_dg7yu"]
 script/source = "extends LineEdit
@@ -16,51 +21,217 @@ func _process(delta):
 	pass
 "
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8iwex"]
+bg_color = Color(0.07058824, 0.37254903, 0.007843138, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qgeia"]
+bg_color = Color(0.8117647, 0.6862745, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_glymg"]
+bg_color = Color(0.45, 0.396, 0.08999999, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5rpyy"]
+bg_color = Color(0.07058824, 0.37254903, 0.007843138, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c8oo5"]
+bg_color = Color(0.3487765, 0.10178318, 0.1256189, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
 [node name="CharacterSheet" type="Control" unique_id=1820753171]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 3.0
+offset_bottom = 3.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+script = ExtResource("1_dg7yu")
 
-[node name="Character" parent="." unique_id=1371470097 instance=ExtResource("1_dg7yu")]
+[node name="Header" type="HSplitContainer" parent="." unique_id=1428007041]
+layout_mode = 0
+offset_right = 911.0
+offset_bottom = 112.0
+split_offsets = PackedInt32Array(728)
+split_offset = 728
 
-[node name="Names" type="HBoxContainer" parent="." unique_id=1837796638]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -546.0
-offset_top = 22.0
-offset_right = 552.0
-offset_bottom = 95.0
-grow_horizontal = 2
+[node name="HeaderInfo" type="VSplitContainer" parent="Header" unique_id=2099249612]
+layout_mode = 2
 
-[node name="NameC" type="BoxContainer" parent="Names" unique_id=570684203]
+[node name="NamePronouns" type="HSplitContainer" parent="Header/HeaderInfo" unique_id=1758749744]
+layout_mode = 2
+
+[node name="NamePanelContainer" type="PanelContainer" parent="Header/HeaderInfo/NamePronouns" unique_id=1901304441]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("2_c8oo5")
+
+[node name="NameC" type="HBoxContainer" parent="Header/HeaderInfo/NamePronouns/NamePanelContainer" unique_id=1593906295]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
-size_flags_horizontal = 2
-size_flags_vertical = 0
+size_flags_horizontal = 4
 
-[node name="NameEdit" type="LineEdit" parent="Names/NameC" unique_id=1389927954]
+[node name="Name" type="Label" parent="Header/HeaderInfo/NamePronouns/NamePanelContainer/NameC" unique_id=1793497501]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "Name: "
+
+[node name="NameEdit" type="LineEdit" parent="Header/HeaderInfo/NamePronouns/NamePanelContainer/NameC" unique_id=1389927954]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 size_flags_horizontal = 2
 placeholder_text = "What is your name?"
 script = SubResource("GDScript_dg7yu")
 
-[node name="AncestryC" type="BoxContainer" parent="Names" unique_id=1029556489]
+[node name="PronounsPanelContainer" type="PanelContainer" parent="Header/HeaderInfo/NamePronouns" unique_id=619742562]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("2_c8oo5")
+
+[node name="Pronouns" type="HBoxContainer" parent="Header/HeaderInfo/NamePronouns/PronounsPanelContainer" unique_id=1818981251]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="Header/HeaderInfo/NamePronouns/PronounsPanelContainer/Pronouns" unique_id=449473121]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "Pronouns:"
+
+[node name="PronounsEdit" type="LineEdit" parent="Header/HeaderInfo/NamePronouns/PronounsPanelContainer/Pronouns" unique_id=1102215493]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="CommnityAncestry" type="HSplitContainer" parent="Header/HeaderInfo" unique_id=1615842318]
 layout_mode = 2
 
-[node name="Ancestry" type="LineEdit" parent="Names/AncestryC" unique_id=1573686438]
-custom_minimum_size = Vector2(300, 50)
+[node name="PanelContainer" type="PanelContainer" parent="Header/HeaderInfo/CommnityAncestry" unique_id=1597585474]
 layout_mode = 2
-size_flags_horizontal = 10
+theme_override_styles/panel = ExtResource("2_c8oo5")
+
+[node name="Community" type="HBoxContainer" parent="Header/HeaderInfo/CommnityAncestry/PanelContainer" unique_id=743414857]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Header/HeaderInfo/CommnityAncestry/PanelContainer/Community" unique_id=760379478]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 0
-placeholder_text = "Ancestry"
+text = "Community:"
+
+[node name="ColorRect" type="ColorRect" parent="Header/HeaderInfo/CommnityAncestry/PanelContainer/Community" unique_id=1812518552]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+color = Color(0.12941177, 0.12941177, 0.12941177, 1)
+
+[node name="Community" type="Label" parent="Header/HeaderInfo/CommnityAncestry/PanelContainer/Community/ColorRect" unique_id=2021481224]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -94.5
+offset_top = -24.0
+offset_right = 94.5
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AncestryPanelContainer" type="PanelContainer" parent="Header/HeaderInfo/CommnityAncestry" unique_id=913894309]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("2_c8oo5")
+
+[node name="Ancestry" type="HBoxContainer" parent="Header/HeaderInfo/CommnityAncestry/AncestryPanelContainer" unique_id=400480339]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Header/HeaderInfo/CommnityAncestry/AncestryPanelContainer/Ancestry" unique_id=1081074418]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "Ancestry:"
+
+[node name="ColorRect" type="ColorRect" parent="Header/HeaderInfo/CommnityAncestry/AncestryPanelContainer/Ancestry" unique_id=612125050]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+color = Color(0.12941177, 0.12941177, 0.12941177, 1)
+
+[node name="Ancestry" type="Label" parent="Header/HeaderInfo/CommnityAncestry/AncestryPanelContainer/Ancestry/ColorRect" unique_id=33290907]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -25.0
+offset_right = 100.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 8
+size_flags_vertical = 2
+
+[node name="Level" type="PanelContainer" parent="Header" unique_id=1090331652]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("2_c8oo5")
+
+[node name="FieldContainer" type="VBoxContainer" parent="Header/Level" unique_id=379242002]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Header/Level/FieldContainer" unique_id=1925828569]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 5
+
+[node name="HSplitContainer" type="HSplitContainer" parent="Header/Level/FieldContainer/MarginContainer" unique_id=887078140]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="LevelLabel" type="Label" parent="Header/Level/FieldContainer/MarginContainer/HSplitContainer" unique_id=1690346254]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Lvl."
+vertical_alignment = 2
+
+[node name="LevelDisplay" type="Label" parent="Header/Level/FieldContainer/MarginContainer/HSplitContainer" unique_id=304716378]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "0"
+vertical_alignment = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Header/Level/FieldContainer" unique_id=1069698842]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8iwex")
+
+[node name="LevelUpButton" type="Button" parent="Header/Level/FieldContainer/PanelContainer" unique_id=1305469132]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+text = "Level Up"
 
 [node name="TraitModifiers" type="HBoxContainer" parent="." unique_id=1219526404]
 layout_mode = 1
@@ -70,14 +241,16 @@ anchor_top = 0.089
 anchor_right = 0.5
 anchor_bottom = 0.089
 offset_left = -482.0
-offset_top = 33.328
+offset_top = 95.328
 offset_right = 480.0
-offset_bottom = 86.328
+offset_bottom = 148.328
 grow_horizontal = 2
 
 [node name="Agility" type="BoxContainer" parent="TraitModifiers" unique_id=1577777243]
+custom_minimum_size = Vector2(159, 0)
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="Label" type="Label" parent="TraitModifiers/Agility" unique_id=282414516]
 layout_mode = 2
@@ -88,9 +261,22 @@ custom_minimum_size = Vector2(50, 25)
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="Strength" type="BoxContainer" parent="TraitModifiers" unique_id=546099669]
+[node name="AdvanceButton" type="Button" parent="TraitModifiers/Agility" unique_id=664161827]
+visible = false
+custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
-size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_qgeia")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_glymg")
+toggle_mode = true
+text = "+1
+"
+
+[node name="Strength" type="BoxContainer" parent="TraitModifiers" unique_id=546099669]
+custom_minimum_size = Vector2(178, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="Label" type="Label" parent="TraitModifiers/Strength" unique_id=270208455]
 layout_mode = 2
@@ -101,9 +287,22 @@ custom_minimum_size = Vector2(50, 25)
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="Finesse" type="BoxContainer" parent="TraitModifiers" unique_id=1194059882]
+[node name="AdvanceButton" type="Button" parent="TraitModifiers/Strength" unique_id=946685690]
+visible = false
+custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
-size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_qgeia")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_glymg")
+toggle_mode = true
+text = "+1
+"
+
+[node name="Finesse" type="BoxContainer" parent="TraitModifiers" unique_id=1194059882]
+custom_minimum_size = Vector2(168, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="Label" type="Label" parent="TraitModifiers/Finesse" unique_id=2135928192]
 layout_mode = 2
@@ -114,9 +313,22 @@ custom_minimum_size = Vector2(50, 25)
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="Instinct" type="BoxContainer" parent="TraitModifiers" unique_id=1848782649]
+[node name="AdvanceButton" type="Button" parent="TraitModifiers/Finesse" unique_id=1353375183]
+visible = false
+custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
-size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_qgeia")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_glymg")
+toggle_mode = true
+text = "+1
+"
+
+[node name="Instinct" type="BoxContainer" parent="TraitModifiers" unique_id=1848782649]
+custom_minimum_size = Vector2(169, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="Label" type="Label" parent="TraitModifiers/Instinct" unique_id=1221245103]
 layout_mode = 2
@@ -127,9 +339,22 @@ custom_minimum_size = Vector2(50, 25)
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="Prescence" type="BoxContainer" parent="TraitModifiers" unique_id=1511671395]
+[node name="AdvanceButton" type="Button" parent="TraitModifiers/Instinct" unique_id=1344672724]
+visible = false
+custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
-size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_qgeia")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_glymg")
+toggle_mode = true
+text = "+1
+"
+
+[node name="Prescence" type="BoxContainer" parent="TraitModifiers" unique_id=1511671395]
+custom_minimum_size = Vector2(189, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="Label" type="Label" parent="TraitModifiers/Prescence" unique_id=515719497]
 layout_mode = 2
@@ -140,9 +365,22 @@ custom_minimum_size = Vector2(50, 25)
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="Knowledge" type="BoxContainer" parent="TraitModifiers" unique_id=959325206]
+[node name="AdvanceButton" type="Button" parent="TraitModifiers/Prescence" unique_id=1926052421]
+visible = false
+custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
-size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_qgeia")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_glymg")
+toggle_mode = true
+text = "+1
+"
+
+[node name="Knowledge" type="BoxContainer" parent="TraitModifiers" unique_id=959325206]
+custom_minimum_size = Vector2(196, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="Label" type="Label" parent="TraitModifiers/Knowledge" unique_id=14507721]
 layout_mode = 2
@@ -153,7 +391,18 @@ custom_minimum_size = Vector2(50, 25)
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="HealthStress" type="VBoxContainer" parent="." unique_id=1671798450]
+[node name="AdvanceButton" type="Button" parent="TraitModifiers/Knowledge" unique_id=2048896870]
+visible = false
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_qgeia")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_glymg")
+toggle_mode = true
+text = "+1
+"
+
+[node name="MarkableStats" type="VBoxContainer" parent="." unique_id=1671798450]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.208
@@ -161,23 +410,242 @@ anchor_top = 0.289
 anchor_right = 0.208
 anchor_bottom = 0.289
 offset_left = -201.616
-offset_top = -0.27200317
+offset_top = 62.727997
 offset_right = 201.384
-offset_bottom = 123.728
+offset_bottom = 186.728
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HealthStress" unique_id=820844553]
+[node name="Health" type="PanelContainer" parent="MarkableStats" unique_id=898166146]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("2_c8oo5")
+script = ExtResource("4_qgeia")
+
+[node name="FieldContainer" type="HBoxContainer" parent="MarkableStats/Health" unique_id=1675041664]
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="Labels" type="HBoxContainer" parent="MarkableStats/Health/FieldContainer" unique_id=1411703975]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="FieldName" type="Label" parent="MarkableStats/Health/FieldContainer/Labels" unique_id=156588636]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "Health:"
+
+[node name="FieldValue" type="Label" parent="MarkableStats/Health/FieldContainer/Labels" unique_id=934834431]
+custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 
-[node name="Health" type="Label" parent="HealthStress/HBoxContainer" unique_id=1654680755]
-layout_mode = 2
-text = "Health: "
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="HealthStress" unique_id=1254795536]
+[node name="Buttons" type="HBoxContainer" parent="MarkableStats/Health/FieldContainer" unique_id=788903875]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="HealthStress/HBoxContainer2" unique_id=1788949092]
+[node name="AdvanceButton" type="Button" parent="MarkableStats/Health/FieldContainer/Buttons" unique_id=1637502055]
+visible = false
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_qgeia")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_glymg")
+toggle_mode = true
+text = "+1
+"
+
+[node name="IncrementButton" type="Button" parent="MarkableStats/Health/FieldContainer/Buttons" unique_id=1813164056]
+custom_minimum_size = Vector2(40, 30)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_5rpyy")
+text = "+"
+
+[node name="DecrementButton" type="Button" parent="MarkableStats/Health/FieldContainer/Buttons" unique_id=1471146276]
+custom_minimum_size = Vector2(40, 30)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_c8oo5")
+text = "-"
+
+[node name="Stress" type="PanelContainer" parent="MarkableStats" unique_id=2030183416]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("2_c8oo5")
+script = ExtResource("4_qgeia")
+
+[node name="FieldContainer" type="HBoxContainer" parent="MarkableStats/Stress" unique_id=1848188292]
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="Labels" type="HBoxContainer" parent="MarkableStats/Stress/FieldContainer" unique_id=781890519]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="FieldName" type="Label" parent="MarkableStats/Stress/FieldContainer/Labels" unique_id=1888500388]
+custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 text = "Stress:"
+
+[node name="FieldValue" type="Label" parent="MarkableStats/Stress/FieldContainer/Labels" unique_id=870010703]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="Buttons" type="HBoxContainer" parent="MarkableStats/Stress/FieldContainer" unique_id=1839278276]
+layout_mode = 2
+
+[node name="AdvanceButton" type="Button" parent="MarkableStats/Stress/FieldContainer/Buttons" unique_id=861303389]
+visible = false
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_qgeia")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_glymg")
+toggle_mode = true
+text = "+1
+"
+
+[node name="IncrementButton" type="Button" parent="MarkableStats/Stress/FieldContainer/Buttons" unique_id=476777845]
+custom_minimum_size = Vector2(40, 30)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_5rpyy")
+text = "+"
+
+[node name="DecrementButton" type="Button" parent="MarkableStats/Stress/FieldContainer/Buttons" unique_id=212254171]
+custom_minimum_size = Vector2(40, 30)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_c8oo5")
+text = "-"
+
+[node name="Hope" type="PanelContainer" parent="MarkableStats" unique_id=431121348]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("2_c8oo5")
+script = ExtResource("4_qgeia")
+
+[node name="FieldContainer" type="HBoxContainer" parent="MarkableStats/Hope" unique_id=135152164]
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="Labels" type="HBoxContainer" parent="MarkableStats/Hope/FieldContainer" unique_id=1661390057]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="FieldName" type="Label" parent="MarkableStats/Hope/FieldContainer/Labels" unique_id=1034984974]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "Hope:"
+
+[node name="FieldValue" type="Label" parent="MarkableStats/Hope/FieldContainer/Labels" unique_id=1200812551]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="Buttons" type="HBoxContainer" parent="MarkableStats/Hope/FieldContainer" unique_id=101616658]
+layout_mode = 2
+
+[node name="IncrementButton" type="Button" parent="MarkableStats/Hope/FieldContainer/Buttons" unique_id=1858314804]
+custom_minimum_size = Vector2(40, 30)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_5rpyy")
+text = "+"
+
+[node name="DecrementButton" type="Button" parent="MarkableStats/Hope/FieldContainer/Buttons" unique_id=2041295477]
+custom_minimum_size = Vector2(40, 30)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_c8oo5")
+text = "-"
+
+[node name="Armor" type="PanelContainer" parent="MarkableStats" unique_id=592864428]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("2_c8oo5")
+script = ExtResource("4_qgeia")
+
+[node name="FieldContainer" type="HBoxContainer" parent="MarkableStats/Armor" unique_id=125254012]
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="Labels" type="HBoxContainer" parent="MarkableStats/Armor/FieldContainer" unique_id=249560848]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="FieldName" type="Label" parent="MarkableStats/Armor/FieldContainer/Labels" unique_id=1844967160]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "Used Armor:"
+
+[node name="FieldValue" type="Label" parent="MarkableStats/Armor/FieldContainer/Labels" unique_id=1747823043]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="Buttons" type="HBoxContainer" parent="MarkableStats/Armor/FieldContainer" unique_id=1367763343]
+layout_mode = 2
+
+[node name="IncrementButton" type="Button" parent="MarkableStats/Armor/FieldContainer/Buttons" unique_id=496211763]
+custom_minimum_size = Vector2(40, 30)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_5rpyy")
+text = "+"
+
+[node name="DecrementButton" type="Button" parent="MarkableStats/Armor/FieldContainer/Buttons" unique_id=276716746]
+custom_minimum_size = Vector2(40, 30)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_c8oo5")
+text = "-"
+
+[node name="ClassSubclass" type="VBoxContainer" parent="." unique_id=162208600]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.795
+anchor_top = 0.289
+anchor_right = 0.795
+anchor_bottom = 0.289
+offset_left = -102.84003
+offset_top = 63.227997
+offset_right = 102.15997
+offset_bottom = 164.228
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="ClassSubclass" unique_id=1249334898]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Class & Subclass"
+
+[node name="ClassRect" type="ColorRect" parent="ClassSubclass" unique_id=1089273435]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+color = Color(0.19793725, 0.19793722, 0.19793722, 1)
+
+[node name="Class" type="Label" parent="ClassSubclass/ClassRect" unique_id=1672109693]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -102.5
+offset_top = -18.25
+offset_right = 102.5
+offset_bottom = 18.25
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+
+[node name="SubclassRect" type="ColorRect" parent="ClassSubclass" unique_id=885645139]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+color = Color(0.19607843, 0.19607843, 0.19607843, 1)
+
+[node name="Label" type="Label" parent="ClassSubclass/SubclassRect" unique_id=1350163337]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -102.5
+offset_top = -16.75
+offset_right = 102.5
+offset_bottom = 16.75
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
 
 [node name="Bio" type="VBoxContainer" parent="." unique_id=561844215]
 layout_mode = 1
@@ -187,9 +655,9 @@ anchor_top = 0.45800003
 anchor_right = 0.79800004
 anchor_bottom = 0.45800003
 offset_left = -192.29602
-offset_top = 0.2159729
+offset_top = 103.21597
 offset_right = 192.70398
-offset_bottom = 340.21597
+offset_bottom = 317.21597
 
 [node name="Label" type="Label" parent="Bio" unique_id=986580117]
 layout_mode = 2
@@ -200,12 +668,366 @@ text = "Bio"
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 
-[connection signal="text_changed" from="Names/NameC/NameEdit" to="Character" method="_on_name_edit_text_changed"]
-[connection signal="text_submitted" from="Names/NameC/NameEdit" to="Character" method="_on_name_edit_text_submitted"]
-[connection signal="text_submitted" from="TraitModifiers/Agility/LineEdit" to="Character" method="_on_agility_text_submitted"]
-[connection signal="text_submitted" from="TraitModifiers/Strength/LineEdit" to="Character" method="_on_strength_text_submitted"]
-[connection signal="text_submitted" from="TraitModifiers/Finesse/LineEdit" to="Character" method="_on_finesse_text_submitted"]
-[connection signal="text_submitted" from="TraitModifiers/Instinct/LineEdit" to="Character" method="_on_instinct_text_submitted"]
-[connection signal="text_submitted" from="TraitModifiers/Prescence/LineEdit" to="Character" method="_on_presence_text_submitted"]
-[connection signal="text_submitted" from="TraitModifiers/Knowledge/LineEdit" to="Character" method="_on_knowledge_text_submitted"]
-[connection signal="text_changed" from="Bio/BioEdit" to="Character" method="_on_bio_text_changed"]
+[node name="Experiences" type="VBoxContainer" parent="." unique_id=2003283091]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.208
+anchor_top = 0.9710001
+anchor_right = 0.208
+anchor_bottom = 0.9710001
+offset_left = -201.616
+offset_top = -214.20807
+offset_right = 202.384
+offset_bottom = -0.20806885
+
+[node name="Label" type="Label" parent="Experiences" unique_id=908732964]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Experiences"
+
+[node name="Experience1" type="HBoxContainer" parent="Experiences" unique_id=1280858404]
+layout_mode = 2
+
+[node name="Experience1" type="LineEdit" parent="Experiences/Experience1" unique_id=1020765395]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+
+[node name="AdvanceButton" type="Button" parent="Experiences/Experience1" unique_id=1986869644]
+visible = false
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_qgeia")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_glymg")
+toggle_mode = true
+text = "+1
+"
+
+[node name="Experience2" type="HBoxContainer" parent="Experiences" unique_id=281734232]
+layout_mode = 2
+
+[node name="Experience2" type="LineEdit" parent="Experiences/Experience2" unique_id=1768669913]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+
+[node name="AdvanceButton" type="Button" parent="Experiences/Experience2" unique_id=1003584641]
+visible = false
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_qgeia")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_glymg")
+toggle_mode = true
+text = "+1
+"
+
+[node name="Experience3" type="HBoxContainer" parent="Experiences" unique_id=517739238]
+layout_mode = 2
+
+[node name="Experience3" type="LineEdit" parent="Experiences/Experience3" unique_id=321112575]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+
+[node name="AdvanceButton" type="Button" parent="Experiences/Experience3" unique_id=1063491678]
+visible = false
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_qgeia")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_glymg")
+toggle_mode = true
+text = "+1
+"
+
+[node name="Experience4" type="HBoxContainer" parent="Experiences" unique_id=1618166217]
+layout_mode = 2
+
+[node name="Experience4" type="LineEdit" parent="Experiences/Experience4" unique_id=57808382]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+
+[node name="AdvanceButton" type="Button" parent="Experiences/Experience4" unique_id=709864554]
+visible = false
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_qgeia")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_glymg")
+toggle_mode = true
+text = "+1
+"
+
+[node name="Experience5" type="HBoxContainer" parent="Experiences" unique_id=1984229138]
+layout_mode = 2
+
+[node name="Experience5" type="LineEdit" parent="Experiences/Experience5" unique_id=1875908754]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+
+[node name="AdvanceButton" type="Button" parent="Experiences/Experience5" unique_id=1340097354]
+visible = false
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_qgeia")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_glymg")
+toggle_mode = true
+text = "+1
+"
+
+[node name="ActionButtons" type="HBoxContainer" parent="." unique_id=92466979]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -110.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="RestButtons" type="VBoxContainer" parent="ActionButtons" unique_id=1953046344]
+custom_minimum_size = Vector2(100, 110)
+layout_mode = 2
+
+[node name="ShortRest" type="Button" parent="ActionButtons/RestButtons" unique_id=375690570]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 6
+text = "Short Rest"
+
+[node name="LongRest" type="Button" parent="ActionButtons/RestButtons" unique_id=1429046138]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 6
+text = "Long Rest"
+
+[node name="RestWindow" type="Window" parent="ActionButtons/RestButtons" unique_id=2095986794]
+oversampling_override = 1.0
+title = "Rest Actions"
+initial_position = 1
+size = Vector2i(500, 400)
+visible = false
+script = ExtResource("4_8iwex")
+
+[node name="RestUI" type="Control" parent="ActionButtons/RestButtons/RestWindow" unique_id=165973256]
+custom_minimum_size = Vector2(500, 400)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -200.0
+offset_right = 250.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="RestActions" type="VBoxContainer" parent="ActionButtons/RestButtons/RestWindow/RestUI" unique_id=335220932]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -85.5
+offset_right = 220.0
+offset_bottom = 85.5
+grow_vertical = 2
+alignment = 1
+
+[node name="TendWounds" type="CheckButton" parent="ActionButtons/RestButtons/RestWindow/RestUI/RestActions" unique_id=996454089]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_vertical = 4
+text = "Tend to Wounds"
+
+[node name="ClearStress" type="CheckButton" parent="ActionButtons/RestButtons/RestWindow/RestUI/RestActions" unique_id=794885834]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_vertical = 4
+text = "Clear Stress"
+
+[node name="RepairArmor" type="CheckButton" parent="ActionButtons/RestButtons/RestWindow/RestUI/RestActions" unique_id=1231113641]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_vertical = 4
+text = "Repair Armor"
+
+[node name="Prepare" type="CheckButton" parent="ActionButtons/RestButtons/RestWindow/RestUI/RestActions" unique_id=775912072]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_vertical = 4
+text = "Prepare"
+
+[node name="Project" type="CheckButton" parent="ActionButtons/RestButtons/RestWindow/RestUI/RestActions" unique_id=1777724042]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_vertical = 4
+text = "Work on a Project"
+
+[node name="ConfirmButton" type="Button" parent="ActionButtons/RestButtons/RestWindow/RestUI" unique_id=1063158913]
+custom_minimum_size = Vector2(75, 40)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -37.5
+offset_top = -56.0
+offset_right = 37.5
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Confirm"
+
+[node name="DiceButtons" type="VBoxContainer" parent="ActionButtons" unique_id=164893220]
+custom_minimum_size = Vector2(100, 110)
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Dice" type="Button" parent="ActionButtons/DiceButtons" unique_id=1692544909]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+text = "Dice Roll"
+
+[node name="FHDice" type="Button" parent="ActionButtons/DiceButtons" unique_id=272697354]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+text = "F/H Roll"
+
+[node name="DiceRollWindow" parent="ActionButtons/DiceButtons" unique_id=292838826 instance=ExtResource("5_glymg")]
+visible = false
+
+[node name="FHRollWindow" parent="ActionButtons/DiceButtons" unique_id=1979625603 instance=ExtResource("6_8iwex")]
+visible = false
+
+[node name="LevelUpConfirmation" type="PanelContainer" parent="." unique_id=937050480]
+visible = false
+layout_mode = 0
+offset_left = 922.0
+offset_top = 50.0
+offset_right = 1026.0
+offset_bottom = 120.0
+theme_override_styles/panel = ExtResource("2_c8oo5")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LevelUpConfirmation" unique_id=583142456]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="ConfirmButton" type="Button" parent="LevelUpConfirmation/VBoxContainer" unique_id=1173136180]
+layout_mode = 2
+text = "Confirm"
+
+[node name="CancelButton" type="Button" parent="LevelUpConfirmation/VBoxContainer" unique_id=96840819]
+layout_mode = 2
+text = "Cancel"
+
+[node name="CardsButton" type="Button" parent="." unique_id=2032869381]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 600.0
+offset_right = 48.83908
+offset_bottom = 640.0
+
+[node name="EvasionProficency" type="VBoxContainer" parent="." unique_id=1872226757]
+layout_mode = 0
+offset_left = 455.0
+offset_top = 250.0
+offset_right = 583.0
+offset_bottom = 323.0
+
+[node name="Evasion" type="HBoxContainer" parent="EvasionProficency" unique_id=1745427904]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="EvasionProficency/Evasion" unique_id=551798954]
+layout_mode = 2
+text = "Evasion:"
+
+[node name="Value" type="Label" parent="EvasionProficency/Evasion" unique_id=976301454]
+layout_mode = 2
+
+[node name="AdvanceButton" type="Button" parent="EvasionProficency/Evasion" unique_id=481170119]
+visible = false
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_qgeia")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_glymg")
+toggle_mode = true
+text = "+1
+"
+
+[node name="Proficiency" type="HBoxContainer" parent="EvasionProficency" unique_id=1348180779]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="EvasionProficency/Proficiency" unique_id=279680082]
+layout_mode = 2
+text = "Proficiency:"
+
+[node name="Value" type="Label" parent="EvasionProficency/Proficiency" unique_id=612684652]
+layout_mode = 2
+
+[node name="AdvanceButton" type="Button" parent="EvasionProficency/Proficiency" unique_id=143155068]
+visible = false
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_qgeia")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_glymg")
+toggle_mode = true
+text = "+1
+"
+
+[connection signal="text_changed" from="Header/HeaderInfo/NamePronouns/NamePanelContainer/NameC/NameEdit" to="." method="_on_name_edit_text_changed"]
+[connection signal="text_submitted" from="Header/HeaderInfo/NamePronouns/NamePanelContainer/NameC/NameEdit" to="." method="_on_name_edit_text_submitted"]
+[connection signal="text_changed" from="Header/HeaderInfo/NamePronouns/PronounsPanelContainer/Pronouns/PronounsEdit" to="." method="_on_pronouns_text_changed"]
+[connection signal="text_submitted" from="Header/HeaderInfo/NamePronouns/PronounsPanelContainer/Pronouns/PronounsEdit" to="." method="_on_pronouns_text_submitted"]
+[connection signal="text_submitted" from="TraitModifiers/Agility/LineEdit" to="." method="_on_agility_text_submitted"]
+[connection signal="toggled" from="TraitModifiers/Agility/AdvanceButton" to="." method="_on_agility_advance_button_toggled"]
+[connection signal="text_submitted" from="TraitModifiers/Strength/LineEdit" to="." method="_on_strength_text_submitted"]
+[connection signal="toggled" from="TraitModifiers/Strength/AdvanceButton" to="." method="_on_strength_advance_button_toggled"]
+[connection signal="text_submitted" from="TraitModifiers/Finesse/LineEdit" to="." method="_on_finesse_text_submitted"]
+[connection signal="toggled" from="TraitModifiers/Finesse/AdvanceButton" to="." method="_on_finesse_advance_button_toggled"]
+[connection signal="text_submitted" from="TraitModifiers/Instinct/LineEdit" to="." method="_on_instinct_text_submitted"]
+[connection signal="toggled" from="TraitModifiers/Instinct/AdvanceButton" to="." method="_on_instinct_advance_button_toggled"]
+[connection signal="text_submitted" from="TraitModifiers/Prescence/LineEdit" to="." method="_on_presence_text_submitted"]
+[connection signal="toggled" from="TraitModifiers/Prescence/AdvanceButton" to="." method="_on_presence_advance_button_toggled"]
+[connection signal="text_submitted" from="TraitModifiers/Knowledge/LineEdit" to="." method="_on_knowledge_text_submitted"]
+[connection signal="toggled" from="TraitModifiers/Knowledge/AdvanceButton" to="." method="_on_advance_button_toggled"]
+[connection signal="toggled" from="MarkableStats/Health/FieldContainer/Buttons/AdvanceButton" to="." method="_on_health_advance_button_toggled"]
+[connection signal="toggled" from="MarkableStats/Stress/FieldContainer/Buttons/AdvanceButton" to="." method="_on_stress_advance_button_toggled"]
+[connection signal="text_changed" from="Bio/BioEdit" to="." method="_on_bio_text_changed"]
+[connection signal="text_changed" from="Experiences/Experience1/Experience1" to="." method="_on_experience_1_text_changed"]
+[connection signal="text_submitted" from="Experiences/Experience1/Experience1" to="." method="_on_experience_1_text_submitted"]
+[connection signal="toggled" from="Experiences/Experience1/AdvanceButton" to="." method="_on_experience_1_advance_button_toggled"]
+[connection signal="text_changed" from="Experiences/Experience2/Experience2" to="." method="_on_experience_2_text_changed"]
+[connection signal="text_submitted" from="Experiences/Experience2/Experience2" to="." method="_on_experience_2_text_submitted"]
+[connection signal="toggled" from="Experiences/Experience2/AdvanceButton" to="." method="_on_experience_2_advance_button_toggled"]
+[connection signal="text_changed" from="Experiences/Experience3/Experience3" to="." method="_on_experience_3_text_changed"]
+[connection signal="text_submitted" from="Experiences/Experience3/Experience3" to="." method="_on_experience_3_text_submitted"]
+[connection signal="toggled" from="Experiences/Experience3/AdvanceButton" to="." method="_on_experience_3_advance_button_toggled"]
+[connection signal="text_changed" from="Experiences/Experience4/Experience4" to="." method="_on_experience_4_text_changed"]
+[connection signal="text_submitted" from="Experiences/Experience4/Experience4" to="." method="_on_experience_4_text_submitted"]
+[connection signal="toggled" from="Experiences/Experience4/AdvanceButton" to="." method="_on_experience_4_advance_button_toggled"]
+[connection signal="text_changed" from="Experiences/Experience5/Experience5" to="." method="_on_experience_5_text_changed"]
+[connection signal="text_submitted" from="Experiences/Experience5/Experience5" to="." method="_on_experience_5_text_submitted"]
+[connection signal="toggled" from="Experiences/Experience5/AdvanceButton" to="." method="_on_experience_5_advance_button_toggled"]
+[connection signal="close_requested" from="ActionButtons/RestButtons/RestWindow" to="." method="_on_rest_window_close_requested"]
+[connection signal="pressed" from="ActionButtons/RestButtons/RestWindow/RestUI/ConfirmButton" to="." method="_on_confirm_button_pressed"]
+[connection signal="close_requested" from="ActionButtons/DiceButtons/DiceRollWindow" to="." method="_on_dice_roll_window_close_requested"]
+[connection signal="pressed" from="LevelUpConfirmation/VBoxContainer/ConfirmButton" to="." method="_on_level_up_confirm_button_pressed"]
+[connection signal="pressed" from="CardsButton" to="." method="_on_cards_button_pressed"]
+[connection signal="toggled" from="EvasionProficency/Evasion/AdvanceButton" to="." method="_on_evasion_advance_button_toggled"]
+[connection signal="toggled" from="EvasionProficency/Proficiency/AdvanceButton" to="." method="_on_proficiency_advance_button_toggled"]

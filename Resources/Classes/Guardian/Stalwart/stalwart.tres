@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="CharacterSubclass" format=3 uid="uid://cw05p56ev40ru"]
+
+[ext_resource type="Script" uid="uid://ckqlyqdo4cyhe" path="res://Scripts/CharacterClasses/character_class_feature.gd" id="1_rkgkl"]
+[ext_resource type="Script" uid="uid://cxymexx6bno82" path="res://Scripts/CharacterClasses/character_subclass.gd" id="2_7nba8"]
+[ext_resource type="Resource" uid="uid://c46p1cfs32dxt" path="res://Resources/Classes/Guardian/Stalwart/unwavering.tres" id="2_cqsds"]
+[ext_resource type="Resource" uid="uid://i3sowpsp6igh" path="res://Resources/Classes/Guardian/Stalwart/iron_will.tres" id="3_2f534"]
+[ext_resource type="Resource" uid="uid://cuf5jiymtl8em" path="res://Resources/Classes/Guardian/Stalwart/undaunted.tres" id="4_nelm7"]
+[ext_resource type="Resource" uid="uid://dykus067mm1wo" path="res://Resources/Classes/Guardian/Stalwart/loyal_protector.tres" id="5_4q0kg"]
+[ext_resource type="Resource" uid="uid://ctpusbu5cqn4e" path="res://Resources/Classes/Guardian/Stalwart/unrelenting.tres" id="7_10c3u"]
+[ext_resource type="Resource" uid="uid://cs0ben7fexflc" path="res://Resources/Classes/Guardian/Stalwart/partners_in_arms.tres" id="8_nt8c8"]
+
+[resource]
+script = ExtResource("2_7nba8")
+subclass_name = "Stalwart"
+foundation_feature = Array[ExtResource("1_rkgkl")]([ExtResource("2_cqsds"), ExtResource("3_2f534")])
+specialization_feature = Array[ExtResource("1_rkgkl")]([ExtResource("7_10c3u"), ExtResource("8_nt8c8")])
+mastery_feature = Array[ExtResource("1_rkgkl")]([ExtResource("4_nelm7"), ExtResource("5_4q0kg")])
+metadata/_custom_type_script = "uid://cxymexx6bno82"

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="CharacterClassFeature" format=3 uid="uid://cuxte8x3rtmc1"]
+
+[ext_resource type="Script" uid="uid://ckqlyqdo4cyhe" path="res://Scripts/CharacterClasses/character_class_feature.gd" id="1_nnnef"]
+
+[resource]
+script = ExtResource("1_nnnef")
+feature_name = "Act of Reprisal"
+metadata/_custom_type_script = "uid://ckqlyqdo4cyhe"

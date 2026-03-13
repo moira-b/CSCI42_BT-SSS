@@ -10,6 +10,7 @@ extends Control
 var option_tab_array: Array[Control]
 var option_tab_index: int
 var active_option_tab: Control
+var sheet_scene: PackedScene = preload("res://Scenes/CharacterDisplay/character_sheet.tscn")
 
 func _ready() -> void:
 	option_tab_index = 0
@@ -82,13 +83,20 @@ func _on_confirm_button_pressed() -> void:
 	confirm_button.disabled = true
 	description_display.clear_message()
 
+
 func _on_back_button_pressed() -> void:
 	option_tab_index -= 1
 	_set_active_option_tab(option_tab_index)
-	
+
+
 func show_description(message: String) -> void:
 	description_display.display_message(message)
 
 
 func _on_complete_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/CharacterDisplay/character_sheet.tscn")
+	var new_scene = sheet_scene.instantiate()
+	character.reparent(new_scene)
+	self.get_parent().add_child(new_scene)
+	new_scene.enter()
+	self.queue_free()
+	#get_tree().change_scene_to_packed(sheet_scene)

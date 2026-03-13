@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="CharacterSubclass" format=3 uid="uid://bta8gbut4lypc"]
+
+[ext_resource type="Script" uid="uid://ckqlyqdo4cyhe" path="res://Scripts/CharacterClasses/character_class_feature.gd" id="1_h7aon"]
+[ext_resource type="Resource" uid="uid://c2vcucpg718ft" path="res://Resources/Classes/Seraph/WingedSentinel/wings_of_light.tres" id="2_g4xp3"]
+[ext_resource type="Script" uid="uid://cxymexx6bno82" path="res://Scripts/CharacterClasses/character_subclass.gd" id="2_wwjrd"]
+[ext_resource type="Resource" uid="uid://cpvlybj0rlvx0" path="res://Resources/Classes/Seraph/WingedSentinel/ascendant.tres" id="3_u855a"]
+[ext_resource type="Resource" uid="uid://b4ksurcy3sk7g" path="res://Resources/Classes/Seraph/WingedSentinel/power_of_the_gods.tres" id="4_6pdws"]
+[ext_resource type="Resource" uid="uid://cj0mm246qm3r" path="res://Resources/Classes/Seraph/WingedSentinel/ethereal_visage.tres" id="6_ynmt2"]
+[ext_resource type="Resource" uid="uid://dgtlfkrc1f7c2" path="res://Resources/GeneralUseAttributes/CharacterTraits/strength.tres" id="7_ix2lp"]
+
+[resource]
+script = ExtResource("2_wwjrd")
+subclass_name = "Winged Sentinel"
+foundation_feature = Array[ExtResource("1_h7aon")]([ExtResource("2_g4xp3")])
+specialization_feature = Array[ExtResource("1_h7aon")]([ExtResource("6_ynmt2")])
+mastery_feature = Array[ExtResource("1_h7aon")]([ExtResource("3_u855a"), ExtResource("4_6pdws")])
+spellcast_trait = ExtResource("7_ix2lp")
+metadata/_custom_type_script = "uid://cxymexx6bno82"

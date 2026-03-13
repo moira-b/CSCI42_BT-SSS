@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CharacterSubclass" format=3 uid="uid://7xpqdsd1jdxa"]
+
+[ext_resource type="Script" uid="uid://ckqlyqdo4cyhe" path="res://Scripts/CharacterClasses/character_class_feature.gd" id="1_5fksy"]
+[ext_resource type="Resource" uid="uid://cs3d33gmvy3b4" path="res://Resources/Classes/Wizard/SchoolKnowledge/prepared.tres" id="2_7pkwg"]
+[ext_resource type="Script" uid="uid://cxymexx6bno82" path="res://Scripts/CharacterClasses/character_subclass.gd" id="2_513b2"]
+[ext_resource type="Resource" uid="uid://dnp37un6cx1u7" path="res://Resources/Classes/Wizard/SchoolKnowledge/adept.tres" id="3_avrk3"]
+[ext_resource type="Resource" uid="uid://c5wmb7y36a3o3" path="res://Resources/Classes/Wizard/SchoolKnowledge/brilliant.tres" id="4_57e4k"]
+[ext_resource type="Resource" uid="uid://ck6dtako7cg8v" path="res://Resources/Classes/Wizard/SchoolKnowledge/honed_expertise.tres" id="5_cukps"]
+[ext_resource type="Resource" uid="uid://bhcxlii8lbrr6" path="res://Resources/Classes/Wizard/SchoolKnowledge/accomplished.tres" id="7_tavio"]
+[ext_resource type="Resource" uid="uid://boh5hr0dy0ttk" path="res://Resources/Classes/Wizard/SchoolKnowledge/perfect_recall.tres" id="8_dd7hl"]
+[ext_resource type="Resource" uid="uid://boeplttdl6mfd" path="res://Resources/GeneralUseAttributes/CharacterTraits/knowledge.tres" id="9_2gq4e"]
+
+[resource]
+script = ExtResource("2_513b2")
+subclass_name = "School of Knowledge"
+foundation_feature = Array[ExtResource("1_5fksy")]([ExtResource("2_7pkwg"), ExtResource("3_avrk3")])
+specialization_feature = Array[ExtResource("1_5fksy")]([ExtResource("7_tavio"), ExtResource("8_dd7hl")])
+mastery_feature = Array[ExtResource("1_5fksy")]([ExtResource("4_57e4k"), ExtResource("5_cukps")])
+spellcast_trait = ExtResource("9_2gq4e")
+metadata/_custom_type_script = "uid://cxymexx6bno82"

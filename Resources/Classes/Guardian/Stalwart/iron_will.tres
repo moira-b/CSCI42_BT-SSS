@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="CharacterClassFeature" format=3 uid="uid://i3sowpsp6igh"]
+
+[ext_resource type="Script" uid="uid://ckqlyqdo4cyhe" path="res://Scripts/CharacterClasses/character_class_feature.gd" id="1_4wp5v"]
+
+[resource]
+script = ExtResource("1_4wp5v")
+feature_name = "Iron Will"
+metadata/_custom_type_script = "uid://ckqlyqdo4cyhe"

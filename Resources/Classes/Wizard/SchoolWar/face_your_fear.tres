@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="CharacterClassFeature" format=3 uid="uid://dlvk3mq1gcxdi"]
+
+[ext_resource type="Script" uid="uid://ckqlyqdo4cyhe" path="res://Scripts/CharacterClasses/character_class_feature.gd" id="1_5l2m4"]
+
+[resource]
+script = ExtResource("1_5l2m4")
+feature_name = "Face Your Fear"
+metadata/_custom_type_script = "uid://ckqlyqdo4cyhe"

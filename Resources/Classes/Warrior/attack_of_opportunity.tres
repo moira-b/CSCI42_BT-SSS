@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="CharacterClassFeature" format=3 uid="uid://crm51dfsu8pe7"]
+
+[ext_resource type="Script" uid="uid://ckqlyqdo4cyhe" path="res://Scripts/CharacterClasses/character_class_feature.gd" id="1_2257n"]
+
+[resource]
+script = ExtResource("1_2257n")
+feature_name = "Attack of Opportunity"
+metadata/_custom_type_script = "uid://ckqlyqdo4cyhe"

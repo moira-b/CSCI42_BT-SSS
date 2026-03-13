@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="CharacterClassFeature" format=3 uid="uid://dx0lnblq0jk3p"]
+
+[ext_resource type="Script" uid="uid://ckqlyqdo4cyhe" path="res://Scripts/CharacterClasses/character_class_feature.gd" id="1_1am4d"]
+
+[resource]
+script = ExtResource("1_1am4d")
+feature_name = "Combat Training"
+metadata/_custom_type_script = "uid://ckqlyqdo4cyhe"

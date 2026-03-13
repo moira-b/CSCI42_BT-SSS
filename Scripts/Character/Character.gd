@@ -2,147 +2,132 @@
 # which holds all the character information and methods
 class_name Character
 extends Node
-
-# Objects from local scene
-@onready var bio_edit = $"../Bio/BioEdit"
-@onready var name_edit = $"../Names/NameC/NameEdit"
-@onready var agility_field: LineEdit = $"../TraitModifiers/Agility/LineEdit"
-@onready var strength_field: LineEdit = $"../TraitModifiers/Strength/LineEdit"
-@onready var finesse_field: LineEdit = $"../TraitModifiers/Finesse/LineEdit"
-@onready var instinct_field: LineEdit = $"../TraitModifiers/Instinct/LineEdit"
-@onready var presence_field: LineEdit = $"../TraitModifiers/Prescence/LineEdit"
-@onready var knowledge_field: LineEdit = $"../TraitModifiers/Knowledge/LineEdit"
+ 
+const max_level: int = 10
+const max_hope: int = 6
 
 @export var bio: String
 @export var character_name: String
 @export var pronouns: String
 @export var level: int
+@export var evasion: int
 @export var agility: int
 @export var strength: int
 @export var finesse: int
 @export var instinct: int
 @export var presence: int
 @export var knowledge: int
+@export var proficiency: int
+@export var proficiency_modifier: int
 @export var max_hp: int
 @export var current_hp: int
+@export var max_stress: int
 @export var current_stress: int
-@export var max_hope: int
 @export var current_hope: int
 @export var items: Array[String]
 @export var max_armor_slots: int
 @export var used_armor_slots: int
-@export var experiences: Array[String] = ["", ""]
+@export var experiences: Array[String] = ["", "", "", "", ""]
+@export var damage_thresholds: Array[int]
 
 var ancestry: Ancestry
 var community: Community
 var character_class: CharacterClass
 var subclass: CharacterSubclass
 
+@onready var active_domain_cards = $ActiveDomainCards
+@onready var vaulted_domain_cards = $VaultedDomainCards
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	print_character_details()
-	update_edit_fields()
+	pass
+
+func set_maximum_health() -> void:
+	self.max_hp = 12 # PLACEHOLDER
+	# TODO: set maximum health based on character creation options
+	# (i.e. consider chosen character features)
+
+func set_current_health(value: int) -> bool:
+	if(0 <= value && value <= self.max_hp):
+		current_hp = value
+		#print("DEBUG: " + self.character_name + "'s current health is " + str(current_hp) + ".")
+		return true
+	elif(value < 0):
+		print("Cannot set current health to be less than 0.")
+	else:
+		print("Cannot set current health to be greater than max health.")
 	
+	return false
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta) -> void:
-	pass
-
-func _on_name_edit_text_changed(new_text) -> void:
-	pass
-
-
-func _on_bio_text_changed() -> void:
-	bio = bio_edit.get_text()
-	if(bio == "Im Cool"):
-		print(bio)
-		print_character_details()
-		bio_edit.set_text("hi")
-
+func set_maximum_stress() -> void:
+	self.max_stress = 6 # PLACEHOLDER
+	# TODO: set maximum health based on character creation options
+	# (i.e. consider chosen character features)
+	
+func mark_stress(stress_taken: int):
+	var new_stress= current_stress+stress_taken
+	if( not set_current_stress(new_stress)):
+		set_current_health(current_hp-(new_stress-current_stress))
 		
-func take_damage(dmg: int) -> void:
-	current_hp -= dmg
-	
-
-func print_character_details() -> void:
-	print("Character Details:")
-	print("name: " + character_name)
-	print(pronouns)
-	print(level)
-	print("agility: " + str(agility))
-	print("strength: " + str(strength))
-	print("finesse: " + str(finesse))
-	print("instinct: " + str(instinct))
-	print("presence: " + str(presence))
-	print("knowledge: " + str(knowledge))
-	print(bio)
-	
-	
-func update_edit_fields() -> void:
-	name_edit.set_text(character_name)
-	bio_edit.set_text(bio)
-	agility_field.set_text(str(agility))
-	strength_field.set_text(str(strength))
-	instinct_field.set_text(str(instinct))
-	finesse_field.set_text(str(finesse))
-	presence_field.set_text(str(presence))
-	knowledge_field.set_text(str(knowledge))
-
-
-func _on_name_edit_text_submitted(new_text):
-	character_name = new_text
-	print(character_name)
-
-
-func _on_agility_text_submitted(new_text: String) -> void:
-	if (int(new_text) == 0):
-		print("Invalid input")
+func set_current_stress(value: int) -> bool:
+	if(0 <= value && value <= self.max_stress):
+		current_stress = value
+		#print("DEBUG: " + self.character_name + "'s current stress is " + str(self.current_stress) + ".")
+		return true
+	elif(value < 0):
+		print("Cannot set current stress to be less than 0.")
 	else:
-		agility = int(new_text)
-		agility_field.text = str(agility)
-		print("Agility: " + str(agility))
+		print("Cannot set current stress to be greater than max stress.")
+		
+	return false
 
-
-func _on_strength_text_submitted(new_text: String) -> void:
-	if (int(new_text) == 0):
-		print("Invalid input")
+func set_maximum_armor_slots() -> void:
+	self.max_armor_slots = 12 # ACTUAL DEFAULT
+	# TODO: set maximum health based on character creation options
+	# (i.e. consider chosen character features)
+	
+func set_used_armor_slots(value: int) -> bool:
+	if(0 <= value && value <= self.max_armor_slots):
+		used_armor_slots = value
+		#print("DEBUG: " + self.character_name + " has used " + str(used_armor_slots) + " armor slots.")
+		return true
+	elif(value < 0):
+		print("Cannot set used armor slots to be less than 0.")
 	else:
-		strength = int(new_text)
-		strength_field.text = str(strength)
-		print("Strength: " + str(strength))
+		print("Cannot set used armor slots to be greater than max armor slots.")
+	
+	return false
+	
+func set_current_hope(value: int) -> bool:
+	if(0 <= value && value <= self.max_hope):
+		current_hope = value
+		#print("DEBUG: " + self.character_name + " currently has " + str(current_hope) + " hope.")
+		return true
+	elif(value < 0):
+		print("Cannot set hope counter s to be less than 0.")
+	else:
+		print("Cannot set hope counter to be greater than max hope.")
+	
+	return false
 
+func set_level(value: int) -> bool:
+	if(1 <= value && value <= self.max_level):
+		level = value
+		#print("DEBUG: " + self.character_name + " currently has " + str(level) + " level.")
+		set_proficiency_modifier()
+		return true
+	elif(value < 1):
+		print("Cannot set level counter s to be less than 1.")
+	else:
+		print("Cannot set level counter to be greater than max level.")
+	
+	return false
 
-func _on_finesse_text_submitted(new_text: String) -> void:
-		if (int(new_text) == 0):
-			print("Invalid input")
-		else:
-			finesse = int(new_text)
-			finesse_field.text = str(finesse)
-			print("Finesse: " + str(finesse))
-
-
-func _on_instinct_text_submitted(new_text: String) -> void:
-		if (int(new_text) == 0):
-			print("Invalid input")
-		else:
-			instinct = int(new_text)
-			instinct_field.text = str(instinct)
-			print("Instinct: " + str(instinct))
-
-
-func _on_presence_text_submitted(new_text: String) -> void:
-		if (int(new_text) == 0):
-			print("Invalid input")
-		else:
-			presence = int(new_text)
-			presence_field.text = str(presence)
-			print("Presence: " + str(presence))
-
-
-func _on_knowledge_text_submitted(new_text: String) -> void:
-		if (int(new_text) == 0):
-			print("Invalid input")
-		else:
-			knowledge = int(new_text)
-			knowledge_field.text = str(knowledge)
-			print("knowledge: " + str(knowledge))
+func set_proficiency_modifier() -> void:
+	proficiency_modifier = 0
+	if level > 1: proficiency_modifier = 1
+	if level > 4: proficiency_modifier = 2
+	if level > 7: proficiency_modifier = 3
+	
+func set_proficiency() -> void:
+	self.proficiency = proficiency_modifier + proficiency
+	pass

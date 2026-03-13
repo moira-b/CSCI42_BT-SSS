@@ -1,0 +1,383 @@
+[gd_scene format=3 uid="uid://dltyc5tel16kj"]
+
+[ext_resource type="Script" uid="uid://cwqjejxfms3kp" path="res://Scripts/CharacterDisplay/dice_roll_window.gd" id="1_2ttmj"]
+[ext_resource type="Theme" uid="uid://cp2l2rc2p0t85" path="res://Resources/GUIStyles/dice_roller_options.tres" id="1_5tshs"]
+[ext_resource type="StyleBox" uid="uid://dic645d200g74" path="res://Resources/GUIStyles/character_sheet_stylebox.tres" id="1_bdub2"]
+[ext_resource type="Script" uid="uid://dlbrr2dgig6i1" path="res://Scripts/CharacterDisplay/die_selector.gd" id="2_nb8f3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nb8f3"]
+bg_color = Color(0.07058824, 0.37254903, 0.007843138, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5tshs"]
+bg_color = Color(0.3487765, 0.10178318, 0.1256189, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="DiceRollWindow" type="Window" unique_id=292838826]
+oversampling_override = 1.0
+initial_position = 1
+size = Vector2i(450, 550)
+script = ExtResource("1_2ttmj")
+
+[node name="ResultsContainer" type="VSplitContainer" parent="." unique_id=1169329085]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.033
+anchor_right = 0.5
+anchor_bottom = 0.033
+offset_left = -175.0
+offset_top = -0.2499981
+offset_right = 175.0
+offset_bottom = 95.75
+
+[node name="Sum" type="Label" parent="ResultsContainer" unique_id=2019198714]
+layout_mode = 2
+theme = ExtResource("1_5tshs")
+horizontal_alignment = 1
+
+[node name="IndividualRolls" type="Label" parent="ResultsContainer" unique_id=388726724]
+custom_minimum_size = Vector2(350, 50)
+layout_mode = 2
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="DiceRollUI" type="PanelContainer" parent="." unique_id=1426847236]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.536
+anchor_right = 0.5
+anchor_bottom = 0.536
+offset_left = -138.5
+offset_top = -174.80002
+offset_right = 138.5
+offset_bottom = 175.19998
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = ExtResource("1_bdub2")
+
+[node name="Dice" type="VBoxContainer" parent="DiceRollUI" unique_id=517467545]
+layout_mode = 2
+
+[node name="D4" type="PanelContainer" parent="DiceRollUI/Dice" unique_id=196741560]
+layout_mode = 2
+theme = ExtResource("1_5tshs")
+theme_override_styles/panel = ExtResource("1_bdub2")
+script = ExtResource("2_nb8f3")
+num_sides = 4
+
+[node name="FieldContainer" type="HBoxContainer" parent="DiceRollUI/Dice/D4" unique_id=1628062400]
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="Labels" type="HBoxContainer" parent="DiceRollUI/Dice/D4/FieldContainer" unique_id=1243434373]
+layout_mode = 2
+
+[node name="FieldName" type="Label" parent="DiceRollUI/Dice/D4/FieldContainer/Labels" unique_id=1047873000]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+text = "D4"
+
+[node name="FieldValue" type="LineEdit" parent="DiceRollUI/Dice/D4/FieldContainer/Labels" unique_id=1652425699]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+placeholder_text = "0"
+emoji_menu_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="Buttons" type="HBoxContainer" parent="DiceRollUI/Dice/D4/FieldContainer" unique_id=1713651986]
+layout_mode = 2
+
+[node name="IncrementButton" type="Button" parent="DiceRollUI/Dice/D4/FieldContainer/Buttons" unique_id=1103095331]
+custom_minimum_size = Vector2(40, 30)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_nb8f3")
+text = "+"
+
+[node name="DecrementButton" type="Button" parent="DiceRollUI/Dice/D4/FieldContainer/Buttons" unique_id=2138813809]
+custom_minimum_size = Vector2(40, 30)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5tshs")
+text = "-"
+
+[node name="D6" type="PanelContainer" parent="DiceRollUI/Dice" unique_id=142617785]
+layout_mode = 2
+theme = ExtResource("1_5tshs")
+theme_override_styles/panel = ExtResource("1_bdub2")
+script = ExtResource("2_nb8f3")
+num_sides = 6
+
+[node name="FieldContainer" type="HBoxContainer" parent="DiceRollUI/Dice/D6" unique_id=2085738603]
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="Labels" type="HBoxContainer" parent="DiceRollUI/Dice/D6/FieldContainer" unique_id=1155195051]
+layout_mode = 2
+
+[node name="FieldName" type="Label" parent="DiceRollUI/Dice/D6/FieldContainer/Labels" unique_id=740652573]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+text = "D6"
+
+[node name="FieldValue" type="LineEdit" parent="DiceRollUI/Dice/D6/FieldContainer/Labels" unique_id=1236138699]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+placeholder_text = "0"
+emoji_menu_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="Buttons" type="HBoxContainer" parent="DiceRollUI/Dice/D6/FieldContainer" unique_id=1080817882]
+layout_mode = 2
+
+[node name="IncrementButton" type="Button" parent="DiceRollUI/Dice/D6/FieldContainer/Buttons" unique_id=155116788]
+custom_minimum_size = Vector2(40, 30)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_nb8f3")
+text = "+"
+
+[node name="DecrementButton" type="Button" parent="DiceRollUI/Dice/D6/FieldContainer/Buttons" unique_id=745609792]
+custom_minimum_size = Vector2(40, 30)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5tshs")
+text = "-"
+
+[node name="D8" type="PanelContainer" parent="DiceRollUI/Dice" unique_id=1793869203]
+layout_mode = 2
+theme = ExtResource("1_5tshs")
+theme_override_styles/panel = ExtResource("1_bdub2")
+script = ExtResource("2_nb8f3")
+num_sides = 8
+
+[node name="FieldContainer" type="HBoxContainer" parent="DiceRollUI/Dice/D8" unique_id=2133774079]
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="Labels" type="HBoxContainer" parent="DiceRollUI/Dice/D8/FieldContainer" unique_id=1634743120]
+layout_mode = 2
+
+[node name="FieldName" type="Label" parent="DiceRollUI/Dice/D8/FieldContainer/Labels" unique_id=1357912976]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+text = "D8"
+
+[node name="FieldValue" type="LineEdit" parent="DiceRollUI/Dice/D8/FieldContainer/Labels" unique_id=1333356062]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+placeholder_text = "0"
+emoji_menu_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="Buttons" type="HBoxContainer" parent="DiceRollUI/Dice/D8/FieldContainer" unique_id=656141011]
+layout_mode = 2
+
+[node name="IncrementButton" type="Button" parent="DiceRollUI/Dice/D8/FieldContainer/Buttons" unique_id=1224782397]
+custom_minimum_size = Vector2(40, 30)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_nb8f3")
+text = "+"
+
+[node name="DecrementButton" type="Button" parent="DiceRollUI/Dice/D8/FieldContainer/Buttons" unique_id=1616603047]
+custom_minimum_size = Vector2(40, 30)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5tshs")
+text = "-"
+
+[node name="D10" type="PanelContainer" parent="DiceRollUI/Dice" unique_id=143940124]
+layout_mode = 2
+theme = ExtResource("1_5tshs")
+theme_override_styles/panel = ExtResource("1_bdub2")
+script = ExtResource("2_nb8f3")
+num_sides = 10
+
+[node name="FieldContainer" type="HBoxContainer" parent="DiceRollUI/Dice/D10" unique_id=1969586341]
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="Labels" type="HBoxContainer" parent="DiceRollUI/Dice/D10/FieldContainer" unique_id=2079313644]
+layout_mode = 2
+
+[node name="FieldName" type="Label" parent="DiceRollUI/Dice/D10/FieldContainer/Labels" unique_id=1964730194]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+text = "D10"
+
+[node name="FieldValue" type="LineEdit" parent="DiceRollUI/Dice/D10/FieldContainer/Labels" unique_id=1366683064]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+placeholder_text = "0"
+emoji_menu_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="Buttons" type="HBoxContainer" parent="DiceRollUI/Dice/D10/FieldContainer" unique_id=131226401]
+layout_mode = 2
+
+[node name="IncrementButton" type="Button" parent="DiceRollUI/Dice/D10/FieldContainer/Buttons" unique_id=595922308]
+custom_minimum_size = Vector2(40, 30)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_nb8f3")
+text = "+"
+
+[node name="DecrementButton" type="Button" parent="DiceRollUI/Dice/D10/FieldContainer/Buttons" unique_id=1493702953]
+custom_minimum_size = Vector2(40, 30)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5tshs")
+text = "-"
+
+[node name="D12" type="PanelContainer" parent="DiceRollUI/Dice" unique_id=1525040638]
+layout_mode = 2
+theme = ExtResource("1_5tshs")
+theme_override_styles/panel = ExtResource("1_bdub2")
+script = ExtResource("2_nb8f3")
+num_sides = 12
+
+[node name="FieldContainer" type="HBoxContainer" parent="DiceRollUI/Dice/D12" unique_id=1516768460]
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="Labels" type="HBoxContainer" parent="DiceRollUI/Dice/D12/FieldContainer" unique_id=1903467202]
+layout_mode = 2
+
+[node name="FieldName" type="Label" parent="DiceRollUI/Dice/D12/FieldContainer/Labels" unique_id=711479358]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+text = "D12"
+
+[node name="FieldValue" type="LineEdit" parent="DiceRollUI/Dice/D12/FieldContainer/Labels" unique_id=1085638698]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+placeholder_text = "0"
+emoji_menu_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="Buttons" type="HBoxContainer" parent="DiceRollUI/Dice/D12/FieldContainer" unique_id=387155649]
+layout_mode = 2
+
+[node name="IncrementButton" type="Button" parent="DiceRollUI/Dice/D12/FieldContainer/Buttons" unique_id=1482681303]
+custom_minimum_size = Vector2(40, 30)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_nb8f3")
+text = "+"
+
+[node name="DecrementButton" type="Button" parent="DiceRollUI/Dice/D12/FieldContainer/Buttons" unique_id=26256380]
+custom_minimum_size = Vector2(40, 30)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5tshs")
+text = "-"
+
+[node name="D20" type="PanelContainer" parent="DiceRollUI/Dice" unique_id=1220786145]
+layout_mode = 2
+theme = ExtResource("1_5tshs")
+theme_override_styles/panel = ExtResource("1_bdub2")
+script = ExtResource("2_nb8f3")
+num_sides = 20
+
+[node name="FieldContainer" type="HBoxContainer" parent="DiceRollUI/Dice/D20" unique_id=1016253400]
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="Labels" type="HBoxContainer" parent="DiceRollUI/Dice/D20/FieldContainer" unique_id=2090102311]
+layout_mode = 2
+
+[node name="FieldName" type="Label" parent="DiceRollUI/Dice/D20/FieldContainer/Labels" unique_id=1898430016]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+text = "D20"
+
+[node name="FieldValue" type="LineEdit" parent="DiceRollUI/Dice/D20/FieldContainer/Labels" unique_id=1190410759]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+placeholder_text = "0"
+emoji_menu_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="Buttons" type="HBoxContainer" parent="DiceRollUI/Dice/D20/FieldContainer" unique_id=1252400122]
+layout_mode = 2
+
+[node name="IncrementButton" type="Button" parent="DiceRollUI/Dice/D20/FieldContainer/Buttons" unique_id=1602103938]
+custom_minimum_size = Vector2(40, 30)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_nb8f3")
+text = "+"
+
+[node name="DecrementButton" type="Button" parent="DiceRollUI/Dice/D20/FieldContainer/Buttons" unique_id=1670180749]
+custom_minimum_size = Vector2(40, 30)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5tshs")
+text = "-"
+
+[node name="D100" type="PanelContainer" parent="DiceRollUI/Dice" unique_id=1848082897]
+layout_mode = 2
+theme = ExtResource("1_5tshs")
+theme_override_styles/panel = ExtResource("1_bdub2")
+script = ExtResource("2_nb8f3")
+num_sides = 100
+
+[node name="FieldContainer" type="HBoxContainer" parent="DiceRollUI/Dice/D100" unique_id=337938550]
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="Labels" type="HBoxContainer" parent="DiceRollUI/Dice/D100/FieldContainer" unique_id=80452300]
+layout_mode = 2
+
+[node name="FieldName" type="Label" parent="DiceRollUI/Dice/D100/FieldContainer/Labels" unique_id=1226873019]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+text = "D100"
+
+[node name="FieldValue" type="LineEdit" parent="DiceRollUI/Dice/D100/FieldContainer/Labels" unique_id=1758279160]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+placeholder_text = "0"
+emoji_menu_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="Buttons" type="HBoxContainer" parent="DiceRollUI/Dice/D100/FieldContainer" unique_id=463500143]
+layout_mode = 2
+
+[node name="IncrementButton" type="Button" parent="DiceRollUI/Dice/D100/FieldContainer/Buttons" unique_id=492777147]
+custom_minimum_size = Vector2(40, 30)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_nb8f3")
+text = "+"
+
+[node name="DecrementButton" type="Button" parent="DiceRollUI/Dice/D100/FieldContainer/Buttons" unique_id=930837803]
+custom_minimum_size = Vector2(40, 30)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5tshs")
+text = "-"
+
+[node name="RollButtonContainer" type="MarginContainer" parent="." unique_id=1127682714]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -50.0
+offset_top = -57.0
+offset_right = 50.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="RollButton" type="Button" parent="RollButtonContainer" unique_id=140606695]
+layout_mode = 2
+theme = ExtResource("1_5tshs")
+text = "Roll"
+
+[connection signal="pressed" from="RollButtonContainer/RollButton" to="." method="_on_roll_button_pressed"]
