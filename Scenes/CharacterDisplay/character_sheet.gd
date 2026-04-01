@@ -32,7 +32,7 @@ extends Control
 @onready var fh_roll_window: Window = $ActionButtons/DiceButtons/FHRollWindow
 @onready var evasion_value: Label = $EvasionProficency/Evasion/Value
 @onready var proficiency_value: Label = $EvasionProficency/Proficiency/Value
-
+@onready var advance_window: Window = $AdvanceWindow
 
 
 @onready var dice_button: Button = $ActionButtons/DiceButtons/Dice
@@ -346,6 +346,8 @@ func _on_levelup_confirm_pressed() -> void:
 	levelup_confirmation_button.pressed.disconnect(_on_levelup_confirm_pressed)
 	levelup_cancel_button.pressed.disconnect(_on_levelup_cancel_pressed)
 	levelup_confirmation_panel.visible = false
+	advance_window.visible = true
+	advance_window.get_character(character)
 
 func _on_levelup_cancel_pressed() -> void:
 	levelup_confirmation_panel.visible = false
