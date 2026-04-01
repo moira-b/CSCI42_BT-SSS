@@ -782,5 +782,6 @@ func increment_advancements(stats) -> void:
 
 func _on_save_button_pressed() -> void:
 	var save_manager = $SaveManager
+	save_manager.set_character(character)
 	save_manager.character = self.character
 	save_manager.call("save_character_data")

@@ -1,10 +1,18 @@
 extends Node2D
 
-@onready var character = self.get_parent().character
 const FILE_PATH = "user://character_data"
+var character = null
+
+func set_character(character: Character):
+	self.character = character
 
 func save_character_data():
-
+	
+	# Verify that a character has already been assigned
+	if (character==null):
+		print("Error. Attempting to save character, but save manager does not have a reference to the character.")
+		return
+	
 	# Verify that the node can serialize data
 	# (which is only possible for nodes of type Character)
 	if !character.has_method("serialize_data"):

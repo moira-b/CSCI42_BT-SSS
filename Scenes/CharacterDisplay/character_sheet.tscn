@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dhouly0p8fe4p"]
 
 [ext_resource type="Script" uid="uid://cmt4mu51iv5vw" path="res://Scenes/CharacterDisplay/character_sheet.gd" id="1_dg7yu"]
-[ext_resource type="Script" uid="uid://c3g4nw83rco5p" path="res://Scripts/CharacterDisplay/save_manager.gd" id="2_56qfy"]
+[ext_resource type="PackedScene" uid="uid://r02yxwfx48hx" path="res://Scenes/SheetManagement/SaveManager.tscn" id="2_56qfy"]
 [ext_resource type="StyleBox" uid="uid://dic645d200g74" path="res://Resources/GUIStyles/character_sheet_stylebox.tres" id="2_c8oo5"]
 [ext_resource type="Script" uid="uid://dfs5rt0xu3vuj" path="res://Scripts/CharacterDisplay/rest.gd" id="4_8iwex"]
 [ext_resource type="Script" uid="uid://dnjp24h6b6fc2" path="res://Scripts/CharacterDisplay/markable_stat.gd" id="4_qgeia"]
@@ -66,8 +66,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_dg7yu")
 
-[node name="SaveManager" type="Node2D" parent="." unique_id=437314400]
-script = ExtResource("2_56qfy")
+[node name="SaveManager" parent="." unique_id=538318276 instance=ExtResource("2_56qfy")]
 
 [node name="Header" type="HSplitContainer" parent="." unique_id=1428007041]
 layout_mode = 0
