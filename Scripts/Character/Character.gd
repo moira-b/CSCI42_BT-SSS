@@ -34,6 +34,7 @@ var ancestry: Ancestry
 var community: Community
 var character_class: CharacterClass
 var subclass: CharacterSubclass
+var primary_key: String
 
 @onready var active_domain_cards = $ActiveDomainCards
 @onready var vaulted_domain_cards = $VaultedDomainCards
@@ -134,6 +135,7 @@ func set_proficiency() -> void:
 	
 func serialize_data():
 	var save_dict = {
+		"primary_key": primary_key,
 		"character_name": character_name,
 		"pronouns": pronouns,
 		"bio": bio,
@@ -159,6 +161,9 @@ func serialize_data():
 		"damage_thresholds": damage_thresholds,
 	}
 	return save_dict
+
+func assign_primary_key(pk: int):
+	self.primary_key = str(pk)
 
 func load_data():
 	pass

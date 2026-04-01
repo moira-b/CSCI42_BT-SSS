@@ -5,19 +5,20 @@ const FILE_PATH = "user://character_data"
 
 func save_character_data():
 
+	# Verify that the node can serialize data
+	# (which is only possible for nodes of type Character)
 	if !character.has_method("serialize_data"):
 		print("Error. The node does not have a method for data serialization.")
 		return
 	
-	# get serialized data from the character
-	var character_data = character.call("serialize_data")
-	var character_name = character_data["character_name"]
-	
 	# CASE 1: no file yet (i.e. first character)
 	if !FileAccess.file_exists(FILE_PATH):
+		character.assign_primary_key(1)
+		var character_data = character.call("serialize_data")
 		var save_file = FileAccess.open(FILE_PATH, FileAccess.WRITE)
 		var to_store = {
-			character_name: character_data
+			"pk_count": 1,
+			character.primary_key: character_data
 		}
 		save_file.store_line(JSON.stringify(to_store, "\t"))
 		save_file.close()
@@ -36,23 +37,27 @@ func save_character_data():
 			
 		# Check that the file contents can be made into a dictionary
 		var json_data = json.data
-		#if !(typeof(parse_result)==TYPE_DICTIONARY):
-			#print("File format error. Contents of character_data do not comprise a dictionary.")
-			#return
 		
 		print("CHECKPOINT 1")
-		print(json.data)
+		#print(json.data)
 		
-		if character_name in json.data:
+		# CASE 2A: Editing existing character
+		if (character.primary_key in json.data):
 			print("Character exists, updating profile now")
-			json.data[character_name] = character_data
+			
+		# Case 2B: Creating new character
 		else:
+			# make sure to handle primary keys
+			json_data["pk_count"] += 1
+			character.assign_primary_key(json_data["pk_count"])
 			print("Character does not exist, creating profile now")
-			json.data[character_name] = character_data
-		save_file.store_line(JSON.stringify(json.data, "\t"))
+			
+		var character_data = character.call("serialize_data")
+		json.data[character.primary_key] = character_data
+		save_file.store_line(JSON.stringify(json_data, "\t"))
 
 		print("CHECKPOINT 2")
-		print(json.data)
+		#print(json.data)
 		save_file.close()
 
 func _get_dictionary(json_data: Variant):
