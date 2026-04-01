@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dhouly0p8fe4p"]
 
 [ext_resource type="Script" uid="uid://cmt4mu51iv5vw" path="res://Scenes/CharacterDisplay/character_sheet.gd" id="1_dg7yu"]
+[ext_resource type="Script" uid="uid://c3g4nw83rco5p" path="res://Scripts/CharacterDisplay/save_manager.gd" id="2_56qfy"]
 [ext_resource type="StyleBox" uid="uid://dic645d200g74" path="res://Resources/GUIStyles/character_sheet_stylebox.tres" id="2_c8oo5"]
 [ext_resource type="Script" uid="uid://dfs5rt0xu3vuj" path="res://Scripts/CharacterDisplay/rest.gd" id="4_8iwex"]
 [ext_resource type="Script" uid="uid://dnjp24h6b6fc2" path="res://Scripts/CharacterDisplay/markable_stat.gd" id="4_qgeia"]
@@ -64,6 +65,9 @@ grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_dg7yu")
+
+[node name="SaveManager" type="Node2D" parent="." unique_id=437314400]
+script = ExtResource("2_56qfy")
 
 [node name="Header" type="HSplitContainer" parent="." unique_id=1428007041]
 layout_mode = 0
@@ -989,6 +993,14 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_glymg")
 toggle_mode = true
 text = "+1
 "
+
+[node name="SaveButton" type="Button" parent="." unique_id=1686076530]
+layout_mode = 0
+offset_left = 967.0
+offset_top = 27.0
+offset_right = 1087.0
+offset_bottom = 93.0
+text = "SAVE"
 
 [connection signal="text_changed" from="Header/HeaderInfo/NamePronouns/NamePanelContainer/NameC/NameEdit" to="." method="_on_name_edit_text_changed"]
 [connection signal="text_submitted" from="Header/HeaderInfo/NamePronouns/NamePanelContainer/NameC/NameEdit" to="." method="_on_name_edit_text_submitted"]

@@ -131,3 +131,34 @@ func set_proficiency_modifier() -> void:
 func set_proficiency() -> void:
 	self.proficiency = proficiency_modifier + proficiency
 	pass
+	
+func serialize_data():
+	var save_dict = {
+		"character_name": character_name,
+		"pronouns": pronouns,
+		"bio": bio,
+		"level": level,
+		"evasion": evasion,
+		"agility": agility,
+		"strength": strength,
+		"finesse": finesse,
+		"instinct": instinct,
+		"presence": presence,
+		"knowledge": knowledge,
+		"proficiency": proficiency,
+		"proficiency_modifier": proficiency_modifier,
+		"max_hp": max_hp,
+		"current_hp": current_hp,
+		"max_stress": max_stress,
+		"current_stress": current_stress,
+		"current_hope": current_hope,
+		"items": items,
+		"max_armor_slots": max_armor_slots,
+		"used_armor_slots": used_armor_slots,
+		"experiences": experiences,
+		"damage_thresholds": damage_thresholds,
+	}
+	return save_dict
+
+func load_data():
+	pass

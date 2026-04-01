@@ -33,8 +33,6 @@ extends Control
 @onready var evasion_value: Label = $EvasionProficency/Evasion/Value
 @onready var proficiency_value: Label = $EvasionProficency/Proficiency/Value
 
-
-
 @onready var dice_button: Button = $ActionButtons/DiceButtons/Dice
 @onready var fearhope_button: Button = $ActionButtons/DiceButtons/FHDice
 
@@ -59,6 +57,8 @@ extends Control
 @onready var experience5_advance: Button = $Experiences/Experience5/AdvanceButton
 @onready var evasion_advance: Button = $EvasionProficency/Evasion/AdvanceButton
 @onready var proficiency_advance: Button = $EvasionProficency/Proficiency/AdvanceButton
+
+@onready var save_button: Button = $SaveButton
 
 var advance_buttons: Array[Button] = []
 var selected_advance: Array[Button] = []
@@ -398,14 +398,14 @@ func connect_signals() -> void:
 	fh_roll_window.close_requested.connect(_on_fh_roll_window_close_requested)
 	
 	levelup_button.pressed.connect(_on_levelup_button_pressed)
+	
+	save_button.pressed.connect(_on_save_button_pressed)
 
 func disable_button_selection(b: bool) -> void:
 	short_rest_button.disabled = b
 	long_rest_button.disabled = b
 	dice_button.disabled = b
 	fearhope_button.disabled = b
-	
-
 
 func _on_agility_advance_button_toggled(toggled_on: bool) -> void:
 	if toggled_on:
@@ -779,3 +779,8 @@ func increment_advancements(stats) -> void:
 		if s == evasion_advance: character.evasion += 1
 		if s == proficiency_advance: character.proficiency += 1
 	update_edit_fields()
+
+func _on_save_button_pressed() -> void:
+	var save_manager = $SaveManager
+	save_manager.character = self.character
+	save_manager.call("save_character_data")
