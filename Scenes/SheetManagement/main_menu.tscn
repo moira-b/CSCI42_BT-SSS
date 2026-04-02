@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://b3udvby21u3eh"]
 
+[ext_resource type="Script" uid="uid://028wp2ttofun" path="res://Scripts/SheetManagement/main_menu.gd" id="1_vsvys"]
+
 [node name="MainMenu" type="Control" unique_id=621885202]
 layout_mode = 3
 anchors_preset = 15
@@ -7,3 +9,74 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_vsvys")
+
+[node name="Header" type="HBoxContainer" parent="." unique_id=533069780]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.499
+anchor_top = 0.023000002
+anchor_right = 0.499
+anchor_bottom = 0.023000002
+offset_left = -558.848
+offset_top = 0.095998764
+offset_right = 559.152
+offset_bottom = 72.096
+grow_horizontal = 2
+
+[node name="LineEdit" type="LineEdit" parent="Header" unique_id=626609327]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+placeholder_text = "Search for a character..."
+
+[node name="Button" type="Button" parent="Header" unique_id=361756707]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_horizontal = 10
+text = "Create a new Character"
+
+[node name="Body" type="HBoxContainer" parent="." unique_id=1837161623]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -555.0
+offset_top = -207.5
+offset_right = 555.0
+offset_bottom = 207.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=533659469]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.49800003
+anchor_top = 0.98
+anchor_right = 0.49800003
+anchor_bottom = 0.98
+offset_left = -565.69604
+offset_top = -81.04004
+offset_right = 566.30396
+offset_bottom = -0.040039063
+
+[node name="CreateCharacterConfirm" type="PanelContainer" parent="." unique_id=1879167693]
+layout_mode = 0
+offset_left = 734.0
+offset_top = 18.0
+offset_right = 902.0
+offset_bottom = 84.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CreateCharacterConfirm" unique_id=1031325904]
+layout_mode = 2
+
+[node name="ConfirmButton" type="Button" parent="CreateCharacterConfirm/VBoxContainer" unique_id=2105291481]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 2
+text = "Confirm"
+
+[node name="CancelButton" type="Button" parent="CreateCharacterConfirm/VBoxContainer" unique_id=661236875]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+text = "Cancel"

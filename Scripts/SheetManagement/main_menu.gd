@@ -1,11 +1,37 @@
+class_name MainMenu
 extends Control
 
+@onready var create_new_character_button : Button = $Header/Button
+@onready var create_new_character_confirm: Button = $CreateCharacterConfirm/VBoxContainer/ConfirmButton
+@onready var create_new_character_cancel: Button = $CreateCharacterConfirm/VBoxContainer/CancelButton
+@onready var confirm_window: PanelContainer = $CreateCharacterConfirm
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
+	enter()
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+func enter():
+	confirm_window.visible = false
+	connect_signals()
+
+
+func connect_signals():
+	create_new_character_button.pressed.connect(_on_createcharacter_button_pressed)
+
+func _on_createcharacter_button_pressed() -> void:
+	create_new_character_confirm.pressed.connect(_on_creatercharacter_confirm_pressed)
+	create_new_character_cancel.pressed.connect(_on_creatercharacter_cancel_pressed)
+	confirm_window.visible = true
+
+func _on_creatercharacter_confirm_pressed() -> void:
+	create_new_character_confirm.pressed.disconnect(_on_creatercharacter_confirm_pressed)
+	create_new_character_cancel.pressed.disconnect(_on_creatercharacter_cancel_pressed)
+	confirm_window.visible = false
+
+func _on_creatercharacter_cancel_pressed() -> void:
+	confirm_window.visible = false
