@@ -21,6 +21,7 @@ extends Window
 knowledge, health, stress, evasion, proficiency, exp_1, exp_2, exp_3, exp_4, exp_5]
 var selected: Array[CheckButton]
 var character: Character
+signal advancements_confirmed
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -66,16 +67,19 @@ func _update_fields() -> void:
 	exp_5.text = character.experiences[4]
 	
 	if character.level == 2:
+		exp_3.text = "New Experience"
 		exp_3.show()
 		
 		for b in allButtons:
 			b.disabled = false
 	elif character.level == 5:
+		exp_4.text = "New Experience"
 		exp_4.show()
 		
 		for b in allButtons:
 			b.disabled = false
 	elif character.level == 8:
+		exp_5.text = "New Experience"
 		exp_5.show()
 		
 		for b in allButtons:
@@ -102,4 +106,9 @@ func _on_confirm_pressed() -> void:
 		s.set_pressed_no_signal(false)
 		s.disabled = true
 	selected.clear()
+	update_sheet_fields()
 	self.hide()
+
+
+func update_sheet_fields():
+	advancements_confirmed.emit()
