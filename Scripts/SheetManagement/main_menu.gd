@@ -5,6 +5,7 @@ extends Control
 @onready var create_new_character_confirm: Button = $CreateCharacterConfirm/VBoxContainer/ConfirmButton
 @onready var create_new_character_cancel: Button = $CreateCharacterConfirm/VBoxContainer/CancelButton
 @onready var confirm_window: PanelContainer = $CreateCharacterConfirm
+@onready var char_creation_scene: PackedScene = preload("res://Scenes/CharacterCreator/character_creator_interface.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -29,9 +30,11 @@ func _on_createcharacter_button_pressed() -> void:
 	confirm_window.visible = true
 
 func _on_creatercharacter_confirm_pressed() -> void:
-	create_new_character_confirm.pressed.disconnect(_on_creatercharacter_confirm_pressed)
-	create_new_character_cancel.pressed.disconnect(_on_creatercharacter_cancel_pressed)
-	confirm_window.visible = false
+	var new_scene = char_creation_scene.instantiate()
+	self.get_parent().add_child(new_scene)
+	self.queue_free()
 
 func _on_creatercharacter_cancel_pressed() -> void:
+	create_new_character_confirm.pressed.disconnect(_on_creatercharacter_confirm_pressed)
+	create_new_character_cancel.pressed.disconnect(_on_creatercharacter_cancel_pressed)
 	confirm_window.visible = false

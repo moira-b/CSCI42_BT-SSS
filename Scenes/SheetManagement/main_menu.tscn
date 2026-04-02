@@ -21,7 +21,7 @@ anchor_bottom = 0.023000002
 offset_left = -558.848
 offset_top = 0.095998764
 offset_right = 559.152
-offset_bottom = 72.096
+offset_bottom = 50.096
 grow_horizontal = 2
 
 [node name="LineEdit" type="LineEdit" parent="Header" unique_id=626609327]
@@ -35,21 +35,7 @@ layout_mode = 2
 size_flags_horizontal = 10
 text = "Create a new Character"
 
-[node name="Body" type="HBoxContainer" parent="." unique_id=1837161623]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -555.0
-offset_top = -207.5
-offset_right = 555.0
-offset_bottom = 207.5
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=533659469]
+[node name="Bottom" type="HBoxContainer" parent="." unique_id=533659469]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.49800003
@@ -80,3 +66,88 @@ text = "Confirm"
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 text = "Cancel"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1345530181]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -559.0
+offset_top = -205.0
+offset_right = 556.0
+offset_bottom = 230.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="ScrollContainer" unique_id=246319859]
+custom_minimum_size = Vector2(1050, 1000)
+layout_mode = 2
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
+columns = 4
+
+[node name="PanelContainer" type="PanelContainer" parent="ScrollContainer/GridContainer" unique_id=1132653642]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+
+[node name="PanelContainer2" type="PanelContainer" parent="ScrollContainer/GridContainer" unique_id=843896901]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+
+[node name="PanelContainer3" type="PanelContainer" parent="ScrollContainer/GridContainer" unique_id=2046105652]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+
+[node name="PanelContainer4" type="PanelContainer" parent="ScrollContainer/GridContainer" unique_id=1258865940]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+
+[node name="PanelContainer5" type="PanelContainer" parent="ScrollContainer/GridContainer" unique_id=1227710339]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+
+[node name="PanelContainer6" type="PanelContainer" parent="ScrollContainer/GridContainer" unique_id=1112092810]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+
+[node name="PanelContainer7" type="PanelContainer" parent="ScrollContainer/GridContainer" unique_id=524551179]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+
+[node name="PanelContainer8" type="PanelContainer" parent="ScrollContainer/GridContainer" unique_id=405968734]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+
+[node name="PanelContainer9" type="PanelContainer" parent="ScrollContainer/GridContainer" unique_id=2046134248]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+
+[node name="PanelContainer10" type="PanelContainer" parent="ScrollContainer/GridContainer" unique_id=1585417373]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+
+[node name="PanelContainer11" type="PanelContainer" parent="ScrollContainer/GridContainer" unique_id=1368658792]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+
+[node name="PanelContainer12" type="PanelContainer" parent="ScrollContainer/GridContainer" unique_id=458771093]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+
+[node name="PanelContainer13" type="PanelContainer" parent="ScrollContainer/GridContainer" unique_id=246984520]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+
+[node name="PanelContainer14" type="PanelContainer" parent="ScrollContainer/GridContainer" unique_id=1158841220]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+
+[node name="PanelContainer15" type="PanelContainer" parent="ScrollContainer/GridContainer" unique_id=1069054746]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+
+[node name="PanelContainer16" type="PanelContainer" parent="ScrollContainer/GridContainer" unique_id=1553773610]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
