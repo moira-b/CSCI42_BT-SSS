@@ -19,5 +19,47 @@
 		"domain":"Arcana",
 		"recall_cost":1,
 		"description":"Spend a Hope to allow a creature you can touch to climb on walls and ceilings as easily as walking on the ground. This lasts until the end of the scene or you cast Wall Walk again."
+	},
+	"Cinder Grasp":{
+		"level": 2,
+		"type":"Spell",
+		"domain":"Arcana",
+		"recall_cost":1,
+		"description":"Make a Spellcast Roll against a target within Melee range. On a success, the target instantly bursts into flames, takes 1d20+3 magic damage, and is temporarily lit On Fire.\nWhen a creature acts while On Fire, they must take an extra 2d6 magic damage if they are still On Fire at the end of their action."
+	},
+	"Floating Eye":{
+		"level": 2,
+		"type":"Spell",
+		"domain":"Arcana",
+		"recall_cost":0,
+		"description":"Spend a Hope to create a single, small floating orb that you can move anywhere within Very Far range. While this spell is active, you can see through the orb as though you’re looking out from its position. You can transition between using your own senses and seeing through the orb freely. If the orb takes damage or moves out of range, the spell ends."
+	},
+	"Counterspell":{
+		"level": 3,
+		"type":"Spell",
+		"domain":"Arcana",
+		"recall_cost":2,
+		"description":"You can interrupt a magical effect taking place by making a reaction roll using your Spellcast trait. On a success, the effect stops and any consequences are avoided, and this card is placed in your vault."
+	},
+	"Flight":{
+		"level": 3,
+		"type":"Spell",
+		"domain":"Arcana",
+		"recall_cost":1,
+		"description":"Make a Spellcast Roll (15). On a success, place a number of tokens equal to your Agility on this card (minimum 1). When you make an action roll while flying, spend a token from this card. After the action that spends the last token is resolved, you descend to the ground directly below you."
+	},
+	"Blink Out":{
+		"level": 4,
+		"type":"Spell",
+		"domain":"Arcana",
+		"recall_cost":1,
+		"description":"Make a Spellcast Roll (12). On a success, spend a Hope to teleport to another point you can see within Far range. If any willing creatures are within Very Close range, spend an additional Hope for each creature to bring them with you."
+	},
+	"Preservation Blast":{
+		"level": 4,
+		"type":"Spell",
+		"domain":"Arcana",
+		"recall_cost":2,
+		"description":"Make a Spellcast Roll against all targets within Melee range. Targets you succeed against are forced back to Far range and take d8+3 magic damage using your Spellcast trait"
 	}
 }
