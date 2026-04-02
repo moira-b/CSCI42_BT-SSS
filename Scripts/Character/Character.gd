@@ -29,6 +29,7 @@ const max_hope: int = 6
 @export var used_armor_slots: int
 @export var experiences: Array[String] = ["", "", "", "", ""]
 @export var damage_thresholds: Array[int]
+@export var experience_levels: Array[int] = [2, 2, 2, 2, 2]
 
 var ancestry: Ancestry
 var community: Community

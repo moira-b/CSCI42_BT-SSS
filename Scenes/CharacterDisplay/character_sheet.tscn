@@ -820,6 +820,7 @@ oversampling_override = 1.0
 title = "Advancements"
 initial_position = 2
 size = Vector2i(800, 550)
+visible = false
 script = ExtResource("7_56qfy")
 
 [node name="ObjectContainer" type="HFlowContainer" parent="AdvanceWindow" unique_id=1685616752]
@@ -828,7 +829,7 @@ anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -229.5
-offset_top = 20.0
+offset_top = 5.0
 offset_right = 229.5
 offset_bottom = 20.0
 grow_horizontal = 2

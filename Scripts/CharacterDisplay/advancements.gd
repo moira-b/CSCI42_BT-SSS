@@ -18,7 +18,7 @@ extends Window
 @onready var confirm_button: Button = $ConfirmButton
 
 @onready var allButtons: Array[CheckButton] = [agility, strength, finesse, instinct, presence,
-knowledge, health, stress, evasion, proficiency]
+knowledge, health, stress, evasion, proficiency, exp_1, exp_2, exp_3, exp_4, exp_5]
 var selected: Array[CheckButton]
 var character: Character
 
@@ -56,16 +56,50 @@ func _on_checkButton_toggled(toggled_on: bool, toggled_button: CheckButton) -> v
 
 func get_character(c: Character):
 	character = c
-	
+	_update_fields()
 
 func _update_fields() -> void:
-	if character.level < 2:
+	exp_1.text = character.experiences[0]
+	exp_2.text = character.experiences[1]
+	exp_3.text = character.experiences[2]
+	exp_4.text = character.experiences[3]
+	exp_5.text = character.experiences[4]
+	
+	if character.level == 2:
 		exp_3.show()
-	if character.level < 5:
+		
+		for b in allButtons:
+			b.disabled = false
+	elif character.level == 5:
 		exp_4.show()
-	if character.level < 8:
+		
+		for b in allButtons:
+			b.disabled = false
+	elif character.level == 8:
 		exp_5.show()
+		
+		for b in allButtons:
+			b.disabled = false
 
 	
 func _on_confirm_pressed() -> void:
+	for s in selected:
+		if s == agility: character.agility += 1
+		if s == strength: character.strength += 1
+		if s == finesse: character.finesse += 1
+		if s == instinct: character.instinct += 1
+		if s == presence: character.presence += 1
+		if s == knowledge: character.knowledge += 1
+		if s == proficiency: character.proficiency += 1
+		if s == health: character.max_hp += 1
+		if s == stress: character.max_stress += 1
+		if s == exp_1: character.experience_levels[0] += 1
+		if s == exp_2: character.experience_levels[1] += 1
+		if s == exp_3: character.experience_levels[2] += 1
+		if s == exp_4: character.experience_levels[3] += 1
+		if s == exp_5: character.experience_levels[4] += 1
+	for s in selected:
+		s.set_pressed_no_signal(false)
+		s.disabled = true
+	selected.clear()
 	self.hide()
