@@ -951,10 +951,10 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "Cards"
 
-[node name="Button" type="Button" parent="AdvanceWindow/ObjectContainer" unique_id=2056735212]
+[node name="Classes" type="Button" parent="AdvanceWindow/ObjectContainer" unique_id=2056735212]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Subclasses"
+text = "Classes"
 
 [node name="ConfirmButton" type="Button" parent="AdvanceWindow" unique_id=481842158]
 custom_minimum_size = Vector2(150, 50)

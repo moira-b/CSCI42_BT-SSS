@@ -15,6 +15,8 @@ extends Window
 @onready var exp_3: CheckButton = $ObjectContainer/Experiences/VBoxContainer/Exp3
 @onready var exp_4: CheckButton = $ObjectContainer/Experiences/VBoxContainer/Exp4
 @onready var exp_5: CheckButton = $ObjectContainer/Experiences/VBoxContainer/Exp5
+@onready var cards: Button = $ObjectContainer/Cards
+@onready var classes: Button = $ObjectContainer/Classes
 @onready var confirm_button: Button = $ConfirmButton
 
 @onready var allButtons: Array[CheckButton] = [agility, strength, finesse, instinct, presence,
@@ -25,6 +27,7 @@ signal advancements_confirmed
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	classes.disabled = true
 	for button in allButtons:
 		button.toggled.connect(_on_checkButton_toggled.bind(button))
 	confirm_button.pressed.connect(_on_confirm_pressed)
@@ -75,6 +78,7 @@ func _update_fields() -> void:
 	elif character.level == 5:
 		exp_4.text = "New Experience"
 		exp_4.show()
+		classes.disabled = false
 		
 		for b in allButtons:
 			b.disabled = false
@@ -87,27 +91,30 @@ func _update_fields() -> void:
 
 	
 func _on_confirm_pressed() -> void:
-	for s in selected:
-		if s == agility: character.agility += 1
-		if s == strength: character.strength += 1
-		if s == finesse: character.finesse += 1
-		if s == instinct: character.instinct += 1
-		if s == presence: character.presence += 1
-		if s == knowledge: character.knowledge += 1
-		if s == proficiency: character.proficiency += 1
-		if s == health: character.max_hp += 1
-		if s == stress: character.max_stress += 1
-		if s == exp_1: character.experience_levels[0] += 1
-		if s == exp_2: character.experience_levels[1] += 1
-		if s == exp_3: character.experience_levels[2] += 1
-		if s == exp_4: character.experience_levels[3] += 1
-		if s == exp_5: character.experience_levels[4] += 1
-	for s in selected:
-		s.set_pressed_no_signal(false)
-		s.disabled = true
-	selected.clear()
-	update_sheet_fields()
-	self.hide()
+	if !selected.size() >= 2 && !proficiency in selected:
+		print("No advancements selected")
+	else:
+		for s in selected:
+			if s == agility: character.agility += 1
+			if s == strength: character.strength += 1
+			if s == finesse: character.finesse += 1
+			if s == instinct: character.instinct += 1
+			if s == presence: character.presence += 1
+			if s == knowledge: character.knowledge += 1
+			if s == proficiency: character.proficiency += 1
+			if s == health: character.max_hp += 1
+			if s == stress: character.max_stress += 1
+			if s == exp_1: character.experience_levels[0] += 1
+			if s == exp_2: character.experience_levels[1] += 1
+			if s == exp_3: character.experience_levels[2] += 1
+			if s == exp_4: character.experience_levels[3] += 1
+			if s == exp_5: character.experience_levels[4] += 1
+		for s in selected:
+			s.set_pressed_no_signal(false)
+			s.disabled = true
+		selected.clear()
+		update_sheet_fields()
+		self.hide()
 
 
 func update_sheet_fields():

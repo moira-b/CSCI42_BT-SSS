@@ -52,7 +52,6 @@ var card_scene: PackedScene = load("res://Scenes/Cards/card_vault.tscn")
 func enter() -> void:
 	character = $Character
 	rest_window.get_character(character)
-	advance_window.get_character(character)
 	dice_roll_window.visible = false
 	fh_roll_window.visible = false
 	levelup_confirmation_panel.visible = false
@@ -347,6 +346,7 @@ func _on_levelup_confirm_pressed() -> void:
 	levelup_confirmation_button.pressed.disconnect(_on_levelup_confirm_pressed)
 	levelup_cancel_button.pressed.disconnect(_on_levelup_cancel_pressed)
 	levelup_confirmation_panel.visible = false
+	advance_window.get_character(character)
 	advance_window.visible = true
 
 func _on_levelup_cancel_pressed() -> void:
