@@ -201,8 +201,10 @@ theme_override_constants/separation = 34
 alignment = 1
 
 [node name="DomainCard" parent="OptionLists/DomainCardSelContainer/Card Info/SelectionDisplay" unique_id=1871884780 instance=ExtResource("47_g2o8p")]
-custom_minimum_size = Vector2(200, 350)
+custom_minimum_size = Vector2(250, 350)
 layout_mode = 2
+size_flags_horizontal = 1
+size_flags_vertical = 1
 
 [node name="SelectButton" type="Button" parent="OptionLists/DomainCardSelContainer/Card Info/SelectionDisplay" unique_id=400395179]
 layout_mode = 2
