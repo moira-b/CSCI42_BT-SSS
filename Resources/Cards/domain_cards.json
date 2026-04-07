@@ -61,5 +61,383 @@
 		"domain":"Arcana",
 		"recall_cost":2,
 		"description":"Make a Spellcast Roll against all targets within Melee range. Targets you succeed against are forced back to Far range and take d8+3 magic damage using your Spellcast trait"
+	},
+	"Chain Lightning":{
+		"level": 5,
+		"type":"Spell",
+		"domain":"Arcana",
+		"recall_cost":1,
+		"description":"Mark 2 Stress to make a Spellcast Roll, unleashing lightning on all targets within Close range. Targets you succeed against must make a reaction roll with a Difficulty equal to the result of your Spellcast Roll. Targets who fail take 2d8+4 magic damage. Additional adversaries not already targeted by Chain Lightning and within Close range of previous targets who took damage must also make the reaction roll. Targets who fail take 2d8+4 magic damage. This chain continues until there are no more adversaries within range."
+	},
+	"Premonition":{
+		"level": 5,
+		"type":"Spell",
+		"domain":"Arcana",
+		"recall_cost":2,
+		"description":"You can channel arcane energy to have visions of the future. Once per long rest, immediately after the GM conveys the consequences of a roll you made, you can rescind the move and consequences like they never happened and make another move instead."
+	},
+	"Rift Walker":{
+		"level": 6,
+		"type":"Spell",
+		"domain":"Arcana",
+		"recall_cost":2,
+		"description":"Make a Spellcast Roll (15). On a success, you place an arcane marking on the ground where you currently stand. The next time you successfully cast Rift Walker, a rift in space opens up, providing safe passage back to the exact spot where the marking was placed. This rift stays open until you choose to close it or you cast another spell. You can drop the spell at any time to cast Rift Walker again and place the marking somewhere new."
+	},
+	"Telekenesis":{
+		"level": 6,
+		"type":"Spell",
+		"domain":"Arcana",
+		"recall_cost":0,
+		"description":"Make a Spellcast Roll against a target within Far range. On a success, you can use your mind to move them anywhere within Far range of their original position. You can throw the lifted target as an attack by making an additional Spellcast Roll against the second target you’re trying to attack. On a success, deal 12d4 physical damage to the second target using your Proficiency Die."
+	},
+	"Arcana-Touched":{
+		"level": 7,
+		"type":"Ability",
+		"domain":"Arcana",
+		"recall_cost":2,
+		"description":"When 4 or more of the domain cards in your loadout are from the Arcana domain, gain the following benefits: - +1 bonus to your Spellcast Rolls - Once per rest, you can switch the results of your Hope and Fear Dice."
+	},
+	"Cloaking Blast":{
+		"level": 7,
+		"type":"Spell",
+		"domain":"Arcana",
+		"recall_cost":2,
+		"description":"When you make a successful Spellcast Roll to cast a different spell, you can spend a Hope to become Cloaked. While Cloaked, you remain unseen if you are stationary when an adversary moves to where they would normally see you. When you move into or within an adversary’s line of sight or make an attack, you are no longer Cloaked."
+	},
+	"Arcana Reflection":{
+		"level": 8,
+		"type":"Spell",
+		"domain":"Arcana",
+		"recall_cost":1,
+		"description":"When you would take magic damage, you can spend any number of Hope to roll that many d6s. If any roll a 6, the attack is reflected back to the caster, dealing the damage to them instead."
+	},
+	"Confusing Aura":{
+		"level": 8,
+		"type":"Spell",
+		"domain":"Arcana",
+		"recall_cost":2,
+		"description":"Make a Spellcast Roll (14). Once per long rest on a success, you create a layer of illusion over your body that makes it hard to tell exactly where you are. Mark any number of Stress to make that many additional layers. When an adversary makes an attack against you, roll a number of d6s equal to the number of layers currently active. If any roll a 5 or higher, one layer of the aura is destroyed and the attack fails. If all the results are 4 or lower, you take the damage and this spell ends."
+	},
+	"Earthquake":{
+		"level": 9,
+		"type":"Spell",
+		"domain":"Arcana",
+		"recall_cost":2,
+		"description":"Make a Spellcast Roll (16). Once per rest on a success, all targets within Very Far range who aren’t flying must make a Reaction Roll (18). Targets who fail take 3d10+8 physical damage and are temporarily Vulnerable. Targets who succeed take half damage. Additionally, when you succeed on the Spellcast Roll, all terrain within Very Far range becomes difficult to move through and structures within this range might sustain damage or crumble."
+	},
+	"Sensory Projection":{
+		"level": 9,
+		"type":"Spell",
+		"domain":"Arcana",
+		"recall_cost":0,
+		"description":"Once per rest, make a Spellcast Roll (15). On a success, drop into a vision that lets you clearly see and hear any place you have been before as though you are standing there in this moment. You can move freely in this vision and are not constrained by the physics or impediments of a physical body. This spell cannot be detected by mundane or magical means. You drop out of this vision upon taking damage or casting another spell."
+	},
+	"Adjust Reality":{
+		"level": 10,
+		"type":"Spell",
+		"domain":"Arcana",
+		"recall_cost":1,
+		"description":"After you or a willing ally make any roll, you can spend 5 Hope to change the numerical result of that roll to a result of your choice instead. The result must be plausible within the range of the dice."
+	},
+	"Falling Sky":{
+		"level": 10,
+		"type":"Spell",
+		"domain":"Arcana",
+		"recall_cost":1,
+		"description":"Make a Spellcast Roll against all adversaries within Far range. Mark any number of Stress to make shards of arcana rain down from above. Targets you succeed against take 12d20+2 magic damage for each Stress marked."
+	},
+
+	
+	
+	
+	"Get Back Up":{
+		"level": 1,
+		"type":"Ability",
+		"domain":"Blade",
+		"recall_cost":1,
+		"description":"When you take Severe damage, you can mark a Stress to reduce the severity by one threshold."
+	},
+	"Not Good Enough":{
+		"level": 1,
+		"type":"Ability",
+		"domain":"Blade",
+		"recall_cost":1,
+		"description":"When you roll your damage dice, you can reroll any 1s or 2s."
+	},
+	"Whirlwind":{
+		"level": 1,
+		"type":"Ability",
+		"domain":"Blade",
+		"recall_cost": 0,
+		"description":"When you make a successful attack against a target within Very Close range, you can spend a Hope to use the attack against all other targets within Very Close range. All additional adversaries you succeed against with this ability take half damage."
+	},
+	"A Soldier's Bond":{
+		"level": 2,
+		"type":"Ability",
+		"domain":"Blade",
+		"recall_cost": 1,
+		"description":"Once per long rest, when you compliment someone or ask them about something they’re good at, you can both gain 3 Hope."
+	},
+	"Reckless":{
+		"level": 2,
+		"type":"Ability",
+		"domain":"Blade",
+		"recall_cost": 1,
+		"description":"Mark a Stress to gain advantage on an attack."
+	},
+	"Scramble":{
+		"level": 3,
+		"type":"Ability",
+		"domain":"Blade",
+		"recall_cost": 1,
+		"description":"Once per rest, when a creature within Melee range would deal damage to you, you can avoid the attack and safely move out of Melee range of the enemy."
+	},
+	"Versatile Fighter":{
+		"level": 3,
+		"type":"Ability",
+		"domain":"Blade",
+		"recall_cost": 1,
+		"description":"You can use a different character trait for an equipped weapon, rather than the trait the weapon calls for. When you deal damage, you can mark a Stress to use the maximum result of one of your damage dice instead of rolling it."
+	},
+	"Deadly Focus":{
+		"level": 4,
+		"type":"Ability",
+		"domain":"Blade",
+		"recall_cost": 2,
+		"description":"Once per rest, you can apply all your focus toward a target of your choice. Until you attack another creature, you defeat the target, or the battle ends, gain a +1 bonus to your Proficiency."
+	},
+	"Fortified Armor":{
+		"level": 4,
+		"type":"Ability",
+		"domain":"Blade",
+		"recall_cost": 0,
+		"description":"While you are wearing armor, gain a +2 bonus to your damage thresholds."
+	},
+	"Champion's Edge":{
+		"level": 5,
+		"type":"Ability",
+		"domain":"Blade",
+		"recall_cost": 0,
+		"description":"When you critically succeed on an attack, you can spend up to 3 Hope and choose one of the following options for each Hope spent: - You clear a Hit Point. - You clear an Armor Slot. - The target must mark an additional Hit Point. You can’t choose the same option more than once."
+	},
+	"Vitality":{
+		"level": 5,
+		"type":"Ability",
+		"domain":"Blade",
+		"recall_cost": 0,
+		"description":"When you choose this card, permanently gain two of the following benefits: \n- One Stress slot \n- One Hit Point slot \n- +2 bonus to your damage thresholds \nThen place this card in your vault permanently."
+	},
+	"Rage Up":{
+		"level": 6,
+		"type":"Ability",
+		"domain":"Blade",
+		"recall_cost": 1,
+		"description":"Before you make an attack, you can mark a Stress to gain a bonus to your damage roll equal to twice your Strength. You can Rage Up twice per attack."
+	},
+	"Blade-Touched":{
+		"level": 7,
+		"type":"Ability",
+		"domain":"Blade",
+		"recall_cost": 1,
+		"description":"When 4 or more of the domain cards in your loadout are from the Blade domain, gain the following benefits: \n- +2 bonus to your attack rolls \n- +4 bonus to your Severe damage threshold"
+	},
+	"Glancing Blow":{
+		"level": 7,
+		"type":"Ability",
+		"domain":"Blade",
+		"recall_cost": 1,
+		"description":"When you fail an attack, you can mark a Stress to deal weapon damage using half your Proficiency."
+	},
+	"Battle Cry":{
+		"level": 8,
+		"type":"Ability",
+		"domain":"Blade",
+		"recall_cost": 2,
+		"description":"Once per long rest, while you’re charging into danger, you can muster a rousing call that inspires your allies. All allies who can hear you each clear a Stress and gain a Hope. Additionally, your allies gain advantage on attack rolls until you or an ally rolls a failure with Fear."
+	},
+	"Frenzy":{
+		"level": 8,
+		"type":"Ability",
+		"domain":"Blade",
+		"recall_cost": 3,
+		"description":"Once per long rest, you can go into a Frenzy until there are no more adversaries within sight. While Frenzied, you can’t use Armor Slots, and you gain a +10 bonus to your damage rolls and a +8 bonus to your Severe damage threshold."
+	},
+	"Gore And Glory":{
+		"level": 9,
+		"type":"Ability",
+		"domain":"Blade",
+		"recall_cost": 2,
+		"description":"When you critically succeed on a weapon attack, gain an additional Hope or clear an additional Stress. Additionally, when you deal enough damage to defeat an enemy, gain a Hope or clear a Stress."
+	},
+	"Reaper's Strike":{
+		"level": 9,
+		"type":"Ability",
+		"domain":"Blade",
+		"recall_cost": 3,
+		"description":"Once per long rest, spend a Hope to make an attack roll. The GM tells you which targets within range it would succeed against. Choose one of these targets and force them to mark 5 Hit Points."
+	},
+	"Battle Monster":{
+		"level": 10,
+		"type":"Ability",
+		"domain":"Blade",
+		"recall_cost": 0,
+		"description":"When you make a successful attack against an adversary, you can mark 4 Stress to force the target to mark a number of Hit Points equal to the number of Hit Points you currently have marked instead of rolling for damage."
+	},
+	"Onslaught":{
+		"level": 10,
+		"type":"Ability",
+		"domain":"Blade",
+		"recall_cost": 3,
+		"description":"When you successfully make an attack with your weapon, you never deal damage beneath a target’s Major damage threshold (the target always marks a minimum of 2 Hit Points). Additionally, when a creature within your weapon’s range deals damage to an ally with an attack that doesn’t include you, you can mark a Stress to force them to make a Reaction Roll (15). On a failure, the target must mark a Hit Point."
+	},
+	
+
+	
+	
+	"Deft Maneuvers":{
+		"level": 1,
+		"type":"Ability",
+		"domain":"Bone",
+		"recall_cost": 0,
+		"description":"Once per rest, mark a Stress to sprint anywhere within Far range without making an Agility Roll to get there. If you end this movement within Melee range of an adversary and immediately make an attack against them, gain a +1 bonus to the attack roll."
+	},
+	"I See It Coming":{
+		"level": 1,
+		"type":"Ability",
+		"domain":"Bone",
+		"recall_cost": 1,
+		"description":"When you’re targeted by an attack made from beyond Melee range, you can mark a Stress to roll a d4 and gain a bonus to your Evasion equal to the result against the attack."
+	},
+	"Untouchable":{
+		"level": 1,
+		"type":"Ability",
+		"domain":"Bone",
+		"recall_cost": 1,
+		"description":"Gain a bonus to your Evasion equal to half your Agility."
+	},
+
+
+
+
+	"Deft Deceiver":{
+		"level": 1,
+		"type":"Ability",
+		"domain":"Grace",
+		"recall_cost": 0,
+		"description":"Spend a Hope to gain advantage on a roll to deceive or trick someone into believing a lie you tell them."
+	},
+	"Enrapture":{
+		"level": 1,
+		"type":"Spell",
+		"domain":"Grace",
+		"recall_cost": 1,
+		"description":"Make a Spellcast Roll against a target within Close range. On a success, they become temporarily Enraptured. While Enraptured, a target’s attention is fixed on you, narrowing their field of view and drowning out any sound but your voice. Once per rest on a success, you can mark a Stress to force the Enraptured target to mark a Stress as well."
+	},
+	"Insipirational Words":{
+		"level": 1,
+		"type":"Ability",
+		"domain":"Grace",
+		"recall_cost": 1,
+		"description":"Your speech is imbued with power. After a long rest, place a number of tokens on this card equal to your Presence. When you speak with an ally, you can spend a token from this card to give them one benefit from the following options: \n- Your ally clears a Stress. \n- Your ally clears a Hit Point. \n- Your ally gains a Hope. \nWhen you take a long rest, clear all unspent tokens."
+	},
+
+
+
+
+	"Pick and Pull":{
+		"level": 1,
+		"type":"Ability",
+		"domain":"Midnight",
+		"recall_cost": 0,
+		"description":"You have advantage on action rolls to pick nonmagical locks, disarm nonmagical traps, or steal items from a target (either through stealth or by force)."
+	},
+	"Rain of Blades":{
+		"level": 1,
+		"type":"Spell",
+		"domain":"Midnight",
+		"recall_cost": 1,
+		"description":"Spend a Hope to make a Spellcast Roll and conjure throwing blades that strike out at all targets within Very Close range. Targets you succeed against take 1d8+2 magic damage using your Proficiency. If a target you hit is Vulnerable, they take an extra 1d8 damage."
+	},
+	"Uncanny Disguise":{
+		"level": 1,
+		"type":"Spell",
+		"domain":"Midnight",
+		"recall_cost": 0,
+		"description":"When you have a few minutes to prepare, you can mark a Stress to don the facade of any humanoid you can picture clearly in your mind. While disguised, you have advantage on Presence Rolls to avoid scrutiny. Place a number of tokens equal to your Spellcast trait on this card. When you take an action while disguised, spend a token from this card. After the action that spends the last token is resolved, the disguise drops."
+	},
+
+
+
+
+	"Gift Tracker":{
+		"level": 1,
+		"type":"Ability",
+		"domain":"Sage",
+		"recall_cost": 0,
+		"description":"When you’re tracking a specific creature or group of creatures based on signs of their passage, you can spend any number of Hope and ask the GM that many questions from the following list. \n- What direction did they go? \n- How long ago did they pass through? \n- What were they doing in this location? - How many of them were here? When you encounter creatures you’ve tracked in this way, gain a +1 bonus to your Evasion against them."
+	},
+	"Nature's Tongue":{
+		"level": 1,
+		"type":"Ability",
+		"domain":"Sage",
+		"recall_cost": 0,
+		"description":"You can speak the language of the natural world. When you want to speak to the plants and animals around you, make an Instinct Roll (12). On a success, they’ll give you the information they know. On a roll with Fear, their knowledge might be limited or come at a cost. Additionally, before you make a Spellcast Roll while within a natural environment, you can spend a Hope to gain a +2 bonus to the roll."
+	},
+	"Vicious Entangle":{
+		"level": 1,
+		"type":"Spell",
+		"domain":"Sage",
+		"recall_cost": 1,
+		"description":"Make a Spellcast Roll against a target within Far range. On a success, roots and vines reach out from the ground, dealing 1d8+1 physical damage and temporarily Restraining the target. Additionally on a success, you can spend a Hope to temporarily Restrain another adversary within Very Close range of your target."
+	},
+
+
+
+
+	"Bolt Beacon":{
+		"level": 1,
+		"type":"Spell",
+		"domain":"Splendor",
+		"recall_cost": 1,
+		"description":"Make a Spellcast Roll against a target within Far range. On a success, spend a Hope to send a bolt of shimmering light toward them, dealing d8+2 magic damage using your Proficiency. The target becomes temporarily Vulnerable and glows brightly until this condition is cleared."
+	},
+	"Mending Touch":{
+		"level": 1,
+		"type":"Spell",
+		"domain":"Splendor",
+		"recall_cost": 1,
+		"description":"You lay your hands upon a creature and channel healing magic to close their wounds. When you can take a few minutes to focus on the target you’re helping, you can spend 2 Hope to clear a Hit Point or a Stress on them. Once per long rest, when you spend this healing time learning something new about them or revealing something about yourself, you can clear 2 Hit Points or 2 Stress on them instead."
+	},
+	"Reassurance":{
+		"level": 1,
+		"type":"Spell",
+		"domain":"Splendor",
+		"recall_cost": 0,
+		"description":"Once per rest, after any ill attempts an action roll but before the consequences take place, you can offer assistance or words of support. When you do, your ally can reroll their dice."
+	},
+
+
+
+
+	"Bare Bones":{
+		"level": 1,
+		"type":"Ability",
+		"domain":"Valor",
+		"recall_cost": 0,
+		"description":"When you choose not to equip armor, you have a base Armor Score of 3 + your Strength and use the following as your base damage thresholds: \n- Tier 1: 9/19 \n- Tier 2: 11/24 \n- Tier 3: 13/31 \n- Tier 4: 15/35"
+	},
+	"Forceful Push":{
+		"level": 1,
+		"type":"Ability",
+		"domain":"Valor",
+		"recall_cost": 0,
+		"description":"Make an attack with your primary weapon against a target within Melee range. On a success, you deal damage and knock them back to Close range. On a success with Hope, add a d6 to your damage roll. Additionally, you can spend a Hope to make them temporarily Vulnerable."
+	},
+	"I Am Your Shield":{
+		"level": 1,
+		"type":"Ability",
+		"domain":"Valor",
+		"recall_cost": 1,
+		"description":"When an ally within Very Close range would take damage, you can mark a Stress to stand in the way and make yourself the target of the attack instead. When you take damage from this attack, you can mark any number of Armor Slots."
 	}
 }
