@@ -53,6 +53,9 @@ func _set_active_option_tab(_index: int):
 		confirm_button.visible = false
 		complete_button.disabled = true
 		complete_button.visible = true
+	elif active_option_tab.name == "DomainCardSelContainer":
+		description_display.visible = false
+		active_option_tab.fill_domain_card_list()
 	else:
 		confirm_button.visible = true
 		complete_button.disabled = true

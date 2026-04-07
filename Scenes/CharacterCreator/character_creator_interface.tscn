@@ -49,6 +49,7 @@
 [ext_resource type="Resource" uid="uid://s12git0i5oci" path="res://Resources/Communities/wildborne.tres" id="36_m83la"]
 [ext_resource type="Script" uid="uid://clmxkh4im6n7f" path="res://Scripts/CharacterCreation/text_fill_container.gd" id="39_68bmj"]
 [ext_resource type="Script" uid="uid://bwg57k6ymdiig" path="res://Scripts/CharacterCreation/description_display.gd" id="42_a5r2x"]
+[ext_resource type="Script" uid="uid://dicpfif3vilqk" path="res://Scripts/Cards/domain_card_selector.gd" id="47_deb4u"]
 [ext_resource type="PackedScene" uid="uid://cknxpivnpwbxd" path="res://Scenes/Cards/domain_card_base.tscn" id="47_g2o8p"]
 
 [sub_resource type="Resource" id="Resource_7bny4"]
@@ -176,6 +177,7 @@ offset_left = -509.0
 offset_top = -269.0
 offset_right = 515.0
 offset_bottom = 251.0
+script = ExtResource("47_deb4u")
 
 [node name="ToSelectContainer" type="VBoxContainer" parent="OptionLists/DomainCardSelContainer" unique_id=308575947]
 custom_minimum_size = Vector2(500, 0)
@@ -189,33 +191,36 @@ text = "Choose a Domain Card:"
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Card Info" type="VBoxContainer" parent="OptionLists/DomainCardSelContainer" unique_id=1698582631]
+[node name="CardInfo" type="VBoxContainer" parent="OptionLists/DomainCardSelContainer" unique_id=1698582631]
 custom_minimum_size = Vector2(520, 0)
 layout_mode = 2
 
-[node name="SelectionDisplay" type="HBoxContainer" parent="OptionLists/DomainCardSelContainer/Card Info" unique_id=831202034]
+[node name="SelectionDisplay" type="HBoxContainer" parent="OptionLists/DomainCardSelContainer/CardInfo" unique_id=831202034]
 custom_minimum_size = Vector2(520, 0)
 layout_direction = 2
 layout_mode = 2
+size_flags_vertical = 3
 theme_override_constants/separation = 34
 alignment = 1
 
-[node name="DomainCard" parent="OptionLists/DomainCardSelContainer/Card Info/SelectionDisplay" unique_id=1871884780 instance=ExtResource("47_g2o8p")]
+[node name="DomainCard" parent="OptionLists/DomainCardSelContainer/CardInfo/SelectionDisplay" unique_id=1871884780 instance=ExtResource("47_g2o8p")]
+visible = false
 custom_minimum_size = Vector2(250, 350)
 layout_mode = 2
 size_flags_horizontal = 1
 size_flags_vertical = 1
 
-[node name="SelectButton" type="Button" parent="OptionLists/DomainCardSelContainer/Card Info/SelectionDisplay" unique_id=400395179]
+[node name="SelectButton" type="Button" parent="OptionLists/DomainCardSelContainer/CardInfo/SelectionDisplay" unique_id=400395179]
 layout_mode = 2
+size_flags_horizontal = 10
 size_flags_vertical = 4
 text = "Select"
 
-[node name="SelectedLabel" type="Label" parent="OptionLists/DomainCardSelContainer/Card Info" unique_id=671947977]
+[node name="SelectedLabel" type="Label" parent="OptionLists/DomainCardSelContainer/CardInfo" unique_id=671947977]
 layout_mode = 2
 text = "Selected Domain Cards:"
 
-[node name="SelectedCardsList" type="ItemList" parent="OptionLists/DomainCardSelContainer/Card Info" unique_id=585113079]
+[node name="SelectedCardsList" type="ItemList" parent="OptionLists/DomainCardSelContainer/CardInfo" unique_id=585113079]
 custom_minimum_size = Vector2(0, 160)
 layout_mode = 2
 
@@ -603,7 +608,6 @@ layout_mode = 2
 text = "Complete"
 
 [node name="DescriptionContainer" type="PanelContainer" parent="." unique_id=1439688923]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.505
