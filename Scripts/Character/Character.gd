@@ -2,7 +2,9 @@
 # which holds all the character information and methods
 class_name Character
 extends Node
- 
+
+const FILE_PATH = "user://character_data"
+
 const max_level: int = 10
 const max_hope: int = 6
 
@@ -76,6 +78,7 @@ func set_current_stress(value: int) -> bool:
 		return true
 	elif(value < 0):
 		print("Cannot set current stress to be less than 0.")
+		load_data(1)
 	else:
 		print("Cannot set current stress to be greater than max stress.")
 		
@@ -165,5 +168,18 @@ func serialize_data():
 func assign_primary_key(pk: int):
 	self.primary_key = str(pk)
 
-func load_data():
-	pass
+func load_data(pk: int):
+	var save_file = FileAccess.open(FILE_PATH, FileAccess.READ_WRITE)
+	var current_contents = save_file.get_as_text()
+	var json = JSON.new()
+	
+	# Check that the file contents can be parsed by JSON
+	var parse_result = json.parse(current_contents)
+	if !(parse_result==OK):
+		print("JSON Parse Error: " + json.get_error_message() + " at line " + str(json.get_error_line()))
+		return
+		
+	# Check that the file contents can be made into a dictionary
+	var json_data = json.data
+	var char_dict = json_data["1"]
+	print(char_dict["character_name"])

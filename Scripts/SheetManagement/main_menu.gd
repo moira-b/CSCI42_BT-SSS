@@ -6,6 +6,7 @@ extends Control
 @onready var create_new_character_cancel: Button = $CreateCharacterConfirm/VBoxContainer/CancelButton
 @onready var confirm_window: PanelContainer = $CreateCharacterConfirm
 @onready var char_creation_scene: PackedScene = preload("res://Scenes/CharacterCreator/character_creator_interface.tscn")
+@onready var test_button: Button = $Button
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -23,6 +24,7 @@ func enter():
 
 func connect_signals():
 	create_new_character_button.pressed.connect(_on_createcharacter_button_pressed)
+	test_button.pressed.connect(_on_test_button_pressed)
 
 func _on_createcharacter_button_pressed() -> void:
 	create_new_character_confirm.pressed.connect(_on_creatercharacter_confirm_pressed)
@@ -38,3 +40,7 @@ func _on_creatercharacter_cancel_pressed() -> void:
 	create_new_character_confirm.pressed.disconnect(_on_creatercharacter_confirm_pressed)
 	create_new_character_cancel.pressed.disconnect(_on_creatercharacter_cancel_pressed)
 	confirm_window.visible = false
+
+func _on_test_button_pressed() -> void:
+	pass
+	#do smth
