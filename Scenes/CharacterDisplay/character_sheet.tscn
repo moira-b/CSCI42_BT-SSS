@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://dnjp24h6b6fc2" path="res://Scripts/CharacterDisplay/markable_stat.gd" id="4_qgeia"]
 [ext_resource type="PackedScene" uid="uid://dltyc5tel16kj" path="res://Scenes/CharacterDisplay/dice_roll_window.tscn" id="5_glymg"]
 [ext_resource type="PackedScene" uid="uid://b6t3g5gxhwopj" path="res://Scenes/CharacterDisplay/fh_roll_window.tscn" id="6_8iwex"]
+[ext_resource type="Script" uid="uid://b3ypom2uq1exh" path="res://Scripts/CharacterDisplay/advancements.gd" id="7_56qfy"]
 
 [sub_resource type="GDScript" id="GDScript_dg7yu"]
 script/source = "extends LineEdit
@@ -24,20 +25,6 @@ func _process(delta):
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8iwex"]
 bg_color = Color(0.07058824, 0.37254903, 0.007843138, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qgeia"]
-bg_color = Color(0.8117647, 0.6862745, 0, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_glymg"]
-bg_color = Color(0.45, 0.396, 0.08999999, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5rpyy"]
 bg_color = Color(0.07058824, 0.37254903, 0.007843138, 1)
 corner_radius_top_left = 4
@@ -51,6 +38,9 @@ corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
+
+[sub_resource type="LabelSettings" id="LabelSettings_56qfy"]
+font_size = 24
 
 [node name="CharacterSheet" type="Control" unique_id=1820753171]
 layout_mode = 3
@@ -261,17 +251,6 @@ custom_minimum_size = Vector2(50, 25)
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="AdvanceButton" type="Button" parent="TraitModifiers/Agility" unique_id=664161827]
-visible = false
-custom_minimum_size = Vector2(30, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_qgeia")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_glymg")
-toggle_mode = true
-text = "+1
-"
-
 [node name="Strength" type="BoxContainer" parent="TraitModifiers" unique_id=546099669]
 custom_minimum_size = Vector2(178, 0)
 layout_mode = 2
@@ -286,17 +265,6 @@ text = "Strength:"
 custom_minimum_size = Vector2(50, 25)
 layout_mode = 2
 size_flags_vertical = 4
-
-[node name="AdvanceButton" type="Button" parent="TraitModifiers/Strength" unique_id=946685690]
-visible = false
-custom_minimum_size = Vector2(30, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_qgeia")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_glymg")
-toggle_mode = true
-text = "+1
-"
 
 [node name="Finesse" type="BoxContainer" parent="TraitModifiers" unique_id=1194059882]
 custom_minimum_size = Vector2(168, 0)
@@ -313,17 +281,6 @@ custom_minimum_size = Vector2(50, 25)
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="AdvanceButton" type="Button" parent="TraitModifiers/Finesse" unique_id=1353375183]
-visible = false
-custom_minimum_size = Vector2(30, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_qgeia")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_glymg")
-toggle_mode = true
-text = "+1
-"
-
 [node name="Instinct" type="BoxContainer" parent="TraitModifiers" unique_id=1848782649]
 custom_minimum_size = Vector2(169, 0)
 layout_mode = 2
@@ -338,17 +295,6 @@ text = "Instinct:"
 custom_minimum_size = Vector2(50, 25)
 layout_mode = 2
 size_flags_vertical = 4
-
-[node name="AdvanceButton" type="Button" parent="TraitModifiers/Instinct" unique_id=1344672724]
-visible = false
-custom_minimum_size = Vector2(30, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_qgeia")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_glymg")
-toggle_mode = true
-text = "+1
-"
 
 [node name="Prescence" type="BoxContainer" parent="TraitModifiers" unique_id=1511671395]
 custom_minimum_size = Vector2(189, 0)
@@ -365,17 +311,6 @@ custom_minimum_size = Vector2(50, 25)
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="AdvanceButton" type="Button" parent="TraitModifiers/Prescence" unique_id=1926052421]
-visible = false
-custom_minimum_size = Vector2(30, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_qgeia")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_glymg")
-toggle_mode = true
-text = "+1
-"
-
 [node name="Knowledge" type="BoxContainer" parent="TraitModifiers" unique_id=959325206]
 custom_minimum_size = Vector2(196, 0)
 layout_mode = 2
@@ -390,17 +325,6 @@ text = "Knowledge:"
 custom_minimum_size = Vector2(50, 25)
 layout_mode = 2
 size_flags_vertical = 4
-
-[node name="AdvanceButton" type="Button" parent="TraitModifiers/Knowledge" unique_id=2048896870]
-visible = false
-custom_minimum_size = Vector2(30, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_qgeia")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_glymg")
-toggle_mode = true
-text = "+1
-"
 
 [node name="MarkableStats" type="VBoxContainer" parent="." unique_id=1671798450]
 layout_mode = 1
@@ -439,17 +363,6 @@ layout_mode = 2
 [node name="Buttons" type="HBoxContainer" parent="MarkableStats/Health/FieldContainer" unique_id=788903875]
 layout_mode = 2
 
-[node name="AdvanceButton" type="Button" parent="MarkableStats/Health/FieldContainer/Buttons" unique_id=1637502055]
-visible = false
-custom_minimum_size = Vector2(30, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_qgeia")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_glymg")
-toggle_mode = true
-text = "+1
-"
-
 [node name="IncrementButton" type="Button" parent="MarkableStats/Health/FieldContainer/Buttons" unique_id=1813164056]
 custom_minimum_size = Vector2(40, 30)
 layout_mode = 2
@@ -487,17 +400,6 @@ layout_mode = 2
 
 [node name="Buttons" type="HBoxContainer" parent="MarkableStats/Stress/FieldContainer" unique_id=1839278276]
 layout_mode = 2
-
-[node name="AdvanceButton" type="Button" parent="MarkableStats/Stress/FieldContainer/Buttons" unique_id=861303389]
-visible = false
-custom_minimum_size = Vector2(30, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_qgeia")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_glymg")
-toggle_mode = true
-text = "+1
-"
 
 [node name="IncrementButton" type="Button" parent="MarkableStats/Stress/FieldContainer/Buttons" unique_id=476777845]
 custom_minimum_size = Vector2(40, 30)
@@ -692,34 +594,12 @@ layout_mode = 2
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 
-[node name="AdvanceButton" type="Button" parent="Experiences/Experience1" unique_id=1986869644]
-visible = false
-custom_minimum_size = Vector2(30, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_qgeia")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_glymg")
-toggle_mode = true
-text = "+1
-"
-
 [node name="Experience2" type="HBoxContainer" parent="Experiences" unique_id=281734232]
 layout_mode = 2
 
 [node name="Experience2" type="LineEdit" parent="Experiences/Experience2" unique_id=1768669913]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
-
-[node name="AdvanceButton" type="Button" parent="Experiences/Experience2" unique_id=1003584641]
-visible = false
-custom_minimum_size = Vector2(30, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_qgeia")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_glymg")
-toggle_mode = true
-text = "+1
-"
 
 [node name="Experience3" type="HBoxContainer" parent="Experiences" unique_id=517739238]
 layout_mode = 2
@@ -728,17 +608,6 @@ layout_mode = 2
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 
-[node name="AdvanceButton" type="Button" parent="Experiences/Experience3" unique_id=1063491678]
-visible = false
-custom_minimum_size = Vector2(30, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_qgeia")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_glymg")
-toggle_mode = true
-text = "+1
-"
-
 [node name="Experience4" type="HBoxContainer" parent="Experiences" unique_id=1618166217]
 layout_mode = 2
 
@@ -746,34 +615,12 @@ layout_mode = 2
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 
-[node name="AdvanceButton" type="Button" parent="Experiences/Experience4" unique_id=709864554]
-visible = false
-custom_minimum_size = Vector2(30, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_qgeia")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_glymg")
-toggle_mode = true
-text = "+1
-"
-
 [node name="Experience5" type="HBoxContainer" parent="Experiences" unique_id=1984229138]
 layout_mode = 2
 
 [node name="Experience5" type="LineEdit" parent="Experiences/Experience5" unique_id=1875908754]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
-
-[node name="AdvanceButton" type="Button" parent="Experiences/Experience5" unique_id=1340097354]
-visible = false
-custom_minimum_size = Vector2(30, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_qgeia")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_glymg")
-toggle_mode = true
-text = "+1
-"
 
 [node name="ActionButtons" type="HBoxContainer" parent="." unique_id=92466979]
 layout_mode = 1
@@ -958,17 +805,6 @@ text = "Evasion:"
 [node name="Value" type="Label" parent="EvasionProficency/Evasion" unique_id=976301454]
 layout_mode = 2
 
-[node name="AdvanceButton" type="Button" parent="EvasionProficency/Evasion" unique_id=481170119]
-visible = false
-custom_minimum_size = Vector2(30, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_qgeia")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_glymg")
-toggle_mode = true
-text = "+1
-"
-
 [node name="Proficiency" type="HBoxContainer" parent="EvasionProficency" unique_id=1348180779]
 layout_mode = 2
 
@@ -979,55 +815,185 @@ text = "Proficiency:"
 [node name="Value" type="Label" parent="EvasionProficency/Proficiency" unique_id=612684652]
 layout_mode = 2
 
-[node name="AdvanceButton" type="Button" parent="EvasionProficency/Proficiency" unique_id=143155068]
+[node name="AdvanceWindow" type="Window" parent="." unique_id=609611659]
+oversampling_override = 1.0
+title = "Advancements"
+initial_position = 2
+size = Vector2i(800, 550)
 visible = false
-custom_minimum_size = Vector2(30, 0)
+script = ExtResource("7_56qfy")
+
+[node name="ObjectContainer" type="HFlowContainer" parent="AdvanceWindow" unique_id=1685616752]
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -229.5
+offset_top = 5.0
+offset_right = 229.5
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Header" type="Label" parent="AdvanceWindow/ObjectContainer" unique_id=970900252]
 layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_qgeia")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_glymg")
-toggle_mode = true
-text = "+1
+text = "Select 2 stats to add a permanent +1 to:"
+label_settings = SubResource("LabelSettings_56qfy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Traits" type="PanelContainer" parent="AdvanceWindow/ObjectContainer" unique_id=267000129]
+custom_minimum_size = Vector2(230, 0)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AdvanceWindow/ObjectContainer/Traits" unique_id=1921439541]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="AdvanceWindow/ObjectContainer/Traits/VBoxContainer" unique_id=168523618]
+layout_mode = 2
+text = "Traits"
+horizontal_alignment = 1
+
+[node name="Agility" type="CheckButton" parent="AdvanceWindow/ObjectContainer/Traits/VBoxContainer" unique_id=528539920]
+layout_mode = 2
+text = "Agility"
+
+[node name="Strength" type="CheckButton" parent="AdvanceWindow/ObjectContainer/Traits/VBoxContainer" unique_id=88378038]
+layout_mode = 2
+text = "Strength"
+
+[node name="Finesse" type="CheckButton" parent="AdvanceWindow/ObjectContainer/Traits/VBoxContainer" unique_id=574238242]
+layout_mode = 2
+text = "Finesse"
+
+[node name="Instinct" type="CheckButton" parent="AdvanceWindow/ObjectContainer/Traits/VBoxContainer" unique_id=1274473994]
+layout_mode = 2
+text = "Instinct"
+
+[node name="Presence" type="CheckButton" parent="AdvanceWindow/ObjectContainer/Traits/VBoxContainer" unique_id=4335712]
+layout_mode = 2
+text = "Presence"
+
+[node name="Knowledge" type="CheckButton" parent="AdvanceWindow/ObjectContainer/Traits/VBoxContainer" unique_id=506521080]
+layout_mode = 2
+text = "Knowledge"
+
+[node name="Markables" type="VBoxContainer" parent="AdvanceWindow/ObjectContainer" unique_id=292305664]
+custom_minimum_size = Vector2(225, 0)
+layout_mode = 2
+
+[node name="HealthPanel" type="PanelContainer" parent="AdvanceWindow/ObjectContainer/Markables" unique_id=1109426991]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Health" type="CheckButton" parent="AdvanceWindow/ObjectContainer/Markables/HealthPanel" unique_id=2046713117]
+layout_mode = 2
+text = "Health         "
+
+[node name="StressPanel" type="PanelContainer" parent="AdvanceWindow/ObjectContainer/Markables" unique_id=126300132]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Stress" type="CheckButton" parent="AdvanceWindow/ObjectContainer/Markables/StressPanel" unique_id=244053893]
+layout_mode = 2
+text = "Stress"
+
+[node name="EvasionPanel" type="PanelContainer" parent="AdvanceWindow/ObjectContainer/Markables" unique_id=389355948]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Evasion" type="CheckButton" parent="AdvanceWindow/ObjectContainer/Markables/EvasionPanel" unique_id=1722831904]
+layout_mode = 2
+text = "Evasion
 "
+
+[node name="ProficiencyPanel" type="PanelContainer" parent="AdvanceWindow/ObjectContainer/Markables" unique_id=1602887370]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Proficiency" type="CheckButton" parent="AdvanceWindow/ObjectContainer/Markables/ProficiencyPanel" unique_id=375489201]
+layout_mode = 2
+text = "Proficiency
+"
+
+[node name="Experiences" type="PanelContainer" parent="AdvanceWindow/ObjectContainer" unique_id=1047609444]
+custom_minimum_size = Vector2(230, 0)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AdvanceWindow/ObjectContainer/Experiences" unique_id=1150217807]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="AdvanceWindow/ObjectContainer/Experiences/VBoxContainer" unique_id=919383364]
+layout_mode = 2
+text = "Experiences"
+horizontal_alignment = 1
+
+[node name="Exp1" type="CheckButton" parent="AdvanceWindow/ObjectContainer/Experiences/VBoxContainer" unique_id=1845104459]
+layout_mode = 2
+
+[node name="Exp2" type="CheckButton" parent="AdvanceWindow/ObjectContainer/Experiences/VBoxContainer" unique_id=1448747192]
+layout_mode = 2
+
+[node name="Exp3" type="CheckButton" parent="AdvanceWindow/ObjectContainer/Experiences/VBoxContainer" unique_id=603731474]
+visible = false
+layout_mode = 2
+
+[node name="Exp4" type="CheckButton" parent="AdvanceWindow/ObjectContainer/Experiences/VBoxContainer" unique_id=236044382]
+visible = false
+layout_mode = 2
+
+[node name="Exp5" type="CheckButton" parent="AdvanceWindow/ObjectContainer/Experiences/VBoxContainer" unique_id=249731350]
+visible = false
+layout_mode = 2
+
+[node name="Cards" type="Button" parent="AdvanceWindow/ObjectContainer" unique_id=1016202308]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Cards"
+
+[node name="Classes" type="Button" parent="AdvanceWindow/ObjectContainer" unique_id=2056735212]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Classes"
+
+[node name="ConfirmButton" type="Button" parent="AdvanceWindow" unique_id=481842158]
+custom_minimum_size = Vector2(150, 50)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -75.0
+offset_top = -50.0
+offset_right = 75.0
+offset_bottom = -19.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Confirm"
 
 [connection signal="text_changed" from="Header/HeaderInfo/NamePronouns/NamePanelContainer/NameC/NameEdit" to="." method="_on_name_edit_text_changed"]
 [connection signal="text_submitted" from="Header/HeaderInfo/NamePronouns/NamePanelContainer/NameC/NameEdit" to="." method="_on_name_edit_text_submitted"]
 [connection signal="text_changed" from="Header/HeaderInfo/NamePronouns/PronounsPanelContainer/Pronouns/PronounsEdit" to="." method="_on_pronouns_text_changed"]
 [connection signal="text_submitted" from="Header/HeaderInfo/NamePronouns/PronounsPanelContainer/Pronouns/PronounsEdit" to="." method="_on_pronouns_text_submitted"]
 [connection signal="text_submitted" from="TraitModifiers/Agility/LineEdit" to="." method="_on_agility_text_submitted"]
-[connection signal="toggled" from="TraitModifiers/Agility/AdvanceButton" to="." method="_on_agility_advance_button_toggled"]
 [connection signal="text_submitted" from="TraitModifiers/Strength/LineEdit" to="." method="_on_strength_text_submitted"]
-[connection signal="toggled" from="TraitModifiers/Strength/AdvanceButton" to="." method="_on_strength_advance_button_toggled"]
 [connection signal="text_submitted" from="TraitModifiers/Finesse/LineEdit" to="." method="_on_finesse_text_submitted"]
-[connection signal="toggled" from="TraitModifiers/Finesse/AdvanceButton" to="." method="_on_finesse_advance_button_toggled"]
 [connection signal="text_submitted" from="TraitModifiers/Instinct/LineEdit" to="." method="_on_instinct_text_submitted"]
-[connection signal="toggled" from="TraitModifiers/Instinct/AdvanceButton" to="." method="_on_instinct_advance_button_toggled"]
 [connection signal="text_submitted" from="TraitModifiers/Prescence/LineEdit" to="." method="_on_presence_text_submitted"]
-[connection signal="toggled" from="TraitModifiers/Prescence/AdvanceButton" to="." method="_on_presence_advance_button_toggled"]
 [connection signal="text_submitted" from="TraitModifiers/Knowledge/LineEdit" to="." method="_on_knowledge_text_submitted"]
-[connection signal="toggled" from="TraitModifiers/Knowledge/AdvanceButton" to="." method="_on_advance_button_toggled"]
-[connection signal="toggled" from="MarkableStats/Health/FieldContainer/Buttons/AdvanceButton" to="." method="_on_health_advance_button_toggled"]
-[connection signal="toggled" from="MarkableStats/Stress/FieldContainer/Buttons/AdvanceButton" to="." method="_on_stress_advance_button_toggled"]
 [connection signal="text_changed" from="Bio/BioEdit" to="." method="_on_bio_text_changed"]
 [connection signal="text_changed" from="Experiences/Experience1/Experience1" to="." method="_on_experience_1_text_changed"]
 [connection signal="text_submitted" from="Experiences/Experience1/Experience1" to="." method="_on_experience_1_text_submitted"]
-[connection signal="toggled" from="Experiences/Experience1/AdvanceButton" to="." method="_on_experience_1_advance_button_toggled"]
 [connection signal="text_changed" from="Experiences/Experience2/Experience2" to="." method="_on_experience_2_text_changed"]
 [connection signal="text_submitted" from="Experiences/Experience2/Experience2" to="." method="_on_experience_2_text_submitted"]
-[connection signal="toggled" from="Experiences/Experience2/AdvanceButton" to="." method="_on_experience_2_advance_button_toggled"]
 [connection signal="text_changed" from="Experiences/Experience3/Experience3" to="." method="_on_experience_3_text_changed"]
 [connection signal="text_submitted" from="Experiences/Experience3/Experience3" to="." method="_on_experience_3_text_submitted"]
-[connection signal="toggled" from="Experiences/Experience3/AdvanceButton" to="." method="_on_experience_3_advance_button_toggled"]
 [connection signal="text_changed" from="Experiences/Experience4/Experience4" to="." method="_on_experience_4_text_changed"]
 [connection signal="text_submitted" from="Experiences/Experience4/Experience4" to="." method="_on_experience_4_text_submitted"]
-[connection signal="toggled" from="Experiences/Experience4/AdvanceButton" to="." method="_on_experience_4_advance_button_toggled"]
 [connection signal="text_changed" from="Experiences/Experience5/Experience5" to="." method="_on_experience_5_text_changed"]
 [connection signal="text_submitted" from="Experiences/Experience5/Experience5" to="." method="_on_experience_5_text_submitted"]
-[connection signal="toggled" from="Experiences/Experience5/AdvanceButton" to="." method="_on_experience_5_advance_button_toggled"]
 [connection signal="close_requested" from="ActionButtons/RestButtons/RestWindow" to="." method="_on_rest_window_close_requested"]
 [connection signal="pressed" from="ActionButtons/RestButtons/RestWindow/RestUI/ConfirmButton" to="." method="_on_confirm_button_pressed"]
 [connection signal="close_requested" from="ActionButtons/DiceButtons/DiceRollWindow" to="." method="_on_dice_roll_window_close_requested"]
 [connection signal="pressed" from="LevelUpConfirmation/VBoxContainer/ConfirmButton" to="." method="_on_level_up_confirm_button_pressed"]
 [connection signal="pressed" from="CardsButton" to="." method="_on_cards_button_pressed"]
-[connection signal="toggled" from="EvasionProficency/Evasion/AdvanceButton" to="." method="_on_evasion_advance_button_toggled"]
-[connection signal="toggled" from="EvasionProficency/Proficiency/AdvanceButton" to="." method="_on_proficiency_advance_button_toggled"]
