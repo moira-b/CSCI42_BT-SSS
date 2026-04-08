@@ -143,6 +143,8 @@ func serialize_data():
 		"pronouns": pronouns,
 		"bio": bio,
 		"level": level,
+		"class": character_class.name,
+		"subclass": subclass.subclass_name,
 		"evasion": evasion,
 		"agility": agility,
 		"strength": strength,
