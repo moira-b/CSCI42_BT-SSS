@@ -78,10 +78,6 @@ func enter() -> void:
 	experience1_advance, experience2_advance, evasion_advance, proficiency_advance]
 	update_edit_fields()
 	
-	#character.set_maximum_health()
-	#character.set_maximum_stress()
-	#character.set_maximum_armor_slots()
-	
 	connect_signals()
 	
 	self.update_markable_fields()
@@ -94,9 +90,6 @@ func enter() -> void:
 	evasion_value.set_text(str(character.evasion))
 	proficiency_value.set_text(str(character.proficiency))
 
-func load_character() -> void:
-	pass
-	
 
 func _process(_delta: float) -> void:
 	if(updated==false and character.character_name!=""):

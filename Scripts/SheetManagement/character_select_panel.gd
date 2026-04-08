@@ -14,12 +14,15 @@ const FILE_PATH = "user://character_data"
 @onready var character: Character = $Character
 
 var sheet_scene: PackedScene = preload("res://Scenes/CharacterDisplay/character_sheet.tscn")
+var save_manager
 
 # Called when the node enters the scene tree for the first time.
 func enter(pk: String):
+	save_manager = get_tree().root.get_child(0).get_child(0)
 	set_primary_key(pk)
 	load_character_details(pk)
 	update_all_fields()
+	connect_signals()
 
 func load_character_details(pk: String):
 	var save_file = FileAccess.open(FILE_PATH, FileAccess.READ_WRITE)
@@ -49,14 +52,15 @@ func connect_signals():
 	select_button.pressed.connect(_on_select_button_pressed)
 	settings_button.pressed.connect(_on_settings_button_pressed)
 	
-	
 func _on_select_button_pressed():
 	var new_scene = sheet_scene.instantiate()
+	char_dict = save_manager._get_character_dictionary(char_primary_key)
 	character.load_data(char_dict)
 	character.reparent(new_scene)
-	self.get_parent().add_child(new_scene)
+	get_tree().root.add_child(new_scene)
 	new_scene.enter()
-	self.queue_free()
+	print("hi")
+	get_tree().root.get_child(0).queue_free()
 
 func _on_settings_button_pressed():
 	pass

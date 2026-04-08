@@ -91,50 +91,6 @@ theme_override_constants/h_separation = 20
 theme_override_constants/v_separation = 20
 columns = 4
 
-[node name="PanelContainer" type="PanelContainer" parent="ScrollContainer/GridContainer" unique_id=1132653642]
-custom_minimum_size = Vector2(200, 200)
-layout_mode = 2
-
-[node name="PanelContainer2" type="PanelContainer" parent="ScrollContainer/GridContainer" unique_id=843896901]
-custom_minimum_size = Vector2(200, 200)
-layout_mode = 2
-
-[node name="PanelContainer3" type="PanelContainer" parent="ScrollContainer/GridContainer" unique_id=2046105652]
-custom_minimum_size = Vector2(200, 200)
-layout_mode = 2
-
-[node name="PanelContainer4" type="PanelContainer" parent="ScrollContainer/GridContainer" unique_id=1258865940]
-custom_minimum_size = Vector2(200, 200)
-layout_mode = 2
-
-[node name="PanelContainer5" type="PanelContainer" parent="ScrollContainer/GridContainer" unique_id=1227710339]
-custom_minimum_size = Vector2(200, 200)
-layout_mode = 2
-
-[node name="PanelContainer6" type="PanelContainer" parent="ScrollContainer/GridContainer" unique_id=1112092810]
-custom_minimum_size = Vector2(200, 200)
-layout_mode = 2
-
-[node name="PanelContainer7" type="PanelContainer" parent="ScrollContainer/GridContainer" unique_id=524551179]
-custom_minimum_size = Vector2(200, 200)
-layout_mode = 2
-
-[node name="PanelContainer8" type="PanelContainer" parent="ScrollContainer/GridContainer" unique_id=405968734]
-custom_minimum_size = Vector2(200, 200)
-layout_mode = 2
-
-[node name="PanelContainer14" type="PanelContainer" parent="ScrollContainer/GridContainer" unique_id=1158841220]
-custom_minimum_size = Vector2(200, 200)
-layout_mode = 2
-
-[node name="PanelContainer15" type="PanelContainer" parent="ScrollContainer/GridContainer" unique_id=1069054746]
-custom_minimum_size = Vector2(200, 200)
-layout_mode = 2
-
-[node name="PanelContainer16" type="PanelContainer" parent="ScrollContainer/GridContainer" unique_id=1553773610]
-custom_minimum_size = Vector2(200, 200)
-layout_mode = 2
-
 [node name="Button" type="Button" parent="." unique_id=1982241539]
 layout_mode = 1
 anchors_preset = -1
