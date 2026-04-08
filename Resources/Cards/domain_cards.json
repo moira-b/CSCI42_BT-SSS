@@ -466,11 +466,137 @@
 		"recall_cost": 1,
 		"description":"Your speech is imbued with power. After a long rest, place a number of tokens on this card equal to your Presence. When you speak with an ally, you can spend a token from this card to give them one benefit from the following options: \n- Your ally clears a Stress. \n- Your ally clears a Hit Point. \n- Your ally gains a Hope. \nWhen you take a long rest, clear all unspent tokens."
 	},
+	"Tell No Lies":{
+		"level": 2,
+		"type":"Ability",
+		"domain":"Grace",
+		"recall_cost": 1,
+		"description":"Make a Spellcast Roll against a target within Very Close range. On a success, they can’t lie to you while they remain within Close range, but they are not compelled to speak. If you ask them a question and they refuse to answer, they must mark a Stress and the effect ends. The target is typically unaware this spell has been cast on them until it causes them to utter the truth."
+	},
+	"Troublemaker":{
+		"level": 2,
+		"type":"Ability",
+		"domain":"Grace",
+		"recall_cost": 2,
+		"description":"When you taunt or provoke a target within Far range, make a Presence Roll against them. Once per rest on a success, roll a number of d4s equal to your Proficiency. The target must mark Stress equal to the highest result rolled."
+	},
+	"Hypnotic Shimmer":{
+		"level": 3,
+		"type":"Spell",
+		"domain":"Grace",
+		"recall_cost": 1,
+		"description":"Make a Spellcast Roll against all adversaries in front of you within Close range. Once per rest on a success, create an illusion of flashing colors and lights that temporarily Stuns targets you succeed against and forces them to mark a Stress. While Stunned, they can’t use reactions and can’t take any other actions until they clear this condition."
+	},
+	"Invisibility":{
+		"level": 3,
+		"type":"Spell",
+		"domain":"Grace",
+		"recall_cost": 1,
+		"description":"Make a Spellcast Roll (10). On a success, mark a Stress and choose yourself or an ally within Melee range to become Invisible. An Invisible creature can’t be seen except through magical means and attack rolls against them are made with disadvantage. Place a number of tokens on this card equal to your Spellcast trait. When the Invisible creature takes an action, spend a token from this card. After the action that spends the last token is resolved, the effect ends. You can only hold Invisibility on one creature at a time."
+	},
+	"Soothing Speech":{
+		"level": 4,
+		"type":"Ability",
+		"domain":"Grace",
+		"recall_cost": 1,
+		"description":"During a short rest, when you take the time to comfort another character while using the Tend to Wounds downtime move on them, clear an additional Hit Point on that character. When you do, you also clear 2 Hit Points."
+	},
+	"Through Your Eyes":{
+		"level": 4,
+		"type":"Spell",
+		"domain":"Grace",
+		"recall_cost": 1,
+		"description":"Choose a target within Very Far range. You can see through their eyes and hear through their ears. You can transition between using your own senses or the target’s freely until you cast another spell or until your next rest."
+	},
+	"Thought Delver":{
+		"level": 5,
+		"type":"Spell",
+		"domain":"Grace",
+		"recall_cost": 2,
+		"description":"You can peek into the minds of others. Spend a Hope to read the vague surface thoughts of a target within Far range. Make a Spellcast Roll against the target to delve for deeper, more hidden thoughts. On a roll with Fear, the target might, at the GM’s discretion, become aware that you’re reading their thoughts."
+	},
+	"Words Of Discord":{
+		"level": 5,
+		"type":"Spell",
+		"domain":"Grace",
+		"recall_cost": 1,
+		"description":"Whisper words of discord to an adversary within Melee range and make a Spellcast Roll (13). On a success, the target must mark a Stress and make an attack against another adversary instead of against you or your allies. Once this attack is over, the target realizes what happened. The next time you cast Words of Discord on them, gain a –5 penalty to the Spellcast Roll."
+	},
+	"Never Upstaged":{
+		"level": 6,
+		"type":"Ability",
+		"domain":"Grace",
+		"recall_cost": 2,
+		"description":"When you mark 1 or more Hit Points from an attack, you can mark a Stress to place a number of tokens equal to the number of Hit Points you marked on this card. On your next successful attack, gain a +5 bonus to your damage roll for each token on this card, then clear all tokens."
+	},
+	"Share The Burden":{
+		"level": 6,
+		"type":"Spell",
+		"domain":"Grace",
+		"recall_cost": 0,
+		"description":"Once per rest, take on the Stress from a willing creature within Melee range. The target describes what intimate knowledge or emotions telepathically leak from their mind in this moment between you. Transfer any number of their marked Stress to you, then gain a Hope for each Stress transferred."
+	},
+	"Endless Charisma":{
+		"level": 7,
+		"type":"Ability",
+		"domain":"Grace",
+		"recall_cost": 1,
+		"description":"After you make an action roll to persuade, lie, or garner favor, you can spend a Hope to reroll the Hope or Fear Die."
+	},
+	"Grace-Touched":{
+		"level": 7,
+		"type":"Ability",
+		"domain":"Grace",
+		"recall_cost": 2,
+		"description":"When 4 or more of the domain cards in your loadout are from the Grace domain, gain the following benefits: \n- You can mark an Armor Slot instead of marking a Stress. \n- When you would force a target to mark a number of Hit Points, you can choose instead to force them to mark that number of Stress."
+	},
+	"Astral Projection":{
+		"level": 8,
+		"type":"Spell",
+		"domain":"Grace",
+		"recall_cost": 0,
+		"description":"Once per long rest, mark a Stress to create a projected copy of yourself that can appear anywhere you’ve been before. You can see and hear through the projection as though it were you and affect the world as though you were there. A creature investigating the projection can tell it’s of magical origin. This effect lasts until your next rest or your projection takes any damage."
+	},
+	"Mass Enrapture":{
+		"level": 8,
+		"type":"Spell",
+		"domain":"Grace",
+		"recall_cost": 3,
+		"description":"Make a Spellcast Roll against all targets within Far range. Targets you succeed against become temporarily Enraptured. While Enraptured, a target’s attention is fixed on you, narrowing their field of view and drowning out any sound but your voice. Mark a Stress to force all Enraptured targets to mark a Stress, ending this spell."
+	},
+	"Copycat":{
+		"level": 9,
+		"type":"Spell",
+		"domain":"Grace",
+		"recall_cost": 3,
+		"description":"Once per long rest, this card can mimic the features of another domain card of level 8 or lower in another player’s loadout. Spend Hope equal to half the card’s level to gain access to the feature. It lasts until your next rest or they place the card in their vault."
+	},
+	"Master Of The Craft":{
+		"level": 9,
+		"type":"Ability",
+		"domain":"Grace",
+		"recall_cost": 0,
+		"description":"Gain a permanent +2 bonus to two of your Experiences or a permanent +3 bonus to one of your Experiences. Then place this card in your vault permanently."
+	},
+	"Encore":{
+		"level": 10,
+		"type":"Spell",
+		"domain":"Grace",
+		"recall_cost": 1,
+		"description":"When an ally within Close range deals damage to an adversary, you can make a Spellcast Roll against that same target. On a success, you deal the same damage to the target that your ally dealt. If your Spellcast Roll succeeds with Fear, place this card in your vault."
+	},
+	"Notorious":{
+		"level": 10,
+		"type":"Spell",
+		"domain":"Grace",
+		"recall_cost": 0,
+		"description":"People know who you are and what you’ve done, and they treat you differently because of it. When you leverage your notoriety to get what you want, you can mark a Stress before you roll to gain a +10 bonus to the result. Your food and drinks are always free wherever you go, and everything else you buy is reduced in price by one bag of gold (to a minimum of one handful). This card doesn’t count against your loadout’s domain card maximum of 5 and can’t be placed in your vault."
+	},
 
 
 
 
-	"Pick and Pull":{
+	"Pick And Pull":{
 		"level": 1,
 		"type":"Ability",
 		"domain":"Midnight",
@@ -490,6 +616,132 @@
 		"domain":"Midnight",
 		"recall_cost": 0,
 		"description":"When you have a few minutes to prepare, you can mark a Stress to don the facade of any humanoid you can picture clearly in your mind. While disguised, you have advantage on Presence Rolls to avoid scrutiny. Place a number of tokens equal to your Spellcast trait on this card. When you take an action while disguised, spend a token from this card. After the action that spends the last token is resolved, the disguise drops."
+	},
+	"Midnight Spirit":{
+		"level": 2,
+		"type":"Spell",
+		"domain":"Midnight",
+		"recall_cost": 1,
+		"description":"Spend a Hope to summon a humanoid-sized spirit that can move or carry things for you until your next rest. You can also send it to attack an adversary. When you do, make a Spellcast Roll against a target within Very Far range. On a success, the spirit moves into Melee range with that target. Roll a number of d6s equal to your Spellcast trait and deal that much magic damage to the target. The spirit then dissipates. You can only have one spirit at a time."
+	},
+	"Shadowbind":{
+		"level": 2,
+		"type":"Spell",
+		"domain":"Midnight",
+		"recall_cost": 0,
+		"description":"Make a Spellcast Roll against all adversaries within Very Close range. Targets you succeed against are temporarily Restrained as their shadow binds them in place."
+	},
+	"Chokehold":{
+		"level": 3,
+		"type":"Ability",
+		"domain":"Midnight",
+		"recall_cost": 1,
+		"description":"When you position yourself behind a creature who’s about your size, you can mark a Stress to pull them into a chokehold, making them temporarily Vulnerable. When a creature attacks a target who is Vulnerable in this way, they deal an extra 2d6 damage."
+	},
+	"Veil of Night":{
+		"level": 3,
+		"type":"Spell",
+		"domain":"Midnight",
+		"recall_cost": 1,
+		"description":"Make a Spellcast Roll (13). On a success, you can create a temporary curtain of darkness between two points within Far range. Only you can see through this darkness. You’re considered Hidden to adversaries on the other side of the veil, and you have advantage on attacks you make through the darkness. The veil remains until you cast another spell."
+	},
+	"Stealth Expertise":{
+		"level": 4,
+		"type":"Ability",
+		"domain":"Midnight",
+		"recall_cost": 0,
+		"description":"When you roll with Fear while attempting to move unnoticed through a dangerous area, you can mark a Stress to roll with Hope instead. If an ally within Close range is also attempting to move unnoticed and rolls with Fear, you can mark a Stress to change their result to a roll with Hope."
+	},
+	"Glyph of Nightfall":{
+		"level": 4,
+		"type":"Spell",
+		"domain":"Midnight",
+		"recall_cost": 1,
+		"description":"Make a Spellcast Roll against a target within Very Close range. On a success, spend a Hope to conjure a dark glyph upon their body that exposes their weak points, temporarily reducing the target’s Difficulty by a value equal to your Knowledge (minimum 1)."
+	},
+	"Hush":{
+		"level": 5,
+		"type":"Spell",
+		"domain":"Midnight",
+		"recall_cost": 1,
+		"description":"Make a Spellcast Roll against a target within Close range. On a success, spend a Hope to conjure suppressive magic around the target that encompasses everything within Very Close range of them and follows them as they move. The target and anything within the area is Silenced until the GM spends a Fear on their turn to clear this condition, you cast Hush again, or you take Major damage. While Silenced, they can’t make noise and can’t cast spells."
+	},
+	"Phantom Retreat":{
+		"level": 5,
+		"type":"Spell",
+		"domain":"Midnight",
+		"recall_cost": 2,
+		"description":"Spend a Hope to activate Phantom Retreat where you’re currently standing. Spend another Hope at any time before your next rest to disappear from where you are and reappear where you were standing when you activated Phantom Retreat. This spell ends after you reappear."
+	},
+	"Dark Whispers":{
+		"level": 6,
+		"type":"Spell",
+		"domain":"Midnight",
+		"recall_cost": 0,
+		"description":"You can speak into the mind of any person with whom you’ve made physical contact. Once you’ve opened a channel with them, they can speak back into your mind. Additionally, you can mark a Stress to make a Spellcast Roll against them. On a success, you can ask the GM one of the following questions and receive an answer: \n- Where are they? \n- What are they doing? \n- What are they afraid of? \n- What do they cherish most in the world?"
+	},
+	"Mass Disguise":{
+		"level": 6,
+		"type":"Spell",
+		"domain":"Midnight",
+		"recall_cost": 0,
+		"description":"When you have a few minutes of silence to focus, you can mark a Stress to change the appearance of all willing creatures within Close range. Their new forms must share a general body structure and size, and can be somebody or something you’ve seen before or entirely fabricated. A disguised creature has advantage on Presence Rolls to avoid scrutiny. Activate a Countdown (8). It ticks down as a consequence the GM chooses. When it triggers, the disguise drops."
+	},
+	"Midnight-Touched":{
+		"level": 6,
+		"type":"Ability",
+		"domain":"Midnight",
+		"recall_cost": 2,
+		"description":"When you have midnight domain cards in your loadout are from the midnight domain, gain the following benefits: \n- Once per rest, when you have 0 Hope and the GM would gain a Fear, you can gain a Hope instead. \n- When you make a successful attack, you can mark a Stress to add the result of your Fear Die to your damage roll."
+	},
+	"Vanishing Dodge":{
+		"level": 7,
+		"type":"Spell",
+		"domain":"Midnight",
+		"recall_cost": 1,
+		"description":"When an attack made against you that would deal physical damage fails, you can spend a Hope to envelop yourself in shadow, becoming Hidden and teleporting to a point within Close range of the attacker. You remain Hidden until the next time you make an action roll."
+	},
+	"Shadowhunter":{
+		"level": 8,
+		"type":"Ability",
+		"domain":"Midnight",
+		"recall_cost": 2,
+		"description":"Your prowess is enhanced under the cover of shadow. While you’re shrouded in low light or darkness, you gain a +1 bonus to your Evasion and make attack rolls with advantage."
+	},
+	"Spellcharge":{
+		"level": 8,
+		"type":"Spell",
+		"domain":"Midnight",
+		"recall_cost": 1,
+		"description":"When you take magic damage, place tokens equal to the number of Hit Points you marked on this card. You can store a number of tokens equal to your Spellcast trait. When you make a successful attack against a target, you can spend any number of tokens to add a d6 for each token spent to your damage roll."
+	},
+	"Night Terror":{
+		"level": 9,
+		"type":"Spell",
+		"domain":"Midnight",
+		"recall_cost": 2,
+		"description":"Once per long rest, choose any targets within Very Close range to perceive you as a nightmarish horror. The targets must succeed on a Reaction Roll (16) or become temporarily Horrified. While Horrified, they’re Vulnerable. Steal a number of Fear from the GM equal to the number of targets that are Horrified (up to the number of Fear in the GM’s pool). Roll a number of d6s equal to the number of stolen Fear and deal the total damage to each Horrified target. Discard the stolen Fear."
+	},
+	"Twilight Toll":{
+		"level": 9,
+		"type":"Ability",
+		"domain":"Midnight",
+		"recall_cost": 1,
+		"description":"Choose a target within Far range. When you succeed on an action roll against them that doesn’t result in making a damage roll, place a token on this card. When you deal damage to this target, spend any number of tokens to add a d12 for each token spent to your damage roll. You can only hold Twilight Toll on one creature at a time. When you choose a new target or take a rest, clear all unspent tokens."
+	},
+	"Eclipse":{
+		"level": 10,
+		"type":"Spell",
+		"domain":"Midnight",
+		"recall_cost": 2,
+		"description":"Make a Spellcast Roll (16). Once per long rest on a success, plunge the entire area within Far range into complete darkness only you and your allies can see through. Attack rolls have disadvantage when targeting you or an ally within this shadow. Additionally, when you or an ally succeeds with Hope against an adversary within this shadow, the target must mark a Stress. This spell lasts until the GM spends a Fear on their turn to clear this effect or you take Severe damage."
+	},
+	"Specter Of The Dark":{
+		"level": 10,
+		"type":"Spell",
+		"domain":"Midnight",
+		"recall_cost": 1,
+		"description":"Mark a Stress to become Spectral until you make an action roll targeting another creature. While Spectral, you’re immune to physical damage and can float and pass through solid objects. Other creatures can still see you while you’re in this form."
 	},
 
 
