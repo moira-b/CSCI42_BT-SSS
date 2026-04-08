@@ -89,6 +89,9 @@ func enter() -> void:
 	level_field.text = str(character.level)
 	evasion_value.set_text(str(character.evasion))
 	proficiency_value.set_text(str(character.proficiency))
+	
+	#TODO: set the savemanager character, then save
+	# so that it will save when the character is created itself
 
 
 func _process(_delta: float) -> void:
