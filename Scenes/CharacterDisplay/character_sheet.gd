@@ -93,6 +93,9 @@ func enter() -> void:
 	level_field.text = str(character.level)
 	evasion_value.set_text(str(character.evasion))
 	proficiency_value.set_text(str(character.proficiency))
+
+func load_character() -> void:
+	pass
 	
 
 func _process(_delta: float) -> void:

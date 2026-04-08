@@ -183,5 +183,6 @@ func load_data(pk: int):
 		
 	# Check that the file contents can be made into a dictionary
 	var json_data = json.data
-	var char_dict = json_data["1"]
-	print(char_dict["character_name"])
+	var char_dict = json_data[primary_key]
+	for key in char_dict:
+		print(key, ": ", char_dict[key])
