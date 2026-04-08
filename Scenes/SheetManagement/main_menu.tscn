@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b3udvby21u3eh"]
 
 [ext_resource type="Script" uid="uid://028wp2ttofun" path="res://Scripts/SheetManagement/main_menu.gd" id="1_vsvys"]
+[ext_resource type="PackedScene" uid="uid://r02yxwfx48hx" path="res://Scenes/SheetManagement/SaveManager.tscn" id="2_3hhsk"]
 
 [node name="MainMenu" type="Control" unique_id=621885202]
 layout_mode = 3
@@ -10,6 +11,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vsvys")
+
+[node name="SaveManager" parent="." unique_id=538318276 instance=ExtResource("2_3hhsk")]
 
 [node name="Header" type="HBoxContainer" parent="." unique_id=533069780]
 layout_mode = 1
@@ -134,11 +137,14 @@ layout_mode = 2
 
 [node name="Button" type="Button" parent="." unique_id=1982241539]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -37.0
-offset_right = 37.0
-offset_bottom = 42.0
+anchors_preset = -1
+anchor_left = 0.499
+anchor_top = 0.029000001
+anchor_right = 0.499
+anchor_bottom = 0.029000001
+offset_left = -36.848022
+offset_top = 0.20800018
+offset_right = 37.151978
+offset_bottom = 42.208
 grow_horizontal = 2
 text = "TEST"

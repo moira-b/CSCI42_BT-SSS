@@ -68,8 +68,18 @@ func save_character_data():
 		#print(json.data)
 		save_file.close()
 
-func _get_dictionary(json_data: Variant):
-	pass
-
-func load_character_data():
-	pass
+func _get_character_dictionary(pk: int):
+	var save_file = FileAccess.open(FILE_PATH, FileAccess.READ_WRITE)
+	var current_contents = save_file.get_as_text()
+	var json = JSON.new()
+	
+	# Check that the file contents can be parsed by JSON
+	var parse_result = json.parse(current_contents)
+	if !(parse_result==OK):
+		print("JSON Parse Error: " + json.get_error_message() + " at line " + str(json.get_error_line()))
+		return
+			
+	# Check that the file contents can be made into a dictionary
+	var json_data = json.data
+	var char_dict = json_data[pk]
+	return char_dict
