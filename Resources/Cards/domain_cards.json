@@ -768,6 +768,132 @@
 		"recall_cost": 1,
 		"description":"Make a Spellcast Roll against a target within Far range. On a success, roots and vines reach out from the ground, dealing 1d8+1 physical damage and temporarily Restraining the target. Additionally on a success, you can spend a Hope to temporarily Restrain another adversary within Very Close range of your target."
 	},
+	"Conjure Swarm":{
+		"level": 2,
+		"type":"Spell",
+		"domain":"Sage",
+		"recall_cost": 1,
+		"description":"Tekaira Armored Beetles: Mark a Stress to conjure armored beetles that encircle you. When you next take damage, reduce the severity by one threshold. You can spend a Hope to keep the beetles conjured after taking damage. \nFire Flies: Make a Spellcast Roll against all adversaries within Close range. Spend a Hope to deal 2d8+3 magic damage to targets you succeed against."
+	},
+	"Natural Familiar":{
+		"level": 2,
+		"type":"Spell",
+		"domain":"Sage",
+		"recall_cost": 1,
+		"description":"Spend a Hope to summon a small nature spirit or forest critter to your side until your next rest, you cast Natural Familiar again, or the familiar is targeted by an attack. If you spend an additional Hope, you can summon a familiar that flies. You can communicate with them, make a Spellcast Roll to command them to perform simple tasks, and mark a Stress to see through their eyes. When you deal damage to an adversary within Melee range of your familiar, you add a d6 to your damage roll."
+	},
+	"Corrosive Projectile":{
+		"level": 3,
+		"type":"Spell",
+		"domain":"Sage",
+		"recall_cost": 1,
+		"description":"Make a Spellcast Roll against a target within Far range. On a success, deal 6d4 magic damage using your Proficiency. Additionally, mark 2 or more Stress to make them permanently Corroded. While a target is Corroded, they gain a –1 penalty to their Difficulty for every 2 Stress you spent. This condition can stack."
+	},
+	"Towering Stalk":{
+		"level": 3,
+		"type":"Spell",
+		"domain":"Sage",
+		"recall_cost": 1,
+		"description":"Once per rest, you can conjure a thick, twisting stalk within Close range that can be easily climbed. Its height can grow up to Far range. Mark a Stress to use this spell as an attack. Make a Spellcast Roll against an adversary or group of adversaries within Close range. The erupting stalk lifts targets you succeed against into the air and drops them, dealing d8 physical damage using your Proficiency."
+	},
+	"Death Grip":{
+		"level": 4,
+		"type":"Spell",
+		"domain":"Sage",
+		"recall_cost": 1,
+		"description":"Make a Spellcast Roll against a target within Close range and choose one of the following options: \n- You pull the target into Melee range or pull yourself into Melee range of them. \n- You constrict the target and force them to mark 2 Stress. \n- All adversaries between you and the target must succeed on a Reaction Roll (13) or be hit by vines, taking 3d6+2 physical damage. On a success, vines reach out from your hands, causing the chosen effect and temporarily Restraining the target."
+	},
+	"Healing Field":{
+		"level": 4,
+		"type":"Spell",
+		"domain":"Sage",
+		"recall_cost": 2,
+		"description":"Once per long rest, you can conjure a field of healing plants around you. Everywhere within Close range of you bursts to life with vibrant nature, allowing you and all allies in the area to clear a Hit Point. Spend 2 Hope to allow you and all allies to clear 2 Hit Points instead."
+	},
+	"Thorn Skin":{
+		"level": 5,
+		"type":"Spell",
+		"domain":"Sage",
+		"recall_cost": 1,
+		"description":"Once per rest, spend a Hope to sprout thorns all over your body. When you do, place a number of tokens equal to your Spellcast trait on this card. When you take damage, you can spend any number of tokens to roll that number of d6s. Add the results together and reduce the incoming damage by that amount. If you’re within Melee range of the attacker, deal that amount of damage back to them. When you take a rest, clear all unspent tokens."
+	},
+	"Wild Fortress":{
+		"level": 5,
+		"type":"Spell",
+		"domain":"Sage",
+		"recall_cost": 1,
+		"description":"Make a Spellcast Roll (13). On a success, spend 2 Hope to grow a natural barricade in the shape of a dome that you and one ally can take cover within. While inside the dome, a creature can’t be targeted by attacks and can’t make attacks. Attacks made against the dome automatically succeed. The dome has the following damage thresholds and lasts until it marks 3 Hit Points. Place tokens on this card to represent marking Hit Points. Thresholds: 15/30"
+	},
+	"Conure Steeds":{
+		"level": 6,
+		"type":"Spell",
+		"domain":"Sage",
+		"recall_cost": 0,
+		"description":"Spend any number of Hope to conjure that many magical steeds (such as horses, camels, or elephants) that you and your allies can ride until your next long rest or the steeds take any damage. The steeds double your land speed while traveling and, when in danger, allow you to move within Far range without having to roll. Creatures riding a steed gain a –2 penalty to attack rolls and a +2 bonus to damage rolls."
+	},
+	"Forager":{
+		"level": 6,
+		"type":"Ability",
+		"domain":"Sage",
+		"recall_cost": 1,
+		"description":"As an additional downtime move you can choose, roll a d6 to see what you forage. Work with the GM to describe it and add it to your inventory as a consumable. Your party can carry up to five foraged consumables at a time. \n1. An unusual flower (Clear 2 Stress) \n2. A beautiful relic (Gain 2 Hope) \n3. An arcane rune (+2 to a Spellcast Roll) \n4. A healing vial (Clear 2 Hit Points) \n5. A luck charm (Reroll any die) \nChoose one of the options above."
+	},
+	"Sage-Touched":{
+		"level": 7,
+		"type":"Ability",
+		"domain":"Sage",
+		"recall_cost": 2,
+		"description":"When 4 or more of the domain cards in your loadout are from the Sage domain, gain the following benefits: \n- While you’re in a natural environment, you gain a +2 bonus to your Spellcast Rolls. \n- Once per rest, you can double your Agility or Instinct when making a roll that uses that trait. You must choose to do this before you roll."
+	},
+	"Wild Surge":{
+		"level": 7,
+		"type":"Spell",
+		"domain":"Sage",
+		"recall_cost": 2,
+		"description":"Once per long rest, mark a Stress to channel the natural world around you and enhance yourself. Describe how your appearance changes, then place a d6 on this card with the 1 value facing up. While the Wild Surge Die is active, you add its value to every action roll you make. After you add its value to a roll, increase the Wild Surge Die’s value by one. When the die’s value would exceed 6 or you take a rest, this form drops and you must mark an additional Stress."
+	},
+	"Forest Sprites":{
+		"level": 8,
+		"type":"Spell",
+		"domain":"Sage",
+		"recall_cost": 2,
+		"description":"Make a Spellcast Roll (13). On a success, spend any number of Hope to create an equal number of small forest sprites who appear at points you choose within Far range, providing the following benefits: \n- Your allies gain a +3 bonus to attack rolls against adversaries within Melee range of a sprite. \n- An ally who marks an Armor Slot while within Melee range of a sprite can mark an additional Armor Slot. A sprite vanishes after granting a benefit or taking any damage."
+	},
+	"Rejuvination Barrier":{
+		"level": 8,
+		"type":"Spell",
+		"domain":"Sage",
+		"recall_cost": 2,
+		"description":"Make a Spellcast Roll (13). On a success, spend any number of Hope to create an equal number of small forest sprites who appear at points you choose within Far range, providing the following benefits: \n- Your allies gain a +3 bonus to attack rolls against adversaries within Melee range of a sprite. \n- An ally who marks an Armor Slot while within Melee range of a sprite can mark an additional Armor Slot. A sprite vanishes after granting a benefit or taking any damage."
+	},
+	"Fane Of The Wilds":{
+		"level": 9,
+		"type":"Ability",
+		"domain":"Sage",
+		"recall_cost": 2,
+		"description":"After a long rest, place a number of tokens equal to the number of Sage domain cards in your loadout and vault on this card. When you would make a Spellcast Roll, you can spend any number of tokens after the roll to gain a +1 bonus for each token spent. When you critically succeed on a Spellcast Roll for a Sage domain spell, gain a token. When you take a long rest, clear all unspent tokens."
+	},
+	"Plant Dominion":{
+		"level": 9,
+		"type":"Spell",
+		"domain":"Sage",
+		"recall_cost": 1,
+		"description":"Make a Spellcast Roll (18). Once per long rest on a success, you reshape the natural world, changing the surrounding plant life anywhere within Far range of you. For example, you can grow trees instantly, clear a path through dense vines, or create a wall of roots."
+	},
+	"Force Of Nature":{
+		"level": 10,
+		"type":"Spell",
+		"domain":"Sage",
+		"recall_cost": 2,
+		"description":"Mark a Stress to transform into a hulking nature spirit, gaining the following benefits: \n- When you succeed on an attack or Spellcast Roll, gain a +10 bonus to the damage roll. \n- When you deal enough damage to defeat a creature within Close range, you absorb them and clear an Armor Slot. - You can’t be Restrained. Before you make an action roll, you must spend a Hope. If you can’t, you revert to your normal form."
+	},
+	"Tempest":{
+		"level": 10,
+		"type":"Spell",
+		"domain":"Sage",
+		"recall_cost": 2,
+		"description":"Choose one of the following tempests and make a Spellcast Roll against all targets within Far range. Targets you succeed against experience its effects until the GM spends a Fear on their turn to end this spell. \n- Blizzard: Deal 2d20+8 magic damage and targets are temporarily Vulnerable. \n- Hurricane: Deal 3d10+10 magic damage and choose a direction the wind is blowing. Targets can’t move against the wind. \n- Sandstorm: Deal 5d6+9 magic damage. Attacks made from beyond Melee range have disadvantage."
+	},
 
 
 
@@ -793,6 +919,132 @@
 		"recall_cost": 0,
 		"description":"Once per rest, after any ill attempts an action roll but before the consequences take place, you can offer assistance or words of support. When you do, your ally can reroll their dice."
 	},
+	"Final Words":{
+		"level": 2,
+		"type":"Spell",
+		"domain":"Splendor",
+		"recall_cost": 1,
+		"description":"You can infuse a corpse with a moment of life to speak with it. Make a Spellcast Roll (13). On a success with Hope, the corpse answers up to three questions. On a success with Fear, the corpse answers one question. The corpse answers truthfully, but it can’t impart information it didn’t know in life. On a failure, or once the corpse has finished answering your questions, the body turns to dust."
+	},
+	"Healing Hands":{
+		"level": 2,
+		"type":"Spell",
+		"domain":"Splendor",
+		"recall_cost": 1,
+		"description":"Make a Spellcast Roll (13) and target a creature other than yourself within Melee range. On a success, mark a Stress to clear 2 Hit Points or 2 Stress on the target. On a failure, mark a Stress to clear a Hit Point or a Stress on the target. You can’t heal the same target again until your next long rest."
+	},
+	"Second Wind":{
+		"level": 3,
+		"type":"Ability",
+		"domain":"Splendor",
+		"recall_cost": 2,
+		"description":"Once per rest, when you succeed on an attack against an adversary, you can clear 3 Stress or a Hit Point. On a success with Hope, you also clear 3 Stress or a Hit Point on an ally within Close range of you."
+	},
+	"Voice Of Reason":{
+		"level": 3,
+		"type":"Ability",
+		"domain":"Splendor",
+		"recall_cost": 1,
+		"description":"You speak with an unmatched power and authority. You have advantage on action rolls to de-escalate violent situations or convince someone to follow your lead. Additionally, you’re emboldened in moments of duress. When all of your Stress slots are marked, you gain a +1 bonus to your Proficiency for damage rolls."
+	},
+	"Divination":{
+		"level": 4,
+		"type":"Spell",
+		"domain":"Splendor",
+		"recall_cost": 1,
+		"description":"Once per long rest, spend 3 Hope to reach out to the forces beyond and ask one “yes or no” question about an event, person, place, or situation in the near future. For a moment, the present falls away and you see the answer before you."
+	},
+	"Life Ward":{
+		"level": 4,
+		"type":"Spell",
+		"domain":"Splendor",
+		"recall_cost": 1,
+		"description":"Spend 3 Hope and choose an ally within Close range. They are marked with a glowing sigil of protection. When this ally would make a death move, they clear a Hit Point instead. This effect ends when it saves the target from a death move, you cast Life Ward on another target, or you take a long rest."
+	},
+	"Shape Material":{
+		"level": 5,
+		"type":"Spell",
+		"domain":"Splendor",
+		"recall_cost": 1,
+		"description":"Spend a Hope to shape a section of natural material you’re touching (such as stone, ice, or wood) to suit your purpose. The area of the material can be no larger than you. For example, you can form a rudimentary tool or create a door. You can only affect the material within Close range of where you’re touching it."
+	},
+	"Smite":{
+		"level": 5,
+		"type":"Spell",
+		"domain":"Splendor",
+		"recall_cost": 2,
+		"description":"Once per rest, spend 3 Hope to charge your powerful smite. When you next successfully attack with a weapon, double the result of your damage roll. This attack deals magic damage regardless of the weapon's damage type."
+	},
+	"Restoration":{
+		"level": 6,
+		"type":"Spell",
+		"domain":"Splendor",
+		"recall_cost": 2,
+		"description":"After a long rest, place a number of tokens equal to your Spellcast trait on this card. Touch a creature and spend any number of tokens to clear 2 Hit Points or 2 Stress for each token spent. You can also spend a token from this card when touching a creature to clear the Vulnerable condition or heal a physical or magical ailment (the GM might require additional tokens depending on the strength of the ailment). When you take a long rest, clear all unspent tokens."
+	},
+	"Zone Of Protection":{
+		"level": 6,
+		"type":"Spell",
+		"domain":"Splendor",
+		"recall_cost": 2,
+		"description":"Make a Spellcast Roll (16). Once per long rest on a success, choose a point within Far range and create a visible zone of protection there for all allies within Very Close range of that point. When you do, place a d6 on this card with the 1 value facing up. When an ally in this zone takes damage, they reduce it by the die’s value. You then increase the die’s value by one. When the die’s value would exceed 6, this effect ends."
+	},
+	"Healing Strike":{
+		"level": 7,
+		"type":"Spell",
+		"domain":"Splendor",
+		"recall_cost": 1,
+		"description":"When you deal damage to an adversary, you can spend 2 Hope to clear a Hit Point on an ally within Close range."
+	},
+	"Splendor-Touched":{
+		"level": 7,
+		"type":"Ability",
+		"domain":"Splendor",
+		"recall_cost": 2,
+		"description":"When 4 or more of the domain cards in your loadout are from the Splendor domain, gain the following benefits: \n- +3 bonus to your Severe damage threshold \n- Once per long rest, when incoming damage would require you to mark a number of Hit Points, you can choose to mark that much Stress or spend that much Hope instead."
+	},
+	"Shiled Aura":{
+		"level": 8,
+		"type":"Ability",
+		"domain":"Splendor",
+		"recall_cost": 2,
+		"description":"Mark a Stress to cast a protective aura on a target within Very Close range. When the target marks an Armor Slot, they reduce the severity of the attack by an additional threshold. If this spell causes a creature who would be damaged to instead mark no Hit Points, the effect ends. You can only hold Shield Aura on one creature at a time."
+	},
+	"Stunning Sunlight":{
+		"level": 8,
+		"type":"Spell",
+		"domain":"Splendor",
+		"recall_cost": 2,
+		"description":"Make a Spellcast Roll to unleash powerful rays of burning sunlight against all adversaries in front of you within Far range. On a success, spend any number of Hope and force that many targets you succeeded against to make a Reaction Roll (14). Targets who succeed take 3d20+3 magic damage. Targets who fail take 4d20+5 magic damage and are temporarily Stunned. While Stunned, they can’t use reactions and can’t take any other actions until they clear this condition."
+	},
+	"Overwhelming Aura":{
+		"level": 9,
+		"type":"Spell",
+		"domain":"Splendor",
+		"recall_cost": 2,
+		"description":"Make a Spellcast Roll (15) to magically empower your aura. On a success, spend 2 Hope to make your Presence equal to your Spellcast trait until your next long rest. While this spell is active, an adversary must mark a Stress when they target you with an attack."
+	},
+	"Salvation Beam":{
+		"level": 9,
+		"type":"Spell",
+		"domain":"Splendor",
+		"recall_cost": 2,
+		"description":"Make a Spellcast Roll (16). On a success, mark any number of Stress to target a line of allies within Far range. You can clear Hit Points on the targets equal to the number of Stress marked, divided among them however you’d like."
+	},
+	"Invigoration":{
+		"level": 10,
+		"type":"Spell",
+		"domain":"Splendor",
+		"recall_cost": 3,
+		"description":"When you or an ally within Close range has used a feature that has an exhaustion limit (such as once per rest or once per session), you can spend any number of Hope and roll that many d6s. If any roll a 6, the feature can be used again."
+	},
+	"Resurrection":{
+		"level": 10,
+		"type":"Spell",
+		"domain":"Splendor",
+		"recall_cost": 2,
+		"description":"Make a Spellcast Roll (20). On a success, restore one creature who has been dead no longer than 100 years to full strength. Then roll a d6. On a result of 5 or lower, place this card in your vault permanently. On a failure, you can’t cast Resurrection again for a week."
+	},
 
 
 
@@ -817,5 +1069,49 @@
 		"domain":"Valor",
 		"recall_cost": 1,
 		"description":"When an ally within Very Close range would take damage, you can mark a Stress to stand in the way and make yourself the target of the attack instead. When you take damage from this attack, you can mark any number of Armor Slots."
+	},
+	"Body Basher":{
+		"level": 2,
+		"type":"Ability",
+		"domain":"Valor",
+		"recall_cost": 1,
+		"description":"You use the full force of your body in a fight. On a successful attack using a weapon with a Melee range, gain a bonus to your damage roll equal to your Strength."
+	},
+	"Bold Presence":{
+		"level": 2,
+		"type":"Ability",
+		"domain":"Valor",
+		"recall_cost": 0,
+		"description":"When you make a Presence Roll, you can spend a Hope to add your Strength to the roll. Additionally, once per rest when you would gain a condition, you can describe how your bold presence aids you in the situation and avoid gaining the condition."
+	},
+	"Critical Inspiration":{
+		"level": 3,
+		"type":"Ability",
+		"domain":"Valor",
+		"recall_cost": 1,
+		"description":"Once per rest, when you critically succeed on an attack, all allies within Very Close range can clear a Stress or gain a Hope."
+	},
+	"Lean On Me":{
+		"level": 3,
+		"type":"Ability",
+		"domain":"Valor",
+		"recall_cost": 1,
+		"description":"Once per long rest, when you console or inspire an ally who failed an action roll, you can both clear 2 Stress."
+	},
+	"Goad Them On":{
+		"level": 4,
+		"type":"Ability",
+		"domain":"Valor",
+		"recall_cost": 1,
+		"description":"Describe how you taunt a target within Close range, then make a Presence Roll against them. On a success, the target must mark a Stress, and the next time the GM spotlights them, they must target you with an attack, which they make with disadvantage."
+	},
+	"Goad Them On":{
+		"level": 4,
+		"type":"Ability",
+		"domain":"Valor",
+		"recall_cost": 1,
+		"description":"Describe how you taunt a target within Close range, then make a Presence Roll against them. On a success, the target must mark a Stress, and the next time the GM spotlights them, they must target you with an attack, which they make with disadvantage."
 	}
+	
+	
 }
