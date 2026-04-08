@@ -78,7 +78,7 @@ func set_current_stress(value: int) -> bool:
 		return true
 	elif(value < 0):
 		print("Cannot set current stress to be less than 0.")
-		load_data(1)
+		print_data()
 	else:
 		print("Cannot set current stress to be greater than max stress.")
 		
@@ -143,8 +143,10 @@ func serialize_data():
 		"pronouns": pronouns,
 		"bio": bio,
 		"level": level,
-		"class": character_class.name,
-		"subclass": subclass.subclass_name,
+		"class": character_class,
+		"subclass": subclass,
+		"ancestry": ancestry,
+		"community": community,
 		"evasion": evasion,
 		"agility": agility,
 		"strength": strength,
@@ -170,7 +172,13 @@ func serialize_data():
 func assign_primary_key(pk: int):
 	self.primary_key = str(pk)
 
-func load_data(pk: int):
+func load_data(char_dict: Variant):
+	bio = char_dict["bio"]
+	character_name = char_dict["character_name"]
+	pronouns = char_dict["prounouns"]
+	level = int(char_dict["level"])
+
+func print_data():
 	var save_file = FileAccess.open(FILE_PATH, FileAccess.READ_WRITE)
 	var current_contents = save_file.get_as_text()
 	var json = JSON.new()
@@ -180,9 +188,9 @@ func load_data(pk: int):
 	if !(parse_result==OK):
 		print("JSON Parse Error: " + json.get_error_message() + " at line " + str(json.get_error_line()))
 		return
-		
+			
 	# Check that the file contents can be made into a dictionary
 	var json_data = json.data
-	var char_dict = json_data[primary_key]
+	var char_dict = json_data[str(primary_key)]
 	for key in char_dict:
 		print(key, ": ", char_dict[key])

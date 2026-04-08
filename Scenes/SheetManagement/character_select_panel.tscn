@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dijo07xgmyqtr"]
 
 [ext_resource type="Script" uid="uid://cwlkj5m57huwr" path="res://Scripts/SheetManagement/character_select_panel.gd" id="1_7sfn8"]
+[ext_resource type="PackedScene" uid="uid://c76krhgbjyotx" path="res://Scenes/Characters/character.tscn" id="2_ajeve"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wut7y"]
 expand_margin_left = 10.0
@@ -20,6 +21,8 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxTexture_wut7y")
 script = ExtResource("1_7sfn8")
+
+[node name="Character" parent="." unique_id=1371470097 instance=ExtResource("2_ajeve")]
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=77115605]
 layout_mode = 2

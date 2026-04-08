@@ -10,6 +10,8 @@ const FILE_PATH = "user://character_data"
 @onready var class_label: Label = $ContentContainer/VBoxContainer/Class
 @onready var tags: Array = []
 @onready var settings_button: Button = $ContentContainer/SettingsButton
+@onready var char_dict: Variant
+@onready var character: Character = $Character
 
 var sheet_scene: PackedScene = preload("res://Scenes/CharacterDisplay/character_sheet.tscn")
 
@@ -32,7 +34,7 @@ func load_character_details(pk: String):
 		
 	# Check that the file contents can be made into a dictionary
 	var json_data = json.data
-	var char_dict = json_data[pk]
+	char_dict = json_data[pk]
 	char_name = char_dict["character_name"]
 	char_class = char_dict["class"]
 
@@ -49,7 +51,12 @@ func connect_signals():
 	
 	
 func _on_select_button_pressed():
-	pass
+	var new_scene = sheet_scene.instantiate()
+	character.load_data(char_dict)
+	character.reparent(new_scene)
+	self.get_parent().add_child(new_scene)
+	new_scene.enter()
+	self.queue_free()
 
 func _on_settings_button_pressed():
 	pass

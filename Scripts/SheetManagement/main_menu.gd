@@ -7,6 +7,7 @@ extends Control
 @onready var confirm_window: PanelContainer = $CreateCharacterConfirm
 @onready var char_creation_scene: PackedScene = preload("res://Scenes/CharacterCreator/character_creator_interface.tscn")
 @onready var test_button: Button = $Button
+@onready var save_manager = $SaveManager
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
