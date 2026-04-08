@@ -1105,12 +1105,96 @@
 		"recall_cost": 1,
 		"description":"Describe how you taunt a target within Close range, then make a Presence Roll against them. On a success, the target must mark a Stress, and the next time the GM spotlights them, they must target you with an attack, which they make with disadvantage."
 	},
-	"Goad Them On":{
+	"Support Tank":{
 		"level": 4,
 		"type":"Ability",
 		"domain":"Valor",
+		"recall_cost": 2,
+		"description":"When an ally within Close range fails a roll, you can spend 2 Hope to allow them to reroll either their Hope or Fear Die."
+	},
+	"Armorer":{
+		"level": 5,
+		"type":"Ability",
+		"domain":"Valor",
 		"recall_cost": 1,
-		"description":"Describe how you taunt a target within Close range, then make a Presence Roll against them. On a success, the target must mark a Stress, and the next time the GM spotlights them, they must target you with an attack, which they make with disadvantage."
+		"description":"While you’re wearing armor, gain a +1 bonus to your Armor Score. During a rest, when you choose to repair your armor as a downtime move, your allies also clear an Armor Slot."
+	},
+	"Rousing Strike":{
+		"level": 5,
+		"type":"Ability",
+		"domain":"Valor",
+		"recall_cost": 1,
+		"description":"Once per rest, when you critically succeed on an attack, you and allies who can see or hear you can clear a Hit Point or 1d4 Stress."
+	},
+	"Inevitable":{
+		"level": 6,
+		"type":"Ability",
+		"domain":"Valor",
+		"recall_cost": 1,
+		"description":"When you fail an action roll, your next action roll has advantage."
+	},
+	"Rise Up":{
+		"level": 6,
+		"type":"Ability",
+		"domain":"Valor",
+		"recall_cost": 2,
+		"description":"Gain a bonus to your Severe threshold equal to your Proficiency. When you mark 1 or more Hit Points from an attack, clear a Stress."
+	},
+	"Shrug It Off":{
+		"level": 7,
+		"type":"Ability",
+		"domain":"Valor",
+		"recall_cost": 1,
+		"description":"When you would take damage, you can mark a Stress to reduce the severity of the damage by one threshold. When you do, roll a d6. On a result of 3 or lower, place this card in your vault."
+	},
+	"Valor-Touched":{
+		"level": 7,
+		"type":"Ability",
+		"domain":"Valor",
+		"recall_cost": 1,
+		"description":"When 4 or more of the domain cards in your loadout are from the Valor domain, gain the following benefits: \n- +1 bonus to your Armor Score \n- When you mark 1 or more Hit Points without marking an Armor Slot, clear an Armor Slot."
+	},
+	"Full Surge":{
+		"level": 8,
+		"type":"Ability",
+		"domain":"Valor",
+		"recall_cost": 1,
+		"description":"Once per long rest, mark 3 Stress to push your body to its limits. Gain a +2 bonus to all of your character traits until your next rest."
+	},
+	"Ground Pound":{
+		"level": 8,
+		"type":"Ability",
+		"domain":"Valor",
+		"recall_cost": 2,
+		"description":"Spend 2 Hope to strike the ground where you stand and make a Strength Roll against all targets within Very Close range. Targets you succeed against are thrown back to Far range and must make a Reaction Roll (17). Targets who fail take 4d10+8 damage. Targets who succeed take half damage."
+	},
+	"Hold The Line":{
+		"level": 9,
+		"type":"Ability",
+		"domain":"Valor",
+		"recall_cost": 1,
+		"description":"Describe the defensive stance you take and spend a Hope. If an adversary moves within Very Close range, they’re pulled into Melee range and Restrained. This condition lasts until you move or fail a roll with Fear, or the GM spends 2 Fear on their turn to clear it."
+	},
+	"Lead By Example":{
+		"level": 9,
+		"type":"Ability",
+		"domain":"Valor",
+		"recall_cost": 3,
+		"description":"When you deal damage to an adversary, you can mark a Stress and describe how you encourage your allies. The next PC to make an attack against that adversary can clear a Stress or gain a Hope."
+	},
+	"Unbreakable":{
+		"level": 10,
+		"type":"Ability",
+		"domain":"Valor",
+		"recall_cost": 4,
+		"description":"When you mark your last Hit Point, instead of making a death move, you can roll a d6 and clear a number of Hit Points equal to the result. Then place this card in your vault."
+	},
+	"Unyielding Armor":{
+		"level": 10,
+		"type":"Ability",
+		"domain":"Valor",
+		"recall_cost": 1,
+		"description":"When you would mark an Armor Slot, roll a number of d6s equal to your Proficiency. If any roll a 6, reduce the severity by one threshold without marking an Armor Slot."
 	}
 	
 	
