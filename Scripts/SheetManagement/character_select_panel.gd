@@ -65,5 +65,15 @@ func _on_select_button_pressed():
 	print("hi")
 	get_tree().root.get_child(0).queue_free()
 
+func open_character_sheet():
+	var new_scene = sheet_scene.instantiate()
+	char_dict = save_manager._get_character_dictionary(char_primary_key)
+	character.load_data(char_dict)
+	character.reparent(new_scene)
+	get_tree().root.add_child(new_scene)
+	new_scene.enter()
+	print("hi")
+	get_tree().root.get_child(0).queue_free()
+
 func _on_settings_button_pressed():
 	settings_button_pressed.emit(char_primary_key)

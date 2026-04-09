@@ -95,6 +95,7 @@ theme_override_constants/v_separation = 20
 columns = 4
 
 [node name="OptionsPopupMenu" type="PanelContainer" parent="." unique_id=391540452]
+visible = false
 layout_mode = 0
 offset_right = 175.0
 offset_bottom = 70.0
