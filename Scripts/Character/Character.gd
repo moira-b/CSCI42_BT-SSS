@@ -40,6 +40,8 @@ var character_class: CharacterClass
 var subclass: CharacterSubclass
 var primary_key: String
 
+@onready var button_enabler: Array[bool] = [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]
+
 @onready var active_cards: Array[String] = []
 @onready var vaulted_cards: Array[String] = []
 
@@ -173,7 +175,8 @@ func serialize_data():
 		"experience_levels": experience_levels,
 		"max_domain_cards": max_domain_cards,
 		"active_cards" : active_cards,
-		"vaulted_cards": vaulted_cards
+		"vaulted_cards": vaulted_cards,
+		"button_enabler": button_enabler
 	}
 	return save_dict
 
@@ -213,5 +216,6 @@ func load_data(char_dict: Variant):
 	max_domain_cards = char_dict["max_domain_cards"]
 	active_cards.assign(char_dict["active_cards"])
 	vaulted_cards.assign(char_dict["vaulted_cards"])
+	button_enabler.assign(char_dict["button_enabler"])
 	
 	

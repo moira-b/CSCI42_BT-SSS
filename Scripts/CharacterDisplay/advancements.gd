@@ -64,6 +64,7 @@ func _on_checkButton_toggled(toggled_on: bool, toggled_button: CheckButton) -> v
 func get_character(c: Character):
 	character = c
 	_update_fields()
+	_update_buttons()
 
 func _update_fields() -> void:
 	exp_1.text = character.experiences[0]
@@ -76,21 +77,21 @@ func _update_fields() -> void:
 		exp_3.text = "New Experience"
 		exp_3.show()
 		
-		for b in allButtons:
-			b.disabled = false
+		for b in character.button_enabler:
+			b = false
 	elif character.level == 5:
 		exp_4.text = "New Experience"
 		exp_4.show()
 		classes.disabled = false
 		
-		for b in allButtons:
-			b.disabled = false
+		for b in character.button_enabler:
+			b = false
 	elif character.level == 8:
 		exp_5.text = "New Experience"
 		exp_5.show()
 		
-		for b in allButtons:
-			b.disabled = false
+		for b in character.button_enabler:
+			b = false
 
 func _on_confirm_pressed() -> void:
 	if !selected.size() >= 2 && !proficiency in selected:
@@ -113,8 +114,8 @@ func _on_confirm_pressed() -> void:
 			if s == exp_5: character.experience_levels[4] += 1
 			if s == domain_card: character.max_domain_cards += 1
 		for s in selected:
-			s.set_pressed_no_signal(false)
-			s.disabled = true
+			var index = allButtons.find(s)
+			character.button_enabler[index] = true
 		_set_domain_card_selector_visibility(true)
 		character.max_domain_cards += 1
 		domain_card_selector.level_up_selector_setup()
@@ -132,3 +133,11 @@ func confirm_all_advancements():
 	_set_domain_card_selector_visibility(false)
 	update_sheet_fields()
 	self.hide()
+
+func _update_buttons():
+	var i=0
+	for button in allButtons:
+		button.set_pressed_no_signal(character.button_enabler[i])
+		button.disabled = character.button_enabler[i]
+		i+=1
+		
