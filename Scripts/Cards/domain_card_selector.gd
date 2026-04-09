@@ -138,6 +138,7 @@ func _on_confirm() -> void:
 			else:
 				character.vaulted_cards.append(card)
 	
+	existing_cards = []
 	var new_scene = load("res://Scenes/CharacterDisplay/character_sheet.tscn").instantiate()
 	character.reparent(new_scene)
 	get_tree().root.add_child(new_scene)
