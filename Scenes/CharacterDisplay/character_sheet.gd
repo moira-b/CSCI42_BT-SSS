@@ -71,9 +71,11 @@ var updated = false
 var shortRestCounter = 0
 var character: Character
 var card_scene: PackedScene = load("res://Scenes/Cards/card_vault.tscn")
+var save_manager
 
 func enter() -> void:
 	character = $Character
+	save_manager = get_tree().root.get_node("CharacterSheet").get_node("SaveManager")
 	rest_window.get_character(character)
 	dice_roll_window.visible = false
 	fh_roll_window.visible = false
@@ -92,8 +94,8 @@ func enter() -> void:
 	evasion_value.set_text(str(character.evasion))
 	proficiency_value.set_text(str(character.proficiency))
 	
-	#TODO: set the savemanager character, then save
-	# so that it will save when the character is created itself
+	save_manager.set_character(character)
+	save_manager.save_character_data()
 
 
 func _process(_delta: float) -> void:

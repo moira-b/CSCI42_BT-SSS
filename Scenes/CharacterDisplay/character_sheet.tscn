@@ -4,10 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://r02yxwfx48hx" path="res://Scenes/SheetManagement/SaveManager.tscn" id="2_56qfy"]
 [ext_resource type="StyleBox" uid="uid://dic645d200g74" path="res://Resources/GUIStyles/character_sheet_stylebox.tres" id="2_c8oo5"]
 [ext_resource type="Script" uid="uid://dfs5rt0xu3vuj" path="res://Scripts/CharacterDisplay/rest.gd" id="4_8iwex"]
-[ext_resource type="StyleBox" uid="uid://iibbyxddwuc5" path="res://Resources/GUIStyles/green_button.tres" id="4_8skux"]
+[ext_resource type="StyleBox" path="res://Resources/GUIStyles/green_button.tres" id="4_8skux"]
 [ext_resource type="Script" uid="uid://dnjp24h6b6fc2" path="res://Scripts/CharacterDisplay/markable_stat.gd" id="4_qgeia"]
 [ext_resource type="PackedScene" uid="uid://dltyc5tel16kj" path="res://Scenes/CharacterDisplay/dice_roll_window.tscn" id="5_glymg"]
-[ext_resource type="Script" uid="uid://wblpjoc7sjgv" path="res://Scripts/CharacterDisplay/save_notification.gd" id="5_n5rmr"]
+[ext_resource type="Script" path="res://Scripts/CharacterDisplay/save_notification.gd" id="5_n5rmr"]
 [ext_resource type="PackedScene" uid="uid://b6t3g5gxhwopj" path="res://Scenes/CharacterDisplay/fh_roll_window.tscn" id="6_8iwex"]
 [ext_resource type="Script" uid="uid://b3ypom2uq1exh" path="res://Scripts/CharacterDisplay/advancements.gd" id="7_56qfy"]
 
