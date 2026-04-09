@@ -90,21 +90,18 @@ func _update_fields() -> void:
 		exp_3.text = "New Experience"
 		exp_3.show()
 		
-		for b in character.button_enabler:
-			b = false
+		character.button_enabler = [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]
 	elif character.level == 5:
 		exp_4.text = "New Experience"
 		exp_4.show()
 		multiclass.disabled = false
 		
-		for b in character.button_enabler:
-			b = false
+		character.button_enabler = [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]
 	elif character.level == 8:
 		exp_5.text = "New Experience"
 		exp_5.show()
 		
-		for b in character.button_enabler:
-			b = false
+		character.button_enabler = [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]
 
 func _on_confirm_pressed() -> void:
 	if active_container == container_array[0]: _handle_object_container_confirm()
