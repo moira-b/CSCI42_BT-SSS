@@ -62,9 +62,9 @@ extends Control
 @onready var delete_button: Button = $Header/PanelContainer/MarginContainer/RightPanel/Delete
 @onready var main_menu_button: Button = $Header/PanelContainer/MarginContainer/RightPanel/MainMenu
 
-@onready var del_window = $Heder/PanelContainer/MarginContainer/RightPanel/DeletionWindow
-@onready var del_confirm_button = del_window.get_node("Buttons/ConfirmButton")
-@onready var del_cancel_button = del_window.get_node("Buttons/CancelButton")
+@onready var del_window = $Header/PanelContainer/MarginContainer/RightPanel/DeletionWindow
+@onready var del_confirm_button = $Header/PanelContainer/MarginContainer/RightPanel/DeletionWindow/Buttons/ConfirmButton
+@onready var del_cancel_button = $Header/PanelContainer/MarginContainer/RightPanel/DeletionWindow/Buttons/CancelButton
 
 var advance_buttons: Array[Button] = []
 var selected_advance: Array[Button] = []

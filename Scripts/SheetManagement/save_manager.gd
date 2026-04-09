@@ -85,9 +85,10 @@ func delete_character_data():
 		print("Error. The node does not have a method for data serialization.")
 		return
 		
-	var save_file = FileAccess.open(FILE_PATH, FileAccess.READ_WRITE)
+	var save_file = FileAccess.open(FILE_PATH, FileAccess.READ)
 	var current_contents = save_file.get_as_text()
 	var json = JSON.new()
+	save_file.close()
 	
 	# Check that the file contents can be parsed by JSON
 	var parse_result = json.parse(current_contents)
@@ -98,5 +99,9 @@ func delete_character_data():
 	var json_data = json.data
 	if (character.primary_key in json.data):
 		json_data.erase(character.primary_key)
-		print("DEBUG: Removed " + character.character_name + " from save file.")
+		print(json.data)
+		print("DEBUG: Removed character '" + character.character_name + "' from save file.")
+	
+	save_file = FileAccess.open(FILE_PATH, FileAccess.WRITE)
 	save_file.store_line(JSON.stringify(json_data, "\t"))
+	save_file.close()
