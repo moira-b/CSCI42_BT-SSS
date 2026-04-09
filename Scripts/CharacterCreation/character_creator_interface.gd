@@ -89,6 +89,7 @@ func _handle_back_button_visibility():
 		back_button.disabled = true
 		back_button.visible = false
 
+
 func _on_confirm_button_pressed() -> void:
 	option_tab_index += 1
 	_set_active_option_tab(option_tab_index)

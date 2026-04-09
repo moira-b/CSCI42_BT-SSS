@@ -40,8 +40,6 @@ func _load_json_files() -> void:
 
 func fill_domain_card_list() -> void:
 	for domain in character.character_class.domains:
-		# It's gonna be O(n^2) but idk if there's a better way to do it
-		# erm achsually this is only O(n) since character class will alwways be 2 or less so its O(2n) or O(n)
 		var cards_in_domain = association_as_dict.get(domain.name)
 		for card in cards_in_domain:
 			var card_check = cards_as_dict.get(card)
@@ -52,9 +50,12 @@ func fill_domain_card_list() -> void:
 
 func clear_screen() -> void:
 	domain_card_list.clear()
-	domain_card_display.visible=false
+	domain_card_display.visible = false
 	current_selected_index = -1
 	select_button.disabled = true
+
+func clear_selected_cards() -> void:
+	select_card_list.clear()
 
 func _on_option_selected(index: int) -> void:
 	domain_card_display.visible = true	
@@ -62,18 +63,17 @@ func _on_option_selected(index: int) -> void:
 	current_selected_index = index
 	if(select_card_list.item_count < 2):
 		select_button.disabled = false
-		
+
 func _on_selected_option_selected(index: int) -> void:
 	domain_card_display.visible = true	
 	domain_card_display.change_card(select_card_list.get_item_text(index))
-	
+
 func _on_card_select() -> void:
-	select_card_list.add_item(domain_card_display.card_name)
+	select_card_list.add_item(domain_card_list.get_item_text(current_selected_index))
 	domain_card_list.remove_item(current_selected_index)
 	current_selected_index = -1
 	select_button.disabled = true
-	
-	
+
 func _on_card_remove(index) -> void:
 	var card = select_card_list.get_item_text(index)
 	select_card_list.remove_item(index)
@@ -81,4 +81,3 @@ func _on_card_remove(index) -> void:
 	fill_domain_card_list()
 	domain_card_display.visible = true	
 	domain_card_display.change_card(card)
-	
