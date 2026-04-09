@@ -134,8 +134,8 @@ func _handle_object_container_confirm() -> void:
 			character.button_enabler[index] = true
 		character.max_domain_cards += 1
 		if is_multiclassing:
-			multiclass_container.initialize()
 			multiclass_container.get_character(character)
+			multiclass_container.initialize()
 			_set_active_container(1)
 		else:
 			_set_active_container(2)
