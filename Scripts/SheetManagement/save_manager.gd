@@ -7,7 +7,6 @@ func set_character(character: Character):
 	self.character = character
 
 func save_character_data():
-	
 	# Verify that a character has already been assigned
 	if (character==null):
 		print("Error. Attempting to save character, but save manager does not have a reference to the character.")

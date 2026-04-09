@@ -21,7 +21,6 @@ func enter():
 	confirm_window.visible = false
 	connect_signals()
 
-
 func connect_signals():
 	create_new_character_button.pressed.connect(_on_createcharacter_button_pressed)
 	test_button.pressed.connect(_on_test_button_pressed)
