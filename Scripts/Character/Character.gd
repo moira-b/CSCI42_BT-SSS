@@ -166,6 +166,7 @@ func serialize_data():
 		"used_armor_slots": used_armor_slots,
 		"experiences": experiences,
 		"damage_thresholds": damage_thresholds,
+		"experience_levels": experience_levels,
 	}
 	return save_dict
 
@@ -185,6 +186,7 @@ func load_data(char_dict: Variant):
 	damage_thresholds.assign(char_dict["damage_thresholds"])
 	evasion = char_dict["evasion"]
 	experiences.assign(char_dict["experiences"])
+	experience_levels.assign(char_dict["experience_levels"])
 	finesse = char_dict["finesse"]
 	instinct = char_dict["instinct"]
 	items.assign(char_dict["items"])
