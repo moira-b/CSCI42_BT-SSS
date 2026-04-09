@@ -73,7 +73,7 @@ func test_iterate_through_stress():
 		i += 1
 	assert_eq(character.current_stress, max_stress)
 	
-func test_armor():
+func test_max_armor():
 	character.set_maximum_armor_slots()
 	var max_armor = character.max_armor_slots
 	assert_eq(max_armor, 12, "Max armor must be 12")
@@ -83,6 +83,24 @@ func test_armor():
 	invalid_armor = character.set_used_armor_slots(max_armor+1)
 	assert_false(invalid_armor)
 	# test valid stress values
+	var valid_armor = character.set_used_armor_slots(0)
+	var i: int = 0
+	while(valid_armor):
+		valid_armor = character.set_used_armor_slots(i)
+		i += 1
+	assert_eq(character.used_armor_slots, max_armor)
+
+func test_invalid_armor():
+	character.set_maximum_armor_slots()
+	var max_armor = character.max_armor_slots
+	var invalid_armor= character.set_used_armor_slots(-1)
+	assert_false(invalid_armor)
+	invalid_armor = character.set_used_armor_slots(max_armor+1)
+	assert_false(invalid_armor)
+
+func test_iterate_through_armor():
+	character.set_maximum_armor_slots()
+	var max_armor = character.max_armor_slots
 	var valid_armor = character.set_used_armor_slots(0)
 	var i: int = 0
 	while(valid_armor):
