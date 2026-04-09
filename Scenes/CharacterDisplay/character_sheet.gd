@@ -421,12 +421,13 @@ func _on_cards_button_pressed() -> void:
 	new_scene.enter()
 	self.queue_free()
 
-
 func save_character() -> void:
 	var save_manager = $SaveManager
 	save_manager.set_character(character)
 	await save_manager.call("save_character_data")
 	
+	var save_notif = $Header/PanelContainer/MarginContainer/RightPanel/SaveNotification
+	save_notif.showFor()
 	
 func _on_delete_button_pressed() -> void:
 	# CONFIRM IF PLAYER IS SURE
