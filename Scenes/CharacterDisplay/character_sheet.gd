@@ -399,9 +399,9 @@ func connect_signals() -> void:
 	fh_roll_window.close_requested.connect(_on_fh_roll_window_close_requested)
 	
 	levelup_button.pressed.connect(_on_levelup_button_pressed)
-	save_button.pressed.connect(_on_save_button_pressed)
+	save_button.pressed.connect(save_character)
 	delete_button.pressed.connect(_on_delete_button_pressed)
-	main_menu_button.pressed.connect(go_to_main_menu)
+	main_menu_button.pressed.connect(_on_main_menu_button_pressed)
 	advance_window.advancements_confirmed.connect(update_markable_fields)
 	advance_window.advancements_confirmed.connect(update_edit_fields)
 
@@ -420,7 +420,7 @@ func _on_cards_button_pressed() -> void:
 	self.queue_free()
 
 
-func _on_save_button_pressed() -> void:
+func save_character() -> void:
 	var save_manager = $SaveManager
 	save_manager.set_character(character)
 	await save_manager.call("save_character_data")
@@ -446,9 +446,12 @@ func _on_confirm_deletion():
 	del_confirm_button.pressed.disconnect(_on_confirm_deletion)
 	del_window.hide()
 	
-	go_to_main_menu()
+	var main_menu = load("res://Scenes/SheetManagement/main_menu.tscn").instantiate()
+	get_tree().root.add_child(main_menu)
+	self.queue_free()
 	
-func go_to_main_menu() -> void:
+func _on_main_menu_button_pressed() -> void:
+	save_character()
 	var main_menu = load("res://Scenes/SheetManagement/main_menu.tscn").instantiate()
 	get_tree().root.add_child(main_menu)
 	self.queue_free()
