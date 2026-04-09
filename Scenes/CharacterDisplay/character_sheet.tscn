@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://wblpjoc7sjgv" path="res://Scripts/CharacterDisplay/save_notification.gd" id="5_n5rmr"]
 [ext_resource type="PackedScene" uid="uid://b6t3g5gxhwopj" path="res://Scenes/CharacterDisplay/fh_roll_window.tscn" id="6_8iwex"]
 [ext_resource type="Script" uid="uid://b3ypom2uq1exh" path="res://Scripts/CharacterDisplay/advancements.gd" id="7_56qfy"]
+[ext_resource type="PackedScene" uid="uid://1un73y3t3x7b" path="res://Scenes/Cards/domain_card_sel_container.tscn" id="8_8skux"]
 
 [sub_resource type="GDScript" id="GDScript_dg7yu"]
 script/source = "extends LineEdit
@@ -925,7 +926,7 @@ layout_mode = 2
 oversampling_override = 1.0
 title = "Advancements"
 initial_position = 2
-size = Vector2i(800, 550)
+size = Vector2i(1030, 560)
 visible = false
 script = ExtResource("7_56qfy")
 
@@ -1052,10 +1053,15 @@ layout_mode = 2
 visible = false
 layout_mode = 2
 
-[node name="Cards" type="Button" parent="AdvanceWindow/ObjectContainer" unique_id=1016202308]
+[node name="DomainCardPanel" type="PanelContainer" parent="AdvanceWindow/ObjectContainer" unique_id=1115123307]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Cards"
+size_flags_vertical = 3
+
+[node name="ExtraDomainCard" type="CheckButton" parent="AdvanceWindow/ObjectContainer/DomainCardPanel" unique_id=253160910]
+layout_mode = 2
+text = "Extra Domain Card
+"
 
 [node name="Classes" type="Button" parent="AdvanceWindow/ObjectContainer" unique_id=2056735212]
 layout_mode = 2
@@ -1076,6 +1082,20 @@ offset_bottom = -19.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Confirm"
+
+[node name="DomainCardSelContainer" parent="AdvanceWindow" unique_id=710034451 instance=ExtResource("8_8skux")]
+visible = false
+offset_left = -515.0
+offset_top = -280.0
+offset_right = 509.0
+offset_bottom = 261.0
+
+[node name="DomainCardWindow" type="Window" parent="." unique_id=204325370]
+oversampling_override = 1.0
+title = "Domain Card Selector"
+initial_position = 1
+size = Vector2i(1030, 550)
+visible = false
 
 [connection signal="text_changed" from="Header/HeaderInfo/NamePronouns/NamePanelContainer/NameC/NameEdit" to="." method="_on_name_edit_text_changed"]
 [connection signal="text_submitted" from="Header/HeaderInfo/NamePronouns/NamePanelContainer/NameC/NameEdit" to="." method="_on_name_edit_text_submitted"]

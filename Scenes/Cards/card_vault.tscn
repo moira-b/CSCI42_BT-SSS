@@ -37,8 +37,6 @@ offset_left = -120.0
 offset_top = -176.0
 offset_right = 130.0
 offset_bottom = 176.0
-grow_horizontal = 1
-grow_vertical = 1
 
 [node name="ActiveCards" type="HBoxContainer" parent="." unique_id=520518874]
 layout_mode = 0

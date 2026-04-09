@@ -32,12 +32,16 @@ const max_hope: int = 6
 @export var experiences: Array[String] = ["", "", "", "", ""]
 @export var damage_thresholds: Array[int]
 @export var experience_levels: Array[int] = [2, 2, 2, 2, 2]
+@export var max_domain_cards: int
 
 var ancestry: Ancestry
 var community: Community
 var character_class: CharacterClass
 var subclass: CharacterSubclass
 var primary_key: String
+
+@onready var active_cards: Array[String] = []
+@onready var vaulted_cards: Array[String] = []
 
 @onready var active_domain_cards = $ActiveDomainCards
 @onready var vaulted_domain_cards = $VaultedDomainCards
