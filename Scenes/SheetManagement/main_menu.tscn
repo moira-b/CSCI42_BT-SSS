@@ -95,7 +95,6 @@ theme_override_constants/v_separation = 20
 columns = 4
 
 [node name="OptionsPopupMenu" type="PanelContainer" parent="." unique_id=391540452]
-visible = false
 layout_mode = 0
 offset_right = 175.0
 offset_bottom = 70.0
@@ -110,11 +109,6 @@ theme_override_constants/separation = 4
 layout_mode = 2
 theme_override_styles/normal = ExtResource("4_dumt2")
 text = "Open Character Sheet"
-
-[node name="LabelButton" type="Button" parent="OptionsPopupMenu/ButtonsContainer" unique_id=321948658]
-layout_mode = 2
-theme_override_styles/normal = ExtResource("4_dumt2")
-text = "Apply Label to Character"
 
 [node name="DeleteButton" type="Button" parent="OptionsPopupMenu/ButtonsContainer" unique_id=1342807733]
 layout_mode = 2
