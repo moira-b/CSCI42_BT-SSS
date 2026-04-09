@@ -957,10 +957,48 @@ layout_mode = 2
 text = "Extra Domain Card
 "
 
-[node name="Classes" type="Button" parent="AdvanceWindow/ObjectContainer" unique_id=2056735212]
+[node name="MulticlassPanel" type="PanelContainer" parent="AdvanceWindow/ObjectContainer" unique_id=71834697]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Classes"
+size_flags_vertical = 3
+
+[node name="Multiclassing" type="CheckButton" parent="AdvanceWindow/ObjectContainer/MulticlassPanel" unique_id=1713924928]
+layout_mode = 2
+disabled = true
+text = "Multiclassing"
+
+[node name="MulticlassChoiceContainer" type="HBoxContainer" parent="AdvanceWindow" unique_id=974524269]
+custom_minimum_size = Vector2(860, 355)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -427.0
+offset_top = -237.0
+offset_right = 435.0
+offset_bottom = 118.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MulticlassChoiceList" type="ItemList" parent="AdvanceWindow/MulticlassChoiceContainer" unique_id=789023377]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+auto_height = true
+
+[node name="MulticlassDomainList" type="ItemList" parent="AdvanceWindow/MulticlassChoiceContainer" unique_id=1717788272]
+custom_minimum_size = Vector2(250, 100)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+
+[node name="DomainCardSelContainer" parent="AdvanceWindow" unique_id=710034451 instance=ExtResource("8_8skux")]
+visible = false
+offset_left = -515.0
+offset_top = -280.0
+offset_right = 509.0
+offset_bottom = 261.0
 
 [node name="ConfirmButton" type="Button" parent="AdvanceWindow" unique_id=481842158]
 custom_minimum_size = Vector2(150, 50)
@@ -976,20 +1014,6 @@ offset_bottom = -19.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Confirm"
-
-[node name="DomainCardSelContainer" parent="AdvanceWindow" unique_id=710034451 instance=ExtResource("8_8skux")]
-visible = false
-offset_left = -515.0
-offset_top = -280.0
-offset_right = 509.0
-offset_bottom = 261.0
-
-[node name="DomainCardWindow" type="Window" parent="." unique_id=204325370]
-oversampling_override = 1.0
-title = "Domain Card Selector"
-initial_position = 1
-size = Vector2i(1030, 550)
-visible = false
 
 [connection signal="text_changed" from="Header/HeaderInfo/NamePronouns/NamePanelContainer/NameC/NameEdit" to="." method="_on_name_edit_text_changed"]
 [connection signal="text_submitted" from="Header/HeaderInfo/NamePronouns/NamePanelContainer/NameC/NameEdit" to="." method="_on_name_edit_text_submitted"]
