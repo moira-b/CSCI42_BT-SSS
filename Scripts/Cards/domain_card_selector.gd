@@ -78,11 +78,21 @@ func clear_screen() -> void:
 	domain_card_display.visible = false
 	current_selected_index = -1
 	select_button.disabled = true
+	
 
 
 func clear_selected_cards() -> void:
-	select_card_list.clear()
-
+	var to_clear = false
+	var passable_cards = []
+	for domain in character.character_class.domains:
+		passable_cards.append_array(association_as_dict.get(domain.name))
+	for card in get_item_list_items(select_card_list):
+		if not card in passable_cards:
+			to_clear = true
+			break
+			
+	if(to_clear):
+		select_card_list.clear()
 
 func _fill_select_card_list() -> void:
 	for active_card in character.active_cards:
