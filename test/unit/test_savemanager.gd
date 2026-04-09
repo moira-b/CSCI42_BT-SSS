@@ -53,3 +53,11 @@ func test_save_character():
 			if json_data[key]["character_name"] == "Quian":
 				new_character_made = true
 	assert_true(new_character_made)
+	
+func test_load_data():
+	var char_dict = save_manager._get_character_dictionary("1")
+	save_manager.character.load_data(char_dict)
+	var correct_name = str(save_manager.character.character_name) == char_dict["character_name"]
+	var correct_agility = int(save_manager.character.agility) == char_dict["agility"]
+	assert_true(correct_name)
+	assert_true(correct_agility)
