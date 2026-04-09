@@ -17,6 +17,8 @@ extends Window
 @onready var exp_5: CheckButton = $ObjectContainer/Experiences/VBoxContainer/Exp5
 @onready var domain_card: CheckButton = $ObjectContainer/DomainCardPanel/ExtraDomainCard
 @onready var classes: Button = $ObjectContainer/Classes
+@onready var domain_card_selector = $DomainCardSelContainer
+@onready var object_container = $ObjectContainer
 @onready var confirm_button: Button = $ConfirmButton
 
 @onready var allButtons: Array[CheckButton] = [agility, strength, finesse, instinct, presence,
@@ -90,7 +92,6 @@ func _update_fields() -> void:
 		for b in allButtons:
 			b.disabled = false
 
-	
 func _on_confirm_pressed() -> void:
 	if !selected.size() >= 2 && !proficiency in selected:
 		print("No advancements selected")
@@ -114,19 +115,20 @@ func _on_confirm_pressed() -> void:
 		for s in selected:
 			s.set_pressed_no_signal(false)
 			s.disabled = true
-		selected.clear()
-		update_sheet_fields()
-		self.hide()
+		_set_domain_card_selector_visibility(true)
 		character.max_domain_cards += 1
-		_load_domain_card_selector()
-
+		domain_card_selector.level_up_selector_setup()
 
 func update_sheet_fields():
 	advancements_confirmed.emit()
 
+func _set_domain_card_selector_visibility(i:bool):
+	object_container.visible = !i
+	confirm_button.visible = !i
+	domain_card_selector.visible = i
 
-func _load_domain_card_selector():
-	var new_scene = card_selector_scene.instantiate()
-	character.reparent(new_scene)
-	get_tree().root.add_child(new_scene)
-	self.get_parent().queue_free()
+func confirm_all_advancements():
+	selected.clear()
+	_set_domain_card_selector_visibility(false)
+	update_sheet_fields()
+	self.hide()

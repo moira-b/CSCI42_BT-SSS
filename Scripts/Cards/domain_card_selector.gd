@@ -42,8 +42,6 @@ func _ready() -> void:
 	
 	if get_parent().get_parent(): #Only really shows up in character creation
 		character = get_tree().current_scene.get_node("Character")
-	else:
-		level_up_selector_setup()
 	
 	
 func get_item_list_items(items: ItemList) -> Array[String]:
@@ -54,7 +52,7 @@ func get_item_list_items(items: ItemList) -> Array[String]:
 	
 	
 func level_up_selector_setup() -> void:
-	character = self.get_node("Character")
+	character = self.get_parent().get_parent().get_node("Character")
 	confirm_button.visible=true
 	confirm_button.disabled=true
 	clear_screen()
@@ -83,8 +81,8 @@ func clear_screen() -> void:
 func clear_selected_cards() -> void:
 	select_card_list.clear()
 
-
 func _fill_select_card_list() -> void:
+	select_card_list.clear()
 	for active_card in character.active_cards:
 		select_card_list.add_item(active_card)
 		existing_cards.append(active_card)
@@ -139,8 +137,4 @@ func _on_confirm() -> void:
 				character.vaulted_cards.append(card)
 	
 	existing_cards = []
-	var new_scene = load("res://Scenes/CharacterDisplay/character_sheet.tscn").instantiate()
-	character.reparent(new_scene)
-	get_tree().root.add_child(new_scene)
-	new_scene.enter()
-	self.queue_free()
+	self.get_parent().confirm_all_advancements()
