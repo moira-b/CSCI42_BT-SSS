@@ -80,7 +80,7 @@ func test_armor():
 		i += 1
 	assert_eq(character.used_armor_slots, max_armor)
 
-func test_health():
+func test_set_initial_max_health():
 	character.set_maximum_health()
 	var max_health = character.max_hp
 	assert_eq(max_health, 12, "Max health should be 12")
@@ -97,4 +97,29 @@ func test_health():
 		i += 1
 	assert_eq(character.current_hp, max_health)
 	
+func test_set_invalid_hp_high():
+	character.set_maximum_health()
+	var max_health = character.max_hp
+	assert_eq(max_health, 12, "Max health should be 12")
+	# test invalid health values
+	var invalid_health = character.set_current_health(13)
+	assert_false(invalid_health)
+
+func test_set_invalid_hp_low():
+	character.set_maximum_health()
+	var max_health = character.max_hp
+	assert_eq(max_health, 12, "Max health should be 12")
+	# test invalid health values
+	var invalid_health = character.set_current_health(-1)
+	assert_false(invalid_health)
+	
+func test_iterate_through_hp():
+	character.set_maximum_health()
+	var max_health = character.max_hp
+	var valid_health = character.set_current_health(0)
+	var i: int = 0
+	while(valid_health):
+		valid_health = character.set_current_health(i)
+		i += 1
+	assert_eq(character.current_hp, max_health)
 	
