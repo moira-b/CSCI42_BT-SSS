@@ -34,6 +34,7 @@ func _ready() -> void:
 	for button in allButtons:
 		button.toggled.connect(_on_checkButton_toggled.bind(button))
 	confirm_button.pressed.connect(_on_confirm_pressed)
+	self.add_theme_icon_override("close", Texture2D.new())
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
