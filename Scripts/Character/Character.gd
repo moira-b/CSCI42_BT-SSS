@@ -31,6 +31,7 @@ const max_hope: int = 6
 @export var used_armor_slots: int
 @export var experiences: Array[String] = ["", "", "", "", ""]
 @export var damage_thresholds: Array[int]
+@export var experience_levels: Array[int] = [2, 2, 2, 2, 2]
 
 var ancestry: Ancestry
 var community: Community
@@ -78,7 +79,6 @@ func set_current_stress(value: int) -> bool:
 		return true
 	elif(value < 0):
 		print("Cannot set current stress to be less than 0.")
-		load_data(1)
 	else:
 		print("Cannot set current stress to be greater than max stress.")
 		
@@ -143,6 +143,10 @@ func serialize_data():
 		"pronouns": pronouns,
 		"bio": bio,
 		"level": level,
+		"class": character_class.resource_path,
+		"subclass": subclass.resource_path,
+		"ancestry": ancestry.resource_path,
+		"community": community.resource_path,
 		"evasion": evasion,
 		"agility": agility,
 		"strength": strength,
@@ -162,24 +166,41 @@ func serialize_data():
 		"used_armor_slots": used_armor_slots,
 		"experiences": experiences,
 		"damage_thresholds": damage_thresholds,
+		"experience_levels": experience_levels,
 	}
 	return save_dict
 
 func assign_primary_key(pk: int):
 	self.primary_key = str(pk)
 
-func load_data(pk: int):
-	var save_file = FileAccess.open(FILE_PATH, FileAccess.READ_WRITE)
-	var current_contents = save_file.get_as_text()
-	var json = JSON.new()
+func load_data(char_dict: Variant):
+	agility = char_dict["agility"]
+	ancestry = load(char_dict["ancestry"])
+	bio = char_dict["bio"]
+	character_name = char_dict["character_name"]
+	character_class = load(char_dict["class"])
+	community = load(char_dict["community"])
+	current_hope = char_dict["current_hope"]
+	current_hp = char_dict["current_hp"]
+	current_stress = char_dict["current_stress"]
+	damage_thresholds.assign(char_dict["damage_thresholds"])
+	evasion = char_dict["evasion"]
+	experiences.assign(char_dict["experiences"])
+	experience_levels.assign(char_dict["experience_levels"])
+	finesse = char_dict["finesse"]
+	instinct = char_dict["instinct"]
+	items.assign(char_dict["items"])
+	knowledge = char_dict["knowledge"]
+	level = char_dict["level"]
+	max_armor_slots = char_dict["max_armor_slots"]
+	max_hp = char_dict["max_hp"]
+	max_stress = char_dict["max_stress"]
+	presence = char_dict["presence"]
+	primary_key = char_dict["primary_key"]
+	proficiency = char_dict["proficiency"]
+	proficiency_modifier = char_dict["proficiency_modifier"]
+	pronouns = char_dict["pronouns"]
+	strength = char_dict["strength"]
+	subclass = load(char_dict["subclass"])
+	used_armor_slots = char_dict["used_armor_slots"]
 	
-	# Check that the file contents can be parsed by JSON
-	var parse_result = json.parse(current_contents)
-	if !(parse_result==OK):
-		print("JSON Parse Error: " + json.get_error_message() + " at line " + str(json.get_error_line()))
-		return
-		
-	# Check that the file contents can be made into a dictionary
-	var json_data = json.data
-	var char_dict = json_data["1"]
-	print(char_dict["character_name"])

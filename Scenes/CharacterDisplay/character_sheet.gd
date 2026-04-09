@@ -32,6 +32,7 @@ extends Control
 @onready var fh_roll_window: Window = $ActionButtons/DiceButtons/FHRollWindow
 @onready var evasion_value: Label = $EvasionProficency/Evasion/Value
 @onready var proficiency_value: Label = $EvasionProficency/Proficiency/Value
+@onready var advance_window: Window = $AdvanceWindow
 
 @onready var dice_button: Button = $ActionButtons/DiceButtons/Dice
 @onready var fearhope_button: Button = $ActionButtons/DiceButtons/FHDice
@@ -66,8 +67,6 @@ extends Control
 @onready var del_confirm_button = $Header/PanelContainer/MarginContainer/RightPanel/DeletionWindow/Buttons/ConfirmButton
 @onready var del_cancel_button = $Header/PanelContainer/MarginContainer/RightPanel/DeletionWindow/Buttons/CancelButton
 
-var advance_buttons: Array[Button] = []
-var selected_advance: Array[Button] = []
 var updated = false
 var shortRestCounter = 0
 var character: Character
@@ -79,14 +78,7 @@ func enter() -> void:
 	dice_roll_window.visible = false
 	fh_roll_window.visible = false
 	levelup_confirmation_panel.visible = false
-	advance_buttons = [agility_advance, strength_advance, finesse_advance,
-	instinct_advance, presence_advance, knowledge_advance, health_advance, stress_advance,
-	experience1_advance, experience2_advance, evasion_advance, proficiency_advance]
 	update_edit_fields()
-	
-	#character.set_maximum_health()
-	#character.set_maximum_stress()
-	#character.set_maximum_armor_slots()
 	
 	connect_signals()
 	
@@ -100,6 +92,9 @@ func enter() -> void:
 	evasion_value.set_text(str(character.evasion))
 	proficiency_value.set_text(str(character.proficiency))
 	
+	#TODO: set the savemanager character, then save
+	# so that it will save when the character is created itself
+
 
 func _process(_delta: float) -> void:
 	if(updated==false and character.character_name!=""):
@@ -247,11 +242,8 @@ func _on_stat_increment_pressed(stat_name: String) -> void:
 	elif(stat_name=="Hope"):
 		if character.set_current_hope(character.current_hope+1):
 			hope_field.set_current_value(str(character.current_hope))
-	# OLD CODE, can delete
-	#elif(stat_name=="Level"):
-		#if character.set_level(character.level+1):
-			#level_field.set_current_value(str(character.level))
-	
+
+
 func _on_stat_decrement_pressed(stat_name: String) -> void:
 	if(stat_name=="Health"):
 		if character.set_current_health(character.current_hp-1):
@@ -377,6 +369,8 @@ func _on_levelup_confirm_pressed() -> void:
 	levelup_confirmation_button.pressed.disconnect(_on_levelup_confirm_pressed)
 	levelup_cancel_button.pressed.disconnect(_on_levelup_cancel_pressed)
 	levelup_confirmation_panel.visible = false
+	advance_window.get_character(character)
+	advance_window.visible = true
 
 func _on_levelup_cancel_pressed() -> void:
 	levelup_confirmation_panel.visible = false
@@ -405,354 +399,17 @@ func connect_signals() -> void:
 	fh_roll_window.close_requested.connect(_on_fh_roll_window_close_requested)
 	
 	levelup_button.pressed.connect(_on_levelup_button_pressed)
-	
 	save_button.pressed.connect(_on_save_button_pressed)
 	delete_button.pressed.connect(_on_delete_button_pressed)
 	main_menu_button.pressed.connect(_on_main_menu_button_pressed)
+	advance_window.advancements_confirmed.connect(update_markable_fields)
+	advance_window.advancements_confirmed.connect(update_edit_fields)
 
 func disable_button_selection(b: bool) -> void:
 	short_rest_button.disabled = b
 	long_rest_button.disabled = b
 	dice_button.disabled = b
 	fearhope_button.disabled = b
-
-func _on_agility_advance_button_toggled(toggled_on: bool) -> void:
-	if toggled_on:
-		selected_advance.append(agility_advance)
-		
-		if selected_advance.size() >= 2:
-			var first = selected_advance[0]
-			var second = selected_advance[1]
-			
-			advance_buttons.erase(first)
-			advance_buttons.erase(second)
-			
-			for button in advance_buttons:
-				button.hide()
-			
-			first.disabled = true
-			second.disabled = true
-			
-			increment_advancements(selected_advance)
-	else:
-		selected_advance.erase(agility_advance)
-
-
-func _on_strength_advance_button_toggled(toggled_on: bool) -> void:
-	if toggled_on:
-		selected_advance.append(strength_advance)
-		
-		if selected_advance.size() >= 2:
-			var first = selected_advance[0]
-			var second = selected_advance[1]
-			
-			advance_buttons.erase(first)
-			advance_buttons.erase(second)
-			
-			for button in advance_buttons:
-				button.hide()
-			
-			first.disabled = true
-			second.disabled = true
-			
-			increment_advancements(selected_advance)
-	else:
-		selected_advance.erase(strength_advance)
-
-
-func _on_finesse_advance_button_toggled(toggled_on: bool) -> void:
-	if toggled_on:
-		selected_advance.append(finesse_advance)
-		
-		if selected_advance.size() >= 2:
-			var first = selected_advance[0]
-			var second = selected_advance[1]
-			
-			advance_buttons.erase(first)
-			advance_buttons.erase(second)
-			
-			for button in advance_buttons:
-				button.hide()
-			
-			first.disabled = true
-			second.disabled = true
-			
-			increment_advancements(selected_advance)
-	else:
-		selected_advance.erase(finesse_advance)
-
-
-func _on_instinct_advance_button_toggled(toggled_on: bool) -> void:
-	if toggled_on:
-		selected_advance.append(instinct_advance)
-		
-		if selected_advance.size() >= 2:
-			var first = selected_advance[0]
-			var second = selected_advance[1]
-			
-			advance_buttons.erase(first)
-			advance_buttons.erase(second)
-			
-			for button in advance_buttons:
-				button.hide()
-			
-			first.disabled = true
-			second.disabled = true
-			
-			increment_advancements(selected_advance)
-	else:
-		selected_advance.erase(instinct_advance)
-
-
-func _on_presence_advance_button_toggled(toggled_on: bool) -> void:
-	if toggled_on:
-		selected_advance.append(presence_advance)
-		
-		if selected_advance.size() >= 2:
-			var first = selected_advance[0]
-			var second = selected_advance[1]
-			
-			advance_buttons.erase(first)
-			advance_buttons.erase(second)
-			
-			for button in advance_buttons:
-				button.hide()
-			
-			first.disabled = true
-			second.disabled = true
-			
-			increment_advancements(selected_advance)
-	else:
-		selected_advance.erase(presence_advance)
-
-
-func _on_advance_button_toggled(toggled_on: bool) -> void:
-	if toggled_on:
-		selected_advance.append(knowledge_advance)
-		
-		if selected_advance.size() >= 2:
-			var first = selected_advance[0]
-			var second = selected_advance[1]
-			
-			advance_buttons.erase(first)
-			advance_buttons.erase(second)
-			
-			for button in advance_buttons:
-				button.hide()
-			
-			first.disabled = true
-			second.disabled = true
-			
-			increment_advancements(selected_advance)
-	else:
-		selected_advance.erase(knowledge_advance)
-
-
-func _on_health_advance_button_toggled(toggled_on: bool) -> void:
-	if toggled_on:
-		selected_advance.append(health_advance)
-		
-		if selected_advance.size() >= 2:
-			var first = selected_advance[0]
-			var second = selected_advance[1]
-			
-			advance_buttons.erase(first)
-			advance_buttons.erase(second)
-			
-			for button in advance_buttons:
-				button.hide()
-			
-			first.disabled = true
-			second.disabled = true
-			
-			increment_advancements(selected_advance)
-	else:
-		selected_advance.erase(health_advance)
-
-
-func _on_stress_advance_button_toggled(toggled_on: bool) -> void:
-	if toggled_on:
-		selected_advance.append(stress_advance)
-		
-		if selected_advance.size() >= 2:
-			var first = selected_advance[0]
-			var second = selected_advance[1]
-			
-			advance_buttons.erase(first)
-			advance_buttons.erase(second)
-			
-			for button in advance_buttons:
-				button.hide()
-			
-			first.disabled = true
-			second.disabled = true
-			
-			increment_advancements(selected_advance)
-	else:
-		selected_advance.erase(stress_advance)
-
-
-func _on_experience_1_advance_button_toggled(toggled_on: bool) -> void:
-	if toggled_on:
-		selected_advance.append(experience1_advance)
-		
-		if selected_advance.size() >= 2:
-			var first = selected_advance[0]
-			var second = selected_advance[1]
-			
-			advance_buttons.erase(first)
-			advance_buttons.erase(second)
-			
-			for button in advance_buttons:
-				button.hide()
-			
-			first.disabled = true
-			second.disabled = true
-			
-			increment_advancements(selected_advance)
-	else:
-		selected_advance.erase(experience1_advance)
-
-
-func _on_experience_2_advance_button_toggled(toggled_on: bool) -> void:
-	if toggled_on:
-		selected_advance.append(experience2_advance)
-		
-		if selected_advance.size() >= 2:
-			var first = selected_advance[0]
-			var second = selected_advance[1]
-			
-			advance_buttons.erase(first)
-			advance_buttons.erase(second)
-			
-			for button in advance_buttons:
-				button.hide()
-			
-			first.disabled = true
-			second.disabled = true
-			
-			increment_advancements(selected_advance)
-	else:
-		selected_advance.erase(experience2_advance)
-
-
-func _on_experience_3_advance_button_toggled(toggled_on: bool) -> void:
-	if toggled_on:
-		selected_advance.append(experience3_advance)
-		
-		if selected_advance.size() >= 2:
-			var first = selected_advance[0]
-			var second = selected_advance[1]
-			
-			advance_buttons.erase(first)
-			advance_buttons.erase(second)
-			
-			for button in advance_buttons:
-				button.hide()
-			
-			first.disabled = true
-			second.disabled = true
-			
-			increment_advancements(selected_advance)
-	else:
-		selected_advance.erase(experience3_advance)
-
-
-func _on_experience_4_advance_button_toggled(toggled_on: bool) -> void:
-	if toggled_on:
-		selected_advance.append(experience4_advance)
-		
-		if selected_advance.size() >= 2:
-			var first = selected_advance[0]
-			var second = selected_advance[1]
-			
-			advance_buttons.erase(first)
-			advance_buttons.erase(second)
-			
-			for button in advance_buttons:
-				button.hide()
-			
-			first.disabled = true
-			second.disabled = true
-			
-			increment_advancements(selected_advance)
-	else:
-		selected_advance.erase(experience4_advance)
-
-
-func _on_experience_5_advance_button_toggled(toggled_on: bool) -> void:
-	if toggled_on:
-		selected_advance.append(experience5_advance)
-		
-		if selected_advance.size() >= 2:
-			var first = selected_advance[0]
-			var second = selected_advance[1]
-			
-			advance_buttons.erase(first)
-			advance_buttons.erase(second)
-			
-			for button in advance_buttons:
-				button.hide()
-			
-			first.disabled = true
-			second.disabled = true
-			
-			increment_advancements(selected_advance)
-	else:
-		selected_advance.erase(experience5_advance)
-
-
-func _on_evasion_advance_button_toggled(toggled_on: bool) -> void:
-	if toggled_on:
-		selected_advance.append(evasion_advance)
-		
-		if selected_advance.size() >= 2:
-			var first = selected_advance[0]
-			var second = selected_advance[1]
-			
-			advance_buttons.erase(first)
-			advance_buttons.erase(second)
-			
-			for button in advance_buttons:
-				button.hide()
-			
-			first.disabled = true
-			second.disabled = true
-			
-			increment_advancements(selected_advance)
-	else:
-		selected_advance.erase(evasion_advance)
-
-
-func _on_proficiency_advance_button_toggled(toggled_on: bool) -> void:
-	if toggled_on:
-		selected_advance.append(proficiency_advance)
-		
-		if selected_advance.size() >= 2:
-			var first = selected_advance[0]
-			var second = selected_advance[1]
-			
-			advance_buttons.erase(first)
-			advance_buttons.erase(second)
-			
-			for button in advance_buttons:
-				button.hide()
-			
-			first.disabled = true
-			second.disabled = true
-			
-			increment_advancements(selected_advance)
-	else:
-		selected_advance.erase(proficiency_advance)
-
-
-func toggle_advance_buttons() -> void:
-	advance_buttons += selected_advance
-	selected_advance.clear()
-	for button in advance_buttons:
-		button.show()
-		button.button_pressed = false
-		button.disabled = false
 
 
 func _on_cards_button_pressed() -> void:
@@ -762,32 +419,6 @@ func _on_cards_button_pressed() -> void:
 	new_scene.enter()
 	self.queue_free()
 
-
-func _on_level_up_confirm_button_pressed() -> void:
-	if character.level == 1:
-		advance_buttons.append(experience3_advance)
-		toggle_advance_buttons()
-	if character.level == 4:
-		advance_buttons.append(experience4_advance)
-		toggle_advance_buttons()
-	if character.level == 7:
-		advance_buttons.append(experience5_advance)
-		toggle_advance_buttons()
-
-
-func increment_advancements(stats) -> void:
-	for s in stats:
-		if s == agility_advance: character.agility += 1
-		if s == strength_advance: character.strength += 1
-		if s == finesse_advance: character.finesse += 1
-		if s == instinct_advance: character.instinct += 1
-		if s == presence_advance: character.presence += 1
-		if s == knowledge_advance: character.knowledge += 1
-		if s == health_advance: character.max_hp += 1
-		if s == stress_advance: character.max_stress += 1
-		if s == evasion_advance: character.evasion += 1
-		if s == proficiency_advance: character.proficiency += 1
-	update_edit_fields()
 
 func _on_save_button_pressed() -> void:
 	var save_manager = $SaveManager
