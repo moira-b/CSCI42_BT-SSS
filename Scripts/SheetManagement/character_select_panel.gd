@@ -1,6 +1,6 @@
 extends PanelContainer
 
-signal settings_button_pressed(pk)
+signal settings_button_pressed(pk, button_position)
 
 const FILE_PATH = "user://character_data"
 
@@ -78,4 +78,5 @@ func open_character_sheet():
 	get_tree().root.get_child(0).queue_free()
 
 func _on_settings_button_pressed():
-	settings_button_pressed.emit(char_primary_key)
+	var button_position: Vector2 = settings_button.global_position
+	settings_button_pressed.emit(char_primary_key, button_position)

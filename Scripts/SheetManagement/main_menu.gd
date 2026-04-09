@@ -16,7 +16,6 @@ var panel_scene: PackedScene = preload("res://Scenes/SheetManagement/character_s
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	enter()
-	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -24,6 +23,7 @@ func _process(delta):
 
 func enter():
 	confirm_window.visible = false
+	options_popup.visible = false
 	connect_signals()
 	create_character_panels()
 
@@ -60,9 +60,11 @@ func _on_test_button_pressed() -> void:
 	pass
 	#do smth
 
-func _on_settings_button_pressed(pk) -> void:
-	print("bananas! the pk of pressed is " + pk)
-	options_popup.enable(pk)
+func _on_settings_button_pressed(pk, button_position) -> void:
+	if ((options_popup.visible==true) && (options_popup.pk==pk)):
+		options_popup.disable()
+	else:
+		options_popup.enable(pk, button_position)
 
 func _on_popup_option_selected(option: String, pk):
 	if (option=="open"):

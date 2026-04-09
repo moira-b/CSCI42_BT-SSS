@@ -12,13 +12,18 @@ signal button_pressed(option: String, pk)
 
 var pk
 
-func enable(pk):
+func enable(pk, button_position):
 	self.pk = pk
 	open_button.pressed.connect(_on_open_button_pressed)
 	delete_button.pressed.connect(_on_delete_button_pressed)
 	
-	# TODO: set position
+	set_panel_position(button_position)
 	self.visible = true
+
+func disable():
+	hide()
+	disconnect_signals()
+	pk = null
 
 func _on_open_button_pressed():
 	button_pressed.emit("open", pk)
@@ -46,3 +51,9 @@ func disconnect_signals():
 	delete_button.pressed.disconnect(_on_delete_button_pressed)
 	del_confirm_button.pressed.disconnect(_on_confirm_deletion)
 	del_cancel_button.pressed.disconnect(_on_cancel_deletion)
+
+func set_panel_position(button_position):
+	self.global_position = Vector2(
+		button_position[0],
+		button_position[1] + 60
+	)
