@@ -15,7 +15,6 @@ var pk
 func enable(pk):
 	self.pk = pk
 	open_button.pressed.connect(_on_open_button_pressed)
-	label_button.pressed.connect(_on_label_button_pressed)
 	delete_button.pressed.connect(_on_delete_button_pressed)
 	
 	# TODO: set position
@@ -26,10 +25,6 @@ func _on_open_button_pressed():
 	print("pressed")
 	disconnect_signals()
 	self.visible = false
-	
-func _on_label_button_pressed():
-	print("pressed")
-	button_pressed.emit("label", pk)
 	
 func _on_delete_button_pressed():
 	del_confirm_button.pressed.connect(_on_confirm_deletion)
@@ -48,7 +43,6 @@ func _on_cancel_deletion():
 
 func disconnect_signals():
 	open_button.pressed.disconnect(_on_open_button_pressed)
-	label_button.pressed.disconnect(_on_label_button_pressed)
 	delete_button.pressed.disconnect(_on_delete_button_pressed)
 	del_confirm_button.pressed.disconnect(_on_confirm_deletion)
 	del_cancel_button.pressed.disconnect(_on_cancel_deletion)
