@@ -1,5 +1,7 @@
 extends PanelContainer
 
+signal settings_button_pressed(pk)
+
 const FILE_PATH = "user://character_data"
 
 @onready var select_button: Button = $Button
@@ -9,7 +11,7 @@ const FILE_PATH = "user://character_data"
 @onready var name_label: Label = $ContentContainer/VBoxContainer/Name
 @onready var class_label: Label = $ContentContainer/VBoxContainer/Class
 @onready var tags: Array = []
-@onready var settings_button: Button = $ContentContainer/SettingsButton
+@onready var settings_button: Button = $SettingsButton
 @onready var char_dict: Variant
 @onready var character: Character = $Character
 
@@ -64,4 +66,4 @@ func _on_select_button_pressed():
 	get_tree().root.get_child(0).queue_free()
 
 func _on_settings_button_pressed():
-	pass
+	settings_button_pressed.emit(char_primary_key)

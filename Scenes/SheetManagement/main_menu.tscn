@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://028wp2ttofun" path="res://Scripts/SheetManagement/main_menu.gd" id="1_vsvys"]
 [ext_resource type="PackedScene" uid="uid://r02yxwfx48hx" path="res://Scenes/SheetManagement/SaveManager.tscn" id="2_3hhsk"]
+[ext_resource type="StyleBox" uid="uid://dic645d200g74" path="res://Resources/GUIStyles/character_sheet_stylebox.tres" id="3_duv1w"]
+[ext_resource type="StyleBox" uid="uid://dewju2mxoq348" path="res://Resources/GUIStyles/button_style.tres" id="4_dumt2"]
+[ext_resource type="Script" uid="uid://fvdr0f3rncnv" path="res://Scenes/SheetManagement/main_menu_options_popup.gd" id="4_rkvgt"]
 
 [node name="MainMenu" type="Control" unique_id=621885202]
 layout_mode = 3
@@ -104,3 +107,30 @@ offset_right = 37.151978
 offset_bottom = 42.208
 grow_horizontal = 2
 text = "TEST"
+
+[node name="OptionsPopupMenu" type="PanelContainer" parent="." unique_id=391540452]
+visible = false
+layout_mode = 0
+offset_right = 175.0
+offset_bottom = 70.0
+theme_override_styles/panel = ExtResource("3_duv1w")
+script = ExtResource("4_rkvgt")
+
+[node name="ButtonsContainer" type="VBoxContainer" parent="OptionsPopupMenu" unique_id=1949118678]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="OpenButton" type="Button" parent="OptionsPopupMenu/ButtonsContainer" unique_id=1757170787]
+layout_mode = 2
+theme_override_styles/normal = ExtResource("4_dumt2")
+text = "Open Character Sheet"
+
+[node name="LabelButton" type="Button" parent="OptionsPopupMenu/ButtonsContainer" unique_id=321948658]
+layout_mode = 2
+theme_override_styles/normal = ExtResource("4_dumt2")
+text = "Apply Label to Character"
+
+[node name="DeleteButton" type="Button" parent="OptionsPopupMenu/ButtonsContainer" unique_id=1342807733]
+layout_mode = 2
+theme_override_styles/normal = ExtResource("4_dumt2")
+text = "Delete Character"

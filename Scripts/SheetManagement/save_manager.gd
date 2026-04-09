@@ -116,6 +116,28 @@ func delete_character_data():
 	save_file.store_line(JSON.stringify(json_data, "\t"))
 	save_file.close()
 
+func delete_character_with_pk(primary_key):
+	var save_file = FileAccess.open(FILE_PATH, FileAccess.READ)
+	var current_contents = save_file.get_as_text()
+	var json = JSON.new()
+	save_file.close()
+	
+	# Check that the file contents can be parsed by JSON
+	var parse_result = json.parse(current_contents)
+	if !(parse_result==OK):
+		print("JSON Parse Error: " + json.get_error_message() + " at line " + str(json.get_error_line()))
+		return
+
+	var json_data = json.data
+	if (primary_key in json.data):
+		json_data.erase(primary_key)
+		print(json.data)
+		print("DEBUG: Removed character with pk " + primary_key + " from save file.")
+	
+	save_file = FileAccess.open(FILE_PATH, FileAccess.WRITE)
+	save_file.store_line(JSON.stringify(json_data, "\t"))
+	save_file.close()
+
 func _get_character_data():
 	var save_file = FileAccess.open(FILE_PATH, FileAccess.READ_WRITE)
 	var current_contents = save_file.get_as_text()

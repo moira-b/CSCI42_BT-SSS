@@ -9,6 +9,7 @@ extends Control
 @onready var test_button: Button = $Button
 @onready var save_manager = $SaveManager
 @onready var grid_container = $ScrollContainer/GridContainer
+@onready var options_popup = $OptionsPopupMenu
 
 var panel_scene: PackedScene = preload("res://Scenes/SheetManagement/character_select_panel.tscn")
 
@@ -29,6 +30,7 @@ func enter():
 func connect_signals():
 	create_new_character_button.pressed.connect(_on_createcharacter_button_pressed)
 	test_button.pressed.connect(_on_test_button_pressed)
+	options_popup.button_pressed.connect(_on_popup_option_selected)
 
 func create_character_panels():
 	if(save_manager.save_file_exists()):
@@ -38,6 +40,7 @@ func create_character_panels():
 				var new_scene = panel_scene.instantiate()
 				grid_container.add_child(new_scene)
 				new_scene.enter(key)
+				new_scene.settings_button_pressed.connect(_on_settings_button_pressed)
 
 func _on_createcharacter_button_pressed() -> void:
 	create_new_character_confirm.pressed.connect(_on_creatercharacter_confirm_pressed)
@@ -57,3 +60,21 @@ func _on_creatercharacter_cancel_pressed() -> void:
 func _on_test_button_pressed() -> void:
 	pass
 	#do smth
+
+func _on_settings_button_pressed(pk) -> void:
+	print("bananas! the pk of pressed is " + pk)
+	options_popup.enable(pk)
+
+func _on_popup_option_selected(option: String, pk):
+	if (option=="open"):
+		print("want to open pk " + pk)
+	elif (option=="label"):
+		print("want to label pk " + pk)
+	elif (option=="delete"):
+		save_manager.delete_character_with_pk(pk)
+		remove_character_panel(pk)
+
+func remove_character_panel(pk):
+	for panel in grid_container.get_children():
+		if (panel.char_primary_key==pk):
+			panel.queue_free()

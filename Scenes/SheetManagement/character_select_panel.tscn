@@ -56,12 +56,13 @@ layout_mode = 2
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 
-[node name="SettingsButton" type="Button" parent="ContentContainer" unique_id=548987942]
-custom_minimum_size = Vector2(30, 30)
+[node name="Button" type="Button" parent="." unique_id=121332290]
+layout_mode = 2
+button_mask = 3
+
+[node name="SettingsButton" type="Button" parent="." unique_id=548987942]
+custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
 text = "..."
-
-[node name="Button" type="Button" parent="." unique_id=121332290]
-layout_mode = 2
