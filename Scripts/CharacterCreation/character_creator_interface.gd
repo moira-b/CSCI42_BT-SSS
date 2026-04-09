@@ -50,6 +50,7 @@ func _set_active_option_tab(_index: int):
 	'''
 	if active_option_tab and active_option_tab.name == "DomainCardSelContainer":
 		active_option_tab.clear_screen()
+		
 
 	if option_tab_array[_index]:
 		active_option_tab = option_tab_array[_index]
@@ -66,6 +67,7 @@ func _set_active_option_tab(_index: int):
 	elif active_option_tab.name == "DomainCardSelContainer":
 		description_display.visible = false
 		active_option_tab.fill_domain_card_list()
+		active_option_tab.clear_selected_cards()
 	else:
 		confirm_button.visible = true
 		complete_button.disabled = true

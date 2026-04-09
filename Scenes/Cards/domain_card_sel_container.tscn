@@ -57,6 +57,7 @@ layout_mode = 2
 text = "Select"
 
 [node name="SwapButton" type="Button" parent="CardInfo/SelectionDisplay/Buttons" unique_id=102888112]
+visible = false
 layout_mode = 2
 text = "Swap"
 
