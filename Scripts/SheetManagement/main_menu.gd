@@ -29,7 +29,6 @@ func enter():
 
 func connect_signals():
 	create_new_character_button.pressed.connect(_on_createcharacter_button_pressed)
-	test_button.pressed.connect(_on_test_button_pressed)
 	options_popup.button_pressed.connect(_on_popup_option_selected)
 
 func create_character_panels():
@@ -67,9 +66,11 @@ func _on_settings_button_pressed(pk) -> void:
 
 func _on_popup_option_selected(option: String, pk):
 	if (option=="open"):
-		print("want to open pk " + pk)
-	elif (option=="label"):
-		print("want to label pk " + pk)
+		var panels = grid_container.get_children()
+		for panel in panels:
+			if (panel.char_primary_key==pk):
+				panel.open_character_sheet()
+		
 	elif (option=="delete"):
 		save_manager.delete_character_with_pk(pk)
 		remove_character_panel(pk)
