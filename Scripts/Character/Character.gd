@@ -44,7 +44,6 @@ var primary_key: String
 
 
 @onready var button_enabler: Array[bool] = [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]
-
 @onready var active_cards: Array[String] = []
 @onready var vaulted_cards: Array[String] = []
 
