@@ -401,7 +401,7 @@ func connect_signals() -> void:
 	levelup_button.pressed.connect(_on_levelup_button_pressed)
 	save_button.pressed.connect(_on_save_button_pressed)
 	delete_button.pressed.connect(_on_delete_button_pressed)
-	main_menu_button.pressed.connect(_on_main_menu_button_pressed)
+	main_menu_button.pressed.connect(go_to_main_menu)
 	advance_window.advancements_confirmed.connect(update_markable_fields)
 	advance_window.advancements_confirmed.connect(update_edit_fields)
 
@@ -446,7 +446,9 @@ func _on_confirm_deletion():
 	del_confirm_button.pressed.disconnect(_on_confirm_deletion)
 	del_window.hide()
 	
-	# TODO: return to main menu after deletion
+	go_to_main_menu()
 	
-func _on_main_menu_button_pressed() -> void:
-	pass
+func go_to_main_menu() -> void:
+	var main_menu = load("res://Scenes/SheetManagement/main_menu.tscn").instantiate()
+	get_tree().root.add_child(main_menu)
+	self.queue_free()

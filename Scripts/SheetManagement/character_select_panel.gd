@@ -18,7 +18,8 @@ var save_manager
 
 # Called when the node enters the scene tree for the first time.
 func enter(pk: String):
-	save_manager = get_tree().root.get_child(0).get_child(0)
+	#save_manager = get_tree().root.get_child(0).get_child(0)
+	save_manager = get_tree().root.get_node("MainMenu").get_node("SaveManager")
 	set_primary_key(pk)
 	load_character_details(pk)
 	update_all_fields()

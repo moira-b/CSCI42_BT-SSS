@@ -45,9 +45,6 @@ func save_character_data():
 		# Check that the file contents can be made into a dictionary
 		var json_data = json.data
 		
-		print("CHECKPOINT 1")
-		#print(json.data)
-		
 		# CASE 2A: Editing existing character
 		if (character.primary_key in json.data):
 			print("Character exists, updating profile now")
@@ -102,6 +99,12 @@ func delete_character_data():
 	var current_contents = save_file.get_as_text()
 	var json = JSON.new()
 	save_file.close()
+	
+	# Check that the file contents can be parsed by JSON
+	var parse_result = json.parse(current_contents)
+	if !(parse_result==OK):
+		print("JSON Parse Error: " + json.get_error_message() + " at line " + str(json.get_error_line()))
+		return
 
 	var json_data = json.data
 	if (character.primary_key in json.data):
