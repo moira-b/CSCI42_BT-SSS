@@ -60,6 +60,11 @@ text = "Select"
 layout_mode = 2
 text = "Swap"
 
+[node name="Confirm" type="Button" parent="CardInfo/SelectionDisplay/Buttons" unique_id=2065526956]
+visible = false
+layout_mode = 2
+text = "Confirm"
+
 [node name="SelectedLabel" type="Label" parent="CardInfo" unique_id=1027082598]
 layout_mode = 2
 text = "Selected Domain Cards:"

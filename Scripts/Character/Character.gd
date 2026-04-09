@@ -37,6 +37,9 @@ var community: Community
 var character_class: CharacterClass
 var subclass: CharacterSubclass
 
+@onready var active_cards: Array[String] = []
+@onready var vaulted_cards: Array[String] = []
+
 @onready var active_domain_cards = $ActiveDomainCards
 @onready var vaulted_domain_cards = $VaultedDomainCards
 # Called when the node enters the scene tree for the first time.

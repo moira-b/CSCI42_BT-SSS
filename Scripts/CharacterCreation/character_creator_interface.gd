@@ -119,8 +119,5 @@ func _on_complete_button_pressed() -> void:
 func add_domain_cards():
 	for index in range(card_selector.select_card_list.item_count):
 		var card = card_selector.select_card_list.get_item_text(index)
-		var new_domain_card = domain.instantiate() 
-		character.get_child(0).add_child(new_domain_card)
-		new_domain_card.change_card(card)
-		new_domain_card.visible = false
+		character.active_cards.append(card)
 		
