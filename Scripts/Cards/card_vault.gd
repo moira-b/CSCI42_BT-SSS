@@ -13,6 +13,8 @@ var card_selected: bool = false
 var selected: DomainCard
 var selected_active_index : int
 var selected_vaulted_index : int
+
+
 func enter():
 	character= $Character
 	display_cards()

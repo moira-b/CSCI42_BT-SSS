@@ -21,22 +21,23 @@ var current_selected_index: int = -1
 func _ready() -> void:
 	domain_card_display.visible = false
 	
-	
 	domain_card_list.item_selected.connect(_on_option_selected)
 	select_card_list.item_selected.connect(_on_selected_option_selected)
 	select_button.pressed.connect(_on_card_select)
 	select_card_list.item_activated.connect(_on_card_remove)
 	
-	character = get_tree().current_scene.get_node("Character")
-	
 	_load_json_files()
-
-func _load_json_files() -> void:
-	association_as_text = FileAccess.get_file_as_string(domain_association_file)
-	association_as_dict = JSON.parse_string(association_as_text)
 	
-	cards_as_text = FileAccess.get_file_as_string(domain_cards_file)
-	cards_as_dict = JSON.parse_string(cards_as_text)
+	if get_parent().get_parent(): #Only really shows up in character creation
+		character = get_tree().current_scene.get_node("Character")
+	else:
+		level_up_selector_setup()
+	
+
+func level_up_selector_setup() -> void:
+	character = self.get_node("Character")
+	_fill_select_card_list()
+	fill_domain_card_list()
 
 func fill_domain_card_list() -> void:
 	for domain in character.character_class.domains:
@@ -57,11 +58,24 @@ func clear_screen() -> void:
 func clear_selected_cards() -> void:
 	select_card_list.clear()
 
+func _fill_select_card_list() -> void:
+	for active_card in character.get_node("ActiveDomainCards").get_children():
+		select_card_list.add_item(active_card.card_name)
+	for active_card in character.get_node("VaultedDomainCards").get_children():
+		select_card_list.add_item(active_card.card_name)
+
+func _load_json_files() -> void:
+	association_as_text = FileAccess.get_file_as_string(domain_association_file)
+	association_as_dict = JSON.parse_string(association_as_text)
+	
+	cards_as_text = FileAccess.get_file_as_string(domain_cards_file)
+	cards_as_dict = JSON.parse_string(cards_as_text)
+
 func _on_option_selected(index: int) -> void:
 	domain_card_display.visible = true	
 	domain_card_display.change_card(domain_card_list.get_item_text(index))
 	current_selected_index = index
-	if(select_card_list.item_count < 2):
+	if(select_card_list.item_count < character.max_domain_cards):
 		select_button.disabled = false
 
 func _on_selected_option_selected(index: int) -> void:

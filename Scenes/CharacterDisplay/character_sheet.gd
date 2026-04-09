@@ -389,6 +389,5 @@ func disable_button_selection(b: bool) -> void:
 func _on_cards_button_pressed() -> void:
 	var new_scene = card_scene.instantiate()
 	character.reparent(new_scene)
-	self.get_parent().add_child(new_scene)
-	new_scene.enter()
 	self.queue_free()
+	self.get_parent().add_child(new_scene)

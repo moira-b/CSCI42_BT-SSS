@@ -15,14 +15,15 @@ extends Window
 @onready var exp_3: CheckButton = $ObjectContainer/Experiences/VBoxContainer/Exp3
 @onready var exp_4: CheckButton = $ObjectContainer/Experiences/VBoxContainer/Exp4
 @onready var exp_5: CheckButton = $ObjectContainer/Experiences/VBoxContainer/Exp5
-@onready var cards: Button = $ObjectContainer/Cards
+@onready var domain_card: CheckButton = $ObjectContainer/DomainCardPanel/ExtraDomainCard
 @onready var classes: Button = $ObjectContainer/Classes
 @onready var confirm_button: Button = $ConfirmButton
 
 @onready var allButtons: Array[CheckButton] = [agility, strength, finesse, instinct, presence,
-knowledge, health, stress, evasion, proficiency, exp_1, exp_2, exp_3, exp_4, exp_5]
+knowledge, health, stress, evasion, proficiency, exp_1, exp_2, exp_3, exp_4, exp_5, domain_card]
 var selected: Array[CheckButton]
 var character: Character
+var card_selector_scene: PackedScene = load("res://Scenes/Cards/domain_card_sel_container.tscn")
 signal advancements_confirmed
 
 # Called when the node enters the scene tree for the first time.
@@ -109,13 +110,23 @@ func _on_confirm_pressed() -> void:
 			if s == exp_3: character.experience_levels[2] += 1
 			if s == exp_4: character.experience_levels[3] += 1
 			if s == exp_5: character.experience_levels[4] += 1
+			if s == domain_card: character.max_domain_cards += 1
 		for s in selected:
 			s.set_pressed_no_signal(false)
 			s.disabled = true
 		selected.clear()
 		update_sheet_fields()
 		self.hide()
+		character.max_domain_cards += 1
+		_load_domain_card_selector()
 
 
 func update_sheet_fields():
 	advancements_confirmed.emit()
+
+
+func _load_domain_card_selector():
+	var new_scene = card_selector_scene.instantiate()
+	character.reparent(new_scene)
+	get_tree().root.add_child(new_scene)
+	self.get_parent().queue_free()
