@@ -15,9 +15,13 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="CS42_Daggerheart-Vault"
-run/main_scene="uid://8ae1l60px6kp"
+run/main_scene="uid://b3udvby21u3eh"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/stretch/mode="viewport"
 
 [editor_plugins]
 
