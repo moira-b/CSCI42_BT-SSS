@@ -16,14 +16,14 @@ extends Window
 @onready var exp_4: CheckButton = $ObjectContainer/Experiences/VBoxContainer/Exp4
 @onready var exp_5: CheckButton = $ObjectContainer/Experiences/VBoxContainer/Exp5
 @onready var domain_card: CheckButton = $ObjectContainer/DomainCardPanel/ExtraDomainCard
-@onready var multiclass: Button = $ObjectContainer/MulticlassPanel/Multiclassing
+@onready var multiclass: CheckButton = $ObjectContainer/MulticlassPanel/Multiclassing
 @onready var object_container = $ObjectContainer
 @onready var multiclass_container = $MulticlassChoiceContainer
 @onready var domain_card_selector = $DomainCardSelContainer
 @onready var confirm_button: Button = $ConfirmButton
 
 @onready var allButtons: Array[CheckButton] = [agility, strength, finesse, instinct, presence,
-knowledge, health, stress, evasion, proficiency, exp_1, exp_2, exp_3, exp_4, exp_5, multiclass, domain_card]
+knowledge, health, stress, evasion, proficiency, exp_1, exp_2, exp_3, exp_4, exp_5, domain_card, multiclass]
 
 var selected: Array[CheckButton]
 @onready var container_array = [object_container, multiclass_container, domain_card_selector]
@@ -38,7 +38,6 @@ func _ready() -> void:
 	for button in allButtons:
 		button.toggled.connect(_on_checkButton_toggled.bind(button))
 	confirm_button.pressed.connect(_on_confirm_pressed)
-	
 	_set_active_container(0)
 	self.add_theme_icon_override("close", Texture2D.new())
 
@@ -136,7 +135,6 @@ func _handle_object_container_confirm() -> void:
 		for s in selected:
 			var index = allButtons.find(s)
 			character.button_enabler[index] = true
-		#_set_domain_card_selector_visibility(true)
 		character.max_domain_cards += 1
 		if is_multiclassing:
 			_set_active_container(1)
@@ -161,4 +159,5 @@ func _update_buttons():
 		button.set_pressed_no_signal(character.button_enabler[i])
 		button.disabled = character.button_enabler[i]
 		i+=1
-		
+		if button == multiclass && character.level < 5:
+			button.disabled = true
