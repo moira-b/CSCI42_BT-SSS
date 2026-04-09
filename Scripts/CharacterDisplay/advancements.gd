@@ -38,10 +38,10 @@ func _ready() -> void:
 	for button in allButtons:
 		button.toggled.connect(_on_checkButton_toggled.bind(button))
 	confirm_button.pressed.connect(_on_confirm_pressed)
-	_set_active_container(0)
+	set_active_container(0)
 	self.add_theme_icon_override("close", Texture2D.new())
 
-func _set_active_container(n: int) -> void:
+func set_active_container(n: int) -> void:
 	active_container = container_array[n]
 	active_container.visible = true
 	for container in container_array:
@@ -104,10 +104,6 @@ func _update_fields() -> void:
 		character.button_enabler = [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]
 
 func _on_confirm_pressed() -> void:
-	if active_container == container_array[0]: _handle_object_container_confirm()
-	elif container_array[1]: _handle_multiclass_container_confirm()
-
-func _handle_object_container_confirm() -> void:
 	var is_multiclassing: bool = false
 	if !selected.size() >= 2 && !proficiency in selected:
 		print("No advancements selected")
@@ -132,23 +128,22 @@ func _handle_object_container_confirm() -> void:
 		for s in selected:
 			var index = allButtons.find(s)
 			character.button_enabler[index] = true
-		character.max_domain_cards += 1
 		if is_multiclassing:
 			multiclass_container.get_character(character)
 			multiclass_container.initialize()
-			_set_active_container(1)
+			set_active_container(1)
 		else:
-			_set_active_container(2)
+			set_active_container(2)
+		
+		character.max_domain_cards += 1
 
-func _handle_multiclass_container_confirm() -> void:
-	_set_active_container(2)
 
 func update_sheet_fields():
 	advancements_confirmed.emit()
 
 func confirm_all_advancements():
 	selected.clear()
-	_set_active_container(0)
+	set_active_container(0)
 	update_sheet_fields()
 	self.hide()
 
