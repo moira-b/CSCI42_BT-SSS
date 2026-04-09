@@ -72,3 +72,31 @@ func _get_dictionary(json_data: Variant):
 
 func load_character_data():
 	pass
+
+func delete_character_data():
+	# Verify that a character has already been assigned
+	if (character==null):
+		print("Error. Attempting to delete character, but save manager does not have a reference to the character.")
+		return
+	
+	# Verify that the node can serialize data
+	# (which is only possible for nodes of type Character)
+	if !character.has_method("serialize_data"):
+		print("Error. The node does not have a method for data serialization.")
+		return
+		
+	var save_file = FileAccess.open(FILE_PATH, FileAccess.READ_WRITE)
+	var current_contents = save_file.get_as_text()
+	var json = JSON.new()
+	
+	# Check that the file contents can be parsed by JSON
+	var parse_result = json.parse(current_contents)
+	if !(parse_result==OK):
+		print("JSON Parse Error: " + json.get_error_message() + " at line " + str(json.get_error_line()))
+		return
+		
+	var json_data = json.data
+	if (character.primary_key in json.data):
+		json_data.erase(character.primary_key)
+		print("DEBUG: Removed " + character.character_name + " from save file.")
+	save_file.store_line(JSON.stringify(json_data, "\t"))

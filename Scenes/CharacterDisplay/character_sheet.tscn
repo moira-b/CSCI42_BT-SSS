@@ -7,6 +7,7 @@
 [ext_resource type="StyleBox" uid="uid://iibbyxddwuc5" path="res://Resources/GUIStyles/green_button.tres" id="4_8skux"]
 [ext_resource type="Script" uid="uid://dnjp24h6b6fc2" path="res://Scripts/CharacterDisplay/markable_stat.gd" id="4_qgeia"]
 [ext_resource type="PackedScene" uid="uid://dltyc5tel16kj" path="res://Scenes/CharacterDisplay/dice_roll_window.tscn" id="5_glymg"]
+[ext_resource type="Script" uid="uid://wblpjoc7sjgv" path="res://Scripts/CharacterDisplay/save_notification.gd" id="5_n5rmr"]
 [ext_resource type="PackedScene" uid="uid://b6t3g5gxhwopj" path="res://Scenes/CharacterDisplay/fh_roll_window.tscn" id="6_8iwex"]
 
 [sub_resource type="GDScript" id="GDScript_dg7yu"]
@@ -290,7 +291,7 @@ This action cannot be undone."
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ButtonsHBox" type="HBoxContainer" parent="Header/PanelContainer/MarginContainer/RightPanel/DeletionWindow" unique_id=144031334]
+[node name="Buttons" type="HBoxContainer" parent="Header/PanelContainer/MarginContainer/RightPanel/DeletionWindow" unique_id=144031334]
 anchors_preset = -1
 anchor_left = 0.5
 anchor_top = 0.9
@@ -305,12 +306,12 @@ grow_vertical = 0
 theme_override_constants/separation = 20
 metadata/_edit_use_anchors_ = true
 
-[node name="ConfirmButton" type="Button" parent="Header/PanelContainer/MarginContainer/RightPanel/DeletionWindow/ButtonsHBox" unique_id=1968126863]
+[node name="ConfirmButton" type="Button" parent="Header/PanelContainer/MarginContainer/RightPanel/DeletionWindow/Buttons" unique_id=1968126863]
 custom_minimum_size = Vector2(75, 40)
 layout_mode = 2
 text = "Confirm"
 
-[node name="CancelButton" type="Button" parent="Header/PanelContainer/MarginContainer/RightPanel/DeletionWindow/ButtonsHBox" unique_id=1696214655]
+[node name="CancelButton" type="Button" parent="Header/PanelContainer/MarginContainer/RightPanel/DeletionWindow/Buttons" unique_id=1696214655]
 custom_minimum_size = Vector2(75, 40)
 layout_mode = 2
 text = "Cancel"
@@ -320,6 +321,7 @@ oversampling_override = 1.0
 initial_position = 1
 size = Vector2i(300, 100)
 visible = false
+script = ExtResource("5_n5rmr")
 
 [node name="ConfirmDeletionPrompt" type="Label" parent="Header/PanelContainer/MarginContainer/RightPanel/SaveNotification" unique_id=1592709199]
 anchors_preset = 8

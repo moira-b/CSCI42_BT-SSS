@@ -58,7 +58,13 @@ extends Control
 @onready var evasion_advance: Button = $EvasionProficency/Evasion/AdvanceButton
 @onready var proficiency_advance: Button = $EvasionProficency/Proficiency/AdvanceButton
 
-@onready var save_button: Button = $SaveButton
+@onready var save_button: Button = $Header/PanelContainer/MarginContainer/RightPanel/Save
+@onready var delete_button: Button = $Header/PanelContainer/MarginContainer/RightPanel/Delete
+@onready var main_menu_button: Button = $Header/PanelContainer/MarginContainer/RightPanel/MainMenu
+
+@onready var del_window = $Heder/PanelContainer/MarginContainer/RightPanel/DeletionWindow
+@onready var del_confirm_button = del_window.get_node("Buttons/ConfirmButton")
+@onready var del_cancel_button = del_window.get_node("Buttons/CancelButton")
 
 var advance_buttons: Array[Button] = []
 var selected_advance: Array[Button] = []
@@ -401,6 +407,8 @@ func connect_signals() -> void:
 	levelup_button.pressed.connect(_on_levelup_button_pressed)
 	
 	save_button.pressed.connect(_on_save_button_pressed)
+	delete_button.pressed.connect(_on_delete_button_pressed)
+	main_menu_button.pressed.connect(_on_main_menu_button_pressed)
 
 func disable_button_selection(b: bool) -> void:
 	short_rest_button.disabled = b
@@ -784,5 +792,25 @@ func increment_advancements(stats) -> void:
 func _on_save_button_pressed() -> void:
 	var save_manager = $SaveManager
 	save_manager.set_character(character)
-	save_manager.character = self.character
-	save_manager.call("save_character_data")
+	await save_manager.call("save_character_data")
+	
+	
+func _on_delete_button_pressed() -> void:
+	# CONFIRM IF PLAYER IS SURE
+	del_cancel_button.pressed.connect(_on_cancel_deletion)
+	del_confirm_button.pressed.connect(_on_confirm_deletion)
+	del_window.show()
+
+func _on_cancel_deletion():
+	del_cancel_button.pressed.disconnect(_on_cancel_deletion)
+	del_confirm_button.pressed.disconnect(_on_confirm_deletion)
+	del_window.hide()
+	
+func _on_confirm_deletion():
+	var save_manager = $SaveManager
+	save_manager.set_character(character)
+	await save_manager.call("delete_character_data")
+	# TODO: return to main menu after deletion
+	
+func _on_main_menu_button_pressed() -> void:
+	pass
