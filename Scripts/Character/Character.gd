@@ -171,6 +171,9 @@ func serialize_data():
 		"experiences": experiences,
 		"damage_thresholds": damage_thresholds,
 		"experience_levels": experience_levels,
+		"max_domain_cards": max_domain_cards,
+		"active_cards" : active_cards,
+		"vaulted_cards": vaulted_cards
 	}
 	return save_dict
 
@@ -207,4 +210,8 @@ func load_data(char_dict: Variant):
 	strength = char_dict["strength"]
 	subclass = load(char_dict["subclass"])
 	used_armor_slots = char_dict["used_armor_slots"]
+	max_domain_cards = char_dict["max_domain_cards"]
+	active_cards.assign(char_dict["active_cards"])
+	vaulted_cards.assign(char_dict["vaulted_cards"])
+	
 	
