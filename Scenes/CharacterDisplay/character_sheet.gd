@@ -810,6 +810,11 @@ func _on_confirm_deletion():
 	var save_manager = $SaveManager
 	save_manager.set_character(character)
 	await save_manager.call("delete_character_data")
+	
+	del_cancel_button.pressed.disconnect(_on_cancel_deletion)
+	del_confirm_button.pressed.disconnect(_on_confirm_deletion)
+	del_window.hide()
+	
 	# TODO: return to main menu after deletion
 	
 func _on_main_menu_button_pressed() -> void:
