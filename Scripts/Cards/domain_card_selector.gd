@@ -3,7 +3,8 @@ extends Control
 @onready var domain_card_list: ItemList = $ToSelectContainer/DomainCardList
 @onready var select_card_list: ItemList = $"CardInfo/SelectedCardsList"
 @onready var domain_card_display: DomainCard = $"CardInfo/SelectionDisplay/DomainCard"
-@onready var select_button: Button = $CardInfo/SelectionDisplay/SelectButton
+@onready var select_button: Button = $CardInfo/SelectionDisplay/Buttons/SelectButton
+@onready var swap_button: Button = $CardInfo/SelectionDisplay/Buttons/SwapButton
 
 var character: Character
 
@@ -33,9 +34,15 @@ func _ready() -> void:
 	else:
 		level_up_selector_setup()
 	
-
+func get_item_list_items(items: ItemList) -> Array[String]:
+	var output: Array[String] = []
+	for i in range(items.item_count):
+		output.append(items.get_item_text(i))
+	return output
+	
 func level_up_selector_setup() -> void:
 	character = self.get_node("Character")
+	clear_screen()
 	_fill_select_card_list()
 	fill_domain_card_list()
 
