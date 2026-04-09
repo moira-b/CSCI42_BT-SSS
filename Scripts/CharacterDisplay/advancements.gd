@@ -104,6 +104,9 @@ func _update_fields() -> void:
 		character.button_enabler = [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]
 
 func _on_confirm_pressed() -> void:
+	if active_container==container_array[0]: _handle_object_container_confirm()
+
+func _handle_object_container_confirm() -> void:
 	var is_multiclassing: bool = false
 	if !selected.size() >= 2 && !proficiency in selected:
 		print("No advancements selected")
@@ -136,7 +139,6 @@ func _on_confirm_pressed() -> void:
 			set_active_container(2)
 		
 		character.max_domain_cards += 1
-
 
 func update_sheet_fields():
 	advancements_confirmed.emit()
