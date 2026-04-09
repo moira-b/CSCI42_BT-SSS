@@ -17,6 +17,12 @@ var selected_vaulted_index : int
 
 func enter():
 	character= $Character
+	vault = $Vault
+	displayed_card = $DisplayedCard
+	active_cards = $ActiveCards
+	swap_button = $SwapButton
+	stress = $VBoxContainer/StressValue
+	health = $VBoxContainer/HealthValue
 	display_cards()
 	stress.text = (str(character.current_stress) + "/" + str(character.max_stress))
 	health.text = (str(character.current_hp) + "/" + str(character.max_hp))  
@@ -29,15 +35,17 @@ func _process(_delta):
 
 func display_cards():
 	print("active")
-	for card in character.get_child(0).get_children() :
-		active_cards.get_child(card.get_index()).visible=true
-		active_cards.get_child(card.get_index()).change_card(card.card_name)
-		print(card.card_name)
+	var i:int=0
+	for card in character.active_cards:
+		active_cards.get_child(i).visible=true
+		active_cards.get_child(i).change_card(card)
+		print(card)
+		i+=1
 		
 	print("vaulted")
-	for card in character.get_child(1).get_children():
-		vault.add_item(card.card_name)
-		print(card.card_name)
+	for card in character.vaulted_cards:
+		vault.add_item(card)
+		print(card)
 
 
 func _on_sheet_button_pressed() -> void:
@@ -50,7 +58,7 @@ func _on_sheet_button_pressed() -> void:
 
 func _on_vault_item_selected(index: int) -> void:
 	displayed_card.get_child(0).visible=true
-	displayed_card.get_child(0).change_card(character.get_child(1).get_child(index).card_name)
+	displayed_card.get_child(0).change_card(character.vaulted_cards[index])
 	selected_vaulted_index = index
 
 
@@ -70,10 +78,10 @@ func swap():
 	var selected_active_name = selected.card_name
 	var selected_vaulted_name = $DisplayedCard/DomainCard.card_name
 	$DisplayedCard/DomainCard.change_card(selected_active_name)
-	character.get_child(1).get_child(selected_vaulted_index).change_card(selected_active_name)
+	character.vaulted_cards[selected_vaulted_index]=selected_active_name
 	
 	active_cards.get_child(selected_active_index).change_card(selected_vaulted_name)
-	character.get_child(0).get_child(selected_active_index).change_card(selected_vaulted_name)
+	character.active_cards[selected_active_index] = selected_vaulted_name
 	
 	vault.set_item_text(selected_vaulted_index, selected_active_name)
 	stress.text = (str(character.current_stress) + "/" + str(character.max_stress))

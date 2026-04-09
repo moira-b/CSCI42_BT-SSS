@@ -34,7 +34,6 @@ extends Control
 @onready var proficiency_value: Label = $EvasionProficency/Proficiency/Value
 @onready var advance_window: Window = $AdvanceWindow
 
-
 @onready var dice_button: Button = $ActionButtons/DiceButtons/Dice
 @onready var fearhope_button: Button = $ActionButtons/DiceButtons/FHDice
 
@@ -44,22 +43,44 @@ extends Control
 @onready var levelup_cancel_button: Button = $LevelUpConfirmation/VBoxContainer/CancelButton
 @onready var level_field = $Header/Level/FieldContainer/MarginContainer/HSplitContainer/LevelDisplay
 
+@onready var agility_advance: Button = $TraitModifiers/Agility/AdvanceButton
+@onready var strength_advance: Button = $TraitModifiers/Strength/AdvanceButton
+@onready var finesse_advance: Button = $TraitModifiers/Finesse/AdvanceButton
+@onready var instinct_advance: Button = $TraitModifiers/Instinct/AdvanceButton
+@onready var presence_advance: Button = $TraitModifiers/Prescence/AdvanceButton
+@onready var knowledge_advance: Button = $TraitModifiers/Knowledge/AdvanceButton
+@onready var health_advance: Button = $MarkableStats/Health/FieldContainer/Buttons/AdvanceButton
+@onready var stress_advance: Button = $MarkableStats/Stress/FieldContainer/Buttons/AdvanceButton
+@onready var experience1_advance: Button = $Experiences/Experience1/AdvanceButton
+@onready var experience2_advance: Button = $Experiences/Experience2/AdvanceButton
+@onready var experience3_advance: Button = $Experiences/Experience3/AdvanceButton
+@onready var experience4_advance: Button = $Experiences/Experience4/AdvanceButton
+@onready var experience5_advance: Button = $Experiences/Experience5/AdvanceButton
+@onready var evasion_advance: Button = $EvasionProficency/Evasion/AdvanceButton
+@onready var proficiency_advance: Button = $EvasionProficency/Proficiency/AdvanceButton
+
+@onready var save_button: Button = $Header/PanelContainer/MarginContainer/RightPanel/Save
+@onready var delete_button: Button = $Header/PanelContainer/MarginContainer/RightPanel/Delete
+@onready var main_menu_button: Button = $Header/PanelContainer/MarginContainer/RightPanel/MainMenu
+
+@onready var del_window = $Header/PanelContainer/MarginContainer/RightPanel/DeletionWindow
+@onready var del_confirm_button = $Header/PanelContainer/MarginContainer/RightPanel/DeletionWindow/Buttons/ConfirmButton
+@onready var del_cancel_button = $Header/PanelContainer/MarginContainer/RightPanel/DeletionWindow/Buttons/CancelButton
+
 var updated = false
 var shortRestCounter = 0
 var character: Character 
 var card_scene: PackedScene = load("res://Scenes/Cards/card_vault.tscn")
+var save_manager
 
 func enter() -> void:
 	character = $Character
+	save_manager = get_tree().root.get_node("CharacterSheet").get_node("SaveManager")
 	rest_window.get_character(character)
 	dice_roll_window.visible = false
 	fh_roll_window.visible = false
 	levelup_confirmation_panel.visible = false
 	update_edit_fields()
-	
-	character.set_maximum_health()
-	character.set_maximum_stress()
-	character.set_maximum_armor_slots()
 	
 	connect_signals()
 	
@@ -72,6 +93,10 @@ func enter() -> void:
 	level_field.text = str(character.level)
 	evasion_value.set_text(str(character.evasion))
 	proficiency_value.set_text(str(character.proficiency))
+	
+	save_manager.set_character(character)
+	save_manager.save_character_data()
+
 
 func _process(_delta: float) -> void:
 	if(updated==false and character.character_name!=""):
@@ -376,6 +401,9 @@ func connect_signals() -> void:
 	fh_roll_window.close_requested.connect(_on_fh_roll_window_close_requested)
 	
 	levelup_button.pressed.connect(_on_levelup_button_pressed)
+	save_button.pressed.connect(save_character)
+	delete_button.pressed.connect(_on_delete_button_pressed)
+	main_menu_button.pressed.connect(_on_main_menu_button_pressed)
 	advance_window.advancements_confirmed.connect(update_markable_fields)
 	advance_window.advancements_confirmed.connect(update_edit_fields)
 
@@ -389,5 +417,44 @@ func disable_button_selection(b: bool) -> void:
 func _on_cards_button_pressed() -> void:
 	var new_scene = card_scene.instantiate()
 	character.reparent(new_scene)
-	self.queue_free()
 	self.get_parent().add_child(new_scene)
+	new_scene.enter()
+	self.queue_free()
+
+func save_character() -> void:
+	var save_manager = $SaveManager
+	save_manager.set_character(character)
+	await save_manager.call("save_character_data")
+	
+	var save_notif = $Header/PanelContainer/MarginContainer/RightPanel/SaveNotification
+	save_notif.showFor()
+	
+func _on_delete_button_pressed() -> void:
+	# CONFIRM IF PLAYER IS SURE
+	del_cancel_button.pressed.connect(_on_cancel_deletion)
+	del_confirm_button.pressed.connect(_on_confirm_deletion)
+	del_window.show()
+
+func _on_cancel_deletion():
+	del_cancel_button.pressed.disconnect(_on_cancel_deletion)
+	del_confirm_button.pressed.disconnect(_on_confirm_deletion)
+	del_window.hide()
+	
+func _on_confirm_deletion():
+	var save_manager = $SaveManager
+	save_manager.set_character(character)
+	await save_manager.call("delete_character_data")
+	
+	del_cancel_button.pressed.disconnect(_on_cancel_deletion)
+	del_confirm_button.pressed.disconnect(_on_confirm_deletion)
+	del_window.hide()
+	
+	var main_menu = load("res://Scenes/SheetManagement/main_menu.tscn").instantiate()
+	get_tree().root.add_child(main_menu)
+	self.queue_free()
+	
+func _on_main_menu_button_pressed() -> void:
+	save_character()
+	var main_menu = load("res://Scenes/SheetManagement/main_menu.tscn").instantiate()
+	get_tree().root.add_child(main_menu)
+	self.queue_free()

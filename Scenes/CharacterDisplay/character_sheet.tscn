@@ -1,10 +1,13 @@
 [gd_scene format=3 uid="uid://dhouly0p8fe4p"]
 
 [ext_resource type="Script" uid="uid://cmt4mu51iv5vw" path="res://Scenes/CharacterDisplay/character_sheet.gd" id="1_dg7yu"]
+[ext_resource type="PackedScene" uid="uid://r02yxwfx48hx" path="res://Scenes/SheetManagement/SaveManager.tscn" id="2_56qfy"]
 [ext_resource type="StyleBox" uid="uid://dic645d200g74" path="res://Resources/GUIStyles/character_sheet_stylebox.tres" id="2_c8oo5"]
 [ext_resource type="Script" uid="uid://dfs5rt0xu3vuj" path="res://Scripts/CharacterDisplay/rest.gd" id="4_8iwex"]
+[ext_resource type="StyleBox" uid="uid://iibbyxddwuc5" path="res://Resources/GUIStyles/green_button.tres" id="4_8skux"]
 [ext_resource type="Script" uid="uid://dnjp24h6b6fc2" path="res://Scripts/CharacterDisplay/markable_stat.gd" id="4_qgeia"]
 [ext_resource type="PackedScene" uid="uid://dltyc5tel16kj" path="res://Scenes/CharacterDisplay/dice_roll_window.tscn" id="5_glymg"]
+[ext_resource type="Script" uid="uid://wblpjoc7sjgv" path="res://Scripts/CharacterDisplay/save_notification.gd" id="5_n5rmr"]
 [ext_resource type="PackedScene" uid="uid://b6t3g5gxhwopj" path="res://Scenes/CharacterDisplay/fh_roll_window.tscn" id="6_8iwex"]
 [ext_resource type="Script" uid="uid://b3ypom2uq1exh" path="res://Scripts/CharacterDisplay/advancements.gd" id="7_56qfy"]
 [ext_resource type="PackedScene" uid="uid://1un73y3t3x7b" path="res://Scenes/Cards/domain_card_sel_container.tscn" id="8_8skux"]
@@ -25,6 +28,8 @@ func _process(delta):
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8iwex"]
 bg_color = Color(0.07058824, 0.37254903, 0.007843138, 1)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_6lo7n"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5rpyy"]
 bg_color = Color(0.07058824, 0.37254903, 0.007843138, 1)
@@ -56,12 +61,13 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_dg7yu")
 
-[node name="Header" type="HSplitContainer" parent="." unique_id=1428007041]
-layout_mode = 0
-offset_right = 911.0
-offset_bottom = 112.0
-split_offsets = PackedInt32Array(728)
-split_offset = 728
+[node name="SaveManager" parent="." unique_id=538318276 instance=ExtResource("2_56qfy")]
+
+[node name="Header" type="HBoxContainer" parent="." unique_id=583286958]
+layout_mode = 1
+offset_right = 1063.0
+offset_bottom = 120.0
+theme_override_constants/separation = 7
 
 [node name="HeaderInfo" type="VSplitContainer" parent="Header" unique_id=2099249612]
 layout_mode = 2
@@ -220,9 +226,112 @@ layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_8iwex")
 
 [node name="LevelUpButton" type="Button" parent="Header/Level/FieldContainer/PanelContainer" unique_id=1305469132]
-custom_minimum_size = Vector2(30, 0)
+custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
+theme_override_styles/normal = ExtResource("4_8skux")
 text = "Level Up"
+
+[node name="PanelContainer" type="PanelContainer" parent="Header" unique_id=1051887835]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("2_c8oo5")
+
+[node name="MarginContainer" type="MarginContainer" parent="Header/PanelContainer" unique_id=1588844554]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="RightPanel" type="VBoxContainer" parent="Header/PanelContainer/MarginContainer" unique_id=485340797]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Save" type="Button" parent="Header/PanelContainer/MarginContainer/RightPanel" unique_id=393625438]
+layout_mode = 2
+text = "Save Character"
+alignment = 0
+
+[node name="Delete" type="Button" parent="Header/PanelContainer/MarginContainer/RightPanel" unique_id=627249800]
+layout_mode = 2
+text = "Delete Character"
+alignment = 0
+
+[node name="MainMenu" type="Button" parent="Header/PanelContainer/MarginContainer/RightPanel" unique_id=1062522431]
+layout_mode = 2
+text = "Back to Main Menu"
+alignment = 0
+
+[node name="DeletionWindow" type="Window" parent="Header/PanelContainer/MarginContainer/RightPanel" unique_id=488975695]
+oversampling_override = 1.0
+initial_position = 1
+size = Vector2i(500, 150)
+visible = false
+theme_override_icons/close = SubResource("PlaceholderTexture2D_6lo7n")
+
+[node name="ConfirmDeletionPrompt" type="Label" parent="Header/PanelContainer/MarginContainer/RightPanel/DeletionWindow" unique_id=1787822924]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.19000001
+anchor_right = 0.5
+anchor_bottom = 0.19000001
+offset_left = -201.0
+offset_top = -3.0000038
+offset_right = 200.0
+offset_bottom = 46.0
+grow_horizontal = 2
+text = "Are you sure that you want to delete this character?
+This action cannot be undone."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Buttons" type="HBoxContainer" parent="Header/PanelContainer/MarginContainer/RightPanel/DeletionWindow" unique_id=144031334]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.9
+anchor_right = 0.5
+anchor_bottom = 0.90000004
+offset_left = -85.0
+offset_top = -43.0
+offset_right = 85.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 20
+metadata/_edit_use_anchors_ = true
+
+[node name="ConfirmButton" type="Button" parent="Header/PanelContainer/MarginContainer/RightPanel/DeletionWindow/Buttons" unique_id=1968126863]
+custom_minimum_size = Vector2(75, 40)
+layout_mode = 2
+text = "Confirm"
+
+[node name="CancelButton" type="Button" parent="Header/PanelContainer/MarginContainer/RightPanel/DeletionWindow/Buttons" unique_id=1696214655]
+custom_minimum_size = Vector2(75, 40)
+layout_mode = 2
+text = "Cancel"
+
+[node name="SaveNotification" type="Window" parent="Header/PanelContainer/MarginContainer/RightPanel" unique_id=1645610347]
+oversampling_override = 1.0
+initial_position = 1
+size = Vector2i(300, 100)
+visible = false
+script = ExtResource("5_n5rmr")
+
+[node name="ConfirmDeletionPrompt" type="Label" parent="Header/PanelContainer/MarginContainer/RightPanel/SaveNotification" unique_id=1592709199]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.5
+offset_top = -24.5
+offset_right = 200.5
+offset_bottom = 24.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Character has been saved."
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="TraitModifiers" type="HBoxContainer" parent="." unique_id=1219526404]
 layout_mode = 1

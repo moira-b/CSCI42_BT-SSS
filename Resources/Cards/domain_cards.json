@@ -754,7 +754,7 @@
 		"recall_cost": 0,
 		"description":"You have advantage on action rolls to pick nonmagical locks, disarm nonmagical traps, or steal items from a target (either through stealth or by force)."
 	},
-	"Rain of Blades":{
+	"Rain Of Blades":{
 		"level": 1,
 		"type":"Spell",
 		"domain":"Midnight",

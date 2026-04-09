@@ -20,7 +20,9 @@ var cards_as_dict: Dictionary
 
 var display_domain_card_array = []
 var current_selected_index: int = -1
+var current_existing_selected_index: int = -1
 
+var swapped_card = ""
 
 func _process(delta: float) -> void:
 	if(character and select_card_list.item_count == character.max_domain_cards):
@@ -37,11 +39,12 @@ func _ready() -> void:
 	select_button.pressed.connect(_on_card_select)
 	select_card_list.item_activated.connect(_on_card_remove)
 	confirm_button.pressed.connect(_on_confirm)
+	swap_button.pressed.connect(_on_swap)
 	
 	_load_json_files()
 	
 	if get_parent().get_parent(): #Only really shows up in character creation
-		character = get_tree().current_scene.get_node("Character")
+		character = self.get_parent().get_parent().get_node("Character")
 	
 	
 func get_item_list_items(items: ItemList) -> Array[String]:
@@ -53,6 +56,7 @@ func get_item_list_items(items: ItemList) -> Array[String]:
 	
 func level_up_selector_setup() -> void:
 	character = self.get_parent().get_parent().get_node("Character")
+	swap_button.visible=true
 	confirm_button.visible=true
 	confirm_button.disabled=true
 	clear_screen()
@@ -75,11 +79,23 @@ func clear_screen() -> void:
 	domain_card_list.clear()
 	domain_card_display.visible = false
 	current_selected_index = -1
+	current_existing_selected_index = -1
 	select_button.disabled = true
+	
 
 
 func clear_selected_cards() -> void:
-	select_card_list.clear()
+	var to_clear = false
+	var passable_cards = []
+	for domain in character.character_class.domains:
+		passable_cards.append_array(association_as_dict.get(domain.name))
+	for card in get_item_list_items(select_card_list):
+		if not card in passable_cards:
+			to_clear = true
+			break
+			
+	if(to_clear):
+		select_card_list.clear()
 
 func _fill_select_card_list() -> void:
 	select_card_list.clear()
@@ -110,6 +126,8 @@ func _on_option_selected(index: int) -> void:
 func _on_selected_option_selected(index: int) -> void:
 	domain_card_display.visible = true	
 	domain_card_display.change_card(select_card_list.get_item_text(index))
+	select_button.disabled = true
+	current_existing_selected_index = index
 
 
 func _on_card_select() -> void:
@@ -121,7 +139,7 @@ func _on_card_select() -> void:
 
 func _on_card_remove(index) -> void:
 	var card = select_card_list.get_item_text(index)
-	if(not card in existing_cards):	
+	if(index >= existing_cards.size()):	
 		select_card_list.remove_item(index)
 		clear_screen()
 		fill_domain_card_list()
@@ -138,3 +156,19 @@ func _on_confirm() -> void:
 	
 	existing_cards = []
 	self.get_parent().confirm_all_advancements()
+
+	
+
+func _on_swap()->void:
+	if (swapped_card == ""):
+		swapped_card = domain_card_list.get_item_text(current_selected_index)
+		domain_card_list.set_item_text(current_selected_index, select_card_list.get_item_text(current_existing_selected_index))
+		select_card_list.set_item_text(current_existing_selected_index, swapped_card)
+		swapped_card = domain_card_list.get_item_text(current_selected_index)
+	elif (swapped_card == domain_card_list.get_item_text(current_selected_index)):
+		swapped_card = domain_card_list.get_item_text(current_selected_index)
+		domain_card_list.set_item_text(current_selected_index, select_card_list.get_item_text(current_existing_selected_index))
+		select_card_list.set_item_text(current_existing_selected_index, swapped_card)
+		swapped_card = ""
+	
+	swap_button.disabled = true

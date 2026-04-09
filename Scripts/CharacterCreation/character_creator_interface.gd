@@ -50,6 +50,7 @@ func _set_active_option_tab(_index: int):
 	'''
 	if active_option_tab and active_option_tab.name == "DomainCardSelContainer":
 		active_option_tab.clear_screen()
+		
 
 	if option_tab_array[_index]:
 		active_option_tab = option_tab_array[_index]
@@ -66,6 +67,7 @@ func _set_active_option_tab(_index: int):
 	elif active_option_tab.name == "DomainCardSelContainer":
 		description_display.visible = false
 		active_option_tab.fill_domain_card_list()
+		active_option_tab.clear_selected_cards()
 	else:
 		confirm_button.visible = true
 		complete_button.disabled = true
@@ -109,6 +111,9 @@ func show_description(message: String) -> void:
 func _on_complete_button_pressed() -> void:
 	add_domain_cards()
 	var new_scene = sheet_scene.instantiate()
+	character.set_maximum_health()
+	character.set_maximum_stress()
+	character.set_maximum_armor_slots()
 	character.reparent(new_scene)
 	self.get_parent().add_child(new_scene)
 	new_scene.enter()

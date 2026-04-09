@@ -40,6 +40,7 @@ func _ready() -> void:
 	confirm_button.pressed.connect(_on_confirm_pressed)
 	
 	_set_active_container(0)
+	self.add_theme_icon_override("close", Texture2D.new())
 
 func _set_active_container(n: int) -> void:
 	active_container = container_array[n]
@@ -77,6 +78,7 @@ func _on_checkButton_toggled(toggled_on: bool, toggled_button: CheckButton) -> v
 func get_character(c: Character):
 	character = c
 	_update_fields()
+	_update_buttons()
 
 func _update_fields() -> void:
 	exp_1.text = character.experiences[0]
@@ -89,22 +91,21 @@ func _update_fields() -> void:
 		exp_3.text = "New Experience"
 		exp_3.show()
 		
-		for b in allButtons:
-			if b == multiclass: b.disabled = true
-			else: b.disabled = false
+		for b in character.button_enabler:
+			b = false
 	elif character.level == 5:
 		exp_4.text = "New Experience"
 		exp_4.show()
 		multiclass.disabled = false
 		
-		for b in allButtons:
-			b.disabled = false
+		for b in character.button_enabler:
+			b = false
 	elif character.level == 8:
 		exp_5.text = "New Experience"
 		exp_5.show()
 		
-		for b in allButtons:
-			b.disabled = false
+		for b in character.button_enabler:
+			b = false
 
 func _on_confirm_pressed() -> void:
 	if active_container == container_array[0]: _handle_object_container_confirm()
@@ -133,8 +134,9 @@ func _handle_object_container_confirm() -> void:
 			if s == domain_card: character.max_domain_cards += 1
 			if s == multiclass: is_multiclassing = true
 		for s in selected:
-			s.set_pressed_no_signal(false)
-			s.disabled = true
+			var index = allButtons.find(s)
+			character.button_enabler[index] = true
+		#_set_domain_card_selector_visibility(true)
 		character.max_domain_cards += 1
 		if is_multiclassing:
 			_set_active_container(1)
@@ -152,3 +154,11 @@ func confirm_all_advancements():
 	_set_active_container(0)
 	update_sheet_fields()
 	self.hide()
+
+func _update_buttons():
+	var i=0
+	for button in allButtons:
+		button.set_pressed_no_signal(character.button_enabler[i])
+		button.disabled = character.button_enabler[i]
+		i+=1
+		
