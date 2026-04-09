@@ -49,7 +49,9 @@ func set_primary_key(pk: String):
 
 func update_all_fields():
 	name_label.set_text(char_name)
-	class_label.set_text(char_class)
+	
+	var char_class_name = load(char_class).name
+	class_label.set_text(char_class_name)
 
 func connect_signals():
 	select_button.pressed.connect(_on_select_button_pressed)
