@@ -44,7 +44,7 @@ func _ready() -> void:
 	_load_json_files()
 	
 	if get_parent().get_parent(): #Only really shows up in character creation
-		character = get_tree().current_scene.get_node("Character")
+		character = self.get_parent().get_parent().get_node("Character")
 	
 	
 func get_item_list_items(items: ItemList) -> Array[String]:
