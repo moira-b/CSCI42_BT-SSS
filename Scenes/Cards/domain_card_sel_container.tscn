@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://1un73y3t3x7b"]
+
+[ext_resource type="Script" uid="uid://dicpfif3vilqk" path="res://Scripts/Cards/domain_card_selector.gd" id="1_txh06"]
+[ext_resource type="PackedScene" uid="uid://cknxpivnpwbxd" path="res://Scenes/Cards/domain_card_base.tscn" id="2_u13nu"]
+
+[node name="DomainCardSelContainer" type="HBoxContainer" unique_id=710034451]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -512.0
+offset_top = -260.0
+offset_right = 512.0
+offset_bottom = 260.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_txh06")
+
+[node name="ToSelectContainer" type="VBoxContainer" parent="." unique_id=826385361]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+
+[node name="ToSelectLabel" type="Label" parent="ToSelectContainer" unique_id=1803057635]
+layout_mode = 2
+text = "Choose a Domain Card:"
+
+[node name="DomainCardList" type="ItemList" parent="ToSelectContainer" unique_id=509865332]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="CardInfo" type="VBoxContainer" parent="." unique_id=870546162]
+custom_minimum_size = Vector2(520, 0)
+layout_mode = 2
+
+[node name="SelectionDisplay" type="HBoxContainer" parent="CardInfo" unique_id=1928269379]
+custom_minimum_size = Vector2(520, 0)
+layout_direction = 2
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 34
+alignment = 1
+
+[node name="DomainCard" parent="CardInfo/SelectionDisplay" unique_id=1871884780 instance=ExtResource("2_u13nu")]
+visible = false
+custom_minimum_size = Vector2(250, 350)
+layout_mode = 2
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="SelectButton" type="Button" parent="CardInfo/SelectionDisplay" unique_id=1803000537]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+text = "Select"
+
+[node name="SelectedLabel" type="Label" parent="CardInfo" unique_id=1027082598]
+layout_mode = 2
+text = "Selected Domain Cards:"
+
+[node name="SelectedCardsList" type="ItemList" parent="CardInfo" unique_id=361409890]
+custom_minimum_size = Vector2(0, 160)
+layout_mode = 2

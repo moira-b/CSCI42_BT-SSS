@@ -5,6 +5,7 @@ extends Control
 @onready var complete_button = $ButtonContainer/CompleteButton
 @onready var back_button = $ButtonContainer/BackButton
 @onready var description_display = $DescriptionContainer
+@onready var card_selector = $OptionLists/DomainCardSelContainer
 @onready var character = $Character
 
 var option_tab_array: Array[Control]
@@ -115,8 +116,8 @@ func _on_complete_button_pressed() -> void:
 
 
 func add_domain_cards():
-	for index in range($OptionLists/DomainCardSelContainer/CardInfo/SelectedCardsList.item_count):
-		var card = $OptionLists/DomainCardSelContainer/CardInfo/SelectedCardsList.get_item_text(index)
+	for index in range(card_selector.select_card_list.item_count):
+		var card = card_selector.select_card_list.get_item_text(index)
 		var new_domain_card = domain.instantiate() 
 		character.get_child(0).add_child(new_domain_card)
 		new_domain_card.change_card(card)

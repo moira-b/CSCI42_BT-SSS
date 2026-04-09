@@ -4,9 +4,8 @@ extends Control
 @onready var select_card_list: ItemList = $"CardInfo/SelectedCardsList"
 @onready var domain_card_display: DomainCard = $"CardInfo/SelectionDisplay/DomainCard"
 @onready var select_button: Button = $CardInfo/SelectionDisplay/SelectButton
-@onready var character: Character = $"../../Character"
 
-
+var character: Character
 
 var domain_association_file = "res://Resources/Cards/domain_card_association.json"
 var association_as_text: String
@@ -28,6 +27,7 @@ func _ready() -> void:
 	select_button.pressed.connect(_on_card_select)
 	select_card_list.item_activated.connect(_on_card_remove)
 	
+	character = get_tree().current_scene.get_node("Character")
 	
 	_load_json_files()
 
@@ -46,12 +46,9 @@ func fill_domain_card_list() -> void:
 		for card in cards_in_domain:
 			var card_check = cards_as_dict.get(card)
 			if card_check:
-				if card_check.get("level") == 1 and not (card in select_card_list):
+				if card_check.get("level") <= character.level and not (card in select_card_list):
 					display_domain_card_array.append(card)
 					domain_card_list.add_item(card)
-			#else:
-				#display_domain_card_array.append("Card not yet encoded")
-				#domain_card_list.add_item("Card not yet encoded")
 
 func clear_screen() -> void:
 	domain_card_list.clear()

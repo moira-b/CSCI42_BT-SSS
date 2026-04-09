@@ -49,8 +49,7 @@
 [ext_resource type="Resource" uid="uid://s12git0i5oci" path="res://Resources/Communities/wildborne.tres" id="36_m83la"]
 [ext_resource type="Script" uid="uid://clmxkh4im6n7f" path="res://Scripts/CharacterCreation/text_fill_container.gd" id="39_68bmj"]
 [ext_resource type="Script" uid="uid://bwg57k6ymdiig" path="res://Scripts/CharacterCreation/description_display.gd" id="42_a5r2x"]
-[ext_resource type="Script" uid="uid://dicpfif3vilqk" path="res://Scripts/Cards/domain_card_selector.gd" id="47_deb4u"]
-[ext_resource type="PackedScene" uid="uid://cknxpivnpwbxd" path="res://Scenes/Cards/domain_card_base.tscn" id="47_g2o8p"]
+[ext_resource type="PackedScene" uid="uid://1un73y3t3x7b" path="res://Scenes/Cards/domain_card_sel_container.tscn" id="47_g2o8p"]
 
 [sub_resource type="Resource" id="Resource_7bny4"]
 script = ExtResource("7_5fs0t")
@@ -171,58 +170,8 @@ same_column_width = true
 script = ExtResource("6_n175s")
 community_array = Array[ExtResource("7_qaets")]([ExtResource("28_82lxq"), ExtResource("29_rli2i"), ExtResource("30_foxel"), ExtResource("31_68bmj"), ExtResource("32_7s5p1"), ExtResource("33_m6swa"), ExtResource("34_a5r2x"), ExtResource("35_5asme"), ExtResource("36_m83la")])
 
-[node name="DomainCardSelContainer" type="HBoxContainer" parent="OptionLists" unique_id=1327355908]
-layout_mode = 0
-offset_left = -509.0
-offset_top = -269.0
-offset_right = 515.0
-offset_bottom = 251.0
-script = ExtResource("47_deb4u")
-
-[node name="ToSelectContainer" type="VBoxContainer" parent="OptionLists/DomainCardSelContainer" unique_id=308575947]
-custom_minimum_size = Vector2(500, 0)
-layout_mode = 2
-
-[node name="ToSelectLabel" type="Label" parent="OptionLists/DomainCardSelContainer/ToSelectContainer" unique_id=1535325206]
-layout_mode = 2
-text = "Choose a Domain Card:"
-
-[node name="DomainCardList" type="ItemList" parent="OptionLists/DomainCardSelContainer/ToSelectContainer" unique_id=67940527]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="CardInfo" type="VBoxContainer" parent="OptionLists/DomainCardSelContainer" unique_id=1698582631]
-custom_minimum_size = Vector2(520, 0)
-layout_mode = 2
-
-[node name="SelectionDisplay" type="HBoxContainer" parent="OptionLists/DomainCardSelContainer/CardInfo" unique_id=831202034]
-custom_minimum_size = Vector2(520, 0)
-layout_direction = 2
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_constants/separation = 34
-alignment = 1
-
-[node name="DomainCard" parent="OptionLists/DomainCardSelContainer/CardInfo/SelectionDisplay" unique_id=1871884780 instance=ExtResource("47_g2o8p")]
-visible = false
-custom_minimum_size = Vector2(250, 350)
-layout_mode = 2
-size_flags_horizontal = 1
-size_flags_vertical = 1
-
-[node name="SelectButton" type="Button" parent="OptionLists/DomainCardSelContainer/CardInfo/SelectionDisplay" unique_id=400395179]
-layout_mode = 2
-size_flags_horizontal = 10
-size_flags_vertical = 4
-text = "Select"
-
-[node name="SelectedLabel" type="Label" parent="OptionLists/DomainCardSelContainer/CardInfo" unique_id=671947977]
-layout_mode = 2
-text = "Selected Domain Cards:"
-
-[node name="SelectedCardsList" type="ItemList" parent="OptionLists/DomainCardSelContainer/CardInfo" unique_id=585113079]
-custom_minimum_size = Vector2(0, 160)
-layout_mode = 2
+[node name="DomainCardSelContainer" parent="OptionLists" unique_id=710034451 instance=ExtResource("47_g2o8p")]
+layout_mode = 1
 
 [node name="TraitAssignmentContainer" type="HBoxContainer" parent="OptionLists" unique_id=1249625595]
 visible = false
