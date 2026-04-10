@@ -69,7 +69,7 @@ extends Control
 
 var updated = false
 var shortRestCounter = 0
-var character: Character
+var character: Character 
 var card_scene: PackedScene = load("res://Scenes/Cards/card_vault.tscn")
 var save_manager
 

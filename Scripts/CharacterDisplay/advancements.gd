@@ -16,51 +16,63 @@ extends Window
 @onready var exp_4: CheckButton = $ObjectContainer/Experiences/VBoxContainer/Exp4
 @onready var exp_5: CheckButton = $ObjectContainer/Experiences/VBoxContainer/Exp5
 @onready var domain_card: CheckButton = $ObjectContainer/DomainCardPanel/ExtraDomainCard
-@onready var classes: Button = $ObjectContainer/Classes
-@onready var domain_card_selector = $DomainCardSelContainer
+@onready var multiclass: CheckButton = $ObjectContainer/MulticlassPanel/Multiclassing
 @onready var object_container = $ObjectContainer
+@onready var multiclass_container = $MulticlassChoiceContainer
+@onready var domain_card_selector = $DomainCardSelContainer
 @onready var confirm_button: Button = $ConfirmButton
 
 @onready var allButtons: Array[CheckButton] = [agility, strength, finesse, instinct, presence,
-knowledge, health, stress, evasion, proficiency, exp_1, exp_2, exp_3, exp_4, exp_5, domain_card]
+knowledge, health, stress, evasion, proficiency, exp_1, exp_2, exp_3, exp_4, exp_5, domain_card, multiclass]
+
 var selected: Array[CheckButton]
+@onready var container_array = [object_container, multiclass_container, domain_card_selector]
+var active_container: Container
 var character: Character
 var card_selector_scene: PackedScene = load("res://Scenes/Cards/domain_card_sel_container.tscn")
 signal advancements_confirmed
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	classes.disabled = true
+	multiclass.disabled = true
 	for button in allButtons:
 		button.toggled.connect(_on_checkButton_toggled.bind(button))
 	confirm_button.pressed.connect(_on_confirm_pressed)
+	set_active_container(0)
 	self.add_theme_icon_override("close", Texture2D.new())
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
+func set_active_container(n: int) -> void:
+	active_container = container_array[n]
+	active_container.visible = true
+	for container in container_array:
+		if container != active_container:
+			container.visible = false
+	
+	if active_container == container_array[2]: 
+		confirm_button.visible = false
+		domain_card_selector.level_up_selector_setup()
+	else:
+		confirm_button.visible = true
 
 func _on_checkButton_toggled(toggled_on: bool, toggled_button: CheckButton) -> void:
-	if toggled_on:
-		if toggled_button == proficiency:
-			if selected.size() > 0:
-				for s in selected:
-					s.set_pressed_no_signal(false)
+	if active_container == container_array[0]:
+		if toggled_on:
+			if toggled_button == proficiency:
+				if selected.size() > 0:
+					for s in selected:
+						s.set_pressed_no_signal(false)
+					selected.clear()
+			elif proficiency in selected:
+				selected[0].set_pressed_no_signal(false)
 				selected.clear()
-		elif proficiency in selected:
-			selected[0].set_pressed_no_signal(false)
-			selected.clear()
-		
-		selected.append(toggled_button)
-		
-		if selected.size() > 2:
-			var oldest = selected.pop_front()
-			oldest.set_pressed_no_signal(false)
-	else:
-		selected.erase(toggled_button)
-		
+			
+			selected.append(toggled_button)
+			
+			if selected.size() > 2:
+				var oldest = selected.pop_front()
+				oldest.set_pressed_no_signal(false)
+		else:
+			selected.erase(toggled_button)
 
 func get_character(c: Character):
 	character = c
@@ -78,23 +90,24 @@ func _update_fields() -> void:
 		exp_3.text = "New Experience"
 		exp_3.show()
 		
-		for b in character.button_enabler:
-			b = false
+		character.button_enabler = [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]
 	elif character.level == 5:
 		exp_4.text = "New Experience"
 		exp_4.show()
-		classes.disabled = false
+		multiclass.disabled = false
 		
-		for b in character.button_enabler:
-			b = false
+		character.button_enabler = [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]
 	elif character.level == 8:
 		exp_5.text = "New Experience"
 		exp_5.show()
 		
-		for b in character.button_enabler:
-			b = false
+		character.button_enabler = [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]
 
 func _on_confirm_pressed() -> void:
+	if active_container==container_array[0]: _handle_object_container_confirm()
+
+func _handle_object_container_confirm() -> void:
+	var is_multiclassing: bool = false
 	if !selected.size() >= 2 && !proficiency in selected:
 		print("No advancements selected")
 	else:
@@ -114,24 +127,25 @@ func _on_confirm_pressed() -> void:
 			if s == exp_4: character.experience_levels[3] += 1
 			if s == exp_5: character.experience_levels[4] += 1
 			if s == domain_card: character.max_domain_cards += 1
+			if s == multiclass: is_multiclassing = true
 		for s in selected:
 			var index = allButtons.find(s)
 			character.button_enabler[index] = true
-		_set_domain_card_selector_visibility(true)
+		if is_multiclassing:
+			multiclass_container.get_character(character)
+			multiclass_container.initialize()
+			set_active_container(1)
+		else:
+			set_active_container(2)
+		
 		character.max_domain_cards += 1
-		domain_card_selector.level_up_selector_setup()
 
 func update_sheet_fields():
 	advancements_confirmed.emit()
 
-func _set_domain_card_selector_visibility(i:bool):
-	object_container.visible = !i
-	confirm_button.visible = !i
-	domain_card_selector.visible = i
-
 func confirm_all_advancements():
 	selected.clear()
-	_set_domain_card_selector_visibility(false)
+	set_active_container(0)
 	update_sheet_fields()
 	self.hide()
 
@@ -141,4 +155,5 @@ func _update_buttons():
 		button.set_pressed_no_signal(character.button_enabler[i])
 		button.disabled = character.button_enabler[i]
 		i+=1
-		
+		if button == multiclass && character.level < 5:
+			button.disabled = true

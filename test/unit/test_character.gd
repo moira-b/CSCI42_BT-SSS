@@ -150,4 +150,3 @@ func test_iterate_through_hp():
 		valid_health = character.set_current_health(i)
 		i += 1
 	assert_eq(character.current_hp, max_health)
-	
