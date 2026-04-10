@@ -5,12 +5,14 @@ extends Control
 @onready var complete_button = $ButtonContainer/CompleteButton
 @onready var back_button = $ButtonContainer/BackButton
 @onready var description_display = $DescriptionContainer
+@onready var card_selector = $OptionLists/DomainCardSelContainer
 @onready var character = $Character
 
 var option_tab_array: Array[Control]
 var option_tab_index: int
 var active_option_tab: Control
 var sheet_scene: PackedScene = preload("res://Scenes/CharacterDisplay/character_sheet.tscn")
+var domain: PackedScene = load("res://Scenes/Cards/domain_card_base.tscn")
 
 func _ready() -> void:
 	option_tab_index = 0
@@ -28,6 +30,11 @@ func _process(_delta: float) -> void:
 	
 	if active_option_tab is ItemList && active_option_tab.is_anything_selected():
 		confirm_button.disabled = false
+	elif active_option_tab.name == "DomainCardSelContainer":
+		if active_option_tab.select_card_list.item_count == 2:
+			confirm_button.disabled = false
+		else:
+			confirm_button.disabled = true
 	elif active_option_tab.name == "TraitAssignmentContainer":
 		if active_option_tab.get_child(1).is_all_items_complete():
 			confirm_button.disabled = false
@@ -41,6 +48,10 @@ func _set_active_option_tab(_index: int):
 	'''
 		Sets active item list by hiding or showing visibility of given item lists
 	'''
+	if active_option_tab and active_option_tab.name == "DomainCardSelContainer":
+		active_option_tab.clear_screen()
+		
+
 	if option_tab_array[_index]:
 		active_option_tab = option_tab_array[_index]
 		active_option_tab.visible = true
@@ -53,6 +64,10 @@ func _set_active_option_tab(_index: int):
 		confirm_button.visible = false
 		complete_button.disabled = true
 		complete_button.visible = true
+	elif active_option_tab.name == "DomainCardSelContainer":
+		description_display.visible = false
+		active_option_tab.fill_domain_card_list()
+		active_option_tab.clear_selected_cards()
 	else:
 		confirm_button.visible = true
 		complete_button.disabled = true
@@ -94,9 +109,20 @@ func show_description(message: String) -> void:
 
 
 func _on_complete_button_pressed() -> void:
+	add_domain_cards()
 	var new_scene = sheet_scene.instantiate()
+	character.set_maximum_health()
+	character.set_maximum_stress()
+	character.set_maximum_armor_slots()
 	character.reparent(new_scene)
 	self.get_parent().add_child(new_scene)
 	new_scene.enter()
 	self.queue_free()
 	#get_tree().change_scene_to_packed(sheet_scene)
+
+
+func add_domain_cards():
+	for index in range(card_selector.select_card_list.item_count):
+		var card = card_selector.select_card_list.get_item_text(index)
+		character.active_cards.append(card)
+		

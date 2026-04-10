@@ -49,6 +49,7 @@
 [ext_resource type="Resource" uid="uid://s12git0i5oci" path="res://Resources/Communities/wildborne.tres" id="36_m83la"]
 [ext_resource type="Script" uid="uid://clmxkh4im6n7f" path="res://Scripts/CharacterCreation/text_fill_container.gd" id="39_68bmj"]
 [ext_resource type="Script" uid="uid://bwg57k6ymdiig" path="res://Scripts/CharacterCreation/description_display.gd" id="42_a5r2x"]
+[ext_resource type="PackedScene" uid="uid://1un73y3t3x7b" path="res://Scenes/Cards/domain_card_sel_container.tscn" id="47_g2o8p"]
 
 [sub_resource type="Resource" id="Resource_7bny4"]
 script = ExtResource("7_5fs0t")
@@ -168,6 +169,9 @@ max_columns = 3
 same_column_width = true
 script = ExtResource("6_n175s")
 community_array = Array[ExtResource("7_qaets")]([ExtResource("28_82lxq"), ExtResource("29_rli2i"), ExtResource("30_foxel"), ExtResource("31_68bmj"), ExtResource("32_7s5p1"), ExtResource("33_m6swa"), ExtResource("34_a5r2x"), ExtResource("35_5asme"), ExtResource("36_m83la")])
+
+[node name="DomainCardSelContainer" parent="OptionLists" unique_id=710034451 instance=ExtResource("47_g2o8p")]
+layout_mode = 1
 
 [node name="TraitAssignmentContainer" type="HBoxContainer" parent="OptionLists" unique_id=1249625595]
 visible = false
@@ -482,6 +486,7 @@ text = "+2"
 horizontal_alignment = 1
 
 [node name="NamePronounContainer" type="HBoxContainer" parent="OptionLists" unique_id=989217177]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

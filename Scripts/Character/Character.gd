@@ -2,7 +2,9 @@
 # which holds all the character information and methods
 class_name Character
 extends Node
- 
+
+const FILE_PATH = "user://character_data"
+
 const max_level: int = 10
 const max_hope: int = 6
 
@@ -29,11 +31,21 @@ const max_hope: int = 6
 @export var used_armor_slots: int
 @export var experiences: Array[String] = ["", "", "", "", ""]
 @export var damage_thresholds: Array[int]
+@export var experience_levels: Array[int] = [2, 2, 2, 2, 2]
+@export var max_domain_cards: int
 
 var ancestry: Ancestry
 var community: Community
 var character_class: CharacterClass
 var subclass: CharacterSubclass
+var multiclass_domains: Array[Domain]
+var multiclass_selections: Array[CharacterClass]
+var primary_key: String
+
+
+@onready var button_enabler: Array[bool] = [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]
+@onready var active_cards: Array[String] = []
+@onready var vaulted_cards: Array[String] = []
 
 @onready var active_domain_cards = $ActiveDomainCards
 @onready var vaulted_domain_cards = $VaultedDomainCards
@@ -127,7 +139,88 @@ func set_proficiency_modifier() -> void:
 	if level > 1: proficiency_modifier = 1
 	if level > 4: proficiency_modifier = 2
 	if level > 7: proficiency_modifier = 3
-	
+
 func set_proficiency() -> void:
 	self.proficiency = proficiency_modifier + proficiency
 	pass
+	
+func serialize_data():
+	var save_dict = {
+		"primary_key": primary_key,
+		"character_name": character_name,
+		"pronouns": pronouns,
+		"bio": bio,
+		"level": level,
+		"class": character_class.resource_path,
+		"subclass": subclass.resource_path,
+		"ancestry": ancestry.resource_path,
+		"community": community.resource_path,
+		"evasion": evasion,
+		"agility": agility,
+		"strength": strength,
+		"finesse": finesse,
+		"instinct": instinct,
+		"presence": presence,
+		"knowledge": knowledge,
+		"proficiency": proficiency,
+		"proficiency_modifier": proficiency_modifier,
+		"max_hp": max_hp,
+		"current_hp": current_hp,
+		"max_stress": max_stress,
+		"current_stress": current_stress,
+		"current_hope": current_hope,
+		"items": items,
+		"max_armor_slots": max_armor_slots,
+		"used_armor_slots": used_armor_slots,
+		"experiences": experiences,
+		"damage_thresholds": damage_thresholds,
+		"experience_levels": experience_levels,
+		"max_domain_cards": max_domain_cards,
+		"active_cards" : active_cards,
+		"vaulted_cards": vaulted_cards,
+		"button_enabler": button_enabler,
+		"multiclass_domains": multiclass_domains,
+		"multiclass_selections": multiclass_selections
+	}
+	return save_dict
+
+func assign_primary_key(pk: int):
+	self.primary_key = str(pk)
+
+func load_data(char_dict: Variant):
+	agility = char_dict["agility"]
+	ancestry = load(char_dict["ancestry"])
+	bio = char_dict["bio"]
+	character_name = char_dict["character_name"]
+	character_class = load(char_dict["class"])
+	community = load(char_dict["community"])
+	current_hope = char_dict["current_hope"]
+	current_hp = char_dict["current_hp"]
+	current_stress = char_dict["current_stress"]
+	damage_thresholds.assign(char_dict["damage_thresholds"])
+	evasion = char_dict["evasion"]
+	experiences.assign(char_dict["experiences"])
+	experience_levels.assign(char_dict["experience_levels"])
+	finesse = char_dict["finesse"]
+	instinct = char_dict["instinct"]
+	items.assign(char_dict["items"])
+	knowledge = char_dict["knowledge"]
+	level = char_dict["level"]
+	max_armor_slots = char_dict["max_armor_slots"]
+	max_hp = char_dict["max_hp"]
+	max_stress = char_dict["max_stress"]
+	presence = char_dict["presence"]
+	primary_key = char_dict["primary_key"]
+	proficiency = char_dict["proficiency"]
+	proficiency_modifier = char_dict["proficiency_modifier"]
+	pronouns = char_dict["pronouns"]
+	strength = char_dict["strength"]
+	subclass = load(char_dict["subclass"])
+	used_armor_slots = char_dict["used_armor_slots"]
+	max_domain_cards = char_dict["max_domain_cards"]
+	active_cards.assign(char_dict["active_cards"])
+	vaulted_cards.assign(char_dict["vaulted_cards"])
+	button_enabler.assign(char_dict["button_enabler"])
+	multiclass_domains.assign(char_dict["multiclass_domains"])
+	multiclass_selections.assign(char_dict["multiclass_selections"])
+	
