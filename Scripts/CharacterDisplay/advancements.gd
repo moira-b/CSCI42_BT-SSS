@@ -66,6 +66,15 @@ func _on_checkButton_toggled(toggled_on: bool, toggled_button: CheckButton) -> v
 				selected[0].set_pressed_no_signal(false)
 				selected.clear()
 			
+			if toggled_button == multiclass:
+				if selected.size() > 0:
+					for s in selected:
+						s.set_pressed_no_signal(false)
+					selected.clear()
+			elif multiclass in selected:
+				selected[0].set_pressed_no_signal(false)
+				selected.clear()
+			
 			selected.append(toggled_button)
 			
 			if selected.size() > 2:
