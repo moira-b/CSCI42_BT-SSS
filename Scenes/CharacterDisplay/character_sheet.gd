@@ -20,7 +20,6 @@ extends Control
 @onready var stress_field = $MarkableStats/Stress
 @onready var armor_field = $MarkableStats/Armor
 @onready var hope_field = $MarkableStats/Hope
-#@onready var level_field = $Header/Level/Level
 @onready var ancestry_field = $Header/HeaderInfo/CommnityAncestry/AncestryPanelContainer/Ancestry/ColorRect/Ancestry
 @onready var community_field = $Header/HeaderInfo/CommnityAncestry/PanelContainer/Community/ColorRect/Community
 @onready var class_field = $ClassSubclass/ClassRect/Class
@@ -259,10 +258,7 @@ func _on_stat_decrement_pressed(stat_name: String) -> void:
 	elif(stat_name=="Hope"):
 		if character.set_current_hope(character.current_hope-1):
 			hope_field.set_current_value(str(character.current_hope))
-	# OLD CODE, can delete
-	#elif(stat_name=="Level"):
-		#if character.set_level(character.level-1):
-			#level_field.set_current_value(str(character.level))
+
 
 func _on_pronouns_text_changed(new_text):
 	character.pronouns = new_text
@@ -360,7 +356,6 @@ func _on_confirm_button_pressed() -> void:
 	
 func _on_levelup_button_pressed() -> void:
 	if character.level < 10:
-		#levelup_confirmation_panel.global_position = levelup_button.global_position
 		levelup_confirmation_button.pressed.connect(_on_levelup_confirm_pressed)
 		levelup_cancel_button.pressed.connect(_on_levelup_cancel_pressed)
 		levelup_confirmation_panel.visible = true
@@ -386,9 +381,6 @@ func connect_signals() -> void:
 	armor_field.stat_decrement_pressed.connect(_on_stat_decrement_pressed)
 	hope_field.stat_increment_pressed.connect(_on_stat_increment_pressed)
 	hope_field.stat_decrement_pressed.connect(_on_stat_decrement_pressed)
-	# OLD CODE, can delete
-	#level_field.stat_increment_pressed.connect(_on_stat_increment_pressed)
-	#level_field.stat_decrement_pressed.connect(_on_stat_decrement_pressed)
 	
 	short_rest_button.pressed.connect(_on_short_rest_pressed)
 	long_rest_button.pressed.connect(_on_long_rest_pressed)
