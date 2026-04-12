@@ -357,132 +357,161 @@ offset_right = 538.0
 offset_bottom = 148.328
 grow_horizontal = 2
 
-[node name="AgilityContainer" type="BoxContainer" parent="TraitModifiers" unique_id=1577777243]
-custom_minimum_size = Vector2(159, 0)
+[node name="AgilityPanel" type="PanelContainer" parent="TraitModifiers" unique_id=845298128]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("2_c8oo5")
+
+[node name="AgilityContainer" type="BoxContainer" parent="TraitModifiers/AgilityPanel" unique_id=1577777243]
+custom_minimum_size = Vector2(145, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Label" type="Label" parent="TraitModifiers/AgilityContainer" unique_id=282414516]
+[node name="Label" type="Label" parent="TraitModifiers/AgilityPanel/AgilityContainer" unique_id=282414516]
 layout_mode = 2
 text = "Agility:"
 
-[node name="Agility" type="LineEdit" parent="TraitModifiers/AgilityContainer" unique_id=1420901994]
-custom_minimum_size = Vector2(50, 25)
+[node name="Agility" type="LineEdit" parent="TraitModifiers/AgilityPanel/AgilityContainer" unique_id=1420901994]
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="SpinBox" type="SpinBox" parent="TraitModifiers/AgilityContainer/Agility" unique_id=1306810026]
+[node name="SpinBox" type="SpinBox" parent="TraitModifiers/AgilityPanel/AgilityContainer/Agility" unique_id=1306810026]
 layout_mode = 0
 offset_right = 86.5
 offset_bottom = 31.0
 min_value = -1.0
 alignment = 1
 
-[node name="StrengthContainer" type="BoxContainer" parent="TraitModifiers" unique_id=546099669]
-custom_minimum_size = Vector2(178, 0)
+[node name="StrengthPanel" type="PanelContainer" parent="TraitModifiers" unique_id=1240049060]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("2_c8oo5")
+
+[node name="StrengthContainer" type="BoxContainer" parent="TraitModifiers/StrengthPanel" unique_id=546099669]
+custom_minimum_size = Vector2(164, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Label" type="Label" parent="TraitModifiers/StrengthContainer" unique_id=270208455]
+[node name="Label" type="Label" parent="TraitModifiers/StrengthPanel/StrengthContainer" unique_id=270208455]
 layout_mode = 2
 text = "Strength:"
 
-[node name="Strength" type="LineEdit" parent="TraitModifiers/StrengthContainer" unique_id=1916158857]
+[node name="Strength" type="LineEdit" parent="TraitModifiers/StrengthPanel/StrengthContainer" unique_id=1916158857]
 custom_minimum_size = Vector2(50, 25)
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="SpinBox" type="SpinBox" parent="TraitModifiers/StrengthContainer/Strength" unique_id=1298242004]
+[node name="SpinBox" type="SpinBox" parent="TraitModifiers/StrengthPanel/StrengthContainer/Strength" unique_id=1298242004]
 layout_mode = 0
 offset_right = 86.5
 offset_bottom = 31.0
 min_value = -1.0
 alignment = 1
 
-[node name="FinesseContainer" type="BoxContainer" parent="TraitModifiers" unique_id=1194059882]
-custom_minimum_size = Vector2(168, 0)
+[node name="FinessePanel" type="PanelContainer" parent="TraitModifiers" unique_id=1146771778]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("2_c8oo5")
+
+[node name="FinesseContainer" type="BoxContainer" parent="TraitModifiers/FinessePanel" unique_id=1194059882]
+custom_minimum_size = Vector2(154, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Label" type="Label" parent="TraitModifiers/FinesseContainer" unique_id=2135928192]
+[node name="Label" type="Label" parent="TraitModifiers/FinessePanel/FinesseContainer" unique_id=2135928192]
 layout_mode = 2
 text = "Finesse:"
 
-[node name="Finesse" type="LineEdit" parent="TraitModifiers/FinesseContainer" unique_id=400501315]
+[node name="Finesse" type="LineEdit" parent="TraitModifiers/FinessePanel/FinesseContainer" unique_id=400501315]
 custom_minimum_size = Vector2(50, 25)
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="SpinBox" type="SpinBox" parent="TraitModifiers/FinesseContainer/Finesse" unique_id=667668459]
+[node name="SpinBox" type="SpinBox" parent="TraitModifiers/FinessePanel/FinesseContainer/Finesse" unique_id=667668459]
 layout_mode = 0
 offset_right = 86.5
 offset_bottom = 31.0
 min_value = -1.0
 alignment = 1
 
-[node name="InstinctContainer" type="BoxContainer" parent="TraitModifiers" unique_id=1848782649]
-custom_minimum_size = Vector2(169, 0)
+[node name="InstinctPanel" type="PanelContainer" parent="TraitModifiers" unique_id=625353031]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("2_c8oo5")
+
+[node name="InstinctContainer" type="BoxContainer" parent="TraitModifiers/InstinctPanel" unique_id=1848782649]
+custom_minimum_size = Vector2(155, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Label" type="Label" parent="TraitModifiers/InstinctContainer" unique_id=1221245103]
+[node name="Label" type="Label" parent="TraitModifiers/InstinctPanel/InstinctContainer" unique_id=1221245103]
 layout_mode = 2
 text = "Instinct:"
 
-[node name="Instinct" type="LineEdit" parent="TraitModifiers/InstinctContainer" unique_id=711950248]
+[node name="Instinct" type="LineEdit" parent="TraitModifiers/InstinctPanel/InstinctContainer" unique_id=711950248]
 custom_minimum_size = Vector2(50, 25)
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="SpinBox" type="SpinBox" parent="TraitModifiers/InstinctContainer/Instinct" unique_id=1594031626]
+[node name="SpinBox" type="SpinBox" parent="TraitModifiers/InstinctPanel/InstinctContainer/Instinct" unique_id=1594031626]
 layout_mode = 0
 offset_right = 86.5
 offset_bottom = 31.0
 min_value = -1.0
 alignment = 1
 
-[node name="PrescenceContainer" type="BoxContainer" parent="TraitModifiers" unique_id=1511671395]
-custom_minimum_size = Vector2(189, 0)
+[node name="PrescencePanel" type="PanelContainer" parent="TraitModifiers" unique_id=1242949170]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("2_c8oo5")
+
+[node name="PrescenceContainer" type="BoxContainer" parent="TraitModifiers/PrescencePanel" unique_id=1511671395]
+custom_minimum_size = Vector2(175, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Label" type="Label" parent="TraitModifiers/PrescenceContainer" unique_id=515719497]
+[node name="Label" type="Label" parent="TraitModifiers/PrescencePanel/PrescenceContainer" unique_id=515719497]
 layout_mode = 2
 text = "Prescence:"
 
-[node name="Prescence" type="LineEdit" parent="TraitModifiers/PrescenceContainer" unique_id=918780444]
+[node name="Prescence" type="LineEdit" parent="TraitModifiers/PrescencePanel/PrescenceContainer" unique_id=918780444]
 custom_minimum_size = Vector2(50, 25)
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="SpinBox" type="SpinBox" parent="TraitModifiers/PrescenceContainer/Prescence" unique_id=167506490]
+[node name="SpinBox" type="SpinBox" parent="TraitModifiers/PrescencePanel/PrescenceContainer/Prescence" unique_id=167506490]
 layout_mode = 0
 offset_right = 86.5
 offset_bottom = 31.0
 min_value = -1.0
 alignment = 1
 
-[node name="KnowledgeContainer" type="BoxContainer" parent="TraitModifiers" unique_id=959325206]
-custom_minimum_size = Vector2(196, 0)
+[node name="KnowledgePanel" type="PanelContainer" parent="TraitModifiers" unique_id=793671647]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("2_c8oo5")
+
+[node name="KnowledgeContainer" type="BoxContainer" parent="TraitModifiers/KnowledgePanel" unique_id=959325206]
+custom_minimum_size = Vector2(182, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Label" type="Label" parent="TraitModifiers/KnowledgeContainer" unique_id=14507721]
+[node name="Label" type="Label" parent="TraitModifiers/KnowledgePanel/KnowledgeContainer" unique_id=14507721]
 layout_mode = 2
 text = "Knowledge:"
 
-[node name="Knowledge" type="LineEdit" parent="TraitModifiers/KnowledgeContainer" unique_id=445053709]
+[node name="Knowledge" type="LineEdit" parent="TraitModifiers/KnowledgePanel/KnowledgeContainer" unique_id=445053709]
 custom_minimum_size = Vector2(50, 25)
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="SpinBox" type="SpinBox" parent="TraitModifiers/KnowledgeContainer/Knowledge" unique_id=173268576]
+[node name="SpinBox" type="SpinBox" parent="TraitModifiers/KnowledgePanel/KnowledgeContainer/Knowledge" unique_id=173268576]
 layout_mode = 0
 offset_right = 86.5
 offset_bottom = 31.0

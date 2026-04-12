@@ -3,12 +3,12 @@ extends Control
 
 @onready var bio_edit = $"Bio/BioEdit"
 @onready var name_edit = $Header/HeaderInfo/NamePronouns/NamePanelContainer/NameC/NameEdit
-@onready var agility_field: SpinBox = $TraitModifiers/AgilityContainer/Agility/SpinBox
-@onready var strength_field: SpinBox = $TraitModifiers/StrengthContainer/Strength/SpinBox
-@onready var finesse_field: SpinBox = $TraitModifiers/FinesseContainer/Finesse/SpinBox
-@onready var instinct_field: SpinBox = $TraitModifiers/InstinctContainer/Instinct/SpinBox
-@onready var presence_field: SpinBox = $TraitModifiers/PrescenceContainer/Prescence/SpinBox
-@onready var knowledge_field: SpinBox = $TraitModifiers/KnowledgeContainer/Knowledge/SpinBox
+@onready var agility_field: SpinBox = $TraitModifiers/AgilityPanel/AgilityContainer/Agility/SpinBox
+@onready var strength_field: SpinBox = $TraitModifiers/StrengthPanel/StrengthContainer/Strength/SpinBox
+@onready var finesse_field: SpinBox = $TraitModifiers/FinessePanel/FinesseContainer/Finesse/SpinBox
+@onready var instinct_field: SpinBox = $TraitModifiers/InstinctPanel/InstinctContainer/Instinct/SpinBox
+@onready var presence_field: SpinBox = $TraitModifiers/PrescencePanel/PrescenceContainer/Prescence/SpinBox
+@onready var knowledge_field: SpinBox = $TraitModifiers/KnowledgePanel/KnowledgeContainer/Knowledge/SpinBox
 @onready var pronouns_field: LineEdit = $Header/HeaderInfo/NamePronouns/PronounsPanelContainer/Pronouns/PronounsEdit
 @onready var experience1 : LineEdit = $Experiences/Experience1/Experience1
 @onready var experience2 : LineEdit = $Experiences/Experience2/Experience2
