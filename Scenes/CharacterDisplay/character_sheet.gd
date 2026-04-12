@@ -66,6 +66,9 @@ extends Control
 @onready var del_confirm_button = $Header/PanelContainer/MarginContainer/RightPanel/DeletionWindow/Buttons/ConfirmButton
 @onready var del_cancel_button = $Header/PanelContainer/MarginContainer/RightPanel/DeletionWindow/Buttons/CancelButton
 
+@onready var all_traits: Array[LineEdit] = [agility_field, strength_field, finesse_field, instinct_field,
+	presence_field, knowledge_field]
+
 var updated = false
 var shortRestCounter = 0
 var character: Character 
@@ -177,59 +180,33 @@ func _on_name_edit_text_changed(new_text: String) -> void:
 	character.character_name = new_text
 
 
-func _on_agility_text_submitted(new_text: String) -> void:
-	if (int(new_text) == 0):
-		print("Invalid input")
-	else:
+func _on_trait_text_submitted(new_text: String, trait_name: String) -> void:
+	if (trait_name == "Agility"):
 		character.agility = int(new_text)
 		agility_field.text = str(character.agility)
 		print("Agility: " + str(character.agility))
-
-
-func _on_strength_text_submitted(new_text: String) -> void:
-	if (int(new_text) == 0):
-		print("Invalid input")
-	else:
+	if (trait_name == "Strength"):
 		character.strength = int(new_text)
 		strength_field.text = str(character.strength)
 		print("Strength: " + str(character.strength))
+	if (trait_name == "Finesse"):
+		character.finesse = int(new_text)
+		finesse_field.text = str(character.finesse)
+		print("Finesse: " + str(character.finesse))
+	if (trait_name == "Instinct"):
+		character.instinct = int(new_text)
+		instinct_field.text = str(character.instinct)
+		print("Instinct: " + str(character.instinct))
+	if (trait_name == "Prescence"):
+		character.presence = int(new_text)
+		presence_field.text = str(character.presence)
+		print("Presence: " + str(character.presence))
+	if (trait_name == "Knowledge"):
+		character.knowledge = int(new_text)
+		knowledge_field.text = str(character.knowledge)
+		print("knowledge: " + str(character.knowledge))
 
 
-func _on_finesse_text_submitted(new_text: String) -> void:
-		if (int(new_text) == 0):
-			print("Invalid input")
-		else:
-			character.finesse = int(new_text)
-			finesse_field.text = str(character.finesse)
-			print("Finesse: " + str(character.finesse))
-
-
-func _on_instinct_text_submitted(new_text: String) -> void:
-		if (int(new_text) == 0):
-			print("Invalid input")
-		else:
-			character.instinct = int(new_text)
-			instinct_field.text = str(character.instinct)
-			print("Instinct: " + str(character.instinct))
-
-
-func _on_presence_text_submitted(new_text: String) -> void:
-		if (int(new_text) == 0):
-			print("Invalid input")
-		else:
-			character.presence = int(new_text)
-			presence_field.text = str(character.presence)
-			print("Presence: " + str(character.presence))
-
-
-func _on_knowledge_text_submitted(new_text: String) -> void:
-		if (int(new_text) == 0):
-			print("Invalid input")
-		else:
-			character.knowledge = int(new_text)
-			knowledge_field.text = str(character.knowledge)
-			print("knowledge: " + str(character.knowledge))
-			
 func _on_stat_increment_pressed(stat_name: String) -> void:
 	if(stat_name=="Health"):
 		if character.set_current_health(character.current_hp+1):
@@ -272,34 +249,34 @@ func change_experience(i: int, s: String):
 	print(character.experiences[i])
 
 func _on_experience_1_text_changed(new_text):
-	change_experience(1, new_text)
+	change_experience(0, new_text)
 
 func _on_experience_1_text_submitted(new_text):
-	change_experience(1, new_text)
+	change_experience(0, new_text)
 
 func _on_experience_2_text_changed(new_text):
-	change_experience(2, new_text)
+	change_experience(1, new_text)
 
 func _on_experience_2_text_submitted(new_text):
-	change_experience(2, new_text)
+	change_experience(1, new_text)
 
 func _on_experience_3_text_changed(new_text):
-	change_experience(3, new_text)
+	change_experience(2, new_text)
 
 func _on_experience_3_text_submitted(new_text):
-	change_experience(3, new_text)
+	change_experience(2, new_text)
 
 func _on_experience_4_text_changed(new_text):
-	change_experience(4, new_text)
+	change_experience(3, new_text)
 
 func _on_experience_4_text_submitted(new_text):
-	change_experience(4, new_text)
+	change_experience(3, new_text)
 
 func _on_experience_5_text_changed(new_text):
-	change_experience(5, new_text)
+	change_experience(4, new_text)
 
 func _on_experience_5_text_submitted(new_text):
-	change_experience(5, new_text)
+	change_experience(4, new_text)
 
 func _on_short_rest_pressed() -> void:
 	rest_window.set_rest_Length("short")
@@ -373,6 +350,9 @@ func _on_levelup_cancel_pressed() -> void:
 	levelup_confirmation_panel.visible = false
 
 func connect_signals() -> void:
+	for field in all_traits:
+		field.text_submitted.connect(_on_trait_text_submitted.bind(field.get_parent().name))
+	
 	health_field.stat_increment_pressed.connect(_on_stat_increment_pressed)
 	health_field.stat_decrement_pressed.connect(_on_stat_decrement_pressed)
 	stress_field.stat_increment_pressed.connect(_on_stat_increment_pressed)
