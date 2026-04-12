@@ -3,12 +3,12 @@ extends Control
 
 @onready var bio_edit = $"Bio/BioEdit"
 @onready var name_edit = $Header/HeaderInfo/NamePronouns/NamePanelContainer/NameC/NameEdit
-@onready var agility_field: LineEdit = $"TraitModifiers/Agility/LineEdit"
-@onready var strength_field: LineEdit = $"TraitModifiers/Strength/LineEdit"
-@onready var finesse_field: LineEdit = $"TraitModifiers/Finesse/LineEdit"
-@onready var instinct_field: LineEdit = $"TraitModifiers/Instinct/LineEdit"
-@onready var presence_field: LineEdit = $"TraitModifiers/Prescence/LineEdit"
-@onready var knowledge_field: LineEdit = $"TraitModifiers/Knowledge/LineEdit"
+@onready var agility_field: SpinBox = $TraitModifiers/AgilityContainer/Agility/SpinBox
+@onready var strength_field: SpinBox = $TraitModifiers/StrengthContainer/Strength/SpinBox
+@onready var finesse_field: SpinBox = $TraitModifiers/FinesseContainer/Finesse/SpinBox
+@onready var instinct_field: SpinBox = $TraitModifiers/InstinctContainer/Instinct/SpinBox
+@onready var presence_field: SpinBox = $TraitModifiers/PrescenceContainer/Prescence/SpinBox
+@onready var knowledge_field: SpinBox = $TraitModifiers/KnowledgeContainer/Knowledge/SpinBox
 @onready var pronouns_field: LineEdit = $Header/HeaderInfo/NamePronouns/PronounsPanelContainer/Pronouns/PronounsEdit
 @onready var experience1 : LineEdit = $Experiences/Experience1/Experience1
 @onready var experience2 : LineEdit = $Experiences/Experience2/Experience2
@@ -66,7 +66,7 @@ extends Control
 @onready var del_confirm_button = $Header/PanelContainer/MarginContainer/RightPanel/DeletionWindow/Buttons/ConfirmButton
 @onready var del_cancel_button = $Header/PanelContainer/MarginContainer/RightPanel/DeletionWindow/Buttons/CancelButton
 
-@onready var all_traits: Array[LineEdit] = [agility_field, strength_field, finesse_field, instinct_field,
+@onready var all_traits: Array[SpinBox] = [agility_field, strength_field, finesse_field, instinct_field,
 	presence_field, knowledge_field]
 
 var updated = false
@@ -116,12 +116,12 @@ func update_markable_fields() -> void:
 func update_edit_fields() -> void:
 	name_edit.set_text(str(character.character_name))
 	bio_edit.set_text(str(character.bio))
-	agility_field.set_text(str(character.agility))
-	strength_field.set_text(str(character.strength))
-	instinct_field.set_text(str(character.instinct))
-	finesse_field.set_text(str(character.finesse))
-	presence_field.set_text(str(character.presence))
-	knowledge_field.set_text(str(character.knowledge))
+	agility_field.value = character.agility
+	strength_field.value = character.strength
+	instinct_field.value = character.instinct
+	finesse_field.value = character.finesse
+	presence_field.value = character.presence
+	knowledge_field.value = character.knowledge
 	pronouns_field.set_text(str(character.pronouns))
 	experience1.set_text(str(character.experiences[0]))
 	experience2.set_text(str(character.experiences[1]))
@@ -180,30 +180,30 @@ func _on_name_edit_text_changed(new_text: String) -> void:
 	character.character_name = new_text
 
 
-func _on_trait_text_submitted(new_text: String, trait_name: String) -> void:
+func _on_trait_text_submitted(new_val: int, trait_name: String) -> void:
 	if (trait_name == "Agility"):
-		character.agility = int(new_text)
-		agility_field.text = str(character.agility)
+		character.agility = new_val
+		agility_field.value = character.agility
 		print("Agility: " + str(character.agility))
 	if (trait_name == "Strength"):
-		character.strength = int(new_text)
-		strength_field.text = str(character.strength)
+		character.strength = new_val
+		strength_field.value = character.strength
 		print("Strength: " + str(character.strength))
 	if (trait_name == "Finesse"):
-		character.finesse = int(new_text)
-		finesse_field.text = str(character.finesse)
+		character.finesse = new_val
+		finesse_field.value = character.finesse
 		print("Finesse: " + str(character.finesse))
 	if (trait_name == "Instinct"):
-		character.instinct = int(new_text)
-		instinct_field.text = str(character.instinct)
+		character.instinct = new_val
+		instinct_field.value = character.instinct
 		print("Instinct: " + str(character.instinct))
 	if (trait_name == "Prescence"):
-		character.presence = int(new_text)
-		presence_field.text = str(character.presence)
+		character.presence = new_val
+		presence_field.value = character.presence
 		print("Presence: " + str(character.presence))
 	if (trait_name == "Knowledge"):
-		character.knowledge = int(new_text)
-		knowledge_field.text = str(character.knowledge)
+		character.knowledge = new_val
+		knowledge_field.value = character.knowledge
 		print("knowledge: " + str(character.knowledge))
 
 
@@ -351,7 +351,7 @@ func _on_levelup_cancel_pressed() -> void:
 
 func connect_signals() -> void:
 	for field in all_traits:
-		field.text_submitted.connect(_on_trait_text_submitted.bind(field.get_parent().name))
+		field.value_changed.connect(_on_trait_text_submitted.bind(field.get_parent().name))
 	
 	health_field.stat_increment_pressed.connect(_on_stat_increment_pressed)
 	health_field.stat_decrement_pressed.connect(_on_stat_decrement_pressed)

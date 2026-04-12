@@ -351,101 +351,143 @@ anchor_left = 0.5
 anchor_top = 0.089
 anchor_right = 0.5
 anchor_bottom = 0.089
-offset_left = -482.0
+offset_left = -541.0
 offset_top = 95.328
-offset_right = 480.0
+offset_right = 538.0
 offset_bottom = 148.328
 grow_horizontal = 2
 
-[node name="Agility" type="BoxContainer" parent="TraitModifiers" unique_id=1577777243]
+[node name="AgilityContainer" type="BoxContainer" parent="TraitModifiers" unique_id=1577777243]
 custom_minimum_size = Vector2(159, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Label" type="Label" parent="TraitModifiers/Agility" unique_id=282414516]
+[node name="Label" type="Label" parent="TraitModifiers/AgilityContainer" unique_id=282414516]
 layout_mode = 2
 text = "Agility:"
 
-[node name="LineEdit" type="LineEdit" parent="TraitModifiers/Agility" unique_id=1420901994]
+[node name="Agility" type="LineEdit" parent="TraitModifiers/AgilityContainer" unique_id=1420901994]
 custom_minimum_size = Vector2(50, 25)
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="Strength" type="BoxContainer" parent="TraitModifiers" unique_id=546099669]
+[node name="SpinBox" type="SpinBox" parent="TraitModifiers/AgilityContainer/Agility" unique_id=1306810026]
+layout_mode = 0
+offset_right = 86.5
+offset_bottom = 31.0
+min_value = -1.0
+alignment = 1
+
+[node name="StrengthContainer" type="BoxContainer" parent="TraitModifiers" unique_id=546099669]
 custom_minimum_size = Vector2(178, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Label" type="Label" parent="TraitModifiers/Strength" unique_id=270208455]
+[node name="Label" type="Label" parent="TraitModifiers/StrengthContainer" unique_id=270208455]
 layout_mode = 2
 text = "Strength:"
 
-[node name="LineEdit" type="LineEdit" parent="TraitModifiers/Strength" unique_id=1916158857]
+[node name="Strength" type="LineEdit" parent="TraitModifiers/StrengthContainer" unique_id=1916158857]
 custom_minimum_size = Vector2(50, 25)
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="Finesse" type="BoxContainer" parent="TraitModifiers" unique_id=1194059882]
+[node name="SpinBox" type="SpinBox" parent="TraitModifiers/StrengthContainer/Strength" unique_id=1298242004]
+layout_mode = 0
+offset_right = 86.5
+offset_bottom = 31.0
+min_value = -1.0
+alignment = 1
+
+[node name="FinesseContainer" type="BoxContainer" parent="TraitModifiers" unique_id=1194059882]
 custom_minimum_size = Vector2(168, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Label" type="Label" parent="TraitModifiers/Finesse" unique_id=2135928192]
+[node name="Label" type="Label" parent="TraitModifiers/FinesseContainer" unique_id=2135928192]
 layout_mode = 2
 text = "Finesse:"
 
-[node name="LineEdit" type="LineEdit" parent="TraitModifiers/Finesse" unique_id=400501315]
+[node name="Finesse" type="LineEdit" parent="TraitModifiers/FinesseContainer" unique_id=400501315]
 custom_minimum_size = Vector2(50, 25)
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="Instinct" type="BoxContainer" parent="TraitModifiers" unique_id=1848782649]
+[node name="SpinBox" type="SpinBox" parent="TraitModifiers/FinesseContainer/Finesse" unique_id=667668459]
+layout_mode = 0
+offset_right = 86.5
+offset_bottom = 31.0
+min_value = -1.0
+alignment = 1
+
+[node name="InstinctContainer" type="BoxContainer" parent="TraitModifiers" unique_id=1848782649]
 custom_minimum_size = Vector2(169, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Label" type="Label" parent="TraitModifiers/Instinct" unique_id=1221245103]
+[node name="Label" type="Label" parent="TraitModifiers/InstinctContainer" unique_id=1221245103]
 layout_mode = 2
 text = "Instinct:"
 
-[node name="LineEdit" type="LineEdit" parent="TraitModifiers/Instinct" unique_id=711950248]
+[node name="Instinct" type="LineEdit" parent="TraitModifiers/InstinctContainer" unique_id=711950248]
 custom_minimum_size = Vector2(50, 25)
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="Prescence" type="BoxContainer" parent="TraitModifiers" unique_id=1511671395]
+[node name="SpinBox" type="SpinBox" parent="TraitModifiers/InstinctContainer/Instinct" unique_id=1594031626]
+layout_mode = 0
+offset_right = 86.5
+offset_bottom = 31.0
+min_value = -1.0
+alignment = 1
+
+[node name="PrescenceContainer" type="BoxContainer" parent="TraitModifiers" unique_id=1511671395]
 custom_minimum_size = Vector2(189, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Label" type="Label" parent="TraitModifiers/Prescence" unique_id=515719497]
+[node name="Label" type="Label" parent="TraitModifiers/PrescenceContainer" unique_id=515719497]
 layout_mode = 2
 text = "Prescence:"
 
-[node name="LineEdit" type="LineEdit" parent="TraitModifiers/Prescence" unique_id=918780444]
+[node name="Prescence" type="LineEdit" parent="TraitModifiers/PrescenceContainer" unique_id=918780444]
 custom_minimum_size = Vector2(50, 25)
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="Knowledge" type="BoxContainer" parent="TraitModifiers" unique_id=959325206]
+[node name="SpinBox" type="SpinBox" parent="TraitModifiers/PrescenceContainer/Prescence" unique_id=167506490]
+layout_mode = 0
+offset_right = 86.5
+offset_bottom = 31.0
+min_value = -1.0
+alignment = 1
+
+[node name="KnowledgeContainer" type="BoxContainer" parent="TraitModifiers" unique_id=959325206]
 custom_minimum_size = Vector2(196, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Label" type="Label" parent="TraitModifiers/Knowledge" unique_id=14507721]
+[node name="Label" type="Label" parent="TraitModifiers/KnowledgeContainer" unique_id=14507721]
 layout_mode = 2
 text = "Knowledge:"
 
-[node name="LineEdit" type="LineEdit" parent="TraitModifiers/Knowledge" unique_id=445053709]
+[node name="Knowledge" type="LineEdit" parent="TraitModifiers/KnowledgeContainer" unique_id=445053709]
 custom_minimum_size = Vector2(50, 25)
 layout_mode = 2
 size_flags_vertical = 4
+
+[node name="SpinBox" type="SpinBox" parent="TraitModifiers/KnowledgeContainer/Knowledge" unique_id=173268576]
+layout_mode = 0
+offset_right = 86.5
+offset_bottom = 31.0
+min_value = -1.0
+alignment = 1
 
 [node name="MarkableStats" type="VBoxContainer" parent="." unique_id=1671798450]
 layout_mode = 1
