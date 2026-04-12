@@ -457,7 +457,7 @@ anchor_bottom = 0.289
 offset_left = -201.616
 offset_top = 62.727997
 offset_right = 201.384
-offset_bottom = 186.728
+offset_bottom = 210.728
 
 [node name="Health" type="PanelContainer" parent="MarkableStats" unique_id=898166146]
 layout_mode = 2
@@ -700,7 +700,7 @@ anchor_right = 0.208
 anchor_bottom = 0.9710001
 offset_left = -201.616
 offset_top = -214.20807
-offset_right = 202.384
+offset_right = 201.384
 offset_bottom = -0.20806885
 
 [node name="Label" type="Label" parent="Experiences" unique_id=908732964]
@@ -909,31 +909,43 @@ offset_top = 600.0
 offset_right = 48.83908
 offset_bottom = 640.0
 
-[node name="EvasionProficency" type="VBoxContainer" parent="." unique_id=1872226757]
+[node name="EvasionProficency" type="HBoxContainer" parent="." unique_id=1963431349]
 layout_mode = 0
 offset_left = 455.0
 offset_top = 250.0
-offset_right = 583.0
-offset_bottom = 323.0
+offset_right = 796.0
+offset_bottom = 285.0
 
-[node name="Evasion" type="HBoxContainer" parent="EvasionProficency" unique_id=1745427904]
+[node name="EvasionContainer" type="PanelContainer" parent="EvasionProficency" unique_id=1029462065]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("2_c8oo5")
+
+[node name="Evasion" type="HBoxContainer" parent="EvasionProficency/EvasionContainer" unique_id=1745427904]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="EvasionProficency/Evasion" unique_id=551798954]
+[node name="Label" type="Label" parent="EvasionProficency/EvasionContainer/Evasion" unique_id=551798954]
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "Evasion:"
 
-[node name="Value" type="Label" parent="EvasionProficency/Evasion" unique_id=976301454]
+[node name="Value" type="Label" parent="EvasionProficency/EvasionContainer/Evasion" unique_id=976301454]
 layout_mode = 2
 
-[node name="Proficiency" type="HBoxContainer" parent="EvasionProficency" unique_id=1348180779]
+[node name="ProficiencyContainer" type="PanelContainer" parent="EvasionProficency" unique_id=851257000]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("2_c8oo5")
+
+[node name="Proficiency" type="HBoxContainer" parent="EvasionProficency/ProficiencyContainer" unique_id=1348180779]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="EvasionProficency/Proficiency" unique_id=279680082]
+[node name="Label" type="Label" parent="EvasionProficency/ProficiencyContainer/Proficiency" unique_id=279680082]
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "Proficiency:"
 
-[node name="Value" type="Label" parent="EvasionProficency/Proficiency" unique_id=612684652]
+[node name="Value" type="Label" parent="EvasionProficency/ProficiencyContainer/Proficiency" unique_id=612684652]
 layout_mode = 2
 
 [node name="AdvanceWindow" type="Window" parent="." unique_id=609611659]
