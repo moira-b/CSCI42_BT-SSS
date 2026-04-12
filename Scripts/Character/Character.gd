@@ -43,7 +43,6 @@ var multiclass_selections: Array[CharacterClass]
 var primary_key: String
 
 
-@onready var button_enabler: Array[bool] = [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]
 @onready var active_cards: Array[String] = []
 @onready var vaulted_cards: Array[String] = []
 
@@ -178,7 +177,6 @@ func serialize_data():
 		"max_domain_cards": max_domain_cards,
 		"active_cards" : active_cards,
 		"vaulted_cards": vaulted_cards,
-		"button_enabler": button_enabler,
 		"multiclass_domains": multiclass_domains,
 		"multiclass_selections": multiclass_selections
 	}
@@ -220,7 +218,6 @@ func load_data(char_dict: Variant):
 	max_domain_cards = char_dict["max_domain_cards"]
 	active_cards.assign(char_dict["active_cards"])
 	vaulted_cards.assign(char_dict["vaulted_cards"])
-	button_enabler.assign(char_dict["button_enabler"])
 	multiclass_domains.assign(char_dict["multiclass_domains"])
 	multiclass_selections.assign(char_dict["multiclass_selections"])
 	

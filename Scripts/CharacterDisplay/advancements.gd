@@ -86,7 +86,6 @@ func _on_checkButton_toggled(toggled_on: bool, toggled_button: CheckButton) -> v
 func get_character(c: Character):
 	character = c
 	_update_fields()
-	_update_buttons()
 
 func _update_fields() -> void:
 	exp_1.text = character.experiences[0]
@@ -99,25 +98,29 @@ func _update_fields() -> void:
 		exp_3.text = "New Experience"
 		exp_3.show()
 		
-		character.button_enabler = [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]
+		for b in allButtons:
+			b.disabled = false
+		
+		multiclass.disabled = true
 	elif character.level == 5:
 		exp_4.text = "New Experience"
 		exp_4.show()
-		multiclass.disabled = false
 		
-		character.button_enabler = [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]
+		for b in allButtons:
+			b.disabled = false
 	elif character.level == 8:
 		exp_5.text = "New Experience"
 		exp_5.show()
 		
-		character.button_enabler = [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]
+		for b in allButtons:
+			b.disabled = false
+
 
 func _on_confirm_pressed() -> void:
 	if active_container==container_array[0]: _handle_object_container_confirm()
 
 func _handle_object_container_confirm() -> void:
-	var is_multiclassing: bool = false
-	if !selected.size() >= 2 && !proficiency in selected:
+	if (!selected.size() >= 2 && (!proficiency in selected && !multiclass in selected)):
 		print("No advancements selected")
 	else:
 		for s in selected:
@@ -135,19 +138,20 @@ func _handle_object_container_confirm() -> void:
 			if s == exp_3: character.experience_levels[2] += 1
 			if s == exp_4: character.experience_levels[3] += 1
 			if s == exp_5: character.experience_levels[4] += 1
-			if s == domain_card: character.max_domain_cards += 1
-			if s == multiclass: is_multiclassing = true
+			if s == domain_card: 
+				character.max_domain_cards += 1
+				set_active_container(2)
+			if s == multiclass: 
+				multiclass_container.get_character(character)
+				multiclass_container.initialize()
+				set_active_container(1)
 		for s in selected:
-			var index = allButtons.find(s)
-			character.button_enabler[index] = true
-		if is_multiclassing:
-			multiclass_container.get_character(character)
-			multiclass_container.initialize()
-			set_active_container(1)
-		else:
-			set_active_container(2)
-		
+			s.set_pressed_no_signal(false)
+			s.disabled = true
+
 		character.max_domain_cards += 1
+	if !domain_card in selected && !multiclass in selected:
+		confirm_all_advancements() 
 
 func update_sheet_fields():
 	advancements_confirmed.emit()
@@ -157,12 +161,3 @@ func confirm_all_advancements():
 	set_active_container(0)
 	update_sheet_fields()
 	self.hide()
-
-func _update_buttons():
-	var i=0
-	for button in allButtons:
-		button.set_pressed_no_signal(character.button_enabler[i])
-		button.disabled = character.button_enabler[i]
-		i+=1
-		if button == multiclass && character.level < 5:
-			button.disabled = true
