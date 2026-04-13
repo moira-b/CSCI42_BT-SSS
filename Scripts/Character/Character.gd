@@ -33,6 +33,7 @@ const max_hope: int = 6
 @export var damage_thresholds: Array[int]
 @export var experience_levels: Array[int] = [2, 2, 2, 2, 2]
 @export var max_domain_cards: int
+@export var num_downtime_moves: int = 2
 
 var ancestry: Ancestry
 var community: Community
@@ -48,6 +49,7 @@ var primary_key: String
 
 @onready var active_domain_cards = $ActiveDomainCards
 @onready var vaulted_domain_cards = $VaultedDomainCards
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
@@ -178,7 +180,8 @@ func serialize_data():
 		"active_cards" : active_cards,
 		"vaulted_cards": vaulted_cards,
 		"multiclass_domains": multiclass_domains,
-		"multiclass_selections": multiclass_selections
+		"multiclass_selections": multiclass_selections,
+		"num_downtime_moves": num_downtime_moves
 	}
 	return save_dict
 
@@ -220,4 +223,21 @@ func load_data(char_dict: Variant):
 	vaulted_cards.assign(char_dict["vaulted_cards"])
 	multiclass_domains.assign(char_dict["multiclass_domains"])
 	multiclass_selections.assign(char_dict["multiclass_selections"])
+	num_downtime_moves = char_dict["num_downtime_moves"]
 	
+func implement_ancestry_features():
+	if self.ancestry.ancestry_name=="Clank":
+		print("CLANK FEATURE IMPLEMENTED IN character_sheet.gd")
+		print(character_name + " has a permanent +1 bonus to an experience due to Clank ancestry.")
+	elif self.ancestry.ancestry_name=="Elf":
+		num_downtime_moves = 3
+		print(character_name + " permanently has an extra downtime move due to Elf ancestry.")
+	elif self.ancestry.ancestry_name=="Giant":
+		max_hp += 1
+		print(character_name + "'s max health is automatically increased by 1 due to Giant ancestry.")
+	elif self.ancestry.ancestry_name=="Human":
+		max_stress += 1
+		print(character_name + "'s max stress is automatically increased by 1 due to Human ancestry.")
+	elif self.ancestry.ancestry_name=="Simiah":
+		evasion += 1
+		print(character_name + "'s evasion is automatically increased by 1 due to Simiah ancestry.")

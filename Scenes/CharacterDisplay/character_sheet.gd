@@ -279,6 +279,10 @@ func _on_experience_5_text_submitted(new_text):
 	change_experience(4, new_text)
 
 func _on_short_rest_pressed() -> void:
+	if character.ancestry.ancestry_name=="Clank":
+		_on_long_rest_pressed()
+		return
+	
 	rest_window.set_rest_Length("short")
 	rest_window.disable_Project()
 	disable_button_selection(true)

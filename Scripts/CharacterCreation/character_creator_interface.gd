@@ -114,6 +114,7 @@ func _on_complete_button_pressed() -> void:
 	character.set_maximum_health()
 	character.set_maximum_stress()
 	character.set_maximum_armor_slots()
+	character.implement_ancestry_features()
 	character.reparent(new_scene)
 	self.get_parent().add_child(new_scene)
 	new_scene.enter()
