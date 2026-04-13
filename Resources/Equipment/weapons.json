@@ -1,0 +1,22 @@
+{
+	"Broadsword":{
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Agility",
+		"range":"Melee",
+		"damage_die":8,
+		"damage_modifier":0,
+		"burden":"One-Handed",
+		"feature":["Reliable"]
+	},
+	"Longsword":{
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Agility",
+		"range":"Melee",
+		"damage_die":10,
+		"damage_modifier":3,
+		"burden":"Two-Handed",
+		"feature":[]
+	},
+}
