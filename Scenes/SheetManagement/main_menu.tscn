@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://028wp2ttofun" path="res://Scripts/SheetManagement/main_menu.gd" id="1_vsvys"]
 [ext_resource type="PackedScene" uid="uid://r02yxwfx48hx" path="res://Scenes/SheetManagement/SaveManager.tscn" id="2_3hhsk"]
+[ext_resource type="StyleBox" uid="uid://dic645d200g74" path="res://Resources/GUIStyles/character_sheet_stylebox.tres" id="3_duv1w"]
+[ext_resource type="StyleBox" uid="uid://dewju2mxoq348" path="res://Resources/GUIStyles/button_style.tres" id="4_dumt2"]
+[ext_resource type="Script" uid="uid://fvdr0f3rncnv" path="res://Scenes/SheetManagement/main_menu_options_popup.gd" id="4_rkvgt"]
 
 [node name="MainMenu" type="Control" unique_id=621885202]
 layout_mode = 3
@@ -91,16 +94,71 @@ theme_override_constants/h_separation = 20
 theme_override_constants/v_separation = 20
 columns = 4
 
-[node name="Button" type="Button" parent="." unique_id=1982241539]
-layout_mode = 1
+[node name="OptionsPopupMenu" type="PanelContainer" parent="." unique_id=391540452]
+visible = false
+layout_mode = 0
+offset_right = 175.0
+offset_bottom = 70.0
+theme_override_styles/panel = ExtResource("3_duv1w")
+script = ExtResource("4_rkvgt")
+
+[node name="ButtonsContainer" type="VBoxContainer" parent="OptionsPopupMenu" unique_id=1949118678]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="OpenButton" type="Button" parent="OptionsPopupMenu/ButtonsContainer" unique_id=1757170787]
+layout_mode = 2
+theme_override_styles/normal = ExtResource("4_dumt2")
+text = "Open Character Sheet"
+
+[node name="DeleteButton" type="Button" parent="OptionsPopupMenu/ButtonsContainer" unique_id=1342807733]
+layout_mode = 2
+theme_override_styles/normal = ExtResource("4_dumt2")
+text = "Delete Character"
+
+[node name="DeletionWindow" type="Window" parent="OptionsPopupMenu" unique_id=232191941]
+oversampling_override = 1.0
+initial_position = 1
+size = Vector2i(500, 150)
+visible = false
+
+[node name="ConfirmDeletionPrompt" type="Label" parent="OptionsPopupMenu/DeletionWindow" unique_id=1072784149]
 anchors_preset = -1
-anchor_left = 0.499
-anchor_top = 0.029000001
-anchor_right = 0.499
-anchor_bottom = 0.029000001
-offset_left = -36.848022
-offset_top = 0.20800018
-offset_right = 37.151978
-offset_bottom = 42.208
+anchor_left = 0.5
+anchor_top = 0.19000001
+anchor_right = 0.5
+anchor_bottom = 0.19000001
+offset_left = -201.0
+offset_top = -3.0000038
+offset_right = 200.0
+offset_bottom = 46.0
 grow_horizontal = 2
-text = "TEST"
+text = "Are you sure that you want to delete this character?
+This action cannot be undone."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Buttons" type="HBoxContainer" parent="OptionsPopupMenu/DeletionWindow" unique_id=277887134]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.9
+anchor_right = 0.5
+anchor_bottom = 0.90000004
+offset_left = -85.0
+offset_top = -43.0
+offset_right = 85.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 20
+metadata/_edit_use_anchors_ = true
+
+[node name="ConfirmButton" type="Button" parent="OptionsPopupMenu/DeletionWindow/Buttons" unique_id=831699243]
+custom_minimum_size = Vector2(75, 40)
+layout_mode = 2
+text = "Confirm"
+
+[node name="CancelButton" type="Button" parent="OptionsPopupMenu/DeletionWindow/Buttons" unique_id=1368090785]
+custom_minimum_size = Vector2(75, 40)
+layout_mode = 2
+text = "Cancel"

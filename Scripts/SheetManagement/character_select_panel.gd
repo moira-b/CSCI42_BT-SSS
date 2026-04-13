@@ -1,5 +1,7 @@
 extends PanelContainer
 
+signal settings_button_pressed(pk, button_position)
+
 const FILE_PATH = "user://character_data"
 
 @onready var select_button: Button = $Button
@@ -9,7 +11,7 @@ const FILE_PATH = "user://character_data"
 @onready var name_label: Label = $ContentContainer/VBoxContainer/Name
 @onready var class_label: Label = $ContentContainer/VBoxContainer/Class
 @onready var tags: Array = []
-@onready var settings_button: Button = $ContentContainer/SettingsButton
+@onready var settings_button: Button = $SettingsButton
 @onready var char_dict: Variant
 @onready var character: Character = $Character
 
@@ -18,7 +20,8 @@ var save_manager
 
 # Called when the node enters the scene tree for the first time.
 func enter(pk: String):
-	save_manager = get_tree().root.get_child(0).get_child(0)
+	#save_manager = get_tree().root.get_child(0).get_child(0)
+	save_manager = get_tree().root.get_node("MainMenu").get_node("SaveManager")
 	set_primary_key(pk)
 	load_character_details(pk)
 	update_all_fields()
@@ -46,7 +49,9 @@ func set_primary_key(pk: String):
 
 func update_all_fields():
 	name_label.set_text(char_name)
-	class_label.set_text(char_class)
+	
+	var char_class_name = load(char_class).name
+	class_label.set_text(char_class_name)
 
 func connect_signals():
 	select_button.pressed.connect(_on_select_button_pressed)
@@ -62,5 +67,16 @@ func _on_select_button_pressed():
 	print("hi")
 	get_tree().root.get_child(0).queue_free()
 
+func open_character_sheet():
+	var new_scene = sheet_scene.instantiate()
+	char_dict = save_manager._get_character_dictionary(char_primary_key)
+	character.load_data(char_dict)
+	character.reparent(new_scene)
+	get_tree().root.add_child(new_scene)
+	new_scene.enter()
+	print("hi")
+	get_tree().root.get_child(0).queue_free()
+
 func _on_settings_button_pressed():
-	pass
+	var button_position: Vector2 = settings_button.global_position
+	settings_button_pressed.emit(char_primary_key, button_position)

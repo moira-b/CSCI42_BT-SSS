@@ -31,12 +31,20 @@ const max_hope: int = 6
 @export var used_armor_slots: int
 @export var experiences: Array[String] = ["", "", "", "", ""]
 @export var damage_thresholds: Array[int]
+@export var experience_levels: Array[int] = [2, 2, 2, 2, 2]
+@export var max_domain_cards: int
 
 var ancestry: Ancestry
 var community: Community
 var character_class: CharacterClass
 var subclass: CharacterSubclass
+var multiclass_domains: Array[Domain]
+var multiclass_selections: Array[CharacterClass]
 var primary_key: String
+
+
+@onready var active_cards: Array[String] = []
+@onready var vaulted_cards: Array[String] = []
 
 @onready var active_domain_cards = $ActiveDomainCards
 @onready var vaulted_domain_cards = $VaultedDomainCards
@@ -130,7 +138,7 @@ func set_proficiency_modifier() -> void:
 	if level > 1: proficiency_modifier = 1
 	if level > 4: proficiency_modifier = 2
 	if level > 7: proficiency_modifier = 3
-	
+
 func set_proficiency() -> void:
 	self.proficiency = proficiency_modifier + proficiency
 	pass
@@ -165,6 +173,12 @@ func serialize_data():
 		"used_armor_slots": used_armor_slots,
 		"experiences": experiences,
 		"damage_thresholds": damage_thresholds,
+		"experience_levels": experience_levels,
+		"max_domain_cards": max_domain_cards,
+		"active_cards" : active_cards,
+		"vaulted_cards": vaulted_cards,
+		"multiclass_domains": multiclass_domains,
+		"multiclass_selections": multiclass_selections
 	}
 	return save_dict
 
@@ -184,6 +198,7 @@ func load_data(char_dict: Variant):
 	damage_thresholds.assign(char_dict["damage_thresholds"])
 	evasion = char_dict["evasion"]
 	experiences.assign(char_dict["experiences"])
+	experience_levels.assign(char_dict["experience_levels"])
 	finesse = char_dict["finesse"]
 	instinct = char_dict["instinct"]
 	items.assign(char_dict["items"])
@@ -200,4 +215,9 @@ func load_data(char_dict: Variant):
 	strength = char_dict["strength"]
 	subclass = load(char_dict["subclass"])
 	used_armor_slots = char_dict["used_armor_slots"]
+	max_domain_cards = char_dict["max_domain_cards"]
+	active_cards.assign(char_dict["active_cards"])
+	vaulted_cards.assign(char_dict["vaulted_cards"])
+	multiclass_domains.assign(char_dict["multiclass_domains"])
+	multiclass_selections.assign(char_dict["multiclass_selections"])
 	
