@@ -1,4 +1,15 @@
 {
 	"Reliable":"+1 to attack rolls",
-	
+	"Massive": "-1 to Evasion; on a successful attack, roll an additional damage die and discard the lowest result.",
+	"Heavy": "-1 to Evasion",
+	"Quick": "When you make an attack, you can mark a Stress to target another creature within range.",
+	"Cumbersome": "-1 to Finesse",
+	"Returning": "When this weapon is thrown within its range, it appears in your hand immediately after the attack.",
+	"Versatile": "This weapon can also be used with these statistics—Presence, Melee, d8.",
+	"Powerful": "On a successful attack, roll an additional damage die and discard the lowest result.",
+	"Paired": "+2 to primary weapon damage to targets within Melee range",
+	"Protective":"+1 to Armor Score",
+	"Barrier": "+2 to Armor Score; -1 to Evasion",
+	"Startling": "Mark a Stress to crack the whip and force all adversaries within Melee range back to Close range.",
+	"Hooked": "On a successful attack, you can pull the target into Melee range."
 }

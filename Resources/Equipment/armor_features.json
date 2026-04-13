@@ -1,4 +1,5 @@
 {
 	"Flexible":"+1 to Evasion",
-	"Heaby":"-1 to Evasion",
+	"Heavy":"-1 to Evasion",
+	"Very Heavy": "-2 to Evasion; -1 to Agility"
 }

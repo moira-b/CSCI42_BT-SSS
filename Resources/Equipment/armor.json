@@ -4,13 +4,27 @@
 		"major_threshold":5,
 		"severe_threshold":11,
 		"base_score":3,
-		"feature":["Flexible"]
+		"feature":"Flexible"
 	},
 	"Leather Armor":{
 		"tier":1,
 		"major_threshold":6,
 		"severe_threshold":13,
 		"base_score":3,
-		"feature":[]
+		"feature":""
 	},
+	"Chainmail Armor":{
+		"tier":1,
+		"major_threshold":7,
+		"severe_threshold":15,
+		"base_score":4,
+		"feature":"Heavy"
+	},
+	"Full Plate Armor":{
+		"tier":1,
+		"major_threshold":8,
+		"severe_threshold":17,
+		"base_score":4,
+		"feature":"Very Heavy"
+	}
 }
