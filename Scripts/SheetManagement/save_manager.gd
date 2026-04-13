@@ -32,8 +32,9 @@ func save_character_data():
 	 
 	# CASE 2: file already exxits
 	else:
-		var save_file = FileAccess.open(FILE_PATH, FileAccess.READ_WRITE)
+		var save_file = FileAccess.open(FILE_PATH, FileAccess.READ)
 		var current_contents = save_file.get_as_text()
+		save_file.close()
 		var json = JSON.new()
 		
 		# Check that the file contents can be parsed by JSON
@@ -58,15 +59,15 @@ func save_character_data():
 			
 		var character_data = character.call("serialize_data")
 		json.data[character.primary_key] = character_data
+		
+		save_file = FileAccess.open(FILE_PATH, FileAccess.WRITE)
 		save_file.store_line(JSON.stringify(json_data, "\t"))
-
-		print("CHECKPOINT 2")
-		#print(json.data)
 		save_file.close()
 
 func _get_character_dictionary(pk: String):
-	var save_file = FileAccess.open(FILE_PATH, FileAccess.READ_WRITE)
+	var save_file = FileAccess.open(FILE_PATH, FileAccess.READ)
 	var current_contents = save_file.get_as_text()
+	save_file.close()
 	var json = JSON.new()
 	
 	# Check that the file contents can be parsed by JSON
@@ -139,8 +140,9 @@ func delete_character_with_pk(primary_key):
 	save_file.close()
 
 func _get_character_data():
-	var save_file = FileAccess.open(FILE_PATH, FileAccess.READ_WRITE)
+	var save_file = FileAccess.open(FILE_PATH, FileAccess.READ)
 	var current_contents = save_file.get_as_text()
+	save_file.close()
 	var json = JSON.new()
 	
 	# Check that the file contents can be parsed by JSON
