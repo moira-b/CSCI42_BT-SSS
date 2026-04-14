@@ -1,5 +1,23 @@
 {
 	"Flexible":"+1 to Evasion",
 	"Heavy":"-1 to Evasion",
-	"Very Heavy": "-2 to Evasion; -1 to Agility"
+	"Very Heavy": "-2 to Evasion; -1 to Agility",
+	"Warded": "You reduce incoming magic damage by your Armor Score before applying it to your damage thresholds.",
+	"Resilient": "Before you mark your last Armor Slot, roll a d6. On a result of 6, reduce the severity by one threshold without marking an Armor Slot.",
+	"Reinforced": "When you mark your last Armor Slot, increase your damage thresholds by +2 until you clear at least 1 Armor Slot.",
+	"Shifting": "When you are targeted for an attack, you can mark an Armor Slot to give the attack roll against you disadvantage.",
+	"Quiet": "You gain a +2 bonus to rolls you make to move silently.",
+	"Hopeful": "When you would spend a Hope, you can mark an Armor Slot instead.",
+	"Gilded": "+1 to Presence",
+	"Impenetrable": "Once per short rest, when you would mark your last Hit Point, you can instead mark a Stress.",
+	"Sharp": "On a successful attack against a target within Melee range, add a d4 to the damage roll.",
+	"Physical": "You can’t mark an Armor Slot to reduce magic damage.",
+	"Magical": "You can’t mark an Armor Slot to reduce physical damage.",
+	"Painful": "Each time you mark an Armor Slot, you must mark a Stress.",
+	"Timeslowing": "Mark an Armor Slot to roll a d4 and add its result as a bonus to your Evasion against an incoming attack.",
+	"Channeling": "+1 to Spellcast Rolls",
+	"Burning": "When an adversary attacks you within Melee range, they mark a Stress.",
+	"Fortified": "When you mark an Armor Slot, you reduce the severity of an attack by two thresholds instead of one.",
+	"Truthseeking": "This armor glows when another creature within Close range tells a lie.",
+	"Difficult": "-1 to all character traits and Evasion."
 }

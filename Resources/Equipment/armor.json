@@ -26,5 +26,227 @@
 		"severe_threshold":17,
 		"base_score":4,
 		"feature":"Very Heavy"
+	},
+	
+	
+	
+	
+	"Improved Gambeson Armor":{
+		"tier":2,
+		"major_threshold":7,
+		"severe_threshold":16,
+		"base_score":4,
+		"feature":"Flexible"
+	},
+	"Improved Leather Armor":{
+		"tier":2,
+		"major_threshold":9,
+		"severe_threshold":20,
+		"base_score":4,
+		"feature":""
+	},
+	"Improved Chainmail Armor":{
+		"tier":2,
+		"major_threshold":11,
+		"severe_threshold":24,
+		"base_score":5,
+		"feature":"Heavy"
+	},
+	"Improved Full Plate Armor":{
+		"tier":2,
+		"major_threshold":13,
+		"severe_threshold":28,
+		"base_score":5,
+		"feature":"Very Heavy"
+	},
+	"Elundrian Chain Armor":{
+		"tier":2,
+		"major_threshold":9,
+		"severe_threshold":21,
+		"base_score":4,
+		"feature":"Warded"
+	},
+	"Harrowbone Armor":{
+		"tier":2,
+		"major_threshold":9,
+		"severe_threshold":21,
+		"base_score":4,
+		"feature":"Resilient"
+	},
+	"Irontree Breastplate Armor":{
+		"tier":2,
+		"major_threshold":9,
+		"severe_threshold":20,
+		"base_score":4,
+		"feature":"Reinforced"
+	},
+	"Runetan Floating Armor":{
+		"tier":2,
+		"major_threshold":9,
+		"severe_threshold":20,
+		"base_score":4,
+		"feature":"Shifting"
+	},
+	"Tyris Soft Armor":{
+		"tier":2,
+		"major_threshold":8,
+		"severe_threshold":18,
+		"base_score":5,
+		"feature":"Quiet"
+	},
+	"Rosewild Armor":{
+		"tier":2,
+		"major_threshold":11,
+		"severe_threshold":23,
+		"base_score":5,
+		"feature":"Hopeful"
+	},
+
+
+
+
+	"Advanced Gambeson Armor":{
+		"tier":3,
+		"major_threshold":9,
+		"severe_threshold":23,
+		"base_score":5,
+		"feature":"Flexible"
+	},
+	"Advanced Leather Armor":{
+		"tier":3,
+		"major_threshold":11,
+		"severe_threshold":27,
+		"base_score":5,
+		"feature":""
+	},
+	"Advanced Chainmail Armor":{
+		"tier":3,
+		"major_threshold":13,
+		"severe_threshold":31,
+		"base_score":6,
+		"feature":"Heavy"
+	},
+	"Advanced Full Plate Armor":{
+		"tier":3,
+		"major_threshold":15,
+		"severe_threshold":35,
+		"base_score":6,
+		"feature":"Very Heavy"
+	},
+	"Bellamie Fine Armor":{
+		"tier":3,
+		"major_threshold":11,
+		"severe_threshold":27,
+		"base_score":5,
+		"feature":"Gilded"
+	},
+	"Dragonscale Armor":{
+		"tier":3,
+		"major_threshold":11,
+		"severe_threshold":27,
+		"base_score":5,
+		"feature":"Impenetrable"
+	},
+	"Spiked Plate Armor":{
+		"tier":3,
+		"major_threshold":10,
+		"severe_threshold":25,
+		"base_score":5,
+		"feature":"Sharp"
+	},
+	"Bladefare Armor":{
+		"tier":3,
+		"major_threshold":16,
+		"severe_threshold":39,
+		"base_score":6,
+		"feature":"Physical"
+	},
+	"Monett's Cloak":{
+		"tier":3,
+		"major_threshold":16,
+		"severe_threshold":39,
+		"base_score":6,
+		"feature":"Magic"
+	},
+	"Runes of Fortification":{
+		"tier":3,
+		"major_threshold":17,
+		"severe_threshold":43,
+		"base_score":6,
+		"feature":"Painful"
+	},
+
+
+
+
+	"Legendary Gambeson Armor":{
+		"tier":4,
+		"major_threshold":11,
+		"severe_threshold":32,
+		"base_score":6,
+		"feature":"Flexible"
+	},
+	"Legendary Leather Armor":{
+		"tier":4,
+		"major_threshold":13,
+		"severe_threshold":36,
+		"base_score":6,
+		"feature":""
+	},
+	"Legendary Chainmail Armor":{
+		"tier":4,
+		"major_threshold":15,
+		"severe_threshold":40,
+		"base_score":7,
+		"feature":"Heavy"
+	},
+	"Legendary Full Plate Armor":{
+		"tier":4,
+		"major_threshold":17,
+		"severe_threshold":44,
+		"base_score":7,
+		"feature":"Very Heavy"
+	},
+	"Dunamis Silkchain":{
+		"tier":4,
+		"major_threshold":13,
+		"severe_threshold":36,
+		"base_score":7,
+		"feature":"Timeslowing"
+	},
+	"Channeling Armor":{
+		"tier":4,
+		"major_threshold":13,
+		"severe_threshold":36,
+		"base_score":5,
+		"feature":"Channeling"
+	},
+	"Emberwoven Armor":{
+		"tier":4,
+		"major_threshold":13,
+		"severe_threshold":36,
+		"base_score":6,
+		"feature":"Burning"
+	},
+	"Full Fortified Armor":{
+		"tier":4,
+		"major_threshold":15,
+		"severe_threshold":40,
+		"base_score":4,
+		"feature":"Fortified"
+	},
+	"Veritas Opal Armor":{
+		"tier":4,
+		"major_threshold":13,
+		"severe_threshold":36,
+		"base_score":6,
+		"feature":"Truthseeking"
+	},
+	"Savior Chainmail":{
+		"tier":4,
+		"major_threshold":18,
+		"severe_threshold":48,
+		"base_score":8,
+		"feature":"Difficult"
 	}
 }
