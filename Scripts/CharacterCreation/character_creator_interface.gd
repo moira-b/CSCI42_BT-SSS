@@ -7,6 +7,8 @@ extends Control
 @onready var description_display = $DescriptionContainer
 @onready var card_selector = $OptionLists/DomainCardSelContainer
 @onready var character = $Character
+@onready var tab_container = $TabButtons
+@onready var tab_buttons: Array[Node] = tab_container.get_children()
 
 var option_tab_array: Array[Control]
 var option_tab_index: int
@@ -23,6 +25,8 @@ func _ready() -> void:
 	complete_button.visible = false
 	_load_option_tabs()
 	_set_active_option_tab(0)
+	for button in tab_buttons:
+		button.pressed.connect(_on_tab_button_pressed.bind(button))
 
 
 func _process(_delta: float) -> void:
@@ -126,4 +130,14 @@ func add_domain_cards():
 	for index in range(card_selector.select_card_list.item_count):
 		var card = card_selector.select_card_list.get_item_text(index)
 		character.active_cards.append(card)
-		
+
+
+func _on_tab_button_pressed(tab: Button) -> void:
+	if tab.name == "Class": _set_active_option_tab(0)
+	if tab.name == "Subclass": _set_active_option_tab(1)
+	if tab.name == "Heritage": _set_active_option_tab(2)
+	if tab.name == "Community": _set_active_option_tab(3)
+	if tab.name == "DomainCards": _set_active_option_tab(4)
+	if tab.name == "Traits": _set_active_option_tab(5)
+	if tab.name == "Experiences": _set_active_option_tab(6)
+	if tab.name == "Name": _set_active_option_tab(7)
