@@ -2,14 +2,14 @@ class_name Character_Sheet
 extends Control
 
 @onready var bio_edit = $"Bio/BioEdit"
-@onready var name_edit = $Header/HeaderInfo/NamePronouns/NamePanelContainer/NameC/NameEdit
+@onready var name_edit = $HeaderMargin/Header/HeaderInfo/NamePronouns/NamePanelContainer/NameC/NameEdit
 @onready var agility_field: SpinBox = $TraitModifiers/AgilityPanel/AgilityContainer/Agility/SpinBox
 @onready var strength_field: SpinBox = $TraitModifiers/StrengthPanel/StrengthContainer/Strength/SpinBox
 @onready var finesse_field: SpinBox = $TraitModifiers/FinessePanel/FinesseContainer/Finesse/SpinBox
 @onready var instinct_field: SpinBox = $TraitModifiers/InstinctPanel/InstinctContainer/Instinct/SpinBox
 @onready var presence_field: SpinBox = $TraitModifiers/PrescencePanel/PrescenceContainer/Prescence/SpinBox
 @onready var knowledge_field: SpinBox = $TraitModifiers/KnowledgePanel/KnowledgeContainer/Knowledge/SpinBox
-@onready var pronouns_field: LineEdit = $Header/HeaderInfo/NamePronouns/PronounsPanelContainer/Pronouns/PronounsEdit
+@onready var pronouns_field: LineEdit = $HeaderMargin/Header/HeaderInfo/NamePronouns/PronounsPanelContainer/Pronouns/PronounsEdit
 @onready var experience1 : LineEdit = $Experiences/Experience1/Experience1
 @onready var experience2 : LineEdit = $Experiences/Experience2/Experience2
 @onready var experience3 : LineEdit = $Experiences/Experience3/Experience3
@@ -20,8 +20,8 @@ extends Control
 @onready var stress_field = $MarkableStats/Stress
 @onready var armor_field = $MarkableStats/Armor
 @onready var hope_field = $MarkableStats/Hope
-@onready var ancestry_field = $Header/HeaderInfo/CommnityAncestry/AncestryPanelContainer/Ancestry/ColorRect/Ancestry
-@onready var community_field = $Header/HeaderInfo/CommnityAncestry/PanelContainer/Community/ColorRect/Community
+@onready var ancestry_field = $HeaderMargin/Header/HeaderInfo/CommnityAncestry/AncestryPanelContainer/Ancestry/ColorRect/Ancestry
+@onready var community_field = $HeaderMargin/Header/HeaderInfo/CommnityAncestry/PanelContainer/Community/ColorRect/Community
 @onready var class_field = $ClassSubclass/ClassRect/Class
 @onready var subclass_field = $ClassSubclass/SubclassRect/Label
 @onready var short_rest_button: Button = $ActionButtons/RestButtons/ShortRest
@@ -36,11 +36,11 @@ extends Control
 @onready var dice_button: Button = $ActionButtons/DiceButtons/Dice
 @onready var fearhope_button: Button = $ActionButtons/DiceButtons/FHDice
 
-@onready var levelup_button: Button = $Header/Level/FieldContainer/PanelContainer/LevelUpButton
+@onready var levelup_button: Button = $HeaderMargin/Header/Level/FieldContainer/PanelContainer/LevelUpButton
 @onready var levelup_confirmation_panel = $LevelUpConfirmation
 @onready var levelup_confirmation_button: Button = $LevelUpConfirmation/VBoxContainer/ConfirmButton
 @onready var levelup_cancel_button: Button = $LevelUpConfirmation/VBoxContainer/CancelButton
-@onready var level_field = $Header/Level/FieldContainer/MarginContainer/HSplitContainer/LevelDisplay
+@onready var level_field = $HeaderMargin/Header/Level/FieldContainer/MarginContainer/HSplitContainer/LevelDisplay
 
 @onready var agility_advance: Button = $TraitModifiers/Agility/AdvanceButton
 @onready var strength_advance: Button = $TraitModifiers/Strength/AdvanceButton
@@ -58,13 +58,13 @@ extends Control
 @onready var evasion_advance: Button = $EvasionProficency/Evasion/AdvanceButton
 @onready var proficiency_advance: Button = $EvasionProficency/Proficiency/AdvanceButton
 
-@onready var save_button: Button = $Header/PanelContainer/MarginContainer/RightPanel/Save
-@onready var delete_button: Button = $Header/PanelContainer/MarginContainer/RightPanel/Delete
-@onready var main_menu_button: Button = $Header/PanelContainer/MarginContainer/RightPanel/MainMenu
+@onready var save_button: Button = $HeaderMargin/Header/PanelContainer/MarginContainer/RightPanel/Save
+@onready var delete_button: Button = $HeaderMargin/Header/PanelContainer/MarginContainer/RightPanel/Delete
+@onready var main_menu_button: Button = $HeaderMargin/Header/PanelContainer/MarginContainer/RightPanel/MainMenu
 
-@onready var del_window = $Header/PanelContainer/MarginContainer/RightPanel/DeletionWindow
-@onready var del_confirm_button = $Header/PanelContainer/MarginContainer/RightPanel/DeletionWindow/Buttons/ConfirmButton
-@onready var del_cancel_button = $Header/PanelContainer/MarginContainer/RightPanel/DeletionWindow/Buttons/CancelButton
+@onready var del_window = $HeaderMargin/Header/PanelContainer/MarginContainer/RightPanel/DeletionWindow
+@onready var del_confirm_button = $HeaderMargin/Header/PanelContainer/MarginContainer/RightPanel/DeletionWindow/Buttons/ConfirmButton
+@onready var del_cancel_button = $HeaderMargin/Header/PanelContainer/MarginContainer/RightPanel/DeletionWindow/Buttons/CancelButton
 
 @onready var all_traits: Array[SpinBox] = [agility_field, strength_field, finesse_field, instinct_field,
 	presence_field, knowledge_field]
@@ -402,7 +402,7 @@ func save_character() -> void:
 	save_manager.set_character(character)
 	await save_manager.call("save_character_data")
 	
-	var save_notif = $Header/PanelContainer/MarginContainer/RightPanel/SaveNotification
+	var save_notif = $HeaderMargin/Header/PanelContainer/MarginContainer/RightPanel/SaveNotification
 	save_notif.showFor()
 	
 func _on_delete_button_pressed() -> void:
