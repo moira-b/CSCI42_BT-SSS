@@ -141,6 +141,7 @@ size_flags_vertical = 0
 
 [node name="ClassCommunityAncestry" type="HBoxContainer" parent="HeaderMargin/Header/HeaderInfo" unique_id=1686316360]
 layout_mode = 2
+theme_override_constants/separation = 10
 
 [node name="ClassPanelContainer" type="PanelContainer" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry" unique_id=1493424672]
 layout_mode = 2
@@ -174,7 +175,7 @@ offset_right = 147.0
 offset_bottom = 24.0
 grow_vertical = 2
 theme_override_constants/paragraph_spacing = -5
-text = "agncestry_name
+text = "ancestry_name
 (subclass)"
 vertical_alignment = 1
 max_lines_visible = 2
