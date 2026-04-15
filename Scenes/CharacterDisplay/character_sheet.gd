@@ -1,7 +1,7 @@
 class_name Character_Sheet
 extends Control
 
-@onready var bio_edit = $RightPanelMargin/RightPanel/VBoxContainer/BioPanelContainer/BioMarginContainer/Bio/BioEdit
+@onready var bio_edit = $BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/BioPanelContainer/BioMarginContainer/Bio/BioEdit
 @onready var name_edit = $HeaderMargin/Header/HeaderInfo/NamePronouns/NamePanelContainer/NameC/NameEdit
 @onready var agility_field: SpinBox = $TraitModifiers/AgilityPanel/AgilityContainer/Agility/SpinBox
 @onready var strength_field: SpinBox = $TraitModifiers/StrengthPanel/StrengthContainer/Strength/SpinBox
@@ -10,11 +10,11 @@ extends Control
 @onready var presence_field: SpinBox = $TraitModifiers/PrescencePanel/PrescenceContainer/Prescence/SpinBox
 @onready var knowledge_field: SpinBox = $TraitModifiers/KnowledgePanel/KnowledgeContainer/Knowledge/SpinBox
 @onready var pronouns_field: LineEdit = $HeaderMargin/Header/HeaderInfo/NamePronouns/PronounsPanelContainer/Pronouns/PronounsEdit
-@onready var experience1 : LineEdit = $RightPanelMargin/RightPanel/VBoxContainer/Experiences/Experience1/Experience1
-@onready var experience2 : LineEdit = $RightPanelMargin/RightPanel/VBoxContainer/Experiences/Experience2/Experience2
-@onready var experience3 : LineEdit = $RightPanelMargin/RightPanel/VBoxContainer/Experiences/Experience3/Experience3
-@onready var experience4 : LineEdit = $RightPanelMargin/RightPanel/VBoxContainer/Experiences/Experience4/Experience4
-@onready var experience5 : LineEdit = $RightPanelMargin/RightPanel/VBoxContainer/Experiences/Experience5/Experience5
+@onready var experience1 : LineEdit = $BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/Experiences/Experience1/Experience1
+@onready var experience2 : LineEdit = $BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/Experiences/Experience2/Experience2
+@onready var experience3 : LineEdit = $BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/Experiences/Experience3/Experience3
+@onready var experience4 : LineEdit = $BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/Experiences/Experience4/Experience4
+@onready var experience5 : LineEdit = $BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/Experiences/Experience5/Experience5
 
 @onready var health_field = $MarkableStats/Health
 @onready var stress_field = $MarkableStats/Stress
@@ -23,17 +23,18 @@ extends Control
 @onready var ancestry_field = $HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/AncestryPanelContainer/Ancestry/ColorRect/Ancestry
 @onready var community_field = $HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/PanelContainer/Community/ColorRect/Community
 @onready var class_field = $HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/ClassPanelContainer/Class/ColorRect/Class
-@onready var short_rest_button: Button = $ActionButtons/RestButtons/ShortRest
-@onready var long_rest_button: Button = $ActionButtons/RestButtons/LongRest
-@onready var rest_window: Window = $ActionButtons/RestButtons/RestWindow
-@onready var dice_roll_window: Window = $ActionButtons/DiceButtons/DiceRollWindow
-@onready var fh_roll_window: Window = $ActionButtons/DiceButtons/FHRollWindow
+@onready var short_rest_button: Button = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/PanelContainer/LeftPanelButtons/VBoxContainer/ActionButtons/RestButtons/ShortRest
+@onready var long_rest_button: Button = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/PanelContainer/LeftPanelButtons/VBoxContainer/ActionButtons/RestButtons/LongRest
+@onready var rest_window: Window = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/PanelContainer/LeftPanelButtons/VBoxContainer/ActionButtons/RestButtons/RestWindow
+@onready var rest_confirm_button: Button = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/PanelContainer/LeftPanelButtons/VBoxContainer/ActionButtons/RestButtons/RestWindow/RestUI/ConfirmButton
+@onready var dice_roll_window: Window = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/PanelContainer/LeftPanelButtons/VBoxContainer/ActionButtons/DiceButtons/DiceRollWindow
+@onready var fh_roll_window: Window = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/PanelContainer/LeftPanelButtons/VBoxContainer/ActionButtons/DiceButtons/FHRollWindow
 @onready var evasion_value: Label = $EvasionProficency/EvasionContainer/Evasion/Value
 @onready var proficiency_value: Label = $EvasionProficency/ProficiencyContainer/Proficiency/Value
 @onready var advance_window: Window = $AdvanceWindow
 
-@onready var dice_button: Button = $ActionButtons/DiceButtons/Dice
-@onready var fearhope_button: Button = $ActionButtons/DiceButtons/FHDice
+@onready var dice_button: Button = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/PanelContainer/LeftPanelButtons/VBoxContainer/ActionButtons/DiceButtons/Dice
+@onready var fearhope_button: Button = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/PanelContainer/LeftPanelButtons/VBoxContainer/ActionButtons/DiceButtons/FHDice
 
 @onready var levelup_button: Button = $HeaderMargin/Header/Level/FieldContainer/PanelContainer/LevelUpButton
 @onready var levelup_confirmation_panel = $LevelUpConfirmation
@@ -368,8 +369,7 @@ func connect_signals() -> void:
 	long_rest_button.pressed.connect(_on_long_rest_pressed)
 	dice_button.pressed.connect(_on_dice_button_pressed)
 	fearhope_button.pressed.connect(_on_fh_dice_button_pressed)
-	$ActionButtons/RestButtons/RestWindow/RestUI/ConfirmButton.pressed.connect(_on_confirm_button_pressed)
-	
+	rest_confirm_button.pressed.connect(_on_confirm_button_pressed)
 	rest_window.close_requested.connect(_on_rest_window_close_requested)
 	dice_roll_window.close_requested.connect(_on_dice_roll_window_close_requested)
 	fh_roll_window.close_requested.connect(_on_fh_roll_window_close_requested)
