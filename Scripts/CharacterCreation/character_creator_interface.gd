@@ -158,10 +158,10 @@ func _on_tab_button_pressed(tab: Button) -> void:
 	if tab.name == "Experiences": 
 		_set_active_option_tab(6)
 		option_tab_index = 6
-	if tab.name == "Name": 
+	if tab.name == "Equipment": 
 		_set_active_option_tab(7)
 		option_tab_index = 7
-	if tab.name == "Equipment":
+	if tab.name == "Name":
 		_set_active_option_tab(8)
 		option_tab_index = 8
 
