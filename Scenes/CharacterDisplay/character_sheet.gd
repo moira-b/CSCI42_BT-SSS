@@ -1,7 +1,7 @@
 class_name Character_Sheet
 extends Control
 
-@onready var bio_edit = $"Bio/BioEdit"
+@onready var bio_edit = $RightPanelMargin/RightPanel/VBoxContainer/BioPanelContainer/BioMarginContainer/Bio/BioEdit
 @onready var name_edit = $HeaderMargin/Header/HeaderInfo/NamePronouns/NamePanelContainer/NameC/NameEdit
 @onready var agility_field: SpinBox = $TraitModifiers/AgilityPanel/AgilityContainer/Agility/SpinBox
 @onready var strength_field: SpinBox = $TraitModifiers/StrengthPanel/StrengthContainer/Strength/SpinBox
@@ -10,11 +10,11 @@ extends Control
 @onready var presence_field: SpinBox = $TraitModifiers/PrescencePanel/PrescenceContainer/Prescence/SpinBox
 @onready var knowledge_field: SpinBox = $TraitModifiers/KnowledgePanel/KnowledgeContainer/Knowledge/SpinBox
 @onready var pronouns_field: LineEdit = $HeaderMargin/Header/HeaderInfo/NamePronouns/PronounsPanelContainer/Pronouns/PronounsEdit
-@onready var experience1 : LineEdit = $Experiences/Experience1/Experience1
-@onready var experience2 : LineEdit = $Experiences/Experience2/Experience2
-@onready var experience3 : LineEdit = $Experiences/Experience3/Experience3
-@onready var experience4 : LineEdit = $Experiences/Experience4/Experience4
-@onready var experience5 : LineEdit = $Experiences/Experience5/Experience5
+@onready var experience1 : LineEdit = $RightPanelMargin/RightPanel/VBoxContainer/Experiences/Experience1/Experience1
+@onready var experience2 : LineEdit = $RightPanelMargin/RightPanel/VBoxContainer/Experiences/Experience2/Experience2
+@onready var experience3 : LineEdit = $RightPanelMargin/RightPanel/VBoxContainer/Experiences/Experience3/Experience3
+@onready var experience4 : LineEdit = $RightPanelMargin/RightPanel/VBoxContainer/Experiences/Experience4/Experience4
+@onready var experience5 : LineEdit = $RightPanelMargin/RightPanel/VBoxContainer/Experiences/Experience5/Experience5
 
 @onready var health_field = $MarkableStats/Health
 @onready var stress_field = $MarkableStats/Stress
