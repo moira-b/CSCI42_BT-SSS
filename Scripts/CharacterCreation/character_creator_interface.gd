@@ -7,6 +7,7 @@ extends Control
 @onready var description_display = $DescriptionContainer
 @onready var card_selector = $OptionLists/DomainCardSelContainer
 @onready var character = $Character
+@onready var notif_window = $NotifWindow
 @onready var tab_container = $TabButtons
 @onready var tab_buttons: Array[Node] = tab_container.get_children()
 
@@ -113,16 +114,17 @@ func show_description(message: String) -> void:
 
 
 func _on_complete_button_pressed() -> void:
-	add_domain_cards()
-	var new_scene = sheet_scene.instantiate()
-	character.set_maximum_health()
-	character.set_maximum_stress()
-	character.set_maximum_armor_slots()
-	character.implement_ancestry_features()
-	character.reparent(new_scene)
-	self.get_parent().add_child(new_scene)
-	new_scene.enter()
-	self.queue_free()
+	if (_is_character_data_valid() == true):
+		add_domain_cards()
+		var new_scene = sheet_scene.instantiate()
+		character.set_maximum_health()
+		character.set_maximum_stress()
+		character.set_maximum_armor_slots()
+		character.implement_ancestry_features()
+		character.reparent(new_scene)
+		self.get_parent().add_child(new_scene)
+		new_scene.enter()
+		self.queue_free()
 	#get_tree().change_scene_to_packed(sheet_scene)
 
 
@@ -136,6 +138,7 @@ func _on_tab_button_pressed(tab: Button) -> void:
 	if tab.name == "Class": 
 		_set_active_option_tab(0)
 		option_tab_index = 0
+		character.subclass = null
 	if tab.name == "Subclass": 
 		_set_active_option_tab(1)
 		option_tab_index = 1
@@ -146,8 +149,9 @@ func _on_tab_button_pressed(tab: Button) -> void:
 		_set_active_option_tab(3)
 		option_tab_index = 3
 	if tab.name == "DomainCards": 
-		_set_active_option_tab(4)
-		option_tab_index = 4
+		if character.character_class != null:
+			_set_active_option_tab(4)
+			option_tab_index = 4
 	if tab.name == "Traits": 
 		_set_active_option_tab(5)
 		option_tab_index = 5
@@ -157,3 +161,17 @@ func _on_tab_button_pressed(tab: Button) -> void:
 	if tab.name == "Name": 
 		_set_active_option_tab(7)
 		option_tab_index = 7
+
+func _is_character_data_valid() -> bool:
+	if (character.character_class == null || character.subclass == null ||
+		character.ancestry == null || character.community == null):
+		_raise_error()
+		return false
+	else:
+		return true
+		
+
+func _raise_error() -> void:
+	notif_window.show()
+	await(get_tree().create_timer(1.0).timeout)
+	notif_window.hide()

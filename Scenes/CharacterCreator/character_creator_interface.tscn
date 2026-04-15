@@ -637,6 +637,22 @@ vertical_alignment = 1
 autowrap_mode = 3
 clip_text = true
 
+[node name="NotifWindow" type="Window" parent="." unique_id=2130778845]
+oversampling_override = 1.0
+initial_position = 1
+size = Vector2i(300, 100)
+visible = false
+
+[node name="NotifText" type="Label" parent="NotifWindow" unique_id=690906775]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Invalid character data."
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="item_selected" from="OptionLists/TraitAssignmentContainer/ModifierContainer/AgiModifierOptions" to="OptionLists/TraitAssignmentContainer/ModifierContainer" method="_on_agi_modifier_options_item_selected"]
 [connection signal="item_selected" from="OptionLists/TraitAssignmentContainer/ModifierContainer/StrModifierOptions" to="OptionLists/TraitAssignmentContainer/ModifierContainer" method="_on_str_modifier_options_item_selected"]
 [connection signal="item_selected" from="OptionLists/TraitAssignmentContainer/ModifierContainer/FinModifierOptions" to="OptionLists/TraitAssignmentContainer/ModifierContainer" method="_on_fin_modifier_options_item_selected"]
