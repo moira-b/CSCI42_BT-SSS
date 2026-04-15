@@ -90,6 +90,7 @@ func swap():
 	character.vaulted_cards[selected_vaulted_index]=selected_active_name
 	
 	active_card_container.get_child(selected_active_index).domain_card.change_card(selected_vaulted_name)
+	active_card_container.get_child(selected_active_index).counter.value = 0
 	character.active_cards[selected_active_index] = selected_vaulted_name
 	
 	vault.set_item_text(selected_vaulted_index, selected_active_name)
@@ -111,4 +112,6 @@ func _connect_active_container() -> void:
 		var card = container.domain_card
 		card.selected.connect(_on_domain_card_selected)
 		card.array_index=i
+		container.initialize(character)
+		container.counter = character.active_domain_card_counters[i]
 		i+=1
