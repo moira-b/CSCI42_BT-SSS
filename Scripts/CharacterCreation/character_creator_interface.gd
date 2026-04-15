@@ -133,11 +133,27 @@ func add_domain_cards():
 
 
 func _on_tab_button_pressed(tab: Button) -> void:
-	if tab.name == "Class": _set_active_option_tab(0)
-	if tab.name == "Subclass": _set_active_option_tab(1)
-	if tab.name == "Heritage": _set_active_option_tab(2)
-	if tab.name == "Community": _set_active_option_tab(3)
-	if tab.name == "DomainCards": _set_active_option_tab(4)
-	if tab.name == "Traits": _set_active_option_tab(5)
-	if tab.name == "Experiences": _set_active_option_tab(6)
-	if tab.name == "Name": _set_active_option_tab(7)
+	if tab.name == "Class": 
+		_set_active_option_tab(0)
+		option_tab_index = 0
+	if tab.name == "Subclass": 
+		_set_active_option_tab(1)
+		option_tab_index = 1
+	if tab.name == "Heritage": 
+		_set_active_option_tab(2)
+		option_tab_index = 2
+	if tab.name == "Community": 
+		_set_active_option_tab(3)
+		option_tab_index = 3
+	if tab.name == "DomainCards": 
+		_set_active_option_tab(4)
+		option_tab_index = 4
+	if tab.name == "Traits": 
+		_set_active_option_tab(5)
+		option_tab_index = 5
+	if tab.name == "Experiences": 
+		_set_active_option_tab(6)
+		option_tab_index = 6
+	if tab.name == "Name": 
+		_set_active_option_tab(7)
+		option_tab_index = 7
