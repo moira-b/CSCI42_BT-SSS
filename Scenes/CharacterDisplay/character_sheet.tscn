@@ -396,18 +396,15 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TraitModifiers" type="HBoxContainer" parent="." unique_id=1219526404]
-visible = false
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -539.5
-offset_top = -53.0
-offset_right = 539.5
+anchors_preset = -1
+anchor_left = 0.057725694
+anchor_top = 0.22376543
+anchor_right = 0.94227433
+anchor_bottom = 0.30555555
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="AgilityPanel" type="PanelContainer" parent="TraitModifiers" unique_id=845298128]
 layout_mode = 2
@@ -736,14 +733,15 @@ text = "-"
 
 [node name="ActionButtons" type="HBoxContainer" parent="." unique_id=92466979]
 layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
+anchors_preset = 7
+anchor_left = 0.5
 anchor_top = 1.0
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -100.0
+offset_left = -102.0
 offset_top = -110.0
-grow_horizontal = 0
+offset_right = 102.0
+grow_horizontal = 2
 grow_vertical = 0
 
 [node name="RestButtons" type="VBoxContainer" parent="ActionButtons" unique_id=1953046344]
@@ -1146,12 +1144,14 @@ text = "Confirm"
 [node name="RightPanelMargin" type="MarginContainer" parent="." unique_id=1836499105]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.6996528
-anchor_top = 0.20833333
-anchor_right = 0.9869792
-anchor_bottom = 0.80709875
+anchor_left = 0.6961806
+anchor_top = 0.33950618
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 0
-grow_vertical = 2
+grow_vertical = 0
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 4
 metadata/_edit_use_anchors_ = true
 
 [node name="RightPanel" type="PanelContainer" parent="RightPanelMargin" unique_id=1912298009]
@@ -1166,6 +1166,7 @@ theme_override_constants/separation = 10
 
 [node name="BioPanelContainer" type="PanelContainer" parent="RightPanelMargin/RightPanel/VBoxContainer" unique_id=1074177722]
 layout_mode = 2
+size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxEmpty_ahdvs")
 metadata/_edit_use_anchors_ = true
 
@@ -1186,6 +1187,7 @@ text = "Bio"
 [node name="BioEdit" type="TextEdit" parent="RightPanelMargin/RightPanel/VBoxContainer/BioPanelContainer/BioMarginContainer/Bio" unique_id=1791306647]
 custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
+size_flags_vertical = 3
 placeholder_text = "Include a brief description of your character here "
 wrap_mode = 1
 
