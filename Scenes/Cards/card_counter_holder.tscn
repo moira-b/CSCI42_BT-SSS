@@ -1,13 +1,16 @@
 [gd_scene format=3 uid="uid://vqg75n62pgd4"]
 
 [ext_resource type="PackedScene" uid="uid://cknxpivnpwbxd" path="res://Scenes/Cards/domain_card_base.tscn" id="1_ei55r"]
+[ext_resource type="Script" uid="uid://dww2uvykmtxpl" path="res://Scripts/Cards/card_counter_holder.gd" id="1_ntm7b"]
 
 [node name="CardCounterHolder" type="Control" unique_id=622011280]
+custom_minimum_size = Vector2(250, 390)
 layout_mode = 3
 anchor_right = 0.2170139
 anchor_bottom = 0.60030866
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ntm7b")
 metadata/_edit_use_anchors_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=779133189]

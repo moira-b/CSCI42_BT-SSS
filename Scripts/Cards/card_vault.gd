@@ -4,7 +4,7 @@ var character: Character
 var sheet_scene: PackedScene = load("res://Scenes/CharacterDisplay/character_sheet.tscn")
 @onready var vault = $Vault
 @onready var displayed_card = $DisplayedCard
-@onready var active_cards = $ActiveCards
+@onready var active_card_container = $ActiveCardContainer
 @onready var swap_button = $SwapButton
 @onready var stress = $VBoxContainer/StressValue
 @onready var health = $VBoxContainer/HealthValue
@@ -19,7 +19,7 @@ func enter():
 	character= $Character
 	vault = $Vault
 	displayed_card = $DisplayedCard
-	active_cards = $ActiveCards
+	active_card_container = $ActiveCardContainer
 	swap_button = $SwapButton
 	stress = $VBoxContainer/StressValue
 	health = $VBoxContainer/HealthValue
@@ -38,8 +38,8 @@ func display_cards():
 	print("active")
 	var i:int=0
 	for card in character.active_cards:
-		active_cards.get_child(i).visible=true
-		active_cards.get_child(i).change_card(card)
+		active_card_container.get_child(i).visible=true
+		active_card_container.get_child(i).domain_card.change_card(card)
 		print(card)
 		i+=1
 		
@@ -64,7 +64,8 @@ func _on_vault_item_selected(index: int) -> void:
 
 
 func _enable_highlighting() -> void:
-	for active_card in active_cards.get_children():
+	for card_container in active_card_container.get_children():
+		var active_card = card_container.domain_card
 		active_card.can_highlight = true
 		active_card.mouse_default_cursor_shape = 2
 
@@ -87,7 +88,7 @@ func swap():
 	$DisplayedCard/DomainCard.change_card(selected_active_name)
 	character.vaulted_cards[selected_vaulted_index]=selected_active_name
 	
-	active_cards.get_child(selected_active_index).change_card(selected_vaulted_name)
+	active_card_container.domain_card.get_child(selected_active_index).change_card(selected_vaulted_name)
 	character.active_cards[selected_active_index] = selected_vaulted_name
 	
 	vault.set_item_text(selected_vaulted_index, selected_active_name)
@@ -98,6 +99,7 @@ func swap():
  
 func _handle_selected_highlight() -> void:
 	selected.toggle_highlight(true)
-	for card: DomainCard in active_cards.get_children():
+	for container in active_card_container.get_children():
+		var card = container.domain_card
 		if card != selected:
 			card.toggle_highlight(false)
