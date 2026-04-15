@@ -25,7 +25,8 @@ func enter():
 	health = $VBoxContainer/HealthValue
 	display_cards()
 	stress.text = (str(character.current_stress) + "/" + str(character.max_stress))
-	health.text = (str(character.current_hp) + "/" + str(character.max_hp))  
+	health.text = (str(character.current_hp) + "/" + str(character.max_hp))
+	_enable_highlighting()
 
 func _process(_delta):
 	if(card_selected and displayed_card.get_child(0).visible):
@@ -60,6 +61,12 @@ func _on_vault_item_selected(index: int) -> void:
 	displayed_card.get_child(0).visible=true
 	displayed_card.get_child(0).change_card(character.vaulted_cards[index])
 	selected_vaulted_index = index
+
+
+func _enable_highlighting() -> void:
+	for active_card in active_cards.get_children():
+		active_card.can_highlight = true
+		active_card.mouse_default_cursor_shape = 2
 
 
 func _on_domain_card_selected(card: DomainCard) -> void:
