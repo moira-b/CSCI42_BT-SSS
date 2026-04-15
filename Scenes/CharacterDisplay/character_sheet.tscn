@@ -1172,6 +1172,7 @@ disabled = true
 text = "Multiclassing"
 
 [node name="MulticlassChoiceContainer" type="HBoxContainer" parent="AdvanceWindow" unique_id=974524269]
+visible = false
 custom_minimum_size = Vector2(860, 355)
 anchors_preset = 8
 anchor_left = 0.5
@@ -1193,7 +1194,16 @@ layout_mode = 2
 size_flags_horizontal = 3
 auto_height = true
 
-[node name="MulticlassDomainList" type="ItemList" parent="AdvanceWindow/MulticlassChoiceContainer" unique_id=1717788272]
+[node name="MulticlassSpecifics" type="VBoxContainer" parent="AdvanceWindow/MulticlassChoiceContainer" unique_id=1540856679]
+layout_mode = 2
+
+[node name="MulticlassDomainList" type="ItemList" parent="AdvanceWindow/MulticlassChoiceContainer/MulticlassSpecifics" unique_id=1717788272]
+custom_minimum_size = Vector2(250, 100)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+
+[node name="MulticlassSubclassList" type="ItemList" parent="AdvanceWindow/MulticlassChoiceContainer/MulticlassSpecifics" unique_id=876238365]
 custom_minimum_size = Vector2(250, 100)
 layout_mode = 2
 size_flags_horizontal = 10
