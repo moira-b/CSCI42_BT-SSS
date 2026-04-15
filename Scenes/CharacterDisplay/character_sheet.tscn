@@ -1032,44 +1032,44 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_7xnek")
 layout_mode = 2
 size_flags_vertical = 8
 
-[node name="PanelContainer" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer" unique_id=1687151303]
+[node name="LeftPanelButtons" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer" unique_id=1687151303]
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 size_flags_vertical = 8
 theme_override_styles/panel = ExtResource("2_c8oo5")
 
-[node name="LeftPanelButtons" type="MarginContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/PanelContainer" unique_id=1743009752]
+[node name="MarginContainer" type="MarginContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons" unique_id=1743009752]
 layout_mode = 2
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="VBoxContainer" type="VBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/PanelContainer/LeftPanelButtons" unique_id=766569678]
+[node name="VBoxContainer" type="VBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer" unique_id=766569678]
 layout_mode = 2
 
-[node name="ActionButtons" type="HBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/PanelContainer/LeftPanelButtons/VBoxContainer" unique_id=92466979]
+[node name="ActionButtons" type="HBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer" unique_id=92466979]
 layout_mode = 2
 
-[node name="RestButtons" type="VBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/PanelContainer/LeftPanelButtons/VBoxContainer/ActionButtons" unique_id=1953046344]
+[node name="RestButtons" type="VBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons" unique_id=1953046344]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ShortRest" type="Button" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/PanelContainer/LeftPanelButtons/VBoxContainer/ActionButtons/RestButtons" unique_id=375690570]
+[node name="ShortRest" type="Button" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/RestButtons" unique_id=375690570]
 custom_minimum_size = Vector2(100, 30)
 layout_mode = 2
 size_flags_horizontal = 5
 size_flags_vertical = 4
 text = "Short Rest"
 
-[node name="LongRest" type="Button" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/PanelContainer/LeftPanelButtons/VBoxContainer/ActionButtons/RestButtons" unique_id=1429046138]
+[node name="LongRest" type="Button" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/RestButtons" unique_id=1429046138]
 custom_minimum_size = Vector2(100, 30)
 layout_mode = 2
 size_flags_horizontal = 5
 size_flags_vertical = 4
 text = "Long Rest"
 
-[node name="RestWindow" type="Window" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/PanelContainer/LeftPanelButtons/VBoxContainer/ActionButtons/RestButtons" unique_id=2095986794]
+[node name="RestWindow" type="Window" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/RestButtons" unique_id=2095986794]
 oversampling_override = 1.0
 title = "Rest Actions"
 initial_position = 1
@@ -1077,7 +1077,7 @@ size = Vector2i(500, 400)
 visible = false
 script = ExtResource("4_8iwex")
 
-[node name="RestUI" type="Control" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/PanelContainer/LeftPanelButtons/VBoxContainer/ActionButtons/RestButtons/RestWindow" unique_id=165973256]
+[node name="RestUI" type="Control" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/RestButtons/RestWindow" unique_id=165973256]
 custom_minimum_size = Vector2(500, 400)
 layout_mode = 3
 anchors_preset = 8
@@ -1094,7 +1094,7 @@ grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="RestActions" type="VBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/PanelContainer/LeftPanelButtons/VBoxContainer/ActionButtons/RestButtons/RestWindow/RestUI" unique_id=335220932]
+[node name="RestActions" type="VBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/RestButtons/RestWindow/RestUI" unique_id=335220932]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 1
 anchors_preset = 4
@@ -1106,37 +1106,37 @@ offset_bottom = 85.5
 grow_vertical = 2
 alignment = 1
 
-[node name="TendWounds" type="CheckButton" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/PanelContainer/LeftPanelButtons/VBoxContainer/ActionButtons/RestButtons/RestWindow/RestUI/RestActions" unique_id=996454089]
+[node name="TendWounds" type="CheckButton" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/RestButtons/RestWindow/RestUI/RestActions" unique_id=996454089]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 size_flags_vertical = 4
 text = "Tend to Wounds"
 
-[node name="ClearStress" type="CheckButton" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/PanelContainer/LeftPanelButtons/VBoxContainer/ActionButtons/RestButtons/RestWindow/RestUI/RestActions" unique_id=794885834]
+[node name="ClearStress" type="CheckButton" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/RestButtons/RestWindow/RestUI/RestActions" unique_id=794885834]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 size_flags_vertical = 4
 text = "Clear Stress"
 
-[node name="RepairArmor" type="CheckButton" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/PanelContainer/LeftPanelButtons/VBoxContainer/ActionButtons/RestButtons/RestWindow/RestUI/RestActions" unique_id=1231113641]
+[node name="RepairArmor" type="CheckButton" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/RestButtons/RestWindow/RestUI/RestActions" unique_id=1231113641]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 size_flags_vertical = 4
 text = "Repair Armor"
 
-[node name="Prepare" type="CheckButton" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/PanelContainer/LeftPanelButtons/VBoxContainer/ActionButtons/RestButtons/RestWindow/RestUI/RestActions" unique_id=775912072]
+[node name="Prepare" type="CheckButton" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/RestButtons/RestWindow/RestUI/RestActions" unique_id=775912072]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 size_flags_vertical = 4
 text = "Prepare"
 
-[node name="Project" type="CheckButton" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/PanelContainer/LeftPanelButtons/VBoxContainer/ActionButtons/RestButtons/RestWindow/RestUI/RestActions" unique_id=1777724042]
+[node name="Project" type="CheckButton" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/RestButtons/RestWindow/RestUI/RestActions" unique_id=1777724042]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 size_flags_vertical = 4
 text = "Work on a Project"
 
-[node name="ConfirmButton" type="Button" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/PanelContainer/LeftPanelButtons/VBoxContainer/ActionButtons/RestButtons/RestWindow/RestUI" unique_id=1063158913]
+[node name="ConfirmButton" type="Button" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/RestButtons/RestWindow/RestUI" unique_id=1063158913]
 custom_minimum_size = Vector2(75, 40)
 layout_mode = 1
 anchors_preset = 7
@@ -1152,32 +1152,32 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "Confirm"
 
-[node name="DiceButtons" type="VBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/PanelContainer/LeftPanelButtons/VBoxContainer/ActionButtons" unique_id=164893220]
+[node name="DiceButtons" type="VBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons" unique_id=164893220]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 4
 
-[node name="Dice" type="Button" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/PanelContainer/LeftPanelButtons/VBoxContainer/ActionButtons/DiceButtons" unique_id=1692544909]
+[node name="Dice" type="Button" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/DiceButtons" unique_id=1692544909]
 custom_minimum_size = Vector2(100, 30)
 layout_mode = 2
 size_flags_horizontal = 5
 size_flags_vertical = 4
 text = "Dice Roll"
 
-[node name="FHDice" type="Button" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/PanelContainer/LeftPanelButtons/VBoxContainer/ActionButtons/DiceButtons" unique_id=272697354]
+[node name="FHDice" type="Button" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/DiceButtons" unique_id=272697354]
 custom_minimum_size = Vector2(100, 30)
 layout_mode = 2
 size_flags_horizontal = 5
 size_flags_vertical = 4
 text = "F/H Roll"
 
-[node name="DiceRollWindow" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/PanelContainer/LeftPanelButtons/VBoxContainer/ActionButtons/DiceButtons" unique_id=292838826 instance=ExtResource("5_glymg")]
+[node name="DiceRollWindow" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/DiceButtons" unique_id=292838826 instance=ExtResource("5_glymg")]
 visible = false
 
-[node name="FHRollWindow" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/PanelContainer/LeftPanelButtons/VBoxContainer/ActionButtons/DiceButtons" unique_id=1979625603 instance=ExtResource("6_8iwex")]
+[node name="FHRollWindow" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/DiceButtons" unique_id=1979625603 instance=ExtResource("6_8iwex")]
 visible = false
 
-[node name="CardsButton" type="Button" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/PanelContainer/LeftPanelButtons/VBoxContainer" unique_id=2032869381]
+[node name="CardsButton" type="Button" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer" unique_id=2032869381]
 custom_minimum_size = Vector2(200, 30)
 layout_mode = 2
 text = "Domain Cards"
@@ -1312,10 +1312,10 @@ allow_lesser = true
 [connection signal="text_changed" from="HeaderMargin/Header/HeaderInfo/NamePronouns/PronounsPanelContainer/Pronouns/PronounsEdit" to="." method="_on_pronouns_text_changed"]
 [connection signal="text_submitted" from="HeaderMargin/Header/HeaderInfo/NamePronouns/PronounsPanelContainer/Pronouns/PronounsEdit" to="." method="_on_pronouns_text_submitted"]
 [connection signal="pressed" from="LevelUpConfirmation/VBoxContainer/ConfirmButton" to="." method="_on_level_up_confirm_button_pressed"]
-[connection signal="close_requested" from="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/PanelContainer/LeftPanelButtons/VBoxContainer/ActionButtons/RestButtons/RestWindow" to="." method="_on_rest_window_close_requested"]
-[connection signal="pressed" from="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/PanelContainer/LeftPanelButtons/VBoxContainer/ActionButtons/RestButtons/RestWindow/RestUI/ConfirmButton" to="." method="_on_confirm_button_pressed"]
-[connection signal="close_requested" from="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/PanelContainer/LeftPanelButtons/VBoxContainer/ActionButtons/DiceButtons/DiceRollWindow" to="." method="_on_dice_roll_window_close_requested"]
-[connection signal="pressed" from="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/PanelContainer/LeftPanelButtons/VBoxContainer/CardsButton" to="." method="_on_cards_button_pressed"]
+[connection signal="close_requested" from="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/RestButtons/RestWindow" to="." method="_on_rest_window_close_requested"]
+[connection signal="pressed" from="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/RestButtons/RestWindow/RestUI/ConfirmButton" to="." method="_on_confirm_button_pressed"]
+[connection signal="close_requested" from="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/DiceButtons/DiceRollWindow" to="." method="_on_dice_roll_window_close_requested"]
+[connection signal="pressed" from="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/CardsButton" to="." method="_on_cards_button_pressed"]
 [connection signal="text_changed" from="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/BioPanelContainer/BioMarginContainer/Bio/BioEdit" to="." method="_on_bio_text_changed"]
 [connection signal="text_changed" from="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/Experiences/Experience1/Experience1" to="." method="_on_experience_1_text_changed"]
 [connection signal="text_submitted" from="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/Experiences/Experience1/Experience1" to="." method="_on_experience_1_text_submitted"]

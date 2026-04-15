@@ -23,18 +23,18 @@ extends Control
 @onready var ancestry_field = $HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/AncestryPanelContainer/Ancestry/ColorRect/Ancestry
 @onready var community_field = $HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/PanelContainer/Community/ColorRect/Community
 @onready var class_field = $HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/ClassPanelContainer/Class/ColorRect/Class
-@onready var short_rest_button: Button = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/PanelContainer/LeftPanelButtons/VBoxContainer/ActionButtons/RestButtons/ShortRest
-@onready var long_rest_button: Button = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/PanelContainer/LeftPanelButtons/VBoxContainer/ActionButtons/RestButtons/LongRest
-@onready var rest_window: Window = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/PanelContainer/LeftPanelButtons/VBoxContainer/ActionButtons/RestButtons/RestWindow
-@onready var rest_confirm_button: Button = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/PanelContainer/LeftPanelButtons/VBoxContainer/ActionButtons/RestButtons/RestWindow/RestUI/ConfirmButton
-@onready var dice_roll_window: Window = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/PanelContainer/LeftPanelButtons/VBoxContainer/ActionButtons/DiceButtons/DiceRollWindow
-@onready var fh_roll_window: Window = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/PanelContainer/LeftPanelButtons/VBoxContainer/ActionButtons/DiceButtons/FHRollWindow
+@onready var short_rest_button: Button = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/RestButtons/ShortRest
+@onready var long_rest_button: Button = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/RestButtons/LongRest
+@onready var rest_window: Window = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/RestButtons/RestWindow
+@onready var rest_confirm_button: Button = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/RestButtons/RestWindow/RestUI/ConfirmButton
+@onready var dice_roll_window: Window = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/DiceButtons/DiceRollWindow
+@onready var fh_roll_window: Window = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/DiceButtons/FHRollWindow
 @onready var evasion_value: Label = $EvasionProficency/EvasionContainer/Evasion/Value
 @onready var proficiency_value: Label = $EvasionProficency/ProficiencyContainer/Proficiency/Value
 @onready var advance_window: Window = $AdvanceWindow
 
-@onready var dice_button: Button = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/PanelContainer/LeftPanelButtons/VBoxContainer/ActionButtons/DiceButtons/Dice
-@onready var fearhope_button: Button = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/PanelContainer/LeftPanelButtons/VBoxContainer/ActionButtons/DiceButtons/FHDice
+@onready var dice_button: Button = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/DiceButtons/Dice
+@onready var fearhope_button: Button = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/DiceButtons/FHDice
 
 @onready var levelup_button: Button = $HeaderMargin/Header/Level/FieldContainer/PanelContainer/LevelUpButton
 @onready var levelup_confirmation_panel = $LevelUpConfirmation
