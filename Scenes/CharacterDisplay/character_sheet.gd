@@ -20,10 +20,9 @@ extends Control
 @onready var stress_field = $MarkableStats/Stress
 @onready var armor_field = $MarkableStats/Armor
 @onready var hope_field = $MarkableStats/Hope
-@onready var ancestry_field = $HeaderMargin/Header/HeaderInfo/CommnityAncestry/AncestryPanelContainer/Ancestry/ColorRect/Ancestry
-@onready var community_field = $HeaderMargin/Header/HeaderInfo/CommnityAncestry/PanelContainer/Community/ColorRect/Community
-@onready var class_field = $ClassSubclass/ClassRect/Class
-@onready var subclass_field = $ClassSubclass/SubclassRect/Label
+@onready var ancestry_field = $HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/AncestryPanelContainer/Ancestry/ColorRect/Ancestry
+@onready var community_field = $HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/PanelContainer/Community/ColorRect/Community
+@onready var class_field = $HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/ClassPanelContainer/Class/ColorRect/Class
 @onready var short_rest_button: Button = $ActionButtons/RestButtons/ShortRest
 @onready var long_rest_button: Button = $ActionButtons/RestButtons/LongRest
 @onready var rest_window: Window = $ActionButtons/RestButtons/RestWindow
@@ -89,8 +88,7 @@ func enter() -> void:
 	self.update_markable_fields()
 	
 	ancestry_field.set_text(character.ancestry.ancestry_name)
-	class_field.set_text(character.character_class.name)
-	subclass_field.set_text(character.subclass.subclass_name)
+	class_field.set_text(character.character_class.name + " \n(" + character.subclass.subclass_name + ")")
 	community_field.set_text(character.community.community_name)
 	level_field.text = str(character.level)
 	evasion_value.set_text(str(character.evasion))

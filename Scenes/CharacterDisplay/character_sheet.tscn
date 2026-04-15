@@ -139,72 +139,112 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 
-[node name="CommnityAncestry" type="HSplitContainer" parent="HeaderMargin/Header/HeaderInfo" unique_id=1615842318]
+[node name="ClassCommunityAncestry" type="HBoxContainer" parent="HeaderMargin/Header/HeaderInfo" unique_id=1686316360]
 layout_mode = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="HeaderMargin/Header/HeaderInfo/CommnityAncestry" unique_id=1597585474]
+[node name="ClassPanelContainer" type="PanelContainer" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry" unique_id=1493424672]
 layout_mode = 2
+size_flags_horizontal = 3
 theme_override_styles/panel = ExtResource("2_c8oo5")
 
-[node name="Community" type="HBoxContainer" parent="HeaderMargin/Header/HeaderInfo/CommnityAncestry/PanelContainer" unique_id=743414857]
+[node name="Class" type="HBoxContainer" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/ClassPanelContainer" unique_id=1471954437]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="HeaderMargin/Header/HeaderInfo/CommnityAncestry/PanelContainer/Community" unique_id=760379478]
+[node name="Label" type="Label" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/ClassPanelContainer/Class" unique_id=687466068]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Class:"
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/ClassPanelContainer/Class" unique_id=2110528739]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.1764706, 0.1764706, 0.1764706, 1)
+
+[node name="Class" type="Label" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/ClassPanelContainer/Class/ColorRect" unique_id=1140117280]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -24.0
+offset_right = 147.0
+offset_bottom = 24.0
+grow_vertical = 2
+theme_override_constants/paragraph_spacing = -5
+text = "agncestry_name
+(subclass)"
+vertical_alignment = 1
+max_lines_visible = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry" unique_id=1597585474]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("2_c8oo5")
+
+[node name="Community" type="HBoxContainer" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/PanelContainer" unique_id=743414857]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/PanelContainer/Community" unique_id=760379478]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Community:"
 vertical_alignment = 1
 
-[node name="ColorRect" type="ColorRect" parent="HeaderMargin/Header/HeaderInfo/CommnityAncestry/PanelContainer/Community" unique_id=1812518552]
-custom_minimum_size = Vector2(200, 50)
+[node name="ColorRect" type="ColorRect" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/PanelContainer/Community" unique_id=1812518552]
+custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
 size_flags_horizontal = 3
-color = Color(0.12941177, 0.12941177, 0.12941177, 1)
+color = Color(0.1764706, 0.1764706, 0.1764706, 1)
 
-[node name="Community" type="Label" parent="HeaderMargin/Header/HeaderInfo/CommnityAncestry/PanelContainer/Community/ColorRect" unique_id=2021481224]
+[node name="Community" type="Label" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/PanelContainer/Community/ColorRect" unique_id=2021481224]
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_top = -24.0
-offset_right = 189.0
+offset_right = 148.0
 offset_bottom = 24.0
 grow_vertical = 2
-text = "test"
+text = "community_name"
 vertical_alignment = 1
 
-[node name="AncestryPanelContainer" type="PanelContainer" parent="HeaderMargin/Header/HeaderInfo/CommnityAncestry" unique_id=913894309]
+[node name="AncestryPanelContainer" type="PanelContainer" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry" unique_id=913894309]
 layout_mode = 2
+size_flags_horizontal = 3
 theme_override_styles/panel = ExtResource("2_c8oo5")
 
-[node name="Ancestry" type="HBoxContainer" parent="HeaderMargin/Header/HeaderInfo/CommnityAncestry/AncestryPanelContainer" unique_id=400480339]
+[node name="Ancestry" type="HBoxContainer" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/AncestryPanelContainer" unique_id=400480339]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="HeaderMargin/Header/HeaderInfo/CommnityAncestry/AncestryPanelContainer/Ancestry" unique_id=1081074418]
+[node name="Label" type="Label" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/AncestryPanelContainer/Ancestry" unique_id=1081074418]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Ancestry:"
 
-[node name="ColorRect" type="ColorRect" parent="HeaderMargin/Header/HeaderInfo/CommnityAncestry/AncestryPanelContainer/Ancestry" unique_id=612125050]
-custom_minimum_size = Vector2(200, 50)
+[node name="ColorRect" type="ColorRect" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/AncestryPanelContainer/Ancestry" unique_id=612125050]
+custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
 size_flags_horizontal = 3
-color = Color(0.12941177, 0.12941177, 0.12941177, 1)
+color = Color(0.1764706, 0.1764706, 0.1764706, 1)
 
-[node name="Ancestry" type="Label" parent="HeaderMargin/Header/HeaderInfo/CommnityAncestry/AncestryPanelContainer/Ancestry/ColorRect" unique_id=33290907]
-custom_minimum_size = Vector2(200, 50)
+[node name="Ancestry" type="Label" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/AncestryPanelContainer/Ancestry/ColorRect" unique_id=33290907]
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_top = -25.0
-offset_right = 200.0
+offset_right = 177.0
 offset_bottom = 25.0
 grow_vertical = 2
 size_flags_horizontal = 8
 size_flags_vertical = 2
-text = "test"
+text = "ancestry_name"
 vertical_alignment = 1
 
 [node name="Level" type="PanelContainer" parent="HeaderMargin/Header" unique_id=1090331652]
@@ -688,65 +728,6 @@ custom_minimum_size = Vector2(40, 30)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_c8oo5")
 text = "-"
-
-[node name="ClassSubclass" type="VBoxContainer" parent="." unique_id=162208600]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.795
-anchor_top = 0.289
-anchor_right = 0.795
-anchor_bottom = 0.289
-offset_left = -102.84003
-offset_top = 63.227997
-offset_right = 102.15997
-offset_bottom = 164.228
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Label" type="Label" parent="ClassSubclass" unique_id=1249334898]
-layout_mode = 2
-size_flags_horizontal = 4
-text = "Class & Subclass"
-
-[node name="ClassRect" type="ColorRect" parent="ClassSubclass" unique_id=1089273435]
-custom_minimum_size = Vector2(0, 35)
-layout_mode = 2
-color = Color(0.19793725, 0.19793722, 0.19793722, 1)
-
-[node name="Class" type="Label" parent="ClassSubclass/ClassRect" unique_id=1672109693]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -102.5
-offset_top = -18.25
-offset_right = 102.5
-offset_bottom = 18.25
-grow_horizontal = 2
-grow_vertical = 2
-horizontal_alignment = 1
-
-[node name="SubclassRect" type="ColorRect" parent="ClassSubclass" unique_id=885645139]
-custom_minimum_size = Vector2(0, 35)
-layout_mode = 2
-color = Color(0.19607843, 0.19607843, 0.19607843, 1)
-
-[node name="Label" type="Label" parent="ClassSubclass/SubclassRect" unique_id=1350163337]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -102.5
-offset_top = -16.75
-offset_right = 102.5
-offset_bottom = 16.75
-grow_horizontal = 2
-grow_vertical = 2
-horizontal_alignment = 1
 
 [node name="Bio" type="VBoxContainer" parent="." unique_id=561844215]
 layout_mode = 1
