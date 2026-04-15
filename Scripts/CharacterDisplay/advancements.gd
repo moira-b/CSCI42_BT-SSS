@@ -123,6 +123,7 @@ func _handle_object_container_confirm() -> void:
 	if (!selected.size() >= 2 && (!proficiency in selected && !multiclass in selected)):
 		print("No advancements selected")
 	else:
+		character.max_domain_cards += 1
 		for s in selected:
 			if s == agility: character.agility += 1
 			if s == strength: character.strength += 1
@@ -140,17 +141,17 @@ func _handle_object_container_confirm() -> void:
 			if s == exp_5: character.experience_levels[4] += 1
 			if s == domain_card: 
 				character.max_domain_cards += 1
-				set_active_container(2)
 			if s == multiclass: 
 				multiclass_container.get_character(character)
 				multiclass_container.initialize()
 				set_active_container(1)
+			else:
+				set_active_container(2)
 		for s in selected:
 			s.set_pressed_no_signal(false)
 			s.disabled = true
 
-		character.max_domain_cards += 1
-	if !domain_card in selected && !multiclass in selected:
+	if active_container != $MulticlassChoiceContainer && active_container != $DomainCardSelContainer:
 		confirm_all_advancements() 
 
 func update_sheet_fields():
