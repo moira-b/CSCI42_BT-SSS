@@ -27,6 +27,7 @@ func enter():
 	stress.text = (str(character.current_stress) + "/" + str(character.max_stress))
 	health.text = (str(character.current_hp) + "/" + str(character.max_hp))
 	_enable_highlighting()
+	_connect_active_container()
 
 func _process(_delta):
 	if(card_selected and displayed_card.get_child(0).visible):
@@ -73,7 +74,7 @@ func _enable_highlighting() -> void:
 func _on_domain_card_selected(card: DomainCard) -> void:
 	card_selected = true
 	selected = card
-	selected_active_index = selected.get_index()
+	selected_active_index = selected.array_index
 	_handle_selected_highlight()
 
 func _on_swap_button_pressed() -> void:
@@ -88,7 +89,7 @@ func swap():
 	$DisplayedCard/DomainCard.change_card(selected_active_name)
 	character.vaulted_cards[selected_vaulted_index]=selected_active_name
 	
-	active_card_container.domain_card.get_child(selected_active_index).change_card(selected_vaulted_name)
+	active_card_container.get_child(selected_active_index).domain_card.change_card(selected_vaulted_name)
 	character.active_cards[selected_active_index] = selected_vaulted_name
 	
 	vault.set_item_text(selected_vaulted_index, selected_active_name)
@@ -103,3 +104,11 @@ func _handle_selected_highlight() -> void:
 		var card = container.domain_card
 		if card != selected:
 			card.toggle_highlight(false)
+
+func _connect_active_container() -> void:
+	var i:int=0
+	for container in active_card_container.get_children():
+		var card = container.domain_card
+		card.selected.connect(_on_domain_card_selected)
+		card.array_index=i
+		i+=1

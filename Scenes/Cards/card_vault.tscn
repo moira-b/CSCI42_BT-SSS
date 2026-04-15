@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dfbxwl184hc6o"]
 
 [ext_resource type="Script" uid="uid://d1jdm4hdlps4l" path="res://Scripts/Cards/card_vault.gd" id="1_7vdci"]
-[ext_resource type="PackedScene" uid="uid://vqg75n62pgd4" path="res://Scenes/Cards/card_counter_holder.tscn" id="3_ldfuo"]
+[ext_resource type="PackedScene" uid="uid://fl781hgpyw48" path="res://Scenes/Cards/card_counter_holder.tscn" id="3_ldfuo"]
 [ext_resource type="PackedScene" uid="uid://cknxpivnpwbxd" path="res://Scenes/Cards/domain_card_base.tscn" id="3_n8krj"]
 
 [node name="CardVault" type="Control" unique_id=1159311945]
@@ -49,18 +49,23 @@ scale = Vector2(0.8940905, 0.8940905)
 theme_override_constants/separation = 7
 
 [node name="CardCounterHolder" parent="ActiveCardContainer" unique_id=622011280 instance=ExtResource("3_ldfuo")]
+visible = false
 layout_mode = 2
 
 [node name="CardCounterHolder2" parent="ActiveCardContainer" unique_id=356223036 instance=ExtResource("3_ldfuo")]
+visible = false
 layout_mode = 2
 
 [node name="CardCounterHolder3" parent="ActiveCardContainer" unique_id=495840682 instance=ExtResource("3_ldfuo")]
+visible = false
 layout_mode = 2
 
 [node name="CardCounterHolder4" parent="ActiveCardContainer" unique_id=2058496043 instance=ExtResource("3_ldfuo")]
+visible = false
 layout_mode = 2
 
 [node name="CardCounterHolder5" parent="ActiveCardContainer" unique_id=880520024 instance=ExtResource("3_ldfuo")]
+visible = false
 layout_mode = 2
 
 [node name="SwapButton" type="Button" parent="." unique_id=161227211]

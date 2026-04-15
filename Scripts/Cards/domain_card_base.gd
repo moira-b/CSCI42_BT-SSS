@@ -8,6 +8,7 @@ var type: String
 var domain: String
 var recall_cost: int
 var is_selected: bool
+var array_index: int
 @export var can_highlight: bool = false
 
 # Display details
