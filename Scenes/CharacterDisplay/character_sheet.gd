@@ -16,10 +16,10 @@ extends Control
 @onready var experience4 : LineEdit = $BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/Experiences/Experience4/Experience4
 @onready var experience5 : LineEdit = $BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/Experiences/Experience5/Experience5
 
-@onready var health_field = $MarkableStats/Health
-@onready var stress_field = $MarkableStats/Stress
-@onready var armor_field = $MarkableStats/Armor
-@onready var hope_field = $MarkableStats/Hope
+@onready var health_field = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Health
+@onready var stress_field = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Stress
+@onready var armor_field = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Armor
+@onready var hope_field = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Hope
 @onready var ancestry_field = $HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/AncestryPanelContainer/Ancestry/ColorRect/Ancestry
 @onready var community_field = $HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/PanelContainer/Community/ColorRect/Community
 @onready var class_field = $HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/ClassPanelContainer/Class/ColorRect/Class
@@ -48,8 +48,8 @@ extends Control
 @onready var instinct_advance: Button = $TraitModifiers/Instinct/AdvanceButton
 @onready var presence_advance: Button = $TraitModifiers/Prescence/AdvanceButton
 @onready var knowledge_advance: Button = $TraitModifiers/Knowledge/AdvanceButton
-@onready var health_advance: Button = $MarkableStats/Health/FieldContainer/Buttons/AdvanceButton
-@onready var stress_advance: Button = $MarkableStats/Stress/FieldContainer/Buttons/AdvanceButton
+@onready var health_advance: Button = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Health/FieldContainer/Buttons/AdvanceButton
+@onready var stress_advance: Button = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Stress/FieldContainer/Buttons/AdvanceButton
 @onready var experience1_advance: Button = $Experiences/Experience1/AdvanceButton
 @onready var experience2_advance: Button = $Experiences/Experience2/AdvanceButton
 @onready var experience3_advance: Button = $Experiences/Experience3/AdvanceButton
