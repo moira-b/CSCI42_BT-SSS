@@ -22,6 +22,7 @@
 [ext_resource type="Resource" uid="uid://hywukpwyumtp" path="res://Resources/Classes/Sorcerer/sorcerer.tres" id="19_rj3pj"]
 [ext_resource type="Resource" uid="uid://cfbttvs0d6csq" path="res://Resources/Classes/Warrior/warrior.tres" id="20_48wf7"]
 [ext_resource type="Resource" uid="uid://dac4f4ifpjnla" path="res://Resources/Classes/Wizard/wizard.tres" id="21_asla6"]
+[ext_resource type="Script" uid="uid://ddgbhwwl4fam4" path="res://Scripts/CharacterDisplay/information_popup.gd" id="23_gjf7o"]
 
 [sub_resource type="GDScript" id="GDScript_dg7yu"]
 script/source = "extends LineEdit
@@ -199,40 +200,6 @@ text = "ancestry_name
 vertical_alignment = 1
 max_lines_visible = 2
 
-[node name="CommunityPanelContainer" type="PanelContainer" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry" unique_id=1597585474]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = ExtResource("2_c8oo5")
-
-[node name="Community" type="HBoxContainer" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/CommunityPanelContainer" unique_id=743414857]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/CommunityPanelContainer/Community" unique_id=760379478]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-size_flags_horizontal = 4
-text = "Community:"
-vertical_alignment = 1
-
-[node name="ColorRect" type="ColorRect" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/CommunityPanelContainer/Community" unique_id=1812518552]
-custom_minimum_size = Vector2(100, 50)
-layout_mode = 2
-size_flags_horizontal = 3
-color = Color(0.1764706, 0.1764706, 0.1764706, 1)
-
-[node name="Community" type="Label" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/CommunityPanelContainer/Community/ColorRect" unique_id=2021481224]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -24.0
-offset_right = 148.0
-offset_bottom = 24.0
-grow_vertical = 2
-text = "community_name"
-vertical_alignment = 1
-
 [node name="AncestryPanelContainer" type="PanelContainer" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry" unique_id=913894309]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -265,6 +232,40 @@ grow_vertical = 2
 size_flags_horizontal = 8
 size_flags_vertical = 2
 text = "ancestry_name"
+vertical_alignment = 1
+
+[node name="CommunityPanelContainer" type="PanelContainer" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry" unique_id=1597585474]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("2_c8oo5")
+
+[node name="Community" type="HBoxContainer" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/CommunityPanelContainer" unique_id=743414857]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/CommunityPanelContainer/Community" unique_id=760379478]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Community:"
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/CommunityPanelContainer/Community" unique_id=1812518552]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.1764706, 0.1764706, 0.1764706, 1)
+
+[node name="Community" type="Label" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/CommunityPanelContainer/Community/ColorRect" unique_id=2021481224]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -24.0
+offset_right = 148.0
+offset_bottom = 24.0
+grow_vertical = 2
+text = "community_name"
 vertical_alignment = 1
 
 [node name="Level" type="PanelContainer" parent="HeaderMargin/Header" unique_id=1090331652]
@@ -1628,6 +1629,67 @@ offset_bottom = -19.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Confirm"
+
+[node name="InformationPopup" type="PanelContainer" parent="." unique_id=1815631795]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = ExtResource("2_c8oo5")
+script = ExtResource("23_gjf7o")
+
+[node name="MarginContainer" type="MarginContainer" parent="InformationPopup" unique_id=1854017691]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="InformationPopup/MarginContainer" unique_id=3577746]
+layout_mode = 2
+
+[node name="AttributeName" type="Label" parent="InformationPopup/MarginContainer/VBoxContainer" unique_id=1623018741]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Attribute Name"
+autowrap_mode = 2
+
+[node name="Spacer" type="Label" parent="InformationPopup/MarginContainer/VBoxContainer" unique_id=1209695237]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_constants/line_spacing = -5
+theme_override_font_sizes/font_size = 12
+autowrap_mode = 2
+
+[node name="Feature1" type="Label" parent="InformationPopup/MarginContainer/VBoxContainer" unique_id=187664634]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_constants/line_spacing = -5
+text = "Attribute Feature 1: Feature Name"
+autowrap_mode = 2
+
+[node name="Feature1Description" type="Label" parent="InformationPopup/MarginContainer/VBoxContainer" unique_id=280401321]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_constants/line_spacing = -5
+theme_override_font_sizes/font_size = 14
+text = "You have advantage on rolls to consort with nobles, negotiate prices, or leverage your reputation to get what you want."
+autowrap_mode = 2
+
+[node name="Feature2" type="Label" parent="InformationPopup/MarginContainer/VBoxContainer" unique_id=1363394027]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_constants/line_spacing = -5
+text = "Attribute Feature 1: Feature Name"
+autowrap_mode = 2
+
+[node name="Feature2Description" type="Label" parent="InformationPopup/MarginContainer/VBoxContainer" unique_id=645411207]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_constants/line_spacing = -5
+theme_override_font_sizes/font_size = 14
+text = "You have advantage on rolls to consort with nobles, negotiate prices, or leverage your reputation to get what you want."
+autowrap_mode = 2
 
 [connection signal="text_changed" from="HeaderMargin/Header/HeaderInfo/NamePronouns/NamePanelContainer/NameC/NameEdit" to="." method="_on_name_edit_text_changed"]
 [connection signal="text_submitted" from="HeaderMargin/Header/HeaderInfo/NamePronouns/NamePanelContainer/NameC/NameEdit" to="." method="_on_name_edit_text_submitted"]

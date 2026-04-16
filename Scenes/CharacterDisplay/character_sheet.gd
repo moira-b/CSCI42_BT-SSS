@@ -69,6 +69,11 @@ extends Control
 @onready var all_traits: Array[SpinBox] = [agility_field, strength_field, finesse_field, instinct_field,
 	presence_field, knowledge_field]
 
+@onready var class_panel = $HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/ClassPanelContainer
+@onready var ancestry_panel = $HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/AncestryPanelContainer
+@onready var community_panel = $HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/CommunityPanelContainer
+@onready var information_popup = $InformationPopup
+
 var updated = false
 var shortRestCounter = 0
 var character: Character 
@@ -381,6 +386,10 @@ func connect_signals() -> void:
 	advance_window.advancements_confirmed.connect(update_markable_fields)
 	advance_window.advancements_confirmed.connect(update_edit_fields)
 
+	class_panel.mouse_entered.connect(_on_mouse_enter_class_panel)
+	ancestry_panel.mouse_entered.connect(_on_mouse_enter_ancestry_panel)
+	community_panel.mouse_entered.connect(_on_mouse_enter_community_panel)
+
 func disable_button_selection(b: bool) -> void:
 	short_rest_button.disabled = b
 	long_rest_button.disabled = b
@@ -432,3 +441,12 @@ func _on_main_menu_button_pressed() -> void:
 	var main_menu = load("res://Scenes/SheetManagement/main_menu.tscn").instantiate()
 	get_tree().root.add_child(main_menu)
 	self.queue_free()
+
+func _on_mouse_enter_class_panel():
+	pass
+
+func _on_mouse_enter_ancestry_panel():
+	pass
+
+func _on_mouse_enter_community_panel():
+	information_popup.showCommunityInformation(character.community)
