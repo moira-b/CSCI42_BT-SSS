@@ -93,13 +93,16 @@ func set_current_stress(value: int) -> bool:
 	return false
 
 func set_maximum_armor_slots() -> void:
-	self.max_armor_slots = 12 # ACTUAL DEFAULT
+	self.max_armor_slots = 0 # ACTUAL DEFAULT
 	# TODO: set maximum health based on character creation options
 	# (i.e. consider chosen character features)
 	
 func set_used_armor_slots(value: int) -> bool:
 	if(0 <= value && value <= self.max_armor_slots):
+		if(value > 12): #max armor slots
+			value = 12
 		used_armor_slots = value
+		
 		#print("DEBUG: " + self.character_name + " has used " + str(used_armor_slots) + " armor slots.")
 		return true
 	elif(value < 0):
@@ -256,7 +259,7 @@ func equip_armor(armor: String):
 	if(not armor_as_dict.get(armor)):
 		return
 		
-	max_armor_slots = armor_as_dict.get(armor).get("base_score")
+	max_armor_slots += armor_as_dict.get(armor).get("base_score")
 	damage_thresholds[0] += armor_as_dict.get(armor).get("major_threshold")
 	damage_thresholds[1] += armor_as_dict.get(armor).get("severe_threshold")
 		
@@ -289,7 +292,7 @@ func unequip_armor(armor: String):
 	if(not armor_as_dict.get(armor)):
 		return
 	
-	max_armor_slots = 0
+	max_armor_slots -= armor_as_dict.get(armor).get("base_score")
 	damage_thresholds[0] -= armor_as_dict.get(armor).get("major_threshold")
 	damage_thresholds[1] -= armor_as_dict.get(armor).get("severe_threshold")
 	
@@ -316,16 +319,117 @@ func unequip_armor(armor: String):
 	
 func equip_primary(weapon: String):
 	print("equipped primary: " + weapon)
-	pass
+	
+	var weapon_as_text = FileAccess.get_file_as_string("res://Resources/Equipment/weapons.json")
+	var weapon_as_dict = JSON.parse_string(weapon_as_text)
+	
+	if(not weapon_as_dict.get(weapon)):
+		return
+	
+	var feature = weapon_as_dict.get(weapon).get("feature")
+	
+	if(feature == "Massive" || feature == "Heavy"):
+		evasion -= 1
+	elif(feature=="Cumbersome"):
+		finesse -= 1
+	elif(feature=="Protective"):
+		max_armor_slots += 1
+	elif(feature =="Barrier"):
+		max_armor_slots += weapon_as_dict.get(weapon).get("tier") + 1
+		evasion -= 1
+	elif(feature =="Double Duty"):
+		max_armor_slots += 1
+	elif(feature == "Brave"):
+		evasion -= 1
+		damage_thresholds[1] += 3
+	elif(feature == "Destructive"):
+		evasion -= 1
+		agility -= 1
+	
 	
 func unequip_primary(weapon: String):
 	print("unequipped primary: " + weapon)
-	pass
+	
+	
+	var weapon_as_text = FileAccess.get_file_as_string("res://Resources/Equipment/weapons.json")
+	var weapon_as_dict = JSON.parse_string(weapon_as_text)
+	
+	if(not weapon_as_dict.get(weapon)):
+		return
+	
+	var feature = weapon_as_dict.get(weapon).get("feature")
+	
+	if(feature == "Massive" || feature == "Heavy"):
+		evasion += 1
+	elif(feature=="Cumbersome"):
+		finesse += 1
+	elif(feature=="Protective"):
+		max_armor_slots -= 1
+	elif(feature =="Barrier"):
+		max_armor_slots -= weapon_as_dict.get(weapon).get("tier") + 1
+		evasion += 1
+	elif(feature =="Double Duty"):
+		max_armor_slots -= 1
+	elif(feature == "Brave"):
+		evasion += 1
+		damage_thresholds[1] -= 3
+	elif(feature == "Destructive"):
+		evasion += 1
+		agility += 1
 	
 func equip_secondary(weapon: String):
 	print("equipped secondary: " + weapon)
-	pass
+	var weapon_as_text = FileAccess.get_file_as_string("res://Resources/Equipment/weapons.json")
+	var weapon_as_dict = JSON.parse_string(weapon_as_text)
+	
+	if(not weapon_as_dict.get(weapon)):
+		return
+	
+	var feature = weapon_as_dict.get(weapon).get("feature")
+	
+	if(feature == "Massive" || feature == "Heavy"):
+		evasion -= 1
+	elif(feature=="Cumbersome"):
+		finesse -= 1
+	elif(feature=="Protective"):
+		max_armor_slots += weapon_as_dict.get(weapon).get("tier")
+	elif(feature =="Barrier"):
+		max_armor_slots += weapon_as_dict.get(weapon).get("tier") + 1
+		evasion -= 1
+	elif(feature =="Double Duty"):
+		max_armor_slots += 1
+	elif(feature == "Brave"):
+		evasion -= 1
+		damage_thresholds[1] += 3
+	elif(feature == "Destructive"):
+		evasion -= 1
+		agility -= 1
+	
 	
 func unequip_secondary(weapon: String):
 	print("unequipped secondary: " + weapon)
-	pass
+	var weapon_as_text = FileAccess.get_file_as_string("res://Resources/Equipment/weapons.json")
+	var weapon_as_dict = JSON.parse_string(weapon_as_text)
+	
+	if(not weapon_as_dict.get(weapon)):
+		return
+	
+	var feature = weapon_as_dict.get(weapon).get("feature")
+	
+	if(feature == "Massive" || feature == "Heavy"):
+		evasion += 1
+	elif(feature=="Cumbersome"):
+		finesse += 1
+	elif(feature=="Protective"):
+		max_armor_slots -= weapon_as_dict.get(weapon).get("tier")
+	elif(feature =="Barrier"):
+		max_armor_slots -= (weapon_as_dict.get(weapon).get("tier") + 1)
+		evasion += 1
+	elif(feature =="Double Duty"):
+		max_armor_slots -= 1
+	elif(feature == "Brave"):
+		evasion += 1
+		damage_thresholds[1] -= 3
+	elif(feature == "Destructive"):
+		evasion += 1
+		agility += 1

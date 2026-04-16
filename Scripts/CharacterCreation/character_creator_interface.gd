@@ -132,6 +132,8 @@ func _on_complete_button_pressed() -> void:
 		character.implement_ancestry_features()
 		character.set_base_evasion()
 		character.equip_armor(character.items[0])
+		character.equip_primary(character.items[1])
+		character.equip_secondary(character.items[2])
 		character.reparent(new_scene)
 		self.get_parent().add_child(new_scene)
 		new_scene.enter()
