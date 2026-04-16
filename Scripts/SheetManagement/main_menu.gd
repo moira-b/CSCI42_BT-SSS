@@ -78,7 +78,9 @@ func _on_popup_option_selected(option: String, pk):
 
 func _on_searchbar_text_changed(text):
 	for char_panel in grid_container.get_children():
-		if char_panel.char_name.contains(text) || char_panel.char_class.contains(text) || text == "":
+		if text == "":
+			char_panel.visible = true
+		elif char_panel.char_name.containsn(text) || char_panel.char_class.containsn(text):
 			char_panel.visible = true
 		else:
 			char_panel.visible = false
