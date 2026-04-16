@@ -31,6 +31,9 @@ extends Control
 @onready var fh_roll_window: Window = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/DiceButtons/FHRollWindow
 @onready var evasion_value: Label = $BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/MarginContainer/HBoxContainer/Evasion/FieldContainer/MarginContainer/FieldValue
 @onready var proficiency_value: Label = $BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/MarginContainer/HBoxContainer/Proficiency/FieldContainer/MarginContainer/FieldValue
+@onready var major_threshold_value: Label = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/DamageThresholds/HBoxContainer/MajorThreshold/FieldContainer/MarginContainer/FieldValue
+@onready var severe_threshold_value: Label = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/DamageThresholds/HBoxContainer/SevereThreshold/FieldContainer/MarginContainer/FieldValue
+
 @onready var advance_window: Window = $AdvanceWindow
 
 @onready var dice_button: Button = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/DiceButtons/Dice
@@ -88,7 +91,7 @@ func enter() -> void:
 	fh_roll_window.visible = false
 	levelup_confirmation_panel.visible = false
 	update_edit_fields()
-	
+	update_equipment_display()
 	connect_signals()
 	
 	self.update_markable_fields()
@@ -110,12 +113,16 @@ func _process(_delta: float) -> void:
 		update_edit_fields()
 	check_tier_achievements_threshold()
 		
-
+func update_equipment_display() -> void:
+	major_threshold_value.set_text(str(character.damage_thresholds[0]))
+	severe_threshold_value.set_text(str(character.damage_thresholds[1]))
+	
 func update_markable_fields() -> void:
 	health_field.set_current_value(str(character.current_hp))
 	stress_field.set_current_value(str(character.current_stress))
 	hope_field.set_current_value(str(character.current_hope))
 	armor_field.set_current_value(str(character.used_armor_slots))
+	
 
 func update_edit_fields() -> void:
 	name_edit.set_text(str(character.character_name))

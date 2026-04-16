@@ -30,7 +30,7 @@ const max_hope: int = 6
 @export var max_armor_slots: int
 @export var used_armor_slots: int
 @export var experiences: Array[String] = ["", "", "", "", ""]
-@export var damage_thresholds: Array[int]
+@export var damage_thresholds: Array[int] = [1,1]
 @export var experience_levels: Array[int] = [2, 2, 2, 2, 2]
 @export var max_domain_cards: int
 @export var num_downtime_moves: int = 2
@@ -244,3 +244,25 @@ func implement_ancestry_features():
 	elif self.ancestry.ancestry_name=="Simiah":
 		evasion += 1
 		print(character_name + "'s evasion is automatically increased by 1 due to Simiah ancestry.")
+		
+func equip_armor(armor: String):
+	var armor_as_text = FileAccess.get_file_as_string("res://Resources/Equipment/armor.json")
+	var armor_as_dict = JSON.parse_string(armor_as_text)
+	
+	if(not armor_as_dict.get(armor)):
+		return
+		
+	max_armor_slots = armor_as_dict.get(armor).get("base_score")
+	damage_thresholds[0] += armor_as_dict.get(armor).get("major_threshold")
+	damage_thresholds[1] += armor_as_dict.get(armor).get("severe_threshold")
+	
+func unequip_armor(armor: String):
+	var armor_as_text = FileAccess.get_file_as_string("res://Resources/Equipment/armor.json")
+	var armor_as_dict = JSON.parse_string(armor_as_text)
+	
+	if(not armor_as_dict.get(armor)):
+		return
+	
+	max_armor_slots = 0
+	damage_thresholds[0] -= armor_as_dict.get(armor).get("major_threshold")
+	damage_thresholds[1] -= armor_as_dict.get(armor).get("severe_threshold")
