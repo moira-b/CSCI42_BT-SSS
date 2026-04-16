@@ -56,9 +56,7 @@ func _ready() -> void:
 	pass
 
 func set_maximum_health() -> void:
-	self.max_hp = 12 # PLACEHOLDER
-	# TODO: set maximum health based on character creation options
-	# (i.e. consider chosen character features)
+	self.max_hp = character_class.starting_hp
 
 func set_current_health(value: int) -> bool:
 	if(0 <= value && value <= self.max_hp):
