@@ -252,7 +252,7 @@
 		"burden":"Two-Handed",
 		"feature":"Versatile"
 	},
-	"WWand":{
+	"Wand":{
 		"tier":1,
 		"category":"Primary",
 		"damage_type":"Magical",
