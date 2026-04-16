@@ -113,5 +113,5 @@ func _connect_active_container() -> void:
 		card.selected.connect(_on_domain_card_selected)
 		card.array_index=i
 		container.initialize(character)
-		container.counter = character.active_domain_card_counters[i]
+		container.counter.value = character.active_domain_card_counters[i]
 		i+=1

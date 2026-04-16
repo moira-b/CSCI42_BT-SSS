@@ -1,7 +1,7 @@
 extends Control
 
 @onready var domain_card = $VBoxContainer/DomainCard
-@onready var counter = $VBoxContainer/CounterPanel/HBoxContainer/Counters/SpinBox
+@onready var counter: SpinBox = $VBoxContainer/CounterPanel/HBoxContainer/Counters/SpinBox
 var character: Character
 var array_index: int
 
