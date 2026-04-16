@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dmmky0qgq613p"]
+[gd_scene format=3 uid="uid://cw1whlkethlnc"]
 
 [ext_resource type="PackedScene" uid="uid://cknxpivnpwbxd" path="res://Scenes/Cards/domain_card_base.tscn" id="1_ei55r"]
 [ext_resource type="Script" uid="uid://dww2uvykmtxpl" path="res://Scripts/Cards/card_counter_holder.gd" id="1_ntm7b"]
