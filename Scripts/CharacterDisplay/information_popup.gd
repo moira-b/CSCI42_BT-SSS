@@ -31,10 +31,10 @@ func showAncestryInformation(ancestry: Ancestry, position_anchor: Vector2, enter
 	)
 	
 	attribute_name.text = ancestry.ancestry_name
-	feature1_name.text = ancestry.feature1.feature_name
+	feature1_name.text = "Ancestry Feature: " + ancestry.feature1.feature_name
 	feature1_description.text = ancestry.feature1.get_description()
 	
-	feature2_name.text = ancestry.feature2.feature_name
+	feature2_name.text = "Ancestry Feature: " + ancestry.feature2.feature_name
 	feature2_description.text = ancestry.feature2.get_description()
 	
 	feature2_name.show()
@@ -50,7 +50,7 @@ func showCommunityInformation(community: Community, position_anchor: Vector2, en
 	)
 	
 	attribute_name.text = community.community_name
-	feature1_name.text = community.get_feature()
+	feature1_name.text = "Community Feature: " + community.get_feature()
 	feature1_description.text = community.get_feature_description()
 
 	feature2_name.hide()
