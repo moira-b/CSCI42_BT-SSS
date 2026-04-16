@@ -68,6 +68,12 @@ func get_description() -> String:
 func set_description() -> void:
 	self.description = all_descriptions[community_name]
 
+func get_feature() -> String:
+	return all_features[community_name]
+	
+func get_feature_description() -> String:
+	return all_features_descriptions[all_features[community_name]]
+
 func set_feature() -> String:
 	self.feature_name = all_features[community_name]
 	return feature_name

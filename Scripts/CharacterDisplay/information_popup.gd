@@ -15,12 +15,9 @@ func showAncestryInformation(ancestry: Ancestry):
 	show()
 	
 func showCommunityInformation(community: Community):
-	community.set_feature()
-	community.set_feature_description()
-	
 	attribute_name.text = community.community_name
-	feature1_name.text = community.feature_name
-	feature1_description.text = community.feature_description
+	feature1_name.text = community.get_feature()
+	feature1_description.text = community.get_feature_description()
 
 	feature2_name.hide()
 	feature2_description.hide()
