@@ -1,11 +1,15 @@
-extends Node
+extends GutTest
 
+var MainMenu = preload("res://Scripts/SheetManagement/main_menu.gd")
+var mainmenu
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+func before_each():
+	mainmenu = autofree(MainMenu.new())
+	add_child(mainmenu)
+	await get_tree().process_frame
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func after_each():
 	pass
+
+func test_pass():
+	assert(1==1, "uhh, what?")

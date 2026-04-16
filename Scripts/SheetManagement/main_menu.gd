@@ -25,7 +25,7 @@ func _process(delta):
 
 func enter():
 	confirm_window.visible = false
-	options_popup.visible = false
+	#options_popup.visible = false
 	connect_signals()
 	create_character_panels()
 
