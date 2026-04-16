@@ -7,6 +7,13 @@ extends Control
 @onready var description_display = $DescriptionContainer
 @onready var card_selector = $OptionLists/DomainCardSelContainer
 @onready var character = $Character
+@onready var notif_window = $NotifWindow
+@onready var tab_container = $TabButtons
+@onready var tab_buttons: Array[Node] = tab_container.get_children()
+@onready var armor_list: ItemList = $OptionLists/EquipmentList/ArmorContainer/ArmorList
+@onready var p_wep_list: ItemList = $OptionLists/EquipmentList/PWepContainer/PWepList
+@onready var s_wep_list: ItemList = $OptionLists/EquipmentList/SWepContainer/SWepList
+
 
 var option_tab_array: Array[Control]
 var option_tab_index: int
@@ -23,6 +30,8 @@ func _ready() -> void:
 	complete_button.visible = false
 	_load_option_tabs()
 	_set_active_option_tab(0)
+	for button in tab_buttons:
+		button.pressed.connect(_on_tab_button_pressed.bind(button))
 
 
 func _process(_delta: float) -> void:
@@ -38,6 +47,11 @@ func _process(_delta: float) -> void:
 	elif active_option_tab.name == "TraitAssignmentContainer":
 		if active_option_tab.get_child(1).is_all_items_complete():
 			confirm_button.disabled = false
+	elif active_option_tab.name == "EquipmentList":
+		if active_option_tab.is_equipment_valid():
+			confirm_button.disabled = false
+		else:
+			confirm_button.disabled = true
 	elif active_option_tab.name == "ExperiencesContainer" and active_option_tab.is_all_textboxes_filled():
 			confirm_button.disabled = false
 	elif active_option_tab.name == "NamePronounContainer" and active_option_tab.is_all_textboxes_filled():
@@ -109,16 +123,21 @@ func show_description(message: String) -> void:
 
 
 func _on_complete_button_pressed() -> void:
-	add_domain_cards()
-	var new_scene = sheet_scene.instantiate()
-	character.set_maximum_health()
-	character.set_maximum_stress()
-	character.set_maximum_armor_slots()
-	character.implement_ancestry_features()
-	character.reparent(new_scene)
-	self.get_parent().add_child(new_scene)
-	new_scene.enter()
-	self.queue_free()
+	if (_is_character_data_valid() == true):
+		add_domain_cards()
+		var new_scene = sheet_scene.instantiate()
+		character.set_maximum_health()
+		character.set_maximum_stress()
+		character.set_maximum_armor_slots()
+		character.implement_ancestry_features()
+		character.set_base_evasion()
+		character.equip_armor(character.items[0])
+		character.equip_primary(character.items[1])
+		character.equip_secondary(character.items[2])
+		character.reparent(new_scene)
+		self.get_parent().add_child(new_scene)
+		new_scene.enter()
+		self.queue_free()
 	#get_tree().change_scene_to_packed(sheet_scene)
 
 
@@ -126,4 +145,49 @@ func add_domain_cards():
 	for index in range(card_selector.select_card_list.item_count):
 		var card = card_selector.select_card_list.get_item_text(index)
 		character.active_cards.append(card)
+
+
+func _on_tab_button_pressed(tab: Button) -> void:
+	if tab.name == "Class": 
+		_set_active_option_tab(0)
+		option_tab_index = 0
+		character.subclass = null
+	if tab.name == "Subclass": 
+		_set_active_option_tab(1)
+		option_tab_index = 1
+	if tab.name == "Heritage": 
+		_set_active_option_tab(2)
+		option_tab_index = 2
+	if tab.name == "Community": 
+		_set_active_option_tab(3)
+		option_tab_index = 3
+	if tab.name == "DomainCards": 
+		if character.character_class != null:
+			_set_active_option_tab(4)
+			option_tab_index = 4
+	if tab.name == "Traits": 
+		_set_active_option_tab(5)
+		option_tab_index = 5
+	if tab.name == "Experiences": 
+		_set_active_option_tab(6)
+		option_tab_index = 6
+	if tab.name == "Equipment": 
+		_set_active_option_tab(7)
+		option_tab_index = 7
+	if tab.name == "Name":
+		_set_active_option_tab(8)
+		option_tab_index = 8
+
+func _is_character_data_valid() -> bool:
+	if (character.character_class == null || character.subclass == null ||
+		character.ancestry == null || character.community == null):
+		_raise_error()
+		return false
+	else:
+		return true
 		
+
+func _raise_error() -> void:
+	notif_window.show()
+	await(get_tree().create_timer(1.0).timeout)
+	notif_window.hide()

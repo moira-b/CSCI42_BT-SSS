@@ -1,0 +1,1438 @@
+{
+	"Broadsword":{
+		"tier":1,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Agility",
+		"range":"Melee",
+		"damage_die":8,
+		"damage_modifier":0,
+		"burden":"One-Handed",
+		"feature":"Reliable"
+	},
+	"Longsword":{
+		"tier":1,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Agility",
+		"range":"Melee",
+		"damage_die":10,
+		"damage_modifier":3,
+		"burden":"Two-Handed",
+		"feature":""
+	},
+	"Battleaxe":{
+		"tier":1,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Strength",
+		"range":"Melee",
+		"damage_die":10,
+		"damage_modifier":3,
+		"burden":"Two-Handed",
+		"feature":""
+	},
+	"Greatsword":{
+		"tier":1,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Strength",
+		"range":"Melee",
+		"damage_die":10,
+		"damage_modifier":3,
+		"burden":"Two-Handed",
+		"feature":"Massive"
+	},
+	"Mace":{
+		"tier":1,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Strength",
+		"range":"Melee",
+		"damage_die":8,
+		"damage_modifier":1,
+		"burden":"One-Handed",
+		"feature":""
+	},
+	"Warhammer":{
+		"tier":1,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Strength",
+		"range":"Melee",
+		"damage_die":12,
+		"damage_modifier":3,
+		"burden":"Two-Handed",
+		"feature":"Heavy"
+	},
+	"Dagger":{
+		"tier":1,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Finesse",
+		"range":"Melee",
+		"damage_die":8,
+		"damage_modifier":1,
+		"burden":"One-Handed",
+		"feature":""
+	},
+	"Quarterstaff":{
+		"tier":1,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Instinct",
+		"range":"Melee",
+		"damage_die":10,
+		"damage_modifier":3,
+		"burden":"Two-Handed",
+		"feature":""
+	},
+	"Cutlass":{
+		"tier":1,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Presence",
+		"range":"Melee",
+		"damage_die":8,
+		"damage_modifier":1,
+		"burden":"One-Handed",
+		"feature":""
+	},
+	"Rapier":{
+		"tier":1,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Presence",
+		"range":"Melee",
+		"damage_die":8,
+		"damage_modifier":0,
+		"burden":"One-Handed",
+		"feature":"Quick"
+	},
+	"Halberd":{
+		"tier":1,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Strength",
+		"range":"Very Close",
+		"damage_die":10,
+		"damage_modifier":2,
+		"burden":"Two-Handed",
+		"feature":"Cumbersome"
+	},
+	"Spear":{
+		"tier":1,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Finesse",
+		"range":"Very Close",
+		"damage_die":8,
+		"damage_modifier":3,
+		"burden":"Two-Handed",
+		"feature":"Cumbersome"
+	},
+	"Shortbow":{
+		"tier":1,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Agility",
+		"range":"Far",
+		"damage_die":6,
+		"damage_modifier":3,
+		"burden":"Two-Handed",
+		"feature":""
+	},
+	"Crossbow":{
+		"tier":1,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Finesse",
+		"range":"Far",
+		"damage_die":6,
+		"damage_modifier":1,
+		"burden":"Two-Handed",
+		"feature":""
+	},
+	"Longbow":{
+		"tier":1,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Agility",
+		"range":"Very Far",
+		"damage_die":8,
+		"damage_modifier":3,
+		"burden":"Two-Handed",
+		"feature":"Cumbersome"
+	},
+	"Arcane Gauntlets":{
+		"tier":1,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Strength",
+		"range":"Melee",
+		"damage_die":10,
+		"damage_modifier":3,
+		"burden":"Two-Handed",
+		"feature":""
+	},
+	"Hallowed Axe":{
+		"tier":1,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Strength",
+		"range":"Melee",
+		"damage_die":8,
+		"damage_modifier":1,
+		"burden":"One-Handed",
+		"feature":""
+	},
+	"Glowing Rings":{
+		"tier":1,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Agility",
+		"range":"Very Close",
+		"damage_die":10,
+		"damage_modifier":2,
+		"burden":"Two-Handed",
+		"feature":""
+	},
+	"Hand Runes":{
+		"tier":1,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Instinct",
+		"range":"Melee",
+		"damage_die":10,
+		"damage_modifier":0,
+		"burden":"One-Handed",
+		"feature":""
+	},
+	"Returning Blade":{
+		"tier":1,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Finesse",
+		"range":"Close",
+		"damage_die":8,
+		"damage_modifier":0,
+		"burden":"One-Handed",
+		"feature":"Returning"
+	},
+	"Shortstaff":{
+		"tier":1,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Instinct",
+		"range":"Close",
+		"damage_die":8,
+		"damage_modifier":1,
+		"burden":"One-Handed",
+		"feature":""
+	},
+	"Dualstaff":{
+		"tier":1,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Instinct",
+		"range":"Far",
+		"damage_die":6,
+		"damage_modifier":3,
+		"burden":"Two-Handed",
+		"feature":""
+	},
+	"Scepter":{
+		"tier":1,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Presence",
+		"range":"Far",
+		"damage_die":6,
+		"damage_modifier":0,
+		"burden":"Two-Handed",
+		"feature":"Versatile"
+	},
+	"Wand":{
+		"tier":1,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Knowledge",
+		"range":"Far",
+		"damage_die":6,
+		"damage_modifier":1,
+		"burden":"One-Handed",
+		"feature":""
+	},
+	"Greatstaff":{
+		"tier":1,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Knowledge",
+		"range":"Melee",
+		"damage_die":6,
+		"damage_modifier":0,
+		"burden":"Two-Handed",
+		"feature":"Powerful"
+	},
+
+
+
+
+	"Shortsword":{
+		"tier":1,
+		"category":"Secondary",
+		"damage_type":"Physical",
+		"trait":"Agility",
+		"range":"Melee",
+		"damage_die":8,
+		"damage_modifier":0,
+		"burden":"One-Handed",
+		"feature":"Paired"
+	},
+	"Round Shield":{
+		"tier":1,
+		"category":"Secondary",
+		"damage_type":"Physical",
+		"trait":"Strength",
+		"range":"Melee",
+		"damage_die":4,
+		"damage_modifier":0,
+		"burden":"One-Handed",
+		"feature":"Protective"
+	},
+	"Tower Shield":{
+		"tier":1,
+		"category":"Secondary",
+		"damage_type":"Physical",
+		"trait":"Strength",
+		"range":"Melee",
+		"damage_die":6,
+		"damage_modifier":0,
+		"burden":"One-Handed",
+		"feature":"Barrier"
+	},
+	"Small Dagger":{
+		"tier":1,
+		"category":"Secondary",
+		"damage_type":"Physical",
+		"trait":"Finesse",
+		"range":"Melee",
+		"damage_die":8,
+		"damage_modifier":0,
+		"burden":"One-Handed",
+		"feature":"Paired"
+	},
+	"Whip":{
+		"tier":1,
+		"category":"Secondary",
+		"damage_type":"Physical",
+		"trait":"Presence",
+		"range":"Very Close",
+		"damage_die":6,
+		"damage_modifier":0,
+		"burden":"One-Handed",
+		"feature":"Startling"
+	},
+	"Grappler":{
+		"tier":1,
+		"category":"Secondary",
+		"damage_type":"Physical",
+		"trait":"Finesse",
+		"range":"Close",
+		"damage_die":6,
+		"damage_modifier":0,
+		"burden":"One-Handed",
+		"feature":"Hooked"
+	},
+	"Hand Crossbow":{
+		"tier":1,
+		"category":"Secondary",
+		"damage_type":"Physical",
+		"trait":"Finesse",
+		"range":"Far",
+		"damage_die":6,
+		"damage_modifier":1,
+		"burden":"One-Handed",
+		"feature":""
+	},
+
+
+
+
+	"Improved Broadsword":{
+		"tier":2,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Agility",
+		"range":"Melee",
+		"damage_die":8,
+		"damage_modifier":3,
+		"burden":"One-Handed",
+		"feature":"Reliable"
+	},
+	"Improved Longsword":{
+		"tier":2,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Agility",
+		"range":"Melee",
+		"damage_die":10,
+		"damage_modifier":6,
+		"burden":"Two-Handed",
+		"feature":""
+	},
+	"Improved Battleaxe":{
+		"tier":2,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Strength",
+		"range":"Melee",
+		"damage_die":10,
+		"damage_modifier":6,
+		"burden":"Two-Handed",
+		"feature":""
+	},
+	"Improved Greatsword":{
+		"tier":2,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Strength",
+		"range":"Melee",
+		"damage_die":10,
+		"damage_modifier":6,
+		"burden":"Two-Handed",
+		"feature":"Massive"
+	},
+	"Improved Mace":{
+		"tier":2,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Strength",
+		"range":"Melee",
+		"damage_die":8,
+		"damage_modifier":4,
+		"burden":"One-Handed",
+		"feature":""
+	},
+	"Improved Warhammer":{
+		"tier":2,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Strength",
+		"range":"Melee",
+		"damage_die":12,
+		"damage_modifier":6,
+		"burden":"Two-Handed",
+		"feature":"Heavy"
+	},
+	"Improved Dagger":{
+		"tier":2,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Finesse",
+		"range":"Melee",
+		"damage_die":8,
+		"damage_modifier":4,
+		"burden":"One-Handed",
+		"feature":""
+	},
+	"Improved Quarterstaff":{
+		"tier":2,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Instinct",
+		"range":"Melee",
+		"damage_die":10,
+		"damage_modifier":6,
+		"burden":"Two-Handed",
+		"feature":""
+	},
+	"Improved Cutlass":{
+		"tier":2,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Presence",
+		"range":"Melee",
+		"damage_die":8,
+		"damage_modifier":4,
+		"burden":"One-Handed",
+		"feature":""
+	},
+	"Improved Rapier":{
+		"tier":2,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Presence",
+		"range":"Melee",
+		"damage_die":8,
+		"damage_modifier":3,
+		"burden":"One-Handed",
+		"feature":"Quick"
+	},
+	"Improved Halberd":{
+		"tier":2,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Strength",
+		"range":"Very Close",
+		"damage_die":10,
+		"damage_modifier":5,
+		"burden":"Two-Handed",
+		"feature":"Cumbersome"
+	},
+	"Improved Spear":{
+		"tier":2,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Finesse",
+		"range":"Very Close",
+		"damage_die":8,
+		"damage_modifier":6,
+		"burden":"Two-Handed",
+		"feature":"Cumbersome"
+	},
+	"Improved Shortbow":{
+		"tier":2,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Agility",
+		"range":"Far",
+		"damage_die":6,
+		"damage_modifier":6,
+		"burden":"Two-Handed",
+		"feature":""
+	},
+	"Improved Crossbow":{
+		"tier":2,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Finesse",
+		"range":"Far",
+		"damage_die":6,
+		"damage_modifier":4,
+		"burden":"Two-Handed",
+		"feature":""
+	},
+	"Improved Longbow":{
+		"tier":2,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Agility",
+		"range":"Very Far",
+		"damage_die":8,
+		"damage_modifier":6,
+		"burden":"Two-Handed",
+		"feature":"Cumbersome"
+	},
+	"Improved Arcane Gauntlets":{
+		"tier":2,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Strength",
+		"range":"Melee",
+		"damage_die":10,
+		"damage_modifier":6,
+		"burden":"Two-Handed",
+		"feature":""
+	},
+	"Improved Hallowed Axe":{
+		"tier":2,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Strength",
+		"range":"Melee",
+		"damage_die":8,
+		"damage_modifier":4,
+		"burden":"One-Handed",
+		"feature":""
+	},
+	"Improved Glowing Rings":{
+		"tier":2,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Agility",
+		"range":"Very Close",
+		"damage_die":10,
+		"damage_modifier":5,
+		"burden":"Two-Handed",
+		"feature":""
+	},
+	"Improved Hand Runes":{
+		"tier":2,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Instinct",
+		"range":"Melee",
+		"damage_die":10,
+		"damage_modifier":3,
+		"burden":"One-Handed",
+		"feature":""
+	},
+	"Improved Returning Blade":{
+		"tier":2,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Finesse",
+		"range":"Close",
+		"damage_die":8,
+		"damage_modifier":3,
+		"burden":"One-Handed",
+		"feature":"Returning"
+	},
+	"Improved Shortstaff":{
+		"tier":2,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Instinct",
+		"range":"Close",
+		"damage_die":8,
+		"damage_modifier":4,
+		"burden":"One-Handed",
+		"feature":""
+	},
+	"Improved Dualstaff":{
+		"tier":2,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Instinct",
+		"range":"Far",
+		"damage_die":6,
+		"damage_modifier":6,
+		"burden":"Two-Handed",
+		"feature":""
+	},
+	"Improved Scepter":{
+		"tier":2,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Presence",
+		"range":"Far",
+		"damage_die":6,
+		"damage_modifier":3,
+		"burden":"Two-Handed",
+		"feature":"Versatile"
+	},
+	"Improved Wand":{
+		"tier":2,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Knowledge",
+		"range":"Far",
+		"damage_die":6,
+		"damage_modifier":4,
+		"burden":"One-Handed",
+		"feature":""
+	},
+	"Improved Greatstaff":{
+		"tier":2,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Knowledge",
+		"range":"Melee",
+		"damage_die":6,
+		"damage_modifier":3,
+		"burden":"Two-Handed",
+		"feature":"Powerful"
+	},
+
+
+
+
+	"Improved Shortsword":{
+		"tier":2,
+		"category":"Secondary",
+		"damage_type":"Physical",
+		"trait":"Agility",
+		"range":"Melee",
+		"damage_die":8,
+		"damage_modifier":2,
+		"burden":"One-Handed",
+		"feature":"Paired"
+	},
+	"Improved Round Shield":{
+		"tier":2,
+		"category":"Secondary",
+		"damage_type":"Physical",
+		"trait":"Strength",
+		"range":"Melee",
+		"damage_die":4,
+		"damage_modifier":2,
+		"burden":"One-Handed",
+		"feature":"Protective"
+	},
+	"Improved Tower Shield":{
+		"tier":2,
+		"category":"Secondary",
+		"damage_type":"Physical",
+		"trait":"Strength",
+		"range":"Melee",
+		"damage_die":6,
+		"damage_modifier":2,
+		"burden":"One-Handed",
+		"feature":"Barrier"
+	},
+	"Improved Small Dagger":{
+		"tier":2,
+		"category":"Secondary",
+		"damage_type":"Physical",
+		"trait":"Finesse",
+		"range":"Melee",
+		"damage_die":8,
+		"damage_modifier":2,
+		"burden":"One-Handed",
+		"feature":"Paired"
+	},
+	"Improved Whip":{
+		"tier":2,
+		"category":"Secondary",
+		"damage_type":"Physical",
+		"trait":"Presence",
+		"range":"Very Close",
+		"damage_die":6,
+		"damage_modifier":2,
+		"burden":"One-Handed",
+		"feature":"Startling"
+	},
+	"Improved Grappler":{
+		"tier":2,
+		"category":"Secondary",
+		"damage_type":"Physical",
+		"trait":"Finesse",
+		"range":"Close",
+		"damage_die":6,
+		"damage_modifier":2,
+		"burden":"One-Handed",
+		"feature":"Hooked"
+	},
+	"Improved Hand Crossbow":{
+		"tier":2,
+		"category":"Secondary",
+		"damage_type":"Physical",
+		"trait":"Finesse",
+		"range":"Far",
+		"damage_die":6,
+		"damage_modifier":3,
+		"burden":"One-Handed",
+		"feature":""
+	},
+
+
+
+
+	"Advanced Broadsword":{
+		"tier":3,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Agility",
+		"range":"Melee",
+		"damage_die":8,
+		"damage_modifier":6,
+		"burden":"One-Handed",
+		"feature":"Reliable"
+	},
+	"Advanced Longsword":{
+		"tier":3,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Agility",
+		"range":"Melee",
+		"damage_die":10,
+		"damage_modifier":9,
+		"burden":"Two-Handed",
+		"feature":""
+	},
+	"Advanced Battleaxe":{
+		"tier":3,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Strength",
+		"range":"Melee",
+		"damage_die":10,
+		"damage_modifier":9,
+		"burden":"Two-Handed",
+		"feature":""
+	},
+	"Advanced Greatsword":{
+		"tier":3,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Strength",
+		"range":"Melee",
+		"damage_die":10,
+		"damage_modifier":9,
+		"burden":"Two-Handed",
+		"feature":"Massive"
+	},
+	"Advanced Mace":{
+		"tier":3,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Strength",
+		"range":"Melee",
+		"damage_die":8,
+		"damage_modifier":7,
+		"burden":"One-Handed",
+		"feature":""
+	},
+	"Advanced Warhammer":{
+		"tier":3,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Strength",
+		"range":"Melee",
+		"damage_die":12,
+		"damage_modifier":9,
+		"burden":"Two-Handed",
+		"feature":"Heavy"
+	},
+	"Advanced Dagger":{
+		"tier":3,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Finesse",
+		"range":"Melee",
+		"damage_die":8,
+		"damage_modifier":7,
+		"burden":"One-Handed",
+		"feature":""
+	},
+	"Advanced Quarterstaff":{
+		"tier":3,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Instinct",
+		"range":"Melee",
+		"damage_die":10,
+		"damage_modifier":9,
+		"burden":"Two-Handed",
+		"feature":""
+	},
+	"Advanced Cutlass":{
+		"tier":3,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Presence",
+		"range":"Melee",
+		"damage_die":8,
+		"damage_modifier":7,
+		"burden":"One-Handed",
+		"feature":""
+	},
+	"Advanced Rapier":{
+		"tier":3,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Presence",
+		"range":"Melee",
+		"damage_die":8,
+		"damage_modifier":6,
+		"burden":"One-Handed",
+		"feature":"Quick"
+	},
+	"Advanced Halberd":{
+		"tier":3,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Strength",
+		"range":"Very Close",
+		"damage_die":10,
+		"damage_modifier":8,
+		"burden":"Two-Handed",
+		"feature":"Cumbersome"
+	},
+	"Advanced Spear":{
+		"tier":3,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Finesse",
+		"range":"Very Close",
+		"damage_die":8,
+		"damage_modifier":9,
+		"burden":"Two-Handed",
+		"feature":"Cumbersome"
+	},
+	"Advanced Shortbow":{
+		"tier":3,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Agility",
+		"range":"Far",
+		"damage_die":6,
+		"damage_modifier":9,
+		"burden":"Two-Handed",
+		"feature":""
+	},
+	"Advanced Crossbow":{
+		"tier":3,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Finesse",
+		"range":"Far",
+		"damage_die":6,
+		"damage_modifier":7,
+		"burden":"Two-Handed",
+		"feature":""
+	},
+	"Advanced Longbow":{
+		"tier":3,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Agility",
+		"range":"Very Far",
+		"damage_die":8,
+		"damage_modifier":9,
+		"burden":"Two-Handed",
+		"feature":"Cumbersome"
+	},
+	"Advanced Arcane Gauntlets":{
+		"tier":3,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Strength",
+		"range":"Melee",
+		"damage_die":10,
+		"damage_modifier":9,
+		"burden":"Two-Handed",
+		"feature":""
+	},
+	"Advanced Hallowed Axe":{
+		"tier":3,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Strength",
+		"range":"Melee",
+		"damage_die":8,
+		"damage_modifier":7,
+		"burden":"One-Handed",
+		"feature":""
+	},
+	"Advanced Glowing Rings":{
+		"tier":3,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Agility",
+		"range":"Very Close",
+		"damage_die":10,
+		"damage_modifier":8,
+		"burden":"Two-Handed",
+		"feature":""
+	},
+	"Advanced Hand Runes":{
+		"tier":3,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Instinct",
+		"range":"Melee",
+		"damage_die":10,
+		"damage_modifier":7,
+		"burden":"One-Handed",
+		"feature":""
+	},
+	"Advanced Returning Blade":{
+		"tier":3,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Finesse",
+		"range":"Close",
+		"damage_die":8,
+		"damage_modifier":6,
+		"burden":"One-Handed",
+		"feature":"Returning"
+	},
+	"Advanced Shortstaff":{
+		"tier":3,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Instinct",
+		"range":"Close",
+		"damage_die":8,
+		"damage_modifier":7,
+		"burden":"One-Handed",
+		"feature":""
+	},
+	"Advanced Dualstaff":{
+		"tier":3,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Instinct",
+		"range":"Far",
+		"damage_die":6,
+		"damage_modifier":7,
+		"burden":"Two-Handed",
+		"feature":""
+	},
+	"Advanced Scepter":{
+		"tier":3,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Presence",
+		"range":"Far",
+		"damage_die":6,
+		"damage_modifier":6,
+		"burden":"Two-Handed",
+		"feature":"Versatile"
+	},
+	"Advanced Wand":{
+		"tier":3,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Knowledge",
+		"range":"Far",
+		"damage_die":6,
+		"damage_modifier":7,
+		"burden":"One-Handed",
+		"feature":""
+	},
+	"Advanced Greatstaff":{
+		"tier":3,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Knowledge",
+		"range":"Melee",
+		"damage_die":6,
+		"damage_modifier":6,
+		"burden":"Two-Handed",
+		"feature":"Powerful"
+	},
+
+
+
+
+	"Advanced Shortsword":{
+		"tier":3,
+		"category":"Secondary",
+		"damage_type":"Physical",
+		"trait":"Agility",
+		"range":"Melee",
+		"damage_die":8,
+		"damage_modifier":4,
+		"burden":"One-Handed",
+		"feature":"Paired"
+	},
+	"Advanced Round Shield":{
+		"tier":3,
+		"category":"Secondary",
+		"damage_type":"Physical",
+		"trait":"Strength",
+		"range":"Melee",
+		"damage_die":4,
+		"damage_modifier":4,
+		"burden":"One-Handed",
+		"feature":"Protective"
+	},
+	"Advanced Tower Shield":{
+		"tier":3,
+		"category":"Secondary",
+		"damage_type":"Physical",
+		"trait":"Strength",
+		"range":"Melee",
+		"damage_die":6,
+		"damage_modifier":4,
+		"burden":"One-Handed",
+		"feature":"Barrier"
+	},
+	"Advanced Small Dagger":{
+		"tier":3,
+		"category":"Secondary",
+		"damage_type":"Physical",
+		"trait":"Finesse",
+		"range":"Melee",
+		"damage_die":8,
+		"damage_modifier":4,
+		"burden":"One-Handed",
+		"feature":"Paired"
+	},
+	"Advanced Whip":{
+		"tier":3,
+		"category":"Secondary",
+		"damage_type":"Physical",
+		"trait":"Presence",
+		"range":"Very Close",
+		"damage_die":6,
+		"damage_modifier":4,
+		"burden":"One-Handed",
+		"feature":"Startling"
+	},
+	"Advanced Grappler":{
+		"tier":3,
+		"category":"Secondary",
+		"damage_type":"Physical",
+		"trait":"Finesse",
+		"range":"Close",
+		"damage_die":6,
+		"damage_modifier":4,
+		"burden":"One-Handed",
+		"feature":"Hooked"
+	},
+	"Advanced Hand Crossbow":{
+		"tier":3,
+		"category":"Secondary",
+		"damage_type":"Physical",
+		"trait":"Finesse",
+		"range":"Far",
+		"damage_die":6,
+		"damage_modifier":5,
+		"burden":"One-Handed",
+		"feature":""
+	},
+
+
+
+
+	"Legendary Broadsword":{
+		"tier":4,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Agility",
+		"range":"Melee",
+		"damage_die":8,
+		"damage_modifier":9,
+		"burden":"One-Handed",
+		"feature":"Reliable"
+	},
+	"Legendary Longsword":{
+		"tier":4,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Agility",
+		"range":"Melee",
+		"damage_die":10,
+		"damage_modifier":12,
+		"burden":"Two-Handed",
+		"feature":""
+	},
+	"Legendary Battleaxe":{
+		"tier":4,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Strength",
+		"range":"Melee",
+		"damage_die":10,
+		"damage_modifier":12,
+		"burden":"Two-Handed",
+		"feature":""
+	},
+	"Legendary Greatsword":{
+		"tier":4,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Strength",
+		"range":"Melee",
+		"damage_die":10,
+		"damage_modifier":12,
+		"burden":"Two-Handed",
+		"feature":"Massive"
+	},
+	"Legendary Mace":{
+		"tier":4,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Strength",
+		"range":"Melee",
+		"damage_die":8,
+		"damage_modifier":10,
+		"burden":"One-Handed",
+		"feature":""
+	},
+	"Legendary Warhammer":{
+		"tier":4,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Strength",
+		"range":"Melee",
+		"damage_die":12,
+		"damage_modifier":12,
+		"burden":"Two-Handed",
+		"feature":"Heavy"
+	},
+	"Legendary Dagger":{
+		"tier":4,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Finesse",
+		"range":"Melee",
+		"damage_die":8,
+		"damage_modifier":10,
+		"burden":"One-Handed",
+		"feature":""
+	},
+	"Legendary Quarterstaff":{
+		"tier":4,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Instinct",
+		"range":"Melee",
+		"damage_die":10,
+		"damage_modifier":12,
+		"burden":"Two-Handed",
+		"feature":""
+	},
+	"Legendary Cutlass":{
+		"tier":4,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Presence",
+		"range":"Melee",
+		"damage_die":8,
+		"damage_modifier":10,
+		"burden":"One-Handed",
+		"feature":""
+	},
+	"Legendary Rapier":{
+		"tier":4,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Presence",
+		"range":"Melee",
+		"damage_die":8,
+		"damage_modifier":9,
+		"burden":"One-Handed",
+		"feature":"Quick"
+	},
+	"Legendary Halberd":{
+		"tier":4,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Strength",
+		"range":"Very Close",
+		"damage_die":10,
+		"damage_modifier":11,
+		"burden":"Two-Handed",
+		"feature":"Cumbersome"
+	},
+	"Legendary Spear":{
+		"tier":4,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Finesse",
+		"range":"Very Close",
+		"damage_die":8,
+		"damage_modifier":12,
+		"burden":"Two-Handed",
+		"feature":"Cumbersome"
+	},
+	"Legendary Shortbow":{
+		"tier":4,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Agility",
+		"range":"Far",
+		"damage_die":6,
+		"damage_modifier":12,
+		"burden":"Two-Handed",
+		"feature":""
+	},
+	"Legendary Crossbow":{
+		"tier":4,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Finesse",
+		"range":"Far",
+		"damage_die":6,
+		"damage_modifier":10,
+		"burden":"Two-Handed",
+		"feature":""
+	},
+	"Legendary Longbow":{
+		"tier":4,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Agility",
+		"range":"Very Far",
+		"damage_die":8,
+		"damage_modifier":12,
+		"burden":"Two-Handed",
+		"feature":"Cumbersome"
+	},
+	"Legendary Arcane Gauntlets":{
+		"tier":4,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Strength",
+		"range":"Melee",
+		"damage_die":10,
+		"damage_modifier":12,
+		"burden":"Two-Handed",
+		"feature":""
+	},
+	"Legendary Hallowed Axe":{
+		"tier":4,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Strength",
+		"range":"Melee",
+		"damage_die":8,
+		"damage_modifier":10,
+		"burden":"One-Handed",
+		"feature":""
+	},
+	"Legendary Glowing Rings":{
+		"tier":4,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Agility",
+		"range":"Very Close",
+		"damage_die":10,
+		"damage_modifier":11,
+		"burden":"Two-Handed",
+		"feature":""
+	},
+	"Legendary Hand Runes":{
+		"tier":4,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Instinct",
+		"range":"Melee",
+		"damage_die":10,
+		"damage_modifier":10,
+		"burden":"One-Handed",
+		"feature":""
+	},
+	"Legendary Returning Blade":{
+		"tier":4,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Finesse",
+		"range":"Close",
+		"damage_die":8,
+		"damage_modifier":9,
+		"burden":"One-Handed",
+		"feature":"Returning"
+	},
+	"Legendary Shortstaff":{
+		"tier":4,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Instinct",
+		"range":"Close",
+		"damage_die":8,
+		"damage_modifier":10,
+		"burden":"One-Handed",
+		"feature":""
+	},
+	"Legendary Dualstaff":{
+		"tier":4,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Instinct",
+		"range":"Far",
+		"damage_die":6,
+		"damage_modifier":10,
+		"burden":"Two-Handed",
+		"feature":""
+	},
+	"Legendary Scepter":{
+		"tier":4,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Presence",
+		"range":"Far",
+		"damage_die":6,
+		"damage_modifier":9,
+		"burden":"Two-Handed",
+		"feature":"Versatile"
+	},
+	"Legendary Wand":{
+		"tier":4,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Knowledge",
+		"range":"Far",
+		"damage_die":6,
+		"damage_modifier":10,
+		"burden":"One-Handed",
+		"feature":""
+	},
+	"Legendary Greatstaff":{
+		"tier":4,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Knowledge",
+		"range":"Melee",
+		"damage_die":6,
+		"damage_modifier":9,
+		"burden":"Two-Handed",
+		"feature":"Powerful"
+	},
+
+
+
+
+	"Legendary Shortsword":{
+		"tier":4,
+		"category":"Secondary",
+		"damage_type":"Physical",
+		"trait":"Agility",
+		"range":"Melee",
+		"damage_die":8,
+		"damage_modifier":6,
+		"burden":"One-Handed",
+		"feature":"Paired"
+	},
+	"Legendary Round Shield":{
+		"tier":4,
+		"category":"Secondary",
+		"damage_type":"Physical",
+		"trait":"Strength",
+		"range":"Melee",
+		"damage_die":4,
+		"damage_modifier":6,
+		"burden":"One-Handed",
+		"feature":"Protective"
+	},
+	"Legendary Tower Shield":{
+		"tier":4,
+		"category":"Secondary",
+		"damage_type":"Physical",
+		"trait":"Strength",
+		"range":"Melee",
+		"damage_die":6,
+		"damage_modifier":6,
+		"burden":"One-Handed",
+		"feature":"Barrier"
+	},
+	"Legendary Small Dagger":{
+		"tier":4,
+		"category":"Secondary",
+		"damage_type":"Physical",
+		"trait":"Finesse",
+		"range":"Melee",
+		"damage_die":8,
+		"damage_modifier":6,
+		"burden":"One-Handed",
+		"feature":"Paired"
+	},
+	"Legendary Whip":{
+		"tier":4,
+		"category":"Secondary",
+		"damage_type":"Physical",
+		"trait":"Presence",
+		"range":"Very Close",
+		"damage_die":6,
+		"damage_modifier":6,
+		"burden":"One-Handed",
+		"feature":"Startling"
+	},
+	"Legendary Grappler":{
+		"tier":4,
+		"category":"Secondary",
+		"damage_type":"Physical",
+		"trait":"Finesse",
+		"range":"Close",
+		"damage_die":6,
+		"damage_modifier":6,
+		"burden":"One-Handed",
+		"feature":"Hooked"
+	},
+	"Legendary Hand Crossbow":{
+		"tier":4,
+		"category":"Secondary",
+		"damage_type":"Physical",
+		"trait":"Finesse",
+		"range":"Far",
+		"damage_die":6,
+		"damage_modifier":7,
+		"burden":"One-Handed",
+		"feature":""
+	}
+}
