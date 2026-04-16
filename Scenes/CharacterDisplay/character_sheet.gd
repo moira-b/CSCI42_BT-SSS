@@ -116,6 +116,7 @@ func _process(_delta: float) -> void:
 func update_equipment_display() -> void:
 	major_threshold_value.set_text(str(character.damage_thresholds[0]))
 	severe_threshold_value.set_text(str(character.damage_thresholds[1]))
+	evasion_value.set_text(str(character.evasion))
 	
 func update_markable_fields() -> void:
 	health_field.set_current_value(str(character.current_hp))
@@ -354,6 +355,9 @@ func _on_levelup_button_pressed() -> void:
 
 func _on_levelup_confirm_pressed() -> void:
 	character.set_level(character.level + 1)
+	character.damage_thresholds[0] += 1
+	character.damage_thresholds[1] += 1
+	update_equipment_display()
 	level_field.text = str(character.level)
 	levelup_confirmation_button.pressed.disconnect(_on_levelup_confirm_pressed)
 	levelup_cancel_button.pressed.disconnect(_on_levelup_cancel_pressed)

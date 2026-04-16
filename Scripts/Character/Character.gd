@@ -142,6 +142,9 @@ func set_proficiency_modifier() -> void:
 	if level > 4: proficiency_modifier = 2
 	if level > 7: proficiency_modifier = 3
 
+func set_base_evasion() -> void:
+	evasion = character_class.starting_evasion + agility
+
 func set_proficiency() -> void:
 	self.proficiency = proficiency_modifier + proficiency
 	pass
@@ -250,12 +253,34 @@ func equip_armor(armor: String):
 	var armor_as_text = FileAccess.get_file_as_string("res://Resources/Equipment/armor.json")
 	var armor_as_dict = JSON.parse_string(armor_as_text)
 	
+	
+	
 	if(not armor_as_dict.get(armor)):
 		return
 		
 	max_armor_slots = armor_as_dict.get(armor).get("base_score")
 	damage_thresholds[0] += armor_as_dict.get(armor).get("major_threshold")
 	damage_thresholds[1] += armor_as_dict.get(armor).get("severe_threshold")
+		
+	var feature = armor_as_dict.get(armor).get("feature")
+	
+	if(feature == "Flexible"):
+		evasion += 1
+	elif(feature == "Heavy"):
+		evasion -= 1
+	elif(feature == "Very Heavy"):
+		evasion -= 3
+		agility -= 1
+	elif (feature == "Gilded"):
+		presence += 1
+	elif (feature == "Difficult"):
+		evasion -= 2
+		agility -= 1
+		strength -= 1
+		finesse -= 1
+		instinct -= 1
+		presence -= 1
+		knowledge -= 1
 		
 	
 func unequip_armor(armor: String):
@@ -269,6 +294,26 @@ func unequip_armor(armor: String):
 	max_armor_slots = 0
 	damage_thresholds[0] -= armor_as_dict.get(armor).get("major_threshold")
 	damage_thresholds[1] -= armor_as_dict.get(armor).get("severe_threshold")
+	
+	var feature = armor_as_dict.get(armor).get("feature")
+	
+	if(feature == "Flexible"):
+		evasion -= 1
+	elif(feature == "Heavy"):
+		evasion += 1
+	elif(feature == "Very Heavy"):
+		evasion += 3
+		agility += 1
+	elif (feature == "Gilded"):
+		presence -= 1
+	elif (feature == "Difficult"):
+		evasion += 2
+		agility += 1
+		strength += 1
+		finesse += 1
+		instinct += 1
+		presence += 1
+		knowledge += 1
 	
 	
 func equip_primary(weapon: String):

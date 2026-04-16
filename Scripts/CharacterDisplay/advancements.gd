@@ -125,7 +125,9 @@ func _handle_object_container_confirm() -> void:
 	else:
 		character.max_domain_cards += 1
 		for s in selected:
-			if s == agility: character.agility += 1
+			if s == agility: 
+				character.agility += 1
+				character.evasion += 1
 			if s == strength: character.strength += 1
 			if s == finesse: character.finesse += 1
 			if s == instinct: character.instinct += 1
