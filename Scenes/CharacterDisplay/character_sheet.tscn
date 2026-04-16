@@ -65,6 +65,13 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ahdvs"]
+border_width_left = 3
+border_width_top = 3
+border_width_right = 10
+border_width_bottom = 3
+border_color = Color(0.6, 0.6, 0.6, 1)
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ahdvs"]
 
 [node name="CharacterSheet" type="Control" unique_id=1820753171]
@@ -1179,9 +1186,142 @@ custom_minimum_size = Vector2(200, 30)
 layout_mode = 2
 text = "Domain Cards"
 
-[node name="CenterPanel" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer" unique_id=1229677819]
+[node name="CenterPanel" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer" unique_id=668516758]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("2_c8oo5")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel" unique_id=345703533]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer" unique_id=1174515028]
+layout_mode = 2
+
+[node name="EvasionDisplay" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/HBoxContainer" unique_id=1842632448]
+layout_mode = 2
+
+[node name="ActiveEquipmentLabel" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer" unique_id=9867553]
+layout_mode = 2
+text = "Active Equipment"
+horizontal_alignment = 1
+
+[node name="EquipmentVBox" type="VBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer" unique_id=1922272708]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="PrimaryWeapon" type="MarginContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentVBox" unique_id=603031627]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 5
+
+[node name="PanelContainer" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentVBox/PrimaryWeapon" unique_id=772604663]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ahdvs")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentVBox/PrimaryWeapon/PanelContainer" unique_id=22400591]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentVBox/PrimaryWeapon/PanelContainer/HBoxContainer" unique_id=2040415458]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="EquipmentName" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentVBox/PrimaryWeapon/PanelContainer/HBoxContainer/VBoxContainer" unique_id=1948472190]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Improved Arcane Gauntlets"
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="EquipmentInfo" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentVBox/PrimaryWeapon/PanelContainer/HBoxContainer/VBoxContainer" unique_id=2071509090]
+layout_mode = 2
+text = "trait | range | dice"
+vertical_alignment = 1
+
+[node name="SwapButton" type="Button" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentVBox/PrimaryWeapon/PanelContainer/HBoxContainer" unique_id=1769994548]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "[sw]"
+
+[node name="SecondaryWeapon" type="MarginContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentVBox" unique_id=35992915]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 5
+
+[node name="PanelContainer" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentVBox/SecondaryWeapon" unique_id=1873584734]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ahdvs")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentVBox/SecondaryWeapon/PanelContainer" unique_id=1405323946]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentVBox/SecondaryWeapon/PanelContainer/HBoxContainer" unique_id=518005630]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="EquipmentName" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentVBox/SecondaryWeapon/PanelContainer/HBoxContainer/VBoxContainer" unique_id=1142608982]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Legendary Arcane Gauntlets"
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="EquipmentInfo" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentVBox/SecondaryWeapon/PanelContainer/HBoxContainer/VBoxContainer" unique_id=636840962]
+layout_mode = 2
+text = "trait | range | dice"
+vertical_alignment = 1
+
+[node name="SwapButton" type="Button" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentVBox/SecondaryWeapon/PanelContainer/HBoxContainer" unique_id=633469310]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "[sw]"
+
+[node name="Armor" type="MarginContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentVBox" unique_id=156305932]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 5
+
+[node name="PanelContainer" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentVBox/Armor" unique_id=1331826140]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ahdvs")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentVBox/Armor/PanelContainer" unique_id=1629208116]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentVBox/Armor/PanelContainer/HBoxContainer" unique_id=952742683]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="EquipmentName" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentVBox/Armor/PanelContainer/HBoxContainer/VBoxContainer" unique_id=1803456694]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Legendary Full Plate Armor"
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="EquipmentInfo" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentVBox/Armor/PanelContainer/HBoxContainer/VBoxContainer" unique_id=793626696]
+layout_mode = 2
+text = "Tier 3"
+vertical_alignment = 1
+
+[node name="SwapButton" type="Button" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentVBox/Armor/PanelContainer/HBoxContainer" unique_id=892231882]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "[sw]"
 
 [node name="RightPanel" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer" unique_id=1912298009]
 custom_minimum_size = Vector2(300, 0)
