@@ -16,8 +16,12 @@ func showClassInformation(character_class: CharacterClass, character_subclass: C
 	feature1_name.text = "Hope Feature: " + character_class.hope_feature.feature_name
 	feature1_description.text = character_class.hope_feature.get_description()
 
-	feature2_name.hide()
-	feature2_description.hide()
+	feature2_name.text = "Class Feature: " + character_class.class_feature[0].feature_name
+	feature2_description.text = character_class.class_feature[0].get_description()
+	feature2_name.show()
+	feature2_description.show()
+	
+	set_size(self.get_minimum_size())
 	show()
 	
 func showAncestryInformation(ancestry: Ancestry, position_anchor: Vector2, entered_size: Vector2):
@@ -36,6 +40,7 @@ func showAncestryInformation(ancestry: Ancestry, position_anchor: Vector2, enter
 	feature2_name.show()
 	feature2_description.show()
 	
+	set_size(self.get_minimum_size())
 	show()
 	
 func showCommunityInformation(community: Community, position_anchor: Vector2, entered_size: Vector2):
@@ -51,4 +56,5 @@ func showCommunityInformation(community: Community, position_anchor: Vector2, en
 	feature2_name.hide()
 	feature2_description.hide()
 
+	set_size(self.get_minimum_size())
 	show()

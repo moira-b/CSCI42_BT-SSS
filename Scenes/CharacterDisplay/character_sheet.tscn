@@ -1601,6 +1601,7 @@ script = ExtResource("23_gjf7o")
 
 [node name="MarginContainer" type="MarginContainer" parent="InformationPopup" unique_id=1854017691]
 layout_mode = 2
+size_flags_vertical = 0
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
@@ -1608,17 +1609,20 @@ theme_override_constants/margin_bottom = 5
 
 [node name="VBoxContainer" type="VBoxContainer" parent="InformationPopup/MarginContainer" unique_id=3577746]
 layout_mode = 2
+size_flags_vertical = 0
 
 [node name="AttributeName" type="Label" parent="InformationPopup/MarginContainer/VBoxContainer" unique_id=1623018741]
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 0
+size_flags_vertical = 0
 text = "Attribute Name"
 autowrap_mode = 2
 
 [node name="Spacer" type="Label" parent="InformationPopup/MarginContainer/VBoxContainer" unique_id=1209695237]
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
+size_flags_vertical = 0
 theme_override_constants/line_spacing = -5
 theme_override_font_sizes/font_size = 12
 autowrap_mode = 2
@@ -1626,6 +1630,8 @@ autowrap_mode = 2
 [node name="Feature1" type="Label" parent="InformationPopup/MarginContainer/VBoxContainer" unique_id=187664634]
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
 theme_override_constants/line_spacing = -5
 text = "Attribute Feature 1: Feature Name"
 autowrap_mode = 2
@@ -1633,6 +1639,7 @@ autowrap_mode = 2
 [node name="Feature1Description" type="Label" parent="InformationPopup/MarginContainer/VBoxContainer" unique_id=280401321]
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
+size_flags_vertical = 0
 theme_override_constants/line_spacing = -5
 theme_override_font_sizes/font_size = 14
 text = "You have advantage on rolls to consort with nobles, negotiate prices, or leverage your reputation to get what you want."
@@ -1642,6 +1649,8 @@ autowrap_mode = 2
 visible = false
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
 theme_override_constants/line_spacing = -5
 text = "Attribute Feature 1: Feature Name"
 autowrap_mode = 2
@@ -1650,6 +1659,7 @@ autowrap_mode = 2
 visible = false
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
+size_flags_vertical = 0
 theme_override_constants/line_spacing = -5
 theme_override_font_sizes/font_size = 14
 text = "You have advantage on rolls to consort with nobles, negotiate prices, or leverage your reputation to get what you want."
