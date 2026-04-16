@@ -42,7 +42,7 @@ func load_character_details(pk: String):
 	var json_data = json.data
 	char_dict = json_data[pk]
 	char_name = char_dict["character_name"]
-	char_class = load(char_dict["class"]).name
+	char_class = char_dict["class"]
 
 func set_primary_key(pk: String):
 	char_primary_key = pk
