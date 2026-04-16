@@ -12,3 +12,6 @@ var json_as_dict = JSON.parse_string(json_as_text)
 
 func set_description() -> void:
 	feature_description = json_as_dict.get(feature_name)
+
+func get_description() -> String:
+	return json_as_dict.get(feature_name)

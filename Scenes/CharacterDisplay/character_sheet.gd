@@ -447,7 +447,12 @@ func _on_main_menu_button_pressed() -> void:
 	self.queue_free()
 
 func _on_mouse_enter_class_panel():
-	pass
+	information_popup.showClassInformation(
+		character.character_class,
+		character.subclass,
+		class_panel.global_position,
+		class_panel.size
+	)
 
 func _on_mouse_enter_ancestry_panel():
 	information_popup.showAncestryInformation(

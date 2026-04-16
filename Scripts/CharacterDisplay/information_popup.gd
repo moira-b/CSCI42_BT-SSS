@@ -6,8 +6,18 @@ extends PanelContainer
 @onready var feature2_name = $MarginContainer/VBoxContainer/Feature2
 @onready var feature2_description = $MarginContainer/VBoxContainer/Feature2Description
 
-func showClassInformation(character_class: CharacterClass, character_subclass: CharacterSubclass):
-	self.label.text = "Hovering over class"
+func showClassInformation(character_class: CharacterClass, character_subclass: CharacterSubclass, position_anchor: Vector2, entered_size: Vector2):
+	self.global_position = Vector2(
+		position_anchor[0] + entered_size[0]/2, 
+		position_anchor[1] + entered_size[1] + 10
+	)
+	
+	attribute_name.text = character_class.name + " (" + character_subclass.subclass_name + ")"
+	feature1_name.text = "Hope Feature: " + character_class.hope_feature.feature_name
+	feature1_description.text = character_class.hope_feature.get_description()
+
+	feature2_name.hide()
+	feature2_description.hide()
 	show()
 	
 func showAncestryInformation(ancestry: Ancestry, position_anchor: Vector2, entered_size: Vector2):
