@@ -49,6 +49,7 @@ var primary_key: String
 
 @onready var active_domain_cards = $ActiveDomainCards
 @onready var vaulted_domain_cards = $VaultedDomainCards
+var active_domain_card_counters = [0, 0, 0, 0, 0]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -181,7 +182,8 @@ func serialize_data():
 		"vaulted_cards": vaulted_cards,
 		"multiclass_domains": multiclass_domains,
 		"multiclass_selections": multiclass_selections,
-		"num_downtime_moves": num_downtime_moves
+		"num_downtime_moves": num_downtime_moves,
+		"active_domain_card_counters": active_domain_card_counters
 	}
 	return save_dict
 
@@ -224,6 +226,7 @@ func load_data(char_dict: Variant):
 	multiclass_domains.assign(char_dict["multiclass_domains"])
 	multiclass_selections.assign(char_dict["multiclass_selections"])
 	num_downtime_moves = char_dict["num_downtime_moves"]
+	active_domain_card_counters.assign(char_dict["active_domain_card_counters"])
 	
 func implement_ancestry_features():
 	if self.ancestry.ancestry_name=="Clank":

@@ -13,7 +13,6 @@ offset_bottom = 350.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_force_pass_scroll_events = false
-mouse_default_cursor_shape = 2
 script = ExtResource("1_yvsxo")
 card_name = "Rune Ward"
 
