@@ -11,8 +11,12 @@
 [ext_resource type="PackedScene" uid="uid://b6t3g5gxhwopj" path="res://Scenes/CharacterDisplay/fh_roll_window.tscn" id="6_8iwex"]
 [ext_resource type="Script" uid="uid://b3ypom2uq1exh" path="res://Scripts/CharacterDisplay/advancements.gd" id="7_56qfy"]
 [ext_resource type="PackedScene" uid="uid://1un73y3t3x7b" path="res://Scenes/Cards/domain_card_sel_container.tscn" id="8_8skux"]
+[ext_resource type="Script" uid="uid://by7ahmitbfup2" path="res://Scripts/CharacterDisplay/equipment_window.gd" id="10_7pq50"]
 [ext_resource type="Script" uid="uid://do0erpc6r8x0r" path="res://Scripts/CharacterDisplay/multiclass_choices.gd" id="11_2cjug"]
+[ext_resource type="Script" path="res://Scripts/CharacterCreation/armor_list.gd" id="11_7pq50"]
 [ext_resource type="Script" uid="uid://c6daeo616vuo3" path="res://Scripts/CharacterClasses/character_class.gd" id="12_ahdvs"]
+[ext_resource type="Script" path="res://Scripts/CharacterCreation/p_weapon_list.gd" id="12_rj3pj"]
+[ext_resource type="Script" path="res://Scripts/CharacterCreation/s_weapon_list.gd" id="13_48wf7"]
 [ext_resource type="Resource" uid="uid://cyaupb2xa2jvp" path="res://Resources/Classes/Bard/bard.tres" id="13_gjf7o"]
 [ext_resource type="Resource" uid="uid://blgr70q7oa266" path="res://Resources/Classes/Druid/druid.tres" id="14_7xnek"]
 [ext_resource type="Resource" uid="uid://b77s47x5y88rn" path="res://Resources/Classes/Guardian/guardian.tres" id="15_n4116"]
@@ -1567,6 +1571,101 @@ offset_bottom = -19.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Confirm"
+
+[node name="EquipmentWindow" type="Window" parent="." unique_id=1353525366]
+oversampling_override = 1.0
+title = "Manage Equipment"
+initial_position = 2
+size = Vector2i(1030, 560)
+script = ExtResource("10_7pq50")
+
+[node name="EquipmentList" type="HBoxContainer" parent="EquipmentWindow" unique_id=1421846324]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -286.0
+offset_top = -17.5
+offset_right = 286.0
+offset_bottom = 17.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ArmorContainer" type="VBoxContainer" parent="EquipmentWindow/EquipmentList" unique_id=1968655432]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="EquipmentWindow/EquipmentList/ArmorContainer" unique_id=606238855]
+layout_mode = 2
+text = "Armor"
+
+[node name="ArmorList" type="ItemList" parent="EquipmentWindow/EquipmentList/ArmorContainer" unique_id=1705313043]
+layout_mode = 2
+allow_search = false
+auto_width = true
+auto_height = true
+same_column_width = true
+script = ExtResource("11_7pq50")
+
+[node name="PWepContainer" type="VBoxContainer" parent="EquipmentWindow/EquipmentList" unique_id=1702573472]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="EquipmentWindow/EquipmentList/PWepContainer" unique_id=996851708]
+layout_mode = 2
+text = "Primary Weapons"
+
+[node name="PWepList" type="ItemList" parent="EquipmentWindow/EquipmentList/PWepContainer" unique_id=1968287863]
+layout_mode = 2
+allow_search = false
+auto_width = true
+auto_height = true
+max_columns = 3
+same_column_width = true
+script = ExtResource("12_rj3pj")
+
+[node name="SWepContainer" type="VBoxContainer" parent="EquipmentWindow/EquipmentList" unique_id=1589881909]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="EquipmentWindow/EquipmentList/SWepContainer" unique_id=1657759450]
+layout_mode = 2
+text = "Secondary Weapons"
+
+[node name="SWepList" type="ItemList" parent="EquipmentWindow/EquipmentList/SWepContainer" unique_id=1555651325]
+layout_mode = 2
+allow_search = false
+auto_width = true
+auto_height = true
+max_columns = 2
+same_column_width = true
+script = ExtResource("13_48wf7")
+
+[node name="ButtonsContainer" type="HBoxContainer" parent="EquipmentWindow" unique_id=1087079924]
+anchors_preset = -1
+anchor_left = 0.42524272
+anchor_top = 0.89285713
+anchor_right = 0.5747573
+anchor_bottom = 0.96428573
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_constants/separation = 10
+metadata/_edit_use_anchors_ = true
+
+[node name="ConfirmButton" type="Button" parent="EquipmentWindow/ButtonsContainer" unique_id=1575199687]
+custom_minimum_size = Vector2(75, 40)
+layout_mode = 2
+size_flags_vertical = 4
+text = "Confirm"
+
+[node name="CancelButton" type="Button" parent="EquipmentWindow/ButtonsContainer" unique_id=1832977913]
+custom_minimum_size = Vector2(75, 40)
+layout_mode = 2
+size_flags_vertical = 4
+text = "Cancel"
 
 [node name="InformationPopup" type="PanelContainer" parent="." unique_id=1815631795]
 visible = false
