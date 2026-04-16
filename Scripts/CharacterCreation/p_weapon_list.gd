@@ -1,5 +1,7 @@
 extends ItemList
 
+signal primary_item_selected()
+
 @onready var s_wep_list: ItemList = $"../../SWepContainer/SWepList"
 
 var weapon_dict: Dictionary
@@ -30,7 +32,7 @@ func _ready() -> void:
 
 func _on_item_selected(_index: int) -> void:
 	selected_primary = primaries[_index]
-	
+	primary_item_selected.emit()
 	
 func get_selected_primary():
 	return selected_primary

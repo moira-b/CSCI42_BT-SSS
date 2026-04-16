@@ -246,7 +246,23 @@ func implement_ancestry_features():
 	elif self.ancestry.ancestry_name=="Simiah":
 		evasion += 1
 		print(character_name + "'s evasion is automatically increased by 1 due to Simiah ancestry.")
-		
+
+func update_equipment(new_equipment: Array[String]):
+	print("current: " + str(items))
+	print("new: " + str(new_equipment))
+	if items[0]!=new_equipment[0]:
+		print("replacing armor")
+		unequip_armor(items[0])
+		equip_armor(new_equipment[0])
+	if items[1]!=new_equipment[1]:
+		print("replacing primary")
+		unequip_primary(items[1])
+		equip_primary(new_equipment[1])
+	if items[2]!=new_equipment[2]:
+		print("replacing secondary")
+		unequip_secondary(items[2])
+		equip_secondary(new_equipment[2])
+
 func equip_armor(armor: String):
 	print("equipped armor: " + armor)
 	var armor_as_text = FileAccess.get_file_as_string(ARMOR_PATH)
@@ -254,7 +270,9 @@ func equip_armor(armor: String):
 	
 	if(not armor_as_dict.get(armor)):
 		return
-		
+	
+	items[0] = armor
+	
 	max_armor_slots = armor_as_dict.get(armor).get("base_score")
 	damage_thresholds[0] += armor_as_dict.get(armor).get("major_threshold")
 	damage_thresholds[1] += armor_as_dict.get(armor).get("severe_threshold")
@@ -267,6 +285,8 @@ func unequip_armor(armor: String):
 	
 	if(not armor_as_dict.get(armor)):
 		return
+		
+	items[0] = ""
 	
 	max_armor_slots = 0
 	damage_thresholds[0] -= armor_as_dict.get(armor).get("major_threshold")
@@ -275,30 +295,31 @@ func unequip_armor(armor: String):
 	
 func equip_primary(weapon: String):
 	print("equipped primary: " + weapon)
+	items[1] = weapon
 	pass
 	
 func unequip_primary(weapon: String):
 	print("unequipped primary: " + weapon)
+	items[1] = ""
 	pass
 	
 func equip_secondary(weapon: String):
 	print("equipped secondary: " + weapon)
+	items[2] = weapon
 	pass
 	
 func unequip_secondary(weapon: String):
 	print("unequipped secondary: " + weapon)
+	items[2] = ""
 	pass
 
 func get_armor_name():
-	print("armor: " + items[2])
 	return items[0]
 
 func get_primary_name():
-	print("primary: " + items[0])
 	return items[1]
 
 func get_secondary_name():
-	print("secondary: " + items[1])
 	return items[2]
 	
 func get_armor_info() -> String:

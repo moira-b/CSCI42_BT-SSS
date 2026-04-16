@@ -132,6 +132,7 @@ func update_equipment_display() -> void:
 	else:
 		secondaryPanel.get_child(0).get_node("EquipmentName").text = character.get_secondary_name()
 		secondaryPanel.get_child(0).get_node("EquipmentInfo").text = character.get_secondary_info()
+		secondaryPanel.show()
 	
 	# handle stat changes due to equipment changes
 	major_threshold_value.set_text(str(character.damage_thresholds[0]))
@@ -142,7 +143,6 @@ func update_markable_fields() -> void:
 	stress_field.set_current_value(str(character.current_stress))
 	hope_field.set_current_value(str(character.current_hope))
 	armor_field.set_current_value(str(character.used_armor_slots))
-	
 
 func update_edit_fields() -> void:
 	name_edit.set_text(str(character.character_name))
@@ -502,4 +502,4 @@ func _on_mouse_exit_header_panel():
 	information_popup.hide()
 
 func _on_equipment_management_button_pressed():
-	equipment_window.showWindow(character)
+	equipment_window.showWindow(self.character)

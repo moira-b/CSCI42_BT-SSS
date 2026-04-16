@@ -1,5 +1,7 @@
 extends ItemList
 
+signal secondary_item_selected()
+
 @onready var p_wep_list: ItemList = $"../../PWepContainer/PWepList"
 
 var weapon_dict: Dictionary
@@ -30,7 +32,7 @@ func _ready() -> void:
 
 func _on_item_selected(_index: int) -> void:
 	selected_secondary = secondaries[_index]
-	
+	secondary_item_selected.emit()
 
 func get_selected_secondary():
 	if self.is_anything_selected() == false:
