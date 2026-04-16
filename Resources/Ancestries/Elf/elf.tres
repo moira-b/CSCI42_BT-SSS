@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Ancestry" load_steps=4 format=3 uid="uid://cdnsv4wu34i87"]
+[gd_resource type="Resource" script_class="Ancestry" format=3 uid="uid://cdnsv4wu34i87"]
 
 [ext_resource type="Resource" uid="uid://bc3a0t043sjnd" path="res://Resources/Ancestries/Elf/quick_reactions.tres" id="1_etwic"]
 [ext_resource type="Script" uid="uid://c5wd1842qiju3" path="res://Scripts/Ancestries/ancestry.gd" id="1_guib1"]

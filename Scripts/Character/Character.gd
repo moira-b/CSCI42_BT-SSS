@@ -30,7 +30,7 @@ const max_hope: int = 6
 @export var max_armor_slots: int
 @export var used_armor_slots: int
 @export var experiences: Array[String] = ["", "", "", "", ""]
-@export var damage_thresholds: Array[int]
+@export var damage_thresholds: Array[int] = [1,1]
 @export var experience_levels: Array[int] = [2, 2, 2, 2, 2]
 @export var max_domain_cards: int
 @export var num_downtime_moves: int = 2
@@ -40,6 +40,7 @@ var community: Community
 var character_class: CharacterClass
 var subclass: CharacterSubclass
 var multiclass_domains: Array[Domain]
+var multiclass_subclasses: Array[CharacterSubclass]
 var multiclass_selections: Array[CharacterClass]
 var primary_key: String
 
@@ -55,9 +56,7 @@ func _ready() -> void:
 	pass
 
 func set_maximum_health() -> void:
-	self.max_hp = 12 # PLACEHOLDER
-	# TODO: set maximum health based on character creation options
-	# (i.e. consider chosen character features)
+	self.max_hp = character_class.starting_hp
 
 func set_current_health(value: int) -> bool:
 	if(0 <= value && value <= self.max_hp):
@@ -94,13 +93,16 @@ func set_current_stress(value: int) -> bool:
 	return false
 
 func set_maximum_armor_slots() -> void:
-	self.max_armor_slots = 12 # ACTUAL DEFAULT
+	self.max_armor_slots = 0 # ACTUAL DEFAULT
 	# TODO: set maximum health based on character creation options
 	# (i.e. consider chosen character features)
 	
 func set_used_armor_slots(value: int) -> bool:
 	if(0 <= value && value <= self.max_armor_slots):
+		if(value > 12): #max armor slots
+			value = 12
 		used_armor_slots = value
+		
 		#print("DEBUG: " + self.character_name + " has used " + str(used_armor_slots) + " armor slots.")
 		return true
 	elif(value < 0):
@@ -141,6 +143,9 @@ func set_proficiency_modifier() -> void:
 	if level > 4: proficiency_modifier = 2
 	if level > 7: proficiency_modifier = 3
 
+func set_base_evasion() -> void:
+	evasion = character_class.starting_evasion + agility
+
 func set_proficiency() -> void:
 	self.proficiency = proficiency_modifier + proficiency
 	pass
@@ -180,6 +185,7 @@ func serialize_data():
 		"active_cards" : active_cards,
 		"vaulted_cards": vaulted_cards,
 		"multiclass_domains": multiclass_domains,
+		"multiclass_subclasses": multiclass_subclasses,
 		"multiclass_selections": multiclass_selections,
 		"num_downtime_moves": num_downtime_moves
 	}
@@ -222,6 +228,7 @@ func load_data(char_dict: Variant):
 	active_cards.assign(char_dict["active_cards"])
 	vaulted_cards.assign(char_dict["vaulted_cards"])
 	multiclass_domains.assign(char_dict["multiclass_domains"])
+	multiclass_subclasses.assign(char_dict["multiclass_subclasses"])
 	multiclass_selections.assign(char_dict["multiclass_selections"])
 	num_downtime_moves = char_dict["num_downtime_moves"]
 	
@@ -241,3 +248,188 @@ func implement_ancestry_features():
 	elif self.ancestry.ancestry_name=="Simiah":
 		evasion += 1
 		print(character_name + "'s evasion is automatically increased by 1 due to Simiah ancestry.")
+		
+func equip_armor(armor: String):
+	print("equipped armor: " + armor)
+	var armor_as_text = FileAccess.get_file_as_string("res://Resources/Equipment/armor.json")
+	var armor_as_dict = JSON.parse_string(armor_as_text)
+	
+	
+	
+	if(not armor_as_dict.get(armor)):
+		return
+		
+	max_armor_slots += armor_as_dict.get(armor).get("base_score")
+	damage_thresholds[0] += armor_as_dict.get(armor).get("major_threshold")
+	damage_thresholds[1] += armor_as_dict.get(armor).get("severe_threshold")
+		
+	var feature = armor_as_dict.get(armor).get("feature")
+	
+	if(feature == "Flexible"):
+		evasion += 1
+	elif(feature == "Heavy"):
+		evasion -= 1
+	elif(feature == "Very Heavy"):
+		evasion -= 3
+		agility -= 1
+	elif (feature == "Gilded"):
+		presence += 1
+	elif (feature == "Difficult"):
+		evasion -= 2
+		agility -= 1
+		strength -= 1
+		finesse -= 1
+		instinct -= 1
+		presence -= 1
+		knowledge -= 1
+		
+	
+func unequip_armor(armor: String):
+	print("unequipped armor: " + armor)
+	var armor_as_text = FileAccess.get_file_as_string("res://Resources/Equipment/armor.json")
+	var armor_as_dict = JSON.parse_string(armor_as_text)
+	
+	if(not armor_as_dict.get(armor)):
+		return
+	
+	max_armor_slots -= armor_as_dict.get(armor).get("base_score")
+	damage_thresholds[0] -= armor_as_dict.get(armor).get("major_threshold")
+	damage_thresholds[1] -= armor_as_dict.get(armor).get("severe_threshold")
+	
+	var feature = armor_as_dict.get(armor).get("feature")
+	
+	if(feature == "Flexible"):
+		evasion -= 1
+	elif(feature == "Heavy"):
+		evasion += 1
+	elif(feature == "Very Heavy"):
+		evasion += 3
+		agility += 1
+	elif (feature == "Gilded"):
+		presence -= 1
+	elif (feature == "Difficult"):
+		evasion += 2
+		agility += 1
+		strength += 1
+		finesse += 1
+		instinct += 1
+		presence += 1
+		knowledge += 1
+	
+	
+func equip_primary(weapon: String):
+	print("equipped primary: " + weapon)
+	
+	var weapon_as_text = FileAccess.get_file_as_string("res://Resources/Equipment/weapons.json")
+	var weapon_as_dict = JSON.parse_string(weapon_as_text)
+	
+	if(not weapon_as_dict.get(weapon)):
+		return
+	
+	var feature = weapon_as_dict.get(weapon).get("feature")
+	
+	if(feature == "Massive" || feature == "Heavy"):
+		evasion -= 1
+	elif(feature=="Cumbersome"):
+		finesse -= 1
+	elif(feature=="Protective"):
+		max_armor_slots += 1
+	elif(feature =="Barrier"):
+		max_armor_slots += weapon_as_dict.get(weapon).get("tier") + 1
+		evasion -= 1
+	elif(feature =="Double Duty"):
+		max_armor_slots += 1
+	elif(feature == "Brave"):
+		evasion -= 1
+		damage_thresholds[1] += 3
+	elif(feature == "Destructive"):
+		evasion -= 1
+		agility -= 1
+	
+	
+func unequip_primary(weapon: String):
+	print("unequipped primary: " + weapon)
+	
+	
+	var weapon_as_text = FileAccess.get_file_as_string("res://Resources/Equipment/weapons.json")
+	var weapon_as_dict = JSON.parse_string(weapon_as_text)
+	
+	if(not weapon_as_dict.get(weapon)):
+		return
+	
+	var feature = weapon_as_dict.get(weapon).get("feature")
+	
+	if(feature == "Massive" || feature == "Heavy"):
+		evasion += 1
+	elif(feature=="Cumbersome"):
+		finesse += 1
+	elif(feature=="Protective"):
+		max_armor_slots -= 1
+	elif(feature =="Barrier"):
+		max_armor_slots -= weapon_as_dict.get(weapon).get("tier") + 1
+		evasion += 1
+	elif(feature =="Double Duty"):
+		max_armor_slots -= 1
+	elif(feature == "Brave"):
+		evasion += 1
+		damage_thresholds[1] -= 3
+	elif(feature == "Destructive"):
+		evasion += 1
+		agility += 1
+	
+func equip_secondary(weapon: String):
+	print("equipped secondary: " + weapon)
+	var weapon_as_text = FileAccess.get_file_as_string("res://Resources/Equipment/weapons.json")
+	var weapon_as_dict = JSON.parse_string(weapon_as_text)
+	
+	if(not weapon_as_dict.get(weapon)):
+		return
+	
+	var feature = weapon_as_dict.get(weapon).get("feature")
+	
+	if(feature == "Massive" || feature == "Heavy"):
+		evasion -= 1
+	elif(feature=="Cumbersome"):
+		finesse -= 1
+	elif(feature=="Protective"):
+		max_armor_slots += weapon_as_dict.get(weapon).get("tier")
+	elif(feature =="Barrier"):
+		max_armor_slots += weapon_as_dict.get(weapon).get("tier") + 1
+		evasion -= 1
+	elif(feature =="Double Duty"):
+		max_armor_slots += 1
+	elif(feature == "Brave"):
+		evasion -= 1
+		damage_thresholds[1] += 3
+	elif(feature == "Destructive"):
+		evasion -= 1
+		agility -= 1
+	
+	
+func unequip_secondary(weapon: String):
+	print("unequipped secondary: " + weapon)
+	var weapon_as_text = FileAccess.get_file_as_string("res://Resources/Equipment/weapons.json")
+	var weapon_as_dict = JSON.parse_string(weapon_as_text)
+	
+	if(not weapon_as_dict.get(weapon)):
+		return
+	
+	var feature = weapon_as_dict.get(weapon).get("feature")
+	
+	if(feature == "Massive" || feature == "Heavy"):
+		evasion += 1
+	elif(feature=="Cumbersome"):
+		finesse += 1
+	elif(feature=="Protective"):
+		max_armor_slots -= weapon_as_dict.get(weapon).get("tier")
+	elif(feature =="Barrier"):
+		max_armor_slots -= (weapon_as_dict.get(weapon).get("tier") + 1)
+		evasion += 1
+	elif(feature =="Double Duty"):
+		max_armor_slots -= 1
+	elif(feature == "Brave"):
+		evasion += 1
+		damage_thresholds[1] -= 3
+	elif(feature == "Destructive"):
+		evasion += 1
+		agility += 1

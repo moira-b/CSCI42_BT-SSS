@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://r02yxwfx48hx" path="res://Scenes/SheetManagement/SaveManager.tscn" id="2_3hhsk"]
 [ext_resource type="StyleBox" uid="uid://dic645d200g74" path="res://Resources/GUIStyles/character_sheet_stylebox.tres" id="3_duv1w"]
 [ext_resource type="StyleBox" uid="uid://dewju2mxoq348" path="res://Resources/GUIStyles/button_style.tres" id="4_dumt2"]
-[ext_resource type="Script" path="res://Scenes/SheetManagement/main_menu_options_popup.gd" id="4_rkvgt"]
+[ext_resource type="Script" uid="uid://fvdr0f3rncnv" path="res://Scenes/SheetManagement/main_menu_options_popup.gd" id="4_rkvgt"]
 
 [node name="MainMenu" type="Control" unique_id=621885202]
 layout_mode = 3
