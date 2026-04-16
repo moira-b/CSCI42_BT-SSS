@@ -10,7 +10,7 @@ extends Control
 @onready var save_manager = $SaveManager
 @onready var grid_container = $ScrollContainer/GridContainer
 @onready var options_popup = $OptionsPopupMenu
-@onready var searchbar = $Header/LineEdit
+@onready var searchbar: LineEdit = $Header/LineEdit
 
 
 var panel_scene: PackedScene = preload("res://Scenes/SheetManagement/character_select_panel.tscn")
@@ -32,7 +32,7 @@ func enter():
 func connect_signals():
 	create_new_character_button.pressed.connect(_on_createcharacter_button_pressed)
 	options_popup.button_pressed.connect(_on_popup_option_selected)
-	searchbar.text_changed.connect(_on_searchbar_change)
+	searchbar.text_changed.connect(_on_searchbar_text_changed)
 
 func create_character_panels():
 	if(save_manager.save_file_exists()):
@@ -76,8 +76,12 @@ func _on_popup_option_selected(option: String, pk):
 		save_manager.delete_character_with_pk(pk)
 		remove_character_panel(pk)
 
-func _on_searchbar_change():
-	print("hi")
+func _on_searchbar_text_changed(text):
+	for char_panel in grid_container.get_children():
+		if char_panel.char_name.contains(text) || char_panel.char_class.contains(text) || text == "":
+			char_panel.visible = true
+		else:
+			char_panel.visible = false
 
 func remove_character_panel(pk):
 	for panel in grid_container.get_children():
