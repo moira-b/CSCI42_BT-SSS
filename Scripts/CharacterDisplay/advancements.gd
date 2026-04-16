@@ -132,6 +132,7 @@ func _handle_object_container_confirm() -> void:
 			if s == presence: character.presence += 1
 			if s == knowledge: character.knowledge += 1
 			if s == proficiency: character.proficiency += 1
+			if s == evasion: character.evasion += 1
 			if s == health: character.max_hp += 1
 			if s == stress: character.max_stress += 1
 			if s == exp_1: character.experience_levels[0] += 1

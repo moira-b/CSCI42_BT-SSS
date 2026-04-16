@@ -42,9 +42,6 @@ bg_color = Color(0.07058824, 0.37254903, 0.007843138, 1)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_6lo7n"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_56qfy"]
-font_size = 24
-
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gjf7o"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7xnek"]
@@ -65,6 +62,9 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gjf7o"]
+bg_color = Color(0.11764706, 0.11764706, 0.11764706, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ahdvs"]
 border_width_left = 3
 border_width_top = 3
@@ -73,6 +73,9 @@ border_width_bottom = 3
 border_color = Color(0.6, 0.6, 0.6, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ahdvs"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_56qfy"]
+font_size = 24
 
 [node name="CharacterSheet" type="Control" unique_id=1820753171]
 layout_mode = 3
@@ -671,209 +674,6 @@ text = "Proficiency:"
 [node name="Value" type="Label" parent="EvasionProficency/ProficiencyContainer/Proficiency" unique_id=612684652]
 layout_mode = 2
 
-[node name="AdvanceWindow" type="Window" parent="." unique_id=609611659]
-oversampling_override = 1.0
-title = "Advancements"
-initial_position = 2
-size = Vector2i(1030, 560)
-visible = false
-script = ExtResource("7_56qfy")
-
-[node name="ObjectContainer" type="HFlowContainer" parent="AdvanceWindow" unique_id=1685616752]
-visible = false
-anchors_preset = 13
-anchor_left = 0.5
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -229.5
-offset_top = 5.0
-offset_right = 229.5
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Header" type="Label" parent="AdvanceWindow/ObjectContainer" unique_id=970900252]
-layout_mode = 2
-text = "Select 2 stats to add a permanent +1 to:"
-label_settings = SubResource("LabelSettings_56qfy")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Traits" type="PanelContainer" parent="AdvanceWindow/ObjectContainer" unique_id=267000129]
-custom_minimum_size = Vector2(230, 0)
-layout_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="AdvanceWindow/ObjectContainer/Traits" unique_id=1921439541]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="AdvanceWindow/ObjectContainer/Traits/VBoxContainer" unique_id=168523618]
-layout_mode = 2
-text = "Traits"
-horizontal_alignment = 1
-
-[node name="Agility" type="CheckButton" parent="AdvanceWindow/ObjectContainer/Traits/VBoxContainer" unique_id=528539920]
-layout_mode = 2
-text = "Agility"
-
-[node name="Strength" type="CheckButton" parent="AdvanceWindow/ObjectContainer/Traits/VBoxContainer" unique_id=88378038]
-layout_mode = 2
-text = "Strength"
-
-[node name="Finesse" type="CheckButton" parent="AdvanceWindow/ObjectContainer/Traits/VBoxContainer" unique_id=574238242]
-layout_mode = 2
-text = "Finesse"
-
-[node name="Instinct" type="CheckButton" parent="AdvanceWindow/ObjectContainer/Traits/VBoxContainer" unique_id=1274473994]
-layout_mode = 2
-text = "Instinct"
-
-[node name="Presence" type="CheckButton" parent="AdvanceWindow/ObjectContainer/Traits/VBoxContainer" unique_id=4335712]
-layout_mode = 2
-text = "Presence"
-
-[node name="Knowledge" type="CheckButton" parent="AdvanceWindow/ObjectContainer/Traits/VBoxContainer" unique_id=506521080]
-layout_mode = 2
-text = "Knowledge"
-
-[node name="Markables" type="VBoxContainer" parent="AdvanceWindow/ObjectContainer" unique_id=292305664]
-custom_minimum_size = Vector2(225, 0)
-layout_mode = 2
-
-[node name="HealthPanel" type="PanelContainer" parent="AdvanceWindow/ObjectContainer/Markables" unique_id=1109426991]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Health" type="CheckButton" parent="AdvanceWindow/ObjectContainer/Markables/HealthPanel" unique_id=2046713117]
-layout_mode = 2
-text = "Health         "
-
-[node name="StressPanel" type="PanelContainer" parent="AdvanceWindow/ObjectContainer/Markables" unique_id=126300132]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Stress" type="CheckButton" parent="AdvanceWindow/ObjectContainer/Markables/StressPanel" unique_id=244053893]
-layout_mode = 2
-text = "Stress"
-
-[node name="EvasionPanel" type="PanelContainer" parent="AdvanceWindow/ObjectContainer/Markables" unique_id=389355948]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Evasion" type="CheckButton" parent="AdvanceWindow/ObjectContainer/Markables/EvasionPanel" unique_id=1722831904]
-layout_mode = 2
-text = "Evasion
-"
-
-[node name="ProficiencyPanel" type="PanelContainer" parent="AdvanceWindow/ObjectContainer/Markables" unique_id=1602887370]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Proficiency" type="CheckButton" parent="AdvanceWindow/ObjectContainer/Markables/ProficiencyPanel" unique_id=375489201]
-layout_mode = 2
-text = "Proficiency
-"
-
-[node name="Experiences" type="PanelContainer" parent="AdvanceWindow/ObjectContainer" unique_id=1047609444]
-visible = false
-custom_minimum_size = Vector2(230, 0)
-layout_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="AdvanceWindow/ObjectContainer/Experiences" unique_id=1150217807]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="AdvanceWindow/ObjectContainer/Experiences/VBoxContainer" unique_id=919383364]
-layout_mode = 2
-text = "Experiences"
-horizontal_alignment = 1
-
-[node name="Exp1" type="CheckButton" parent="AdvanceWindow/ObjectContainer/Experiences/VBoxContainer" unique_id=1845104459]
-layout_mode = 2
-
-[node name="Exp2" type="CheckButton" parent="AdvanceWindow/ObjectContainer/Experiences/VBoxContainer" unique_id=1448747192]
-layout_mode = 2
-
-[node name="Exp3" type="CheckButton" parent="AdvanceWindow/ObjectContainer/Experiences/VBoxContainer" unique_id=603731474]
-visible = false
-layout_mode = 2
-
-[node name="Exp4" type="CheckButton" parent="AdvanceWindow/ObjectContainer/Experiences/VBoxContainer" unique_id=236044382]
-visible = false
-layout_mode = 2
-
-[node name="Exp5" type="CheckButton" parent="AdvanceWindow/ObjectContainer/Experiences/VBoxContainer" unique_id=249731350]
-visible = false
-layout_mode = 2
-
-[node name="DomainCardPanel" type="PanelContainer" parent="AdvanceWindow/ObjectContainer" unique_id=1115123307]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="ExtraDomainCard" type="CheckButton" parent="AdvanceWindow/ObjectContainer/DomainCardPanel" unique_id=253160910]
-layout_mode = 2
-text = "Extra Domain Card
-"
-
-[node name="MulticlassPanel" type="PanelContainer" parent="AdvanceWindow/ObjectContainer" unique_id=71834697]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Multiclassing" type="CheckButton" parent="AdvanceWindow/ObjectContainer/MulticlassPanel" unique_id=1713924928]
-layout_mode = 2
-disabled = true
-text = "Multiclassing"
-
-[node name="MulticlassChoiceContainer" type="HBoxContainer" parent="AdvanceWindow" unique_id=974524269]
-custom_minimum_size = Vector2(860, 355)
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -427.0
-offset_top = -237.0
-offset_right = 435.0
-offset_bottom = 118.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("11_2cjug")
-character_classes = Array[ExtResource("12_ahdvs")]([ExtResource("13_gjf7o"), ExtResource("14_7xnek"), ExtResource("15_n4116"), ExtResource("16_kjdj8"), ExtResource("17_oxyly"), ExtResource("18_7pq50"), ExtResource("19_rj3pj"), ExtResource("20_48wf7"), ExtResource("21_asla6")])
-
-[node name="MulticlassChoiceList" type="ItemList" parent="AdvanceWindow/MulticlassChoiceContainer" unique_id=789023377]
-custom_minimum_size = Vector2(600, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-auto_height = true
-
-[node name="MulticlassDomainList" type="ItemList" parent="AdvanceWindow/MulticlassChoiceContainer" unique_id=1717788272]
-custom_minimum_size = Vector2(250, 100)
-layout_mode = 2
-size_flags_horizontal = 10
-size_flags_vertical = 4
-
-[node name="DomainCardSelContainer" parent="AdvanceWindow" unique_id=710034451 instance=ExtResource("8_8skux")]
-visible = false
-offset_left = -515.0
-offset_top = -280.0
-offset_right = 509.0
-offset_bottom = 261.0
-
-[node name="ConfirmButton" type="Button" parent="AdvanceWindow" unique_id=481842158]
-custom_minimum_size = Vector2(150, 50)
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -75.0
-offset_top = -50.0
-offset_right = 75.0
-offset_bottom = -19.0
-grow_horizontal = 2
-grow_vertical = 0
-text = "Confirm"
-
 [node name="BodyMargin" type="MarginContainer" parent="." unique_id=291965919]
 layout_mode = 1
 anchors_preset = 12
@@ -899,6 +699,7 @@ theme_override_constants/separation = 30
 [node name="LeftPanel" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer" unique_id=709591819]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_7xnek")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel" unique_id=1761976576]
@@ -1223,11 +1024,84 @@ theme_override_styles/panel = ExtResource("2_c8oo5")
 [node name="VBoxContainer" type="VBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel" unique_id=345703533]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer" unique_id=1174515028]
+[node name="MarginContainer" type="MarginContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer" unique_id=1068692241]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/MarginContainer" unique_id=1174515028]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Evasion" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/MarginContainer/HBoxContainer" unique_id=288805226]
+custom_minimum_size = Vector2(125, 0)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("2_c8oo5")
+
+[node name="FieldContainer" type="VBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/MarginContainer/HBoxContainer/Evasion" unique_id=1737631886]
 layout_mode = 2
 
-[node name="EvasionDisplay" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/HBoxContainer" unique_id=1842632448]
+[node name="MarginContainer" type="MarginContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/MarginContainer/HBoxContainer/Evasion/FieldContainer" unique_id=666988413]
 layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 5
+
+[node name="FieldValue" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/MarginContainer/HBoxContainer/Evasion/FieldContainer/MarginContainer" unique_id=506780720]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/MarginContainer/HBoxContainer/Evasion/FieldContainer" unique_id=1268304785]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_gjf7o")
+
+[node name="FieldLabel" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/MarginContainer/HBoxContainer/Evasion/FieldContainer/PanelContainer" unique_id=514784411]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+text = "Evasion"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Proficiency" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/MarginContainer/HBoxContainer" unique_id=1168794863]
+custom_minimum_size = Vector2(125, 0)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("2_c8oo5")
+
+[node name="FieldContainer" type="VBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/MarginContainer/HBoxContainer/Proficiency" unique_id=843835469]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/MarginContainer/HBoxContainer/Proficiency/FieldContainer" unique_id=1882655637]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 5
+
+[node name="FieldValue" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/MarginContainer/HBoxContainer/Proficiency/FieldContainer/MarginContainer" unique_id=1216961648]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/MarginContainer/HBoxContainer/Proficiency/FieldContainer" unique_id=1289074487]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_gjf7o")
+
+[node name="FieldLabel" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/MarginContainer/HBoxContainer/Proficiency/FieldContainer/PanelContainer" unique_id=905060961]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+text = "Proficiency"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="ActiveEquipmentLabel" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer" unique_id=9867553]
 layout_mode = 2
@@ -1472,6 +1346,209 @@ min_value = -100.0
 value = 2.0
 allow_greater = true
 allow_lesser = true
+
+[node name="AdvanceWindow" type="Window" parent="." unique_id=609611659]
+oversampling_override = 1.0
+title = "Advancements"
+initial_position = 2
+size = Vector2i(1030, 560)
+visible = false
+script = ExtResource("7_56qfy")
+
+[node name="ObjectContainer" type="HFlowContainer" parent="AdvanceWindow" unique_id=1685616752]
+visible = false
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -229.5
+offset_top = 5.0
+offset_right = 229.5
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Header" type="Label" parent="AdvanceWindow/ObjectContainer" unique_id=970900252]
+layout_mode = 2
+text = "Select 2 stats to add a permanent +1 to:"
+label_settings = SubResource("LabelSettings_56qfy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Traits" type="PanelContainer" parent="AdvanceWindow/ObjectContainer" unique_id=267000129]
+custom_minimum_size = Vector2(230, 0)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AdvanceWindow/ObjectContainer/Traits" unique_id=1921439541]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="AdvanceWindow/ObjectContainer/Traits/VBoxContainer" unique_id=168523618]
+layout_mode = 2
+text = "Traits"
+horizontal_alignment = 1
+
+[node name="Agility" type="CheckButton" parent="AdvanceWindow/ObjectContainer/Traits/VBoxContainer" unique_id=528539920]
+layout_mode = 2
+text = "Agility"
+
+[node name="Strength" type="CheckButton" parent="AdvanceWindow/ObjectContainer/Traits/VBoxContainer" unique_id=88378038]
+layout_mode = 2
+text = "Strength"
+
+[node name="Finesse" type="CheckButton" parent="AdvanceWindow/ObjectContainer/Traits/VBoxContainer" unique_id=574238242]
+layout_mode = 2
+text = "Finesse"
+
+[node name="Instinct" type="CheckButton" parent="AdvanceWindow/ObjectContainer/Traits/VBoxContainer" unique_id=1274473994]
+layout_mode = 2
+text = "Instinct"
+
+[node name="Presence" type="CheckButton" parent="AdvanceWindow/ObjectContainer/Traits/VBoxContainer" unique_id=4335712]
+layout_mode = 2
+text = "Presence"
+
+[node name="Knowledge" type="CheckButton" parent="AdvanceWindow/ObjectContainer/Traits/VBoxContainer" unique_id=506521080]
+layout_mode = 2
+text = "Knowledge"
+
+[node name="Markables" type="VBoxContainer" parent="AdvanceWindow/ObjectContainer" unique_id=292305664]
+custom_minimum_size = Vector2(225, 0)
+layout_mode = 2
+
+[node name="HealthPanel" type="PanelContainer" parent="AdvanceWindow/ObjectContainer/Markables" unique_id=1109426991]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Health" type="CheckButton" parent="AdvanceWindow/ObjectContainer/Markables/HealthPanel" unique_id=2046713117]
+layout_mode = 2
+text = "Health         "
+
+[node name="StressPanel" type="PanelContainer" parent="AdvanceWindow/ObjectContainer/Markables" unique_id=126300132]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Stress" type="CheckButton" parent="AdvanceWindow/ObjectContainer/Markables/StressPanel" unique_id=244053893]
+layout_mode = 2
+text = "Stress"
+
+[node name="EvasionPanel" type="PanelContainer" parent="AdvanceWindow/ObjectContainer/Markables" unique_id=389355948]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Evasion" type="CheckButton" parent="AdvanceWindow/ObjectContainer/Markables/EvasionPanel" unique_id=1722831904]
+layout_mode = 2
+text = "Evasion
+"
+
+[node name="ProficiencyPanel" type="PanelContainer" parent="AdvanceWindow/ObjectContainer/Markables" unique_id=1602887370]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Proficiency" type="CheckButton" parent="AdvanceWindow/ObjectContainer/Markables/ProficiencyPanel" unique_id=375489201]
+layout_mode = 2
+text = "Proficiency
+"
+
+[node name="Experiences" type="PanelContainer" parent="AdvanceWindow/ObjectContainer" unique_id=1047609444]
+visible = false
+custom_minimum_size = Vector2(230, 0)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AdvanceWindow/ObjectContainer/Experiences" unique_id=1150217807]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="AdvanceWindow/ObjectContainer/Experiences/VBoxContainer" unique_id=919383364]
+layout_mode = 2
+text = "Experiences"
+horizontal_alignment = 1
+
+[node name="Exp1" type="CheckButton" parent="AdvanceWindow/ObjectContainer/Experiences/VBoxContainer" unique_id=1845104459]
+layout_mode = 2
+
+[node name="Exp2" type="CheckButton" parent="AdvanceWindow/ObjectContainer/Experiences/VBoxContainer" unique_id=1448747192]
+layout_mode = 2
+
+[node name="Exp3" type="CheckButton" parent="AdvanceWindow/ObjectContainer/Experiences/VBoxContainer" unique_id=603731474]
+visible = false
+layout_mode = 2
+
+[node name="Exp4" type="CheckButton" parent="AdvanceWindow/ObjectContainer/Experiences/VBoxContainer" unique_id=236044382]
+visible = false
+layout_mode = 2
+
+[node name="Exp5" type="CheckButton" parent="AdvanceWindow/ObjectContainer/Experiences/VBoxContainer" unique_id=249731350]
+visible = false
+layout_mode = 2
+
+[node name="DomainCardPanel" type="PanelContainer" parent="AdvanceWindow/ObjectContainer" unique_id=1115123307]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ExtraDomainCard" type="CheckButton" parent="AdvanceWindow/ObjectContainer/DomainCardPanel" unique_id=253160910]
+layout_mode = 2
+text = "Extra Domain Card
+"
+
+[node name="MulticlassPanel" type="PanelContainer" parent="AdvanceWindow/ObjectContainer" unique_id=71834697]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Multiclassing" type="CheckButton" parent="AdvanceWindow/ObjectContainer/MulticlassPanel" unique_id=1713924928]
+layout_mode = 2
+disabled = true
+text = "Multiclassing"
+
+[node name="MulticlassChoiceContainer" type="HBoxContainer" parent="AdvanceWindow" unique_id=974524269]
+custom_minimum_size = Vector2(860, 355)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -427.0
+offset_top = -237.0
+offset_right = 435.0
+offset_bottom = 118.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("11_2cjug")
+character_classes = Array[ExtResource("12_ahdvs")]([ExtResource("13_gjf7o"), ExtResource("14_7xnek"), ExtResource("15_n4116"), ExtResource("16_kjdj8"), ExtResource("17_oxyly"), ExtResource("18_7pq50"), ExtResource("19_rj3pj"), ExtResource("20_48wf7"), ExtResource("21_asla6")])
+
+[node name="MulticlassChoiceList" type="ItemList" parent="AdvanceWindow/MulticlassChoiceContainer" unique_id=789023377]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+auto_height = true
+
+[node name="MulticlassDomainList" type="ItemList" parent="AdvanceWindow/MulticlassChoiceContainer" unique_id=1717788272]
+custom_minimum_size = Vector2(250, 100)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+
+[node name="DomainCardSelContainer" parent="AdvanceWindow" unique_id=710034451 instance=ExtResource("8_8skux")]
+visible = false
+offset_left = -515.0
+offset_top = -280.0
+offset_right = 509.0
+offset_bottom = 261.0
+
+[node name="ConfirmButton" type="Button" parent="AdvanceWindow" unique_id=481842158]
+custom_minimum_size = Vector2(150, 50)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -75.0
+offset_top = -50.0
+offset_right = 75.0
+offset_bottom = -19.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Confirm"
 
 [connection signal="text_changed" from="HeaderMargin/Header/HeaderInfo/NamePronouns/NamePanelContainer/NameC/NameEdit" to="." method="_on_name_edit_text_changed"]
 [connection signal="text_submitted" from="HeaderMargin/Header/HeaderInfo/NamePronouns/NamePanelContainer/NameC/NameEdit" to="." method="_on_name_edit_text_submitted"]

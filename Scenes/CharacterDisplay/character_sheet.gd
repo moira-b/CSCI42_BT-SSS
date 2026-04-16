@@ -29,8 +29,8 @@ extends Control
 @onready var rest_confirm_button: Button = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/RestButtons/RestWindow/RestUI/ConfirmButton
 @onready var dice_roll_window: Window = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/DiceButtons/DiceRollWindow
 @onready var fh_roll_window: Window = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/DiceButtons/FHRollWindow
-@onready var evasion_value: Label = $EvasionProficency/EvasionContainer/Evasion/Value
-@onready var proficiency_value: Label = $EvasionProficency/ProficiencyContainer/Proficiency/Value
+@onready var evasion_value: Label = $BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/MarginContainer/HBoxContainer/Evasion/FieldContainer/MarginContainer/FieldValue
+@onready var proficiency_value: Label = $BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/MarginContainer/HBoxContainer/Proficiency/FieldContainer/MarginContainer/FieldValue
 @onready var advance_window: Window = $AdvanceWindow
 
 @onready var dice_button: Button = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/DiceButtons/Dice
