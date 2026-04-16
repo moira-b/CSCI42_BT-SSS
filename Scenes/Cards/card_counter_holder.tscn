@@ -45,3 +45,4 @@ layout_mode = 0
 offset_right = 86.5
 offset_bottom = 31.0
 alignment = 1
+update_on_text_changed = true
