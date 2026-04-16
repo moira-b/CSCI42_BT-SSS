@@ -37,9 +37,9 @@ extends Control
 @onready var fearhope_button: Button = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/DiceButtons/FHDice
 
 @onready var levelup_button: Button = $HeaderMargin/Header/Level/FieldContainer/PanelContainer/LevelUpButton
-@onready var levelup_confirmation_panel = $LevelUpConfirmation
-@onready var levelup_confirmation_button: Button = $LevelUpConfirmation/VBoxContainer/ConfirmButton
-@onready var levelup_cancel_button: Button = $LevelUpConfirmation/VBoxContainer/CancelButton
+@onready var levelup_confirmation_panel = $HeaderMargin/Header/Level/FieldContainer/LevelUpWindow
+@onready var levelup_confirmation_button: Button = $HeaderMargin/Header/Level/FieldContainer/LevelUpWindow/Buttons/ConfirmButton
+@onready var levelup_cancel_button: Button = $HeaderMargin/Header/Level/FieldContainer/LevelUpWindow/Buttons/CancelButton
 @onready var level_field = $HeaderMargin/Header/Level/FieldContainer/MarginContainer/HSplitContainer/LevelDisplay
 
 @onready var agility_advance: Button = $TraitModifiers/Agility/AdvanceButton
