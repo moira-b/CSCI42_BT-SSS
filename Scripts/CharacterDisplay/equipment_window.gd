@@ -39,18 +39,19 @@ func _on_cancel_button_pressed():
 	self.hide()
 
 func _on_item_selected():
+	selected_equipment[0] = armor_list.get_selected_armor()
+	selected_equipment[1] = p_wep_list.get_selected_primary()
+	selected_equipment[2] = s_wep_list.get_selected_secondary()
 	
 	# if the selected equipment is valid, allow confirm button to be clicked
 	# else, do not allow confirm button to be clicked
 	confirm_button.disabled = !is_selection_valid()
 	
-	print("DEBUG: Armor is " + armor_list.get_selected_armor())
-	print("DEBUG: Primary is " + p_wep_list.get_selected_primary())
-	print("DEBUG: Secondary is " + s_wep_list.get_selected_secondary())
-	
-	selected_equipment[0] = armor_list.get_selected_armor()
-	selected_equipment[1] = p_wep_list.get_selected_primary()
-	selected_equipment[2] = s_wep_list.get_selected_secondary()
+	print("DEBUG. "
+		+ "Armor: " + armor_list.get_selected_armor() + " | "
+		+ "Primary: " + p_wep_list.get_selected_primary() + " | "
+		+ "Secondary: " + s_wep_list.get_selected_secondary()
+	)
 
 func preselect_current_equipment(current_equipment: Array[String]):
 	armor_list.selected_armor = current_equipment[0]
