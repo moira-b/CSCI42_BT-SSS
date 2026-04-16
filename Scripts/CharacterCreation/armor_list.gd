@@ -3,6 +3,7 @@ extends ItemList
 var character: Character
 var armor_dict: Dictionary
 var armor_array: Array
+var selected_armor: String
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -12,7 +13,7 @@ func _ready() -> void:
 	file.close()
 	armor_dict = json.parse_string(armor_list)
 	armor_array = armor_dict.keys()
-	character = $"../../../../Character"
+	
 	for item in armor_dict:
 		if armor_dict[item].tier == 1:
 			add_item(item)
@@ -21,7 +22,8 @@ func _ready() -> void:
 	
 	
 func _on_item_selected(_index: int) -> void:
-	if character.items.size() >= 1:
-		character.items[0] = armor_array[_index]
-	else:
-		character.items.append(armor_array[_index])
+	selected_armor = armor_array[_index]
+	
+
+func get_selected_armor():
+	return selected_armor

@@ -10,6 +10,10 @@ extends Control
 @onready var notif_window = $NotifWindow
 @onready var tab_container = $TabButtons
 @onready var tab_buttons: Array[Node] = tab_container.get_children()
+@onready var armor_list: ItemList = $OptionLists/EquipmentList/ArmorContainer/ArmorList
+@onready var p_wep_list: ItemList = $OptionLists/EquipmentList/PWepContainer/PWepList
+@onready var s_wep_list: ItemList = $OptionLists/EquipmentList/SWepContainer/SWepList
+
 
 var option_tab_array: Array[Control]
 var option_tab_index: int
@@ -43,6 +47,11 @@ func _process(_delta: float) -> void:
 	elif active_option_tab.name == "TraitAssignmentContainer":
 		if active_option_tab.get_child(1).is_all_items_complete():
 			confirm_button.disabled = false
+	elif active_option_tab.name == "EquipmentList":
+		if active_option_tab.is_equipment_valid():
+			confirm_button.disabled = false
+		else:
+			confirm_button.disabled = true
 	elif active_option_tab.name == "ExperiencesContainer" and active_option_tab.is_all_textboxes_filled():
 			confirm_button.disabled = false
 	elif active_option_tab.name == "NamePronounContainer" and active_option_tab.is_all_textboxes_filled():

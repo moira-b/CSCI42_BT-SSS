@@ -6,7 +6,6 @@ var weapon_dict: Dictionary
 var tier_1_dict: Dictionary
 var secondaries: Array[String]
 var selected_secondary: String
-var character: Character
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,7 +14,6 @@ func _ready() -> void:
 	var weapon_list = file.get_as_text()
 	file.close()
 	weapon_dict = json.parse_string(weapon_list)
-	character = $"../../../../Character"
 	
 	tier_1_dict = weapon_dict.duplicate(true)
 	for q in weapon_dict:
@@ -31,7 +29,10 @@ func _ready() -> void:
 
 
 func _on_item_selected(_index: int) -> void:
-	if character.items.size() > 2:
-		character.items[2] = secondaries[_index]
-	else:
-		character.items.append(secondaries[_index])
+	selected_secondary = secondaries[_index]
+	
+
+func get_selected_secondary():
+	if self.is_anything_selected() == false:
+		selected_secondary = ""
+	return selected_secondary

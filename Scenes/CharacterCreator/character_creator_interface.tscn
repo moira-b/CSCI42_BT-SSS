@@ -52,6 +52,7 @@
 [ext_resource type="PackedScene" uid="uid://1un73y3t3x7b" path="res://Scenes/Cards/domain_card_sel_container.tscn" id="47_g2o8p"]
 [ext_resource type="Script" uid="uid://co3dycsyqv6ap" path="res://Scripts/CharacterCreation/armor_list.gd" id="50_7mc0y"]
 [ext_resource type="Script" uid="uid://mx8mfwor421u" path="res://Scripts/CharacterCreation/p_weapon_list.gd" id="50_deb4u"]
+[ext_resource type="Script" uid="uid://dfemyf8r5ay1p" path="res://Scripts/CharacterCreation/equipment_list.gd" id="50_kdp8w"]
 [ext_resource type="Script" uid="uid://cutrjksidwmox" path="res://Scripts/CharacterCreation/s_weapon_list.gd" id="52_v3iga"]
 
 [sub_resource type="Resource" id="Resource_7bny4"]
@@ -546,7 +547,6 @@ text = "+2"
 horizontal_alignment = 1
 
 [node name="EquipmentList" type="HBoxContainer" parent="OptionLists" unique_id=1101846628]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -559,6 +559,7 @@ offset_right = 286.0
 offset_bottom = 17.5
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("50_kdp8w")
 
 [node name="ArmorContainer" type="VBoxContainer" parent="OptionLists/EquipmentList" unique_id=759511222]
 layout_mode = 2

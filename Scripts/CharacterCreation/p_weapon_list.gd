@@ -6,7 +6,6 @@ var weapon_dict: Dictionary
 var tier_1_dict: Dictionary
 var primaries: Array[String]
 var selected_primary: String
-var character: Character
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,7 +14,6 @@ func _ready() -> void:
 	var weapon_list = file.get_as_text()
 	file.close()
 	weapon_dict = json.parse_string(weapon_list)
-	character = $"../../../../Character"
 	
 	tier_1_dict = weapon_dict.duplicate(true)
 	for q in weapon_dict:
@@ -31,7 +29,12 @@ func _ready() -> void:
 
 
 func _on_item_selected(_index: int) -> void:
-	if character.items.size() > 1:
-		character.items[1] = primaries[_index]
-	else:
-		character.items.append(primaries[_index])
+	selected_primary = primaries[_index]
+	
+	
+func get_selected_primary():
+	return selected_primary
+	
+	
+func get_burden():
+	return tier_1_dict[selected_primary].burden
