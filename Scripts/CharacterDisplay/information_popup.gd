@@ -14,7 +14,12 @@ func showAncestryInformation(ancestry: Ancestry):
 	self.label.text = "Hovering over ancestry"
 	show()
 	
-func showCommunityInformation(community: Community):
+func showCommunityInformation(community: Community, position_anchor: Vector2, entered_size: Vector2):
+	self.global_position = Vector2(
+		position_anchor[0] + entered_size[0]/2, 
+		position_anchor[1] + entered_size[1] + 10
+	)
+	
 	attribute_name.text = community.community_name
 	feature1_name.text = community.get_feature()
 	feature1_description.text = community.get_feature_description()

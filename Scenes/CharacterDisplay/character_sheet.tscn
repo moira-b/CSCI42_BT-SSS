@@ -1677,6 +1677,7 @@ text = "You have advantage on rolls to consort with nobles, negotiate prices, or
 autowrap_mode = 2
 
 [node name="Feature2" type="Label" parent="InformationPopup/MarginContainer/VBoxContainer" unique_id=1363394027]
+visible = false
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 theme_override_constants/line_spacing = -5
@@ -1684,6 +1685,7 @@ text = "Attribute Feature 1: Feature Name"
 autowrap_mode = 2
 
 [node name="Feature2Description" type="Label" parent="InformationPopup/MarginContainer/VBoxContainer" unique_id=645411207]
+visible = false
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 theme_override_constants/line_spacing = -5

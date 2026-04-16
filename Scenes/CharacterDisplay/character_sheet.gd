@@ -449,4 +449,8 @@ func _on_mouse_enter_ancestry_panel():
 	pass
 
 func _on_mouse_enter_community_panel():
-	information_popup.showCommunityInformation(character.community)
+	information_popup.showCommunityInformation(
+		character.community, 
+		community_panel.global_position,
+		community_panel.size
+	)
