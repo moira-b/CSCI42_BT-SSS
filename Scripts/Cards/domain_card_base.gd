@@ -8,6 +8,8 @@ var type: String
 var domain: String
 var recall_cost: int
 var is_selected: bool
+var array_index: int
+@export var can_highlight: bool = false
 
 # Display details
 @onready var level_label: Label = $Level
@@ -52,7 +54,8 @@ func _on_gui_input(event: InputEvent) -> void:
 
 
 func _on_mouse_entered() -> void:
-	highlight_panel.visible = true
+	if can_highlight:
+		highlight_panel.visible = true
 
 
 func _on_mouse_exited() -> void:
