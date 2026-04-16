@@ -248,8 +248,6 @@ func implement_ancestry_features():
 		print(character_name + "'s evasion is automatically increased by 1 due to Simiah ancestry.")
 
 func update_equipment(new_equipment: Array[String]):
-	print("current: " + str(items))
-	print("new: " + str(new_equipment))
 	if items[0]!=new_equipment[0]:
 		print("replacing armor")
 		unequip_armor(items[0])
