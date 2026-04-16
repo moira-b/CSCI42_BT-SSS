@@ -21,7 +21,7 @@ extends Control
 @onready var armor_field = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Armor
 @onready var hope_field = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Hope
 @onready var ancestry_field = $HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/AncestryPanelContainer/Ancestry/ColorRect/Ancestry
-@onready var community_field = $HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/PanelContainer/Community/ColorRect/Community
+@onready var community_field = $HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/CommunityPanelContainer/Community/ColorRect/Community
 @onready var class_field = $HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/ClassPanelContainer/Class/ColorRect/Class
 @onready var short_rest_button: Button = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/RestButtons/ShortRest
 @onready var long_rest_button: Button = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/RestButtons/LongRest

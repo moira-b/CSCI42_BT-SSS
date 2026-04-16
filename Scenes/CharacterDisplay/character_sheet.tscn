@@ -199,28 +199,28 @@ text = "ancestry_name
 vertical_alignment = 1
 max_lines_visible = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry" unique_id=1597585474]
+[node name="CommunityPanelContainer" type="PanelContainer" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry" unique_id=1597585474]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = ExtResource("2_c8oo5")
 
-[node name="Community" type="HBoxContainer" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/PanelContainer" unique_id=743414857]
+[node name="Community" type="HBoxContainer" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/CommunityPanelContainer" unique_id=743414857]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/PanelContainer/Community" unique_id=760379478]
+[node name="Label" type="Label" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/CommunityPanelContainer/Community" unique_id=760379478]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Community:"
 vertical_alignment = 1
 
-[node name="ColorRect" type="ColorRect" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/PanelContainer/Community" unique_id=1812518552]
+[node name="ColorRect" type="ColorRect" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/CommunityPanelContainer/Community" unique_id=1812518552]
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
 size_flags_horizontal = 3
 color = Color(0.1764706, 0.1764706, 0.1764706, 1)
 
-[node name="Community" type="Label" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/PanelContainer/Community/ColorRect" unique_id=2021481224]
+[node name="Community" type="Label" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/CommunityPanelContainer/Community/ColorRect" unique_id=2021481224]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 1
 anchors_preset = 4
