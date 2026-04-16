@@ -178,22 +178,9 @@ size_flags_horizontal = 4
 text = "Class:"
 vertical_alignment = 1
 
-[node name="ColorRect" type="ColorRect" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/ClassPanelContainer/Class" unique_id=2110528739]
-custom_minimum_size = Vector2(100, 50)
-layout_mode = 2
-size_flags_horizontal = 3
-color = Color(0.1764706, 0.1764706, 0.1764706, 1)
-
-[node name="Class" type="Label" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/ClassPanelContainer/Class/ColorRect" unique_id=1140117280]
+[node name="Class" type="Label" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/ClassPanelContainer/Class" unique_id=1140117280]
 custom_minimum_size = Vector2(100, 0)
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -24.0
-offset_right = 147.0
-offset_bottom = 24.0
-grow_vertical = 2
+layout_mode = 2
 theme_override_constants/paragraph_spacing = -5
 text = "ancestry_name
 (subclass)"
@@ -213,24 +200,11 @@ layout_mode = 2
 size_flags_horizontal = 4
 text = "Ancestry:"
 
-[node name="ColorRect" type="ColorRect" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/AncestryPanelContainer/Ancestry" unique_id=612125050]
-custom_minimum_size = Vector2(100, 50)
-layout_mode = 2
-size_flags_horizontal = 3
-color = Color(0.1764706, 0.1764706, 0.1764706, 1)
-
-[node name="Ancestry" type="Label" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/AncestryPanelContainer/Ancestry/ColorRect" unique_id=33290907]
+[node name="Ancestry" type="Label" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/AncestryPanelContainer/Ancestry" unique_id=33290907]
 custom_minimum_size = Vector2(100, 0)
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -25.0
-offset_right = 177.0
-offset_bottom = 25.0
-grow_vertical = 2
-size_flags_horizontal = 8
-size_flags_vertical = 2
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 6
 text = "ancestry_name"
 vertical_alignment = 1
 
@@ -249,22 +223,9 @@ size_flags_horizontal = 4
 text = "Community:"
 vertical_alignment = 1
 
-[node name="ColorRect" type="ColorRect" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/CommunityPanelContainer/Community" unique_id=1812518552]
-custom_minimum_size = Vector2(100, 50)
-layout_mode = 2
-size_flags_horizontal = 3
-color = Color(0.1764706, 0.1764706, 0.1764706, 1)
-
-[node name="Community" type="Label" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/CommunityPanelContainer/Community/ColorRect" unique_id=2021481224]
+[node name="Community" type="Label" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/CommunityPanelContainer/Community" unique_id=2021481224]
 custom_minimum_size = Vector2(100, 0)
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -24.0
-offset_right = 148.0
-offset_bottom = 24.0
-grow_vertical = 2
+layout_mode = 2
 text = "community_name"
 vertical_alignment = 1
 
@@ -1631,6 +1592,7 @@ grow_vertical = 0
 text = "Confirm"
 
 [node name="InformationPopup" type="PanelContainer" parent="." unique_id=1815631795]
+visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0

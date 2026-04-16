@@ -7,9 +7,12 @@ extends Resource
 var description: String
 
 func _ready() -> void:
-	self.description = self.set_description()
+	self.description = self.get_description()
 
-func set_description() -> String:
+func set_description() -> void:
+	self.description = self.get_description()
+
+func get_description() -> String:
 	# descriptions were taken from:
 	# https://daggerheart.org/reference/ancestries
 	var all_descriptions: Dictionary = {

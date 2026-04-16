@@ -20,9 +20,9 @@ extends Control
 @onready var stress_field = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Stress
 @onready var armor_field = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Armor
 @onready var hope_field = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Hope
-@onready var ancestry_field = $HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/AncestryPanelContainer/Ancestry/ColorRect/Ancestry
-@onready var community_field = $HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/CommunityPanelContainer/Community/ColorRect/Community
-@onready var class_field = $HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/ClassPanelContainer/Class/ColorRect/Class
+@onready var ancestry_field = $HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/AncestryPanelContainer/Ancestry/Ancestry
+@onready var community_field = $HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/CommunityPanelContainer/Community/Community
+@onready var class_field = $HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/ClassPanelContainer/Class/Class
 @onready var short_rest_button: Button = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/RestButtons/ShortRest
 @onready var long_rest_button: Button = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/RestButtons/LongRest
 @onready var rest_window: Window = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/RestButtons/RestWindow
@@ -389,6 +389,10 @@ func connect_signals() -> void:
 	class_panel.mouse_entered.connect(_on_mouse_enter_class_panel)
 	ancestry_panel.mouse_entered.connect(_on_mouse_enter_ancestry_panel)
 	community_panel.mouse_entered.connect(_on_mouse_enter_community_panel)
+	
+	class_panel.mouse_exited.connect(_on_mouse_exit_header_panel)
+	ancestry_panel.mouse_exited.connect(_on_mouse_exit_header_panel)
+	community_panel.mouse_exited.connect(_on_mouse_exit_header_panel)
 
 func disable_button_selection(b: bool) -> void:
 	short_rest_button.disabled = b
@@ -446,7 +450,11 @@ func _on_mouse_enter_class_panel():
 	pass
 
 func _on_mouse_enter_ancestry_panel():
-	pass
+	information_popup.showAncestryInformation(
+		character.ancestry,
+		ancestry_panel.global_position,
+		ancestry_panel.size
+	)
 
 func _on_mouse_enter_community_panel():
 	information_popup.showCommunityInformation(
@@ -454,3 +462,6 @@ func _on_mouse_enter_community_panel():
 		community_panel.global_position,
 		community_panel.size
 	)
+
+func _on_mouse_exit_header_panel():
+	information_popup.hide()
