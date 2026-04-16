@@ -266,3 +266,15 @@ func unequip_armor(armor: String):
 	max_armor_slots = 0
 	damage_thresholds[0] -= armor_as_dict.get(armor).get("major_threshold")
 	damage_thresholds[1] -= armor_as_dict.get(armor).get("severe_threshold")
+	
+func equip_primary(weapon: String):
+	pass
+	
+func unequip_primary(weapon: String):
+	pass
+	
+func equip_secondary(weapon: String):
+	pass
+	
+func unequip_secondary(weapon: String):
+	pass
