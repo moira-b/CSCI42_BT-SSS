@@ -9,7 +9,7 @@ extends Control
 @onready var test_button: Button = $Button
 @onready var save_manager = $SaveManager
 @onready var grid_container = $ScrollContainer/GridContainer
-@onready var options_popup = $OptionsPopupMenu
+@onready var options_popup: PanelContainer = $OptionsPopupMenu
 @onready var searchbar: LineEdit = $Header/LineEdit
 
 
@@ -25,7 +25,7 @@ func _process(delta):
 
 func enter():
 	confirm_window.visible = false
-	#options_popup.visible = false
+	options_popup.visible = false
 	connect_signals()
 	create_character_panels()
 
