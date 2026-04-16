@@ -4,6 +4,8 @@ class_name Character
 extends Node
 
 const FILE_PATH = "user://character_data"
+const WEAPON_PATH = "res://Resources/Equipment/weapons.json"
+const ARMOR_PATH = "res://Resources/Equipment/armor.json"
 
 const max_level: int = 10
 const max_hope: int = 6
@@ -26,7 +28,7 @@ const max_hope: int = 6
 @export var max_stress: int
 @export var current_stress: int
 @export var current_hope: int
-@export var items: Array[String]
+@export var items: Array[String]		#index 0: armor, 1: primary, 2: secondary
 @export var max_armor_slots: int
 @export var used_armor_slots: int
 @export var experiences: Array[String] = ["", "", "", "", ""]
@@ -247,7 +249,7 @@ func implement_ancestry_features():
 		
 func equip_armor(armor: String):
 	print("equipped armor: " + armor)
-	var armor_as_text = FileAccess.get_file_as_string("res://Resources/Equipment/armor.json")
+	var armor_as_text = FileAccess.get_file_as_string(ARMOR_PATH)
 	var armor_as_dict = JSON.parse_string(armor_as_text)
 	
 	if(not armor_as_dict.get(armor)):
@@ -260,7 +262,7 @@ func equip_armor(armor: String):
 	
 func unequip_armor(armor: String):
 	print("unequipped armor: " + armor)
-	var armor_as_text = FileAccess.get_file_as_string("res://Resources/Equipment/armor.json")
+	var armor_as_text = FileAccess.get_file_as_string(ARMOR_PATH)
 	var armor_as_dict = JSON.parse_string(armor_as_text)
 	
 	if(not armor_as_dict.get(armor)):
@@ -286,3 +288,61 @@ func equip_secondary(weapon: String):
 func unequip_secondary(weapon: String):
 	print("unequipped secondary: " + weapon)
 	pass
+
+func get_armor_name():
+	print("armor: " + items[2])
+	return items[0]
+
+func get_primary_name():
+	print("primary: " + items[0])
+	return items[1]
+
+func get_secondary_name():
+	print("secondary: " + items[1])
+	return items[2]
+	
+func get_armor_info() -> String:
+	var armor = get_armor_name()
+	var armor_as_text = FileAccess.get_file_as_string(ARMOR_PATH)
+	var armor_as_dict = JSON.parse_string(armor_as_text)
+	
+	if(not armor_as_dict.get(armor)):
+		return "ERROR IN GETTING ARMOR INFO"
+	
+	var tier: int = armor_as_dict.get(armor).get("tier")
+	var base_score: int = armor_as_dict.get(armor).get("base_score")
+
+	var info = "Tier %d | Base Score %d" % [tier, base_score]
+	return info
+
+func get_primary_info() -> String:
+	var primary = get_primary_name()
+	var weapon_as_text = FileAccess.get_file_as_string(WEAPON_PATH)
+	var weapon_as_dict = JSON.parse_string(weapon_as_text)
+	
+	if(not weapon_as_dict.get(primary)):
+		return "ERROR IN GETTING PRIMARY INFO"
+	
+	var damageType = weapon_as_dict.get(primary).get("damage_type")
+	var range = weapon_as_dict.get(primary).get("range")
+	var rollTrait = weapon_as_dict.get(primary).get("trait")
+	var damageDie: int = weapon_as_dict.get(primary).get("damage_die")
+
+	var info = "%s | %s | %s | d%d" % [damageType, range, rollTrait, damageDie]
+	return info
+
+func get_secondary_info() -> String:
+	var secondary = get_secondary_name()
+	var weapon_as_text = FileAccess.get_file_as_string(WEAPON_PATH)
+	var weapon_as_dict = JSON.parse_string(weapon_as_text)
+	
+	if(not weapon_as_dict.get(secondary)):
+		return "ERROR IN GETTING SECONDARY INFO"
+	
+	var damageType = weapon_as_dict.get(secondary).get("damage_type")
+	var range = weapon_as_dict.get(secondary).get("range")
+	var rollTrait = weapon_as_dict.get(secondary).get("trait")
+	var damageDie: int = weapon_as_dict.get(secondary).get("damage_die")
+
+	var info = "%s | %s | %s | d%d" % [damageType, range, rollTrait, damageDie]
+	return info
