@@ -246,6 +246,7 @@ func implement_ancestry_features():
 		print(character_name + "'s evasion is automatically increased by 1 due to Simiah ancestry.")
 		
 func equip_armor(armor: String):
+	print("equipped armor: " + armor)
 	var armor_as_text = FileAccess.get_file_as_string("res://Resources/Equipment/armor.json")
 	var armor_as_dict = JSON.parse_string(armor_as_text)
 	
@@ -255,8 +256,10 @@ func equip_armor(armor: String):
 	max_armor_slots = armor_as_dict.get(armor).get("base_score")
 	damage_thresholds[0] += armor_as_dict.get(armor).get("major_threshold")
 	damage_thresholds[1] += armor_as_dict.get(armor).get("severe_threshold")
+		
 	
 func unequip_armor(armor: String):
+	print("unequipped armor: " + armor)
 	var armor_as_text = FileAccess.get_file_as_string("res://Resources/Equipment/armor.json")
 	var armor_as_dict = JSON.parse_string(armor_as_text)
 	
@@ -267,14 +270,19 @@ func unequip_armor(armor: String):
 	damage_thresholds[0] -= armor_as_dict.get(armor).get("major_threshold")
 	damage_thresholds[1] -= armor_as_dict.get(armor).get("severe_threshold")
 	
+	
 func equip_primary(weapon: String):
+	print("equipped primary: " + weapon)
 	pass
 	
 func unequip_primary(weapon: String):
+	print("unequipped primary: " + weapon)
 	pass
 	
 func equip_secondary(weapon: String):
+	print("equipped secondary: " + weapon)
 	pass
 	
 func unequip_secondary(weapon: String):
+	print("unequipped secondary: " + weapon)
 	pass
