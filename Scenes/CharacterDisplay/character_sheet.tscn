@@ -1577,6 +1577,7 @@ oversampling_override = 1.0
 title = "Manage Equipment"
 initial_position = 2
 size = Vector2i(1030, 560)
+visible = false
 script = ExtResource("10_7pq50")
 
 [node name="EquipmentList" type="HBoxContainer" parent="EquipmentWindow" unique_id=1421846324]

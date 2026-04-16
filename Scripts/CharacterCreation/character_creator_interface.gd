@@ -13,13 +13,14 @@ extends Control
 @onready var armor_list: ItemList = $OptionLists/EquipmentList/ArmorContainer/ArmorList
 @onready var p_wep_list: ItemList = $OptionLists/EquipmentList/PWepContainer/PWepList
 @onready var s_wep_list: ItemList = $OptionLists/EquipmentList/SWepContainer/SWepList
-
+@onready var pd_window = $PurposefulDesignWindow
 
 var option_tab_array: Array[Control]
 var option_tab_index: int
 var active_option_tab: Control
 var sheet_scene: PackedScene = preload("res://Scenes/CharacterDisplay/character_sheet.tscn")
 var domain: PackedScene = load("res://Scenes/Cards/domain_card_base.tscn")
+var purposeful_design_chosen: int = -1
 
 func _ready() -> void:
 	option_tab_index = 0
@@ -33,6 +34,8 @@ func _ready() -> void:
 	for button in tab_buttons:
 		button.pressed.connect(_on_tab_button_pressed.bind(button))
 
+	pd_window.hide()
+	pd_window.closing.connect(_on_pd_window_closing)
 
 func _process(_delta: float) -> void:
 	_handle_back_button_visibility()
@@ -107,11 +110,11 @@ func _handle_back_button_visibility():
 
 
 func _on_confirm_button_pressed() -> void:
-	option_tab_index += 1
-	_set_active_option_tab(option_tab_index)
-	confirm_button.disabled = true
-	description_display.clear_message()
-
+	if !(needs_purposeful_design_window() && option_tab_index==6):
+		option_tab_index += 1
+		_set_active_option_tab(option_tab_index)
+		confirm_button.disabled = true
+		description_display.clear_message()
 
 func _on_back_button_pressed() -> void:
 	option_tab_index -= 1
@@ -123,22 +126,23 @@ func show_description(message: String) -> void:
 
 
 func _on_complete_button_pressed() -> void:
-	if (_is_character_data_valid() == true):
-		add_domain_cards()
-		var new_scene = sheet_scene.instantiate()
-		character.set_maximum_health()
-		character.set_maximum_stress()
-		character.set_maximum_armor_slots()
-		character.implement_ancestry_features()
-		character.set_base_evasion()
-		character.equip_armor(character.items[0])
-		character.equip_primary(character.items[1])
-		character.equip_secondary(character.items[2])
-		character.reparent(new_scene)
-		self.get_parent().add_child(new_scene)
-		new_scene.enter()
-		self.queue_free()
-	#get_tree().change_scene_to_packed(sheet_scene)
+	if !needs_purposeful_design_window():
+		if (_is_character_data_valid() == true):
+			add_domain_cards()
+			var new_scene = sheet_scene.instantiate()
+			character.set_maximum_health()
+			character.set_maximum_stress()
+			character.set_maximum_armor_slots()
+			character.implement_ancestry_features()
+			character.set_base_evasion()
+			character.equip_armor(character.items[0])
+			character.equip_primary(character.items[1])
+			character.equip_secondary(character.items[2])
+			character.reparent(new_scene)
+			self.get_parent().add_child(new_scene)
+			new_scene.enter()
+			self.queue_free()
+		#get_tree().change_scene_to_packed(sheet_scene)
 
 
 func add_domain_cards():
@@ -191,3 +195,27 @@ func _raise_error() -> void:
 	notif_window.show()
 	await(get_tree().create_timer(1.0).timeout)
 	notif_window.hide()
+
+func needs_purposeful_design_window() -> bool:
+	# pd window can only show up when confirming experiences
+	# or when confirming entire character creation process
+	if (option_tab_index!=6 && option_tab_index!=8):
+		return false
+	
+	# pd will only show up if needed for Clank feature
+	if (character.ancestry && character.ancestry.ancestry_name=="Clank"):
+		if (purposeful_design_chosen!=1 && purposeful_design_chosen!=2):
+			var pd_window = $PurposefulDesignWindow
+			pd_window.showWindow()
+			return true
+	
+	return false
+
+func _on_pd_window_closing(exp_num: int):
+	purposeful_design_chosen = exp_num
+	if purposeful_design_chosen==1:
+		#TODO: set +1 to chosen experience
+		pass
+	elif purposeful_design_chosen==2:
+		#TODO: set +1 to chosen experience
+		pass
