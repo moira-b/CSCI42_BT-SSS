@@ -40,6 +40,7 @@ var community: Community
 var character_class: CharacterClass
 var subclass: CharacterSubclass
 var multiclass_domains: Array[Domain]
+var multiclass_subclasses: Array[CharacterSubclass]
 var multiclass_selections: Array[CharacterClass]
 var primary_key: String
 
@@ -180,6 +181,7 @@ func serialize_data():
 		"active_cards" : active_cards,
 		"vaulted_cards": vaulted_cards,
 		"multiclass_domains": multiclass_domains,
+		"multiclass_subclasses": multiclass_subclasses,
 		"multiclass_selections": multiclass_selections,
 		"num_downtime_moves": num_downtime_moves
 	}
@@ -222,6 +224,7 @@ func load_data(char_dict: Variant):
 	active_cards.assign(char_dict["active_cards"])
 	vaulted_cards.assign(char_dict["vaulted_cards"])
 	multiclass_domains.assign(char_dict["multiclass_domains"])
+	multiclass_subclasses.assign(char_dict["multiclass_subclasses"])
 	multiclass_selections.assign(char_dict["multiclass_selections"])
 	num_downtime_moves = char_dict["num_downtime_moves"]
 	

@@ -70,6 +70,57 @@ script = ExtResource("1_ofddw")
 
 [node name="Character" parent="." unique_id=1371470097 instance=ExtResource("2_foxel")]
 
+[node name="TabButtons" type="HBoxContainer" parent="." unique_id=1396724264]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -325.0
+offset_top = 24.0
+offset_right = 325.0
+offset_bottom = 64.0
+grow_horizontal = 2
+
+[node name="Class" type="Button" parent="TabButtons" unique_id=394473369]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Class"
+
+[node name="Subclass" type="Button" parent="TabButtons" unique_id=1329706564]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Subclass"
+
+[node name="Heritage" type="Button" parent="TabButtons" unique_id=1406435465]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Heritage"
+
+[node name="Community" type="Button" parent="TabButtons" unique_id=1071396811]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Community"
+
+[node name="DomainCards" type="Button" parent="TabButtons" unique_id=1215117363]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Domain Cards"
+
+[node name="Traits" type="Button" parent="TabButtons" unique_id=1773478265]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Traits"
+
+[node name="Experiences" type="Button" parent="TabButtons" unique_id=2133570945]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Experiences"
+
+[node name="Name" type="Button" parent="TabButtons" unique_id=781964754]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Name"
+
 [node name="OptionLists" type="Control" parent="." unique_id=1737252042]
 layout_mode = 1
 anchors_preset = 8
@@ -171,6 +222,7 @@ script = ExtResource("6_n175s")
 community_array = Array[ExtResource("7_qaets")]([ExtResource("28_82lxq"), ExtResource("29_rli2i"), ExtResource("30_foxel"), ExtResource("31_68bmj"), ExtResource("32_7s5p1"), ExtResource("33_m6swa"), ExtResource("34_a5r2x"), ExtResource("35_5asme"), ExtResource("36_m83la")])
 
 [node name="DomainCardSelContainer" parent="OptionLists" unique_id=710034451 instance=ExtResource("47_g2o8p")]
+visible = false
 layout_mode = 1
 
 [node name="TraitAssignmentContainer" type="HBoxContainer" parent="OptionLists" unique_id=1249625595]
@@ -584,6 +636,22 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 clip_text = true
+
+[node name="NotifWindow" type="Window" parent="." unique_id=2130778845]
+oversampling_override = 1.0
+initial_position = 1
+size = Vector2i(300, 100)
+visible = false
+
+[node name="NotifText" type="Label" parent="NotifWindow" unique_id=690906775]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Invalid character data."
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="item_selected" from="OptionLists/TraitAssignmentContainer/ModifierContainer/AgiModifierOptions" to="OptionLists/TraitAssignmentContainer/ModifierContainer" method="_on_agi_modifier_options_item_selected"]
 [connection signal="item_selected" from="OptionLists/TraitAssignmentContainer/ModifierContainer/StrModifierOptions" to="OptionLists/TraitAssignmentContainer/ModifierContainer" method="_on_str_modifier_options_item_selected"]
