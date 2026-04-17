@@ -7,12 +7,12 @@
 [ext_resource type="StyleBox" uid="uid://iibbyxddwuc5" path="res://Resources/GUIStyles/green_button.tres" id="4_8skux"]
 [ext_resource type="Script" uid="uid://dnjp24h6b6fc2" path="res://Scripts/CharacterDisplay/markable_stat.gd" id="4_qgeia"]
 [ext_resource type="PackedScene" uid="uid://dltyc5tel16kj" path="res://Scenes/CharacterDisplay/dice_roll_window.tscn" id="5_glymg"]
-[ext_resource type="Script" path="res://Scripts/CharacterDisplay/save_notification.gd" id="5_n5rmr"]
+[ext_resource type="Script" uid="uid://wblpjoc7sjgv" path="res://Scripts/CharacterDisplay/save_notification.gd" id="5_n5rmr"]
 [ext_resource type="PackedScene" uid="uid://b6t3g5gxhwopj" path="res://Scenes/CharacterDisplay/fh_roll_window.tscn" id="6_8iwex"]
 [ext_resource type="Script" uid="uid://b3ypom2uq1exh" path="res://Scripts/CharacterDisplay/advancements.gd" id="7_56qfy"]
 [ext_resource type="PackedScene" uid="uid://1un73y3t3x7b" path="res://Scenes/Cards/domain_card_sel_container.tscn" id="8_8skux"]
-[ext_resource type="Script" path="res://Scripts/CharacterDisplay/equipment_window.gd" id="10_7pq50"]
-[ext_resource type="Script" path="res://Scripts/CharacterDisplay/experiences.gd" id="10_rj3pj"]
+[ext_resource type="Script" uid="uid://by7ahmitbfup2" path="res://Scripts/CharacterDisplay/equipment_window.gd" id="10_7pq50"]
+[ext_resource type="Script" uid="uid://djod0suj342ks" path="res://Scripts/CharacterDisplay/experiences.gd" id="10_rj3pj"]
 [ext_resource type="Script" uid="uid://do0erpc6r8x0r" path="res://Scripts/CharacterDisplay/multiclass_choices.gd" id="11_2cjug"]
 [ext_resource type="Script" uid="uid://co3dycsyqv6ap" path="res://Scripts/CharacterCreation/armor_list.gd" id="11_7pq50"]
 [ext_resource type="Script" uid="uid://c6daeo616vuo3" path="res://Scripts/CharacterClasses/character_class.gd" id="12_ahdvs"]
@@ -27,7 +27,7 @@
 [ext_resource type="Resource" uid="uid://hywukpwyumtp" path="res://Resources/Classes/Sorcerer/sorcerer.tres" id="19_rj3pj"]
 [ext_resource type="Resource" uid="uid://cfbttvs0d6csq" path="res://Resources/Classes/Warrior/warrior.tres" id="20_48wf7"]
 [ext_resource type="Resource" uid="uid://dac4f4ifpjnla" path="res://Resources/Classes/Wizard/wizard.tres" id="21_asla6"]
-[ext_resource type="Script" path="res://Scripts/CharacterDisplay/information_popup.gd" id="23_gjf7o"]
+[ext_resource type="Script" uid="uid://ddgbhwwl4fam4" path="res://Scripts/CharacterDisplay/information_popup.gd" id="23_gjf7o"]
 
 [sub_resource type="GDScript" id="GDScript_dg7yu"]
 script/source = "extends LineEdit
@@ -776,7 +776,7 @@ size_flags_horizontal = 3
 [node name="FieldName" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Health/FieldContainer/Labels" unique_id=156588636]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
-text = "Health:"
+text = "Marked Health:"
 
 [node name="FieldValue" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Health/FieldContainer/Labels" unique_id=934834431]
 custom_minimum_size = Vector2(50, 0)
@@ -814,7 +814,7 @@ size_flags_horizontal = 3
 [node name="FieldName" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Stress/FieldContainer/Labels" unique_id=1888500388]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
-text = "Stress:"
+text = "Marked Stress:"
 
 [node name="FieldValue" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Stress/FieldContainer/Labels" unique_id=870010703]
 custom_minimum_size = Vector2(50, 0)
@@ -852,7 +852,7 @@ size_flags_horizontal = 3
 [node name="FieldName" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Hope/FieldContainer/Labels" unique_id=1034984974]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
-text = "Hope:"
+text = "Current Hope:"
 
 [node name="FieldValue" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Hope/FieldContainer/Labels" unique_id=1200812551]
 custom_minimum_size = Vector2(50, 0)
