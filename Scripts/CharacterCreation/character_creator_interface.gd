@@ -206,7 +206,11 @@ func needs_purposeful_design_window() -> bool:
 	if (character.ancestry && character.ancestry.ancestry_name=="Clank"):
 		if (purposeful_design_chosen!=1 && purposeful_design_chosen!=2):
 			var pd_window = $PurposefulDesignWindow
-			pd_window.showWindow()
+			var exp1_field = $OptionLists/ExperiencesContainer/Experience1/LineEdit
+			var exp2_field = $OptionLists/ExperiencesContainer/Experience2/LineEdit
+			print(exp1_field.text)
+			print(exp2_field.text)
+			pd_window.showWindow(exp1_field.text, exp2_field.text)
 			return true
 	
 	return false

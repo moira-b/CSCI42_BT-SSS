@@ -14,9 +14,9 @@ var experience1: String
 var experience2: String
 var chosen_experience: int = -1
 
-func showWindow():
-	experience1_label.text = "bananas"
-	experience2_label.text = "bananas"
+func showWindow(exp1: String, exp2: String):
+	experience1_label.text = exp1
+	experience2_label.text = exp2
 	
 	confirm_button.disabled = true
 	connect_signals()
