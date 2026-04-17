@@ -2,9 +2,6 @@
 
 [ext_resource type="Script" uid="uid://df48s1uusquv0" path="res://Scripts/Cards/domain_card_base.gd" id="1_yvsxo"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_a0nth"]
-size = Vector2(250, 175)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yvsxo"]
 bg_color = Color(1.0781288e-05, 0.93776095, 0.93776095, 0.23529412)
 
@@ -16,7 +13,6 @@ offset_bottom = 350.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_force_pass_scroll_events = false
-mouse_default_cursor_shape = 2
 script = ExtResource("1_yvsxo")
 card_name = "Rune Ward"
 
@@ -36,9 +32,15 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
-[node name="CardArt" type="Sprite2D" parent="CardBG" unique_id=1524844910]
-texture = SubResource("PlaceholderTexture2D_a0nth")
-offset = Vector2(125, 86.5)
+[node name="DomainColor" type="ColorRect" parent="CardBG" unique_id=129044946]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -125.0
+offset_right = 125.0
+offset_bottom = 10.0
+grow_horizontal = 2
 
 [node name="Level" type="Label" parent="." unique_id=1981221215]
 layout_mode = 1
@@ -53,6 +55,7 @@ offset_right = -88.0
 offset_bottom = -143.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "1"
 horizontal_alignment = 1
@@ -71,6 +74,7 @@ offset_right = -74.0
 offset_bottom = -129.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 12
 text = "Domain"
 horizontal_alignment = 1
@@ -88,23 +92,21 @@ offset_right = 113.0
 offset_bottom = -144.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 13
 text = "0"
 horizontal_alignment = 1
 
 [node name="Type" type="Label" parent="." unique_id=1270775154]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
 offset_left = -20.0
-offset_top = -11.5
+offset_top = 40.0
 offset_right = 20.0
-offset_bottom = 11.5
+offset_bottom = 63.0
 grow_horizontal = 2
-grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 10
 text = "Type"
@@ -113,17 +115,14 @@ vertical_alignment = 1
 
 [node name="Name" type="Label" parent="." unique_id=2138193583]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -33.0
-offset_top = 5.5
-offset_right = 36.0
-offset_bottom = 39.5
+offset_left = -34.5
+offset_top = 3.0
+offset_right = 34.5
+offset_bottom = 37.0
 grow_horizontal = 2
-grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "Name"
@@ -138,7 +137,7 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -115.0
-offset_top = 45.0
+offset_top = -103.0
 offset_right = 118.0
 offset_bottom = 165.0
 grow_horizontal = 2

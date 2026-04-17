@@ -10,6 +10,7 @@ extends Window
 var selected: Array[CheckButton] = []
 var rest_length: String = ""
 var character: Character
+var num_moves: int
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -26,7 +27,6 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-
 
 func enable_Project() -> void:
 	project.visible = true
@@ -50,18 +50,18 @@ func set_rest_Length(length) -> void:
 
 func get_character(pc) -> void:
 	character = pc
-
+	num_moves = character.num_downtime_moves
 
 func _on_tend_wounds_toggled(toggled_on: bool) -> void:
 	if toggled_on:
 		selected.append(tend_wounds)
 		
-		if selected.size() > 2:
+		if selected.size() > num_moves:
 			var oldest = selected.pop_front()
 			oldest.set_pressed_no_signal(false)
 	else:
 		selected.erase(tend_wounds)
-	if selected.size() >= 2:
+	if selected.size() >= num_moves:
 		confirm_button.disabled = false
 	else:
 		confirm_button.disabled = true
@@ -72,12 +72,12 @@ func _on_clear_stress_toggled(toggled_on: bool) -> void:
 	if toggled_on:
 		selected.append(clear_stress)
 		
-		if selected.size() > 2:
+		if selected.size() > num_moves:
 			var oldest = selected.pop_front()
 			oldest.set_pressed_no_signal(false)
 	else:
 		selected.erase(clear_stress)
-	if selected.size() >= 2:
+	if selected.size() >= num_moves:
 		confirm_button.disabled = false
 	else:
 		confirm_button.disabled = true
@@ -88,12 +88,12 @@ func _on_repair_armor_toggled(toggled_on: bool) -> void:
 	if toggled_on:
 		selected.append(repair_armor)
 		
-		if selected.size() > 2:
+		if selected.size() > num_moves:
 			var oldest = selected.pop_front()
 			oldest.set_pressed_no_signal(false)
 	else:
 		selected.erase(repair_armor)
-	if selected.size() >= 2:
+	if selected.size() >= num_moves:
 		confirm_button.disabled = false
 	else:
 		confirm_button.disabled = true
@@ -103,12 +103,12 @@ func _on_prepare_toggled(toggled_on: bool) -> void:
 	if toggled_on:
 		selected.append(prepare)
 		
-		if selected.size() > 2:
+		if selected.size() > num_moves:
 			var oldest = selected.pop_front()
 			oldest.set_pressed_no_signal(false)
 	else:
 		selected.erase(prepare)
-	if selected.size() >= 2:
+	if selected.size() >= num_moves:
 		confirm_button.disabled = false
 	else:
 		confirm_button.disabled = true
@@ -118,12 +118,12 @@ func _on_project_toggled(toggled_on: bool) -> void:
 	if toggled_on:
 		selected.append(project)
 		
-		if selected.size() > 2:
+		if selected.size() > num_moves:
 			var oldest = selected.pop_front()
 			oldest.set_pressed_no_signal(false)
 	else:
 		selected.erase(project)
-	if selected.size() >= 2:
+	if selected.size() >= num_moves:
 		confirm_button.disabled = false
 	else:
 		confirm_button.disabled = true
