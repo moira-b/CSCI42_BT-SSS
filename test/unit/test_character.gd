@@ -109,21 +109,33 @@ func test_iterate_through_armor():
 	assert_eq(character.used_armor_slots, max_armor)
 
 func test_set_initial_max_health():
-	character.set_maximum_health()
-	var max_health = character.max_hp
-	assert_eq(max_health, 12, "Max health should be 12")
-	# test invalid health values
-	var invalid_health = character.set_current_health(13)
-	assert_false(invalid_health)
-	invalid_health = character.set_current_health(-1)
-	assert_false(invalid_health)
-	# test valid health values
-	var valid_health = character.set_current_health(0)
-	var i: int = 0
-	while(valid_health):
-		valid_health = character.set_current_health(i)
-		i += 1
-	assert_eq(character.current_hp, max_health)
+	var classes: Array[CharacterClass] = [
+	load("res://Resources/Classes/Bard/bard.tres"), 
+	load("res://Resources/Classes/Druid/druid.tres"),
+	load("res://Resources/Classes/Guardian/guardian.tres"),
+	load("res://Resources/Classes/Ranger/ranger.tres"),
+	load("res://Resources/Classes/Rogue/rogue.tres"),
+	load("res://Resources/Classes/Seraph/seraph.tres"),
+	load("res://Resources/Classes/Warrior/warrior.tres"),
+	load("res://Resources/Classes/Wizard/wizard.tres")]
+	
+	for character_class in classes:
+		character.character_class = character_class
+		character.set_maximum_health()
+		var max_health = character.max_hp
+		assert_eq(max_health, character_class.starting_hp, "Max health should be the same as " + character_class.name)
+		# test invalid health values
+		var invalid_health = character.set_current_health(13)
+		assert_false(invalid_health)
+		invalid_health = character.set_current_health(-1)
+		assert_false(invalid_health)
+		# test valid health values
+		var valid_health = character.set_current_health(0)
+		var i: int = 0
+		while(valid_health):
+			valid_health = character.set_current_health(i)
+			i += 1
+		assert_eq(character.current_hp, max_health)
 	
 func test_set_invalid_hp_high():
 	character.set_maximum_health()
