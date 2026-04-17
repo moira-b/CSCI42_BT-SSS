@@ -7,6 +7,7 @@ var save_manager
 
 func before_each():
 	character = autofree(Character.new())
+	character.character_class = load("res://Resources/Classes/Rogue/rogue.tres")
 	character.set_maximum_health()
 	character.set_maximum_armor_slots()
 	character.set_maximum_stress()
