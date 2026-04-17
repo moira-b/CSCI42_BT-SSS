@@ -1,5 +1,6 @@
 extends GutTest
-
+const WEAPON_PATH = "res://Resources/Equipment/weapons.json"
+const ARMOR_PATH = "res://Resources/Equipment/armor.json"
 var Character = preload("res://Scripts/Character/Character.gd")
 var character: Character
 
@@ -74,10 +75,10 @@ func test_iterate_through_stress():
 		i += 1
 	assert_eq(character.current_stress, max_stress)
 	
-func test_max_armor():
+func test_base_armor():
 	character.set_maximum_armor_slots()
 	var max_armor = character.max_armor_slots
-	assert_true(max_armor > 0, "Max Armor must be more than 0")
+	assert_true(max_armor == 0, "Base Max Armor must be 0")
 
 func test_invalid_armor():
 	character.set_maximum_armor_slots()
@@ -97,7 +98,74 @@ func test_iterate_through_armor():
 		i += 1
 	assert_eq(character.used_armor_slots, max_armor)
 
-#TODO: please fix
+
+func test_equipment_armor():
+	character.items = ["","",""]
+	var armors:Array[String] = ["Gambeson Armor","Leather Armor","Chainmail Armor","Full Plate Armor"]
+	for armor in armors:
+		character.equip_armor(armor)
+		assert_eq(character.items[0], armor, "Character must have equipped the armor")
+		
+		character.unequip_armor(armor)
+		assert_eq(character.items[0],"","Character's armor slot must be empty")
+
+
+func test_equipment_damage_thresholds():
+	character.items = ["","",""]
+	var armors:Array[String] = ["Gambeson Armor","Leather Armor","Chainmail Armor","Full Plate Armor"]
+	for armor in armors:
+		var armor_as_text = FileAccess.get_file_as_string(ARMOR_PATH)
+		var armor_as_dict = JSON.parse_string(armor_as_text)
+		character.equip_armor(armor)
+		var valid_armor: int = armor_as_dict.get(armor).get("major_threshold") + 1
+		assert_eq(character.damage_thresholds[0],valid_armor,"Character must have the same major threshold as the armor")
+		valid_armor = armor_as_dict.get(armor).get("severe_threshold") + 1
+		assert_eq(character.damage_thresholds[1],valid_armor,"Character must have the same severe threshold as the armor")
+				
+		character.unequip_armor(armor)
+		
+		assert_eq(character.damage_thresholds[0],1,"Character's major threshold must equal the level(1)")
+		assert_eq(character.damage_thresholds[0],1,"Character's severe threshold must equal the level(1)")
+		
+
+func test_equipment_weapons():
+	character.items = ["","",""]
+	var weapons:Array[String] = ["Broadsword","Longsword","Dagger","Battleaxe"]
+	for weapon in weapons:
+		character.equip_primary(weapon)
+		assert_eq(character.items[1], weapon, "Character must have equipped the weapon")
+		
+		character.unequip_primary(weapon)
+		assert_eq(character.items[1],"","Character must have unequipped the weapon")
+		
+
+func test_equipment_secondary_weapons():
+	character.items = ["","",""]
+	var weapons:Array[String] = ["Shortsword","Round Shield","Tower Shield","Small Dagger"]
+	for weapon in weapons:
+		character.equip_secondary(weapon)
+		assert_eq(character.items[2], weapon, "Character must have equipped the weapon")
+		
+		character.unequip_secondary(weapon)
+		assert_eq(character.items[2],"","Character must have unequipped the weapon")
+
+
+func test_equipment_armor_score():
+	character.items = ["","",""]
+	var armors:Array[String] = ["Gambeson Armor","Leather Armor","Chainmail Armor","Full Plate Armor"]
+	character.set_maximum_armor_slots()
+	for armor in armors:
+		var armor_as_text = FileAccess.get_file_as_string(ARMOR_PATH)
+		var armor_as_dict = JSON.parse_string(armor_as_text)
+		character.equip_armor(armor)
+		var valid_armor: int = armor_as_dict.get(armor).get("base_score")
+		assert_eq(character.max_armor_slots,valid_armor,"Character must have the same max armor slots as the armor")
+		
+		character.unequip_armor(armor)
+		
+		assert_eq(character.max_armor_slots,0,"Character must have no armor")
+
+
 func test_set_initial_max_health():
 	var classes: Array[CharacterClass] = [
 	load("res://Resources/Classes/Bard/bard.tres"), 
@@ -136,17 +204,46 @@ func test_set_invalid_hp_high():
 
 func test_set_invalid_hp_low():
 	character.set_maximum_health()
-	var max_health = character.max_hp
 	# test invalid health values
 	var invalid_health = character.set_current_health(-1)
 	assert_false(invalid_health)
 	
 func test_iterate_through_hp():
+	var classes: Array[CharacterClass] = [
+	load("res://Resources/Classes/Bard/bard.tres"), 
+	load("res://Resources/Classes/Druid/druid.tres"),
+	load("res://Resources/Classes/Guardian/guardian.tres"),
+	load("res://Resources/Classes/Ranger/ranger.tres"),
+	load("res://Resources/Classes/Rogue/rogue.tres"),
+	load("res://Resources/Classes/Seraph/seraph.tres"),
+	load("res://Resources/Classes/Warrior/warrior.tres"),
+	load("res://Resources/Classes/Wizard/wizard.tres")]
+	
+	for character_class in classes:
+		character.character_class = character_class
+		character.set_maximum_health()
+		var max_health = character.max_hp
+		var valid_health = character.set_current_health(0)
+		var i: int = 0
+		while(valid_health):
+			valid_health = character.set_current_health(i)
+			i += 1
+		assert_eq(character.current_hp, max_health)
+		
+		
+func test_ancestries():
+	character.ancestry = load("res://Resources/Ancestries/Elf/elf.tres")
+	character.implement_ancestry_features()
+	assert_eq(character.num_downtime_moves,3,"Elves must gain an additional downtime move")
+	
+	character.ancestry = load("res://Resources/Ancestries/Human/human.tres")
+	character.set_maximum_stress()
+	character.implement_ancestry_features()
+	assert_eq(character.max_stress,7,"Humans must gain an additional stress")
+	
+	character.ancestry = load("res://Resources/Ancestries/Giant/giant.tres")
 	character.set_maximum_health()
-	var max_health = character.max_hp
-	var valid_health = character.set_current_health(0)
-	var i: int = 0
-	while(valid_health):
-		valid_health = character.set_current_health(i)
-		i += 1
-	assert_eq(character.current_hp, max_health)
+	character.implement_ancestry_features()
+	assert_eq(character.max_hp,7,"Giants must gain an additional hitpoint")
+	
+	
