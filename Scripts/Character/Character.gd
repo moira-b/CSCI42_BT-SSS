@@ -530,3 +530,14 @@ func update_experience_level(which_exp: int, change_amt: int):
 		return
 	
 	experience_levels[exp_index] += change_amt
+
+func set_character_name(new_name: String) -> String:
+	if new_name=="":
+		return "Failed to change the name of " + character_name + ". New name cannot be blank."
+	
+	if len(new_name) > 64:
+		return "Failed to change the name of " + character_name + ". New name cannot be more than 64 characters."
+	
+	var old_name = character_name
+	character_name = new_name
+	return old_name + "'s name has been changed to " + new_name + "."
