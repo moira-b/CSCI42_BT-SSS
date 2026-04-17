@@ -101,7 +101,7 @@ func test_iterate_through_armor():
 func test_set_initial_max_health():
 	character.set_maximum_health()
 	var max_health = character.max_hp
-	assert(max_health > 0, "Initial max health should be more than 0")
+	assert_true(max_health > 0)
 	
 func test_set_invalid_hp_high():
 	character.set_maximum_health()
