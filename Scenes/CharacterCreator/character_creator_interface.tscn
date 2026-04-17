@@ -50,10 +50,12 @@
 [ext_resource type="Script" uid="uid://clmxkh4im6n7f" path="res://Scripts/CharacterCreation/text_fill_container.gd" id="39_68bmj"]
 [ext_resource type="Script" uid="uid://bwg57k6ymdiig" path="res://Scripts/CharacterCreation/description_display.gd" id="42_a5r2x"]
 [ext_resource type="PackedScene" uid="uid://1un73y3t3x7b" path="res://Scenes/Cards/domain_card_sel_container.tscn" id="47_g2o8p"]
-[ext_resource type="Script" path="res://Scripts/CharacterCreation/armor_list.gd" id="50_7mc0y"]
-[ext_resource type="Script" path="res://Scripts/CharacterCreation/p_weapon_list.gd" id="50_deb4u"]
-[ext_resource type="Script" path="res://Scripts/CharacterCreation/equipment_list.gd" id="50_kdp8w"]
-[ext_resource type="Script" path="res://Scripts/CharacterCreation/s_weapon_list.gd" id="52_v3iga"]
+[ext_resource type="Script" uid="uid://co3dycsyqv6ap" path="res://Scripts/CharacterCreation/armor_list.gd" id="50_7mc0y"]
+[ext_resource type="Script" uid="uid://mx8mfwor421u" path="res://Scripts/CharacterCreation/p_weapon_list.gd" id="50_deb4u"]
+[ext_resource type="Script" uid="uid://dfemyf8r5ay1p" path="res://Scripts/CharacterCreation/equipment_list.gd" id="50_kdp8w"]
+[ext_resource type="Script" uid="uid://cutrjksidwmox" path="res://Scripts/CharacterCreation/s_weapon_list.gd" id="52_v3iga"]
+[ext_resource type="StyleBox" uid="uid://dic645d200g74" path="res://Resources/GUIStyles/character_sheet_stylebox.tres" id="55_cu4qg"]
+[ext_resource type="Script" uid="uid://brw0h6t6ssxf" path="res://Scripts/CharacterCreation/clank_feature_window.gd" id="55_q4mme"]
 
 [sub_resource type="Resource" id="Resource_7bny4"]
 script = ExtResource("7_5fs0t")
@@ -726,6 +728,102 @@ grow_vertical = 2
 text = "Invalid character data."
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="PurposefulDesignWindow" type="Window" parent="." unique_id=10576106]
+oversampling_override = 1.0
+title = "Clank Feature: Purposeful Design"
+initial_position = 2
+size = Vector2i(800, 560)
+visible = false
+unresizable = true
+script = ExtResource("55_q4mme")
+
+[node name="InstructionsLabel" type="Label" parent="PurposefulDesignWindow" unique_id=961422956]
+custom_minimum_size = Vector2(650, 0)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -325.0
+offset_top = 100.0
+offset_right = 325.0
+offset_bottom = 227.0
+grow_horizontal = 2
+text = "Those of the Clank ancestry possess the Purposeful Design Feature.
+
+Decide who made you and for what purpose. Choose one of your Experiences that best aligns with this purpose and gain a permanent +1 bonus to it."
+autowrap_mode = 2
+
+[node name="ExperiencesVBox" type="VBoxContainer" parent="PurposefulDesignWindow" unique_id=1105211492]
+anchors_preset = -1
+anchor_left = 0.27875
+anchor_top = 0.5
+anchor_right = 0.72125
+anchor_bottom = 0.7
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="Experience1" type="PanelContainer" parent="PurposefulDesignWindow/ExperiencesVBox" unique_id=1506218913]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("55_cu4qg")
+
+[node name="ExperienceHBox" type="HBoxContainer" parent="PurposefulDesignWindow/ExperiencesVBox/Experience1" unique_id=2041004088]
+custom_minimum_size = Vector2(350, 50)
+layout_mode = 2
+
+[node name="ExperienceLabel" type="Label" parent="PurposefulDesignWindow/ExperiencesVBox/Experience1/ExperienceHBox" unique_id=1259549019]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Experience 1 Lorem Ipsum"
+vertical_alignment = 1
+
+[node name="CheckBox" type="CheckBox" parent="PurposefulDesignWindow/ExperiencesVBox/Experience1/ExperienceHBox" unique_id=992707339]
+layout_mode = 2
+
+[node name="Experience2" type="PanelContainer" parent="PurposefulDesignWindow/ExperiencesVBox" unique_id=670889499]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("55_cu4qg")
+
+[node name="ExperienceHBox" type="HBoxContainer" parent="PurposefulDesignWindow/ExperiencesVBox/Experience2" unique_id=1273784538]
+custom_minimum_size = Vector2(350, 50)
+layout_mode = 2
+
+[node name="ExperienceLabel" type="Label" parent="PurposefulDesignWindow/ExperiencesVBox/Experience2/ExperienceHBox" unique_id=1843932008]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Experience 2 Dolor Sit Amet"
+vertical_alignment = 1
+
+[node name="CheckBox" type="CheckBox" parent="PurposefulDesignWindow/ExperiencesVBox/Experience2/ExperienceHBox" unique_id=161287099]
+layout_mode = 2
+
+[node name="ButtonsContainer" type="HBoxContainer" parent="PurposefulDesignWindow" unique_id=1160410219]
+anchors_preset = -1
+anchor_left = 0.42524272
+anchor_top = 0.89285713
+anchor_right = 0.5747573
+anchor_bottom = 0.96428573
+offset_left = -20.194183
+offset_right = 20.194183
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_constants/separation = 10
+metadata/_edit_use_anchors_ = true
+
+[node name="ConfirmButton" type="Button" parent="PurposefulDesignWindow/ButtonsContainer" unique_id=1194510852]
+custom_minimum_size = Vector2(75, 40)
+layout_mode = 2
+size_flags_vertical = 4
+text = "Confirm"
+
+[node name="CancelButton" type="Button" parent="PurposefulDesignWindow/ButtonsContainer" unique_id=1195967952]
+custom_minimum_size = Vector2(75, 40)
+layout_mode = 2
+size_flags_vertical = 4
+text = "Cancel"
 
 [connection signal="item_selected" from="OptionLists/TraitAssignmentContainer/ModifierContainer/AgiModifierOptions" to="OptionLists/TraitAssignmentContainer/ModifierContainer" method="_on_agi_modifier_options_item_selected"]
 [connection signal="item_selected" from="OptionLists/TraitAssignmentContainer/ModifierContainer/StrModifierOptions" to="OptionLists/TraitAssignmentContainer/ModifierContainer" method="_on_str_modifier_options_item_selected"]

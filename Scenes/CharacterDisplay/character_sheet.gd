@@ -29,8 +29,8 @@ extends Control
 @onready var rest_confirm_button: Button = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/RestButtons/RestWindow/RestUI/ConfirmButton
 @onready var dice_roll_window: Window = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/DiceButtons/DiceRollWindow
 @onready var fh_roll_window: Window = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/DiceButtons/FHRollWindow
-@onready var evasion_value: Label = $BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/MarginContainer/HBoxContainer/Evasion/FieldContainer/MarginContainer/FieldValue
-@onready var proficiency_value: Label = $BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/MarginContainer/HBoxContainer/Proficiency/FieldContainer/MarginContainer/FieldValue
+@onready var evasion_value: Label = $BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EvasionProficiencyMargin/HBoxContainer/Evasion/FieldContainer/MarginContainer/FieldValue
+@onready var proficiency_value: Label = $BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EvasionProficiencyMargin/HBoxContainer/Proficiency/FieldContainer/MarginContainer/FieldValue
 @onready var major_threshold_value: Label = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/DamageThresholds/HBoxContainer/MajorThreshold/FieldContainer/MarginContainer/FieldValue
 @onready var severe_threshold_value: Label = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/DamageThresholds/HBoxContainer/SevereThreshold/FieldContainer/MarginContainer/FieldValue
 
@@ -77,6 +77,9 @@ extends Control
 @onready var community_panel = $HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/CommunityPanelContainer
 @onready var information_popup = $InformationPopup
 
+@onready var equipment_window = $EquipmentWindow
+@onready var experiences_container = $BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/Experiences
+
 var updated = false
 var shortRestCounter = 0
 var character: Character 
@@ -90,6 +93,7 @@ func enter() -> void:
 	dice_roll_window.visible = false
 	fh_roll_window.visible = false
 	levelup_confirmation_panel.visible = false
+	equipment_window.visible = false
 	update_edit_fields()
 	update_equipment_display()
 	connect_signals()
@@ -106,6 +110,8 @@ func enter() -> void:
 	save_manager.set_character(character)
 	save_manager.save_character_data()
 
+	experiences_container.set_level_values(character)
+	experiences_container.set_visible_experiences(character)
 
 func _process(_delta: float) -> void:
 	if(updated==false and character.character_name!=""):
@@ -114,6 +120,24 @@ func _process(_delta: float) -> void:
 	check_tier_achievements_threshold()
 		
 func update_equipment_display() -> void:
+	# handle display of actual equipment
+	var primaryPanel = $BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentMargin/EquipmentVBox/PrimaryWeapon
+	var secondaryPanel = $BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentMargin/EquipmentVBox/SecondaryWeapon
+	var armorPanel = $BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentMargin/EquipmentVBox/Armor
+	
+	primaryPanel.get_child(0).get_node("EquipmentName").text = character.get_primary_name()
+	primaryPanel.get_child(0).get_node("EquipmentInfo").text = character.get_primary_info()
+	armorPanel.get_child(0).get_node("EquipmentName").text = character.get_armor_name()
+	armorPanel.get_child(0).get_node("EquipmentInfo").text = character.get_armor_info()
+	
+	if (character.get_secondary_name()==""):
+		secondaryPanel.hide()
+	else:
+		secondaryPanel.get_child(0).get_node("EquipmentName").text = character.get_secondary_name()
+		secondaryPanel.get_child(0).get_node("EquipmentInfo").text = character.get_secondary_info()
+		secondaryPanel.show()
+	
+	# handle stat changes due to equipment changes
 	major_threshold_value.set_text(str(character.damage_thresholds[0]))
 	severe_threshold_value.set_text(str(character.damage_thresholds[1]))
 	evasion_value.set_text(str(character.evasion))
@@ -123,7 +147,6 @@ func update_markable_fields() -> void:
 	stress_field.set_current_value(str(character.current_stress))
 	hope_field.set_current_value(str(character.current_hope))
 	armor_field.set_current_value(str(character.used_armor_slots))
-	
 
 func update_edit_fields() -> void:
 	name_edit.set_text(str(character.character_name))
@@ -405,6 +428,11 @@ func connect_signals() -> void:
 	ancestry_panel.mouse_exited.connect(_on_mouse_exit_header_panel)
 	community_panel.mouse_exited.connect(_on_mouse_exit_header_panel)
 
+	var manage_equipment_button = $BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentMargin/EquipmentVBox/ManageEquipment
+	manage_equipment_button.pressed.connect(_on_equipment_management_button_pressed)
+	
+	experiences_container.exp_level_changed.connect(_on_exp_level_changed)
+
 func disable_button_selection(b: bool) -> void:
 	short_rest_button.disabled = b
 	long_rest_button.disabled = b
@@ -481,3 +509,10 @@ func _on_mouse_enter_community_panel():
 
 func _on_mouse_exit_header_panel():
 	information_popup.hide()
+
+func _on_equipment_management_button_pressed():
+	equipment_window.showWindow(self.character)
+
+func _on_exp_level_changed(which_exp: int, new_val: int):
+	var current_val = character.experience_levels[which_exp-1]
+	character.update_experience_level(which_exp, new_val-current_val)

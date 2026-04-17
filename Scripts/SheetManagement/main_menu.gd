@@ -9,7 +9,7 @@ extends Control
 @onready var test_button: Button = $Button
 @onready var save_manager = $SaveManager
 @onready var grid_container = $ScrollContainer/GridContainer
-@onready var options_popup: PanelContainer = $OptionsPopupMenu
+@onready var options_popup = $OptionsPopupMenu
 @onready var searchbar: LineEdit = $Header/LineEdit
 
 

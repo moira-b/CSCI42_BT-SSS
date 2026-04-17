@@ -1,5 +1,7 @@
 extends ItemList
 
+signal armor_item_selected()
+
 var character: Character
 var armor_dict: Dictionary
 var armor_array: Array
@@ -23,7 +25,7 @@ func _ready() -> void:
 	
 func _on_item_selected(_index: int) -> void:
 	selected_armor = armor_array[_index]
-	
+	armor_item_selected.emit()
 
 func get_selected_armor():
 	return selected_armor
