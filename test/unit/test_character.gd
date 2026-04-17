@@ -17,6 +17,10 @@ func test_max_level():
 	# this test will pass because 1 does equal 1
 	assert_eq(character.max_level, 10, "Character's max level should be 10.")
 
+func test_character_class():
+	var char_class = character.character_class.name
+	assert_true(char_class == "Rogue")
+
 func test_invalid_level():
 	var invalid_lvl = character.set_level(-1)
 	assert_false(invalid_lvl)
