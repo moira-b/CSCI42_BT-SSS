@@ -614,7 +614,6 @@ same_column_width = true
 script = ExtResource("52_v3iga")
 
 [node name="NamePronounContainer" type="HBoxContainer" parent="OptionLists" unique_id=989217177]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
