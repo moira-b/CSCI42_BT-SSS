@@ -5,6 +5,7 @@
 [node name="Character" type="Node" unique_id=1371470097]
 script = ExtResource("1_vu0vm")
 level = 1
+current_hope = 2
 max_domain_cards = 2
 
 [node name="ActiveDomainCards" type="Node" parent="." unique_id=26493145]
