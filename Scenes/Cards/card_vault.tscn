@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dfbxwl184hc6o"]
 
 [ext_resource type="Script" uid="uid://d1jdm4hdlps4l" path="res://Scripts/Cards/card_vault.gd" id="1_7vdci"]
+[ext_resource type="PackedScene" uid="uid://dmmky0qgq613p" path="res://Scenes/Cards/card_counter_holder.tscn" id="3_ldfuo"]
 [ext_resource type="PackedScene" uid="uid://cknxpivnpwbxd" path="res://Scenes/Cards/domain_card_base.tscn" id="3_n8krj"]
 
 [node name="CardVault" type="Control" unique_id=1159311945]
@@ -38,7 +39,7 @@ offset_top = -176.0
 offset_right = 130.0
 offset_bottom = 176.0
 
-[node name="ActiveCards" type="HBoxContainer" parent="." unique_id=520518874]
+[node name="ActiveCardContainer" type="HBoxContainer" parent="." unique_id=520518874]
 layout_mode = 0
 offset_left = 4.0
 offset_top = 29.999998
@@ -47,29 +48,24 @@ offset_bottom = 380.0
 scale = Vector2(0.8940905, 0.8940905)
 theme_override_constants/separation = 7
 
-[node name="DomainCard" parent="ActiveCards" unique_id=1517906148 instance=ExtResource("3_n8krj")]
+[node name="CardCounterHolder" parent="ActiveCardContainer" unique_id=622011280 instance=ExtResource("3_ldfuo")]
 visible = false
-custom_minimum_size = Vector2(250, 350)
 layout_mode = 2
 
-[node name="DomainCard2" parent="ActiveCards" unique_id=1197342788 instance=ExtResource("3_n8krj")]
+[node name="CardCounterHolder2" parent="ActiveCardContainer" unique_id=356223036 instance=ExtResource("3_ldfuo")]
 visible = false
-custom_minimum_size = Vector2(250, 350)
 layout_mode = 2
 
-[node name="DomainCard3" parent="ActiveCards" unique_id=2010156359 instance=ExtResource("3_n8krj")]
+[node name="CardCounterHolder3" parent="ActiveCardContainer" unique_id=495840682 instance=ExtResource("3_ldfuo")]
 visible = false
-custom_minimum_size = Vector2(250, 350)
 layout_mode = 2
 
-[node name="DomainCard4" parent="ActiveCards" unique_id=547194531 instance=ExtResource("3_n8krj")]
+[node name="CardCounterHolder4" parent="ActiveCardContainer" unique_id=2058496043 instance=ExtResource("3_ldfuo")]
 visible = false
-custom_minimum_size = Vector2(250, 350)
 layout_mode = 2
 
-[node name="DomainCard5" parent="ActiveCards" unique_id=1363607818 instance=ExtResource("3_n8krj")]
+[node name="CardCounterHolder5" parent="ActiveCardContainer" unique_id=880520024 instance=ExtResource("3_ldfuo")]
 visible = false
-custom_minimum_size = Vector2(250, 350)
 layout_mode = 2
 
 [node name="SwapButton" type="Button" parent="." unique_id=161227211]
@@ -104,9 +100,4 @@ layout_mode = 2
 
 [connection signal="pressed" from="SheetButton" to="." method="_on_sheet_button_pressed"]
 [connection signal="item_selected" from="Vault" to="." method="_on_vault_item_selected"]
-[connection signal="selected" from="ActiveCards/DomainCard" to="." method="_on_domain_card_selected"]
-[connection signal="selected" from="ActiveCards/DomainCard2" to="." method="_on_domain_card_selected"]
-[connection signal="selected" from="ActiveCards/DomainCard3" to="." method="_on_domain_card_selected"]
-[connection signal="selected" from="ActiveCards/DomainCard4" to="." method="_on_domain_card_selected"]
-[connection signal="selected" from="ActiveCards/DomainCard5" to="." method="_on_domain_card_selected"]
 [connection signal="pressed" from="SwapButton" to="." method="_on_swap_button_pressed"]

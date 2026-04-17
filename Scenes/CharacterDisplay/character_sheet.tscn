@@ -11,8 +11,13 @@
 [ext_resource type="PackedScene" uid="uid://b6t3g5gxhwopj" path="res://Scenes/CharacterDisplay/fh_roll_window.tscn" id="6_8iwex"]
 [ext_resource type="Script" uid="uid://b3ypom2uq1exh" path="res://Scripts/CharacterDisplay/advancements.gd" id="7_56qfy"]
 [ext_resource type="PackedScene" uid="uid://1un73y3t3x7b" path="res://Scenes/Cards/domain_card_sel_container.tscn" id="8_8skux"]
+[ext_resource type="Script" uid="uid://by7ahmitbfup2" path="res://Scripts/CharacterDisplay/equipment_window.gd" id="10_7pq50"]
+[ext_resource type="Script" uid="uid://djod0suj342ks" path="res://Scripts/CharacterDisplay/experiences.gd" id="10_rj3pj"]
 [ext_resource type="Script" uid="uid://do0erpc6r8x0r" path="res://Scripts/CharacterDisplay/multiclass_choices.gd" id="11_2cjug"]
+[ext_resource type="Script" uid="uid://co3dycsyqv6ap" path="res://Scripts/CharacterCreation/armor_list.gd" id="11_7pq50"]
 [ext_resource type="Script" uid="uid://c6daeo616vuo3" path="res://Scripts/CharacterClasses/character_class.gd" id="12_ahdvs"]
+[ext_resource type="Script" uid="uid://mx8mfwor421u" path="res://Scripts/CharacterCreation/p_weapon_list.gd" id="12_rj3pj"]
+[ext_resource type="Script" uid="uid://cutrjksidwmox" path="res://Scripts/CharacterCreation/s_weapon_list.gd" id="13_48wf7"]
 [ext_resource type="Resource" uid="uid://cyaupb2xa2jvp" path="res://Resources/Classes/Bard/bard.tres" id="13_gjf7o"]
 [ext_resource type="Resource" uid="uid://blgr70q7oa266" path="res://Resources/Classes/Druid/druid.tres" id="14_7xnek"]
 [ext_resource type="Resource" uid="uid://b77s47x5y88rn" path="res://Resources/Classes/Guardian/guardian.tres" id="15_n4116"]
@@ -22,7 +27,7 @@
 [ext_resource type="Resource" uid="uid://hywukpwyumtp" path="res://Resources/Classes/Sorcerer/sorcerer.tres" id="19_rj3pj"]
 [ext_resource type="Resource" uid="uid://cfbttvs0d6csq" path="res://Resources/Classes/Warrior/warrior.tres" id="20_48wf7"]
 [ext_resource type="Resource" uid="uid://dac4f4ifpjnla" path="res://Resources/Classes/Wizard/wizard.tres" id="21_asla6"]
-[ext_resource type="Script" path="res://Scripts/CharacterDisplay/information_popup.gd" id="23_gjf7o"]
+[ext_resource type="Script" uid="uid://ddgbhwwl4fam4" path="res://Scripts/CharacterDisplay/information_popup.gd" id="23_gjf7o"]
 
 [sub_resource type="GDScript" id="GDScript_dg7yu"]
 script/source = "extends LineEdit
@@ -1065,26 +1070,26 @@ theme_override_styles/panel = ExtResource("2_c8oo5")
 [node name="VBoxContainer" type="VBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel" unique_id=345703533]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer" unique_id=1068692241]
+[node name="EvasionProficiencyMargin" type="MarginContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer" unique_id=1068692241]
 layout_mode = 2
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="HBoxContainer" type="HBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/MarginContainer" unique_id=1174515028]
+[node name="HBoxContainer" type="HBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EvasionProficiencyMargin" unique_id=1174515028]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="Evasion" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/MarginContainer/HBoxContainer" unique_id=288805226]
+[node name="Evasion" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EvasionProficiencyMargin/HBoxContainer" unique_id=288805226]
 custom_minimum_size = Vector2(125, 0)
 layout_mode = 2
 theme_override_styles/panel = ExtResource("2_c8oo5")
 
-[node name="FieldContainer" type="VBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/MarginContainer/HBoxContainer/Evasion" unique_id=1737631886]
+[node name="FieldContainer" type="VBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EvasionProficiencyMargin/HBoxContainer/Evasion" unique_id=1737631886]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/MarginContainer/HBoxContainer/Evasion/FieldContainer" unique_id=666988413]
+[node name="MarginContainer" type="MarginContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EvasionProficiencyMargin/HBoxContainer/Evasion/FieldContainer" unique_id=666988413]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 15
@@ -1092,33 +1097,33 @@ theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 5
 
-[node name="FieldValue" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/MarginContainer/HBoxContainer/Evasion/FieldContainer/MarginContainer" unique_id=506780720]
+[node name="FieldValue" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EvasionProficiencyMargin/HBoxContainer/Evasion/FieldContainer/MarginContainer" unique_id=506780720]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "0"
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/MarginContainer/HBoxContainer/Evasion/FieldContainer" unique_id=1268304785]
+[node name="PanelContainer" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EvasionProficiencyMargin/HBoxContainer/Evasion/FieldContainer" unique_id=1268304785]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_gjf7o")
 
-[node name="FieldLabel" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/MarginContainer/HBoxContainer/Evasion/FieldContainer/PanelContainer" unique_id=514784411]
+[node name="FieldLabel" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EvasionProficiencyMargin/HBoxContainer/Evasion/FieldContainer/PanelContainer" unique_id=514784411]
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
 text = "Evasion"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Proficiency" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/MarginContainer/HBoxContainer" unique_id=1168794863]
+[node name="Proficiency" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EvasionProficiencyMargin/HBoxContainer" unique_id=1168794863]
 custom_minimum_size = Vector2(125, 0)
 layout_mode = 2
 theme_override_styles/panel = ExtResource("2_c8oo5")
 
-[node name="FieldContainer" type="VBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/MarginContainer/HBoxContainer/Proficiency" unique_id=843835469]
+[node name="FieldContainer" type="VBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EvasionProficiencyMargin/HBoxContainer/Proficiency" unique_id=843835469]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/MarginContainer/HBoxContainer/Proficiency/FieldContainer" unique_id=1882655637]
+[node name="MarginContainer" type="MarginContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EvasionProficiencyMargin/HBoxContainer/Proficiency/FieldContainer" unique_id=1882655637]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 15
@@ -1126,18 +1131,18 @@ theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 5
 
-[node name="FieldValue" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/MarginContainer/HBoxContainer/Proficiency/FieldContainer/MarginContainer" unique_id=1216961648]
+[node name="FieldValue" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EvasionProficiencyMargin/HBoxContainer/Proficiency/FieldContainer/MarginContainer" unique_id=1216961648]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "0"
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/MarginContainer/HBoxContainer/Proficiency/FieldContainer" unique_id=1289074487]
+[node name="PanelContainer" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EvasionProficiencyMargin/HBoxContainer/Proficiency/FieldContainer" unique_id=1289074487]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_gjf7o")
 
-[node name="FieldLabel" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/MarginContainer/HBoxContainer/Proficiency/FieldContainer/PanelContainer" unique_id=905060961]
+[node name="FieldLabel" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EvasionProficiencyMargin/HBoxContainer/Proficiency/FieldContainer/PanelContainer" unique_id=905060961]
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
 text = "Proficiency"
@@ -1149,29 +1154,26 @@ layout_mode = 2
 text = "Active Equipment"
 horizontal_alignment = 1
 
-[node name="EquipmentVBox" type="VBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer" unique_id=1922272708]
-layout_mode = 2
-theme_override_constants/separation = 8
-
-[node name="PrimaryWeapon" type="MarginContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentVBox" unique_id=603031627]
+[node name="EquipmentMargin" type="MarginContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer" unique_id=925309888]
 layout_mode = 2
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_right = 5
 
-[node name="PanelContainer" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentVBox/PrimaryWeapon" unique_id=772604663]
+[node name="EquipmentVBox" type="VBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentMargin" unique_id=1922272708]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="PrimaryWeapon" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentMargin/EquipmentVBox" unique_id=772604663]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ahdvs")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentVBox/PrimaryWeapon/PanelContainer" unique_id=22400591]
-layout_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentVBox/PrimaryWeapon/PanelContainer/HBoxContainer" unique_id=2040415458]
+[node name="PrimaryVBox" type="VBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentMargin/EquipmentVBox/PrimaryWeapon" unique_id=2040415458]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 
-[node name="EquipmentName" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentVBox/PrimaryWeapon/PanelContainer/HBoxContainer/VBoxContainer" unique_id=1948472190]
+[node name="EquipmentName" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentMargin/EquipmentVBox/PrimaryWeapon/PrimaryVBox" unique_id=1948472190]
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1180,36 +1182,22 @@ text = "Improved Arcane Gauntlets"
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="EquipmentInfo" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentVBox/PrimaryWeapon/PanelContainer/HBoxContainer/VBoxContainer" unique_id=2071509090]
+[node name="EquipmentInfo" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentMargin/EquipmentVBox/PrimaryWeapon/PrimaryVBox" unique_id=2071509090]
 layout_mode = 2
 text = "trait | range | dice"
 vertical_alignment = 1
 
-[node name="SwapButton" type="Button" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentVBox/PrimaryWeapon/PanelContainer/HBoxContainer" unique_id=1769994548]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-text = "[sw]"
-
-[node name="SecondaryWeapon" type="MarginContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentVBox" unique_id=35992915]
-layout_mode = 2
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_right = 5
-
-[node name="PanelContainer" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentVBox/SecondaryWeapon" unique_id=1873584734]
+[node name="SecondaryWeapon" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentMargin/EquipmentVBox" unique_id=1873584734]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ahdvs")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentVBox/SecondaryWeapon/PanelContainer" unique_id=1405323946]
-layout_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentVBox/SecondaryWeapon/PanelContainer/HBoxContainer" unique_id=518005630]
+[node name="SecondaryVBox" type="VBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentMargin/EquipmentVBox/SecondaryWeapon" unique_id=518005630]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 
-[node name="EquipmentName" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentVBox/SecondaryWeapon/PanelContainer/HBoxContainer/VBoxContainer" unique_id=1142608982]
+[node name="EquipmentName" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentMargin/EquipmentVBox/SecondaryWeapon/SecondaryVBox" unique_id=1142608982]
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1218,36 +1206,22 @@ text = "Legendary Arcane Gauntlets"
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="EquipmentInfo" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentVBox/SecondaryWeapon/PanelContainer/HBoxContainer/VBoxContainer" unique_id=636840962]
+[node name="EquipmentInfo" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentMargin/EquipmentVBox/SecondaryWeapon/SecondaryVBox" unique_id=636840962]
 layout_mode = 2
 text = "trait | range | dice"
 vertical_alignment = 1
 
-[node name="SwapButton" type="Button" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentVBox/SecondaryWeapon/PanelContainer/HBoxContainer" unique_id=633469310]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-text = "[sw]"
-
-[node name="Armor" type="MarginContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentVBox" unique_id=156305932]
-layout_mode = 2
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_right = 5
-
-[node name="PanelContainer" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentVBox/Armor" unique_id=1331826140]
+[node name="Armor" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentMargin/EquipmentVBox" unique_id=1331826140]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ahdvs")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentVBox/Armor/PanelContainer" unique_id=1629208116]
-layout_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentVBox/Armor/PanelContainer/HBoxContainer" unique_id=952742683]
+[node name="ArmorVBox" type="VBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentMargin/EquipmentVBox/Armor" unique_id=952742683]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 
-[node name="EquipmentName" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentVBox/Armor/PanelContainer/HBoxContainer/VBoxContainer" unique_id=1803456694]
+[node name="EquipmentName" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentMargin/EquipmentVBox/Armor/ArmorVBox" unique_id=1803456694]
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1256,16 +1230,14 @@ text = "Legendary Full Plate Armor"
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="EquipmentInfo" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentVBox/Armor/PanelContainer/HBoxContainer/VBoxContainer" unique_id=793626696]
+[node name="EquipmentInfo" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentMargin/EquipmentVBox/Armor/ArmorVBox" unique_id=793626696]
 layout_mode = 2
 text = "Tier 3"
 vertical_alignment = 1
 
-[node name="SwapButton" type="Button" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentVBox/Armor/PanelContainer/HBoxContainer" unique_id=892231882]
+[node name="ManageEquipment" type="Button" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentMargin/EquipmentVBox" unique_id=1821670160]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-text = "[sw]"
+text = "Manage Equipment"
 
 [node name="RightPanel" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer" unique_id=1912298009]
 custom_minimum_size = Vector2(300, 0)
@@ -1307,6 +1279,7 @@ wrap_mode = 1
 
 [node name="Experiences" type="VBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer" unique_id=2003283091]
 layout_mode = 2
+script = ExtResource("10_rj3pj")
 
 [node name="Label" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/Experiences" unique_id=908732964]
 layout_mode = 2
@@ -1600,6 +1573,102 @@ offset_bottom = -19.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Confirm"
+
+[node name="EquipmentWindow" type="Window" parent="." unique_id=1353525366]
+oversampling_override = 1.0
+title = "Manage Equipment"
+initial_position = 2
+size = Vector2i(1030, 560)
+visible = false
+script = ExtResource("10_7pq50")
+
+[node name="EquipmentList" type="HBoxContainer" parent="EquipmentWindow" unique_id=1421846324]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -286.0
+offset_top = -17.5
+offset_right = 286.0
+offset_bottom = 17.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ArmorContainer" type="VBoxContainer" parent="EquipmentWindow/EquipmentList" unique_id=1968655432]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="EquipmentWindow/EquipmentList/ArmorContainer" unique_id=606238855]
+layout_mode = 2
+text = "Armor"
+
+[node name="ArmorList" type="ItemList" parent="EquipmentWindow/EquipmentList/ArmorContainer" unique_id=1705313043]
+layout_mode = 2
+allow_search = false
+auto_width = true
+auto_height = true
+same_column_width = true
+script = ExtResource("11_7pq50")
+
+[node name="PWepContainer" type="VBoxContainer" parent="EquipmentWindow/EquipmentList" unique_id=1702573472]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="EquipmentWindow/EquipmentList/PWepContainer" unique_id=996851708]
+layout_mode = 2
+text = "Primary Weapons"
+
+[node name="PWepList" type="ItemList" parent="EquipmentWindow/EquipmentList/PWepContainer" unique_id=1968287863]
+layout_mode = 2
+allow_search = false
+auto_width = true
+auto_height = true
+max_columns = 3
+same_column_width = true
+script = ExtResource("12_rj3pj")
+
+[node name="SWepContainer" type="VBoxContainer" parent="EquipmentWindow/EquipmentList" unique_id=1589881909]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="EquipmentWindow/EquipmentList/SWepContainer" unique_id=1657759450]
+layout_mode = 2
+text = "Secondary Weapons"
+
+[node name="SWepList" type="ItemList" parent="EquipmentWindow/EquipmentList/SWepContainer" unique_id=1555651325]
+layout_mode = 2
+allow_search = false
+auto_width = true
+auto_height = true
+max_columns = 2
+same_column_width = true
+script = ExtResource("13_48wf7")
+
+[node name="ButtonsContainer" type="HBoxContainer" parent="EquipmentWindow" unique_id=1087079924]
+anchors_preset = -1
+anchor_left = 0.42524272
+anchor_top = 0.89285713
+anchor_right = 0.5747573
+anchor_bottom = 0.96428573
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_constants/separation = 10
+metadata/_edit_use_anchors_ = true
+
+[node name="ConfirmButton" type="Button" parent="EquipmentWindow/ButtonsContainer" unique_id=1575199687]
+custom_minimum_size = Vector2(75, 40)
+layout_mode = 2
+size_flags_vertical = 4
+text = "Confirm"
+
+[node name="CancelButton" type="Button" parent="EquipmentWindow/ButtonsContainer" unique_id=1832977913]
+custom_minimum_size = Vector2(75, 40)
+layout_mode = 2
+size_flags_vertical = 4
+text = "Cancel"
 
 [node name="InformationPopup" type="PanelContainer" parent="." unique_id=1815631795]
 visible = false

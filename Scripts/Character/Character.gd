@@ -4,6 +4,8 @@ class_name Character
 extends Node
 
 const FILE_PATH = "user://character_data"
+const WEAPON_PATH = "res://Resources/Equipment/weapons.json"
+const ARMOR_PATH = "res://Resources/Equipment/armor.json"
 
 const max_level: int = 10
 const max_hope: int = 6
@@ -26,7 +28,7 @@ const max_hope: int = 6
 @export var max_stress: int
 @export var current_stress: int
 @export var current_hope: int
-@export var items: Array[String]
+@export var items: Array[String]		#index 0: armor, 1: primary, 2: secondary
 @export var max_armor_slots: int
 @export var used_armor_slots: int
 @export var experiences: Array[String] = ["", "", "", "", ""]
@@ -50,6 +52,7 @@ var primary_key: String
 
 @onready var active_domain_cards = $ActiveDomainCards
 @onready var vaulted_domain_cards = $VaultedDomainCards
+var active_domain_card_counters = [0, 0, 0, 0, 0]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -187,7 +190,8 @@ func serialize_data():
 		"multiclass_domains": multiclass_domains,
 		"multiclass_subclasses": multiclass_subclasses,
 		"multiclass_selections": multiclass_selections,
-		"num_downtime_moves": num_downtime_moves
+		"num_downtime_moves": num_downtime_moves,
+		"active_domain_card_counters": active_domain_card_counters
 	}
 	return save_dict
 
@@ -231,11 +235,13 @@ func load_data(char_dict: Variant):
 	multiclass_subclasses.assign(char_dict["multiclass_subclasses"])
 	multiclass_selections.assign(char_dict["multiclass_selections"])
 	num_downtime_moves = char_dict["num_downtime_moves"]
+	active_domain_card_counters.assign(char_dict["active_domain_card_counters"])
 	
-func implement_ancestry_features():
+func implement_ancestry_features(pd_which_exp: int=-1):
 	if self.ancestry.ancestry_name=="Clank":
-		print("CLANK FEATURE IMPLEMENTED IN character_sheet.gd")
+		update_experience_level(pd_which_exp, 1)
 		print(character_name + " has a permanent +1 bonus to an experience due to Clank ancestry.")
+		print(experience_levels)
 	elif self.ancestry.ancestry_name=="Elf":
 		num_downtime_moves = 3
 		print(character_name + " permanently has an extra downtime move due to Elf ancestry.")
@@ -248,10 +254,24 @@ func implement_ancestry_features():
 	elif self.ancestry.ancestry_name=="Simiah":
 		evasion += 1
 		print(character_name + "'s evasion is automatically increased by 1 due to Simiah ancestry.")
-		
+
+func update_equipment(new_equipment: Array[String]):
+	if items[0]!=new_equipment[0]:
+		print("replacing armor")
+		unequip_armor(items[0])
+		equip_armor(new_equipment[0])
+	if items[1]!=new_equipment[1]:
+		print("replacing primary")
+		unequip_primary(items[1])
+		equip_primary(new_equipment[1])
+	if items[2]!=new_equipment[2]:
+		print("replacing secondary")
+		unequip_secondary(items[2])
+		equip_secondary(new_equipment[2])
+
 func equip_armor(armor: String):
 	print("equipped armor: " + armor)
-	var armor_as_text = FileAccess.get_file_as_string("res://Resources/Equipment/armor.json")
+	var armor_as_text = FileAccess.get_file_as_string(ARMOR_PATH)
 	var armor_as_dict = JSON.parse_string(armor_as_text)
 	
 	
@@ -260,6 +280,9 @@ func equip_armor(armor: String):
 		return
 		
 	max_armor_slots += armor_as_dict.get(armor).get("base_score")
+	
+	items[0] = armor
+	
 	damage_thresholds[0] += armor_as_dict.get(armor).get("major_threshold")
 	damage_thresholds[1] += armor_as_dict.get(armor).get("severe_threshold")
 		
@@ -286,11 +309,13 @@ func equip_armor(armor: String):
 	
 func unequip_armor(armor: String):
 	print("unequipped armor: " + armor)
-	var armor_as_text = FileAccess.get_file_as_string("res://Resources/Equipment/armor.json")
+	var armor_as_text = FileAccess.get_file_as_string(ARMOR_PATH)
 	var armor_as_dict = JSON.parse_string(armor_as_text)
 	
 	if(not armor_as_dict.get(armor)):
 		return
+		
+	items[0] = ""
 	
 	max_armor_slots -= armor_as_dict.get(armor).get("base_score")
 	damage_thresholds[0] -= armor_as_dict.get(armor).get("major_threshold")
@@ -326,6 +351,8 @@ func equip_primary(weapon: String):
 	if(not weapon_as_dict.get(weapon)):
 		return
 	
+	items[1] = weapon
+	
 	var feature = weapon_as_dict.get(weapon).get("feature")
 	
 	if(feature == "Massive" || feature == "Heavy"):
@@ -357,6 +384,8 @@ func unequip_primary(weapon: String):
 	if(not weapon_as_dict.get(weapon)):
 		return
 	
+	items[1] = ""
+	
 	var feature = weapon_as_dict.get(weapon).get("feature")
 	
 	if(feature == "Massive" || feature == "Heavy"):
@@ -384,6 +413,8 @@ func equip_secondary(weapon: String):
 	
 	if(not weapon_as_dict.get(weapon)):
 		return
+	
+	items[2] = weapon
 	
 	var feature = weapon_as_dict.get(weapon).get("feature")
 	
@@ -414,6 +445,8 @@ func unequip_secondary(weapon: String):
 	if(not weapon_as_dict.get(weapon)):
 		return
 	
+	items[2] = ""
+	
 	var feature = weapon_as_dict.get(weapon).get("feature")
 	
 	if(feature == "Massive" || feature == "Heavy"):
@@ -433,3 +466,67 @@ func unequip_secondary(weapon: String):
 	elif(feature == "Destructive"):
 		evasion += 1
 		agility += 1
+	
+
+func get_armor_name():
+	return items[0]
+
+func get_primary_name():
+	return items[1]
+
+func get_secondary_name():
+	return items[2]
+	
+func get_armor_info() -> String:
+	var armor = get_armor_name()
+	var armor_as_text = FileAccess.get_file_as_string(ARMOR_PATH)
+	var armor_as_dict = JSON.parse_string(armor_as_text)
+	
+	if(not armor_as_dict.get(armor)):
+		return "ERROR IN GETTING ARMOR INFO"
+	
+	var tier: int = armor_as_dict.get(armor).get("tier")
+	var base_score: int = armor_as_dict.get(armor).get("base_score")
+
+	var info = "Tier %d | Base Score %d" % [tier, base_score]
+	return info
+
+func get_primary_info() -> String:
+	var primary = get_primary_name()
+	var weapon_as_text = FileAccess.get_file_as_string(WEAPON_PATH)
+	var weapon_as_dict = JSON.parse_string(weapon_as_text)
+	
+	if(not weapon_as_dict.get(primary)):
+		return "ERROR IN GETTING PRIMARY INFO"
+	
+	var damageType = weapon_as_dict.get(primary).get("damage_type")
+	var range = weapon_as_dict.get(primary).get("range")
+	var rollTrait = weapon_as_dict.get(primary).get("trait")
+	var damageDie: int = weapon_as_dict.get(primary).get("damage_die")
+
+	var info = "%s | %s | %s | d%d" % [damageType, range, rollTrait, damageDie]
+	return info
+
+func get_secondary_info() -> String:
+	var secondary = get_secondary_name()
+	var weapon_as_text = FileAccess.get_file_as_string(WEAPON_PATH)
+	var weapon_as_dict = JSON.parse_string(weapon_as_text)
+	
+	if(not weapon_as_dict.get(secondary)):
+		return "ERROR IN GETTING SECONDARY INFO"
+	
+	var damageType = weapon_as_dict.get(secondary).get("damage_type")
+	var range = weapon_as_dict.get(secondary).get("range")
+	var rollTrait = weapon_as_dict.get(secondary).get("trait")
+	var damageDie: int = weapon_as_dict.get(secondary).get("damage_die")
+
+	var info = "%s | %s | %s | d%d" % [damageType, range, rollTrait, damageDie]
+	return info
+
+func update_experience_level(which_exp: int, change_amt: int):
+	var exp_index = which_exp -1
+	if (exp_index < 0) || (exp_index > len(experience_levels)-1):
+		print("ERROR in set_experience_level. Trying to access unexpected exp index.")
+		return
+	
+	experience_levels[exp_index] += change_amt
