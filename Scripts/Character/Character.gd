@@ -237,10 +237,11 @@ func load_data(char_dict: Variant):
 	num_downtime_moves = char_dict["num_downtime_moves"]
 	active_domain_card_counters.assign(char_dict["active_domain_card_counters"])
 	
-func implement_ancestry_features():
+func implement_ancestry_features(pd_which_exp: int=-1):
 	if self.ancestry.ancestry_name=="Clank":
-		print("CLANK FEATURE IMPLEMENTED IN character_sheet.gd")
+		update_experience_level(pd_which_exp, 1)
 		print(character_name + " has a permanent +1 bonus to an experience due to Clank ancestry.")
+		print(experience_levels)
 	elif self.ancestry.ancestry_name=="Elf":
 		num_downtime_moves = 3
 		print(character_name + " permanently has an extra downtime move due to Elf ancestry.")
@@ -521,3 +522,11 @@ func get_secondary_info() -> String:
 
 	var info = "%s | %s | %s | d%d" % [damageType, range, rollTrait, damageDie]
 	return info
+
+func update_experience_level(which_exp: int, change_amt: int):
+	var exp_index = which_exp -1
+	if (exp_index < 0) || (exp_index > len(experience_levels)-1):
+		print("ERROR in set_experience_level. Trying to access unexpected exp index.")
+		return
+	
+	experience_levels[exp_index] += change_amt
