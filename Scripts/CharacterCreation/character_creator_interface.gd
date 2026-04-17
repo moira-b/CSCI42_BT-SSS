@@ -133,7 +133,7 @@ func _on_complete_button_pressed() -> void:
 			character.set_maximum_health()
 			character.set_maximum_stress()
 			character.set_maximum_armor_slots()
-			character.implement_ancestry_features()
+			character.implement_ancestry_features(purposeful_design_chosen)
 			character.set_base_evasion()
 			character.equip_armor(character.items[0])
 			character.equip_primary(character.items[1])

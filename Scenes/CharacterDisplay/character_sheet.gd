@@ -78,6 +78,7 @@ extends Control
 @onready var information_popup = $InformationPopup
 
 @onready var equipment_window = $EquipmentWindow
+@onready var experiences_container = $BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/Experiences
 
 var updated = false
 var shortRestCounter = 0
@@ -109,6 +110,7 @@ func enter() -> void:
 	save_manager.set_character(character)
 	save_manager.save_character_data()
 
+	experiences_container.set_level_values(character)
 
 func _process(_delta: float) -> void:
 	if(updated==false and character.character_name!=""):
@@ -427,6 +429,8 @@ func connect_signals() -> void:
 
 	var manage_equipment_button = $BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentMargin/EquipmentVBox/ManageEquipment
 	manage_equipment_button.pressed.connect(_on_equipment_management_button_pressed)
+	
+	experiences_container.exp_level_changed.connect(_on_exp_level_changed)
 
 func disable_button_selection(b: bool) -> void:
 	short_rest_button.disabled = b
@@ -507,3 +511,7 @@ func _on_mouse_exit_header_panel():
 
 func _on_equipment_management_button_pressed():
 	equipment_window.showWindow(self.character)
+
+func _on_exp_level_changed(which_exp: int, new_val: int):
+	var current_val = character.experience_levels[which_exp-1]
+	character.update_experience_level(which_exp, new_val-current_val)
