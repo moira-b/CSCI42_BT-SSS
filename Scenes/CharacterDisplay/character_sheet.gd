@@ -111,6 +111,7 @@ func enter() -> void:
 	save_manager.save_character_data()
 
 	experiences_container.set_level_values(character)
+	experiences_container.set_visible_experiences(character)
 
 func _process(_delta: float) -> void:
 	if(updated==false and character.character_name!=""):
