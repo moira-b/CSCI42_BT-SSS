@@ -69,6 +69,18 @@ func change_card(name: String):
 func _set_color(domain: String):
 	var color_to = colors_dict.get(domain)
 	domain_color_box.color = color_to
+	if color_to == DomainColor.DC_BONE:
+		name_label.set("theme_override_colors/font_color", Color(0, 0, 0, 1))
+		level_label.set("theme_override_colors/font_color", Color(0, 0, 0, 1))
+		domain_label.set("theme_override_colors/font_color", Color(0, 0, 0, 1))
+		recall_cost_label.set("theme_override_colors/font_color", Color(0, 0, 0, 1))
+		type_label.set("theme_override_colors/font_color", Color(0, 0, 0, 1))
+	else:
+		name_label.set("theme_override_colors/font_color", Color(1, 1, 1, 1))
+		level_label.set("theme_override_colors/font_color", Color(1, 1, 1, 1))
+		domain_label.set("theme_override_colors/font_color", Color(1, 1, 1, 1))
+		recall_cost_label.set("theme_override_colors/font_color", Color(1, 1, 1, 1))
+		type_label.set("theme_override_colors/font_color", Color(1, 1, 1, 1))
 
 func toggle_highlight(option: bool):
 	is_selected = option

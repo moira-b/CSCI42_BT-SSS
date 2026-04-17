@@ -207,13 +207,12 @@ func _on_bio_text_changed() -> void:
 
 
 func _on_name_edit_text_submitted(new_text):
-	character.character_name = new_text
-	print(character.character_name)
+	print(character.set_character_name(new_text))
+	name_edit.text = character.character_name
 
-
-func _on_name_edit_text_changed(new_text: String) -> void:
-	character.character_name = new_text
-
+func _on_name_edit_focus_exited():
+	print(character.set_character_name(name_edit.text))
+	name_edit.text = character.character_name
 
 func _on_trait_text_submitted(new_val: int, trait_name: String) -> void:
 	if (trait_name == "Agility"):
@@ -432,6 +431,9 @@ func connect_signals() -> void:
 	manage_equipment_button.pressed.connect(_on_equipment_management_button_pressed)
 	
 	experiences_container.exp_level_changed.connect(_on_exp_level_changed)
+
+	name_edit.focus_exited.connect(_on_name_edit_focus_exited)
+	name_edit.text_submitted.connect(_on_name_edit_text_submitted)
 
 func disable_button_selection(b: bool) -> void:
 	short_rest_button.disabled = b

@@ -59,7 +59,11 @@ func _process(_delta: float) -> void:
 			confirm_button.disabled = false
 	elif active_option_tab.name == "NamePronounContainer" and active_option_tab.is_all_textboxes_filled():
 			complete_button.disabled = false
-			
+	
+	if character.character_class == null:
+		tab_buttons[1].disabled = true
+	else:
+		tab_buttons[1].disabled = false
 
 func _set_active_option_tab(_index: int):
 	'''
