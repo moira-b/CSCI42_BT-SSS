@@ -10,6 +10,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ui6cb")
+num_columns = 6
+amount_total = 13
 
 [node name="DecrementButton" type="Button" parent="." unique_id=951567152]
 custom_minimum_size = Vector2(30, 0)

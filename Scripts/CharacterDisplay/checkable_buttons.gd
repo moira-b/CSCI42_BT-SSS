@@ -1,13 +1,12 @@
 extends HBoxContainer
 
-const MAX_DIMENSIONS: Vector2 = Vector2(30, 30)
-
-@export var num_columns: int = 6
-@export var amount_pressed: int = 0
+@export var checkable_max_dimensions: Vector2 = Vector2(30, 30)
+@export var num_columns: int
 @export var amount_total: int = 12
 
 @onready var checkables_vbox = $CheckablesVBox
 
+var amount_pressed: int = 0
 var checked_texture: Texture2D
 var unchecked_texture: Texture2D
 var checkables_array: Array
@@ -65,8 +64,10 @@ func _on_checkable_pressed(was_clicked: TextureButton):
 	print(amount_pressed)
 
 func _setup_checkables():
-	for i in range(int(amount_total/num_columns)):
+	var num_rows = (int(amount_total/num_columns))+1
+	for i in range(num_rows):
 		checkables_vbox.add_child(HBoxContainer.new())
+		print(i)
 	
 	var hboxes_array = checkables_vbox.get_children()
 	var checkables_instantiated: int = 0
@@ -78,11 +79,11 @@ func _setup_checkables():
 		new_checkable.set_texture_pressed(checked_texture)
 		new_checkable.set_ignore_texture_size(true)
 		new_checkable.set_stretch_mode(TextureButton.STRETCH_SCALE)
-		new_checkable.set_custom_minimum_size(MAX_DIMENSIONS)	
+		new_checkable.set_custom_minimum_size(checkable_max_dimensions)	
 		new_checkable.set_toggle_mode(true)
 		new_checkable.pressed.connect(_on_checkable_pressed.bind(new_checkable))
 		
-		var hbox_index = int(checkables_instantiated/6)
+		var hbox_index = int(checkables_instantiated/num_columns)
 		hboxes_array[hbox_index].add_child(new_checkable)
 		checkables_instantiated += 1
 
