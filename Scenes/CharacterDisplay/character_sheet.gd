@@ -16,10 +16,6 @@ extends Control
 @onready var experience4 : LineEdit = $BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/Experiences/Experience4/Experience4
 @onready var experience5 : LineEdit = $BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/Experiences/Experience5/Experience5
 
-#@onready var health_field = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Health
-#@onready var stress_field = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Stress
-##@onready var armor_field = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Armor
-#@onready var hope_field = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Hope
 @onready var ancestry_field = $HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/AncestryPanelContainer/Ancestry/Ancestry
 @onready var community_field = $HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/CommunityPanelContainer/Community/Community
 @onready var class_field = $HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/ClassPanelContainer/Class/Class
@@ -154,11 +150,6 @@ func update_equipment_display() -> void:
 	evasion_value.set_text(str(character.evasion))
 	
 func update_markable_fields() -> void:
-	#health_field.set_current_value(str(character.current_hp))
-	#stress_field.set_current_value(str(character.current_stress))
-	#hope_field.set_current_value(str(character.current_hope))
-	#armor_field.set_current_value(str(character.used_armor_slots))
-
 	health_checkables.set_amount_toggled(character.current_hp)
 	health_checkables.set_maximum_toggled(character.max_hp)
 	stress_checkables.set_amount_toggled(character.current_stress)
@@ -260,36 +251,6 @@ func _on_trait_text_submitted(new_val: int, trait_name: String) -> void:
 		knowledge_field.value = character.knowledge
 		print("knowledge: " + str(character.knowledge))
 
-
-#func _on_stat_increment_pressed(stat_name: String) -> void:
-	#if(stat_name=="Health"):
-		#if character.set_current_health(character.current_hp+1):
-			#health_field.set_current_value(str(character.current_hp))
-	#elif(stat_name=="Stress"):
-		#if character.set_current_stress(character.current_stress+1):
-			#stress_field.set_current_value(str(character.current_stress))
-	##elif(stat_name=="Armor"):
-		##if character.set_used_armor_slots(character.used_armor_slots+1):
-			##armor_field.set_current_value(str(character.used_armor_slots))
-	#elif(stat_name=="Hope"):
-		#if character.set_current_hope(character.current_hope+1):
-			#hope_field.set_current_value(str(character.current_hope))
-
-
-#func _on_stat_decrement_pressed(stat_name: String) -> void:
-	#if(stat_name=="Health"):
-		#if character.set_current_health(character.current_hp-1):
-			#health_field.set_current_value(str(character.current_hp))
-	#elif(stat_name=="Stress"):
-		#if character.set_current_stress(character.current_stress-1):
-			#stress_field.set_current_value(str(character.current_stress))
-	##elif(stat_name=="Armor"):
-		##if character.set_used_armor_slots(character.used_armor_slots-1):
-			##armor_field.set_current_value(str(character.used_armor_slots))
-	#elif(stat_name=="Hope"):
-		#if character.set_current_hope(character.current_hope-1):
-			#hope_field.set_current_value(str(character.current_hope))
-
 func _on_markable_stat_pressed(new_value: int, stat_name: String) -> void:
 	if(stat_name=="Health"):
 		character.set_current_health(new_value)
@@ -387,14 +348,11 @@ func _on_fh_roll_window_close_requested() -> void:
 	if fh_roll_window.latest_outcome=="Hope":
 		character.set_current_hope(character.current_hope + 1)
 		hope_checkables.set_amount_toggled(character.current_hope)
-		#hope_field.set_current_value(str(character.current_hope))
 	elif fh_roll_window.latest_outcome=="Crit":
 		character.set_current_hope(character.current_hope + 1)
 		hope_checkables.set_amount_toggled(character.current_hope)
-		#hope_field.set_current_value(str(character.current_hope))
 		character.set_current_stress(character.current_stress - 1)
 		stress_checkables.set_amount_toggled(character.current_stress)
-		#stress_field.set_current_value(str(character.current_stress))
 
 func _on_confirm_button_pressed() -> void:
 	rest_window.hide()
@@ -427,15 +385,6 @@ func _on_levelup_cancel_pressed() -> void:
 func connect_signals() -> void:
 	for field in all_traits:
 		field.value_changed.connect(_on_trait_text_submitted.bind(field.get_parent().name))
-	
-	#health_field.stat_increment_pressed.connect(_on_stat_increment_pressed)
-	#health_field.stat_decrement_pressed.connect(_on_stat_decrement_pressed)
-	#stress_field.stat_increment_pressed.connect(_on_stat_increment_pressed)
-	#stress_field.stat_decrement_pressed.connect(_on_stat_decrement_pressed)
-	##armor_field.stat_increment_pressed.connect(_on_stat_increment_pressed)
-	##armor_field.stat_decrement_pressed.connect(_on_stat_decrement_pressed)
-	#hope_field.stat_increment_pressed.connect(_on_stat_increment_pressed)
-	#hope_field.stat_decrement_pressed.connect(_on_stat_decrement_pressed)
 	
 	short_rest_button.pressed.connect(_on_short_rest_pressed)
 	long_rest_button.pressed.connect(_on_long_rest_pressed)
