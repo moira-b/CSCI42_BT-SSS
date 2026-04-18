@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://wblpjoc7sjgv" path="res://Scripts/CharacterDisplay/save_notification.gd" id="5_n5rmr"]
 [ext_resource type="PackedScene" uid="uid://b6t3g5gxhwopj" path="res://Scenes/CharacterDisplay/fh_roll_window.tscn" id="6_8iwex"]
 [ext_resource type="Script" uid="uid://b3ypom2uq1exh" path="res://Scripts/CharacterDisplay/advancements.gd" id="7_56qfy"]
+[ext_resource type="PackedScene" uid="uid://b80x84qmywg0k" path="res://Scenes/CharacterDisplay/checkable_buttons.tscn" id="7_rj3pj"]
 [ext_resource type="PackedScene" uid="uid://1un73y3t3x7b" path="res://Scenes/Cards/domain_card_sel_container.tscn" id="8_8skux"]
 [ext_resource type="Script" uid="uid://by7ahmitbfup2" path="res://Scripts/CharacterDisplay/equipment_window.gd" id="10_7pq50"]
 [ext_resource type="Script" uid="uid://djod0suj342ks" path="res://Scripts/CharacterDisplay/experiences.gd" id="10_rj3pj"]
@@ -766,6 +767,7 @@ theme_override_styles/panel = ExtResource("2_c8oo5")
 script = ExtResource("4_qgeia")
 
 [node name="FieldContainer" type="HBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Health" unique_id=1675041664]
+visible = false
 layout_mode = 2
 theme_override_constants/separation = 1
 
@@ -797,6 +799,9 @@ custom_minimum_size = Vector2(40, 30)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_c8oo5")
 text = "-"
+
+[node name="checkable_buttons" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Health" unique_id=1054008189 instance=ExtResource("7_rj3pj")]
+layout_mode = 2
 
 [node name="Stress" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer" unique_id=2030183416]
 layout_mode = 2

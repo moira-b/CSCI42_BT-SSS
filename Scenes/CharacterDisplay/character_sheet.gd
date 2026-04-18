@@ -80,6 +80,8 @@ extends Control
 @onready var equipment_window = $EquipmentWindow
 @onready var experiences_container = $BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/Experiences
 
+@onready var health_checkables = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Health/checkable_buttons
+
 var updated = false
 var shortRestCounter = 0
 var character: Character 
@@ -98,6 +100,8 @@ func enter() -> void:
 	update_equipment_display()
 	connect_signals()
 	
+	health_checkables.initialize("Health", character.max_hp)
+	
 	self.update_markable_fields()
 	
 	ancestry_field.set_text(character.ancestry.ancestry_name)
@@ -112,7 +116,7 @@ func enter() -> void:
 
 	experiences_container.set_level_values(character)
 	experiences_container.set_visible_experiences(character)
-
+	
 func _process(_delta: float) -> void:
 	if(updated==false and character.character_name!=""):
 		updated=true
@@ -147,6 +151,9 @@ func update_markable_fields() -> void:
 	stress_field.set_current_value(str(character.current_stress))
 	hope_field.set_current_value(str(character.current_hope))
 	armor_field.set_current_value(str(character.used_armor_slots))
+
+	health_checkables.set_amount_toggled(character.current_hp)
+	health_checkables.set_maximum_toggled(character.max_hp)
 
 func update_edit_fields() -> void:
 	name_edit.set_text(str(character.character_name))
@@ -270,6 +277,10 @@ func _on_stat_decrement_pressed(stat_name: String) -> void:
 		if character.set_current_hope(character.current_hope-1):
 			hope_field.set_current_value(str(character.current_hope))
 
+func _on_markable_stat_pressed(new_value: int, stat_name: String) -> void:
+	if(stat_name=="Health"):
+		if character.set_current_health(new_value):
+			health_field.set_current_value(str(character.current_hp))
 
 func _on_pronouns_text_changed(new_text):
 	character.pronouns = new_text
@@ -434,6 +445,8 @@ func connect_signals() -> void:
 
 	name_edit.focus_exited.connect(_on_name_edit_focus_exited)
 	name_edit.text_submitted.connect(_on_name_edit_text_submitted)
+	
+	health_checkables.amount_toggled_updated.connect(_on_markable_stat_pressed.bind("Health"))
 
 func disable_button_selection(b: bool) -> void:
 	short_rest_button.disabled = b
