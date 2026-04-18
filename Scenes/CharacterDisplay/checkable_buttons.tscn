@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://b80x84qmywg0k"]
+
+[ext_resource type="Script" uid="uid://b4x52fqxr3okp" path="res://Scripts/CharacterDisplay/checkable_buttons.gd" id="1_ui6cb"]
+[ext_resource type="Texture2D" uid="uid://ceb2a5actwqe3" path="res://Assets/GUI_Icons/Save.png" id="2_pheuh"]
+
+[node name="checkable_buttons" type="HBoxContainer" unique_id=1054008189]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ui6cb")
+
+[node name="DecrementButton" type="Button" parent="." unique_id=951567152]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+size_flags_vertical = 4
+text = "-"
+
+[node name="CheckablesVBox" type="VBoxContainer" parent="." unique_id=2135070005]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="IncrementButton" type="Button" parent="." unique_id=207461808]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+size_flags_vertical = 4
+text = "+"
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=265310983]
+custom_minimum_size = Vector2(15, 15)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_pheuh")
+texture_pressed = ExtResource("2_pheuh")
+ignore_texture_size = true
+stretch_mode = 0
