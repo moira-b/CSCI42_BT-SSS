@@ -15,6 +15,9 @@ var checkables_array: Array
 func initialize(attribute: String, maximum_toggled: int) -> void:
 	self.maximum_toggled = maximum_toggled
 	
+	var attribute_label = $AttributeLabel
+	attribute_label.text = attribute + ": "
+	
 	set_type(attribute)
 	_setup_checkables()
 	_connect_signals()

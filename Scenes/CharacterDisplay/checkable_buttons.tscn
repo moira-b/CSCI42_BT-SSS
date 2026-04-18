@@ -10,6 +10,13 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ui6cb")
 
+[node name="AttributeLabel" type="Label" parent="." unique_id=1413560494]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "Attribute:"
+vertical_alignment = 1
+autowrap_mode = 2
+
 [node name="DecrementButton" type="Button" parent="." unique_id=951567152]
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
