@@ -1,36 +1,46 @@
 extends HBoxContainer
 
-signal amount_pressed_updated(amount_pressed)
+signal currently_checked_updated(currently_checked)
 
 @export var checkable_max_dimensions: Vector2 = Vector2(30, 30)
 @export var num_columns: int
 @export var amount_total: int = 12
-
 @onready var checkables_vbox = $CheckablesVBox
 
-var amount_pressed: int = 0
-var checked_texture: Texture2D
-var unchecked_texture: Texture2D
+var currently_checked: int = 0
+var checked_texture: Texture2D = load("res://Assets/GUI_Icons/Stats/hope_marked.png")
+var unchecked_texture: Texture2D = load("res://Assets/GUI_Icons/Stats/hope_unmarked.png")
 var checkables_array: Array
 
 func _ready() -> void:
-	checked_texture = load("res://Assets/GUI_Icons/Stats/health_marked.png")
-	unchecked_texture = load("res://Assets/GUI_Icons/Stats/health_unmarked.png")	
 	_setup_checkables()
 	_connect_signals()
+
+func set_type(which_texture: String) -> void:
+	if (which_texture=="health"):
+		checked_texture = load("res://Assets/GUI_Icons/Stats/health_marked.png")
+		unchecked_texture = load("res://Assets/GUI_Icons/Stats/health_unmarked.png")
+	elif (which_texture=="stress"):
+		checked_texture = load("res://Assets/GUI_Icons/Stats/stress_marked.png")
+		unchecked_texture = load("res://Assets/GUI_Icons/Stats/stress_unmarked.png")
+	elif (which_texture=="hope"):
+		checked_texture = load("res://Assets/GUI_Icons/Stats/hope_marked.png")
+		unchecked_texture = load("res://Assets/GUI_Icons/Stats/hope_unmarked.png")
+	else:
+		print("Error in checkable_buttons.gd. Attempting to set type to unsupported type " + which_texture + ".")
 	
 func increment_pressed(increment_by: int=1):
-	var old_amount = amount_pressed
-	amount_pressed = clamp(amount_pressed+increment_by, 0, amount_total)
+	var old_amount = currently_checked
+	currently_checked = clamp(currently_checked+increment_by, 0, amount_total)
 	
-	for i in range(amount_pressed-old_amount):
+	for i in range(currently_checked-old_amount):
 		checkables_array[old_amount+i].set_pressed_no_signal(true)
 	
 func decrement_pressed(decrement_by: int=1):
-	var old_amount = amount_pressed
-	amount_pressed = clamp(amount_pressed-decrement_by, 0, amount_total)
+	var old_amount = currently_checked
+	currently_checked = clamp(currently_checked-decrement_by, 0, amount_total)
 
-	while old_amount > amount_pressed:
+	while old_amount > currently_checked:
 		checkables_array[old_amount-1].set_pressed_no_signal(false)
 		old_amount -= 1
 
@@ -38,13 +48,13 @@ func set_total(new: int):
 	amount_total = clamp(new, 0, 100)
 	update_display()
 	
-func set_amount_pressed(new: int):
-	amount_pressed = clamp(new, 0, amount_total)
+func set_currently_checked(new: int):
+	currently_checked = clamp(new, 0, amount_total)
 	update_display()
 
 func update_display():
 	for i in range(amount_total):
-		if i < amount_pressed:
+		if i < currently_checked:
 			checkables_array[i].set_pressed_no_signal(true)
 		else:
 			checkables_array[i].set_pressed_no_signal(false)
@@ -62,7 +72,7 @@ func _on_checkable_pressed(was_clicked: TextureButton):
 		checkables_array[index].set_pressed_no_signal(true)
 		for i in range((amount_total-index)-1):
 			checkables_array[(amount_total-1)-i].set_pressed_no_signal(false	)
-	amount_pressed = index+1
+	currently_checked = index+1
 
 func _setup_checkables():
 	var num_rows = (int(amount_total/num_columns))+1
