@@ -34,6 +34,12 @@ func set_type(which_texture: String) -> void:
 	elif (which_texture=="Hope"):
 		checked_texture = load("res://Assets/GUI_Icons/Stats/hope_marked.png")
 		unchecked_texture = load("res://Assets/GUI_Icons/Stats/hope_unmarked.png")
+	elif (which_texture=="Armor"):
+		checked_texture = load("res://Assets/GUI_Icons/Stats/armor_marked.png")
+		unchecked_texture = load("res://Assets/GUI_Icons/Stats/armor_unmarked.png")
+	elif (which_texture=="Proficiency"):
+		checked_texture = load("res://Assets/GUI_Icons/Stats/proficiency_marked.png")
+		unchecked_texture = load("res://Assets/GUI_Icons/Stats/proficiency_unmarked.png")
 	else:
 		print("Error in checkable_buttons.gd. Attempting to set type to unsupported type " + which_texture + ".")
 	
