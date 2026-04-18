@@ -1,5 +1,7 @@
 extends HBoxContainer
 
+signal amount_pressed_updated(amount_pressed)
+
 @export var checkable_max_dimensions: Vector2 = Vector2(30, 30)
 @export var num_columns: int
 @export var amount_total: int = 12
@@ -33,10 +35,12 @@ func decrement_pressed(decrement_by: int=1):
 		old_amount -= 1
 
 func set_total(new: int):
-	amount_total = new
+	amount_total = clamp(new, 0, 100)
+	update_display()
 	
 func set_amount_pressed(new: int):
 	amount_pressed = clamp(new, 0, amount_total)
+	update_display()
 
 func update_display():
 	for i in range(amount_total):
