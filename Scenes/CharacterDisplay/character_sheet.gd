@@ -16,10 +16,10 @@ extends Control
 @onready var experience4 : LineEdit = $BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/Experiences/Experience4/Experience4
 @onready var experience5 : LineEdit = $BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/Experiences/Experience5/Experience5
 
-@onready var health_field = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Health
-@onready var stress_field = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Stress
-@onready var armor_field = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Armor
-@onready var hope_field = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Hope
+#@onready var health_field = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Health
+#@onready var stress_field = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Stress
+##@onready var armor_field = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Armor
+#@onready var hope_field = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Hope
 @onready var ancestry_field = $HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/AncestryPanelContainer/Ancestry/Ancestry
 @onready var community_field = $HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/CommunityPanelContainer/Community/Community
 @onready var class_field = $HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/ClassPanelContainer/Class/Class
@@ -81,6 +81,10 @@ extends Control
 @onready var experiences_container = $BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/Experiences
 
 @onready var health_checkables = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Health/checkable_buttons
+@onready var stress_checkables = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Stress/checkable_buttons
+@onready var hope_checkables = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Hope/checkable_buttons
+@onready var armor_checkables = $BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/Armor/checkable_buttons
+
 
 var updated = false
 var shortRestCounter = 0
@@ -101,6 +105,9 @@ func enter() -> void:
 	connect_signals()
 	
 	health_checkables.initialize("Health", character.max_hp)
+	stress_checkables.initialize("Stress", character.max_stress)
+	hope_checkables.initialize("Hope", character.max_hope)
+	armor_checkables.initialize("Armor", character.max_armor_slots)
 	
 	self.update_markable_fields()
 	
@@ -147,13 +154,19 @@ func update_equipment_display() -> void:
 	evasion_value.set_text(str(character.evasion))
 	
 func update_markable_fields() -> void:
-	health_field.set_current_value(str(character.current_hp))
-	stress_field.set_current_value(str(character.current_stress))
-	hope_field.set_current_value(str(character.current_hope))
-	armor_field.set_current_value(str(character.used_armor_slots))
+	#health_field.set_current_value(str(character.current_hp))
+	#stress_field.set_current_value(str(character.current_stress))
+	#hope_field.set_current_value(str(character.current_hope))
+	#armor_field.set_current_value(str(character.used_armor_slots))
 
 	health_checkables.set_amount_toggled(character.current_hp)
 	health_checkables.set_maximum_toggled(character.max_hp)
+	stress_checkables.set_amount_toggled(character.current_stress)
+	stress_checkables.set_maximum_toggled(character.max_stress)
+	hope_checkables.set_amount_toggled(character.current_hope)
+	hope_checkables.set_maximum_toggled(character.max_hope)
+	armor_checkables.set_amount_toggled(character.used_armor_slots)
+	armor_checkables.set_maximum_toggled(character.max_armor_slots)
 
 func update_edit_fields() -> void:
 	name_edit.set_text(str(character.character_name))
@@ -248,39 +261,46 @@ func _on_trait_text_submitted(new_val: int, trait_name: String) -> void:
 		print("knowledge: " + str(character.knowledge))
 
 
-func _on_stat_increment_pressed(stat_name: String) -> void:
-	if(stat_name=="Health"):
-		if character.set_current_health(character.current_hp+1):
-			health_field.set_current_value(str(character.current_hp))
-	elif(stat_name=="Stress"):
-		if character.set_current_stress(character.current_stress+1):
-			stress_field.set_current_value(str(character.current_stress))
-	elif(stat_name=="Armor"):
-		if character.set_used_armor_slots(character.used_armor_slots+1):
-			armor_field.set_current_value(str(character.used_armor_slots))
-	elif(stat_name=="Hope"):
-		if character.set_current_hope(character.current_hope+1):
-			hope_field.set_current_value(str(character.current_hope))
+#func _on_stat_increment_pressed(stat_name: String) -> void:
+	#if(stat_name=="Health"):
+		#if character.set_current_health(character.current_hp+1):
+			#health_field.set_current_value(str(character.current_hp))
+	#elif(stat_name=="Stress"):
+		#if character.set_current_stress(character.current_stress+1):
+			#stress_field.set_current_value(str(character.current_stress))
+	##elif(stat_name=="Armor"):
+		##if character.set_used_armor_slots(character.used_armor_slots+1):
+			##armor_field.set_current_value(str(character.used_armor_slots))
+	#elif(stat_name=="Hope"):
+		#if character.set_current_hope(character.current_hope+1):
+			#hope_field.set_current_value(str(character.current_hope))
 
 
-func _on_stat_decrement_pressed(stat_name: String) -> void:
-	if(stat_name=="Health"):
-		if character.set_current_health(character.current_hp-1):
-			health_field.set_current_value(str(character.current_hp))
-	elif(stat_name=="Stress"):
-		if character.set_current_stress(character.current_stress-1):
-			stress_field.set_current_value(str(character.current_stress))
-	elif(stat_name=="Armor"):
-		if character.set_used_armor_slots(character.used_armor_slots-1):
-			armor_field.set_current_value(str(character.used_armor_slots))
-	elif(stat_name=="Hope"):
-		if character.set_current_hope(character.current_hope-1):
-			hope_field.set_current_value(str(character.current_hope))
+#func _on_stat_decrement_pressed(stat_name: String) -> void:
+	#if(stat_name=="Health"):
+		#if character.set_current_health(character.current_hp-1):
+			#health_field.set_current_value(str(character.current_hp))
+	#elif(stat_name=="Stress"):
+		#if character.set_current_stress(character.current_stress-1):
+			#stress_field.set_current_value(str(character.current_stress))
+	##elif(stat_name=="Armor"):
+		##if character.set_used_armor_slots(character.used_armor_slots-1):
+			##armor_field.set_current_value(str(character.used_armor_slots))
+	#elif(stat_name=="Hope"):
+		#if character.set_current_hope(character.current_hope-1):
+			#hope_field.set_current_value(str(character.current_hope))
 
 func _on_markable_stat_pressed(new_value: int, stat_name: String) -> void:
 	if(stat_name=="Health"):
-		if character.set_current_health(new_value):
-			health_field.set_current_value(str(character.current_hp))
+		character.set_current_health(new_value)
+	elif(stat_name=="Stress"):
+		character.set_current_stress(new_value)
+	elif(stat_name=="Hope"):
+		character.set_current_hope(new_value)
+	elif(stat_name=="Armor"):
+		character.set_used_armor_slots(new_value)
+	elif(stat_name=="Proficiency"):
+			pass
 
 func _on_pronouns_text_changed(new_text):
 	character.pronouns = new_text
@@ -366,12 +386,15 @@ func _on_fh_roll_window_close_requested() -> void:
 	# handle the FH result
 	if fh_roll_window.latest_outcome=="Hope":
 		character.set_current_hope(character.current_hope + 1)
-		hope_field.set_current_value(str(character.current_hope))
+		hope_checkables.set_amount_toggled(character.current_hope)
+		#hope_field.set_current_value(str(character.current_hope))
 	elif fh_roll_window.latest_outcome=="Crit":
 		character.set_current_hope(character.current_hope + 1)
-		hope_field.set_current_value(str(character.current_hope))
+		hope_checkables.set_amount_toggled(character.current_hope)
+		#hope_field.set_current_value(str(character.current_hope))
 		character.set_current_stress(character.current_stress - 1)
-		stress_field.set_current_value(str(character.current_stress))
+		stress_checkables.set_amount_toggled(character.current_stress)
+		#stress_field.set_current_value(str(character.current_stress))
 
 func _on_confirm_button_pressed() -> void:
 	rest_window.hide()
@@ -405,14 +428,14 @@ func connect_signals() -> void:
 	for field in all_traits:
 		field.value_changed.connect(_on_trait_text_submitted.bind(field.get_parent().name))
 	
-	health_field.stat_increment_pressed.connect(_on_stat_increment_pressed)
-	health_field.stat_decrement_pressed.connect(_on_stat_decrement_pressed)
-	stress_field.stat_increment_pressed.connect(_on_stat_increment_pressed)
-	stress_field.stat_decrement_pressed.connect(_on_stat_decrement_pressed)
-	armor_field.stat_increment_pressed.connect(_on_stat_increment_pressed)
-	armor_field.stat_decrement_pressed.connect(_on_stat_decrement_pressed)
-	hope_field.stat_increment_pressed.connect(_on_stat_increment_pressed)
-	hope_field.stat_decrement_pressed.connect(_on_stat_decrement_pressed)
+	#health_field.stat_increment_pressed.connect(_on_stat_increment_pressed)
+	#health_field.stat_decrement_pressed.connect(_on_stat_decrement_pressed)
+	#stress_field.stat_increment_pressed.connect(_on_stat_increment_pressed)
+	#stress_field.stat_decrement_pressed.connect(_on_stat_decrement_pressed)
+	##armor_field.stat_increment_pressed.connect(_on_stat_increment_pressed)
+	##armor_field.stat_decrement_pressed.connect(_on_stat_decrement_pressed)
+	#hope_field.stat_increment_pressed.connect(_on_stat_increment_pressed)
+	#hope_field.stat_decrement_pressed.connect(_on_stat_decrement_pressed)
 	
 	short_rest_button.pressed.connect(_on_short_rest_pressed)
 	long_rest_button.pressed.connect(_on_long_rest_pressed)
@@ -447,6 +470,9 @@ func connect_signals() -> void:
 	name_edit.text_submitted.connect(_on_name_edit_text_submitted)
 	
 	health_checkables.amount_toggled_updated.connect(_on_markable_stat_pressed.bind("Health"))
+	stress_checkables.amount_toggled_updated.connect(_on_markable_stat_pressed.bind("Stress"))
+	hope_checkables.amount_toggled_updated.connect(_on_markable_stat_pressed.bind("Hope"))
+	armor_checkables.amount_toggled_updated.connect(_on_markable_stat_pressed.bind("Armor"))
 
 func disable_button_selection(b: bool) -> void:
 	short_rest_button.disabled = b
