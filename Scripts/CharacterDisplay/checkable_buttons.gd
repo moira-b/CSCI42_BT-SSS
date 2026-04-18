@@ -20,7 +20,6 @@ func _ready() -> void:
 func increment_pressed(increment_by: int=1):
 	var old_amount = amount_pressed
 	amount_pressed = clamp(amount_pressed+increment_by, 0, amount_total)
-	print(amount_pressed)
 	
 	for i in range(amount_pressed-old_amount):
 		checkables_array[old_amount+i].set_pressed_no_signal(true)
@@ -28,7 +27,6 @@ func increment_pressed(increment_by: int=1):
 func decrement_pressed(decrement_by: int=1):
 	var old_amount = amount_pressed
 	amount_pressed = clamp(amount_pressed-decrement_by, 0, amount_total)
-	print(amount_pressed)
 
 	while old_amount > amount_pressed:
 		checkables_array[old_amount-1].set_pressed_no_signal(false)
@@ -61,13 +59,11 @@ func _on_checkable_pressed(was_clicked: TextureButton):
 		for i in range((amount_total-index)-1):
 			checkables_array[(amount_total-1)-i].set_pressed_no_signal(false	)
 	amount_pressed = index+1
-	print(amount_pressed)
 
 func _setup_checkables():
 	var num_rows = (int(amount_total/num_columns))+1
 	for i in range(num_rows):
 		checkables_vbox.add_child(HBoxContainer.new())
-		print(i)
 	
 	var hboxes_array = checkables_vbox.get_children()
 	var checkables_instantiated: int = 0

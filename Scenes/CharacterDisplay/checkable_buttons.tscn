@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://b80x84qmywg0k"]
 
 [ext_resource type="Script" uid="uid://b4x52fqxr3okp" path="res://Scripts/CharacterDisplay/checkable_buttons.gd" id="1_ui6cb"]
-[ext_resource type="Texture2D" uid="uid://ceb2a5actwqe3" path="res://Assets/GUI_Icons/Save.png" id="2_pheuh"]
 
 [node name="checkable_buttons" type="HBoxContainer" unique_id=1054008189]
 anchors_preset = 15
@@ -28,13 +27,3 @@ custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
 size_flags_vertical = 4
 text = "+"
-
-[node name="TextureButton" type="TextureButton" parent="." unique_id=265310983]
-custom_minimum_size = Vector2(15, 15)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture_normal = ExtResource("2_pheuh")
-texture_pressed = ExtResource("2_pheuh")
-ignore_texture_size = true
-stretch_mode = 0
