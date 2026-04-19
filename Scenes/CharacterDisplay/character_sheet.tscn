@@ -5,9 +5,13 @@
 [ext_resource type="StyleBox" uid="uid://dic645d200g74" path="res://Resources/GUIStyles/character_sheet_stylebox.tres" id="2_c8oo5"]
 [ext_resource type="Script" uid="uid://dfs5rt0xu3vuj" path="res://Scripts/CharacterDisplay/rest.gd" id="4_8iwex"]
 [ext_resource type="StyleBox" uid="uid://iibbyxddwuc5" path="res://Resources/GUIStyles/green_button.tres" id="4_8skux"]
+[ext_resource type="StyleBox" uid="uid://bbokr0uyec1ac" path="res://Resources/GUIStyles/line_edit_normal.tres" id="4_48wf7"]
+[ext_resource type="StyleBox" uid="uid://dhobd2i8q8nhi" path="res://Resources/GUIStyles/section_header_panel.tres" id="4_irdes"]
 [ext_resource type="StyleBox" uid="uid://dae1vokrglwgx" path="res://Resources/GUIStyles/class_ancestry_community_panel.tres" id="4_rj3pj"]
+[ext_resource type="StyleBox" uid="uid://duwnobw5p4cl6" path="res://Resources/GUIStyles/line_edit_focus.tres" id="5_asla6"]
 [ext_resource type="PackedScene" uid="uid://dltyc5tel16kj" path="res://Scenes/CharacterDisplay/dice_roll_window.tscn" id="5_glymg"]
 [ext_resource type="Script" uid="uid://wblpjoc7sjgv" path="res://Scripts/CharacterDisplay/save_notification.gd" id="5_n5rmr"]
+[ext_resource type="StyleBox" uid="uid://dh0x1614wwewt" path="res://Resources/GUIStyles/yellow_label.tres" id="5_svvgr"]
 [ext_resource type="PackedScene" uid="uid://b6t3g5gxhwopj" path="res://Scenes/CharacterDisplay/fh_roll_window.tscn" id="6_8iwex"]
 [ext_resource type="Script" uid="uid://b3ypom2uq1exh" path="res://Scripts/CharacterDisplay/advancements.gd" id="7_56qfy"]
 [ext_resource type="PackedScene" uid="uid://b80x84qmywg0k" path="res://Scenes/CharacterDisplay/checkable_buttons.tscn" id="7_rj3pj"]
@@ -104,52 +108,90 @@ theme_override_constants/separation = 10
 [node name="HeaderInfo" type="VBoxContainer" parent="HeaderMargin/Header" unique_id=1580594087]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/separation = 10
+theme_override_constants/separation = 5
 
 [node name="NamePronouns" type="HBoxContainer" parent="HeaderMargin/Header/HeaderInfo" unique_id=746183296]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="NamePanelContainer" type="PanelContainer" parent="HeaderMargin/Header/HeaderInfo/NamePronouns" unique_id=1901304441]
+[node name="NamePanelContainerOLD" type="PanelContainer" parent="HeaderMargin/Header/HeaderInfo/NamePronouns" unique_id=1901304441]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = ExtResource("2_c8oo5")
 
-[node name="NameC" type="HBoxContainer" parent="HeaderMargin/Header/HeaderInfo/NamePronouns/NamePanelContainer" unique_id=1593906295]
+[node name="NameC" type="HBoxContainer" parent="HeaderMargin/Header/HeaderInfo/NamePronouns/NamePanelContainerOLD" unique_id=1593906295]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 
-[node name="Name" type="Label" parent="HeaderMargin/Header/HeaderInfo/NamePronouns/NamePanelContainer/NameC" unique_id=1793497501]
+[node name="Name" type="Label" parent="HeaderMargin/Header/HeaderInfo/NamePronouns/NamePanelContainerOLD/NameC" unique_id=1793497501]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 text = "Name: "
 
-[node name="NameEdit" type="LineEdit" parent="HeaderMargin/Header/HeaderInfo/NamePronouns/NamePanelContainer/NameC" unique_id=1389927954]
+[node name="NameEdit" type="LineEdit" parent="HeaderMargin/Header/HeaderInfo/NamePronouns/NamePanelContainerOLD/NameC" unique_id=1389927954]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 placeholder_text = "What is your name?"
 script = SubResource("GDScript_dg7yu")
 
-[node name="PronounsPanelContainer" type="PanelContainer" parent="HeaderMargin/Header/HeaderInfo/NamePronouns" unique_id=619742562]
+[node name="NamePanelContainer" type="PanelContainer" parent="HeaderMargin/Header/HeaderInfo/NamePronouns" unique_id=1078994171]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
-theme_override_styles/panel = ExtResource("2_c8oo5")
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("4_irdes")
 
-[node name="Pronouns" type="HBoxContainer" parent="HeaderMargin/Header/HeaderInfo/NamePronouns/PronounsPanelContainer" unique_id=1818981251]
+[node name="NameC" type="VBoxContainer" parent="HeaderMargin/Header/HeaderInfo/NamePronouns/NamePanelContainer" unique_id=1121421158]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Name" type="Label" parent="HeaderMargin/Header/HeaderInfo/NamePronouns/NamePanelContainer/NameC" unique_id=993157749]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = ExtResource("5_svvgr")
+text = "Name"
+horizontal_alignment = 1
+
+[node name="NameEdit" type="LineEdit" parent="HeaderMargin/Header/HeaderInfo/NamePronouns/NamePanelContainer/NameC" unique_id=706613170]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+theme_override_styles/normal = ExtResource("4_48wf7")
+theme_override_styles/focus = ExtResource("5_asla6")
+placeholder_text = "What is your name?"
+max_length = 64
+
+[node name="PronounsPanelContainer" type="PanelContainer" parent="HeaderMargin/Header/HeaderInfo/NamePronouns" unique_id=619742562]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("4_irdes")
+
+[node name="Pronouns" type="VBoxContainer" parent="HeaderMargin/Header/HeaderInfo/NamePronouns/PronounsPanelContainer" unique_id=929304455]
 layout_mode = 2
 size_flags_vertical = 0
 
 [node name="Label" type="Label" parent="HeaderMargin/Header/HeaderInfo/NamePronouns/PronounsPanelContainer/Pronouns" unique_id=449473121]
-custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
-text = "Pronouns:"
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = ExtResource("5_svvgr")
+text = "Pronouns"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="PronounsEdit" type="LineEdit" parent="HeaderMargin/Header/HeaderInfo/NamePronouns/PronounsPanelContainer/Pronouns" unique_id=1102215493]
-custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 0
+size_flags_vertical = 8
+theme_override_styles/normal = ExtResource("4_48wf7")
+theme_override_styles/focus = ExtResource("5_asla6")
 
 [node name="ClassCommunityAncestry" type="HBoxContainer" parent="HeaderMargin/Header/HeaderInfo" unique_id=1686316360]
 layout_mode = 2
@@ -1581,7 +1623,7 @@ theme_override_font_sizes/font_size = 14
 text = "You have advantage on rolls to consort with nobles, negotiate prices, or leverage your reputation to get what you want."
 autowrap_mode = 2
 
-[connection signal="text_submitted" from="HeaderMargin/Header/HeaderInfo/NamePronouns/NamePanelContainer/NameC/NameEdit" to="." method="_on_name_edit_text_submitted"]
+[connection signal="text_submitted" from="HeaderMargin/Header/HeaderInfo/NamePronouns/NamePanelContainerOLD/NameC/NameEdit" to="." method="_on_name_edit_text_submitted"]
 [connection signal="text_changed" from="HeaderMargin/Header/HeaderInfo/NamePronouns/PronounsPanelContainer/Pronouns/PronounsEdit" to="." method="_on_pronouns_text_changed"]
 [connection signal="text_submitted" from="HeaderMargin/Header/HeaderInfo/NamePronouns/PronounsPanelContainer/Pronouns/PronounsEdit" to="." method="_on_pronouns_text_submitted"]
 [connection signal="close_requested" from="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/RestButtons/RestWindow" to="." method="_on_rest_window_close_requested"]
