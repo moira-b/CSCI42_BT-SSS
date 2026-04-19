@@ -22,6 +22,7 @@
 [ext_resource type="Script" uid="uid://co3dycsyqv6ap" path="res://Scripts/CharacterCreation/armor_list.gd" id="11_7pq50"]
 [ext_resource type="Script" uid="uid://c6daeo616vuo3" path="res://Scripts/CharacterClasses/character_class.gd" id="12_ahdvs"]
 [ext_resource type="Script" uid="uid://mx8mfwor421u" path="res://Scripts/CharacterCreation/p_weapon_list.gd" id="12_rj3pj"]
+[ext_resource type="Theme" uid="uid://c8jljcwdlnc2s" path="res://Resources/GUIStyles/action_buttons_theme.tres" id="12_rllm4"]
 [ext_resource type="Script" uid="uid://cutrjksidwmox" path="res://Scripts/CharacterCreation/s_weapon_list.gd" id="13_48wf7"]
 [ext_resource type="Resource" uid="uid://cyaupb2xa2jvp" path="res://Resources/Classes/Bard/bard.tres" id="13_gjf7o"]
 [ext_resource type="Resource" uid="uid://blgr70q7oa266" path="res://Resources/Classes/Druid/druid.tres" id="14_7xnek"]
@@ -792,34 +793,34 @@ layout_mode = 2
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 size_flags_vertical = 8
-theme_override_styles/panel = ExtResource("2_c8oo5")
+theme = ExtResource("12_rllm4")
 
 [node name="MarginContainer" type="MarginContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons" unique_id=1743009752]
 layout_mode = 2
-theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
 [node name="VBoxContainer" type="VBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer" unique_id=766569678]
 layout_mode = 2
+theme_override_constants/separation = 6
 
 [node name="ActionButtons" type="HBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer" unique_id=92466979]
 layout_mode = 2
+theme_override_constants/separation = 6
 
 [node name="RestButtons" type="VBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons" unique_id=1953046344]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_constants/separation = 6
 
 [node name="ShortRest" type="Button" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/RestButtons" unique_id=375690570]
-custom_minimum_size = Vector2(100, 30)
 layout_mode = 2
 size_flags_horizontal = 5
 size_flags_vertical = 4
 text = "Short Rest"
 
 [node name="LongRest" type="Button" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/RestButtons" unique_id=1429046138]
-custom_minimum_size = Vector2(100, 30)
 layout_mode = 2
 size_flags_horizontal = 5
 size_flags_vertical = 4
@@ -911,17 +912,15 @@ text = "Confirm"
 [node name="DiceButtons" type="VBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons" unique_id=164893220]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/separation = 4
+theme_override_constants/separation = 6
 
 [node name="Dice" type="Button" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/DiceButtons" unique_id=1692544909]
-custom_minimum_size = Vector2(100, 30)
 layout_mode = 2
 size_flags_horizontal = 5
 size_flags_vertical = 4
 text = "Dice Roll"
 
 [node name="FHDice" type="Button" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/DiceButtons" unique_id=272697354]
-custom_minimum_size = Vector2(100, 30)
 layout_mode = 2
 size_flags_horizontal = 5
 size_flags_vertical = 4
@@ -934,7 +933,6 @@ visible = false
 visible = false
 
 [node name="CardsButton" type="Button" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer" unique_id=2032869381]
-custom_minimum_size = Vector2(200, 30)
 layout_mode = 2
 text = "Domain Cards"
 
