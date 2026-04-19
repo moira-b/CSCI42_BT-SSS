@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://blf44ks0qcuqu"]
+
+[ext_resource type="Theme" uid="uid://dw741ewx83hq6" path="res://Resources/GUIStyles/damage_threshold_theme.tres" id="1_dgcq2"]
+[ext_resource type="Script" uid="uid://dcehu4665di8k" path="res://Scripts/CharacterDisplay/damage_threshold_display.gd" id="1_h2ajj"]
+
+[node name="DamageThresholdDisplay" type="HBoxContainer" unique_id=1301891163]
+custom_minimum_size = Vector2(0, 50)
+offset_right = 394.0
+offset_bottom = 66.0
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+script = ExtResource("1_h2ajj")
+
+[node name="MinorDmgLabel" type="Label" parent="." unique_id=574151988]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource("1_dgcq2")
+text = "Minor
+Damage"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MajorThreshold" type="Label" parent="." unique_id=146699973]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.8
+theme = ExtResource("1_dgcq2")
+theme_type_variation = &"ThresholdValue"
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="MajorDmgLabel" type="Label" parent="." unique_id=1581478802]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource("1_dgcq2")
+text = "Major
+Damage"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SevereThreshold" type="Label" parent="." unique_id=261404123]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.8
+theme = ExtResource("1_dgcq2")
+theme_type_variation = &"ThresholdValue"
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="SevereDmgLabel" type="Label" parent="." unique_id=1963811022]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource("1_dgcq2")
+text = "Severe
+Damage"
+horizontal_alignment = 1
+vertical_alignment = 1

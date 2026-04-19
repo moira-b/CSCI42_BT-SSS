@@ -28,8 +28,9 @@ extends Control
 @onready var fh_roll_window: Window = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/DiceButtons/FHRollWindow
 @onready var evasion_value: Label = $BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EvasionProficiencyMargin/HBoxContainer/Evasion/FieldContainer/MarginContainer/FieldValue
 @onready var proficiency_value: Label = $BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EvasionProficiencyMargin/HBoxContainer/Proficiency/FieldContainer/MarginContainer/FieldValue
-@onready var major_threshold_value: Label = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/DamageThresholds/HBoxContainer/MajorThreshold/FieldContainer/MarginContainer/FieldValue
-@onready var severe_threshold_value: Label = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/DamageThresholds/HBoxContainer/SevereThreshold/FieldContainer/MarginContainer/FieldValue
+@onready var damage_threshold_display = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/DamageThresholdDisplay
+#@onready var major_threshold_value: Label = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/DamageThresholds/HBoxContainer/MajorThreshold/FieldContainer/MarginContainer/FieldValue
+#@onready var severe_threshold_value: Label = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/DamageThresholds/HBoxContainer/SevereThreshold/FieldContainer/MarginContainer/FieldValue
 
 @onready var advance_window: Window = $AdvanceWindow
 
@@ -146,8 +147,10 @@ func update_equipment_display() -> void:
 		secondaryPanel.show()
 	
 	# handle stat changes due to equipment changes
-	major_threshold_value.set_text(str(character.damage_thresholds[0]))
-	severe_threshold_value.set_text(str(character.damage_thresholds[1]))
+	damage_threshold_display.set_major_threshold(character.damage_thresholds[0])
+	damage_threshold_display.set_severe_threshold(character.damage_thresholds[1])
+	#major_threshold_value.set_text(str(character.damage_thresholds[0]))
+	#severe_threshold_value.set_text(str(character.damage_thresholds[1]))
 	evasion_value.set_text(str(character.evasion))
 	
 func update_markable_fields() -> void:

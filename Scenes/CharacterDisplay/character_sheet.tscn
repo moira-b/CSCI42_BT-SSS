@@ -19,6 +19,7 @@
 [ext_resource type="Script" uid="uid://by7ahmitbfup2" path="res://Scripts/CharacterDisplay/equipment_window.gd" id="10_7pq50"]
 [ext_resource type="Script" uid="uid://djod0suj342ks" path="res://Scripts/CharacterDisplay/experiences.gd" id="10_rj3pj"]
 [ext_resource type="Script" uid="uid://do0erpc6r8x0r" path="res://Scripts/CharacterDisplay/multiclass_choices.gd" id="11_2cjug"]
+[ext_resource type="PackedScene" uid="uid://blf44ks0qcuqu" path="res://Scenes/CharacterDisplay/damage_threshold_display.tscn" id="11_2ohwh"]
 [ext_resource type="Script" uid="uid://co3dycsyqv6ap" path="res://Scripts/CharacterCreation/armor_list.gd" id="11_7pq50"]
 [ext_resource type="Script" uid="uid://c6daeo616vuo3" path="res://Scripts/CharacterClasses/character_class.gd" id="12_ahdvs"]
 [ext_resource type="Script" uid="uid://mx8mfwor421u" path="res://Scripts/CharacterCreation/p_weapon_list.gd" id="12_rj3pj"]
@@ -60,10 +61,16 @@ bg_color = Color(0.07058824, 0.37254903, 0.007843138, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7xnek"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n4116"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2ohwh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jlx5q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dxpx4"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gjf7o"]
 bg_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n4116"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ahdvs"]
 border_width_left = 3
@@ -682,84 +689,8 @@ layout_mode = 2
 size_flags_vertical = 8
 theme_override_constants/separation = 10
 
-[node name="DamageThresholds" type="MarginContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer" unique_id=364119110]
+[node name="DamageThresholdDisplay" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer" unique_id=1301891163 instance=ExtResource("11_2ohwh")]
 layout_mode = 2
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 5
-
-[node name="HBoxContainer" type="HBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/DamageThresholds" unique_id=35536270]
-layout_mode = 2
-size_flags_horizontal = 4
-
-[node name="MajorThreshold" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/DamageThresholds/HBoxContainer" unique_id=1441793302]
-custom_minimum_size = Vector2(125, 0)
-layout_mode = 2
-theme_override_styles/panel = ExtResource("2_c8oo5")
-
-[node name="FieldContainer" type="VBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/DamageThresholds/HBoxContainer/MajorThreshold" unique_id=2098797474]
-layout_mode = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/DamageThresholds/HBoxContainer/MajorThreshold/FieldContainer" unique_id=2002611526]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 15
-theme_override_constants/margin_bottom = 5
-
-[node name="FieldValue" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/DamageThresholds/HBoxContainer/MajorThreshold/FieldContainer/MarginContainer" unique_id=1355398323]
-layout_mode = 2
-theme_override_font_sizes/font_size = 24
-text = "0"
-horizontal_alignment = 1
-vertical_alignment = 2
-
-[node name="PanelContainer" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/DamageThresholds/HBoxContainer/MajorThreshold/FieldContainer" unique_id=1443844467]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_gjf7o")
-
-[node name="FieldLabel" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/DamageThresholds/HBoxContainer/MajorThreshold/FieldContainer/PanelContainer" unique_id=345306745]
-custom_minimum_size = Vector2(30, 0)
-layout_mode = 2
-text = "Major Dmg"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="SevereThreshold" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/DamageThresholds/HBoxContainer" unique_id=1103550042]
-custom_minimum_size = Vector2(125, 0)
-layout_mode = 2
-theme_override_styles/panel = ExtResource("2_c8oo5")
-
-[node name="FieldContainer" type="VBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/DamageThresholds/HBoxContainer/SevereThreshold" unique_id=107534197]
-layout_mode = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/DamageThresholds/HBoxContainer/SevereThreshold/FieldContainer" unique_id=1132997976]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 15
-theme_override_constants/margin_bottom = 5
-
-[node name="FieldValue" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/DamageThresholds/HBoxContainer/SevereThreshold/FieldContainer/MarginContainer" unique_id=1448989266]
-layout_mode = 2
-theme_override_font_sizes/font_size = 24
-text = "0"
-horizontal_alignment = 1
-vertical_alignment = 2
-
-[node name="PanelContainer" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/DamageThresholds/HBoxContainer/SevereThreshold/FieldContainer" unique_id=521044599]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_gjf7o")
-
-[node name="FieldLabel" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/DamageThresholds/HBoxContainer/SevereThreshold/FieldContainer/PanelContainer" unique_id=923866396]
-custom_minimum_size = Vector2(30, 0)
-layout_mode = 2
-text = "Severe Dmg"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="MarkableStats" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer" unique_id=1999565809]
 layout_mode = 2
@@ -770,21 +701,21 @@ layout_mode = 2
 
 [node name="Health" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer" unique_id=898166146]
 layout_mode = 2
-theme_override_styles/panel = ExtResource("2_c8oo5")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_2ohwh")
 
 [node name="checkable_buttons" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Health" unique_id=1054008189 instance=ExtResource("7_rj3pj")]
 layout_mode = 2
 
 [node name="Stress" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer" unique_id=2030183416]
 layout_mode = 2
-theme_override_styles/panel = ExtResource("2_c8oo5")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_jlx5q")
 
 [node name="checkable_buttons" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Stress" unique_id=1984381611 instance=ExtResource("7_rj3pj")]
 layout_mode = 2
 
 [node name="Hope" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer" unique_id=431121348]
 layout_mode = 2
-theme_override_styles/panel = ExtResource("2_c8oo5")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_dxpx4")
 
 [node name="checkable_buttons" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Hope" unique_id=858122431 instance=ExtResource("7_rj3pj")]
 layout_mode = 2

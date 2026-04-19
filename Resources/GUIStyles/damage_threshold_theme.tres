@@ -1,0 +1,25 @@
+[gd_resource type="Theme" format=3 uid="uid://dw741ewx83hq6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_if8tu"]
+bg_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1qpsf"]
+bg_color = Color(0.9372549, 0.9019608, 0.8666667, 1)
+border_width_top = 2
+border_width_bottom = 2
+border_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
+
+[resource]
+Label/colors/font_color = Color(0.9372549, 0.9019608, 0.8666667, 1)
+Label/constants/line_spacing = -4
+Label/styles/focus = SubResource("StyleBoxFlat_if8tu")
+Label/styles/normal = SubResource("StyleBoxFlat_if8tu")
+ThresholdValue/base_type = &"Label"
+ThresholdValue/colors/font_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
+ThresholdValue/font_sizes/font_size = 24
+ThresholdValue/styles/focus = SubResource("StyleBoxFlat_1qpsf")
+ThresholdValue/styles/normal = SubResource("StyleBoxFlat_1qpsf")
