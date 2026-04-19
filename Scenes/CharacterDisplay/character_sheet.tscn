@@ -5,6 +5,7 @@
 [ext_resource type="StyleBox" uid="uid://dic645d200g74" path="res://Resources/GUIStyles/character_sheet_stylebox.tres" id="2_c8oo5"]
 [ext_resource type="Script" uid="uid://dfs5rt0xu3vuj" path="res://Scripts/CharacterDisplay/rest.gd" id="4_8iwex"]
 [ext_resource type="StyleBox" uid="uid://iibbyxddwuc5" path="res://Resources/GUIStyles/green_button.tres" id="4_8skux"]
+[ext_resource type="StyleBox" uid="uid://dae1vokrglwgx" path="res://Resources/GUIStyles/class_ancestry_community_panel.tres" id="4_rj3pj"]
 [ext_resource type="PackedScene" uid="uid://dltyc5tel16kj" path="res://Scenes/CharacterDisplay/dice_roll_window.tscn" id="5_glymg"]
 [ext_resource type="Script" uid="uid://wblpjoc7sjgv" path="res://Scripts/CharacterDisplay/save_notification.gd" id="5_n5rmr"]
 [ext_resource type="PackedScene" uid="uid://b6t3g5gxhwopj" path="res://Scenes/CharacterDisplay/fh_roll_window.tscn" id="6_8iwex"]
@@ -155,70 +156,44 @@ layout_mode = 2
 theme_override_constants/separation = 10
 
 [node name="ClassPanelContainer" type="PanelContainer" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry" unique_id=1493424672]
+custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = ExtResource("2_c8oo5")
+theme_override_styles/panel = ExtResource("4_rj3pj")
 
-[node name="Class" type="HBoxContainer" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/ClassPanelContainer" unique_id=1471954437]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/ClassPanelContainer/Class" unique_id=687466068]
-custom_minimum_size = Vector2(100, 0)
+[node name="Class" type="Label" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/ClassPanelContainer" unique_id=1140117280]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Class:"
-vertical_alignment = 1
-
-[node name="Class" type="Label" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/ClassPanelContainer/Class" unique_id=1140117280]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
 theme_override_constants/paragraph_spacing = -5
-text = "ancestry_name
-(subclass)"
+text = "class_name (subclass)"
+horizontal_alignment = 1
 vertical_alignment = 1
 max_lines_visible = 2
 
 [node name="AncestryPanelContainer" type="PanelContainer" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry" unique_id=913894309]
 layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = ExtResource("2_c8oo5")
+theme_override_styles/panel = ExtResource("4_rj3pj")
 
-[node name="Ancestry" type="HBoxContainer" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/AncestryPanelContainer" unique_id=400480339]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/AncestryPanelContainer/Ancestry" unique_id=1081074418]
+[node name="Ancestry" type="Label" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/AncestryPanelContainer" unique_id=705797364]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Ancestry:"
-
-[node name="Ancestry" type="Label" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/AncestryPanelContainer/Ancestry" unique_id=33290907]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 6
+theme_override_constants/paragraph_spacing = -5
 text = "ancestry_name"
+horizontal_alignment = 1
 vertical_alignment = 1
+max_lines_visible = 2
 
 [node name="CommunityPanelContainer" type="PanelContainer" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry" unique_id=1597585474]
 layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = ExtResource("2_c8oo5")
+theme_override_styles/panel = ExtResource("4_rj3pj")
 
-[node name="Community" type="HBoxContainer" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/CommunityPanelContainer" unique_id=743414857]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/CommunityPanelContainer/Community" unique_id=760379478]
-custom_minimum_size = Vector2(100, 0)
+[node name="Community" type="Label" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/CommunityPanelContainer" unique_id=266250659]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Community:"
-vertical_alignment = 1
-
-[node name="Community" type="Label" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/CommunityPanelContainer/Community" unique_id=2021481224]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
+theme_override_constants/paragraph_spacing = -5
 text = "community_name"
+horizontal_alignment = 1
 vertical_alignment = 1
+max_lines_visible = 2
 
 [node name="Level" type="PanelContainer" parent="HeaderMargin/Header" unique_id=1090331652]
 custom_minimum_size = Vector2(150, 0)

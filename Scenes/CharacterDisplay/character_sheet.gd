@@ -16,9 +16,9 @@ extends Control
 @onready var experience4 : LineEdit = $BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/Experiences/Experience4/Experience4
 @onready var experience5 : LineEdit = $BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/Experiences/Experience5/Experience5
 
-@onready var ancestry_field = $HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/AncestryPanelContainer/Ancestry/Ancestry
-@onready var community_field = $HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/CommunityPanelContainer/Community/Community
-@onready var class_field = $HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/ClassPanelContainer/Class/Class
+@onready var ancestry_field = $HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/AncestryPanelContainer/Ancestry
+@onready var community_field = $HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/CommunityPanelContainer/Community
+@onready var class_field = $HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/ClassPanelContainer/Class
 @onready var short_rest_button: Button = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/RestButtons/ShortRest
 @onready var long_rest_button: Button = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/RestButtons/LongRest
 @onready var rest_window: Window = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/RestButtons/RestWindow
@@ -108,7 +108,7 @@ func enter() -> void:
 	self.update_markable_fields()
 	
 	ancestry_field.set_text(character.ancestry.ancestry_name)
-	class_field.set_text(character.character_class.name + " \n(" + character.subclass.subclass_name + ")")
+	class_field.set_text(character.character_class.name + " (" + character.subclass.subclass_name + ")")
 	community_field.set_text(character.community.community_name)
 	level_field.text = str(character.level)
 	evasion_value.set_text(str(character.evasion))
