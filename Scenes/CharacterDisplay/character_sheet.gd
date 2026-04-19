@@ -3,12 +3,12 @@ extends Control
 
 @onready var bio_edit = $BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/BioPanelContainer/BioMarginContainer/Bio/BioEdit
 @onready var name_edit = $HeaderMargin/Header/HeaderInfo/NamePronouns/NamePanelContainer/NameC/NameEdit
-@onready var agility_field: SpinBox = $TraitModifiers/AgilityPanel/AgilityContainer/Agility/SpinBox
-@onready var strength_field: SpinBox = $TraitModifiers/StrengthPanel/StrengthContainer/Strength/SpinBox
-@onready var finesse_field: SpinBox = $TraitModifiers/FinessePanel/FinesseContainer/Finesse/SpinBox
-@onready var instinct_field: SpinBox = $TraitModifiers/InstinctPanel/InstinctContainer/Instinct/SpinBox
-@onready var presence_field: SpinBox = $TraitModifiers/PrescencePanel/PrescenceContainer/Prescence/SpinBox
-@onready var knowledge_field: SpinBox = $TraitModifiers/KnowledgePanel/KnowledgeContainer/Knowledge/SpinBox
+@onready var agility_field: SpinBox = $TraitModifiers/AgilityPanel/AgilityContainer/AgilitySpinbox
+@onready var strength_field: SpinBox = $TraitModifiers/StrengthPanel/StrengthContainer/StrengthSpinbox
+@onready var finesse_field: SpinBox = $TraitModifiers/FinessePanel/FinesseContainer/FinesseSpinbox
+@onready var instinct_field: SpinBox = $TraitModifiers/InstinctPanel/InstinctContainer/InstinctSpinbox
+@onready var presence_field: SpinBox = $TraitModifiers/PrescencePanel/PrescenceContainer/PresenceSpinbox
+@onready var knowledge_field: SpinBox = $TraitModifiers/KnowledgePanel/KnowledgeContainer/KnowledgeSpinbox
 @onready var pronouns_field: LineEdit = $HeaderMargin/Header/HeaderInfo/NamePronouns/PronounsPanelContainer/Pronouns/PronounsEdit
 @onready var experience1 : LineEdit = $BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences/Experience1/Experience1
 @onready var experience2 : LineEdit = $BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences/Experience2/Experience2
@@ -222,27 +222,27 @@ func _on_name_edit_focus_exited():
 	name_edit.text = character.character_name
 
 func _on_trait_text_submitted(new_val: int, trait_name: String) -> void:
-	if (trait_name == "Agility"):
+	if (trait_name == "AgilitySpinbox"):
 		character.agility = new_val
 		agility_field.value = character.agility
 		print("Agility: " + str(character.agility))
-	if (trait_name == "Strength"):
+	if (trait_name == "StrengthSpinbox"):
 		character.strength = new_val
 		strength_field.value = character.strength
 		print("Strength: " + str(character.strength))
-	if (trait_name == "Finesse"):
+	if (trait_name == "FinesseSpinbox"):
 		character.finesse = new_val
 		finesse_field.value = character.finesse
 		print("Finesse: " + str(character.finesse))
-	if (trait_name == "Instinct"):
+	if (trait_name == "InstinctSpinbox"):
 		character.instinct = new_val
 		instinct_field.value = character.instinct
 		print("Instinct: " + str(character.instinct))
-	if (trait_name == "Prescence"):
+	if (trait_name == "PresenceSpinbox"):
 		character.presence = new_val
 		presence_field.value = character.presence
 		print("Presence: " + str(character.presence))
-	if (trait_name == "Knowledge"):
+	if (trait_name == "KnowledgeSpinbox"):
 		character.knowledge = new_val
 		knowledge_field.value = character.knowledge
 		print("knowledge: " + str(character.knowledge))
@@ -380,7 +380,7 @@ func _on_levelup_cancel_pressed() -> void:
 
 func connect_signals() -> void:
 	for field in all_traits:
-		field.value_changed.connect(_on_trait_text_submitted.bind(field.get_parent().name))
+		field.value_changed.connect(_on_trait_text_submitted.bind(field.get_name()))
 	
 	short_rest_button.pressed.connect(_on_short_rest_pressed)
 	long_rest_button.pressed.connect(_on_long_rest_pressed)
