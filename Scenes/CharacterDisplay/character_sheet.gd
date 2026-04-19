@@ -11,11 +11,11 @@ extends Control
 @onready var presence_field: SpinBox = $TraitModifiers/PrescencePanel/PrescenceContainer/Prescence/SpinBox
 @onready var knowledge_field: SpinBox = $TraitModifiers/KnowledgePanel/KnowledgeContainer/Knowledge/SpinBox
 @onready var pronouns_field: LineEdit = $HeaderMargin/Header/HeaderInfo/NamePronouns/PronounsPanelContainer/Pronouns/PronounsEdit
-@onready var experience1 : LineEdit = $BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/Experiences/Experience1/Experience1
-@onready var experience2 : LineEdit = $BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/Experiences/Experience2/Experience2
-@onready var experience3 : LineEdit = $BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/Experiences/Experience3/Experience3
-@onready var experience4 : LineEdit = $BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/Experiences/Experience4/Experience4
-@onready var experience5 : LineEdit = $BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/Experiences/Experience5/Experience5
+@onready var experience1 : LineEdit = $BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/Experiences/Experience1/Experience1
+@onready var experience2 : LineEdit = $BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/Experiences/Experience2/Experience2
+@onready var experience3 : LineEdit = $BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/Experiences/Experience3/Experience3
+@onready var experience4 : LineEdit = $BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/Experiences/Experience4/Experience4
+@onready var experience5 : LineEdit = $BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/Experiences/Experience5/Experience5
 
 @onready var ancestry_field = $HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/AncestryPanelContainer/Ancestry
 @onready var community_field = $HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/CommunityPanelContainer/Community
@@ -75,7 +75,7 @@ extends Control
 @onready var information_popup = $InformationPopup
 
 @onready var equipment_window = $EquipmentWindow
-@onready var experiences_container = $BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/Experiences
+@onready var experiences_vbox = $BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/Experiences
 
 @onready var health_checkables = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Health/checkable_buttons
 @onready var stress_checkables = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Stress/checkable_buttons
@@ -118,8 +118,8 @@ func enter() -> void:
 	save_manager.set_character(character)
 	save_manager.save_character_data()
 
-	experiences_container.set_level_values(character)
-	experiences_container.set_visible_experiences(character)
+	experiences_vbox.set_level_values(character)
+	experiences_vbox.set_visible_experiences(character)
 	
 func _process(_delta: float) -> void:
 	if(updated==false and character.character_name!=""):
@@ -414,7 +414,7 @@ func connect_signals() -> void:
 	var manage_equipment_button = $BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentMargin/EquipmentVBox/ManageEquipment
 	manage_equipment_button.pressed.connect(_on_equipment_management_button_pressed)
 	
-	experiences_container.exp_level_changed.connect(_on_exp_level_changed)
+	experiences_vbox.exp_level_changed.connect(_on_exp_level_changed)
 
 	name_edit.focus_exited.connect(_on_name_edit_focus_exited)
 	name_edit.text_submitted.connect(_on_name_edit_text_submitted)
