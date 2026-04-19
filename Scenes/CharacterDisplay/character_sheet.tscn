@@ -28,7 +28,7 @@
 [ext_resource type="StyleBox" uid="uid://ck1deowv8fsse" path="res://Resources/GUIStyles/purple_border_panel.tres" id="15_1vmjr"]
 [ext_resource type="Resource" uid="uid://b77s47x5y88rn" path="res://Resources/Classes/Guardian/guardian.tres" id="15_n4116"]
 [ext_resource type="Resource" uid="uid://cuy8gd8ecs5j2" path="res://Resources/Classes/Ranger/ranger.tres" id="16_kjdj8"]
-[ext_resource type="Theme" uid="uid://bnf07vwi7mcky" path="res://Resources/GUIStyles/exp_button_theme.tres" id="17_i1vic"]
+[ext_resource type="Theme" uid="uid://bnf07vwi7mcky" path="res://Resources/GUIStyles/exp_theme.tres" id="17_i1vic"]
 [ext_resource type="Resource" uid="uid://bnehy1ghhj8ml" path="res://Resources/Classes/Rogue/rogue.tres" id="17_oxyly"]
 [ext_resource type="Resource" uid="uid://ccwu6ewcynypd" path="res://Resources/Classes/Seraph/seraph.tres" id="18_7pq50"]
 [ext_resource type="Resource" uid="uid://hywukpwyumtp" path="res://Resources/Classes/Sorcerer/sorcerer.tres" id="19_rj3pj"]
@@ -74,20 +74,6 @@ border_color = Color(0.6, 0.6, 0.6, 1)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_svvgr"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1vmjr"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i1vic"]
-bg_color = Color(0.6, 0.6, 0.6, 0.078431375)
-border_width_bottom = 1
-border_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1vmjr"]
-bg_color = Color(0.6, 0.6, 0.6, 0.078431375)
-border_width_bottom = 1
-border_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
 
 [sub_resource type="LabelSettings" id="LabelSettings_56qfy"]
 font_size = 24
@@ -1184,11 +1170,17 @@ wrap_mode = 1
 layout_mode = 2
 theme_override_styles/panel = ExtResource("15_1vmjr")
 
-[node name="Experiences" type="VBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer" unique_id=2003283091]
+[node name="MarginContainer" type="MarginContainer" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer" unique_id=803406521]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 4
+
+[node name="Experiences" type="VBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer" unique_id=2003283091]
 layout_mode = 2
 script = ExtResource("10_rj3pj")
 
-[node name="Label" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/Experiences" unique_id=908732964]
+[node name="Label" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences" unique_id=908732964]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
@@ -1196,82 +1188,87 @@ text = "Experiences"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Experience1" type="HBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/Experiences" unique_id=1280858404]
+[node name="Experience1" type="HBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences" unique_id=1280858404]
 layout_mode = 2
 
-[node name="Experience1" type="LineEdit" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/Experiences/Experience1" unique_id=1020765395]
+[node name="Experience1" type="LineEdit" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences/Experience1" unique_id=1020765395]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_colors/font_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_i1vic")
-theme_override_styles/focus = SubResource("StyleBoxFlat_1vmjr")
+theme = ExtResource("17_i1vic")
 text = "temp"
 
-[node name="SpinBox" type="SpinBox" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/Experiences/Experience1" unique_id=2107774909]
+[node name="SpinBox" type="SpinBox" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences/Experience1" unique_id=2107774909]
 layout_mode = 2
 theme = ExtResource("17_i1vic")
-theme_type_variation = &"SpinBoxInnerLineEdit"
 min_value = -100.0
 value = 2.0
 allow_greater = true
 allow_lesser = true
 
-[node name="Experience2" type="HBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/Experiences" unique_id=281734232]
+[node name="Experience2" type="HBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences" unique_id=281734232]
 layout_mode = 2
 
-[node name="Experience2" type="LineEdit" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/Experiences/Experience2" unique_id=1768669913]
+[node name="Experience2" type="LineEdit" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences/Experience2" unique_id=1768669913]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 3
+theme = ExtResource("17_i1vic")
 
-[node name="SpinBox" type="SpinBox" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/Experiences/Experience2" unique_id=2060575037]
+[node name="SpinBox" type="SpinBox" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences/Experience2" unique_id=2060575037]
 layout_mode = 2
+theme = ExtResource("17_i1vic")
 min_value = -100.0
 value = 2.0
 allow_greater = true
 allow_lesser = true
 
-[node name="Experience3" type="HBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/Experiences" unique_id=517739238]
+[node name="Experience3" type="HBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences" unique_id=517739238]
 layout_mode = 2
 
-[node name="Experience3" type="LineEdit" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/Experiences/Experience3" unique_id=321112575]
+[node name="Experience3" type="LineEdit" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences/Experience3" unique_id=321112575]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 3
+theme = ExtResource("17_i1vic")
 
-[node name="SpinBox" type="SpinBox" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/Experiences/Experience3" unique_id=8149512]
+[node name="SpinBox" type="SpinBox" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences/Experience3" unique_id=8149512]
 layout_mode = 2
+theme = ExtResource("17_i1vic")
 min_value = -100.0
 value = 2.0
 allow_greater = true
 allow_lesser = true
 
-[node name="Experience4" type="HBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/Experiences" unique_id=1618166217]
+[node name="Experience4" type="HBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences" unique_id=1618166217]
 layout_mode = 2
 
-[node name="Experience4" type="LineEdit" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/Experiences/Experience4" unique_id=57808382]
+[node name="Experience4" type="LineEdit" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences/Experience4" unique_id=57808382]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 3
+theme = ExtResource("17_i1vic")
 
-[node name="SpinBox" type="SpinBox" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/Experiences/Experience4" unique_id=1067876951]
+[node name="SpinBox" type="SpinBox" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences/Experience4" unique_id=1067876951]
 layout_mode = 2
+theme = ExtResource("17_i1vic")
 min_value = -100.0
 value = 2.0
 allow_greater = true
 allow_lesser = true
 
-[node name="Experience5" type="HBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/Experiences" unique_id=1984229138]
+[node name="Experience5" type="HBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences" unique_id=1984229138]
 layout_mode = 2
 
-[node name="Experience5" type="LineEdit" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/Experiences/Experience5" unique_id=1875908754]
+[node name="Experience5" type="LineEdit" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences/Experience5" unique_id=1875908754]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 3
+theme = ExtResource("17_i1vic")
 
-[node name="SpinBox" type="SpinBox" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/Experiences/Experience5" unique_id=986027287]
+[node name="SpinBox" type="SpinBox" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences/Experience5" unique_id=986027287]
 layout_mode = 2
+theme = ExtResource("17_i1vic")
 min_value = -100.0
 value = 2.0
 allow_greater = true
@@ -1668,13 +1665,13 @@ autowrap_mode = 2
 [connection signal="close_requested" from="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/DiceButtons/DiceRollWindow" to="." method="_on_dice_roll_window_close_requested"]
 [connection signal="pressed" from="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/CardsButton" to="." method="_on_cards_button_pressed"]
 [connection signal="text_changed" from="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/BioPanelContainer/BioMarginContainer/Bio/BioEdit" to="." method="_on_bio_text_changed"]
-[connection signal="text_changed" from="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/Experiences/Experience1/Experience1" to="." method="_on_experience_1_text_changed"]
-[connection signal="text_submitted" from="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/Experiences/Experience1/Experience1" to="." method="_on_experience_1_text_submitted"]
-[connection signal="text_changed" from="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/Experiences/Experience2/Experience2" to="." method="_on_experience_2_text_changed"]
-[connection signal="text_submitted" from="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/Experiences/Experience2/Experience2" to="." method="_on_experience_2_text_submitted"]
-[connection signal="text_changed" from="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/Experiences/Experience3/Experience3" to="." method="_on_experience_3_text_changed"]
-[connection signal="text_submitted" from="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/Experiences/Experience3/Experience3" to="." method="_on_experience_3_text_submitted"]
-[connection signal="text_changed" from="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/Experiences/Experience4/Experience4" to="." method="_on_experience_4_text_changed"]
-[connection signal="text_submitted" from="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/Experiences/Experience4/Experience4" to="." method="_on_experience_4_text_submitted"]
-[connection signal="text_changed" from="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/Experiences/Experience5/Experience5" to="." method="_on_experience_5_text_changed"]
-[connection signal="text_submitted" from="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/Experiences/Experience5/Experience5" to="." method="_on_experience_5_text_submitted"]
+[connection signal="text_changed" from="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences/Experience1/Experience1" to="." method="_on_experience_1_text_changed"]
+[connection signal="text_submitted" from="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences/Experience1/Experience1" to="." method="_on_experience_1_text_submitted"]
+[connection signal="text_changed" from="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences/Experience2/Experience2" to="." method="_on_experience_2_text_changed"]
+[connection signal="text_submitted" from="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences/Experience2/Experience2" to="." method="_on_experience_2_text_submitted"]
+[connection signal="text_changed" from="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences/Experience3/Experience3" to="." method="_on_experience_3_text_changed"]
+[connection signal="text_submitted" from="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences/Experience3/Experience3" to="." method="_on_experience_3_text_submitted"]
+[connection signal="text_changed" from="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences/Experience4/Experience4" to="." method="_on_experience_4_text_changed"]
+[connection signal="text_submitted" from="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences/Experience4/Experience4" to="." method="_on_experience_4_text_submitted"]
+[connection signal="text_changed" from="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences/Experience5/Experience5" to="." method="_on_experience_5_text_changed"]
+[connection signal="text_submitted" from="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences/Experience5/Experience5" to="." method="_on_experience_5_text_submitted"]

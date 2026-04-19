@@ -11,11 +11,11 @@ extends Control
 @onready var presence_field: SpinBox = $TraitModifiers/PrescencePanel/PrescenceContainer/Prescence/SpinBox
 @onready var knowledge_field: SpinBox = $TraitModifiers/KnowledgePanel/KnowledgeContainer/Knowledge/SpinBox
 @onready var pronouns_field: LineEdit = $HeaderMargin/Header/HeaderInfo/NamePronouns/PronounsPanelContainer/Pronouns/PronounsEdit
-@onready var experience1 : LineEdit = $BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/Experiences/Experience1/Experience1
-@onready var experience2 : LineEdit = $BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/Experiences/Experience2/Experience2
-@onready var experience3 : LineEdit = $BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/Experiences/Experience3/Experience3
-@onready var experience4 : LineEdit = $BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/Experiences/Experience4/Experience4
-@onready var experience5 : LineEdit = $BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/Experiences/Experience5/Experience5
+@onready var experience1 : LineEdit = $BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences/Experience1/Experience1
+@onready var experience2 : LineEdit = $BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences/Experience2/Experience2
+@onready var experience3 : LineEdit = $BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences/Experience3/Experience3
+@onready var experience4 : LineEdit = $BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences/Experience4/Experience4
+@onready var experience5 : LineEdit = $BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences/Experience5/Experience5
 
 @onready var ancestry_field = $HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/AncestryPanelContainer/Ancestry
 @onready var community_field = $HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/CommunityPanelContainer/Community
@@ -75,7 +75,7 @@ extends Control
 @onready var information_popup = $InformationPopup
 
 @onready var equipment_window = $EquipmentWindow
-@onready var experiences_vbox = $BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/Experiences
+@onready var experiences_vbox = $BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences
 
 @onready var health_checkables = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Health/checkable_buttons
 @onready var stress_checkables = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Stress/checkable_buttons
@@ -198,17 +198,17 @@ func print_character_details() -> void:
 
 func check_tier_achievements_threshold() -> void:
 	if character.level < 2:
-		experience3.hide()
+		experiences_vbox.set_experience_visibility(3, false)
 	else:
-		experience3.show()
+		experiences_vbox.set_experience_visibility(3, true)
 	if character.level < 5:
-		experience4.hide()
+		experiences_vbox.set_experience_visibility(4, false)
 	else:
-		experience4.show()
+		experiences_vbox.set_experience_visibility(4, true)
 	if character.level < 8:
-		experience5.hide()
+		experiences_vbox.set_experience_visibility(5, false)
 	else:
-		experience5.show()
+		experiences_vbox.set_experience_visibility(5, true)
 
 func _on_bio_text_changed() -> void:
 	character.bio = bio_edit.get_text()
