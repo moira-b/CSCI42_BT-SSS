@@ -2,7 +2,6 @@ class_name Character_Sheet
 extends Control
 
 @onready var bio_edit = $BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/BioPanelContainer/BioMarginContainer/Bio/BioEdit
-#@onready var name_edit = $HeaderMargin/Header/HeaderInfo/NamePronouns/NamePanelContainer/NameC/NameEdit
 @onready var name_edit = $HeaderMargin/Header/HeaderInfo/NamePronouns/NamePanelContainer/NameC/NameEdit
 @onready var agility_field: SpinBox = $TraitModifiers/AgilityPanel/AgilityContainer/Agility/SpinBox
 @onready var strength_field: SpinBox = $TraitModifiers/StrengthPanel/StrengthContainer/Strength/SpinBox
@@ -29,8 +28,6 @@ extends Control
 @onready var evasion_value: Label = $BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EvasionProficiencyMargin/HBoxContainer/Evasion/FieldContainer/MarginContainer/FieldValue
 @onready var proficiency_value: Label = $BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EvasionProficiencyMargin/HBoxContainer/Proficiency/FieldContainer/MarginContainer/FieldValue
 @onready var damage_threshold_display = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/DamageThresholdDisplay
-#@onready var major_threshold_value: Label = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/DamageThresholds/HBoxContainer/MajorThreshold/FieldContainer/MarginContainer/FieldValue
-#@onready var severe_threshold_value: Label = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/DamageThresholds/HBoxContainer/SevereThreshold/FieldContainer/MarginContainer/FieldValue
 
 @onready var advance_window: Window = $AdvanceWindow
 
@@ -134,23 +131,18 @@ func update_equipment_display() -> void:
 	var secondaryPanel = $BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentContainer/EquipmentMargin/EquipmentVBox/SecondaryWeapon
 	var armorPanel = $BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentContainer/EquipmentMargin/EquipmentVBox/Armor
 	
-	#primaryPanel.get_child(0).get_node("EquipmentName").text = character.get_primary_name()
 	primaryPanel.get_child(0).get_node("EquipmentInfo").text = character.get_primary_name() + "\n" + character.get_primary_info()
-	#armorPanel.get_child(0).get_node("EquipmentName").text = character.get_armor_name()
 	armorPanel.get_child(0).get_node("EquipmentInfo").text = character.get_armor_name() + "\n" + character.get_armor_info()
 	
 	if (character.get_secondary_name()==""):
 		secondaryPanel.hide()
 	else:
-		#secondaryPanel.get_child(0).get_node("EquipmentName").text = character.get_secondary_name()
 		secondaryPanel.get_child(0).get_node("EquipmentInfo").text = character.get_secondary_name() + "\n" + character.get_secondary_info()
 		secondaryPanel.show()
 	
 	# handle stat changes due to equipment changes
 	damage_threshold_display.set_major_threshold(character.damage_thresholds[0])
 	damage_threshold_display.set_severe_threshold(character.damage_thresholds[1])
-	#major_threshold_value.set_text(str(character.damage_thresholds[0]))
-	#severe_threshold_value.set_text(str(character.damage_thresholds[1]))
 	evasion_value.set_text(str(character.evasion))
 	
 func update_markable_fields() -> void:
