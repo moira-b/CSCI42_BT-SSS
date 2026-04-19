@@ -130,20 +130,20 @@ func _process(_delta: float) -> void:
 		
 func update_equipment_display() -> void:
 	# handle display of actual equipment
-	var primaryPanel = $BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentMargin/EquipmentVBox/PrimaryWeapon
-	var secondaryPanel = $BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentMargin/EquipmentVBox/SecondaryWeapon
-	var armorPanel = $BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentMargin/EquipmentVBox/Armor
+	var primaryPanel = $BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentContainer/EquipmentMargin/EquipmentVBox/PrimaryWeapon
+	var secondaryPanel = $BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentContainer/EquipmentMargin/EquipmentVBox/SecondaryWeapon
+	var armorPanel = $BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentContainer/EquipmentMargin/EquipmentVBox/Armor
 	
-	primaryPanel.get_child(0).get_node("EquipmentName").text = character.get_primary_name()
-	primaryPanel.get_child(0).get_node("EquipmentInfo").text = character.get_primary_info()
-	armorPanel.get_child(0).get_node("EquipmentName").text = character.get_armor_name()
-	armorPanel.get_child(0).get_node("EquipmentInfo").text = character.get_armor_info()
+	#primaryPanel.get_child(0).get_node("EquipmentName").text = character.get_primary_name()
+	primaryPanel.get_child(0).get_node("EquipmentInfo").text = character.get_primary_name() + "\n" + character.get_primary_info()
+	#armorPanel.get_child(0).get_node("EquipmentName").text = character.get_armor_name()
+	armorPanel.get_child(0).get_node("EquipmentInfo").text = character.get_armor_name() + "\n" + character.get_armor_info()
 	
 	if (character.get_secondary_name()==""):
 		secondaryPanel.hide()
 	else:
-		secondaryPanel.get_child(0).get_node("EquipmentName").text = character.get_secondary_name()
-		secondaryPanel.get_child(0).get_node("EquipmentInfo").text = character.get_secondary_info()
+		#secondaryPanel.get_child(0).get_node("EquipmentName").text = character.get_secondary_name()
+		secondaryPanel.get_child(0).get_node("EquipmentInfo").text = character.get_secondary_name() + "\n" + character.get_secondary_info()
 		secondaryPanel.show()
 	
 	# handle stat changes due to equipment changes
@@ -414,7 +414,7 @@ func connect_signals() -> void:
 	ancestry_panel.mouse_exited.connect(_on_mouse_exit_header_panel)
 	community_panel.mouse_exited.connect(_on_mouse_exit_header_panel)
 
-	var manage_equipment_button = $BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentMargin/EquipmentVBox/ManageEquipment
+	var manage_equipment_button = $BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentContainer/EquipmentMargin/EquipmentVBox/ManageEquipment
 	manage_equipment_button.pressed.connect(_on_equipment_management_button_pressed)
 	
 	experiences_vbox.exp_level_changed.connect(_on_exp_level_changed)
