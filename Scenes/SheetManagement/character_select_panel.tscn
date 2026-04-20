@@ -23,6 +23,7 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_wut7y")
 script = ExtResource("1_7sfn8")
 
 [node name="Character" parent="." unique_id=1371470097 instance=ExtResource("2_ajeve")]
+proficiency = 0
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=77115605]
 layout_mode = 2
