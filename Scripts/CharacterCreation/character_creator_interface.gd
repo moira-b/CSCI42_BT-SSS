@@ -160,12 +160,12 @@ func _on_tab_button_pressed(tab: Button) -> void:
 		_set_active_option_tab(0)
 		option_tab_index = 0
 		character.subclass = null
-		if character.character_class != null && card_selector.select_card_list.item_count != 0:
+		if character.character_class != null && card_selector.select_card_list.item_count > 0:
 			card_selector.clear_selected_cards()
 	if tab.name == "Subclass": 
 		_set_active_option_tab(1)
 		option_tab_index = 1
-		if character.character_class != null && card_selector.select_card_list.item_count != 0:
+		if character.character_class != null && card_selector.select_card_list.item_count > 0:
 			card_selector.clear_selected_cards()
 	if tab.name == "Heritage": 
 		_set_active_option_tab(2)
@@ -191,8 +191,24 @@ func _on_tab_button_pressed(tab: Button) -> void:
 		option_tab_index = 8
 
 func _is_character_data_valid() -> bool:
-	if (character.character_class == null || character.subclass == null ||
-		character.ancestry == null || character.community == null || card_selector.select_card_list.item_count == 0):
+	if (character.character_class == null):
+		notif_window.get_child(0).text = "Invalid Character Class."
+		_raise_error()
+		return false
+	if (character.subclass == null):
+		notif_window.get_child(0).text = "Invalid Character Subclass."
+		_raise_error()
+		return false
+	if (character.ancestry == null):
+		notif_window.get_child(0).text = "Invalid Character Ancestry."
+		_raise_error()
+		return false
+	if (character.community == null):
+		notif_window.get_child(0).text = "Invalid Character Community."
+		_raise_error()
+		return false
+	if (card_selector.select_card_list.item_count == 0):
+		notif_window.get_child(0).text = "Missing Domain Cards."
 		_raise_error()
 		return false
 	else:
