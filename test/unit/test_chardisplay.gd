@@ -132,3 +132,27 @@ func test_equipment_manager():
 	assert_eq(char_display.major_threshold_value.text, str(char_display.character.damage_thresholds[0]))
 	assert_eq(char_display.severe_threshold_value.text, str(char_display.character.damage_thresholds[1]))
 	assert_eq(char_display.evasion_value.text, str(char_display.character.evasion))
+
+
+func test_markables():
+	var test_health = char_display.health_field.get_node("FieldContainer/Labels/FieldValue")
+	var test_stress = char_display.stress_field.get_node("FieldContainer/Labels/FieldValue")
+	var test_hope = char_display.hope_field.get_node("FieldContainer/Labels/FieldValue")
+	var test_armor = char_display.armor_field.get_node("FieldContainer/Labels/FieldValue")
+	
+	var test_char_health = char_display.character.current_hp
+	var test_char_stress = char_display.character.current_stress
+	var test_char_hope = char_display.character.current_hope
+	var test_char_armor = char_display.character.used_armor_slots
+	
+	test_char_health = 0
+	test_char_stress = 0
+	test_char_hope = 0
+	test_char_armor = 0
+	
+	char_display.update_markable_fields()
+	
+	assert_eq(test_health.text, str(test_char_health))
+	assert_eq(test_stress.text, str(test_char_stress))
+	assert_eq(test_hope.text, str(test_char_hope))
+	assert_eq(test_armor.text, str(test_char_armor))
