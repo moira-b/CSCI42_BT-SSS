@@ -42,3 +42,7 @@ func get_selected_secondary():
 	if self.is_anything_selected() == false:
 		selected_secondary = ""
 	return selected_secondary
+	
+func disable_selection(disable: bool):
+	for i in range(item_count):
+		set_item_disabled(i, disable)

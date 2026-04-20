@@ -75,6 +75,7 @@ func is_selection_valid() -> bool:
 	var primary_burden: String = p_wep_list.get_burden()
 	
 	if primary_burden=="One-Handed":
+		s_wep_list.disable_selection(false)
 		if selected_equipment.count("")==0:
 			"DEBUG: One-handed primary selected. Equipment choices are valid."
 			return true
@@ -83,6 +84,7 @@ func is_selection_valid() -> bool:
 			return false
 	elif primary_burden=="Two-Handed":
 		s_wep_list.deselect_all()
+		s_wep_list.disable_selection(true)
 		selected_equipment[2] = ""
 		if selected_equipment[0]=="":
 			print("DEBUG: Armor not selected. Equipment choices are invalid.")
