@@ -160,9 +160,13 @@ func _on_tab_button_pressed(tab: Button) -> void:
 		_set_active_option_tab(0)
 		option_tab_index = 0
 		character.subclass = null
+		if character.character_class != null && card_selector.select_card_list.item_count != 0:
+			card_selector.clear_selected_cards()
 	if tab.name == "Subclass": 
 		_set_active_option_tab(1)
 		option_tab_index = 1
+		if character.character_class != null && card_selector.select_card_list.item_count != 0:
+			card_selector.clear_selected_cards()
 	if tab.name == "Heritage": 
 		_set_active_option_tab(2)
 		option_tab_index = 2
@@ -188,7 +192,7 @@ func _on_tab_button_pressed(tab: Button) -> void:
 
 func _is_character_data_valid() -> bool:
 	if (character.character_class == null || character.subclass == null ||
-		character.ancestry == null || character.community == null):
+		character.ancestry == null || character.community == null || card_selector.select_card_list.item_count == 0):
 		_raise_error()
 		return false
 	else:
