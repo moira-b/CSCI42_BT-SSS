@@ -60,8 +60,8 @@ func test_signals():
 	assert_connected(char_display.community_panel.mouse_entered, char_display._on_mouse_enter_community_panel)
 	assert_connected(char_display.community_panel.mouse_exited, char_display._on_mouse_exit_header_panel)
 	assert_connected(char_display.experiences_container.exp_level_changed, char_display._on_exp_level_changed)
-	#assert_connected(char_display.name_edit.focus_exited, char_display._on_name_edit_focus_exited)
-	#assert_connected(char_display.name_edit.text_submitted, char_display._on_name_edit_text_submitted)
+	assert_connected(char_display.name_edit.focus_exited, char_display._on_name_edit_focus_exited)
+	assert_connected(char_display.name_edit.text_submitted, char_display._on_name_edit_text_submitted)
 	
 
 
@@ -101,3 +101,17 @@ func test_text_box_functions():
 	bio_field.text_changed.emit()
 	var char_bio = char_display.character.bio
 	assert_eq(char_bio, "abc123")
+
+
+func test_equipment_manager():
+	var primary_info = char_display.get_node($BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentMargin/EquipmentVBox/PrimaryWeapon/PrimaryVBox)
+	var secondary_info = char_display.get_node($BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentMargin/EquipmentVBox/SecondaryWeapon/SecondaryVBox)
+	var armor_info = char_display.get_node($BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentMargin/EquipmentVBox/Armor/ArmorVBox)
+	
+	char_display.character.items[0] = "Gambeson Armor"
+	char_display.character.items[1] = "Broadsword"
+	char_display.character.items[2] = "Shortsword"
+	
+	char_display.update_equipment_display()
+	
+	
