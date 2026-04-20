@@ -199,7 +199,7 @@ func _is_character_data_valid() -> bool:
 		notif_window.get_child(0).text = "Invalid Character Community."
 		_raise_error()
 		return false
-	if (card_selector.select_card_list.item_count == 0):
+	if (card_selector.select_card_list.item_count < 2):
 		notif_window.get_child(0).text = "Missing Domain Cards."
 		_raise_error()
 		return false
