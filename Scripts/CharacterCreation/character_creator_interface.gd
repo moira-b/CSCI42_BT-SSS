@@ -69,6 +69,14 @@ func _set_active_option_tab(_index: int):
 	'''
 		Sets active item list by hiding or showing visibility of given item lists
 	'''
+	
+	var i: int = 0
+	for tab in $TabButtons.get_children():
+		if i > option_tab_index:
+			tab.disabled = true
+		else:
+			tab.disabled = false
+			
 	if active_option_tab and active_option_tab.name == "DomainCardSelContainer":
 		active_option_tab.clear_screen()
 		
@@ -156,35 +164,31 @@ func add_domain_cards():
 
 
 func _on_tab_button_pressed(tab: Button) -> void:
+	var next_tab_index = -1
 	if tab.name == "Class": 
-		_set_active_option_tab(0)
-		option_tab_index = 0
+		next_tab_index = 0
 		character.subclass = null
 	if tab.name == "Subclass": 
-		_set_active_option_tab(1)
-		option_tab_index = 1
+		next_tab_index = 1
 	if tab.name == "Heritage": 
-		_set_active_option_tab(2)
-		option_tab_index = 2
+		next_tab_index = 2
 	if tab.name == "Community": 
-		_set_active_option_tab(3)
-		option_tab_index = 3
+		next_tab_index = 3
 	if tab.name == "DomainCards": 
 		if character.character_class != null:
-			_set_active_option_tab(4)
-			option_tab_index = 4
+			next_tab_index = 4
 	if tab.name == "Traits": 
-		_set_active_option_tab(5)
-		option_tab_index = 5
+		next_tab_index = 5
 	if tab.name == "Experiences": 
-		_set_active_option_tab(6)
-		option_tab_index = 6
+		next_tab_index = 6
 	if tab.name == "Equipment": 
-		_set_active_option_tab(7)
-		option_tab_index = 7
+		next_tab_index = 7
 	if tab.name == "Name":
-		_set_active_option_tab(8)
-		option_tab_index = 8
+		next_tab_index = 8
+	
+	if(next_tab_index <= option_tab_index):
+		option_tab_index = next_tab_index
+		_set_active_option_tab(option_tab_index)
 
 func _is_character_data_valid() -> bool:
 	if (character.character_class == null || character.subclass == null ||

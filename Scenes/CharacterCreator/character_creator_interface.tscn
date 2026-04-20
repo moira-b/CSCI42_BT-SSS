@@ -50,12 +50,12 @@
 [ext_resource type="Script" uid="uid://clmxkh4im6n7f" path="res://Scripts/CharacterCreation/text_fill_container.gd" id="39_68bmj"]
 [ext_resource type="Script" uid="uid://bwg57k6ymdiig" path="res://Scripts/CharacterCreation/description_display.gd" id="42_a5r2x"]
 [ext_resource type="PackedScene" uid="uid://1un73y3t3x7b" path="res://Scenes/Cards/domain_card_sel_container.tscn" id="47_g2o8p"]
-[ext_resource type="Script" path="res://Scripts/CharacterCreation/armor_list.gd" id="50_7mc0y"]
-[ext_resource type="Script" path="res://Scripts/CharacterCreation/p_weapon_list.gd" id="50_deb4u"]
-[ext_resource type="Script" path="res://Scripts/CharacterCreation/equipment_list.gd" id="50_kdp8w"]
-[ext_resource type="Script" path="res://Scripts/CharacterCreation/s_weapon_list.gd" id="52_v3iga"]
+[ext_resource type="Script" uid="uid://co3dycsyqv6ap" path="res://Scripts/CharacterCreation/armor_list.gd" id="50_7mc0y"]
+[ext_resource type="Script" uid="uid://mx8mfwor421u" path="res://Scripts/CharacterCreation/p_weapon_list.gd" id="50_deb4u"]
+[ext_resource type="Script" uid="uid://dfemyf8r5ay1p" path="res://Scripts/CharacterCreation/equipment_list.gd" id="50_kdp8w"]
+[ext_resource type="Script" uid="uid://cutrjksidwmox" path="res://Scripts/CharacterCreation/s_weapon_list.gd" id="52_v3iga"]
 [ext_resource type="StyleBox" uid="uid://dic645d200g74" path="res://Resources/GUIStyles/character_sheet_stylebox.tres" id="55_cu4qg"]
-[ext_resource type="Script" path="res://Scripts/CharacterCreation/clank_feature_window.gd" id="55_q4mme"]
+[ext_resource type="Script" uid="uid://brw0h6t6ssxf" path="res://Scripts/CharacterCreation/clank_feature_window.gd" id="55_q4mme"]
 
 [sub_resource type="Resource" id="Resource_7bny4"]
 script = ExtResource("7_5fs0t")
@@ -90,46 +90,55 @@ grow_horizontal = 2
 [node name="Class" type="Button" parent="TabButtons" unique_id=394473369]
 layout_mode = 2
 size_flags_horizontal = 3
+disabled = true
 text = "Class"
 
 [node name="Subclass" type="Button" parent="TabButtons" unique_id=1329706564]
 layout_mode = 2
 size_flags_horizontal = 3
+disabled = true
 text = "Subclass"
 
 [node name="Heritage" type="Button" parent="TabButtons" unique_id=1406435465]
 layout_mode = 2
 size_flags_horizontal = 3
+disabled = true
 text = "Heritage"
 
 [node name="Community" type="Button" parent="TabButtons" unique_id=1071396811]
 layout_mode = 2
 size_flags_horizontal = 3
+disabled = true
 text = "Community"
 
 [node name="DomainCards" type="Button" parent="TabButtons" unique_id=1215117363]
 layout_mode = 2
 size_flags_horizontal = 3
+disabled = true
 text = "Domain Cards"
 
 [node name="Traits" type="Button" parent="TabButtons" unique_id=1773478265]
 layout_mode = 2
 size_flags_horizontal = 3
+disabled = true
 text = "Traits"
 
 [node name="Experiences" type="Button" parent="TabButtons" unique_id=2133570945]
 layout_mode = 2
 size_flags_horizontal = 3
+disabled = true
 text = "Experiences"
 
 [node name="Equipment" type="Button" parent="TabButtons" unique_id=516539210]
 layout_mode = 2
 size_flags_horizontal = 3
+disabled = true
 text = "Equipment"
 
 [node name="Name" type="Button" parent="TabButtons" unique_id=781964754]
 layout_mode = 2
 size_flags_horizontal = 3
+disabled = true
 text = "Name"
 
 [node name="OptionLists" type="Control" parent="." unique_id=1737252042]
