@@ -29,7 +29,14 @@ func _ready() -> void:
 		add_item(item)
 	self.item_selected.connect(_on_item_selected)
 
-
+func populate_list(tier: int):
+	clear()
+	
+	for item in weapon_dict:
+		if weapon_dict[item].tier <= tier and weapon_dict[item].category == "Primary":
+			add_item(item)
+	
+	self.item_selected.connect(_on_item_selected)
 func _on_item_selected(_index: int) -> void:
 	selected_primary = primaries[_index]
 	primary_item_selected.emit()

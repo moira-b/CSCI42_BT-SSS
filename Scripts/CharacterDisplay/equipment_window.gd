@@ -21,6 +21,19 @@ func showWindow(character: Character):
 	
 	selected_equipment = [character.items[0], character.items[1], character.items[2]]
 	print(selected_equipment)
+	var tier = -1
+	if character.level < 2:
+		tier = 1
+	elif character.level <5:
+		tier = 2
+	elif character.level <8:
+		tier = 3
+	else:
+		tier = 4
+		
+	armor_list.populate_list(tier)
+	p_wep_list.populate_list(tier)
+	s_wep_list.populate_list(tier)
 	
 	# preselect current equipment
 	preselect_current_equipment(character.items)
