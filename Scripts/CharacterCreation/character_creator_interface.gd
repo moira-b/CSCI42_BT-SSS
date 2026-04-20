@@ -60,10 +60,6 @@ func _process(_delta: float) -> void:
 	elif active_option_tab.name == "NamePronounContainer" and active_option_tab.is_all_textboxes_filled():
 			complete_button.disabled = false
 	
-	if character.character_class == null:
-		tab_buttons[1].disabled = true
-	else:
-		tab_buttons[1].disabled = false
 
 func _set_active_option_tab(_index: int):
 	'''
@@ -75,6 +71,8 @@ func _set_active_option_tab(_index: int):
 			
 	if active_option_tab and active_option_tab.name == "DomainCardSelContainer":
 		active_option_tab.clear_screen()
+	elif active_option_tab and active_option_tab.name == "CharacterClassList":
+		card_selector.clear_selected_cards()
 		
 
 	if option_tab_array[_index]:
@@ -163,13 +161,8 @@ func _on_tab_button_pressed(tab: Button) -> void:
 	var next_tab_index = -1
 	if tab.name == "Class": 
 		next_tab_index = 0
-		character.subclass = null
-		if character.character_class != null && card_selector.select_card_list.item_count > 0:
-			card_selector.clear_selected_cards()
 	if tab.name == "Subclass": 
 		next_tab_index = 1
-		if character.character_class != null && card_selector.select_card_list.item_count > 0:
-			card_selector.clear_selected_cards()
 	if tab.name == "Heritage": 
 		next_tab_index = 2
 	if tab.name == "Community": 
