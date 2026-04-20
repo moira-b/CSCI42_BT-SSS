@@ -70,12 +70,8 @@ func _set_active_option_tab(_index: int):
 		Sets active item list by hiding or showing visibility of given item lists
 	'''
 	
-	var i: int = 0
-	for tab in $TabButtons.get_children():
-		if i > option_tab_index:
-			tab.disabled = true
-		else:
-			tab.disabled = false
+	
+	$TabButtons.get_child(_index).disabled = false
 			
 	if active_option_tab and active_option_tab.name == "DomainCardSelContainer":
 		active_option_tab.clear_screen()
@@ -168,8 +164,12 @@ func _on_tab_button_pressed(tab: Button) -> void:
 	if tab.name == "Class": 
 		next_tab_index = 0
 		character.subclass = null
+		if character.character_class != null && card_selector.select_card_list.item_count > 0:
+			card_selector.clear_selected_cards()
 	if tab.name == "Subclass": 
 		next_tab_index = 1
+		if character.character_class != null && card_selector.select_card_list.item_count > 0:
+			card_selector.clear_selected_cards()
 	if tab.name == "Heritage": 
 		next_tab_index = 2
 	if tab.name == "Community": 
@@ -186,13 +186,28 @@ func _on_tab_button_pressed(tab: Button) -> void:
 	if tab.name == "Name":
 		next_tab_index = 8
 	
-	if(next_tab_index <= option_tab_index):
-		option_tab_index = next_tab_index
-		_set_active_option_tab(option_tab_index)
+	option_tab_index = next_tab_index
+	_set_active_option_tab(option_tab_index)
 
 func _is_character_data_valid() -> bool:
-	if (character.character_class == null || character.subclass == null ||
-		character.ancestry == null || character.community == null):
+	if (character.character_class == null):
+		notif_window.get_child(0).text = "Invalid Character Class."
+		_raise_error()
+		return false
+	if (character.subclass == null):
+		notif_window.get_child(0).text = "Invalid Character Subclass."
+		_raise_error()
+		return false
+	if (character.ancestry == null):
+		notif_window.get_child(0).text = "Invalid Character Ancestry."
+		_raise_error()
+		return false
+	if (character.community == null):
+		notif_window.get_child(0).text = "Invalid Character Community."
+		_raise_error()
+		return false
+	if (card_selector.select_card_list.item_count == 0):
+		notif_window.get_child(0).text = "Missing Domain Cards."
 		_raise_error()
 		return false
 	else:
