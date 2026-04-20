@@ -63,12 +63,6 @@ func _process(delta):
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n4116"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2ohwh"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jlx5q"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dxpx4"]
-
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5ih58"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gjf7o"]
@@ -666,21 +660,21 @@ layout_mode = 2
 
 [node name="Health" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer" unique_id=898166146]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_2ohwh")
+theme_override_styles/panel = ExtResource("4_irdes")
 
 [node name="checkable_buttons" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Health" unique_id=1054008189 instance=ExtResource("7_rj3pj")]
 layout_mode = 2
 
 [node name="Stress" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer" unique_id=2030183416]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_jlx5q")
+theme_override_styles/panel = ExtResource("4_irdes")
 
 [node name="checkable_buttons" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Stress" unique_id=1984381611 instance=ExtResource("7_rj3pj")]
 layout_mode = 2
 
 [node name="Hope" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer" unique_id=431121348]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_dxpx4")
+theme_override_styles/panel = ExtResource("4_irdes")
 
 [node name="checkable_buttons" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Hope" unique_id=858122431 instance=ExtResource("7_rj3pj")]
 layout_mode = 2
@@ -923,7 +917,7 @@ vertical_alignment = 1
 
 [node name="Armor" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer" unique_id=592864428]
 layout_mode = 2
-theme = ExtResource("9_jlx5q")
+theme_override_styles/panel = ExtResource("4_irdes")
 
 [node name="checkable_buttons" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/Armor" unique_id=403746211 instance=ExtResource("7_rj3pj")]
 layout_mode = 2
