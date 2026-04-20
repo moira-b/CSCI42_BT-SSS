@@ -104,14 +104,31 @@ func test_text_box_functions():
 
 
 func test_equipment_manager():
-	var primary_info = char_display.get_node($BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentMargin/EquipmentVBox/PrimaryWeapon/PrimaryVBox)
-	var secondary_info = char_display.get_node($BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentMargin/EquipmentVBox/SecondaryWeapon/SecondaryVBox)
-	var armor_info = char_display.get_node($BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentMargin/EquipmentVBox/Armor/ArmorVBox)
+	var test_armor = "Gambeson Armor"
+	var test_prim = "Broadsword"
+	var test_second = "Shortsword"
 	
-	char_display.character.items[0] = "Gambeson Armor"
-	char_display.character.items[1] = "Broadsword"
-	char_display.character.items[2] = "Shortsword"
+	var primary_info = char_display.get_node("BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentMargin/EquipmentVBox/PrimaryWeapon/PrimaryVBox")
+	var secondary_info = char_display.get_node("BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentMargin/EquipmentVBox/SecondaryWeapon/SecondaryVBox")
+	var armor_info = char_display.get_node("BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentMargin/EquipmentVBox/Armor/ArmorVBox")
+	
+	char_display.character.items.append(test_armor)
+	char_display.character.equip_armor(char_display.character.items[0])
+	char_display.character.items.append(test_prim)
+	char_display.character.equip_primary(char_display.character.items[1])
+	char_display.character.items.append(test_second)
+	char_display.character.equip_secondary(char_display.character.items[2])
 	
 	char_display.update_equipment_display()
 	
+	assert_eq(armor_info.get_child(0).text, char_display.character.get_armor_name())
+	assert_eq(primary_info.get_child(0).text, char_display.character.get_primary_name())
+	assert_eq(secondary_info.get_child(0).text, char_display.character.get_secondary_name())
 	
+	assert_eq(armor_info.get_child(1).text, char_display.character.get_armor_info())
+	assert_eq(primary_info.get_child(1).text, char_display.character.get_primary_info())
+	assert_eq(secondary_info.get_child(1).text, char_display.character.get_secondary_info())
+	
+	assert_eq(char_display.major_threshold_value.text, str(char_display.character.damage_thresholds[0]))
+	assert_eq(char_display.severe_threshold_value.text, str(char_display.character.damage_thresholds[1]))
+	assert_eq(char_display.evasion_value.text, str(char_display.character.evasion))
