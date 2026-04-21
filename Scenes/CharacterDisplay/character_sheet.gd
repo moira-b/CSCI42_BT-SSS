@@ -508,6 +508,7 @@ func _on_header_panel_clicked(input: InputEvent, panel: String):
 				)
 			else:
 				information_popup.hide()
+				information_popup.class_description.text = ""
 				return
 
 func _on_equipment_management_button_pressed():
