@@ -46,7 +46,7 @@ var multiclass_subclasses: Array[CharacterSubclass]
 var multiclass_selections: Array[CharacterClass]
 var primary_key: String
 
-
+@onready var button_enabler: Array[bool] = [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true]
 @onready var active_cards: Array[String] = []
 @onready var vaulted_cards: Array[String] = []
 
@@ -186,7 +186,8 @@ func serialize_data():
 		"multiclass_subclasses": multiclass_subclasses,
 		"multiclass_selections": multiclass_selections,
 		"num_downtime_moves": num_downtime_moves,
-		"active_domain_card_counters": active_domain_card_counters
+		"active_domain_card_counters": active_domain_card_counters,
+		"button_enabler": button_enabler
 	}
 	return save_dict
 
@@ -231,6 +232,7 @@ func load_data(char_dict: Variant):
 	multiclass_selections.assign(char_dict["multiclass_selections"])
 	num_downtime_moves = char_dict["num_downtime_moves"]
 	active_domain_card_counters.assign(char_dict["active_domain_card_counters"])
+	button_enabler.assign(char_dict["button_enabler"])
 	
 func implement_ancestry_features(pd_which_exp: int=-1):
 	if self.ancestry.ancestry_name=="Clank":
