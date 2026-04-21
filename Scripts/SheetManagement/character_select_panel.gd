@@ -64,7 +64,6 @@ func _on_select_button_pressed():
 	character.reparent(new_scene)
 	get_tree().root.add_child(new_scene)
 	new_scene.enter()
-	print("hi")
 	get_tree().root.get_child(0).queue_free()
 
 func open_character_sheet():
@@ -74,7 +73,6 @@ func open_character_sheet():
 	character.reparent(new_scene)
 	get_tree().root.add_child(new_scene)
 	new_scene.enter()
-	print("hi")
 	get_tree().root.get_child(0).queue_free()
 
 func _on_settings_button_pressed():

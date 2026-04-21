@@ -41,10 +41,11 @@ var ancestry: Ancestry
 var community: Community
 var character_class: CharacterClass
 var subclass: CharacterSubclass
-var multiclass_domains: Array[Domain]
-var multiclass_subclasses: Array[CharacterSubclass]
-var multiclass_selections: Array[CharacterClass]
+var multiclass_domains: Domain
+var multiclass_subclass: CharacterSubclass
+var multiclass_selection: CharacterClass
 var primary_key: String
+var has_multiclassed: bool = false
 
 @onready var button_enabler: Array[bool] = [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true]
 @onready var active_cards: Array[String] = []
@@ -149,6 +150,19 @@ func set_proficiency() -> void:
 	pass
 	
 func serialize_data():
+	var to_save_multiclass_subclass
+	var to_save_multiclass_selections
+	var to_save_multiclass_domain
+	
+	if has_multiclassed:
+		to_save_multiclass_subclass = multiclass_subclass.resource_path
+		to_save_multiclass_selections = multiclass_selection.resource_path
+		to_save_multiclass_domain = multiclass_domains.resource_path
+	else:
+		to_save_multiclass_subclass = null
+		to_save_multiclass_selections = null
+		to_save_multiclass_domain = null
+	
 	var save_dict = {
 		"primary_key": primary_key,
 		"character_name": character_name,
@@ -182,12 +196,13 @@ func serialize_data():
 		"max_domain_cards": max_domain_cards,
 		"active_cards" : active_cards,
 		"vaulted_cards": vaulted_cards,
-		"multiclass_domains": multiclass_domains,
-		"multiclass_subclasses": multiclass_subclasses,
-		"multiclass_selections": multiclass_selections,
+		"multiclass_domains": to_save_multiclass_domain,
+		"multiclass_subclass": to_save_multiclass_subclass,
+		"multiclass_selection": to_save_multiclass_selections,
 		"num_downtime_moves": num_downtime_moves,
 		"active_domain_card_counters": active_domain_card_counters,
-		"button_enabler": button_enabler
+		"button_enabler": button_enabler,
+		"has_multiclassed": has_multiclassed
 	}
 	return save_dict
 
@@ -227,9 +242,11 @@ func load_data(char_dict: Variant):
 	max_domain_cards = char_dict["max_domain_cards"]
 	active_cards.assign(char_dict["active_cards"])
 	vaulted_cards.assign(char_dict["vaulted_cards"])
-	multiclass_domains.assign(char_dict["multiclass_domains"])
-	multiclass_subclasses.assign(char_dict["multiclass_subclasses"])
-	multiclass_selections.assign(char_dict["multiclass_selections"])
+	has_multiclassed = char_dict["has_multiclassed"]
+	if has_multiclassed:
+		multiclass_subclass = load(char_dict["multiclass_subclass"])
+		multiclass_selection = load(char_dict["multiclass_selection"])
+		multiclass_domains = load(char_dict["multiclass_domains"])
 	num_downtime_moves = char_dict["num_downtime_moves"]
 	active_domain_card_counters.assign(char_dict["active_domain_card_counters"])
 	button_enabler.assign(char_dict["button_enabler"])
@@ -302,7 +319,7 @@ func equip_armor(armor: String):
 		instinct -= 1
 		presence -= 1
 		knowledge -= 1
-		
+	
 	
 func unequip_armor(armor: String):
 	print("unequipped armor: " + armor)

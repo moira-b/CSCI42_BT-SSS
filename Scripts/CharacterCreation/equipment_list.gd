@@ -38,9 +38,24 @@ func _process(delta: float) -> void:
 
 		
 func is_equipment_valid() -> bool:
-	if starting_inventory.count("") < 1:
-		return true
-	elif primary_burden == "Two-Handed" && starting_inventory[2] == "":
-		return true
+	if primary_burden=="One-Handed":
+		s_wep_list.disable_selection(false)
+		if starting_inventory.count("")==0:
+			"DEBUG: One-handed primary selected. Equipment choices are valid."
+			return true
+		else:
+			"DEBUG: Insufficient equipment selected. Equipment choices are invalid."
+			return false
+	elif primary_burden=="Two-Handed":
+		s_wep_list.deselect_all()
+		s_wep_list.disable_selection(true)
+		starting_inventory[2] = ""
+		if starting_inventory[0]=="":
+			print("DEBUG: Armor not selected. Equipment choices are invalid.")
+			return false
+		else:
+			print("DEBUG: Two-Handed primary selected. Equipment choices are valid.")
+			return true
 	else:
+		print("DEBUG: Unexpected behaviour in is_selection_valid() of equipment_window.gd")
 		return false
