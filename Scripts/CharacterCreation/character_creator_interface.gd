@@ -50,6 +50,8 @@ func _process(_delta: float) -> void:
 	elif active_option_tab.name == "TraitAssignmentContainer":
 		if active_option_tab.get_child(1).is_all_items_complete():
 			confirm_button.disabled = false
+		else:
+			confirm_button.disabled = true
 	elif active_option_tab.name == "EquipmentList":
 		if active_option_tab.is_equipment_valid():
 			confirm_button.disabled = false
@@ -183,6 +185,7 @@ func _on_tab_button_pressed(tab: Button) -> void:
 	_set_active_option_tab(option_tab_index)
 
 func _is_character_data_valid() -> bool:
+	var trait_container = $OptionLists/TraitAssignmentContainer/ModifierContainer
 	if (character.character_class == null):
 		notif_window.get_child(0).text = "Invalid Character Class."
 		_raise_error()
@@ -201,6 +204,10 @@ func _is_character_data_valid() -> bool:
 		return false
 	if (card_selector.select_card_list.item_count < 2):
 		notif_window.get_child(0).text = "Missing Domain Cards."
+		_raise_error()
+		return false
+	if (trait_container.is_all_items_complete() == false):
+		notif_window.get_child(0).text = "Invalid Character Traits."
 		_raise_error()
 		return false
 	else:
