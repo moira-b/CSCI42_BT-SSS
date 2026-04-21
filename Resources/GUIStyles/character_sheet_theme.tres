@@ -1,8 +1,8 @@
-[gd_resource type="Theme" format=3 uid="uid://g4e3keprj7yb"]
+[gd_resource type="Theme" format=3 uid="uid://1kqi7iy53nla"]
 
-[ext_resource type="StyleBox" uid="uid://dhobd2i8q8nhi" path="res://Resources/GUIStyles/purple_panel.tres" id="1_ywn5i"]
-[ext_resource type="StyleBox" uid="uid://cl1o00l0s5ict" path="res://Resources/GUIStyles/purple_panel_hover.tres" id="2_lmeh2"]
-[ext_resource type="StyleBox" uid="uid://f8rwf4112klm" path="res://window_stylebox.tres" id="3_y1wpl"]
+[ext_resource type="StyleBox" uid="uid://cl1o00l0s5ict" path="res://Resources/GUIStyles/purple_panel_hover.tres" id="1_33qbj"]
+[ext_resource type="StyleBox" uid="uid://dhobd2i8q8nhi" path="res://Resources/GUIStyles/purple_panel.tres" id="2_jcyeq"]
+[ext_resource type="StyleBox" uid="uid://f8rwf4112klm" path="res://window_stylebox.tres" id="3_kuqv5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qnbmb"]
 content_margin_left = 10.0
@@ -74,15 +74,17 @@ Button/colors/font_color = Color(0.9372549, 0.9019608, 0.8666667, 1)
 Button/styles/disabled = SubResource("StyleBoxFlat_qnbmb")
 Button/styles/focus = SubResource("StyleBoxFlat_ywn5i")
 Button/styles/hover = SubResource("StyleBoxFlat_ywn5i")
+Button/styles/hover_pressed = SubResource("StyleBoxFlat_ywn5i")
 Button/styles/normal = SubResource("StyleBoxFlat_q4mme")
+Button/styles/pressed = SubResource("StyleBoxFlat_ywn5i")
 CheckBox/colors/checkbox_checked_color = Color(0.87058824, 0.78039217, 0.38431373, 1)
 CheckBox/colors/checkbox_unchecked_color = Color(17.765293, 17.131433, 16.497572, 1)
 CheckBox/colors/font_color = Color(0.9372549, 0.9019608, 0.8666667, 1)
-CheckBox/styles/focus = ExtResource("2_lmeh2")
-CheckBox/styles/hover = ExtResource("2_lmeh2")
-CheckBox/styles/hover_pressed = ExtResource("2_lmeh2")
-CheckBox/styles/normal = ExtResource("1_ywn5i")
-CheckBox/styles/pressed = ExtResource("2_lmeh2")
+CheckBox/styles/focus = ExtResource("1_33qbj")
+CheckBox/styles/hover = ExtResource("1_33qbj")
+CheckBox/styles/hover_pressed = ExtResource("1_33qbj")
+CheckBox/styles/normal = ExtResource("2_jcyeq")
+CheckBox/styles/pressed = ExtResource("1_33qbj")
 ExpModifierPanel/base_type = &"Panel"
 ExpModifierPanel/styles/panel = SubResource("StyleBoxFlat_4vsvy")
 ItemList/colors/font_color = Color(0.9372549, 0.9019608, 0.8666667, 1)
@@ -110,5 +112,5 @@ TraitPanelContainer/base_type = &"PanelContainer"
 TraitPanelContainer/styles/panel = SubResource("StyleBoxFlat_11ruf")
 Window/icons/close = SubResource("PlaceholderTexture2D_lmeh2")
 Window/icons/close_pressed = SubResource("PlaceholderTexture2D_y1wpl")
-Window/styles/embedded_border = ExtResource("3_y1wpl")
-Window/styles/embedded_unfocused_border = ExtResource("3_y1wpl")
+Window/styles/embedded_border = ExtResource("3_kuqv5")
+Window/styles/embedded_unfocused_border = ExtResource("3_kuqv5")

@@ -57,7 +57,6 @@
 [ext_resource type="Script" uid="uid://mx8mfwor421u" path="res://Scripts/CharacterCreation/p_weapon_list.gd" id="50_deb4u"]
 [ext_resource type="Script" uid="uid://dfemyf8r5ay1p" path="res://Scripts/CharacterCreation/equipment_list.gd" id="50_kdp8w"]
 [ext_resource type="Script" uid="uid://cutrjksidwmox" path="res://Scripts/CharacterCreation/s_weapon_list.gd" id="52_v3iga"]
-[ext_resource type="StyleBox" uid="uid://dic645d200g74" path="res://Resources/GUIStyles/character_sheet_stylebox.tres" id="55_cu4qg"]
 [ext_resource type="Script" uid="uid://brw0h6t6ssxf" path="res://Scripts/CharacterCreation/clank_feature_window.gd" id="55_q4mme"]
 
 [sub_resource type="Resource" id="Resource_7bny4"]
@@ -74,6 +73,8 @@ bg_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r4lgg"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vkfsn"]
+
 [node name="CharacterCreatorInterface" type="Control" unique_id=1505700201]
 layout_mode = 3
 anchors_preset = 15
@@ -84,7 +85,6 @@ grow_vertical = 2
 size_flags_horizontal = 4
 theme = ExtResource("1_r4lgg")
 script = ExtResource("1_ofddw")
-metadata/_edit_lock_ = true
 
 [node name="Character" parent="." unique_id=1371470097 instance=ExtResource("2_foxel")]
 
@@ -259,7 +259,6 @@ visible = false
 layout_mode = 1
 
 [node name="TraitAssignmentContainer" type="HBoxContainer" parent="OptionLists" unique_id=1249625595]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -331,6 +330,11 @@ layout_mode = 2
 layout_mode = 2
 text = "Knowledge"
 horizontal_alignment = 1
+
+[node name="ResetButton" type="Button" parent="OptionLists/TraitAssignmentContainer/TraitNameContainer" unique_id=1390461237]
+custom_minimum_size = Vector2(90, 40)
+layout_mode = 2
+text = "Reset Selection"
 
 [node name="ModifierContainer" type="VBoxContainer" parent="OptionLists/TraitAssignmentContainer" unique_id=1798246451]
 layout_mode = 2
@@ -440,6 +444,7 @@ popup/item_5/text = "-1"
 popup/item_5/id = 5
 
 [node name="ExperiencesContainer" type="VBoxContainer" parent="OptionLists" unique_id=791843489]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -462,24 +467,15 @@ custom_minimum_size = Vector2(300, 40)
 layout_mode = 2
 max_length = 255
 
-[node name="ModifierPanel" type="Panel" parent="OptionLists/ExperiencesContainer/Experience1" unique_id=2127389027]
+[node name="ModifierPanel" type="PanelContainer" parent="OptionLists/ExperiencesContainer/Experience1" unique_id=2017779018]
 custom_minimum_size = Vector2(50, 40)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_type_variation = &"ExpModifierPanel"
 
 [node name="Label" type="Label" parent="OptionLists/ExperiencesContainer/Experience1/ModifierPanel" unique_id=1482373349]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
 theme_override_colors/font_color = Color(0.9372549, 0.9019608, 0.8666667, 1)
 theme_override_font_sizes/font_size = 20
 text = "+2"
@@ -493,28 +489,28 @@ custom_minimum_size = Vector2(300, 40)
 layout_mode = 2
 max_length = 255
 
-[node name="ModifierPanel" type="Panel" parent="OptionLists/ExperiencesContainer/Experience2" unique_id=1393244708]
+[node name="ModifierPanel" type="PanelContainer" parent="OptionLists/ExperiencesContainer/Experience2" unique_id=430610193]
 custom_minimum_size = Vector2(50, 40)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_type_variation = &"ExpModifierPanel"
 
 [node name="Label" type="Label" parent="OptionLists/ExperiencesContainer/Experience2/ModifierPanel" unique_id=161986817]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
 theme_override_colors/font_color = Color(0.9372549, 0.9019608, 0.8666667, 1)
 theme_override_font_sizes/font_size = 20
 text = "+2"
 horizontal_alignment = 1
+
+[node name="ClankPDButtonMargin" type="MarginContainer" parent="OptionLists/ExperiencesContainer" unique_id=983197897]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_top = 20
+
+[node name="ClankPDButton" type="Button" parent="OptionLists/ExperiencesContainer/ClankPDButtonMargin" unique_id=2029692475]
+layout_mode = 2
+text = "Edit Purposeful Design Bonus"
 
 [node name="EquipmentList" type="HBoxContainer" parent="OptionLists" unique_id=1101846628]
 visible = false
@@ -629,9 +625,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -35.5
-offset_top = -40.0
-offset_right = 35.5
+offset_left = -81.0
+offset_top = -58.0
+offset_right = 81.0
+offset_bottom = -18.0
 grow_horizontal = 2
 grow_vertical = 0
 alignment = 1
@@ -680,19 +677,18 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0.9372549, 0.9019608, 0.8666667, 1)
 theme_override_constants/line_spacing = -2
-text = "sample line 1
-sample line 2
-sample line 3
-sample line 4"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="NotifWindow" type="Window" parent="." unique_id=2130778845]
+gui_embed_subwindows = true
 oversampling_override = 1.0
 initial_position = 1
 size = Vector2i(300, 100)
 visible = false
+unresizable = true
+popup_window = true
 
 [node name="NotifText" type="Label" parent="NotifWindow" unique_id=690906775]
 anchors_preset = 15
@@ -700,6 +696,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vkfsn")
 text = "Invalid character data."
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -721,9 +718,9 @@ anchor_right = 0.5
 offset_left = -325.0
 offset_top = 100.0
 offset_right = 325.0
-offset_bottom = 227.0
+offset_bottom = 201.0
 grow_horizontal = 2
-text = "Those of the Clank ancestry possess the Purposeful Design Feature.
+text = "The Clank ancestry possesses the Purposeful Design Feature.
 
 Decide who made you and for what purpose. Choose one of your Experiences that best aligns with this purpose and gain a permanent +1 bonus to it."
 autowrap_mode = 2
@@ -739,39 +736,17 @@ grow_vertical = 2
 size_flags_vertical = 4
 metadata/_edit_use_anchors_ = true
 
-[node name="Experience1" type="PanelContainer" parent="PurposefulDesignWindow/ExperiencesVBox" unique_id=1506218913]
+[node name="Experience1CheckBox" type="CheckBox" parent="PurposefulDesignWindow/ExperiencesVBox" unique_id=992707339]
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
-theme_override_styles/panel = ExtResource("55_cu4qg")
-
-[node name="ExperienceHBox" type="HBoxContainer" parent="PurposefulDesignWindow/ExperiencesVBox/Experience1" unique_id=2041004088]
-custom_minimum_size = Vector2(350, 50)
-layout_mode = 2
-
-[node name="ExperienceLabel" type="Label" parent="PurposefulDesignWindow/ExperiencesVBox/Experience1/ExperienceHBox" unique_id=1259549019]
-layout_mode = 2
-size_flags_horizontal = 3
 text = "Experience 1 Lorem Ipsum"
-vertical_alignment = 1
+autowrap_mode = 2
 
-[node name="CheckBox" type="CheckBox" parent="PurposefulDesignWindow/ExperiencesVBox/Experience1/ExperienceHBox" unique_id=992707339]
+[node name="Experience2CheckBox" type="CheckBox" parent="PurposefulDesignWindow/ExperiencesVBox" unique_id=161287099]
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
-
-[node name="Experience2" type="PanelContainer" parent="PurposefulDesignWindow/ExperiencesVBox" unique_id=670889499]
-layout_mode = 2
-theme_override_styles/panel = ExtResource("55_cu4qg")
-
-[node name="ExperienceHBox" type="HBoxContainer" parent="PurposefulDesignWindow/ExperiencesVBox/Experience2" unique_id=1273784538]
-custom_minimum_size = Vector2(350, 50)
-layout_mode = 2
-
-[node name="ExperienceLabel" type="Label" parent="PurposefulDesignWindow/ExperiencesVBox/Experience2/ExperienceHBox" unique_id=1843932008]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Experience 2 Dolor Sit Amet"
-vertical_alignment = 1
-
-[node name="CheckBox" type="CheckBox" parent="PurposefulDesignWindow/ExperiencesVBox/Experience2/ExperienceHBox" unique_id=161287099]
-layout_mode = 2
+text = "Experience 2 Lorem Ipsum"
+autowrap_mode = 2
 
 [node name="ButtonsContainer" type="HBoxContainer" parent="PurposefulDesignWindow" unique_id=1160410219]
 anchors_preset = -1
@@ -788,17 +763,17 @@ size_flags_vertical = 8
 theme_override_constants/separation = 10
 metadata/_edit_use_anchors_ = true
 
-[node name="ConfirmButton" type="Button" parent="PurposefulDesignWindow/ButtonsContainer" unique_id=1194510852]
-custom_minimum_size = Vector2(75, 40)
-layout_mode = 2
-size_flags_vertical = 4
-text = "Confirm"
-
 [node name="CancelButton" type="Button" parent="PurposefulDesignWindow/ButtonsContainer" unique_id=1195967952]
 custom_minimum_size = Vector2(75, 40)
 layout_mode = 2
 size_flags_vertical = 4
 text = "Cancel"
+
+[node name="ConfirmButton" type="Button" parent="PurposefulDesignWindow/ButtonsContainer" unique_id=1194510852]
+custom_minimum_size = Vector2(75, 40)
+layout_mode = 2
+size_flags_vertical = 4
+text = "Confirm"
 
 [connection signal="item_selected" from="OptionLists/TraitAssignmentContainer/ModifierContainer/AgiModifierOptions" to="OptionLists/TraitAssignmentContainer/ModifierContainer" method="_on_agi_modifier_options_item_selected"]
 [connection signal="item_selected" from="OptionLists/TraitAssignmentContainer/ModifierContainer/StrModifierOptions" to="OptionLists/TraitAssignmentContainer/ModifierContainer" method="_on_str_modifier_options_item_selected"]

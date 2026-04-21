@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://blf44ks0qcuqu"]
 
-[ext_resource type="Theme" uid="uid://dw741ewx83hq6" path="res://Resources/GUIStyles/damage_threshold_theme.tres" id="1_dgcq2"]
+[ext_resource type="Theme" uid="uid://bxi4du2rs0vdp" path="res://Resources/GUIStyles/damage_threshold_theme.tres" id="1_dgcq2"]
 [ext_resource type="Script" uid="uid://dcehu4665di8k" path="res://Scripts/CharacterDisplay/damage_threshold_display.gd" id="1_h2ajj"]
 
 [node name="DamageThresholdDisplay" type="HBoxContainer" unique_id=1301891163]

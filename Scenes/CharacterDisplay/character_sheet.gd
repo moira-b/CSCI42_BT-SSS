@@ -425,7 +425,6 @@ func disable_button_selection(b: bool) -> void:
 	dice_button.disabled = b
 	fearhope_button.disabled = b
 
-
 func _on_cards_button_pressed() -> void:
 	var new_scene = card_scene.instantiate()
 	character.reparent(new_scene)

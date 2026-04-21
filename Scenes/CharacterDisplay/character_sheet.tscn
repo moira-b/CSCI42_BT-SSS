@@ -21,6 +21,7 @@
 [ext_resource type="Script" uid="uid://do0erpc6r8x0r" path="res://Scripts/CharacterDisplay/multiclass_choices.gd" id="11_2cjug"]
 [ext_resource type="PackedScene" uid="uid://blf44ks0qcuqu" path="res://Scenes/CharacterDisplay/damage_threshold_display.tscn" id="11_2ohwh"]
 [ext_resource type="Script" uid="uid://co3dycsyqv6ap" path="res://Scripts/CharacterCreation/armor_list.gd" id="11_7pq50"]
+[ext_resource type="StyleBox" uid="uid://f8rwf4112klm" path="res://window_stylebox.tres" id="11_dxpx4"]
 [ext_resource type="Script" uid="uid://c6daeo616vuo3" path="res://Scripts/CharacterClasses/character_class.gd" id="12_ahdvs"]
 [ext_resource type="Script" uid="uid://mx8mfwor421u" path="res://Scripts/CharacterCreation/p_weapon_list.gd" id="12_rj3pj"]
 [ext_resource type="Theme" uid="uid://ccxm2bwpjuy2p" path="res://Resources/GUIStyles/purple_button.tres" id="12_rllm4"]
@@ -37,7 +38,7 @@
 [ext_resource type="Resource" uid="uid://hywukpwyumtp" path="res://Resources/Classes/Sorcerer/sorcerer.tres" id="19_rj3pj"]
 [ext_resource type="Resource" uid="uid://cfbttvs0d6csq" path="res://Resources/Classes/Warrior/warrior.tres" id="20_48wf7"]
 [ext_resource type="Resource" uid="uid://dac4f4ifpjnla" path="res://Resources/Classes/Wizard/wizard.tres" id="21_asla6"]
-[ext_resource type="Theme" uid="uid://cpnp7rqytix60" path="res://Resources/GUIStyles/advancements_window.tres" id="21_dxpx4"]
+[ext_resource type="Theme" uid="uid://cpym4sw2hsrrw" path="res://Resources/GUIStyles/advancements_window.tres" id="21_dxpx4"]
 [ext_resource type="Script" uid="uid://ddgbhwwl4fam4" path="res://Scripts/CharacterDisplay/information_popup.gd" id="23_gjf7o"]
 
 [sub_resource type="GDScript" id="GDScript_dg7yu"]
@@ -57,6 +58,8 @@ func _process(delta):
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6w3xy"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_6lo7n"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_dxpx4"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gjf7o"]
 
@@ -393,6 +396,8 @@ initial_position = 1
 size = Vector2i(500, 150)
 visible = false
 theme_override_icons/close = SubResource("PlaceholderTexture2D_6lo7n")
+theme_override_styles/embedded_border = ExtResource("11_dxpx4")
+theme_override_styles/embedded_unfocused_border = ExtResource("11_dxpx4")
 
 [node name="ConfirmDeletionPrompt" type="Label" parent="HeaderMargin/Header/PanelContainer/MarginContainer/RightPanel/DeletionWindow" unique_id=1787822924]
 anchors_preset = -1
@@ -425,21 +430,24 @@ grow_vertical = 0
 theme_override_constants/separation = 20
 metadata/_edit_use_anchors_ = true
 
-[node name="ConfirmButton" type="Button" parent="HeaderMargin/Header/PanelContainer/MarginContainer/RightPanel/DeletionWindow/Buttons" unique_id=1968126863]
-custom_minimum_size = Vector2(75, 40)
-layout_mode = 2
-text = "Confirm"
-
 [node name="CancelButton" type="Button" parent="HeaderMargin/Header/PanelContainer/MarginContainer/RightPanel/DeletionWindow/Buttons" unique_id=1696214655]
 custom_minimum_size = Vector2(75, 40)
 layout_mode = 2
 text = "Cancel"
+
+[node name="ConfirmButton" type="Button" parent="HeaderMargin/Header/PanelContainer/MarginContainer/RightPanel/DeletionWindow/Buttons" unique_id=1968126863]
+custom_minimum_size = Vector2(75, 40)
+layout_mode = 2
+text = "Confirm"
 
 [node name="SaveNotification" type="Window" parent="HeaderMargin/Header/PanelContainer/MarginContainer/RightPanel" unique_id=1645610347]
 oversampling_override = 1.0
 initial_position = 1
 size = Vector2i(300, 100)
 visible = false
+theme_override_icons/close = SubResource("PlaceholderTexture2D_dxpx4")
+theme_override_styles/embedded_border = ExtResource("11_dxpx4")
+theme_override_styles/embedded_unfocused_border = ExtResource("11_dxpx4")
 script = ExtResource("5_n5rmr")
 
 [node name="ConfirmDeletionPrompt" type="Label" parent="HeaderMargin/Header/PanelContainer/MarginContainer/RightPanel/SaveNotification" unique_id=1592709199]
@@ -729,37 +737,37 @@ text = "Long Rest"
 oversampling_override = 1.0
 title = "Rest Actions"
 initial_position = 1
-size = Vector2i(500, 400)
+size = Vector2i(260, 300)
 visible = false
+theme = ExtResource("9_jlx5q")
 script = ExtResource("4_8iwex")
 
 [node name="RestUI" type="Control" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/RestButtons/RestWindow" unique_id=165973256]
-custom_minimum_size = Vector2(500, 400)
 layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -250.0
-offset_top = -200.0
-offset_right = 250.0
-offset_bottom = 200.0
+anchor_left = -0.034999993
+anchor_top = -0.093666665
+anchor_right = 1.4615384
+anchor_bottom = 1.1666666
+offset_left = 9.099998
+offset_top = 60.1
+offset_right = -120.0
+offset_bottom = -49.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+metadata/_edit_use_anchors_ = true
 
 [node name="RestActions" type="VBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/RestButtons/RestWindow/RestUI" unique_id=335220932]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -85.5
-offset_right = 220.0
-offset_bottom = 85.5
-grow_vertical = 2
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -110.0
+offset_right = 110.0
+offset_bottom = 171.0
+grow_horizontal = 2
 alignment = 1
 
 [node name="TendWounds" type="CheckButton" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/RestButtons/RestWindow/RestUI/RestActions" unique_id=996454089]
