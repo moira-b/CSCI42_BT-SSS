@@ -10,7 +10,7 @@ extends Control
 @onready var save_manager = $SaveManager
 @onready var grid_container = $ScrollContainer/GridContainer
 @onready var options_popup = $OptionsPopupMenu
-@onready var searchbar: LineEdit = $Header/PanelContainer/HBoxContainer/LineEdit
+@onready var searchbar: LineEdit = $Header/PanelContainer/HBoxContainer/MarginContainer2/LineEdit
 
 
 var panel_scene: PackedScene = preload("res://Scenes/SheetManagement/character_select_panel.tscn")

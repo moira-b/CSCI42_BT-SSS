@@ -3,9 +3,9 @@
 [ext_resource type="Script" uid="uid://028wp2ttofun" path="res://Scripts/SheetManagement/main_menu.gd" id="1_vsvys"]
 [ext_resource type="PackedScene" uid="uid://r02yxwfx48hx" path="res://Scenes/SheetManagement/SaveManager.tscn" id="2_3hhsk"]
 [ext_resource type="StyleBox" uid="uid://dic645d200g74" path="res://Resources/GUIStyles/character_sheet_stylebox.tres" id="3_duv1w"]
-[ext_resource type="Texture2D" uid="uid://ccmmm1nxjrbb1" path="res://Assets/GUI_Icons/search.png" id="3_x2qhb"]
+[ext_resource type="Texture2D" uid="uid://csr08715qa60f" path="res://Assets/GUI_Icons/icons8-search-480.png" id="3_x2qhb"]
 [ext_resource type="StyleBox" uid="uid://dewju2mxoq348" path="res://Resources/GUIStyles/button_style.tres" id="4_dumt2"]
-[ext_resource type="Script" uid="uid://fvdr0f3rncnv" path="res://Scenes/SheetManagement/main_menu_options_popup.gd" id="4_rkvgt"]
+[ext_resource type="Script" path="res://Scenes/SheetManagement/main_menu_options_popup.gd" id="4_rkvgt"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rkvgt"]
 bg_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
@@ -16,6 +16,9 @@ corner_radius_bottom_right = 22
 corner_radius_bottom_left = 22
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x2qhb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x2qhb"]
+bg_color = Color(0.47058824, 0.47058824, 0.47058824, 0)
 
 [node name="MainMenu" type="Control" unique_id=621885202]
 layout_mode = 3
@@ -63,11 +66,20 @@ size_flags_vertical = 4
 texture = ExtResource("3_x2qhb")
 expand_mode = 2
 
-[node name="LineEdit" type="LineEdit" parent="Header/PanelContainer/HBoxContainer" unique_id=626609327]
+[node name="MarginContainer2" type="MarginContainer" parent="Header/PanelContainer/HBoxContainer" unique_id=850984024]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="LineEdit" type="LineEdit" parent="Header/PanelContainer/HBoxContainer/MarginContainer2" unique_id=626609327]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_x2qhb")
+theme_override_styles/focus = SubResource("StyleBoxFlat_x2qhb")
 placeholder_text = "Search for a character..."
+caret_blink = true
 
 [node name="Button" type="Button" parent="Header" unique_id=361756707]
 custom_minimum_size = Vector2(200, 50)
@@ -122,7 +134,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="GridContainer" type="GridContainer" parent="ScrollContainer" unique_id=246319859]
-custom_minimum_size = Vector2(1050, 1000)
+custom_minimum_size = Vector2(1000, 1000)
 layout_mode = 2
 theme_override_constants/h_separation = 20
 theme_override_constants/v_separation = 20
