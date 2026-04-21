@@ -3,8 +3,11 @@
 [ext_resource type="Script" uid="uid://cwlkj5m57huwr" path="res://Scripts/SheetManagement/character_select_panel.gd" id="1_7sfn8"]
 [ext_resource type="PackedScene" uid="uid://c76krhgbjyotx" path="res://Scenes/Characters/character.tscn" id="2_ajeve"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wut7y"]
-expand_margin_left = 10.0
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ajeve"]
+bg_color = Color(0.29082528, 0.61244506, 0.9579837, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
 
 [node name="CharacterSelectPanel" type="PanelContainer" unique_id=989815913]
 custom_minimum_size = Vector2(200, 200)
@@ -19,13 +22,14 @@ offset_right = 99.77599
 offset_bottom = 100.20799
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_styles/panel = SubResource("StyleBoxTexture_wut7y")
+theme_override_styles/panel = SubResource("StyleBoxFlat_ajeve")
 script = ExtResource("1_7sfn8")
 
 [node name="Character" parent="." unique_id=1371470097 instance=ExtResource("2_ajeve")]
 proficiency = 0
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=77115605]
+visible = false
 layout_mode = 2
 color = Color(0.10980392, 0.09019608, 0.22745098, 1)
 
@@ -59,6 +63,8 @@ layout_mode = 2
 
 [node name="Button" type="Button" parent="." unique_id=121332290]
 layout_mode = 2
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0)
+theme_override_colors/icon_focus_color = Color(1, 1, 1, 0)
 button_mask = 3
 
 [node name="SettingsButton" type="Button" parent="." unique_id=548987942]
