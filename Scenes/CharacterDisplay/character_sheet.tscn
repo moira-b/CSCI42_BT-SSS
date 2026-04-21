@@ -38,7 +38,7 @@
 [ext_resource type="Resource" uid="uid://hywukpwyumtp" path="res://Resources/Classes/Sorcerer/sorcerer.tres" id="19_rj3pj"]
 [ext_resource type="Resource" uid="uid://cfbttvs0d6csq" path="res://Resources/Classes/Warrior/warrior.tres" id="20_48wf7"]
 [ext_resource type="Resource" uid="uid://dac4f4ifpjnla" path="res://Resources/Classes/Wizard/wizard.tres" id="21_asla6"]
-[ext_resource type="Theme" uid="uid://cpnp7rqytix60" path="res://Resources/GUIStyles/advancements_window.tres" id="21_dxpx4"]
+[ext_resource type="Theme" uid="uid://cpym4sw2hsrrw" path="res://Resources/GUIStyles/advancements_window.tres" id="21_dxpx4"]
 [ext_resource type="Script" uid="uid://ddgbhwwl4fam4" path="res://Scripts/CharacterDisplay/information_popup.gd" id="23_gjf7o"]
 
 [sub_resource type="GDScript" id="GDScript_dg7yu"]
@@ -834,7 +834,6 @@ size_flags_vertical = 4
 text = "F/H Roll"
 
 [node name="DiceRollWindow" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/DiceButtons" unique_id=292838826 instance=ExtResource("5_glymg")]
-visible = false
 
 [node name="FHRollWindow" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/DiceButtons" unique_id=1979625603 instance=ExtResource("6_8iwex")]
 visible = false

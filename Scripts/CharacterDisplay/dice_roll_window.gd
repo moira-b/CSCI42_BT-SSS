@@ -5,6 +5,10 @@ extends Window
 @onready var roll_button = $RollButtonContainer/RollButton
 @onready var dice = $DiceRollUI/Dice
 
+func _ready() -> void:
+	sum_display.text = ""
+	individual_rolls_display = ""
+
 var dice_2d_array = [
 	[4, null],
 	[6, null],
@@ -39,17 +43,7 @@ func _on_roll_button_pressed() -> void:
 		
 		# reset spinbox back to 0
 		die[1].value = 0
-	
-	#for dice_type in dice_array:
-		#for i in range(dice_type.count):
-			#roll = randi_range(1, dice_type.num_sides)
-			#results_array.append(roll)
-			#sum += roll
-		##print("DEBUG: " + str(dice_type.count) + "d" + str(dice_type.num_sides))
-		#dice_type.count = 0
-		#dice_type.value_label.text = str(0)
-	#
-	##print("DEBUG: DICE ROLL RESULT " + str(sum))
+
 	print(results_array)
 
 	sum_display.text = "Sum: " + str(sum)

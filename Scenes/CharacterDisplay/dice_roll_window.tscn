@@ -35,7 +35,6 @@ theme_override_constants/separation = 4
 [node name="Sum" type="Label" parent="ResultsContainer" unique_id=2019198714]
 layout_mode = 2
 theme = SubResource("Theme_5tshs")
-text = "sum here"
 horizontal_alignment = 1
 
 [node name="IndividualRolls" type="Label" parent="ResultsContainer" unique_id=388726724]
@@ -43,7 +42,6 @@ custom_minimum_size = Vector2(350, 50)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_nb8f3")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_5tshs")
-text = "num num num"
 horizontal_alignment = 1
 autowrap_mode = 3
 
