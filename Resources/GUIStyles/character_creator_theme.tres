@@ -1,0 +1,114 @@
+[gd_resource type="Theme" format=3 uid="uid://g4e3keprj7yb"]
+
+[ext_resource type="StyleBox" uid="uid://dhobd2i8q8nhi" path="res://Resources/GUIStyles/purple_panel.tres" id="1_ywn5i"]
+[ext_resource type="StyleBox" uid="uid://cl1o00l0s5ict" path="res://Resources/GUIStyles/purple_panel_hover.tres" id="2_lmeh2"]
+[ext_resource type="StyleBox" uid="uid://f8rwf4112klm" path="res://window_stylebox.tres" id="3_y1wpl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qnbmb"]
+content_margin_left = 10.0
+content_margin_right = 10.0
+bg_color = Color(0.14901961, 0.12941177, 0.25490198, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ywn5i"]
+content_margin_left = 10.0
+content_margin_right = 10.0
+bg_color = Color(0.34117648, 0.29803923, 0.6117647, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q4mme"]
+content_margin_left = 10.0
+content_margin_right = 10.0
+bg_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4vsvy"]
+bg_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y1wpl"]
+bg_color = Color(0.14901961, 0.12941177, 0.25490198, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lmeh2"]
+bg_color = Color(0.14901961, 0.12941177, 0.25490198, 1)
+border_width_bottom = 2
+border_color = Color(0.87058824, 0.78039217, 0.38431373, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pkao1"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ms6y"]
+bg_color = Color(0.6, 0.6, 0.6, 0.078431375)
+border_width_bottom = 3
+border_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_11ruf"]
+bg_color = Color(0.9372549, 0.9019608, 0.8666667, 1)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_lmeh2"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_y1wpl"]
+
+[resource]
+Button/colors/font_color = Color(0.9372549, 0.9019608, 0.8666667, 1)
+Button/styles/disabled = SubResource("StyleBoxFlat_qnbmb")
+Button/styles/focus = SubResource("StyleBoxFlat_ywn5i")
+Button/styles/hover = SubResource("StyleBoxFlat_ywn5i")
+Button/styles/normal = SubResource("StyleBoxFlat_q4mme")
+CheckBox/colors/checkbox_checked_color = Color(0.87058824, 0.78039217, 0.38431373, 1)
+CheckBox/colors/checkbox_unchecked_color = Color(17.765293, 17.131433, 16.497572, 1)
+CheckBox/colors/font_color = Color(0.9372549, 0.9019608, 0.8666667, 1)
+CheckBox/styles/focus = ExtResource("2_lmeh2")
+CheckBox/styles/hover = ExtResource("2_lmeh2")
+CheckBox/styles/hover_pressed = ExtResource("2_lmeh2")
+CheckBox/styles/normal = ExtResource("1_ywn5i")
+CheckBox/styles/pressed = ExtResource("2_lmeh2")
+ExpModifierPanel/base_type = &"Panel"
+ExpModifierPanel/styles/panel = SubResource("StyleBoxFlat_4vsvy")
+ItemList/colors/font_color = Color(0.9372549, 0.9019608, 0.8666667, 1)
+ItemList/colors/font_selected_color = Color(0.9372549, 0.9019608, 0.8666667, 1)
+ItemList/colors/scroll_hint_color = Color(0.87058824, 0.78039217, 0.38431373, 1)
+ItemList/styles/focus = SubResource("StyleBoxFlat_y1wpl")
+ItemList/styles/hovered = SubResource("StyleBoxFlat_y1wpl")
+ItemList/styles/hovered_selected = SubResource("StyleBoxFlat_lmeh2")
+ItemList/styles/hovered_selected_focus = SubResource("StyleBoxFlat_lmeh2")
+ItemList/styles/panel = SubResource("StyleBoxFlat_pkao1")
+ItemList/styles/selected = SubResource("StyleBoxFlat_lmeh2")
+ItemList/styles/selected_focus = SubResource("StyleBoxFlat_lmeh2")
+Label/colors/font_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
+LineEdit/colors/caret_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
+LineEdit/colors/font_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
+LineEdit/colors/font_placeholder_color = Color(0.14901961, 0.12941177, 0.25490198, 1)
+LineEdit/colors/font_selected_color = Color(0.9372549, 0.9019608, 0.8666667, 1)
+LineEdit/colors/selection_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
+LineEdit/styles/focus = SubResource("StyleBoxFlat_1ms6y")
+LineEdit/styles/normal = SubResource("StyleBoxFlat_1ms6y")
+TraitLabel/base_type = &"Label"
+TraitLabel/colors/font_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
+TraitLabel/styles/normal = null
+TraitPanelContainer/base_type = &"PanelContainer"
+TraitPanelContainer/styles/panel = SubResource("StyleBoxFlat_11ruf")
+Window/icons/close = SubResource("PlaceholderTexture2D_lmeh2")
+Window/icons/close_pressed = SubResource("PlaceholderTexture2D_y1wpl")
+Window/styles/embedded_border = ExtResource("3_y1wpl")
+Window/styles/embedded_unfocused_border = ExtResource("3_y1wpl")

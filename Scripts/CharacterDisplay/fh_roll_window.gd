@@ -8,17 +8,22 @@ const MAXIMUM: int = 12
 @onready var sum_display = $ResultsContainer/Sum
 @onready var interpretation_display = $ResultsContainer/Interpretation
 @onready var consequences_display = $ResultsContainer/Consequences
+@onready var roll_button = $ButtonContainer/RollAgainButton
+@onready var close_button = $ButtonContainer/CloseButton
 var fear_result: int = 0
 var hope_result: int = 0
 
 var latest_outcome = ""
 
 func _ready() -> void:
-	self.visible = false
+	#self.visible = false
 	fear_result = randi_range(MINIMUM, MAXIMUM)
 	hope_result = randi_range(MINIMUM, MAXIMUM)
 	fear_display.text = str(fear_result)
 	hope_display.text = str(hope_result)
+	
+	roll_button.pressed.connect(_on_roll_again_button_pressed)
+	close_button.pressed.connect(_on_close_button_pressed)
 	
 	interpret_rolls()
 
@@ -38,7 +43,11 @@ func interpret_rolls() -> void:
 		consequences_display.text = "The GM gains 1 Fear."
 		latest_outcome = "Fear"
 	sum_display.text = "Sum: " + str(hope_result + fear_result)
-		
+
+func _on_close_button_pressed() -> void:
+	self.visible = false
+	close_requested.emit()
+
 func _on_roll_again_button_pressed() -> void:
 	fear_result = randi_range(MINIMUM, MAXIMUM)
 	hope_result = randi_range(MINIMUM, MAXIMUM)

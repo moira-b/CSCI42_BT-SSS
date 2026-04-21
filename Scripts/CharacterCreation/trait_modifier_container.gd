@@ -4,6 +4,7 @@ var option_button_array: Array[OptionButton]
 var selected_index_array: Array
 var modifiers = [2,1,1,0,0,-1]
 var character: Character
+@onready var reset_button: Button = $"../TraitNameContainer/ResetButton"
 
 var agi_index = -1
 var str_index = -1
@@ -14,8 +15,12 @@ var know_index = -1
 
 func _ready() -> void:
 	for child in self.get_children():
+		var popup = child.get_popup()
+		for i in range(child.item_count):
+			popup.set_item_as_radio_checkable(i, false)
 		option_button_array.append(child)
 	character = self.get_parent().get_parent().get_parent().get_child(0)
+	reset_button.pressed.connect(_on_reset_pressed)
 
 func is_all_items_complete() -> bool:
 	var completed = 0
@@ -66,3 +71,16 @@ func _on_know_modifier_options_item_selected(index: int) -> void:
 	_add_item_to_array(know_index,index)
 	know_index = index
 	character.knowledge = modifiers[know_index]
+	
+func _on_reset_pressed() -> void:
+	modifiers = [2,1,1,0,0,-1]
+	agi_index = -1
+	str_index = -1
+	fin_index = -1
+	ins_index = -1
+	prec_index = -1
+	know_index = -1
+	for child in self.get_children():
+		child.selected = -1
+		for item in child.get_item_count():
+			child.set_item_disabled(item, false)

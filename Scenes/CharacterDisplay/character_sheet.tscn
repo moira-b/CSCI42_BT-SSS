@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://r02yxwfx48hx" path="res://Scenes/SheetManagement/SaveManager.tscn" id="2_56qfy"]
 [ext_resource type="StyleBox" uid="uid://dic645d200g74" path="res://Resources/GUIStyles/character_sheet_stylebox.tres" id="2_c8oo5"]
 [ext_resource type="Script" uid="uid://dfs5rt0xu3vuj" path="res://Scripts/CharacterDisplay/rest.gd" id="4_8iwex"]
-[ext_resource type="StyleBox" uid="uid://iibbyxddwuc5" path="res://Resources/GUIStyles/green_button.tres" id="4_8skux"]
 [ext_resource type="StyleBox" uid="uid://bbokr0uyec1ac" path="res://Resources/GUIStyles/line_edit_normal.tres" id="4_48wf7"]
 [ext_resource type="StyleBox" uid="uid://dhobd2i8q8nhi" path="res://Resources/GUIStyles/purple_panel.tres" id="4_irdes"]
 [ext_resource type="StyleBox" uid="uid://dae1vokrglwgx" path="res://Resources/GUIStyles/class_ancestry_community_panel.tres" id="4_rj3pj"]
@@ -16,27 +15,30 @@
 [ext_resource type="Script" uid="uid://b3ypom2uq1exh" path="res://Scripts/CharacterDisplay/advancements.gd" id="7_56qfy"]
 [ext_resource type="PackedScene" uid="uid://b80x84qmywg0k" path="res://Scenes/CharacterDisplay/checkable_buttons.tscn" id="7_rj3pj"]
 [ext_resource type="PackedScene" uid="uid://1un73y3t3x7b" path="res://Scenes/Cards/domain_card_sel_container.tscn" id="8_8skux"]
+[ext_resource type="Theme" uid="uid://tvypmn4kbcjp" path="res://Resources/GUIStyles/daggerheart_theme.tres" id="9_jlx5q"]
 [ext_resource type="Script" uid="uid://by7ahmitbfup2" path="res://Scripts/CharacterDisplay/equipment_window.gd" id="10_7pq50"]
 [ext_resource type="Script" uid="uid://djod0suj342ks" path="res://Scripts/CharacterDisplay/experiences.gd" id="10_rj3pj"]
 [ext_resource type="Script" uid="uid://do0erpc6r8x0r" path="res://Scripts/CharacterDisplay/multiclass_choices.gd" id="11_2cjug"]
 [ext_resource type="PackedScene" uid="uid://blf44ks0qcuqu" path="res://Scenes/CharacterDisplay/damage_threshold_display.tscn" id="11_2ohwh"]
 [ext_resource type="Script" uid="uid://co3dycsyqv6ap" path="res://Scripts/CharacterCreation/armor_list.gd" id="11_7pq50"]
+[ext_resource type="StyleBox" uid="uid://f8rwf4112klm" path="res://window_stylebox.tres" id="11_dxpx4"]
 [ext_resource type="Script" uid="uid://c6daeo616vuo3" path="res://Scripts/CharacterClasses/character_class.gd" id="12_ahdvs"]
 [ext_resource type="Script" uid="uid://mx8mfwor421u" path="res://Scripts/CharacterCreation/p_weapon_list.gd" id="12_rj3pj"]
-[ext_resource type="Theme" uid="uid://ccxm2bwpjuy2p" path="res://Resources/GUIStyles/action_buttons_theme.tres" id="12_rllm4"]
+[ext_resource type="Theme" uid="uid://ccxm2bwpjuy2p" path="res://Resources/GUIStyles/purple_button.tres" id="12_rllm4"]
 [ext_resource type="Script" uid="uid://cutrjksidwmox" path="res://Scripts/CharacterCreation/s_weapon_list.gd" id="13_48wf7"]
 [ext_resource type="Resource" uid="uid://cyaupb2xa2jvp" path="res://Resources/Classes/Bard/bard.tres" id="13_gjf7o"]
 [ext_resource type="Resource" uid="uid://blgr70q7oa266" path="res://Resources/Classes/Druid/druid.tres" id="14_7xnek"]
 [ext_resource type="StyleBox" uid="uid://ck1deowv8fsse" path="res://Resources/GUIStyles/purple_border_panel.tres" id="15_1vmjr"]
 [ext_resource type="Resource" uid="uid://b77s47x5y88rn" path="res://Resources/Classes/Guardian/guardian.tres" id="15_n4116"]
 [ext_resource type="Resource" uid="uid://cuy8gd8ecs5j2" path="res://Resources/Classes/Ranger/ranger.tres" id="16_kjdj8"]
-[ext_resource type="Theme" uid="uid://dtsueom17lou2" path="res://Resources/GUIStyles/exp_theme.tres" id="17_i1vic"]
+[ext_resource type="Theme" uid="uid://dtsueom17lou2" path="res://Resources/GUIStyles/traits_exp_theme.tres" id="17_i1vic"]
 [ext_resource type="Theme" uid="uid://cf6uo4jelunp4" path="res://Resources/GUIStyles/equipment_theme.tres" id="17_jlx5q"]
 [ext_resource type="Resource" uid="uid://bnehy1ghhj8ml" path="res://Resources/Classes/Rogue/rogue.tres" id="17_oxyly"]
 [ext_resource type="Resource" uid="uid://ccwu6ewcynypd" path="res://Resources/Classes/Seraph/seraph.tres" id="18_7pq50"]
 [ext_resource type="Resource" uid="uid://hywukpwyumtp" path="res://Resources/Classes/Sorcerer/sorcerer.tres" id="19_rj3pj"]
 [ext_resource type="Resource" uid="uid://cfbttvs0d6csq" path="res://Resources/Classes/Warrior/warrior.tres" id="20_48wf7"]
 [ext_resource type="Resource" uid="uid://dac4f4ifpjnla" path="res://Resources/Classes/Wizard/wizard.tres" id="21_asla6"]
+[ext_resource type="Theme" uid="uid://cpym4sw2hsrrw" path="res://Resources/GUIStyles/advancements_window.tres" id="21_dxpx4"]
 [ext_resource type="Script" uid="uid://ddgbhwwl4fam4" path="res://Scripts/CharacterDisplay/information_popup.gd" id="23_gjf7o"]
 
 [sub_resource type="GDScript" id="GDScript_dg7yu"]
@@ -53,22 +55,17 @@ func _process(delta):
 	pass
 "
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8iwex"]
-bg_color = Color(0.07058824, 0.37254903, 0.007843138, 1)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6w3xy"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_6lo7n"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_dxpx4"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gjf7o"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7xnek"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n4116"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2ohwh"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jlx5q"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dxpx4"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5ih58"]
 
@@ -79,8 +76,11 @@ bg_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1vmjr"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mamue"]
+
 [sub_resource type="LabelSettings" id="LabelSettings_56qfy"]
 font_size = 24
+font_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
 
 [sub_resource type="Texture2DRD" id="Texture2DRD_jlx5q"]
 
@@ -119,9 +119,10 @@ theme_override_constants/separation = 10
 [node name="HeaderInfo" type="VBoxContainer" parent="HeaderMargin/Header" unique_id=1580594087]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/separation = 5
+theme_override_constants/separation = 6
 
 [node name="NamePronouns" type="HBoxContainer" parent="HeaderMargin/Header/HeaderInfo" unique_id=746183296]
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 theme_override_constants/separation = 10
 
@@ -157,6 +158,7 @@ theme_override_styles/panel = ExtResource("4_irdes")
 [node name="NameC" type="VBoxContainer" parent="HeaderMargin/Header/HeaderInfo/NamePronouns/NamePanelContainer" unique_id=1121421158]
 layout_mode = 2
 theme_override_constants/separation = 4
+alignment = 1
 
 [node name="Name" type="Label" parent="HeaderMargin/Header/HeaderInfo/NamePronouns/NamePanelContainer/NameC" unique_id=993157749]
 layout_mode = 2
@@ -185,11 +187,12 @@ theme_override_styles/panel = ExtResource("4_irdes")
 
 [node name="Pronouns" type="VBoxContainer" parent="HeaderMargin/Header/HeaderInfo/NamePronouns/PronounsPanelContainer" unique_id=929304455]
 layout_mode = 2
-size_flags_vertical = 0
+alignment = 1
 
 [node name="Label" type="Label" parent="HeaderMargin/Header/HeaderInfo/NamePronouns/PronounsPanelContainer/Pronouns" unique_id=449473121]
 layout_mode = 2
 size_flags_horizontal = 0
+size_flags_vertical = 0
 theme_override_colors/font_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
 theme_override_font_sizes/font_size = 12
 theme_override_styles/normal = ExtResource("5_svvgr")
@@ -251,10 +254,11 @@ max_lines_visible = 2
 [node name="Level" type="PanelContainer" parent="HeaderMargin/Header" unique_id=1090331652]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
-theme_override_styles/panel = ExtResource("2_c8oo5")
+theme = ExtResource("9_jlx5q")
 
 [node name="FieldContainer" type="VBoxContainer" parent="HeaderMargin/Header/Level" unique_id=379242002]
 layout_mode = 2
+theme_override_constants/separation = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="HeaderMargin/Header/Level/FieldContainer" unique_id=1925828569]
 layout_mode = 2
@@ -284,13 +288,22 @@ vertical_alignment = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="HeaderMargin/Header/Level/FieldContainer" unique_id=1069698842]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_8iwex")
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = ExtResource("12_rllm4")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_6w3xy")
 
 [node name="LevelUpButton" type="Button" parent="HeaderMargin/Header/Level/FieldContainer/PanelContainer" unique_id=1305469132]
-custom_minimum_size = Vector2(30, 30)
+custom_minimum_size = Vector2(140, 30)
 layout_mode = 2
-theme_override_styles/normal = ExtResource("4_8skux")
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("12_rllm4")
 text = "Level Up"
+
+[node name="Spacer" type="Control" parent="HeaderMargin/Header/Level/FieldContainer" unique_id=979303809]
+custom_minimum_size = Vector2(0, 3)
+layout_mode = 2
 
 [node name="LevelUpWindow" type="Window" parent="HeaderMargin/Header/Level/FieldContainer" unique_id=808897413]
 oversampling_override = 1.0
@@ -342,7 +355,7 @@ text = "Cancel"
 
 [node name="PanelContainer" type="PanelContainer" parent="HeaderMargin/Header" unique_id=1051887835]
 layout_mode = 2
-theme_override_styles/panel = ExtResource("2_c8oo5")
+theme = ExtResource("9_jlx5q")
 
 [node name="MarginContainer" type="MarginContainer" parent="HeaderMargin/Header/PanelContainer" unique_id=1588844554]
 layout_mode = 2
@@ -354,20 +367,28 @@ theme_override_constants/margin_bottom = 5
 [node name="RightPanel" type="VBoxContainer" parent="HeaderMargin/Header/PanelContainer/MarginContainer" unique_id=485340797]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
-size_flags_vertical = 4
 
 [node name="Save" type="Button" parent="HeaderMargin/Header/PanelContainer/MarginContainer/RightPanel" unique_id=393625438]
 layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("12_rllm4")
+theme_type_variation = &"LeftAlignButton"
 text = "Save Character"
 alignment = 0
 
 [node name="Delete" type="Button" parent="HeaderMargin/Header/PanelContainer/MarginContainer/RightPanel" unique_id=627249800]
 layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("12_rllm4")
+theme_type_variation = &"LeftAlignButton"
 text = "Delete Character"
 alignment = 0
 
 [node name="MainMenu" type="Button" parent="HeaderMargin/Header/PanelContainer/MarginContainer/RightPanel" unique_id=1062522431]
 layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("12_rllm4")
+theme_type_variation = &"LeftAlignButton"
 text = "Back to Main Menu"
 alignment = 0
 
@@ -377,6 +398,8 @@ initial_position = 1
 size = Vector2i(500, 150)
 visible = false
 theme_override_icons/close = SubResource("PlaceholderTexture2D_6lo7n")
+theme_override_styles/embedded_border = ExtResource("11_dxpx4")
+theme_override_styles/embedded_unfocused_border = ExtResource("11_dxpx4")
 
 [node name="ConfirmDeletionPrompt" type="Label" parent="HeaderMargin/Header/PanelContainer/MarginContainer/RightPanel/DeletionWindow" unique_id=1787822924]
 anchors_preset = -1
@@ -409,21 +432,24 @@ grow_vertical = 0
 theme_override_constants/separation = 20
 metadata/_edit_use_anchors_ = true
 
-[node name="ConfirmButton" type="Button" parent="HeaderMargin/Header/PanelContainer/MarginContainer/RightPanel/DeletionWindow/Buttons" unique_id=1968126863]
-custom_minimum_size = Vector2(75, 40)
-layout_mode = 2
-text = "Confirm"
-
 [node name="CancelButton" type="Button" parent="HeaderMargin/Header/PanelContainer/MarginContainer/RightPanel/DeletionWindow/Buttons" unique_id=1696214655]
 custom_minimum_size = Vector2(75, 40)
 layout_mode = 2
 text = "Cancel"
+
+[node name="ConfirmButton" type="Button" parent="HeaderMargin/Header/PanelContainer/MarginContainer/RightPanel/DeletionWindow/Buttons" unique_id=1968126863]
+custom_minimum_size = Vector2(75, 40)
+layout_mode = 2
+text = "Confirm"
 
 [node name="SaveNotification" type="Window" parent="HeaderMargin/Header/PanelContainer/MarginContainer/RightPanel" unique_id=1645610347]
 oversampling_override = 1.0
 initial_position = 1
 size = Vector2i(300, 100)
 visible = false
+theme_override_icons/close = SubResource("PlaceholderTexture2D_dxpx4")
+theme_override_styles/embedded_border = ExtResource("11_dxpx4")
+theme_override_styles/embedded_unfocused_border = ExtResource("11_dxpx4")
 script = ExtResource("5_n5rmr")
 
 [node name="ConfirmDeletionPrompt" type="Label" parent="HeaderMargin/Header/PanelContainer/MarginContainer/RightPanel/SaveNotification" unique_id=1592709199]
@@ -653,21 +679,21 @@ layout_mode = 2
 
 [node name="Health" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer" unique_id=898166146]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_2ohwh")
+theme_override_styles/panel = ExtResource("4_irdes")
 
 [node name="checkable_buttons" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Health" unique_id=1054008189 instance=ExtResource("7_rj3pj")]
 layout_mode = 2
 
 [node name="Stress" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer" unique_id=2030183416]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_jlx5q")
+theme_override_styles/panel = ExtResource("4_irdes")
 
 [node name="checkable_buttons" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Stress" unique_id=1984381611 instance=ExtResource("7_rj3pj")]
 layout_mode = 2
 
 [node name="Hope" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer" unique_id=431121348]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_dxpx4")
+theme_override_styles/panel = ExtResource("4_irdes")
 
 [node name="checkable_buttons" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Hope" unique_id=858122431 instance=ExtResource("7_rj3pj")]
 layout_mode = 2
@@ -713,37 +739,37 @@ text = "Long Rest"
 oversampling_override = 1.0
 title = "Rest Actions"
 initial_position = 1
-size = Vector2i(500, 400)
+size = Vector2i(260, 300)
 visible = false
+theme = ExtResource("9_jlx5q")
 script = ExtResource("4_8iwex")
 
 [node name="RestUI" type="Control" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/RestButtons/RestWindow" unique_id=165973256]
-custom_minimum_size = Vector2(500, 400)
 layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -250.0
-offset_top = -200.0
-offset_right = 250.0
-offset_bottom = 200.0
+anchor_left = -0.034999993
+anchor_top = -0.093666665
+anchor_right = 1.4615384
+anchor_bottom = 1.1666666
+offset_left = 9.099998
+offset_top = 60.1
+offset_right = -120.0
+offset_bottom = -49.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+metadata/_edit_use_anchors_ = true
 
 [node name="RestActions" type="VBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/RestButtons/RestWindow/RestUI" unique_id=335220932]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -85.5
-offset_right = 220.0
-offset_bottom = 85.5
-grow_vertical = 2
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -110.0
+offset_right = 110.0
+offset_bottom = 171.0
+grow_horizontal = 2
 alignment = 1
 
 [node name="TendWounds" type="CheckButton" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/RestButtons/RestWindow/RestUI/RestActions" unique_id=996454089]
@@ -829,6 +855,7 @@ layout_mode = 2
 
 [node name="EvasionProficiencyMargin" type="MarginContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer" unique_id=1068692241]
 layout_mode = 2
+size_flags_vertical = 0
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
@@ -837,25 +864,27 @@ theme_override_constants/margin_bottom = 5
 [node name="HBoxContainer" type="HBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EvasionProficiencyMargin" unique_id=1174515028]
 layout_mode = 2
 size_flags_horizontal = 4
+size_flags_vertical = 0
 
 [node name="Evasion" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EvasionProficiencyMargin/HBoxContainer" unique_id=288805226]
 custom_minimum_size = Vector2(125, 0)
 layout_mode = 2
-theme_override_styles/panel = ExtResource("2_c8oo5")
+size_flags_vertical = 0
+theme_override_styles/panel = ExtResource("15_1vmjr")
 
 [node name="FieldContainer" type="VBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EvasionProficiencyMargin/HBoxContainer/Evasion" unique_id=1737631886]
 layout_mode = 2
+size_flags_vertical = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EvasionProficiencyMargin/HBoxContainer/Evasion/FieldContainer" unique_id=666988413]
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_vertical = 2
 theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 15
-theme_override_constants/margin_bottom = 5
 
 [node name="FieldValue" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EvasionProficiencyMargin/HBoxContainer/Evasion/FieldContainer/MarginContainer" unique_id=506780720]
 layout_mode = 2
+theme = ExtResource("9_jlx5q")
 theme_override_font_sizes/font_size = 24
 text = "0"
 horizontal_alignment = 1
@@ -875,21 +904,22 @@ vertical_alignment = 1
 [node name="Proficiency" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EvasionProficiencyMargin/HBoxContainer" unique_id=1168794863]
 custom_minimum_size = Vector2(125, 0)
 layout_mode = 2
-theme_override_styles/panel = ExtResource("2_c8oo5")
+size_flags_vertical = 0
+theme_override_styles/panel = ExtResource("15_1vmjr")
 
 [node name="FieldContainer" type="VBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EvasionProficiencyMargin/HBoxContainer/Proficiency" unique_id=843835469]
 layout_mode = 2
+size_flags_vertical = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EvasionProficiencyMargin/HBoxContainer/Proficiency/FieldContainer" unique_id=1882655637]
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_vertical = 2
 theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 15
-theme_override_constants/margin_bottom = 5
 
 [node name="FieldValue" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EvasionProficiencyMargin/HBoxContainer/Proficiency/FieldContainer/MarginContainer" unique_id=1216961648]
 layout_mode = 2
+theme = ExtResource("9_jlx5q")
 theme_override_font_sizes/font_size = 24
 text = "0"
 horizontal_alignment = 1
@@ -908,7 +938,7 @@ vertical_alignment = 1
 
 [node name="Armor" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer" unique_id=592864428]
 layout_mode = 2
-theme_override_styles/panel = ExtResource("2_c8oo5")
+theme_override_styles/panel = ExtResource("4_irdes")
 
 [node name="checkable_buttons" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/Armor" unique_id=403746211 instance=ExtResource("7_rj3pj")]
 layout_mode = 2
@@ -1186,10 +1216,12 @@ title = "Advancements"
 initial_position = 2
 size = Vector2i(1030, 560)
 visible = false
+min_size = Vector2i(1030, 560)
+max_size = Vector2i(1030, 560)
+theme = ExtResource("21_dxpx4")
 script = ExtResource("7_56qfy")
 
 [node name="ObjectContainer" type="HFlowContainer" parent="AdvanceWindow" unique_id=1685616752]
-visible = false
 anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5
@@ -1203,6 +1235,7 @@ grow_vertical = 2
 
 [node name="Header" type="Label" parent="AdvanceWindow/ObjectContainer" unique_id=970900252]
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mamue")
 text = "Select 2 stats to add a permanent +1 to:"
 label_settings = SubResource("LabelSettings_56qfy")
 horizontal_alignment = 1
@@ -1214,6 +1247,7 @@ layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="AdvanceWindow/ObjectContainer/Traits" unique_id=1921439541]
 layout_mode = 2
+theme = ExtResource("9_jlx5q")
 
 [node name="Label" type="Label" parent="AdvanceWindow/ObjectContainer/Traits/VBoxContainer" unique_id=168523618]
 layout_mode = 2
@@ -1324,6 +1358,7 @@ text = "Extra Domain Card
 "
 
 [node name="MulticlassPanel" type="PanelContainer" parent="AdvanceWindow/ObjectContainer" unique_id=71834697]
+custom_minimum_size = Vector2(195, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -1400,6 +1435,9 @@ initial_position = 2
 size = Vector2i(1030, 560)
 visible = false
 theme_override_icons/close = SubResource("Texture2DRD_jlx5q")
+min_size = Vector2i(1030, 560)
+max_size = Vector2i(1030, 560)
+theme = ExtResource("9_jlx5q")
 script = ExtResource("10_7pq50")
 
 [node name="EquipmentList" type="HBoxContainer" parent="EquipmentWindow" unique_id=1421846324]

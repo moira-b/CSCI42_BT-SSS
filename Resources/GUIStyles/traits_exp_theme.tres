@@ -1,5 +1,7 @@
 [gd_resource type="Theme" format=3 uid="uid://dtsueom17lou2"]
 
+[ext_resource type="StyleBox" uid="uid://dhobd2i8q8nhi" path="res://Resources/GUIStyles/purple_panel.tres" id="1_6y53v"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g33lg"]
 content_margin_left = 10.0
 content_margin_top = 5.0
@@ -21,7 +23,42 @@ bg_color = Color(0.6, 0.6, 0.6, 0.078431375)
 border_width_bottom = 2
 border_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3feh7"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.14901961, 0.12941177, 0.25490198, 1)
+border_width_left = 8
+border_width_top = 5
+border_width_right = 8
+border_width_bottom = 5
+border_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tbf5v"]
+bg_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
+border_width_left = 8
+border_width_top = 5
+border_width_right = 8
+border_width_bottom = 5
+border_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pwaja"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rp0ai"]
+bg_color = Color(0.87058824, 0.78039217, 0.38431373, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ohwh"]
 bg_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
@@ -63,7 +100,22 @@ LineEdit/colors/font_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
 LineEdit/constants/minimum_character_width = 2
 LineEdit/styles/focus = SubResource("StyleBoxFlat_vjg25")
 LineEdit/styles/normal = SubResource("StyleBoxFlat_vjg25")
+OptionButton/colors/font_color = Color(0.9372549, 0.9019608, 0.8666667, 1)
+OptionButton/colors/font_focus_color = Color(0.9372549, 0.9019608, 0.8666667, 1)
+OptionButton/colors/font_hover_color = Color(0.9372549, 0.9019608, 0.8666667, 1)
+OptionButton/colors/font_hover_pressed_color = Color(0.9372549, 0.9019608, 0.8666667, 1)
+OptionButton/colors/font_pressed_color = Color(0.9372549, 0.9019608, 0.8666667, 1)
+OptionButton/styles/focus = SubResource("StyleBoxFlat_3feh7")
+OptionButton/styles/hover = SubResource("StyleBoxFlat_3feh7")
+OptionButton/styles/hover_pressed = SubResource("StyleBoxFlat_tbf5v")
+OptionButton/styles/normal = SubResource("StyleBoxFlat_tbf5v")
+OptionButton/styles/normal_mirrored = SubResource("StyleBoxFlat_tbf5v")
+OptionButton/styles/pressed = SubResource("StyleBoxFlat_tbf5v")
 PanelContainer/styles/panel = SubResource("StyleBoxEmpty_pwaja")
+PopupMenu/colors/font_color = Color(0.9372549, 0.9019608, 0.8666667, 1)
+PopupMenu/colors/font_hover_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
+PopupMenu/styles/hover = SubResource("StyleBoxFlat_rp0ai")
+PopupMenu/styles/panel = ExtResource("1_6y53v")
 SpinBox/styles/down_background = SubResource("StyleBoxFlat_2ohwh")
 SpinBox/styles/down_background_disabled = SubResource("StyleBoxFlat_ic1ba")
 SpinBox/styles/down_background_hovered = SubResource("StyleBoxFlat_ic1ba")
