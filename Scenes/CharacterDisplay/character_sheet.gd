@@ -408,6 +408,7 @@ func connect_signals() -> void:
 	advance_window.advancements_confirmed.connect(update_edit_fields)
 	
 	class_panel.gui_input.connect(_on_header_panel_clicked.bind(class_panel.get_child(0).name))
+	multiclass_panel.gui_input.connect(_on_header_panel_clicked.bind(multiclass_panel.get_child(0).name))
 	ancestry_panel.gui_input.connect(_on_header_panel_clicked.bind(ancestry_panel.get_child(0).name))
 	community_panel.gui_input.connect(_on_header_panel_clicked.bind(community_panel.get_child(0).name))
 
@@ -485,6 +486,13 @@ func _on_header_panel_clicked(input: InputEvent, panel: String):
 					character.subclass,
 					class_panel.global_position,
 					class_panel.size
+				)
+				if panel == "Multiclass":
+					information_popup.showClassInformation(
+					character.multiclass_selection,
+					character.multiclass_subclass,
+					multiclass_panel.global_position,
+					multiclass_panel.size
 				)
 				if panel == "Ancestry":
 					information_popup.showAncestryInformation(
