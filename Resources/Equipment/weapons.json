@@ -524,6 +524,105 @@
 		"burden":"Two-Handed",
 		"feature":"Cumbersome"
 	},
+	"Gilded Falchion":{
+		"tier":2,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Strength",
+		"range":"Melee",
+		"damage_die":10,
+		"damage_modifier":4,
+		"burden":"One-Handed",
+		"feature":"Powerful"
+	},
+	"Knuckle Blades":{
+		"tier":2,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Strength",
+		"range":"Melee",
+		"damage_die":10,
+		"damage_modifier":6,
+		"burden":"One-Handed",
+		"feature":"Brutal"
+	},
+	"Urok Broadsword":{
+		"tier":2,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Finesse",
+		"range":"Melee",
+		"damage_die":8,
+		"damage_modifier":3,
+		"burden":"One-Handed",
+		"feature":"Deadly"
+	},
+	"Bladed Whip":{
+		"tier":2,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Agility",
+		"range":"Very Close",
+		"damage_die":8,
+		"damage_modifier":3,
+		"burden":"One-Handed",
+		"feature":"Quick"
+	},
+	"Steelforged Halberd":{
+		"tier":2,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Strength",
+		"range":"Very Close",
+		"damage_die":8,
+		"damage_modifier":4,
+		"burden":"Two-Handed",
+		"feature":"Scary"
+	},
+	"War Scythe":{
+		"tier":2,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Finesse",
+		"range":"Very Close",
+		"damage_die":8,
+		"damage_modifier":5,
+		"burden":"Two-Handed",
+		"feature":"Reliable"
+	},
+	"Blunderbuss":{
+		"tier":2,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Finesse",
+		"range":"Close",
+		"damage_die":8,
+		"damage_modifier":6,
+		"burden":"Two-Handed",
+		"feature":"Reloading"
+	},
+	"Greatbow":{
+		"tier":2,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Strength",
+		"range":"Far",
+		"damage_die":6,
+		"damage_modifier":6,
+		"burden":"Two-Handed",
+		"feature":"Powerful"
+	},
+	"Finehair Bow":{
+		"tier":2,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Agility",
+		"range":"Very Far",
+		"damage_die":6,
+		"damage_modifier":5,
+		"burden":"Two-Handed",
+		"feature":"Reliable"
+	},
 	"Improved Arcane Gauntlets":{
 		"tier":2,
 		"category":"Primary",
@@ -634,6 +733,105 @@
 		"burden":"Two-Handed",
 		"feature":"Powerful"
 	},
+	"Ego Blade":{
+		"tier":2,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Agility",
+		"range":"Melee",
+		"damage_die":12,
+		"damage_modifier":4,
+		"burden":"One-Handed",
+		"feature":"Pompous"
+	},
+	"Casting Sword":{
+		"tier":2,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Strength",
+		"range":"Melee",
+		"damage_die":10,
+		"damage_modifier":4,
+		"burden":"Two-Handed",
+		"feature":"Versatile"
+	},
+	"Devouring Dagger":{
+		"tier":2,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Finesse",
+		"range":"Melee",
+		"damage_die":8,
+		"damage_modifier":4,
+		"burden":"One-Handed",
+		"feature":"Scary"
+	},
+	"Hammer of Exota":{
+		"tier":2,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Instinct",
+		"range":"Melee",
+		"damage_die":8,
+		"damage_modifier":6,
+		"burden":"Two-Handed",
+		"feature":"Eruptive"
+	},
+	"Yutari Bloodbow":{
+		"tier":2,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Finesse",
+		"range":"Far",
+		"damage_die":6,
+		"damage_modifier":4,
+		"burden":"Two-Handed",
+		"feature":"Brutal"
+	},
+	"Elder Bow":{
+		"tier":2,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Instinct",
+		"range":"Far",
+		"damage_die":6,
+		"damage_modifier":4,
+		"burden":"Two-Handed",
+		"feature":"Powerful"
+	},
+	"Scepter of Elias":{
+		"tier":2,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Presence",
+		"range":"Far",
+		"damage_die":6,
+		"damage_modifier":3,
+		"burden":"One-Handed",
+		"feature":"Invigorating"
+	},
+	"Wand of Enthrallment":{
+		"tier":2,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Presence",
+		"range":"Far",
+		"damage_die":6,
+		"damage_modifier":4,
+		"burden":"One-Handed",
+		"feature":"Persuasive"
+	},
+	"Keeper's Staff":{
+		"tier":2,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Knowledge",
+		"range":"Far",
+		"damage_die":6,
+		"damage_modifier":4,
+		"burden":"Two-Handed",
+		"feature":"Reliable"
+	},
 
 
 
@@ -714,6 +912,39 @@
 		"damage_modifier":3,
 		"burden":"One-Handed",
 		"feature":""
+	},
+	"Spiked Shield":{
+		"tier":2,
+		"category":"Secondary",
+		"damage_type":"Physical",
+		"trait":"Strength",
+		"range":"Melee",
+		"damage_die":6,
+		"damage_modifier":2,
+		"burden":"One-Handed",
+		"feature":"Double Duty"
+	},
+	"Parrying Dagger":{
+		"tier":2,
+		"category":"Secondary",
+		"damage_type":"Physical",
+		"trait":"Finesse",
+		"range":"Melee",
+		"damage_die":6,
+		"damage_modifier":2,
+		"burden":"One-Handed",
+		"feature":"Parry"
+	},
+	"Returning Axe":{
+		"tier":2,
+		"category":"Secondary",
+		"damage_type":"Physical",
+		"trait":"Agility",
+		"range":"Close",
+		"damage_die":6,
+		"damage_modifier":4,
+		"burden":"One-Handed",
+		"feature":"Returning"
 	},
 
 
@@ -884,6 +1115,116 @@
 		"burden":"Two-Handed",
 		"feature":"Cumbersome"
 	},
+	"Flickerfly Blade":{
+		"tier":3,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Agility",
+		"range":"Melee",
+		"damage_die":8,
+		"damage_modifier":5,
+		"burden":"One-Handed",
+		"feature":"Sharpening"
+	},
+	"Bravesword":{
+		"tier":3,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Strength",
+		"range":"Melee",
+		"damage_die":12,
+		"damage_modifier":7,
+		"burden":"Two-Handed",
+		"feature":"Brave"
+	},
+	"Hammer of Wrath":{
+		"tier":3,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Strength",
+		"range":"Melee",
+		"damage_die":10,
+		"damage_modifier":7,
+		"burden":"Two-Handed",
+		"feature":"Devastating"
+	},
+	"Labrys Axe":{
+		"tier":3,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Strength",
+		"range":"Melee",
+		"damage_die":10,
+		"damage_modifier":7,
+		"burden":"Two-Handed",
+		"feature":"Protective"
+	},
+	"Meridian Cutlass":{
+		"tier":3,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Presence",
+		"range":"Melee",
+		"damage_die":10,
+		"damage_modifier":5,
+		"burden":"One-Handed",
+		"feature":"Dueling"
+	},
+	"Retractable Saber":{
+		"tier":3,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Presence",
+		"range":"Melee",
+		"damage_die":10,
+		"damage_modifier":7,
+		"burden":"One-Handed",
+		"feature":"Retractable"
+	},
+	"Double Flail":{
+		"tier":3,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Agility",
+		"range":"Very Close",
+		"damage_die":10,
+		"damage_modifier":8,
+		"burden":"Two-Handed",
+		"feature":"Powerful"
+	},
+	"Talon Blades":{
+		"tier":3,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Finesse",
+		"range":"Close",
+		"damage_die":10,
+		"damage_modifier":7,
+		"burden":"Two-Handed",
+		"feature":"Brutal"
+	},
+	"Black Powder Revolver":{
+		"tier":3,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Finesse",
+		"range":"Far",
+		"damage_die":6,
+		"damage_modifier":8,
+		"burden":"One-Handed",
+		"feature":"Reloading"
+	},
+	"Spiked Bow":{
+		"tier":3,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Agility",
+		"range":"Very Far",
+		"damage_die":6,
+		"damage_modifier":7,
+		"burden":"Two-Handed",
+		"feature":"Versatile"
+	},
 	"Advanced Arcane Gauntlets":{
 		"tier":3,
 		"category":"Primary",
@@ -994,6 +1335,105 @@
 		"burden":"Two-Handed",
 		"feature":"Powerful"
 	},
+	"Axe of Fortunies":{
+		"tier":3,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Strength",
+		"range":"Melee",
+		"damage_die":10,
+		"damage_modifier":8,
+		"burden":"Two-Handed",
+		"feature":"Lucky"
+	},
+	"Blessed Anlace":{
+		"tier":3,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Instinct",
+		"range":"Melee",
+		"damage_die":10,
+		"damage_modifier":6,
+		"burden":"One-Handed",
+		"feature":"Healing"
+	},
+	"Ghostblade":{
+		"tier":3,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Presence",
+		"range":"Melee",
+		"damage_die":10,
+		"damage_modifier":7,
+		"burden":"One-Handed",
+		"feature":"Otherworldyl"
+	},
+	"Runes of Ruination":{
+		"tier":3,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Knowledge",
+		"range":"Very Close",
+		"damage_die":20,
+		"damage_modifier":4,
+		"burden":"One-Handed",
+		"feature":"Painful"
+	},
+	"Widgast Pendant":{
+		"tier":3,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Knowledge",
+		"range":"Close",
+		"damage_die":10,
+		"damage_modifier":5,
+		"burden":"One-Handed",
+		"feature":"Timebending"
+	},
+	"Gilded":{
+		"tier":3,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Finesse",
+		"range":"Far",
+		"damage_die":6,
+		"damage_modifier":7,
+		"burden":"Two-Handed",
+		"feature":"Self-Correcting"
+	},
+	"Firestaff":{
+		"tier":3,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Instinct",
+		"range":"Far",
+		"damage_die":6,
+		"damage_modifier":7,
+		"burden":"Two-Handed",
+		"feature":"Burning"
+	},
+	"Mage Orb":{
+		"tier":3,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Knowledge",
+		"range":"Far",
+		"damage_die":6,
+		"damage_modifier":7,
+		"burden":"One-Handed",
+		"feature":"Powerful"
+	},
+	"Ilmari's Rifle":{
+		"tier":3,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Finesse",
+		"range":"Very Far",
+		"damage_die":6,
+		"damage_modifier":6,
+		"burden":"One-Handed",
+		"feature":"Reloading"
+	},
 
 
 
@@ -1074,6 +1514,39 @@
 		"damage_modifier":5,
 		"burden":"One-Handed",
 		"feature":""
+	},
+	"Buckler":{
+		"tier":3,
+		"category":"Secondary",
+		"damage_type":"Physical",
+		"trait":"Agility",
+		"range":"Melee",
+		"damage_die":4,
+		"damage_modifier":4,
+		"burden":"One-Handed",
+		"feature":"Deflecting"
+	},
+	"Powered Gauntlet":{
+		"tier":3,
+		"category":"Secondary",
+		"damage_type":"Physical",
+		"trait":"Knowledge",
+		"range":"Close",
+		"damage_die":6,
+		"damage_modifier":4,
+		"burden":"One-Handed",
+		"feature":"Charged"
+	},
+	"Hand Sling":{
+		"tier":3,
+		"category":"Secondary",
+		"damage_type":"Physical",
+		"trait":"Finesse",
+		"range":"Very Close",
+		"damage_die":6,
+		"damage_modifier":4,
+		"burden":"One-Handed",
+		"feature":"Versatile"
 	},
 
 
@@ -1244,6 +1717,105 @@
 		"burden":"Two-Handed",
 		"feature":"Cumbersome"
 	},
+	"Dual-Ended Sword":{
+		"tier":4,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Agility",
+		"range":"Melee",
+		"damage_die":10,
+		"damage_modifier":9,
+		"burden":"Two-Handed",
+		"feature":"Quick"
+	},
+	"Impact Gauntlet":{
+		"tier":4,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Strength",
+		"range":"Melee",
+		"damage_die":10,
+		"damage_modifier":11,
+		"burden":"One-Handed",
+		"feature":"Concussive"
+	},
+	"Sledge Axe":{
+		"tier":4,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Strength",
+		"range":"Melee",
+		"damage_die":12,
+		"damage_modifier":13,
+		"burden":"Two-Handed",
+		"feature":"Destructive"
+	},
+	"Curved Dagger":{
+		"tier":4,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Finesse",
+		"range":"Melee",
+		"damage_die":8,
+		"damage_modifier":9,
+		"burden":"One-Handed",
+		"feature":"Serrated"
+	},
+	"Extended Polearm":{
+		"tier":4,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Finesse",
+		"range":"Very Close",
+		"damage_die":8,
+		"damage_modifier":10,
+		"burden":"Two-Handed",
+		"feature":"Long"
+	},
+	"Swinging Ropeblade":{
+		"tier":4,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Presence",
+		"range":"Close",
+		"damage_die":8,
+		"damage_modifier":9,
+		"burden":"One-Handed",
+		"feature":"Grappling"
+	},
+	"Ricochet Axes":{
+		"tier":4,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Agility",
+		"range":"Far",
+		"damage_die":6,
+		"damage_modifier":11,
+		"burden":"Two-Handed",
+		"feature":"Bouncing"
+	},
+	"Aantari Bow":{
+		"tier":4,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Finesse",
+		"range":"Far",
+		"damage_die":6,
+		"damage_modifier":11,
+		"burden":"Two-Handed",
+		"feature":"Reliable"
+	},
+	"Hand Cannon":{
+		"tier":4,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Finesse",
+		"range":"Very Far",
+		"damage_die":6,
+		"damage_modifier":12,
+		"burden":"One-Handed",
+		"feature":"Reloading"
+	},
 	"Legendary Arcane Gauntlets":{
 		"tier":4,
 		"category":"Primary",
@@ -1354,6 +1926,106 @@
 		"burden":"Two-Handed",
 		"feature":"Powerful"
 	},
+	"Sword of Light and Flame":{
+		"tier":4,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Strength",
+		"range":"Melee",
+		"damage_die":10,
+		"damage_modifier":11,
+		"burden":"Two-Handed",
+		"feature":"Hot"
+	},
+	"Siphoning Gauntlets":{
+		"tier":4,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Presence",
+		"range":"Melee",
+		"damage_die":10,
+		"damage_modifier":9,
+		"burden":"Two-Handed",
+		"feature":"Lifestealing"
+	},
+	"Midas Scythe":{
+		"tier":4,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Knowledge",
+		"range":"Melee",
+		"damage_die":10,
+		"damage_modifier":9,
+		"burden":"Two-Handed",
+		"feature":"Greedy"
+	},
+	"Floating Bladeshards":{
+		"tier":4,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Instinct",
+		"range":"Close",
+		"damage_die":8,
+		"damage_modifier":9,
+		"burden":"One-Handed",
+		"feature":"Powerful"
+	},
+	"Bloodstaff":{
+		"tier":4,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Instinct",
+		"range":"Far",
+		"damage_die":20,
+		"damage_modifier":7,
+		"burden":"Two-Handed",
+		"feature":"Painful"
+	},
+	"Thistlebow":{
+		"tier":4,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Instinct",
+		"range":"Far",
+		"damage_die":6,
+		"damage_modifier":13,
+		"burden":"Two-Handed",
+		"feature":"Reliable"
+	},
+	"Wand of Essek":{
+		"tier":4,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Knowledge",
+		"range":"Far",
+		"damage_die":8,
+		"damage_modifier":13,
+		"burden":"One-Handed",
+		"feature":"Timebending"
+	},
+	"Magus Revolver":{
+		"tier":4,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Finesse",
+		"range":"Very Far",
+		"damage_die":6,
+		"damage_modifier":13,
+		"burden":"One-Handed",
+		"feature":"Reloading"
+	},
+	"Fusion Gloves":{
+		"tier":4,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Knowledge",
+		"range":"Very Far",
+		"damage_die":6,
+		"damage_modifier":9,
+		"burden":"Two-Handed",
+		"feature":"Bounded"
+	},
+	
 
 
 
@@ -1434,5 +2106,38 @@
 		"damage_modifier":7,
 		"burden":"One-Handed",
 		"feature":""
+	},
+	"Braveshield":{
+		"tier":4,
+		"category":"Secondary",
+		"damage_type":"Physical",
+		"trait":"Agility",
+		"range":"Melee",
+		"damage_die":4,
+		"damage_modifier":6,
+		"burden":"One-Handed",
+		"feature":"Sheltering"
+	},
+	"Knuckle Claws":{
+		"tier":4,
+		"category":"Secondary",
+		"damage_type":"Physical",
+		"trait":"Strength",
+		"range":"Melee",
+		"damage_die":6,
+		"damage_modifier":8,
+		"burden":"One-Handed",
+		"feature":"Doubled Up"
+	},
+	"Primer Shard":{
+		"tier":4,
+		"category":"Secondary",
+		"damage_type":"Physical",
+		"trait":"Instinct",
+		"range":"Very Close",
+		"damage_die":4,
+		"damage_modifier":0,
+		"burden":"One-Handed",
+		"feature":"Locked On"
 	}
 }

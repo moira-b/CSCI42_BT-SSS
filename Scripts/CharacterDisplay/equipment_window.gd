@@ -21,6 +21,19 @@ func showWindow(character: Character):
 	
 	selected_equipment = [character.items[0], character.items[1], character.items[2]]
 	print(selected_equipment)
+	var tier = -1
+	if character.level < 2:
+		tier = 1
+	elif character.level <5:
+		tier = 2
+	elif character.level <8:
+		tier = 3
+	else:
+		tier = 4
+		
+	armor_list.populate_list(tier)
+	p_wep_list.populate_list(tier)
+	s_wep_list.populate_list(tier)
 	
 	# preselect current equipment
 	preselect_current_equipment(character.items)
@@ -62,6 +75,7 @@ func is_selection_valid() -> bool:
 	var primary_burden: String = p_wep_list.get_burden()
 	
 	if primary_burden=="One-Handed":
+		s_wep_list.disable_selection(false)
 		if selected_equipment.count("")==0:
 			"DEBUG: One-handed primary selected. Equipment choices are valid."
 			return true
@@ -70,6 +84,7 @@ func is_selection_valid() -> bool:
 			return false
 	elif primary_burden=="Two-Handed":
 		s_wep_list.deselect_all()
+		s_wep_list.disable_selection(true)
 		selected_equipment[2] = ""
 		if selected_equipment[0]=="":
 			print("DEBUG: Armor not selected. Equipment choices are invalid.")

@@ -7,7 +7,7 @@ extends HBoxContainer
 var starting_inventory: Array[String] = ["", "", ""]
 var primary_burden: String
 var character: Character
-
+var s_disabled = true
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	character = self.get_parent().get_parent().get_child(0)
@@ -23,7 +23,15 @@ func _process(delta: float) -> void:
 		primary_burden = p_wep_list.get_burden()
 	if primary_burden == "Two-Handed":
 		s_wep_list.deselect_all()
+		if s_disabled:
+			s_wep_list.disable_selection(s_disabled)
+			s_disabled = false
 		starting_inventory[2] = ""
+	else:
+		if not s_disabled:
+			s_wep_list.disable_selection(s_disabled)
+			s_disabled = true
+		
 		
 	if starting_inventory.size() >= 3:
 		character.items = starting_inventory

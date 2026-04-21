@@ -58,3 +58,18 @@ func showCommunityInformation(community: Community, position_anchor: Vector2, en
 
 	set_size(self.get_minimum_size())
 	show()
+	
+func showEquipmentInformation(feature: String, desc:String, position_anchor: Vector2, entered_size: Vector2):
+	attribute_name.text = feature
+	feature1_name.text = desc
+	feature1_description.text = ""
+
+	feature2_name.hide()
+	feature2_description.hide()
+
+	set_size(self.get_minimum_size())
+	self.global_position = Vector2(
+		position_anchor[0], 
+		position_anchor[1] - entered_size[1] - self.size[1]/2
+	)
+	show()

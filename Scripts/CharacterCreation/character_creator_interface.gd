@@ -15,9 +15,13 @@ extends Control
 @onready var s_wep_list: ItemList = $OptionLists/EquipmentList/SWepContainer/SWepList
 @onready var pd_window = $PurposefulDesignWindow
 
+
+
 var option_tab_array: Array[Control]
 var option_tab_index: int
 var active_option_tab: Control
+var active_tab_indicator: ColorRect
+var tab_indicator_array: Array[ColorRect]
 var sheet_scene: PackedScene = preload("res://Scenes/CharacterDisplay/character_sheet.tscn")
 var domain: PackedScene = load("res://Scenes/Cards/domain_card_base.tscn")
 var purposeful_design_chosen: int = -1
@@ -29,11 +33,14 @@ func _ready() -> void:
 	back_button.visible = false
 	complete_button.disabled = true
 	complete_button.visible = false
-	_load_option_tabs()
-	_set_active_option_tab(0)
+	
 	for button in tab_buttons:
 		button.pressed.connect(_on_tab_button_pressed.bind(button))
-
+		tab_indicator_array.append(button.get_child(0))
+	
+	_load_option_tabs()
+	_set_active_option_tab(0)
+	
 	pd_window.hide()
 	pd_window.closing.connect(_on_pd_window_closing)
 
@@ -61,29 +68,19 @@ func _process(_delta: float) -> void:
 			confirm_button.disabled = false
 	elif active_option_tab.name == "NamePronounContainer" and active_option_tab.is_all_textboxes_filled():
 			complete_button.disabled = false
-	
 
 func _set_active_option_tab(_index: int):
 	'''
 		Sets active item list by hiding or showing visibility of given item lists
 	'''
-	
-	
 	$TabButtons.get_child(_index).disabled = false
 			
 	if active_option_tab and active_option_tab.name == "DomainCardSelContainer":
 		active_option_tab.clear_screen()
 	elif active_option_tab and active_option_tab.name == "CharacterClassList":
 		card_selector.clear_selected_cards()
-		
-
-	if option_tab_array[_index]:
-		active_option_tab = option_tab_array[_index]
-		active_option_tab.visible = true
-
-	for option_tab in option_tab_array:
-		if option_tab != active_option_tab:
-			option_tab.visible = false
+	
+	_handle_tab_visibility(_index)
 	
 	if active_option_tab.name == "NamePronounContainer":
 		confirm_button.visible = false
@@ -97,6 +94,21 @@ func _set_active_option_tab(_index: int):
 		confirm_button.visible = true
 		complete_button.disabled = true
 		complete_button.visible = false
+
+func _handle_tab_visibility(_index: int):
+	if option_tab_array[_index]:
+		active_option_tab = option_tab_array[_index]
+		active_option_tab.visible = true
+		active_tab_indicator = tab_indicator_array[_index]
+		active_tab_indicator.visible = true
+	
+	for option_tab in option_tab_array:
+		if option_tab != active_option_tab:
+			option_tab.visible = false
+	
+	for tab_indicator in tab_indicator_array:
+		if tab_indicator != active_tab_indicator:
+			tab_indicator.visible = false
 
 
 func _load_option_tabs():
