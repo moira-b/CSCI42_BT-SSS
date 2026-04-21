@@ -113,7 +113,8 @@ func _update_fields() -> void:
 		exp_5.show()
 		
 		for b in allButtons:
-			b.disabled = false
+			if not b == multiclass:
+				b.disabled = false
 
 
 func _on_confirm_pressed() -> void:
