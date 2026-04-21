@@ -110,13 +110,11 @@ func enter() -> void:
 	
 	ancestry_field.set_text(character.ancestry.ancestry_name)
 	class_field.set_text(character.character_class.name + " (" + character.subclass.subclass_name + ")")
-	if character.multiclass_selections:
-	#if (len(character.multiclass_selections) > 0):
-		#multiclass_field.set_text(character.multiclass_selections[0].name)
-		multiclass_field.set_text(character.multiclass_selections.name)
+	if character.multiclass_selection:
+		multiclass_field.set_text(character.multiclass_selection.name)
 		multiclass_field.get_parent().show()
 	else:
-		print(character.multiclass_selections)
+		print(character.multiclass_selection)
 		print("NO MULTICLASS")
 
 	community_field.set_text(character.community.community_name)
@@ -493,9 +491,8 @@ func _on_mouse_enter_class_panel():
 
 func _on_mouse_enter_muliclass_panel():
 	information_popup.showClassInformation(
-		#character.multiclass_selections[0],
-		character.multiclass_selections.name,
-		character.multiclass_subclasses[0],
+		character.multiclass_selection,
+		character.multiclass_subclass,
 		multiclass_panel.global_position,
 		multiclass_panel.size
 	)
@@ -525,11 +522,8 @@ func _on_exp_level_changed(which_exp: int, new_val: int):
 	character.update_experience_level(which_exp, new_val-current_val)
 
 func show_multiclass() -> void:
-	#if character.multiclass_selections[0]:
-		#multiclass_field.text = character.multiclass_selections[0].name
-		#multiclass_field.get_parent().show()
-	if character.multiclass_selections:
-		multiclass_field.text = character.multiclass_selections.name
+	if character.multiclass_selection:
+		multiclass_field.text = character.multiclass_selection.name
 		multiclass_field.get_parent().show()
 	else:
 		print("ERROR. Want to show multiclass in character display, but character has no multiclass.")
