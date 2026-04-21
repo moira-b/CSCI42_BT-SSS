@@ -70,6 +70,9 @@ extends Control
 @onready var class_panel = $HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/ClassPanelContainer
 @onready var ancestry_panel = $HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/AncestryPanelContainer
 @onready var community_panel = $HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/CommunityPanelContainer
+@onready var primaryPanel = $BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentContainer/EquipmentMargin/EquipmentVBox/PrimaryWeapon
+@onready var secondaryPanel = $BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentContainer/EquipmentMargin/EquipmentVBox/SecondaryWeapon
+@onready var armorPanel = $BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentContainer/EquipmentMargin/EquipmentVBox/Armor
 @onready var information_popup = $InformationPopup
 
 @onready var equipment_window = $EquipmentWindow
@@ -127,9 +130,6 @@ func _process(_delta: float) -> void:
 		
 func update_equipment_display() -> void:
 	# handle display of actual equipment
-	var primaryPanel = $BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentContainer/EquipmentMargin/EquipmentVBox/PrimaryWeapon
-	var secondaryPanel = $BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentContainer/EquipmentMargin/EquipmentVBox/SecondaryWeapon
-	var armorPanel = $BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentContainer/EquipmentMargin/EquipmentVBox/Armor
 	
 	primaryPanel.get_child(0).get_node("EquipmentInfo").text = character.get_primary_name() + "\n" + character.get_primary_info()
 	armorPanel.get_child(0).get_node("EquipmentInfo").text = character.get_armor_name() + "\n" + character.get_armor_info()
@@ -420,7 +420,6 @@ func disable_button_selection(b: bool) -> void:
 	long_rest_button.disabled = b
 	dice_button.disabled = b
 	fearhope_button.disabled = b
-
 
 func _on_cards_button_pressed() -> void:
 	var new_scene = card_scene.instantiate()

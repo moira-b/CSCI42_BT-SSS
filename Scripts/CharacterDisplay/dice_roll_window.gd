@@ -3,33 +3,56 @@ extends Window
 @onready var sum_display = $ResultsContainer/Sum
 @onready var individual_rolls_display = $ResultsContainer/IndividualRolls
 @onready var roll_button = $RollButtonContainer/RollButton
-@onready var dice = $DiceRollUI/Dice
+@onready var close_button = $RollButtonContainer/CloseButton
 
-var dice_array: Array
+var dice_quantity_fields: Array[SpinBox]
+var dice_2d_array = [
+	[4, null],
+	[6, null],
+	[8, null],
+	[10, null],
+	[12, null],
+	[20, null],
+	[100, null]
+]
 
 func _ready() -> void:
-	#self.visible = false
-	dice_array = dice.get_children()
+	sum_display.text = ""
+	individual_rolls_display.text = ""
 	
+	var dice_grid_container = $DiceRollUI/Dice
+	var dice = dice_grid_container.get_children()
+	for i in range(len(dice)):
+		dice_2d_array[i][1] = dice[i].get_child(0).get_node("SpinBox")
+
+	roll_button.pressed.connect(_on_roll_button_pressed)
+	close_button.pressed.connect(_on_close_button_pressed)
+
+func _on_close_button_pressed() -> void:
+	self.hide()
+	close_requested.emit()
+
 func _on_roll_button_pressed() -> void:
 	var num_dice: int = 0
 	var sum: int = 0
 	var roll: int
 	var results_array: Array
 	
-	for dice_type in dice_array:
-		for i in range(dice_type.count):
-			roll = randi_range(1, dice_type.num_sides)
+	for die in dice_2d_array:
+		var dice_type = die[0]
+		var quantity_rolled = die[1].value
+		
+		for i in range(quantity_rolled):
+			roll = randi_range(1, dice_type)
 			results_array.append(roll)
 			sum += roll
-		#print("DEBUG: " + str(dice_type.count) + "d" + str(dice_type.num_sides))
-		dice_type.count = 0
-		dice_type.value_label.text = str(0)
-	
-	#print("DEBUG: DICE ROLL RESULT " + str(sum))
+		
+		# reset spinbox back to 0
+		die[1].value = 0
+
 	print(results_array)
 
-	sum_display.text = str(sum)
+	sum_display.text = "Sum: " + str(sum)
 	if (0 < results_array.size() && results_array.size() <= 20):
 		individual_rolls_display.text = array_to_string(results_array)
 	else:

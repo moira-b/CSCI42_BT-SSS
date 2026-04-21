@@ -7,7 +7,8 @@ var current_name = ""
 
 func _ready() -> void:
 	for child in self.get_children():
-		line_edit_array.append(child.get_node("LineEdit"))
+		if (child.name!="ClankPDButtonMargin"):
+			line_edit_array.append(child.get_node("LineEdit"))
 	
 	character = self.get_parent().get_parent().get_node("Character")
 	name_edit.text_submitted.connect(_validate_name)

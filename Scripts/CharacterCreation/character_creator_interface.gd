@@ -15,9 +15,13 @@ extends Control
 @onready var s_wep_list: ItemList = $OptionLists/EquipmentList/SWepContainer/SWepList
 @onready var pd_window = $PurposefulDesignWindow
 
+
+
 var option_tab_array: Array[Control]
 var option_tab_index: int
 var active_option_tab: Control
+var active_tab_indicator: ColorRect
+var tab_indicator_array: Array[ColorRect]
 var sheet_scene: PackedScene = preload("res://Scenes/CharacterDisplay/character_sheet.tscn")
 var domain: PackedScene = load("res://Scenes/Cards/domain_card_base.tscn")
 var purposeful_design_chosen: int = -1
@@ -29,11 +33,14 @@ func _ready() -> void:
 	back_button.visible = false
 	complete_button.disabled = true
 	complete_button.visible = false
-	_load_option_tabs()
-	_set_active_option_tab(0)
+	
 	for button in tab_buttons:
 		button.pressed.connect(_on_tab_button_pressed.bind(button))
-
+		tab_indicator_array.append(button.get_child(0))
+	
+	_load_option_tabs()
+	_set_active_option_tab(0)
+	
 	pd_window.hide()
 	pd_window.closing.connect(_on_pd_window_closing)
 
@@ -50,6 +57,8 @@ func _process(_delta: float) -> void:
 	elif active_option_tab.name == "TraitAssignmentContainer":
 		if active_option_tab.get_child(1).is_all_items_complete():
 			confirm_button.disabled = false
+		else:
+			confirm_button.disabled = true
 	elif active_option_tab.name == "EquipmentList":
 		if active_option_tab.is_equipment_valid():
 			confirm_button.disabled = false
@@ -59,29 +68,19 @@ func _process(_delta: float) -> void:
 			confirm_button.disabled = false
 	elif active_option_tab.name == "NamePronounContainer" and active_option_tab.is_all_textboxes_filled():
 			complete_button.disabled = false
-	
 
 func _set_active_option_tab(_index: int):
 	'''
 		Sets active item list by hiding or showing visibility of given item lists
 	'''
-	
-	
 	$TabButtons.get_child(_index).disabled = false
 			
 	if active_option_tab and active_option_tab.name == "DomainCardSelContainer":
 		active_option_tab.clear_screen()
 	elif active_option_tab and active_option_tab.name == "CharacterClassList":
 		card_selector.clear_selected_cards()
-		
-
-	if option_tab_array[_index]:
-		active_option_tab = option_tab_array[_index]
-		active_option_tab.visible = true
-
-	for option_tab in option_tab_array:
-		if option_tab != active_option_tab:
-			option_tab.visible = false
+	
+	_handle_tab_visibility(_index)
 	
 	if active_option_tab.name == "NamePronounContainer":
 		confirm_button.visible = false
@@ -95,6 +94,21 @@ func _set_active_option_tab(_index: int):
 		confirm_button.visible = true
 		complete_button.disabled = true
 		complete_button.visible = false
+
+func _handle_tab_visibility(_index: int):
+	if option_tab_array[_index]:
+		active_option_tab = option_tab_array[_index]
+		active_option_tab.visible = true
+		active_tab_indicator = tab_indicator_array[_index]
+		active_tab_indicator.visible = true
+	
+	for option_tab in option_tab_array:
+		if option_tab != active_option_tab:
+			option_tab.visible = false
+	
+	for tab_indicator in tab_indicator_array:
+		if tab_indicator != active_tab_indicator:
+			tab_indicator.visible = false
 
 
 func _load_option_tabs():
@@ -183,6 +197,7 @@ func _on_tab_button_pressed(tab: Button) -> void:
 	_set_active_option_tab(option_tab_index)
 
 func _is_character_data_valid() -> bool:
+	var trait_container = $OptionLists/TraitAssignmentContainer/ModifierContainer
 	if (character.character_class == null):
 		notif_window.get_child(0).text = "Invalid Character Class."
 		_raise_error()
@@ -201,6 +216,10 @@ func _is_character_data_valid() -> bool:
 		return false
 	if (card_selector.select_card_list.item_count < 2):
 		notif_window.get_child(0).text = "Missing Domain Cards."
+		_raise_error()
+		return false
+	if (trait_container.is_all_items_complete() == false):
+		notif_window.get_child(0).text = "Invalid Character Traits."
 		_raise_error()
 		return false
 	else:
@@ -224,18 +243,29 @@ func needs_purposeful_design_window() -> bool:
 			var pd_window = $PurposefulDesignWindow
 			var exp1_field = $OptionLists/ExperiencesContainer/Experience1/LineEdit
 			var exp2_field = $OptionLists/ExperiencesContainer/Experience2/LineEdit
-			print(exp1_field.text)
-			print(exp2_field.text)
 			pd_window.showWindow(exp1_field.text, exp2_field.text)
+			
+			var pd_edit_button = $OptionLists/ExperiencesContainer/ClankPDButtonMargin
+			pd_edit_button.get_node("ClankPDButton").pressed.connect(_on_edit_pd_pressed)
+			pd_edit_button.show()
+			
 			return true
 	
 	return false
 
 func _on_pd_window_closing(exp_num: int):
 	purposeful_design_chosen = exp_num
+	var exp1_modifier_label = $OptionLists/ExperiencesContainer/Experience1/ModifierPanel/Label
+	var exp2_modifier_label = $OptionLists/ExperiencesContainer/Experience2/ModifierPanel/Label
 	if purposeful_design_chosen==1:
-		#TODO: set +1 to chosen experience
-		pass
+		exp1_modifier_label.text = "+3"
+		exp2_modifier_label.text = "+2"
 	elif purposeful_design_chosen==2:
-		#TODO: set +1 to chosen experience
-		pass
+		exp1_modifier_label.text = "+2"
+		exp2_modifier_label.text = "+3"
+		
+func _on_edit_pd_pressed():
+	var pd_window = $PurposefulDesignWindow
+	var exp1_field = $OptionLists/ExperiencesContainer/Experience1/LineEdit
+	var exp2_field = $OptionLists/ExperiencesContainer/Experience2/LineEdit
+	pd_window.showWindow(exp1_field.text, exp2_field.text)

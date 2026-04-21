@@ -36,6 +36,25 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y1wpl"]
+bg_color = Color(0.14901961, 0.12941177, 0.25490198, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lmeh2"]
+bg_color = Color(0.14901961, 0.12941177, 0.25490198, 1)
+border_width_bottom = 2
+border_color = Color(0.87058824, 0.78039217, 0.38431373, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pkao1"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ug3rf"]
 bg_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
 expand_margin_left = 10.0
@@ -49,6 +68,16 @@ Button/styles/hover = ExtResource("1_fwlat")
 Button/styles/hover_pressed = ExtResource("1_fwlat")
 Button/styles/normal = ExtResource("2_wgsmk")
 Button/styles/pressed = SubResource("StyleBoxFlat_fwlat")
+ItemList/colors/font_color = Color(0.9372549, 0.9019608, 0.8666667, 1)
+ItemList/colors/font_selected_color = Color(0.9372549, 0.9019608, 0.8666667, 1)
+ItemList/colors/scroll_hint_color = Color(0.87058824, 0.78039217, 0.38431373, 1)
+ItemList/styles/focus = SubResource("StyleBoxFlat_y1wpl")
+ItemList/styles/hovered = SubResource("StyleBoxFlat_y1wpl")
+ItemList/styles/hovered_selected = SubResource("StyleBoxFlat_lmeh2")
+ItemList/styles/hovered_selected_focus = SubResource("StyleBoxFlat_lmeh2")
+ItemList/styles/panel = SubResource("StyleBoxFlat_pkao1")
+ItemList/styles/selected = SubResource("StyleBoxFlat_lmeh2")
+ItemList/styles/selected_focus = SubResource("StyleBoxFlat_lmeh2")
 Label/colors/font_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
 PanelContainer/styles/panel = ExtResource("1_5sa8k")
 Window/styles/embedded_border = SubResource("StyleBoxFlat_ug3rf")

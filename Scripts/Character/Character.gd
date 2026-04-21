@@ -46,7 +46,7 @@ var multiclass_subclasses: Array[CharacterSubclass]
 var multiclass_selections: Array[CharacterClass]
 var primary_key: String
 
-
+@onready var button_enabler: Array[bool] = [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true]
 @onready var active_cards: Array[String] = []
 @onready var vaulted_cards: Array[String] = []
 
@@ -186,7 +186,8 @@ func serialize_data():
 		"multiclass_subclasses": multiclass_subclasses,
 		"multiclass_selections": multiclass_selections,
 		"num_downtime_moves": num_downtime_moves,
-		"active_domain_card_counters": active_domain_card_counters
+		"active_domain_card_counters": active_domain_card_counters,
+		"button_enabler": button_enabler
 	}
 	return save_dict
 
@@ -231,6 +232,7 @@ func load_data(char_dict: Variant):
 	multiclass_selections.assign(char_dict["multiclass_selections"])
 	num_downtime_moves = char_dict["num_downtime_moves"]
 	active_domain_card_counters.assign(char_dict["active_domain_card_counters"])
+	button_enabler.assign(char_dict["button_enabler"])
 	
 func implement_ancestry_features(pd_which_exp: int=-1):
 	if self.ancestry.ancestry_name=="Clank":
@@ -482,8 +484,11 @@ func get_armor_info() -> String:
 	
 	var tier: int = armor_as_dict.get(armor).get("tier")
 	var base_score: int = armor_as_dict.get(armor).get("base_score")
+	var feature = armor_as_dict.get(armor).get("feature")
 
 	var info = "Tier %d | Base Score %d" % [tier, base_score]
+	if feature != "":
+		info += " | " + feature
 	return info
 
 func get_primary_info() -> String:
@@ -498,8 +503,14 @@ func get_primary_info() -> String:
 	var range = weapon_as_dict.get(primary).get("range")
 	var rollTrait = weapon_as_dict.get(primary).get("trait")
 	var damageDie: int = weapon_as_dict.get(primary).get("damage_die")
+	var damageModifier: int = weapon_as_dict.get(primary).get("damage_modifier")
+	var feature = weapon_as_dict.get(primary).get("feature")
 
 	var info = "%s | %s | %s | d%d" % [damageType, range, rollTrait, damageDie]
+	if damageModifier != 0:
+		info += "+" + str(damageModifier)
+	if feature != "":
+		info += " | " + feature
 	return info
 
 func get_secondary_info() -> String:
@@ -514,8 +525,14 @@ func get_secondary_info() -> String:
 	var range = weapon_as_dict.get(secondary).get("range")
 	var rollTrait = weapon_as_dict.get(secondary).get("trait")
 	var damageDie: int = weapon_as_dict.get(secondary).get("damage_die")
+	var damageModifier: int = weapon_as_dict.get(secondary).get("damage_modifier")
+	var feature = weapon_as_dict.get(secondary).get("feature")
 
 	var info = "%s | %s | %s | d%d" % [damageType, range, rollTrait, damageDie]
+	if damageModifier != 0:
+		info += "+" + str(damageModifier)
+	if feature != "":
+		info += " | " + feature
 	return info
 
 func update_experience_level(which_exp: int, change_amt: int):
