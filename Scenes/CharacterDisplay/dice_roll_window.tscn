@@ -1,10 +1,17 @@
 [gd_scene format=3 uid="uid://dltyc5tel16kj"]
 
 [ext_resource type="Script" uid="uid://cwqjejxfms3kp" path="res://Scripts/CharacterDisplay/dice_roll_window.gd" id="1_2ttmj"]
-[ext_resource type="Theme" uid="uid://1kqi7iy53nla" path="res://character_sheet_theme.tres" id="1_5tshs"]
+[ext_resource type="Theme" uid="uid://1kqi7iy53nla" path="res://Resources/GUIStyles/character_sheet_theme.tres" id="1_5tshs"]
+[ext_resource type="Theme" uid="uid://dtsueom17lou2" path="res://Resources/GUIStyles/traits_exp_theme.tres" id="1_nb8f3"]
 
 [sub_resource type="Theme" id="Theme_5tshs"]
 default_font_size = 24
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nb8f3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5tshs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2ttmj"]
 
 [node name="DiceRollWindow" type="Window" unique_id=292838826]
 oversampling_override = 1.0
@@ -20,18 +27,23 @@ anchor_top = 0.033
 anchor_right = 0.5
 anchor_bottom = 0.033
 offset_left = -175.0
-offset_top = -0.2499981
+offset_top = -8.15
 offset_right = 175.0
-offset_bottom = 95.75
+offset_bottom = 79.85
+theme_override_constants/separation = 4
 
 [node name="Sum" type="Label" parent="ResultsContainer" unique_id=2019198714]
 layout_mode = 2
 theme = SubResource("Theme_5tshs")
+text = "sum here"
 horizontal_alignment = 1
 
 [node name="IndividualRolls" type="Label" parent="ResultsContainer" unique_id=388726724]
 custom_minimum_size = Vector2(350, 50)
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_nb8f3")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5tshs")
+text = "num num num"
 horizontal_alignment = 1
 autowrap_mode = 3
 
@@ -42,16 +54,19 @@ anchor_top = 0.536
 anchor_right = 0.5
 anchor_bottom = 0.536
 offset_left = -138.5
-offset_top = -174.80002
+offset_top = -189.80002
 offset_right = 138.5
-offset_bottom = 175.19998
+offset_bottom = 184.19998
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxEmpty_2ttmj")
 
-[node name="Dice" type="VBoxContainer" parent="DiceRollUI" unique_id=517467545]
+[node name="Dice" type="GridContainer" parent="DiceRollUI" unique_id=1026352884]
 layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("1_nb8f3")
 
 [node name="D4" type="PanelContainer" parent="DiceRollUI/Dice" unique_id=196741560]
 layout_mode = 2
@@ -59,14 +74,16 @@ size_flags_vertical = 3
 
 [node name="FieldContainer" type="HBoxContainer" parent="DiceRollUI/Dice/D4" unique_id=1093282611]
 layout_mode = 2
-theme_override_constants/separation = 1
+theme_override_constants/separation = -10
 
 [node name="FieldName" type="Label" parent="DiceRollUI/Dice/D4/FieldContainer" unique_id=14593602]
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
+theme_override_font_sizes/font_size = 16
 text = "D4"
 
 [node name="SpinBox" type="SpinBox" parent="DiceRollUI/Dice/D4/FieldContainer" unique_id=1263784327]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
 [node name="D6" type="PanelContainer" parent="DiceRollUI/Dice" unique_id=142617785]
@@ -75,14 +92,16 @@ size_flags_vertical = 3
 
 [node name="FieldContainer" type="HBoxContainer" parent="DiceRollUI/Dice/D6" unique_id=1139006207]
 layout_mode = 2
-theme_override_constants/separation = 1
+theme_override_constants/separation = -10
 
 [node name="FieldName" type="Label" parent="DiceRollUI/Dice/D6/FieldContainer" unique_id=2051651616]
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
+theme_override_font_sizes/font_size = 16
 text = "D6"
 
 [node name="SpinBox" type="SpinBox" parent="DiceRollUI/Dice/D6/FieldContainer" unique_id=1732688930]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
 [node name="D8" type="PanelContainer" parent="DiceRollUI/Dice" unique_id=1793869203]
@@ -91,14 +110,16 @@ size_flags_vertical = 3
 
 [node name="FieldContainer" type="HBoxContainer" parent="DiceRollUI/Dice/D8" unique_id=1132357622]
 layout_mode = 2
-theme_override_constants/separation = 1
+theme_override_constants/separation = -10
 
 [node name="FieldName" type="Label" parent="DiceRollUI/Dice/D8/FieldContainer" unique_id=330762699]
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
+theme_override_font_sizes/font_size = 16
 text = "D8"
 
 [node name="SpinBox" type="SpinBox" parent="DiceRollUI/Dice/D8/FieldContainer" unique_id=70633465]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
 [node name="D10" type="PanelContainer" parent="DiceRollUI/Dice" unique_id=143940124]
@@ -107,14 +128,16 @@ size_flags_vertical = 3
 
 [node name="FieldContainer" type="HBoxContainer" parent="DiceRollUI/Dice/D10" unique_id=993975873]
 layout_mode = 2
-theme_override_constants/separation = 1
+theme_override_constants/separation = -10
 
 [node name="FieldName" type="Label" parent="DiceRollUI/Dice/D10/FieldContainer" unique_id=406657902]
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
+theme_override_font_sizes/font_size = 16
 text = "D10"
 
 [node name="SpinBox" type="SpinBox" parent="DiceRollUI/Dice/D10/FieldContainer" unique_id=506399388]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
 [node name="D12" type="PanelContainer" parent="DiceRollUI/Dice" unique_id=1525040638]
@@ -123,14 +146,16 @@ size_flags_vertical = 3
 
 [node name="FieldContainer" type="HBoxContainer" parent="DiceRollUI/Dice/D12" unique_id=1499475267]
 layout_mode = 2
-theme_override_constants/separation = 1
+theme_override_constants/separation = -10
 
 [node name="FieldName" type="Label" parent="DiceRollUI/Dice/D12/FieldContainer" unique_id=675635225]
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
+theme_override_font_sizes/font_size = 16
 text = "D12"
 
 [node name="SpinBox" type="SpinBox" parent="DiceRollUI/Dice/D12/FieldContainer" unique_id=624161618]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
 [node name="D20" type="PanelContainer" parent="DiceRollUI/Dice" unique_id=1220786145]
@@ -139,14 +164,16 @@ size_flags_vertical = 3
 
 [node name="FieldContainer" type="HBoxContainer" parent="DiceRollUI/Dice/D20" unique_id=1662673715]
 layout_mode = 2
-theme_override_constants/separation = 1
+theme_override_constants/separation = -10
 
 [node name="FieldName" type="Label" parent="DiceRollUI/Dice/D20/FieldContainer" unique_id=1044545640]
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
+theme_override_font_sizes/font_size = 16
 text = "D20"
 
 [node name="SpinBox" type="SpinBox" parent="DiceRollUI/Dice/D20/FieldContainer" unique_id=117636438]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
 [node name="D100" type="PanelContainer" parent="DiceRollUI/Dice" unique_id=1848082897]
@@ -155,14 +182,16 @@ size_flags_vertical = 3
 
 [node name="FieldContainer" type="HBoxContainer" parent="DiceRollUI/Dice/D100" unique_id=337938550]
 layout_mode = 2
-theme_override_constants/separation = 1
+theme_override_constants/separation = -10
 
 [node name="FieldName" type="Label" parent="DiceRollUI/Dice/D100/FieldContainer" unique_id=1226873019]
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
+theme_override_font_sizes/font_size = 16
 text = "D100"
 
 [node name="SpinBox" type="SpinBox" parent="DiceRollUI/Dice/D100/FieldContainer" unique_id=813120148]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
 [node name="RollButtonContainer" type="MarginContainer" parent="." unique_id=1127682714]
