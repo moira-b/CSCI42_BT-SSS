@@ -9,7 +9,7 @@
 [ext_resource type="StyleBox" uid="uid://dae1vokrglwgx" path="res://Resources/GUIStyles/class_ancestry_community_panel.tres" id="4_rj3pj"]
 [ext_resource type="StyleBox" uid="uid://duwnobw5p4cl6" path="res://Resources/GUIStyles/line_edit_focus.tres" id="5_asla6"]
 [ext_resource type="PackedScene" uid="uid://dltyc5tel16kj" path="res://Scenes/CharacterDisplay/dice_roll_window.tscn" id="5_glymg"]
-[ext_resource type="Script" path="res://Scripts/CharacterDisplay/save_notification.gd" id="5_n5rmr"]
+[ext_resource type="Script" uid="uid://wblpjoc7sjgv" path="res://Scripts/CharacterDisplay/save_notification.gd" id="5_n5rmr"]
 [ext_resource type="StyleBox" uid="uid://dh0x1614wwewt" path="res://Resources/GUIStyles/yellow_label.tres" id="5_svvgr"]
 [ext_resource type="PackedScene" uid="uid://b6t3g5gxhwopj" path="res://Scenes/CharacterDisplay/fh_roll_window.tscn" id="6_8iwex"]
 [ext_resource type="Script" uid="uid://b3ypom2uq1exh" path="res://Scripts/CharacterDisplay/advancements.gd" id="7_56qfy"]
@@ -17,18 +17,16 @@
 [ext_resource type="PackedScene" uid="uid://1un73y3t3x7b" path="res://Scenes/Cards/domain_card_sel_container.tscn" id="8_8skux"]
 [ext_resource type="Theme" uid="uid://tvypmn4kbcjp" path="res://Resources/GUIStyles/daggerheart_theme.tres" id="9_jlx5q"]
 [ext_resource type="Script" uid="uid://by7ahmitbfup2" path="res://Scripts/CharacterDisplay/equipment_window.gd" id="10_7pq50"]
-[ext_resource type="Script" path="res://Scripts/CharacterDisplay/experiences.gd" id="10_rj3pj"]
+[ext_resource type="Script" uid="uid://djod0suj342ks" path="res://Scripts/CharacterDisplay/experiences.gd" id="10_rj3pj"]
 [ext_resource type="Script" uid="uid://do0erpc6r8x0r" path="res://Scripts/CharacterDisplay/multiclass_choices.gd" id="11_2cjug"]
 [ext_resource type="PackedScene" uid="uid://blf44ks0qcuqu" path="res://Scenes/CharacterDisplay/damage_threshold_display.tscn" id="11_2ohwh"]
 [ext_resource type="Script" uid="uid://co3dycsyqv6ap" path="res://Scripts/CharacterCreation/armor_list.gd" id="11_7pq50"]
 [ext_resource type="StyleBox" uid="uid://f8rwf4112klm" path="res://window_stylebox.tres" id="11_dxpx4"]
+[ext_resource type="Theme" uid="uid://dtsueom17lou2" path="res://Resources/GUIStyles/traits_exp_theme.tres" id="12_48wf7"]
 [ext_resource type="Script" uid="uid://mx8mfwor421u" path="res://Scripts/CharacterCreation/p_weapon_list.gd" id="12_rj3pj"]
-[ext_resource type="Theme" path="res://Resources/GUIStyles/action_buttons_theme.tres" id="12_rllm4"]
 [ext_resource type="Script" uid="uid://cutrjksidwmox" path="res://Scripts/CharacterCreation/s_weapon_list.gd" id="13_48wf7"]
 [ext_resource type="StyleBox" uid="uid://ck1deowv8fsse" path="res://Resources/GUIStyles/purple_border_panel.tres" id="15_1vmjr"]
-[ext_resource type="Resource" uid="uid://b77s47x5y88rn" path="res://Resources/Classes/Guardian/guardian.tres" id="15_n4116"]
-[ext_resource type="Resource" uid="uid://cuy8gd8ecs5j2" path="res://Resources/Classes/Ranger/ranger.tres" id="16_kjdj8"]
-[ext_resource type="Theme" path="res://Resources/GUIStyles/exp_theme.tres" id="17_i1vic"]
+[ext_resource type="Theme" uid="uid://ccxm2bwpjuy2p" path="res://Resources/GUIStyles/purple_button.tres" id="15_asla6"]
 [ext_resource type="Theme" uid="uid://cf6uo4jelunp4" path="res://Resources/GUIStyles/equipment_theme.tres" id="17_jlx5q"]
 [ext_resource type="Theme" uid="uid://cpym4sw2hsrrw" path="res://Resources/GUIStyles/advancements_window.tres" id="21_dxpx4"]
 [ext_resource type="Script" uid="uid://ddgbhwwl4fam4" path="res://Scripts/CharacterDisplay/information_popup.gd" id="23_gjf7o"]
@@ -67,6 +65,8 @@ bg_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_svvgr"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1vmjr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_irdes"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mamue"]
 
@@ -300,7 +300,6 @@ vertical_alignment = 2
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-theme = ExtResource("12_rllm4")
 theme_override_styles/panel = SubResource("StyleBoxEmpty_6w3xy")
 
 [node name="LevelUpButton" type="Button" parent="HeaderMargin/Header/Level/FieldContainer/PanelContainer" unique_id=1305469132]
@@ -308,7 +307,6 @@ custom_minimum_size = Vector2(140, 30)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme = ExtResource("12_rllm4")
 text = "Level Up"
 
 [node name="Spacer" type="Control" parent="HeaderMargin/Header/Level/FieldContainer" unique_id=979303809]
@@ -381,7 +379,6 @@ layout_mode = 2
 [node name="Save" type="Button" parent="HeaderMargin/Header/PanelContainer/MarginContainer/RightPanel" unique_id=393625438]
 layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource("12_rllm4")
 theme_type_variation = &"LeftAlignButton"
 text = "Save Character"
 alignment = 0
@@ -389,7 +386,6 @@ alignment = 0
 [node name="Delete" type="Button" parent="HeaderMargin/Header/PanelContainer/MarginContainer/RightPanel" unique_id=627249800]
 layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource("12_rllm4")
 theme_type_variation = &"LeftAlignButton"
 text = "Delete Character"
 alignment = 0
@@ -397,7 +393,6 @@ alignment = 0
 [node name="MainMenu" type="Button" parent="HeaderMargin/Header/PanelContainer/MarginContainer/RightPanel" unique_id=1062522431]
 layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource("12_rllm4")
 theme_type_variation = &"LeftAlignButton"
 text = "Back to Main Menu"
 alignment = 0
@@ -489,13 +484,14 @@ offset_left = 15.0
 offset_right = -15.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("17_i1vic")
+theme = ExtResource("12_48wf7")
 theme_override_constants/separation = 6
 metadata/_edit_use_anchors_ = true
 
 [node name="AgilityPanel" type="PanelContainer" parent="TraitModifiers" unique_id=845298128]
 layout_mode = 2
 size_flags_horizontal = 3
+theme = ExtResource("12_48wf7")
 
 [node name="AgilityContainer" type="BoxContainer" parent="TraitModifiers/AgilityPanel" unique_id=1577777243]
 custom_minimum_size = Vector2(145, 0)
@@ -712,7 +708,7 @@ layout_mode = 2
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 size_flags_vertical = 8
-theme = ExtResource("12_rllm4")
+theme = ExtResource("15_asla6")
 
 [node name="MarginContainer" type="MarginContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons" unique_id=1743009752]
 layout_mode = 2
@@ -1066,7 +1062,7 @@ autowrap_mode = 3
 
 [node name="ManageEquipment" type="Button" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentContainer/EquipmentMargin/EquipmentVBox" unique_id=1821670160]
 layout_mode = 2
-theme = ExtResource("12_rllm4")
+theme = ExtResource("15_asla6")
 text = "Manage Equipment"
 
 [node name="RightPanel" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer" unique_id=1912298009]
@@ -1115,6 +1111,7 @@ wrap_mode = 1
 
 [node name="ExperiencesPanelContainer" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer" unique_id=1172118305]
 layout_mode = 2
+theme = ExtResource("12_48wf7")
 theme_override_styles/panel = ExtResource("15_1vmjr")
 
 [node name="MarginContainer" type="MarginContainer" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer" unique_id=803406521]
@@ -1125,12 +1122,14 @@ theme_override_constants/margin_bottom = 4
 
 [node name="Experiences" type="VBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer" unique_id=2003283091]
 layout_mode = 2
+theme_override_constants/separation = 5
 script = ExtResource("10_rj3pj")
 
 [node name="Label" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences" unique_id=908732964]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_irdes")
 text = "Experiences"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1142,12 +1141,10 @@ layout_mode = 2
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 3
-theme = ExtResource("17_i1vic")
 text = "temp"
 
 [node name="SpinBox" type="SpinBox" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences/Experience1" unique_id=2107774909]
 layout_mode = 2
-theme = ExtResource("17_i1vic")
 min_value = -100.0
 value = 2.0
 allow_greater = true
@@ -1160,11 +1157,9 @@ layout_mode = 2
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 3
-theme = ExtResource("17_i1vic")
 
 [node name="SpinBox" type="SpinBox" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences/Experience2" unique_id=2060575037]
 layout_mode = 2
-theme = ExtResource("17_i1vic")
 min_value = -100.0
 value = 2.0
 allow_greater = true
@@ -1177,11 +1172,9 @@ layout_mode = 2
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 3
-theme = ExtResource("17_i1vic")
 
 [node name="SpinBox" type="SpinBox" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences/Experience3" unique_id=8149512]
 layout_mode = 2
-theme = ExtResource("17_i1vic")
 min_value = -100.0
 value = 2.0
 allow_greater = true
@@ -1194,11 +1187,9 @@ layout_mode = 2
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 3
-theme = ExtResource("17_i1vic")
 
 [node name="SpinBox" type="SpinBox" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences/Experience4" unique_id=1067876951]
 layout_mode = 2
-theme = ExtResource("17_i1vic")
 min_value = -100.0
 value = 2.0
 allow_greater = true
@@ -1211,11 +1202,9 @@ layout_mode = 2
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 3
-theme = ExtResource("17_i1vic")
 
 [node name="SpinBox" type="SpinBox" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences/Experience5" unique_id=986027287]
 layout_mode = 2
-theme = ExtResource("17_i1vic")
 min_value = -100.0
 value = 2.0
 allow_greater = true
