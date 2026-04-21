@@ -1,20 +1,30 @@
-[gd_resource type="Theme" format=3 uid="uid://c8jljcwdlnc2s"]
+[gd_resource type="Theme" format=3 uid="uid://ccxm2bwpjuy2p"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ohwh"]
-bg_color = Color(0.14901961, 0.12941177, 0.25490198, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wvf4n"]
+bg_color = Color(0.34117648, 0.3019608, 0.6117647, 0.9411765)
 border_width_top = 2
 border_width_bottom = 2
-border_color = Color(0.14901961, 0.12941177, 0.25490198, 1)
+border_color = Color(0.34117648, 0.3019608, 0.6117647, 0.9411765)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rllm4"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rodew"]
 bg_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
 border_width_top = 2
 border_width_bottom = 2
 border_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_47ito"]
+bg_color = Color(0.14901961, 0.12941177, 0.25490198, 1)
+border_width_top = 2
+border_width_bottom = 2
+border_color = Color(0.14901961, 0.12941177, 0.25490198, 1)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
@@ -30,8 +40,7 @@ corner_radius_bottom_left = 10
 
 [resource]
 Button/colors/font_color = Color(0.9372549, 0.9019608, 0.8666667, 1)
-Button/styles/focus = SubResource("StyleBoxFlat_2ohwh")
-Button/styles/hover = SubResource("StyleBoxFlat_2ohwh")
-Button/styles/normal = SubResource("StyleBoxFlat_rllm4")
-Button/styles/pressed = SubResource("StyleBoxFlat_2ohwh")
+Button/styles/hover = SubResource("StyleBoxFlat_wvf4n")
+Button/styles/normal = SubResource("StyleBoxFlat_rodew")
+Button/styles/pressed = SubResource("StyleBoxFlat_47ito")
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_i1vic")
