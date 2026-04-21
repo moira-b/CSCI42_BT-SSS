@@ -15,12 +15,13 @@ extends Control
 @onready var s_wep_list: ItemList = $OptionLists/EquipmentList/SWepContainer/SWepList
 @onready var pd_window = $PurposefulDesignWindow
 
-@export var tab_indicator_array: Array[ColorRect]
+
 
 var option_tab_array: Array[Control]
 var option_tab_index: int
 var active_option_tab: Control
 var active_tab_indicator: ColorRect
+var tab_indicator_array: Array[ColorRect]
 var sheet_scene: PackedScene = preload("res://Scenes/CharacterDisplay/character_sheet.tscn")
 var domain: PackedScene = load("res://Scenes/Cards/domain_card_base.tscn")
 var purposeful_design_chosen: int = -1
@@ -32,12 +33,14 @@ func _ready() -> void:
 	back_button.visible = false
 	complete_button.disabled = true
 	complete_button.visible = false
-	_load_option_tabs()
-	_set_active_option_tab(0)
 	
 	for button in tab_buttons:
 		button.pressed.connect(_on_tab_button_pressed.bind(button))
-
+		tab_indicator_array.append(button.get_child(0))
+	
+	_load_option_tabs()
+	_set_active_option_tab(0)
+	
 	pd_window.hide()
 	pd_window.closing.connect(_on_pd_window_closing)
 
