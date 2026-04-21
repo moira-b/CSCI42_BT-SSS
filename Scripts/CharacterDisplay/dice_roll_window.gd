@@ -3,12 +3,9 @@ extends Window
 @onready var sum_display = $ResultsContainer/Sum
 @onready var individual_rolls_display = $ResultsContainer/IndividualRolls
 @onready var roll_button = $RollButtonContainer/RollButton
-@onready var dice = $DiceRollUI/Dice
+@onready var close_button = $RollButtonContainer/CloseButton
 
-func _ready() -> void:
-	sum_display.text = ""
-	individual_rolls_display = ""
-
+var dice_quantity_fields: Array[SpinBox]
 var dice_2d_array = [
 	[4, null],
 	[6, null],
@@ -19,8 +16,22 @@ var dice_2d_array = [
 	[100, null]
 ]
 
-var dice_quantity_fields: Array[SpinBox]
+func _ready() -> void:
+	sum_display.text = ""
+	individual_rolls_display.text = ""
 	
+	var dice_grid_container = $DiceRollUI/Dice
+	var dice = dice_grid_container.get_children()
+	for i in range(len(dice)):
+		dice_2d_array[i][1] = dice[i].get_child(0).get_node("SpinBox")
+
+	roll_button.pressed.connect(_on_roll_button_pressed)
+	close_button.pressed.connect(_on_close_button_pressed)
+
+func _on_close_button_pressed() -> void:
+	self.hide()
+	close_requested.emit()
+
 func _on_roll_button_pressed() -> void:
 	var num_dice: int = 0
 	var sum: int = 0
