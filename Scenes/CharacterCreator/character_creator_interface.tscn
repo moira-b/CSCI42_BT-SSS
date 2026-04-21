@@ -87,6 +87,7 @@ theme = ExtResource("1_r4lgg")
 script = ExtResource("1_ofddw")
 
 [node name="Character" parent="." unique_id=1371470097 instance=ExtResource("2_foxel")]
+proficiency = 0
 
 [node name="TabButtons" type="HBoxContainer" parent="." unique_id=1396724264]
 layout_mode = 1

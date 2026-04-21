@@ -82,6 +82,8 @@ bg_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
 font_size = 24
 font_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
 
+[sub_resource type="Texture2DRD" id="Texture2DRD_jlx5q"]
+
 [node name="CharacterSheet" type="Control" unique_id=1820753171]
 layout_mode = 3
 anchors_preset = 15
@@ -1432,6 +1434,7 @@ title = "Manage Equipment"
 initial_position = 2
 size = Vector2i(1030, 560)
 visible = false
+theme_override_icons/close = SubResource("Texture2DRD_jlx5q")
 min_size = Vector2i(1030, 560)
 max_size = Vector2i(1030, 560)
 theme = ExtResource("9_jlx5q")
@@ -1443,12 +1446,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -286.0
-offset_top = -17.5
-offset_right = 286.0
-offset_bottom = 17.5
+offset_left = -462.0
+offset_top = -238.0
+offset_right = 462.0
+offset_bottom = 207.5
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
 
 [node name="ArmorContainer" type="VBoxContainer" parent="EquipmentWindow/EquipmentList" unique_id=1968655432]
 layout_mode = 2
@@ -1460,9 +1464,8 @@ text = "Armor"
 
 [node name="ArmorList" type="ItemList" parent="EquipmentWindow/EquipmentList/ArmorContainer" unique_id=1705313043]
 layout_mode = 2
+size_flags_vertical = 3
 allow_search = false
-auto_width = true
-auto_height = true
 same_column_width = true
 script = ExtResource("11_7pq50")
 
@@ -1476,9 +1479,8 @@ text = "Primary Weapons"
 
 [node name="PWepList" type="ItemList" parent="EquipmentWindow/EquipmentList/PWepContainer" unique_id=1968287863]
 layout_mode = 2
+size_flags_vertical = 3
 allow_search = false
-auto_width = true
-auto_height = true
 max_columns = 3
 same_column_width = true
 script = ExtResource("12_rj3pj")
@@ -1493,9 +1495,8 @@ text = "Secondary Weapons"
 
 [node name="SWepList" type="ItemList" parent="EquipmentWindow/EquipmentList/SWepContainer" unique_id=1555651325]
 layout_mode = 2
+size_flags_vertical = 3
 allow_search = false
-auto_width = true
-auto_height = true
 max_columns = 2
 same_column_width = true
 script = ExtResource("13_48wf7")

@@ -19,16 +19,20 @@ func _ready() -> void:
 	
 	tier_1_dict = weapon_dict.duplicate(true)
 	for q in weapon_dict:
-		if weapon_dict[q].tier != 1:
-			tier_1_dict.erase(q)
-	for w in tier_1_dict:
-		if tier_1_dict[w].category == "Secondary":
-			secondaries.append(w)
+		if tier_1_dict[q].category == "Secondary":
+			secondaries.append(q)
 
 	for item in secondaries:
-		add_item(item)
+		if(weapon_dict[item].tier ==1):
+			add_item(item)
 	self.item_selected.connect(_on_item_selected)
 
+func populate_list(tier: int):
+	clear()
+	
+	for item in weapon_dict:
+		if weapon_dict[item].tier <= tier and weapon_dict[item].category == "Secondary":
+			add_item(item)
 
 func _on_item_selected(_index: int) -> void:
 	selected_secondary = secondaries[_index]
@@ -38,3 +42,7 @@ func get_selected_secondary():
 	if self.is_anything_selected() == false:
 		selected_secondary = ""
 	return selected_secondary
+	
+func disable_selection(disable: bool):
+	for i in range(item_count):
+		set_item_disabled(i, disable)

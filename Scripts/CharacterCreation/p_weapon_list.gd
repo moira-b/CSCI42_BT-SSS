@@ -19,17 +19,22 @@ func _ready() -> void:
 	
 	tier_1_dict = weapon_dict.duplicate(true)
 	for q in weapon_dict:
-		if weapon_dict[q].tier != 1:
-			tier_1_dict.erase(q)
-	for w in tier_1_dict:
-		if tier_1_dict[w].category == "Primary":
-			primaries.append(w)
+		if tier_1_dict[q].category == "Primary":
+			primaries.append(q)
 
 	for item in primaries:
-		add_item(item)
+		if weapon_dict[item].tier ==1:
+			add_item(item)
 	self.item_selected.connect(_on_item_selected)
 
-
+func populate_list(tier: int):
+	clear()
+	
+	for item in weapon_dict:
+		if weapon_dict[item].tier <= tier and weapon_dict[item].category == "Primary":
+			add_item(item)
+	
+	self.item_selected.connect(_on_item_selected)
 func _on_item_selected(_index: int) -> void:
 	selected_primary = primaries[_index]
 	primary_item_selected.emit()
