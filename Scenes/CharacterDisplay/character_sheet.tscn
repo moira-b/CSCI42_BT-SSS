@@ -37,6 +37,7 @@
 [ext_resource type="Resource" uid="uid://hywukpwyumtp" path="res://Resources/Classes/Sorcerer/sorcerer.tres" id="19_rj3pj"]
 [ext_resource type="Resource" uid="uid://cfbttvs0d6csq" path="res://Resources/Classes/Warrior/warrior.tres" id="20_48wf7"]
 [ext_resource type="Resource" uid="uid://dac4f4ifpjnla" path="res://Resources/Classes/Wizard/wizard.tres" id="21_asla6"]
+[ext_resource type="Theme" uid="uid://cpnp7rqytix60" path="res://Resources/GUIStyles/advancements_window.tres" id="21_dxpx4"]
 [ext_resource type="Script" uid="uid://ddgbhwwl4fam4" path="res://Scripts/CharacterDisplay/information_popup.gd" id="23_gjf7o"]
 
 [sub_resource type="GDScript" id="GDScript_dg7yu"]
@@ -72,8 +73,11 @@ bg_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1vmjr"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mamue"]
+
 [sub_resource type="LabelSettings" id="LabelSettings_56qfy"]
 font_size = 24
+font_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
 
 [node name="CharacterSheet" type="Control" unique_id=1820753171]
 layout_mode = 3
@@ -1195,10 +1199,12 @@ title = "Advancements"
 initial_position = 2
 size = Vector2i(1030, 560)
 visible = false
+min_size = Vector2i(1030, 560)
+max_size = Vector2i(1030, 560)
+theme = ExtResource("21_dxpx4")
 script = ExtResource("7_56qfy")
 
 [node name="ObjectContainer" type="HFlowContainer" parent="AdvanceWindow" unique_id=1685616752]
-visible = false
 anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5
@@ -1212,6 +1218,7 @@ grow_vertical = 2
 
 [node name="Header" type="Label" parent="AdvanceWindow/ObjectContainer" unique_id=970900252]
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mamue")
 text = "Select 2 stats to add a permanent +1 to:"
 label_settings = SubResource("LabelSettings_56qfy")
 horizontal_alignment = 1
@@ -1223,6 +1230,7 @@ layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="AdvanceWindow/ObjectContainer/Traits" unique_id=1921439541]
 layout_mode = 2
+theme = ExtResource("9_jlx5q")
 
 [node name="Label" type="Label" parent="AdvanceWindow/ObjectContainer/Traits/VBoxContainer" unique_id=168523618]
 layout_mode = 2
@@ -1333,6 +1341,7 @@ text = "Extra Domain Card
 "
 
 [node name="MulticlassPanel" type="PanelContainer" parent="AdvanceWindow/ObjectContainer" unique_id=71834697]
+custom_minimum_size = Vector2(195, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -1407,7 +1416,9 @@ oversampling_override = 1.0
 title = "Manage Equipment"
 initial_position = 2
 size = Vector2i(1030, 560)
-visible = false
+min_size = Vector2i(1030, 560)
+max_size = Vector2i(1030, 560)
+theme = ExtResource("9_jlx5q")
 script = ExtResource("10_7pq50")
 
 [node name="EquipmentList" type="HBoxContainer" parent="EquipmentWindow" unique_id=1421846324]

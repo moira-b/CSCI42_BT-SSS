@@ -5,6 +5,10 @@
 [ext_resource type="StyleBox" uid="uid://dhobd2i8q8nhi" path="res://Resources/GUIStyles/purple_panel.tres" id="2_wgsmk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fwlat"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
 bg_color = Color(0.14901961, 0.12941177, 0.25490198, 1)
 border_width_left = 8
 border_width_top = 8
@@ -16,10 +20,18 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ug3rf"]
+bg_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
+expand_margin_left = 10.0
+expand_margin_top = 30.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
 [resource]
-Button/styles/disabled = null
 Button/styles/hover = ExtResource("1_fwlat")
+Button/styles/hover_pressed = ExtResource("1_fwlat")
 Button/styles/normal = ExtResource("2_wgsmk")
 Button/styles/pressed = SubResource("StyleBoxFlat_fwlat")
 Label/colors/font_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
 PanelContainer/styles/panel = ExtResource("1_5sa8k")
+Window/styles/embedded_border = SubResource("StyleBoxFlat_ug3rf")
