@@ -86,6 +86,7 @@ func _on_checkButton_toggled(toggled_on: bool, toggled_button: CheckButton) -> v
 func get_character(c: Character):
 	character = c
 	_update_fields()
+	_update_buttons()
 
 func _update_fields() -> void:
 	exp_1.text = character.experiences[0]
@@ -95,25 +96,31 @@ func _update_fields() -> void:
 	exp_5.text = character.experiences[4]
 	
 	if character.level == 2:
+		print("level 2")
 		exp_3.text = "New Experience"
 		exp_3.show()
 		
-		for b in allButtons:
-			b.disabled = false
+		
+		for i in range(character.button_enabler.size()):
+			if i == character.button_enabler.size()-1:
+				character.button_enabler[i] = true
+			else:
+				character.button_enabler[i] = false
 		
 		multiclass.disabled = true
 	elif character.level == 5:
+		print("level 5")
 		exp_4.text = "New Experience"
 		exp_4.show()
 		
-		for b in allButtons:
-			b.disabled = false
+		for i in range(character.button_enabler.size()):
+			character.button_enabler[i] = false
 	elif character.level == 8:
 		exp_5.text = "New Experience"
 		exp_5.show()
-		
-		for b in allButtons:
-			b.disabled = false
+
+		for i in range(character.button_enabler.size()-1):
+			character.button_enabler[i] = false
 
 
 func _on_confirm_pressed() -> void:
@@ -151,8 +158,8 @@ func _handle_object_container_confirm() -> void:
 			else:
 				set_active_container(2)
 		for s in selected:
-			s.set_pressed_no_signal(false)
-			s.disabled = true
+			var index = allButtons.find(s)
+			character.button_enabler[index] = true
 
 	if active_container != $MulticlassChoiceContainer && active_container != $DomainCardSelContainer:
 		confirm_all_advancements() 
@@ -165,3 +172,12 @@ func confirm_all_advancements():
 	set_active_container(0)
 	update_sheet_fields()
 	self.hide()
+	
+func _update_buttons():
+	var i=0
+	print("hi")
+	for button in allButtons:
+		button.set_pressed_no_signal(character.button_enabler[i])
+		button.disabled = character.button_enabler[i]
+		print(str(button.disabled) + " | " + str(character.button_enabler[i]))
+		i+=1
