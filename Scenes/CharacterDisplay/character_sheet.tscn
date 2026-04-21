@@ -40,20 +40,6 @@
 [ext_resource type="Theme" uid="uid://cpnp7rqytix60" path="res://Resources/GUIStyles/advancements_window.tres" id="21_dxpx4"]
 [ext_resource type="Script" uid="uid://ddgbhwwl4fam4" path="res://Scripts/CharacterDisplay/information_popup.gd" id="23_gjf7o"]
 
-[sub_resource type="GDScript" id="GDScript_dg7yu"]
-script/source = "extends LineEdit
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-"
-
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6w3xy"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_6lo7n"]

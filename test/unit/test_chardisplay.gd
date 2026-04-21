@@ -28,15 +28,14 @@ func test_window_visibility():
 
 func test_signals():
 	watch_signals(char_display)
-	var markables = [char_display.health_field, char_display.stress_field,
-		char_display.armor_field, char_display.hope_field]
+	var markables = [char_display.health_checkables, char_display.stress_checkables,
+		char_display.armor_checkables, char_display.hope_checkables]
 	
 	for t in char_display.all_traits:
 		assert_connected(t.value_changed, char_display._on_trait_text_submitted)
 		
 	for m in markables:
-		assert_connected(m.stat_increment_pressed, char_display._on_stat_increment_pressed)
-		assert_connected(m.stat_decrement_pressed, char_display._on_stat_decrement_pressed)
+		assert_connected(m.amount_toggled_updated, char_display._on_markable_stat_pressed)
 		
 	assert_connected(char_display.short_rest_button.pressed, char_display._on_short_rest_pressed)
 	assert_connected(char_display.long_rest_button.pressed, char_display._on_long_rest_pressed)
@@ -59,7 +58,7 @@ func test_signals():
 	assert_connected(char_display.ancestry_panel.mouse_exited, char_display._on_mouse_exit_header_panel)
 	assert_connected(char_display.community_panel.mouse_entered, char_display._on_mouse_enter_community_panel)
 	assert_connected(char_display.community_panel.mouse_exited, char_display._on_mouse_exit_header_panel)
-	assert_connected(char_display.experiences_container.exp_level_changed, char_display._on_exp_level_changed)
+	assert_connected(char_display.experiences_vbox.exp_level_changed, char_display._on_exp_level_changed)
 	assert_connected(char_display.name_edit.focus_exited, char_display._on_name_edit_focus_exited)
 	assert_connected(char_display.name_edit.text_submitted, char_display._on_name_edit_text_submitted)
 	
@@ -108,9 +107,9 @@ func test_equipment_manager():
 	var test_prim = "Broadsword"
 	var test_second = "Shortsword"
 	
-	var primary_info = char_display.get_node("BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentMargin/EquipmentVBox/PrimaryWeapon/PrimaryVBox")
-	var secondary_info = char_display.get_node("BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentMargin/EquipmentVBox/SecondaryWeapon/SecondaryVBox")
-	var armor_info = char_display.get_node("BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentMargin/EquipmentVBox/Armor/ArmorVBox")
+	var primary_info = char_display.get_node("BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentContainer/EquipmentMargin/EquipmentVBox/PrimaryWeapon/PrimaryVBox")
+	var secondary_info = char_display.get_node("BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentContainer/EquipmentMargin/EquipmentVBox/SecondaryWeapon/SecondaryVBox")
+	var armor_info = char_display.get_node("BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentContainer/EquipmentMargin/EquipmentVBox/Armor/ArmorVBox")
 	
 	char_display.character.items.append(test_armor)
 	char_display.character.equip_armor(char_display.character.items[0])
@@ -121,24 +120,29 @@ func test_equipment_manager():
 	
 	char_display.update_equipment_display()
 	
-	assert_eq(armor_info.get_child(0).text, char_display.character.get_armor_name())
-	assert_eq(primary_info.get_child(0).text, char_display.character.get_primary_name())
-	assert_eq(secondary_info.get_child(0).text, char_display.character.get_secondary_name())
+	assert_string_contains(armor_info.get_child(1).text, char_display.character.get_armor_name())
+	assert_string_contains(primary_info.get_child(1).text, char_display.character.get_primary_name())
+	assert_string_contains(secondary_info.get_child(1).text, char_display.character.get_secondary_name())
 	
-	assert_eq(armor_info.get_child(1).text, char_display.character.get_armor_info())
-	assert_eq(primary_info.get_child(1).text, char_display.character.get_primary_info())
-	assert_eq(secondary_info.get_child(1).text, char_display.character.get_secondary_info())
+	assert_string_contains(armor_info.get_child(1).text, char_display.character.get_armor_info())
+	assert_string_contains(primary_info.get_child(1).text, char_display.character.get_primary_info())
+	assert_string_contains(secondary_info.get_child(1).text, char_display.character.get_secondary_info())
 	
-	assert_eq(char_display.major_threshold_value.text, str(char_display.character.damage_thresholds[0]))
-	assert_eq(char_display.severe_threshold_value.text, str(char_display.character.damage_thresholds[1]))
+	assert_eq(char_display.damage_threshold_display.get_major_threshold(), char_display.character.damage_thresholds[0])
+	assert_eq(char_display.damage_threshold_display.get_severe_threshold(), char_display.character.damage_thresholds[1])
 	assert_eq(char_display.evasion_value.text, str(char_display.character.evasion))
 
 
 func test_markables():
-	var test_health = char_display.health_field.get_node("FieldContainer/Labels/FieldValue")
-	var test_stress = char_display.stress_field.get_node("FieldContainer/Labels/FieldValue")
-	var test_hope = char_display.hope_field.get_node("FieldContainer/Labels/FieldValue")
-	var test_armor = char_display.armor_field.get_node("FieldContainer/Labels/FieldValue")
+	var test_health = char_display.health_checkables
+	var test_stress = char_display.stress_checkables
+	var test_hope = char_display.hope_checkables
+	var test_armor = char_display.armor_checkables
+	
+	test_health.initialize("Health", 5)
+	test_stress.initialize("Stress", 5)
+	test_hope.initialize("Hope", 6)
+	test_armor.initialize("Armor", 5)
 	
 	# Testing setting stats to 0
 	char_display.character.set_current_health(0)
@@ -148,10 +152,10 @@ func test_markables():
 	
 	char_display.update_markable_fields()
 	
-	assert_eq(test_health.text, str(char_display.character.current_hp))
-	assert_eq(test_stress.text, str(char_display.character.current_stress))
-	assert_eq(test_hope.text, str(char_display.character.current_hope))
-	assert_eq(test_armor.text, str(char_display.character.used_armor_slots))
+	assert_eq(test_health.amount_toggled, char_display.character.current_hp)
+	assert_eq(test_stress.amount_toggled, char_display.character.current_stress)
+	assert_eq(test_hope.amount_toggled, char_display.character.current_hope)
+	assert_eq(test_armor.amount_toggled, char_display.character.used_armor_slots)
 	
 	# Testing setting stats to -1
 	char_display.character.set_current_health(-1)
@@ -161,10 +165,10 @@ func test_markables():
 	
 	char_display.update_markable_fields()
 	
-	assert_eq(test_health.text, str(char_display.character.current_hp))
-	assert_eq(test_stress.text, str(char_display.character.current_stress))
-	assert_eq(test_hope.text, str(char_display.character.current_hope))
-	assert_eq(test_armor.text, str(char_display.character.used_armor_slots))
+	assert_eq(test_health.amount_toggled, char_display.character.current_hp)
+	assert_eq(test_stress.amount_toggled, char_display.character.current_stress)
+	assert_eq(test_hope.amount_toggled, char_display.character.current_hope)
+	assert_eq(test_armor.amount_toggled, char_display.character.used_armor_slots)
 	
 	# Testing setting stats greater than max
 	char_display.character.set_current_health(char_display.character.max_hp + 1)
@@ -174,10 +178,10 @@ func test_markables():
 	
 	char_display.update_markable_fields()
 	
-	assert_eq(test_health.text, str(char_display.character.current_hp))
-	assert_eq(test_stress.text, str(char_display.character.current_stress))
-	assert_eq(test_hope.text, str(char_display.character.current_hope))
-	assert_eq(test_armor.text, str(char_display.character.used_armor_slots))
+	assert_eq(test_health.amount_toggled, char_display.character.current_hp)
+	assert_eq(test_stress.amount_toggled, char_display.character.current_stress)
+	assert_eq(test_hope.amount_toggled, char_display.character.current_hope)
+	assert_eq(test_armor.amount_toggled, char_display.character.used_armor_slots)
 	
 	# Testing directly setting stats to 1
 	char_display.character.set_current_health(1)
@@ -187,32 +191,21 @@ func test_markables():
 	
 	char_display.update_markable_fields()
 	
-	assert_eq(test_health.text, str(char_display.character.current_hp))
-	assert_eq(test_stress.text, str(char_display.character.current_stress))
-	assert_eq(test_hope.text, str(char_display.character.current_hope))
-	assert_eq(test_armor.text, str(char_display.character.used_armor_slots))
+	assert_eq(test_health.amount_toggled, char_display.character.current_hp)
+	assert_eq(test_stress.amount_toggled, char_display.character.current_stress)
+	assert_eq(test_hope.amount_toggled, char_display.character.current_hope)
+	assert_eq(test_armor.amount_toggled, char_display.character.used_armor_slots)
 	
 	# Testing incrementing signals
-	char_display.health_field.stat_increment_pressed.emit("Health")
-	char_display.stress_field.stat_increment_pressed.emit("Stress")
-	char_display.hope_field.stat_increment_pressed.emit("Hope")
-	char_display.armor_field.stat_increment_pressed.emit("Armor")
+	test_health.amount_toggled_updated.emit(1)
+	test_stress.amount_toggled_updated.emit(1)
+	test_hope.amount_toggled_updated.emit(1)
+	test_armor.amount_toggled_updated.emit(1)
 
-	assert_eq(test_health.text, str(char_display.character.current_hp))
-	assert_eq(test_stress.text, str(char_display.character.current_stress))
-	assert_eq(test_hope.text, str(char_display.character.current_hope))
-	assert_eq(test_armor.text, str(char_display.character.used_armor_slots))
-	
-	# Testing decrementing signals
-	char_display.health_field.stat_decrement_pressed.emit("Health")
-	char_display.stress_field.stat_decrement_pressed.emit("Stress")
-	char_display.hope_field.stat_decrement_pressed.emit("Hope")
-	char_display.armor_field.stat_decrement_pressed.emit("Armor")
-	
-	assert_eq(test_health.text, str(char_display.character.current_hp))
-	assert_eq(test_stress.text, str(char_display.character.current_stress))
-	assert_eq(test_hope.text, str(char_display.character.current_hope))
-	assert_eq(test_armor.text, str(char_display.character.used_armor_slots))
+	assert_eq(test_health.amount_toggled, char_display.character.current_hp)
+	assert_eq(test_stress.amount_toggled, char_display.character.current_stress)
+	assert_eq(test_hope.amount_toggled, char_display.character.current_hope)
+	assert_eq(test_armor.amount_toggled, char_display.character.used_armor_slots)
 
 
 func test_trait_fields():
