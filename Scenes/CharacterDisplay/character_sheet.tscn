@@ -1610,6 +1610,16 @@ theme_override_font_sizes/font_size = 14
 text = "You have advantage on rolls to consort with nobles, negotiate prices, or leverage your reputation to get what you want."
 autowrap_mode = 2
 
+[node name="ClassDescription" type="RichTextLabel" parent="InformationPopup/MarginContainer/VBoxContainer" unique_id=1892862779]
+custom_minimum_size = Vector2(250, 400)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 14
+theme_override_font_sizes/bold_font_size = 14
+theme_override_font_sizes/bold_italics_font_size = 14
+theme_override_font_sizes/italics_font_size = 14
+theme_override_font_sizes/mono_font_size = 14
+bbcode_enabled = true
+
 [connection signal="text_submitted" from="HeaderMargin/Header/HeaderInfo/NamePronouns/NamePanelContainerOLD/NameC/NameEdit" to="." method="_on_name_edit_text_submitted"]
 [connection signal="text_changed" from="HeaderMargin/Header/HeaderInfo/NamePronouns/PronounsPanelContainer/Pronouns/PronounsEdit" to="." method="_on_pronouns_text_changed"]
 [connection signal="text_submitted" from="HeaderMargin/Header/HeaderInfo/NamePronouns/PronounsPanelContainer/Pronouns/PronounsEdit" to="." method="_on_pronouns_text_submitted"]
