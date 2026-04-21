@@ -1,7 +1,43 @@
 [gd_scene format=3 uid="uid://b6t3g5gxhwopj"]
 
-[ext_resource type="StyleBox" uid="uid://dic645d200g74" path="res://Resources/GUIStyles/character_sheet_stylebox.tres" id="1_epcwd"]
+[ext_resource type="Theme" uid="uid://tvypmn4kbcjp" path="res://Resources/GUIStyles/daggerheart_theme.tres" id="1_5ldc0"]
 [ext_resource type="Script" uid="uid://ypuu2ydt2m1c" path="res://Scripts/CharacterDisplay/fh_roll_window.gd" id="1_k2fvo"]
+[ext_resource type="StyleBox" uid="uid://dh0x1614wwewt" path="res://Resources/GUIStyles/yellow_label.tres" id="3_5ldc0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yalgk"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
+border_width_left = 8
+border_width_top = 5
+border_width_right = 8
+border_width_bottom = 5
+border_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="Theme" id="Theme_kk41y"]
+default_font_size = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yxf2p"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
+border_width_left = 8
+border_width_top = 5
+border_width_right = 8
+border_width_bottom = 5
+border_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [sub_resource type="Theme" id="Theme_k2fvo"]
 default_font_size = 24
@@ -10,6 +46,7 @@ default_font_size = 24
 oversampling_override = 1.0
 initial_position = 1
 size = Vector2i(450, 300)
+theme = ExtResource("1_5ldc0")
 script = ExtResource("1_k2fvo")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1926308283]
@@ -28,7 +65,6 @@ theme_override_constants/separation = 40
 
 [node name="FearDie" type="PanelContainer" parent="HBoxContainer" unique_id=1828400034]
 layout_mode = 2
-theme_override_styles/panel = ExtResource("1_epcwd")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/FearDie" unique_id=2015140579]
 layout_mode = 2
@@ -36,11 +72,13 @@ layout_mode = 2
 [node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/FearDie/VBoxContainer" unique_id=96927000]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yalgk")
 
 [node name="DieLabel" type="Label" parent="HBoxContainer/FearDie/VBoxContainer/PanelContainer" unique_id=322108113]
 custom_minimum_size = Vector2(100, 40)
 layout_mode = 2
-theme = SubResource("Theme_k2fvo")
+theme = SubResource("Theme_kk41y")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "Fear"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -55,7 +93,6 @@ vertical_alignment = 1
 
 [node name="HopeDie" type="PanelContainer" parent="HBoxContainer" unique_id=1844360883]
 layout_mode = 2
-theme_override_styles/panel = ExtResource("1_epcwd")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/HopeDie" unique_id=81588796]
 layout_mode = 2
@@ -63,11 +100,13 @@ layout_mode = 2
 [node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/HopeDie/VBoxContainer" unique_id=1030366333]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yxf2p")
 
 [node name="DieLabel" type="Label" parent="HBoxContainer/HopeDie/VBoxContainer/PanelContainer" unique_id=1786327212]
 custom_minimum_size = Vector2(100, 40)
 layout_mode = 2
 theme = SubResource("Theme_k2fvo")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "Hope"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -117,6 +156,8 @@ vertical_alignment = 1
 
 [node name="Sum" type="Label" parent="ResultsContainer" unique_id=774750773]
 layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/normal = ExtResource("3_5ldc0")
 text = "test"
 horizontal_alignment = 1
 vertical_alignment = 1
