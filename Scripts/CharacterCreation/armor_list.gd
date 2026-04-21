@@ -22,6 +22,14 @@ func _ready() -> void:
 	
 	self.item_selected.connect(_on_item_selected)
 	
+func populate_list(tier: int):
+	clear()
+	
+	for item in armor_dict:
+		if armor_dict[item].tier <= tier:
+			add_item(item)
+	
+	self.item_selected.connect(_on_item_selected)
 	
 func _on_item_selected(_index: int) -> void:
 	selected_armor = armor_array[_index]

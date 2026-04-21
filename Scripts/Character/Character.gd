@@ -482,8 +482,11 @@ func get_armor_info() -> String:
 	
 	var tier: int = armor_as_dict.get(armor).get("tier")
 	var base_score: int = armor_as_dict.get(armor).get("base_score")
+	var feature = armor_as_dict.get(armor).get("feature")
 
 	var info = "Tier %d | Base Score %d" % [tier, base_score]
+	if feature != "":
+		info += " | " + feature
 	return info
 
 func get_primary_info() -> String:
@@ -498,8 +501,14 @@ func get_primary_info() -> String:
 	var range = weapon_as_dict.get(primary).get("range")
 	var rollTrait = weapon_as_dict.get(primary).get("trait")
 	var damageDie: int = weapon_as_dict.get(primary).get("damage_die")
+	var damageModifier: int = weapon_as_dict.get(primary).get("damage_modifier")
+	var feature = weapon_as_dict.get(primary).get("feature")
 
 	var info = "%s | %s | %s | d%d" % [damageType, range, rollTrait, damageDie]
+	if damageModifier != 0:
+		info += "+" + str(damageModifier)
+	if feature != "":
+		info += " | " + feature
 	return info
 
 func get_secondary_info() -> String:
@@ -514,8 +523,14 @@ func get_secondary_info() -> String:
 	var range = weapon_as_dict.get(secondary).get("range")
 	var rollTrait = weapon_as_dict.get(secondary).get("trait")
 	var damageDie: int = weapon_as_dict.get(secondary).get("damage_die")
+	var damageModifier: int = weapon_as_dict.get(secondary).get("damage_modifier")
+	var feature = weapon_as_dict.get(secondary).get("feature")
 
 	var info = "%s | %s | %s | d%d" % [damageType, range, rollTrait, damageDie]
+	if damageModifier != 0:
+		info += "+" + str(damageModifier)
+	if feature != "":
+		info += " | " + feature
 	return info
 
 func update_experience_level(which_exp: int, change_amt: int):
