@@ -1,5 +1,5 @@
 extends PanelContainer
-@onready var label = $DescriptionMarginContainer/DescriptionLabel
+@onready var label = $ScrollContainer/DescriptionLabel
 
 func display_message(message: String) -> void:
 	'''
