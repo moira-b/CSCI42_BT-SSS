@@ -140,19 +140,108 @@ func test_markables():
 	var test_hope = char_display.hope_field.get_node("FieldContainer/Labels/FieldValue")
 	var test_armor = char_display.armor_field.get_node("FieldContainer/Labels/FieldValue")
 	
-	var test_char_health = char_display.character.current_hp
-	var test_char_stress = char_display.character.current_stress
-	var test_char_hope = char_display.character.current_hope
-	var test_char_armor = char_display.character.used_armor_slots
-	
-	test_char_health = 0
-	test_char_stress = 0
-	test_char_hope = 0
-	test_char_armor = 0
+	# Testing setting stats to 0
+	char_display.character.set_current_health(0)
+	char_display.character.set_current_stress(0)
+	char_display.character.set_current_hope(0)
+	char_display.character.set_used_armor_slots(0)
 	
 	char_display.update_markable_fields()
 	
-	assert_eq(test_health.text, str(test_char_health))
-	assert_eq(test_stress.text, str(test_char_stress))
-	assert_eq(test_hope.text, str(test_char_hope))
-	assert_eq(test_armor.text, str(test_char_armor))
+	assert_eq(test_health.text, str(char_display.character.current_hp))
+	assert_eq(test_stress.text, str(char_display.character.current_stress))
+	assert_eq(test_hope.text, str(char_display.character.current_hope))
+	assert_eq(test_armor.text, str(char_display.character.used_armor_slots))
+	
+	# Testing setting stats to -1
+	char_display.character.set_current_health(-1)
+	char_display.character.set_current_stress(-1)
+	char_display.character.set_current_hope(-1)
+	char_display.character.set_used_armor_slots(-1)
+	
+	char_display.update_markable_fields()
+	
+	assert_eq(test_health.text, str(char_display.character.current_hp))
+	assert_eq(test_stress.text, str(char_display.character.current_stress))
+	assert_eq(test_hope.text, str(char_display.character.current_hope))
+	assert_eq(test_armor.text, str(char_display.character.used_armor_slots))
+	
+	# Testing setting stats greater than max
+	char_display.character.set_current_health(char_display.character.max_hp + 1)
+	char_display.character.set_current_stress(char_display.character.max_stress + 1)
+	char_display.character.set_current_hope(char_display.character.max_hope + 1)
+	char_display.character.set_used_armor_slots(char_display.character.max_armor_slots + 1)
+	
+	char_display.update_markable_fields()
+	
+	assert_eq(test_health.text, str(char_display.character.current_hp))
+	assert_eq(test_stress.text, str(char_display.character.current_stress))
+	assert_eq(test_hope.text, str(char_display.character.current_hope))
+	assert_eq(test_armor.text, str(char_display.character.used_armor_slots))
+	
+	# Testing directly setting stats to 1
+	char_display.character.set_current_health(1)
+	char_display.character.set_current_stress(1)
+	char_display.character.set_current_hope(1)
+	char_display.character.set_used_armor_slots(1)
+	
+	char_display.update_markable_fields()
+	
+	assert_eq(test_health.text, str(char_display.character.current_hp))
+	assert_eq(test_stress.text, str(char_display.character.current_stress))
+	assert_eq(test_hope.text, str(char_display.character.current_hope))
+	assert_eq(test_armor.text, str(char_display.character.used_armor_slots))
+	
+	# Testing incrementing signals
+	char_display.health_field.stat_increment_pressed.emit("Health")
+	char_display.stress_field.stat_increment_pressed.emit("Stress")
+	char_display.hope_field.stat_increment_pressed.emit("Hope")
+	char_display.armor_field.stat_increment_pressed.emit("Armor")
+
+	assert_eq(test_health.text, str(char_display.character.current_hp))
+	assert_eq(test_stress.text, str(char_display.character.current_stress))
+	assert_eq(test_hope.text, str(char_display.character.current_hope))
+	assert_eq(test_armor.text, str(char_display.character.used_armor_slots))
+	
+	# Testing decrementing signals
+	char_display.health_field.stat_decrement_pressed.emit("Health")
+	char_display.stress_field.stat_decrement_pressed.emit("Stress")
+	char_display.hope_field.stat_decrement_pressed.emit("Hope")
+	char_display.armor_field.stat_decrement_pressed.emit("Armor")
+	
+	assert_eq(test_health.text, str(char_display.character.current_hp))
+	assert_eq(test_stress.text, str(char_display.character.current_stress))
+	assert_eq(test_hope.text, str(char_display.character.current_hope))
+	assert_eq(test_armor.text, str(char_display.character.used_armor_slots))
+
+
+func test_trait_fields():
+	for field in char_display.all_traits:
+		field.value_changed.emit(1)
+		
+	assert_eq(char_display.agility_field.value, char_display.character.agility)
+	assert_eq(char_display.strength_field.value, char_display.character.strength)
+	assert_eq(char_display.finesse_field.value, char_display.character.finesse)
+	assert_eq(char_display.instinct_field.value, char_display.character.instinct)
+	assert_eq(char_display.presence_field.value, char_display.character.presence)
+	assert_eq(char_display.knowledge_field.value, char_display.character.knowledge)
+	
+	for field in char_display.all_traits:
+		field.value_changed.emit(-2)
+		
+	assert_eq(char_display.agility_field.value, char_display.character.agility)
+	assert_eq(char_display.strength_field.value, char_display.character.strength)
+	assert_eq(char_display.finesse_field.value, char_display.character.finesse)
+	assert_eq(char_display.instinct_field.value, char_display.character.instinct)
+	assert_eq(char_display.presence_field.value, char_display.character.presence)
+	assert_eq(char_display.knowledge_field.value, char_display.character.knowledge)
+	
+	for field in char_display.all_traits:
+		field.value_changed.emit(5)
+		
+	assert_eq(char_display.agility_field.value, char_display.character.agility)
+	assert_eq(char_display.strength_field.value, char_display.character.strength)
+	assert_eq(char_display.finesse_field.value, char_display.character.finesse)
+	assert_eq(char_display.instinct_field.value, char_display.character.instinct)
+	assert_eq(char_display.presence_field.value, char_display.character.presence)
+	assert_eq(char_display.knowledge_field.value, char_display.character.knowledge)
