@@ -1,0 +1,36 @@
+[gd_resource type="Theme" format=3 uid="uid://cf6uo4jelunp4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i41dr"]
+bg_color = Color(0.9372549, 0.9019608, 0.8666667, 1)
+border_width_left = 4
+border_width_right = 4
+border_color = Color(0.8, 0.8, 0.8, 0)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i41dr"]
+content_margin_right = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jlx5q"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[resource]
+EquipmentItemPanel/base_type = &"PanelContainer"
+EquipmentItemPanel/styles/panel = SubResource("StyleBoxFlat_i41dr")
+Label/colors/font_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
+Label/constants/line_spacing = -4
+Label/styles/focus = SubResource("StyleBoxEmpty_i41dr")
+Label/styles/normal = SubResource("StyleBoxEmpty_i41dr")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_jlx5q")
+VBoxContainer/constants/separation = -2

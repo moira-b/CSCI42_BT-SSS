@@ -60,17 +60,19 @@ func _process(_delta: float) -> void:
 	elif active_option_tab.name == "NamePronounContainer" and active_option_tab.is_all_textboxes_filled():
 			complete_button.disabled = false
 	
-	if character.character_class == null:
-		tab_buttons[1].disabled = true
-	else:
-		tab_buttons[1].disabled = false
 
 func _set_active_option_tab(_index: int):
 	'''
 		Sets active item list by hiding or showing visibility of given item lists
 	'''
+	
+	
+	$TabButtons.get_child(_index).disabled = false
+			
 	if active_option_tab and active_option_tab.name == "DomainCardSelContainer":
 		active_option_tab.clear_screen()
+	elif active_option_tab and active_option_tab.name == "CharacterClassList":
+		card_selector.clear_selected_cards()
 		
 
 	if option_tab_array[_index]:
@@ -156,39 +158,49 @@ func add_domain_cards():
 
 
 func _on_tab_button_pressed(tab: Button) -> void:
+	var next_tab_index = -1
 	if tab.name == "Class": 
-		_set_active_option_tab(0)
-		option_tab_index = 0
-		character.subclass = null
+		next_tab_index = 0
 	if tab.name == "Subclass": 
-		_set_active_option_tab(1)
-		option_tab_index = 1
+		next_tab_index = 1
 	if tab.name == "Heritage": 
-		_set_active_option_tab(2)
-		option_tab_index = 2
+		next_tab_index = 2
 	if tab.name == "Community": 
-		_set_active_option_tab(3)
-		option_tab_index = 3
+		next_tab_index = 3
 	if tab.name == "DomainCards": 
 		if character.character_class != null:
-			_set_active_option_tab(4)
-			option_tab_index = 4
+			next_tab_index = 4
 	if tab.name == "Traits": 
-		_set_active_option_tab(5)
-		option_tab_index = 5
+		next_tab_index = 5
 	if tab.name == "Experiences": 
-		_set_active_option_tab(6)
-		option_tab_index = 6
+		next_tab_index = 6
 	if tab.name == "Equipment": 
-		_set_active_option_tab(7)
-		option_tab_index = 7
+		next_tab_index = 7
 	if tab.name == "Name":
-		_set_active_option_tab(8)
-		option_tab_index = 8
+		next_tab_index = 8
+	
+	option_tab_index = next_tab_index
+	_set_active_option_tab(option_tab_index)
 
 func _is_character_data_valid() -> bool:
-	if (character.character_class == null || character.subclass == null ||
-		character.ancestry == null || character.community == null):
+	if (character.character_class == null):
+		notif_window.get_child(0).text = "Invalid Character Class."
+		_raise_error()
+		return false
+	if (character.subclass == null):
+		notif_window.get_child(0).text = "Invalid Character Subclass."
+		_raise_error()
+		return false
+	if (character.ancestry == null):
+		notif_window.get_child(0).text = "Invalid Character Ancestry."
+		_raise_error()
+		return false
+	if (character.community == null):
+		notif_window.get_child(0).text = "Invalid Character Community."
+		_raise_error()
+		return false
+	if (card_selector.select_card_list.item_count < 2):
+		notif_window.get_child(0).text = "Missing Domain Cards."
 		_raise_error()
 		return false
 	else:

@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://8ae1l60px6kp"]
 
 [ext_resource type="Script" uid="uid://cov4ve07sd236" path="res://Scripts/CharacterCreation/character_creator_interface.gd" id="1_ofddw"]
+[ext_resource type="Theme" uid="uid://g4e3keprj7yb" path="res://Resources/GUIStyles/character_creator_theme.tres" id="1_r4lgg"]
 [ext_resource type="PackedScene" uid="uid://c76krhgbjyotx" path="res://Scenes/Characters/character.tscn" id="2_foxel"]
 [ext_resource type="Script" uid="uid://drswrpv4328vh" path="res://Scripts/CharacterCreation/character_class_list.gd" id="2_ngsr7"]
 [ext_resource type="Resource" uid="uid://cyaupb2xa2jvp" path="res://Resources/Classes/Bard/bard.tres" id="3_alotr"]
 [ext_resource type="Script" uid="uid://c6daeo616vuo3" path="res://Scripts/CharacterClasses/character_class.gd" id="3_g85pg"]
 [ext_resource type="Resource" uid="uid://blgr70q7oa266" path="res://Resources/Classes/Druid/druid.tres" id="4_g85pg"]
+[ext_resource type="Theme" uid="uid://ccxm2bwpjuy2p" path="res://Resources/GUIStyles/purple_button.tres" id="4_vkfsn"]
 [ext_resource type="Script" uid="uid://01ybmxp5mmus" path="res://Scripts/CharacterCreation/trait_modifier_container.gd" id="6_g85pg"]
 [ext_resource type="Script" uid="uid://bek5i1ljq64xm" path="res://Scenes/CharacterCreator/heritage_list.gd" id="6_mcmx4"]
 [ext_resource type="Script" uid="uid://bvxjrl3llb0pf" path="res://Scenes/CharacterCreator/community_list.gd" id="6_n175s"]
@@ -50,6 +52,7 @@
 [ext_resource type="Script" uid="uid://clmxkh4im6n7f" path="res://Scripts/CharacterCreation/text_fill_container.gd" id="39_68bmj"]
 [ext_resource type="Script" uid="uid://bwg57k6ymdiig" path="res://Scripts/CharacterCreation/description_display.gd" id="42_a5r2x"]
 [ext_resource type="PackedScene" uid="uid://1un73y3t3x7b" path="res://Scenes/Cards/domain_card_sel_container.tscn" id="47_g2o8p"]
+[ext_resource type="Theme" uid="uid://dtsueom17lou2" path="res://Resources/GUIStyles/traits_exp_theme.tres" id="49_buxby"]
 [ext_resource type="Script" uid="uid://co3dycsyqv6ap" path="res://Scripts/CharacterCreation/armor_list.gd" id="50_7mc0y"]
 [ext_resource type="Script" uid="uid://mx8mfwor421u" path="res://Scripts/CharacterCreation/p_weapon_list.gd" id="50_deb4u"]
 [ext_resource type="Script" uid="uid://dfemyf8r5ay1p" path="res://Scripts/CharacterCreation/equipment_list.gd" id="50_kdp8w"]
@@ -64,6 +67,13 @@ feature1 = ExtResource("14_m83la")
 feature2 = ExtResource("15_xjw6o")
 metadata/_custom_type_script = "uid://c5wd1842qiju3"
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r4lgg"]
+bg_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_buxby"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r4lgg"]
+
 [node name="CharacterCreatorInterface" type="Control" unique_id=1505700201]
 layout_mode = 3
 anchors_preset = 15
@@ -72,7 +82,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
+theme = ExtResource("1_r4lgg")
 script = ExtResource("1_ofddw")
+metadata/_edit_lock_ = true
 
 [node name="Character" parent="." unique_id=1371470097 instance=ExtResource("2_foxel")]
 
@@ -81,55 +93,65 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -325.0
-offset_top = 24.0
-offset_right = 325.0
-offset_bottom = 64.0
+offset_left = -373.5
+offset_top = 8.0
+offset_right = 373.5
+offset_bottom = 48.0
 grow_horizontal = 2
+theme = ExtResource("4_vkfsn")
 
 [node name="Class" type="Button" parent="TabButtons" unique_id=394473369]
 layout_mode = 2
 size_flags_horizontal = 3
+disabled = true
 text = "Class"
 
 [node name="Subclass" type="Button" parent="TabButtons" unique_id=1329706564]
 layout_mode = 2
 size_flags_horizontal = 3
+disabled = true
 text = "Subclass"
 
 [node name="Heritage" type="Button" parent="TabButtons" unique_id=1406435465]
 layout_mode = 2
 size_flags_horizontal = 3
+disabled = true
 text = "Heritage"
 
 [node name="Community" type="Button" parent="TabButtons" unique_id=1071396811]
 layout_mode = 2
 size_flags_horizontal = 3
+disabled = true
 text = "Community"
 
 [node name="DomainCards" type="Button" parent="TabButtons" unique_id=1215117363]
 layout_mode = 2
 size_flags_horizontal = 3
+disabled = true
 text = "Domain Cards"
 
 [node name="Traits" type="Button" parent="TabButtons" unique_id=1773478265]
 layout_mode = 2
 size_flags_horizontal = 3
+disabled = true
 text = "Traits"
 
 [node name="Experiences" type="Button" parent="TabButtons" unique_id=2133570945]
 layout_mode = 2
 size_flags_horizontal = 3
+disabled = true
 text = "Experiences"
 
 [node name="Equipment" type="Button" parent="TabButtons" unique_id=516539210]
 layout_mode = 2
 size_flags_horizontal = 3
+disabled = true
 text = "Equipment"
 
 [node name="Name" type="Button" parent="TabButtons" unique_id=781964754]
 layout_mode = 2
 size_flags_horizontal = 3
+disabled = true
 text = "Name"
 
 [node name="OptionLists" type="Control" parent="." unique_id=1737252042]
@@ -250,126 +272,69 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("49_buxby")
 
 [node name="TraitNameContainer" type="VBoxContainer" parent="OptionLists/TraitAssignmentContainer" unique_id=1226407445]
 layout_mode = 2
+theme_override_constants/separation = 10
 
-[node name="Agility" type="Panel" parent="OptionLists/TraitAssignmentContainer/TraitNameContainer" unique_id=253040051]
+[node name="Agility" type="PanelContainer" parent="OptionLists/TraitAssignmentContainer/TraitNameContainer" unique_id=1061510880]
 custom_minimum_size = Vector2(90, 40)
 layout_mode = 2
 
 [node name="Label" type="Label" parent="OptionLists/TraitAssignmentContainer/TraitNameContainer/Agility" unique_id=1620017397]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -24.0
-offset_top = -11.5
-offset_right = 24.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
 text = "Agility"
+horizontal_alignment = 1
 
-[node name="Strength" type="Panel" parent="OptionLists/TraitAssignmentContainer/TraitNameContainer" unique_id=469901981]
+[node name="Strength" type="PanelContainer" parent="OptionLists/TraitAssignmentContainer/TraitNameContainer" unique_id=1945193228]
 custom_minimum_size = Vector2(90, 40)
 layout_mode = 2
 
 [node name="Label" type="Label" parent="OptionLists/TraitAssignmentContainer/TraitNameContainer/Strength" unique_id=1353670876]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -24.0
-offset_top = -11.5
-offset_right = 24.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
 text = "Strength"
+horizontal_alignment = 1
 
-[node name="Finesse" type="Panel" parent="OptionLists/TraitAssignmentContainer/TraitNameContainer" unique_id=2124586667]
+[node name="Finesse" type="PanelContainer" parent="OptionLists/TraitAssignmentContainer/TraitNameContainer" unique_id=1202272731]
 custom_minimum_size = Vector2(90, 40)
 layout_mode = 2
 
 [node name="Label" type="Label" parent="OptionLists/TraitAssignmentContainer/TraitNameContainer/Finesse" unique_id=1082853850]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -24.0
-offset_top = -11.5
-offset_right = 24.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
 text = "Finesse"
+horizontal_alignment = 1
 
-[node name="Instinct" type="Panel" parent="OptionLists/TraitAssignmentContainer/TraitNameContainer" unique_id=1273343647]
+[node name="Instinct" type="PanelContainer" parent="OptionLists/TraitAssignmentContainer/TraitNameContainer" unique_id=1939590289]
 custom_minimum_size = Vector2(90, 40)
 layout_mode = 2
 
 [node name="Label" type="Label" parent="OptionLists/TraitAssignmentContainer/TraitNameContainer/Instinct" unique_id=59403801]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -24.0
-offset_top = -11.5
-offset_right = 24.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
 text = "Instinct"
+horizontal_alignment = 1
 
-[node name="Presence" type="Panel" parent="OptionLists/TraitAssignmentContainer/TraitNameContainer" unique_id=1761132627]
+[node name="Presence" type="PanelContainer" parent="OptionLists/TraitAssignmentContainer/TraitNameContainer" unique_id=2052832144]
 custom_minimum_size = Vector2(90, 40)
 layout_mode = 2
 
 [node name="Label" type="Label" parent="OptionLists/TraitAssignmentContainer/TraitNameContainer/Presence" unique_id=1581463351]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -24.0
-offset_top = -11.5
-offset_right = 24.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
 text = "Presence"
+horizontal_alignment = 1
 
-[node name="Knowledge" type="Panel" parent="OptionLists/TraitAssignmentContainer/TraitNameContainer" unique_id=772199192]
+[node name="Knowledge" type="PanelContainer" parent="OptionLists/TraitAssignmentContainer/TraitNameContainer" unique_id=630968257]
 custom_minimum_size = Vector2(90, 40)
 layout_mode = 2
 
 [node name="Label" type="Label" parent="OptionLists/TraitAssignmentContainer/TraitNameContainer/Knowledge" unique_id=990819575]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -24.0
-offset_top = -11.5
-offset_right = 24.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
 text = "Knowledge"
+horizontal_alignment = 1
 
 [node name="ModifierContainer" type="VBoxContainer" parent="OptionLists/TraitAssignmentContainer" unique_id=1798246451]
 layout_mode = 2
+theme_override_constants/separation = 10
 script = ExtResource("6_g85pg")
 
 [node name="AgiModifierOptions" type="OptionButton" parent="OptionLists/TraitAssignmentContainer/ModifierContainer" unique_id=759425485]
@@ -475,7 +440,6 @@ popup/item_5/text = "-1"
 popup/item_5/id = 5
 
 [node name="ExperiencesContainer" type="VBoxContainer" parent="OptionLists" unique_id=791843489]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -494,13 +458,14 @@ script = ExtResource("39_68bmj")
 layout_mode = 2
 
 [node name="LineEdit" type="LineEdit" parent="OptionLists/ExperiencesContainer/Experience1" unique_id=177615176]
-custom_minimum_size = Vector2(200, 40)
+custom_minimum_size = Vector2(300, 40)
 layout_mode = 2
 max_length = 255
 
 [node name="ModifierPanel" type="Panel" parent="OptionLists/ExperiencesContainer/Experience1" unique_id=2127389027]
 custom_minimum_size = Vector2(50, 40)
 layout_mode = 2
+theme_type_variation = &"ExpModifierPanel"
 
 [node name="Label" type="Label" parent="OptionLists/ExperiencesContainer/Experience1/ModifierPanel" unique_id=1482373349]
 layout_mode = 1
@@ -515,6 +480,7 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.9372549, 0.9019608, 0.8666667, 1)
 theme_override_font_sizes/font_size = 20
 text = "+2"
 horizontal_alignment = 1
@@ -523,13 +489,14 @@ horizontal_alignment = 1
 layout_mode = 2
 
 [node name="LineEdit" type="LineEdit" parent="OptionLists/ExperiencesContainer/Experience2" unique_id=1293875386]
-custom_minimum_size = Vector2(200, 40)
+custom_minimum_size = Vector2(300, 40)
 layout_mode = 2
 max_length = 255
 
 [node name="ModifierPanel" type="Panel" parent="OptionLists/ExperiencesContainer/Experience2" unique_id=1393244708]
 custom_minimum_size = Vector2(50, 40)
 layout_mode = 2
+theme_type_variation = &"ExpModifierPanel"
 
 [node name="Label" type="Label" parent="OptionLists/ExperiencesContainer/Experience2/ModifierPanel" unique_id=161986817]
 layout_mode = 1
@@ -544,11 +511,13 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.9372549, 0.9019608, 0.8666667, 1)
 theme_override_font_sizes/font_size = 20
 text = "+2"
 horizontal_alignment = 1
 
 [node name="EquipmentList" type="HBoxContainer" parent="OptionLists" unique_id=1101846628]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -614,6 +583,7 @@ same_column_width = true
 script = ExtResource("52_v3iga")
 
 [node name="NamePronounContainer" type="HBoxContainer" parent="OptionLists" unique_id=989217177]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -686,31 +656,37 @@ text = "Complete"
 [node name="DescriptionContainer" type="PanelContainer" parent="." unique_id=1439688923]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.505
-anchor_top = 0.77900004
-anchor_right = 0.505
-anchor_bottom = 0.869
-offset_left = -510.76
-offset_top = 0.2079773
-offset_right = 510.24
-offset_bottom = -0.11199951
+anchor_left = 0.061631944
+anchor_top = 0.779321
+anchor_right = 0.9479167
+anchor_bottom = 0.86882716
+offset_top = -3.0517578e-05
+theme_override_styles/panel = SubResource("StyleBoxFlat_r4lgg")
 script = ExtResource("42_a5r2x")
+metadata/_edit_use_anchors_ = true
 
-[node name="DescriptionMarginContainer" type="MarginContainer" parent="DescriptionContainer" unique_id=1566083001]
+[node name="ScrollContainer" type="ScrollContainer" parent="DescriptionContainer" unique_id=522039893]
 layout_mode = 2
-size_flags_vertical = 4
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
+theme_override_styles/panel = SubResource("StyleBoxEmpty_buxby")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_r4lgg")
+draw_focus_border = true
+horizontal_scroll_mode = 0
+scroll_hint_mode = 3
+tile_scroll_hint = true
 
-[node name="DescriptionLabel" type="Label" parent="DescriptionContainer/DescriptionMarginContainer" unique_id=615693993]
+[node name="DescriptionLabel" type="Label" parent="DescriptionContainer/ScrollContainer" unique_id=615693993]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.9372549, 0.9019608, 0.8666667, 1)
+theme_override_constants/line_spacing = -2
+text = "sample line 1
+sample line 2
+sample line 3
+sample line 4"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
-clip_text = true
 
 [node name="NotifWindow" type="Window" parent="." unique_id=2130778845]
 oversampling_override = 1.0

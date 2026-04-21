@@ -131,7 +131,8 @@ func set_level(value: int) -> bool:
 	if(1 <= value && value <= self.max_level):
 		level = value
 		#print("DEBUG: " + self.character_name + " currently has " + str(level) + " level.")
-		set_proficiency_modifier()
+		if level == 2 or level== 5 or level==8: 
+			set_proficiency()
 		return true
 	elif(value < 1):
 		print("Cannot set level counter s to be less than 1.")
@@ -140,17 +141,11 @@ func set_level(value: int) -> bool:
 	
 	return false
 
-func set_proficiency_modifier() -> void:
-	proficiency_modifier = 0
-	if level > 1: proficiency_modifier = 1
-	if level > 4: proficiency_modifier = 2
-	if level > 7: proficiency_modifier = 3
-
 func set_base_evasion() -> void:
 	evasion = character_class.starting_evasion + agility
 
 func set_proficiency() -> void:
-	self.proficiency = proficiency_modifier + proficiency
+	self.proficiency = proficiency + 1
 	pass
 	
 func serialize_data():
