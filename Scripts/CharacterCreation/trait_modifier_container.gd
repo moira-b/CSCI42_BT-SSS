@@ -14,6 +14,9 @@ var know_index = -1
 
 func _ready() -> void:
 	for child in self.get_children():
+		var popup = child.get_popup()
+		for i in range(child.item_count):
+			popup.set_item_as_radio_checkable(i, false)
 		option_button_array.append(child)
 	character = self.get_parent().get_parent().get_parent().get_child(0)
 

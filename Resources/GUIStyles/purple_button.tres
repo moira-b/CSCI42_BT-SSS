@@ -1,6 +1,17 @@
 [gd_resource type="Theme" format=3 uid="uid://ccxm2bwpjuy2p"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hhbt5"]
+content_margin_left = 10.0
+content_margin_right = 10.0
+bg_color = Color(0.14901961, 0.12941177, 0.25490198, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wvf4n"]
+content_margin_left = 10.0
+content_margin_right = 10.0
 bg_color = Color(0.34117648, 0.29803923, 0.6117647, 1)
 border_width_top = 2
 border_width_bottom = 2
@@ -11,9 +22,9 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rodew"]
+content_margin_left = 10.0
+content_margin_right = 10.0
 bg_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
-border_width_top = 2
-border_width_bottom = 2
 border_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
@@ -21,6 +32,8 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_47ito"]
+content_margin_left = 10.0
+content_margin_right = 10.0
 bg_color = Color(0.14901961, 0.12941177, 0.25490198, 1)
 border_width_top = 2
 border_width_bottom = 2
@@ -40,6 +53,8 @@ corner_radius_bottom_left = 10
 
 [resource]
 Button/colors/font_color = Color(0.9372549, 0.9019608, 0.8666667, 1)
+Button/styles/disabled = SubResource("StyleBoxFlat_hhbt5")
+Button/styles/focus = SubResource("StyleBoxFlat_wvf4n")
 Button/styles/hover = SubResource("StyleBoxFlat_wvf4n")
 Button/styles/normal = SubResource("StyleBoxFlat_rodew")
 Button/styles/pressed = SubResource("StyleBoxFlat_47ito")

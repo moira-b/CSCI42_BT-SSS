@@ -23,14 +23,14 @@
 [ext_resource type="Script" uid="uid://co3dycsyqv6ap" path="res://Scripts/CharacterCreation/armor_list.gd" id="11_7pq50"]
 [ext_resource type="Script" uid="uid://c6daeo616vuo3" path="res://Scripts/CharacterClasses/character_class.gd" id="12_ahdvs"]
 [ext_resource type="Script" uid="uid://mx8mfwor421u" path="res://Scripts/CharacterCreation/p_weapon_list.gd" id="12_rj3pj"]
-[ext_resource type="Theme" uid="uid://ccxm2bwpjuy2p" path="res://Resources/GUIStyles/action_buttons_theme.tres" id="12_rllm4"]
+[ext_resource type="Theme" uid="uid://ccxm2bwpjuy2p" path="res://Resources/GUIStyles/purple_button.tres" id="12_rllm4"]
 [ext_resource type="Script" uid="uid://cutrjksidwmox" path="res://Scripts/CharacterCreation/s_weapon_list.gd" id="13_48wf7"]
 [ext_resource type="Resource" uid="uid://cyaupb2xa2jvp" path="res://Resources/Classes/Bard/bard.tres" id="13_gjf7o"]
 [ext_resource type="Resource" uid="uid://blgr70q7oa266" path="res://Resources/Classes/Druid/druid.tres" id="14_7xnek"]
 [ext_resource type="StyleBox" uid="uid://ck1deowv8fsse" path="res://Resources/GUIStyles/purple_border_panel.tres" id="15_1vmjr"]
 [ext_resource type="Resource" uid="uid://b77s47x5y88rn" path="res://Resources/Classes/Guardian/guardian.tres" id="15_n4116"]
 [ext_resource type="Resource" uid="uid://cuy8gd8ecs5j2" path="res://Resources/Classes/Ranger/ranger.tres" id="16_kjdj8"]
-[ext_resource type="Theme" uid="uid://dtsueom17lou2" path="res://Resources/GUIStyles/exp_theme.tres" id="17_i1vic"]
+[ext_resource type="Theme" uid="uid://dtsueom17lou2" path="res://Resources/GUIStyles/traits_exp_theme.tres" id="17_i1vic"]
 [ext_resource type="Theme" uid="uid://cf6uo4jelunp4" path="res://Resources/GUIStyles/equipment_theme.tres" id="17_jlx5q"]
 [ext_resource type="Resource" uid="uid://bnehy1ghhj8ml" path="res://Resources/Classes/Rogue/rogue.tres" id="17_oxyly"]
 [ext_resource type="Resource" uid="uid://ccwu6ewcynypd" path="res://Resources/Classes/Seraph/seraph.tres" id="18_7pq50"]
@@ -289,7 +289,7 @@ custom_minimum_size = Vector2(140, 30)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme = ExtResource("9_jlx5q")
+theme = ExtResource("12_rllm4")
 text = "Level Up"
 
 [node name="Spacer" type="Control" parent="HeaderMargin/Header/Level/FieldContainer" unique_id=979303809]
@@ -358,23 +358,28 @@ theme_override_constants/margin_bottom = 5
 [node name="RightPanel" type="VBoxContainer" parent="HeaderMargin/Header/PanelContainer/MarginContainer" unique_id=485340797]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
-size_flags_vertical = 4
 
 [node name="Save" type="Button" parent="HeaderMargin/Header/PanelContainer/MarginContainer/RightPanel" unique_id=393625438]
 layout_mode = 2
-theme = ExtResource("9_jlx5q")
+size_flags_vertical = 3
+theme = ExtResource("12_rllm4")
+theme_type_variation = &"LeftAlignButton"
 text = "Save Character"
 alignment = 0
 
 [node name="Delete" type="Button" parent="HeaderMargin/Header/PanelContainer/MarginContainer/RightPanel" unique_id=627249800]
 layout_mode = 2
-theme = ExtResource("9_jlx5q")
+size_flags_vertical = 3
+theme = ExtResource("12_rllm4")
+theme_type_variation = &"LeftAlignButton"
 text = "Delete Character"
 alignment = 0
 
 [node name="MainMenu" type="Button" parent="HeaderMargin/Header/PanelContainer/MarginContainer/RightPanel" unique_id=1062522431]
 layout_mode = 2
-theme = ExtResource("9_jlx5q")
+size_flags_vertical = 3
+theme = ExtResource("12_rllm4")
+theme_type_variation = &"LeftAlignButton"
 text = "Back to Main Menu"
 alignment = 0
 
