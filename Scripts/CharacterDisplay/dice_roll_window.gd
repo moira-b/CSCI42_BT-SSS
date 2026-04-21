@@ -20,11 +20,6 @@ var dice_2d_array = [
 ]
 
 var dice_quantity_fields: Array[SpinBox]
-
-func _ready() -> void:
-	var dice_types = dice.get_children()
-	for i in range(len(dice_types)):
-		dice_2d_array[i][1] = dice_types[i].get_child(0).get_node("SpinBox")
 	
 func _on_roll_button_pressed() -> void:
 	var num_dice: int = 0
