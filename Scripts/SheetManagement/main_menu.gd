@@ -1,7 +1,7 @@
 class_name MainMenu
 extends Control
 
-@onready var create_new_character_button : Button = $Header/Button
+@onready var create_new_character_button : Button = $Header/PanelContainer2/HBoxContainer/Button
 @onready var create_new_character_confirm: Button = $CreateCharacterConfirm/VBoxContainer/ConfirmButton
 @onready var create_new_character_cancel: Button = $CreateCharacterConfirm/VBoxContainer/CancelButton
 @onready var confirm_window: PanelContainer = $CreateCharacterConfirm
@@ -10,10 +10,11 @@ extends Control
 @onready var save_manager = $SaveManager
 @onready var grid_container = $ScrollContainer/GridContainer
 @onready var options_popup = $OptionsPopupMenu
-@onready var searchbar: LineEdit = $Header/LineEdit
+@onready var searchbar: LineEdit = $Header/PanelContainer/HBoxContainer/MarginContainer2/LineEdit
 
 
 var panel_scene: PackedScene = preload("res://Scenes/SheetManagement/character_select_panel.tscn")
+var num_panels = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -39,10 +40,12 @@ func create_character_panels():
 		var data = save_manager._get_character_data()
 		for key in data:
 			if(key != "pk_count"):
+				num_panels += 1
 				var new_scene = panel_scene.instantiate()
 				grid_container.add_child(new_scene)
 				new_scene.enter(key)
 				new_scene.settings_button_pressed.connect(_on_settings_button_pressed)
+	adjust_grid_size(num_panels)
 
 func _on_createcharacter_button_pressed() -> void:
 	create_new_character_confirm.pressed.connect(_on_creatercharacter_confirm_pressed)
@@ -89,3 +92,7 @@ func remove_character_panel(pk):
 	for panel in grid_container.get_children():
 		if (panel.char_primary_key==pk):
 			panel.queue_free()
+
+func adjust_grid_size(num):
+	grid_container.set_custom_minimum_size(Vector2(1000, num%4*400))
+	
