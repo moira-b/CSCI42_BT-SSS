@@ -2,10 +2,13 @@ extends Window
 
 signal closing(exp_num: int)
 
-@onready var experience1_label = $ExperiencesVBox/Experience1/ExperienceHBox/ExperienceLabel
-@onready var experience1_button = $ExperiencesVBox/Experience1/ExperienceHBox/CheckBox
-@onready var experience2_label = $ExperiencesVBox/Experience2/ExperienceHBox/ExperienceLabel
-@onready var experience2_button = $ExperiencesVBox/Experience2/ExperienceHBox/CheckBox
+#@onready var experience1_label = $ExperiencesVBox/Experience1/ExperienceHBox/ExperienceLabel
+#@onready var experience1_button = $ExperiencesVBox/Experience1/ExperienceHBox/CheckBox
+#@onready var experience2_label = $ExperiencesVBox/Experience2/ExperienceHBox/ExperienceLabel
+#@onready var experience2_button = $ExperiencesVBox/Experience2/ExperienceHBox/CheckBox
+
+@onready var experience1_button = $ExperiencesVBox/Experience1CheckBox
+@onready var experience2_button = $ExperiencesVBox/Experience2CheckBox
 
 @onready var confirm_button: Button = $ButtonsContainer/ConfirmButton
 @onready var cancel_button: Button = $ButtonsContainer/CancelButton
@@ -15,21 +18,30 @@ var experience2: String
 var chosen_experience: int = -1
 
 func showWindow(exp1: String, exp2: String):
-	experience1_label.text = exp1
-	experience2_label.text = exp2
+	experience1_button.text = exp1
+	experience2_button.text = exp2
+	
+	#experience1_label.text = exp1
+	#experience2_label.text = exp2
 	
 	confirm_button.disabled = true
 	connect_signals()
 	self.show()
 	
 func _on_option_toggled(exp_num: int):
-	print("SELECTED OPTION " + str(exp_num))
+	print("PRESSED OPTION " + str(exp_num))
 	if exp_num==1:
-		chosen_experience = 1
-		experience2_button.set_pressed_no_signal(false)
+		if experience1_button.is_pressed():
+			chosen_experience = 1
+			experience2_button.set_pressed_no_signal(false)
+		else:
+			chosen_experience = -1
 	elif exp_num==2:
-		chosen_experience = 2
-		experience1_button.set_pressed_no_signal(false)
+		if experience2_button.is_pressed():
+			chosen_experience = 2
+			experience1_button.set_pressed_no_signal(false)
+		else:
+			chosen_experience = -1
 	
 	confirm_button.disabled = (chosen_experience==-1)
 	

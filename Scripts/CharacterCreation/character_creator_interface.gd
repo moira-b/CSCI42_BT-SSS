@@ -224,18 +224,29 @@ func needs_purposeful_design_window() -> bool:
 			var pd_window = $PurposefulDesignWindow
 			var exp1_field = $OptionLists/ExperiencesContainer/Experience1/LineEdit
 			var exp2_field = $OptionLists/ExperiencesContainer/Experience2/LineEdit
-			print(exp1_field.text)
-			print(exp2_field.text)
 			pd_window.showWindow(exp1_field.text, exp2_field.text)
+			
+			var pd_edit_button = $OptionLists/ExperiencesContainer/ClankPDButtonMargin
+			pd_edit_button.get_node("ClankPDButton").pressed.connect(_on_edit_pd_pressed)
+			pd_edit_button.show()
+			
 			return true
 	
 	return false
 
 func _on_pd_window_closing(exp_num: int):
 	purposeful_design_chosen = exp_num
+	var exp1_modifier_label = $OptionLists/ExperiencesContainer/Experience1/ModifierPanel/Label
+	var exp2_modifier_label = $OptionLists/ExperiencesContainer/Experience2/ModifierPanel/Label
 	if purposeful_design_chosen==1:
-		#TODO: set +1 to chosen experience
-		pass
+		exp1_modifier_label.text = "+3"
+		exp2_modifier_label.text = "+2"
 	elif purposeful_design_chosen==2:
-		#TODO: set +1 to chosen experience
-		pass
+		exp1_modifier_label.text = "+2"
+		exp2_modifier_label.text = "+3"
+		
+func _on_edit_pd_pressed():
+	var pd_window = $PurposefulDesignWindow
+	var exp1_field = $OptionLists/ExperiencesContainer/Experience1/LineEdit
+	var exp2_field = $OptionLists/ExperiencesContainer/Experience2/LineEdit
+	pd_window.showWindow(exp1_field.text, exp2_field.text)

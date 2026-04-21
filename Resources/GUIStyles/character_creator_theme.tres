@@ -1,5 +1,8 @@
 [gd_resource type="Theme" format=3 uid="uid://g4e3keprj7yb"]
 
+[ext_resource type="StyleBox" uid="uid://dhobd2i8q8nhi" path="res://Resources/GUIStyles/purple_panel.tres" id="1_ywn5i"]
+[ext_resource type="StyleBox" uid="uid://cl1o00l0s5ict" path="res://Resources/GUIStyles/purple_panel_hover.tres" id="2_lmeh2"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qnbmb"]
 content_margin_left = 10.0
 content_margin_right = 10.0
@@ -67,6 +70,14 @@ Button/styles/disabled = SubResource("StyleBoxFlat_qnbmb")
 Button/styles/focus = SubResource("StyleBoxFlat_ywn5i")
 Button/styles/hover = SubResource("StyleBoxFlat_ywn5i")
 Button/styles/normal = SubResource("StyleBoxFlat_q4mme")
+CheckBox/colors/checkbox_checked_color = Color(0.87058824, 0.78039217, 0.38431373, 1)
+CheckBox/colors/checkbox_unchecked_color = Color(17.765293, 17.131433, 16.497572, 1)
+CheckBox/colors/font_color = Color(0.9372549, 0.9019608, 0.8666667, 1)
+CheckBox/styles/focus = ExtResource("2_lmeh2")
+CheckBox/styles/hover = ExtResource("2_lmeh2")
+CheckBox/styles/hover_pressed = ExtResource("2_lmeh2")
+CheckBox/styles/normal = ExtResource("1_ywn5i")
+CheckBox/styles/pressed = ExtResource("2_lmeh2")
 ExpModifierPanel/base_type = &"Panel"
 ExpModifierPanel/styles/panel = SubResource("StyleBoxFlat_4vsvy")
 ItemList/colors/font_color = Color(0.9372549, 0.9019608, 0.8666667, 1)
