@@ -68,10 +68,8 @@ func _on_settings_button_pressed(pk, button_position) -> void:
 	else:
 		if(button_position.y < 500):
 			options_popup.enable(pk, button_position)
-			print(button_position.y)
 		else:
 			options_popup.enable(pk, Vector2(button_position.x, 470))
-			print("its too low!")
 
 func _on_popup_option_selected(option: String, pk):
 	if (option=="open"):
