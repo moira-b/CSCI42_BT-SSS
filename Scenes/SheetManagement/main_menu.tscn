@@ -2,23 +2,45 @@
 
 [ext_resource type="Script" uid="uid://028wp2ttofun" path="res://Scripts/SheetManagement/main_menu.gd" id="1_vsvys"]
 [ext_resource type="PackedScene" uid="uid://r02yxwfx48hx" path="res://Scenes/SheetManagement/SaveManager.tscn" id="2_3hhsk"]
+[ext_resource type="StyleBox" uid="uid://dhobd2i8q8nhi" path="res://Resources/GUIStyles/purple_panel.tres" id="3_6q5gj"]
 [ext_resource type="StyleBox" uid="uid://dic645d200g74" path="res://Resources/GUIStyles/character_sheet_stylebox.tres" id="3_duv1w"]
 [ext_resource type="Texture2D" uid="uid://csr08715qa60f" path="res://Assets/GUI_Icons/icons8-search-480.png" id="3_x2qhb"]
 [ext_resource type="StyleBox" uid="uid://dewju2mxoq348" path="res://Resources/GUIStyles/button_style.tres" id="4_dumt2"]
 [ext_resource type="Script" path="res://Scenes/SheetManagement/main_menu_options_popup.gd" id="4_rkvgt"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rkvgt"]
-bg_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
-border_color = Color(0, 0.96269935, 0.31227493, 1)
-corner_radius_top_left = 22
-corner_radius_top_right = 22
-corner_radius_bottom_right = 22
-corner_radius_bottom_left = 22
-
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x2qhb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x2qhb"]
 bg_color = Color(0.47058824, 0.47058824, 0.47058824, 0)
+border_width_bottom = 1
+border_color = Color(0.87058824, 0.78039217, 0.38431373, 1)
+corner_radius_top_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g07vw"]
+bg_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6q5gj"]
+bg_color = Color(0.76637274, 0.5602935, 0.088297464, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jif6p"]
+bg_color = Color(0.44250324, 0.33210397, 0.09492508, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [node name="MainMenu" type="Control" unique_id=621885202]
 layout_mode = 3
@@ -28,6 +50,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vsvys")
+metadata/_edit_lock_ = true
 
 [node name="SaveManager" parent="." unique_id=538318276 instance=ExtResource("2_3hhsk")]
 
@@ -46,7 +69,7 @@ grow_horizontal = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="Header" unique_id=668111585]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_rkvgt")
+theme_override_styles/panel = ExtResource("3_6q5gj")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Header/PanelContainer" unique_id=51210313]
 layout_mode = 2
@@ -81,11 +104,28 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_x2qhb")
 placeholder_text = "Search for a character..."
 caret_blink = true
 
-[node name="Button" type="Button" parent="Header" unique_id=361756707]
-custom_minimum_size = Vector2(200, 50)
+[node name="PanelContainer2" type="PanelContainer" parent="Header" unique_id=1675154108]
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 10
-text = "Create a new Character"
+theme_override_styles/panel = SubResource("StyleBoxFlat_g07vw")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Header/PanelContainer2" unique_id=1115322914]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Header/PanelContainer2/HBoxContainer" unique_id=550206716]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "   Add Character"
+
+[node name="Button" type="Button" parent="Header/PanelContainer2/HBoxContainer" unique_id=361756707]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_6q5gj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jif6p")
+text = "+"
 
 [node name="Bottom" type="HBoxContainer" parent="." unique_id=533659469]
 layout_mode = 1
@@ -101,9 +141,9 @@ offset_bottom = -0.040039063
 
 [node name="CreateCharacterConfirm" type="PanelContainer" parent="." unique_id=1879167693]
 layout_mode = 0
-offset_left = 734.0
+offset_left = 765.0
 offset_top = 18.0
-offset_right = 902.0
+offset_right = 918.0
 offset_bottom = 84.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CreateCharacterConfirm" unique_id=1031325904]
@@ -129,9 +169,10 @@ anchor_bottom = 0.5
 offset_left = -559.0
 offset_top = -205.0
 offset_right = 556.0
-offset_bottom = 230.0
+offset_bottom = 324.0
 grow_horizontal = 2
 grow_vertical = 2
+follow_focus = true
 
 [node name="GridContainer" type="GridContainer" parent="ScrollContainer" unique_id=246319859]
 custom_minimum_size = Vector2(1000, 1000)

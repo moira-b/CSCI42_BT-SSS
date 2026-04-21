@@ -23,10 +23,10 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xbmtp"]
 bg_color = Color(1, 1, 1, 0)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
 border_color = Color(0.10980392, 0.41568628, 0.90588236, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
@@ -34,11 +34,12 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5bybj"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-corner_radius_top_left = 25
-corner_radius_top_right = 25
-corner_radius_bottom_right = 25
-corner_radius_bottom_left = 25
+bg_color = Color(0.65882355, 0.5372549, 0.09803922, 0)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.7176471, 0.58431375, 0.10980392, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q2hvt"]
 bg_color = Color(0.6, 0.6, 0.6, 0.101960786)
@@ -106,7 +107,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_xbmtp")
 button_mask = 3
 
 [node name="SettingsButton" type="Button" parent="." unique_id=548987942]
-custom_minimum_size = Vector2(30, 30)
+custom_minimum_size = Vector2(40, 30)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
