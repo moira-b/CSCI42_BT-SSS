@@ -2,7 +2,12 @@
 
 [ext_resource type="Theme" uid="uid://tvypmn4kbcjp" path="res://Resources/GUIStyles/daggerheart_theme.tres" id="1_5ldc0"]
 [ext_resource type="Script" uid="uid://ypuu2ydt2m1c" path="res://Scripts/CharacterDisplay/fh_roll_window.gd" id="1_k2fvo"]
+[ext_resource type="StyleBox" uid="uid://f8rwf4112klm" path="res://window_stylebox.tres" id="2_yalgk"]
 [ext_resource type="StyleBox" uid="uid://dh0x1614wwewt" path="res://Resources/GUIStyles/yellow_label.tres" id="3_5ldc0"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_yalgk"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_kk41y"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yalgk"]
 content_margin_left = 4.0
@@ -42,11 +47,18 @@ corner_radius_bottom_left = 5
 [sub_resource type="Theme" id="Theme_k2fvo"]
 default_font_size = 24
 
+[sub_resource type="Theme" id="Theme_yxf2p"]
+default_font_size = 24
+
 [node name="FHRollWindow" type="Window" unique_id=1979625603]
 oversampling_override = 1.0
 initial_position = 1
-size = Vector2i(450, 300)
+size = Vector2i(450, 550)
 theme = ExtResource("1_5ldc0")
+theme_override_icons/close = SubResource("PlaceholderTexture2D_yalgk")
+theme_override_icons/close_pressed = SubResource("PlaceholderTexture2D_kk41y")
+theme_override_styles/embedded_border = ExtResource("2_yalgk")
+theme_override_styles/embedded_unfocused_border = ExtResource("2_yalgk")
 script = ExtResource("1_k2fvo")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1926308283]
@@ -55,10 +67,10 @@ anchor_left = 0.5
 anchor_top = 0.61700004
 anchor_right = 0.5
 anchor_bottom = 0.61700004
-offset_left = -174.0
-offset_top = -50.100006
-offset_right = 174.0
-offset_bottom = 49.899994
+offset_left = -176.0
+offset_top = -114.35004
+offset_right = 176.0
+offset_bottom = -6.3500366
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 40
@@ -119,20 +131,29 @@ text = "10"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="RollAgainButton" type="Button" parent="." unique_id=536584666]
-custom_minimum_size = Vector2(150, 40)
+[node name="ButtonContainer" type="VBoxContainer" parent="." unique_id=1068903714]
 anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.90000004
-anchor_right = 0.5
-anchor_bottom = 0.90000004
-offset_left = -75.0
-offset_top = -20.0
-offset_right = 75.0
-offset_bottom = 20.0
+anchor_left = 0.2777778
+anchor_top = 0.76363635
+anchor_right = 0.7222222
+anchor_bottom = 0.9236364
+offset_top = -16.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_constants/separation = 20
+metadata/_edit_use_anchors_ = true
+
+[node name="RollAgainButton" type="Button" parent="ButtonContainer" unique_id=1448330390]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme = SubResource("Theme_yxf2p")
 text = "Roll Again"
+
+[node name="CloseButton" type="Button" parent="ButtonContainer" unique_id=1217434039]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme = SubResource("Theme_yxf2p")
+text = "Close"
 
 [node name="ResultsContainer" type="VBoxContainer" parent="." unique_id=1332614251]
 anchors_preset = -1
@@ -167,5 +188,3 @@ layout_mode = 2
 text = "test"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[connection signal="pressed" from="RollAgainButton" to="." method="_on_roll_again_button_pressed"]
