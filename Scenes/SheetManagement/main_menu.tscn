@@ -4,7 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://r02yxwfx48hx" path="res://Scenes/SheetManagement/SaveManager.tscn" id="2_3hhsk"]
 [ext_resource type="StyleBox" uid="uid://dic645d200g74" path="res://Resources/GUIStyles/character_sheet_stylebox.tres" id="3_duv1w"]
 [ext_resource type="StyleBox" uid="uid://dewju2mxoq348" path="res://Resources/GUIStyles/button_style.tres" id="4_dumt2"]
-[ext_resource type="Script" path="res://Scenes/SheetManagement/main_menu_options_popup.gd" id="4_rkvgt"]
+[ext_resource type="Script" uid="uid://fvdr0f3rncnv" path="res://Scenes/SheetManagement/main_menu_options_popup.gd" id="4_rkvgt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rkvgt"]
+bg_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
 
 [node name="MainMenu" type="Control" unique_id=621885202]
 layout_mode = 3
@@ -30,7 +33,11 @@ offset_right = 559.152
 offset_bottom = 50.096
 grow_horizontal = 2
 
-[node name="LineEdit" type="LineEdit" parent="Header" unique_id=626609327]
+[node name="PanelContainer" type="PanelContainer" parent="Header" unique_id=668111585]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_rkvgt")
+
+[node name="LineEdit" type="LineEdit" parent="Header/PanelContainer" unique_id=626609327]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 placeholder_text = "Search for a character..."

@@ -27,7 +27,7 @@ proficiency = 0
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=77115605]
 layout_mode = 2
-color = Color(0.17997457, 0.17997457, 0.17997457, 1)
+color = Color(0.10980392, 0.09019608, 0.22745098, 1)
 
 [node name="ContentContainer" type="MarginContainer" parent="." unique_id=1261087506]
 layout_mode = 2
