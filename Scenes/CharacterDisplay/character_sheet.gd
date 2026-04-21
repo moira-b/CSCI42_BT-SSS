@@ -406,9 +406,9 @@ func connect_signals() -> void:
 	#ancestry_panel.mouse_exited.connect(_on_mouse_exit_header_panel)
 	#community_panel.mouse_exited.connect(_on_mouse_exit_header_panel)
 	
-	class_panel.gui_input.connect(_on_class_panel_clicked.bind(class_panel.get_child(0).name))
-	ancestry_panel.gui_input.connect(_on_class_panel_clicked.bind(ancestry_panel.get_child(0).name))
-	community_panel.gui_input.connect(_on_class_panel_clicked.bind(community_panel.get_child(0).name))
+	class_panel.gui_input.connect(_on_header_panel_clicked.bind(class_panel.get_child(0).name))
+	ancestry_panel.gui_input.connect(_on_header_panel_clicked.bind(ancestry_panel.get_child(0).name))
+	community_panel.gui_input.connect(_on_header_panel_clicked.bind(community_panel.get_child(0).name))
 
 	var manage_equipment_button = $BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentContainer/EquipmentMargin/EquipmentVBox/ManageEquipment
 	manage_equipment_button.pressed.connect(_on_equipment_management_button_pressed)
@@ -475,7 +475,7 @@ func _on_main_menu_button_pressed() -> void:
 	get_tree().root.add_child(main_menu)
 	self.queue_free()
 		
-func _on_class_panel_clicked(input: InputEvent, panel: String):
+func _on_header_panel_clicked(input: InputEvent, panel: String):
 	if input is InputEventMouseButton and input.button_index == MOUSE_BUTTON_LEFT:
 		if input.pressed:
 			if information_popup.visible == false:
