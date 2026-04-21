@@ -1,4 +1,19 @@
 [gd_resource type="Theme" format=3 uid="uid://cp2l2rc2p0t85"]
 
+[ext_resource type="StyleBox" uid="uid://dhobd2i8q8nhi" path="res://Resources/GUIStyles/purple_panel.tres" id="1_yxbak"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jwbce"]
+bg_color = Color(0.14901961, 0.12941177, 0.25490198, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ug3rf"]
+bg_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
+expand_margin_left = 10.0
+expand_margin_top = 30.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
 [resource]
 default_font_size = 24
+LineEdit/styles/normal = SubResource("StyleBoxFlat_jwbce")
+PanelContainer/styles/panel = ExtResource("1_yxbak")
+Window/styles/embedded_border = SubResource("StyleBoxFlat_ug3rf")

@@ -2,18 +2,19 @@
 
 [ext_resource type="Script" uid="uid://cwqjejxfms3kp" path="res://Scripts/CharacterDisplay/dice_roll_window.gd" id="1_2ttmj"]
 [ext_resource type="Theme" uid="uid://cp2l2rc2p0t85" path="res://Resources/GUIStyles/dice_roller_options.tres" id="1_5tshs"]
-[ext_resource type="StyleBox" uid="uid://dic645d200g74" path="res://Resources/GUIStyles/character_sheet_stylebox.tres" id="1_bdub2"]
 [ext_resource type="Script" uid="uid://dlbrr2dgig6i1" path="res://Scripts/CharacterDisplay/die_selector.gd" id="2_nb8f3"]
+[ext_resource type="Theme" uid="uid://tvypmn4kbcjp" path="res://Resources/GUIStyles/daggerheart_theme.tres" id="4_2ttmj"]
+[ext_resource type="StyleBox" uid="uid://dh0x1614wwewt" path="res://Resources/GUIStyles/yellow_label.tres" id="4_ccv2a"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nb8f3"]
-bg_color = Color(0.07058824, 0.37254903, 0.007843138, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5tshs"]
+bg_color = Color(0.3487765, 0.10178318, 0.1256189, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5tshs"]
-bg_color = Color(0.3487765, 0.10178318, 0.1256189, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nb8f3"]
+bg_color = Color(0.07058824, 0.37254903, 0.007843138, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -23,6 +24,7 @@ corner_radius_bottom_left = 4
 oversampling_override = 1.0
 initial_position = 1
 size = Vector2i(450, 550)
+theme = ExtResource("1_5tshs")
 script = ExtResource("1_2ttmj")
 
 [node name="ResultsContainer" type="VSplitContainer" parent="." unique_id=1169329085]
@@ -38,12 +40,16 @@ offset_bottom = 95.75
 
 [node name="Sum" type="Label" parent="ResultsContainer" unique_id=2019198714]
 layout_mode = 2
-theme = ExtResource("1_5tshs")
+size_flags_horizontal = 4
+theme = ExtResource("4_2ttmj")
+theme_override_styles/normal = ExtResource("4_ccv2a")
+text = "Sum:"
 horizontal_alignment = 1
 
 [node name="IndividualRolls" type="Label" parent="ResultsContainer" unique_id=388726724]
 custom_minimum_size = Vector2(350, 50)
 layout_mode = 2
+theme = ExtResource("4_2ttmj")
 horizontal_alignment = 1
 autowrap_mode = 3
 
@@ -61,15 +67,12 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_styles/panel = ExtResource("1_bdub2")
 
 [node name="Dice" type="VBoxContainer" parent="DiceRollUI" unique_id=517467545]
 layout_mode = 2
 
 [node name="D4" type="PanelContainer" parent="DiceRollUI/Dice" unique_id=196741560]
 layout_mode = 2
-theme = ExtResource("1_5tshs")
-theme_override_styles/panel = ExtResource("1_bdub2")
 script = ExtResource("2_nb8f3")
 num_sides = 4
 
@@ -95,6 +98,12 @@ drag_and_drop_selection_enabled = false
 [node name="Buttons" type="HBoxContainer" parent="DiceRollUI/Dice/D4/FieldContainer" unique_id=1713651986]
 layout_mode = 2
 
+[node name="DecrementButton" type="Button" parent="DiceRollUI/Dice/D4/FieldContainer/Buttons" unique_id=2138813809]
+custom_minimum_size = Vector2(40, 30)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5tshs")
+text = "-"
+
 [node name="IncrementButton" type="Button" parent="DiceRollUI/Dice/D4/FieldContainer/Buttons" unique_id=1103095331]
 custom_minimum_size = Vector2(40, 30)
 layout_mode = 2
@@ -102,16 +111,8 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_nb8f3")
 text = "+"
 
-[node name="DecrementButton" type="Button" parent="DiceRollUI/Dice/D4/FieldContainer/Buttons" unique_id=2138813809]
-custom_minimum_size = Vector2(40, 30)
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_5tshs")
-text = "-"
-
 [node name="D6" type="PanelContainer" parent="DiceRollUI/Dice" unique_id=142617785]
 layout_mode = 2
-theme = ExtResource("1_5tshs")
-theme_override_styles/panel = ExtResource("1_bdub2")
 script = ExtResource("2_nb8f3")
 num_sides = 6
 
@@ -137,6 +138,12 @@ drag_and_drop_selection_enabled = false
 [node name="Buttons" type="HBoxContainer" parent="DiceRollUI/Dice/D6/FieldContainer" unique_id=1080817882]
 layout_mode = 2
 
+[node name="DecrementButton" type="Button" parent="DiceRollUI/Dice/D6/FieldContainer/Buttons" unique_id=745609792]
+custom_minimum_size = Vector2(40, 30)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5tshs")
+text = "-"
+
 [node name="IncrementButton" type="Button" parent="DiceRollUI/Dice/D6/FieldContainer/Buttons" unique_id=155116788]
 custom_minimum_size = Vector2(40, 30)
 layout_mode = 2
@@ -144,16 +151,8 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_nb8f3")
 text = "+"
 
-[node name="DecrementButton" type="Button" parent="DiceRollUI/Dice/D6/FieldContainer/Buttons" unique_id=745609792]
-custom_minimum_size = Vector2(40, 30)
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_5tshs")
-text = "-"
-
 [node name="D8" type="PanelContainer" parent="DiceRollUI/Dice" unique_id=1793869203]
 layout_mode = 2
-theme = ExtResource("1_5tshs")
-theme_override_styles/panel = ExtResource("1_bdub2")
 script = ExtResource("2_nb8f3")
 num_sides = 8
 
@@ -179,6 +178,12 @@ drag_and_drop_selection_enabled = false
 [node name="Buttons" type="HBoxContainer" parent="DiceRollUI/Dice/D8/FieldContainer" unique_id=656141011]
 layout_mode = 2
 
+[node name="DecrementButton" type="Button" parent="DiceRollUI/Dice/D8/FieldContainer/Buttons" unique_id=1616603047]
+custom_minimum_size = Vector2(40, 30)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5tshs")
+text = "-"
+
 [node name="IncrementButton" type="Button" parent="DiceRollUI/Dice/D8/FieldContainer/Buttons" unique_id=1224782397]
 custom_minimum_size = Vector2(40, 30)
 layout_mode = 2
@@ -186,16 +191,8 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_nb8f3")
 text = "+"
 
-[node name="DecrementButton" type="Button" parent="DiceRollUI/Dice/D8/FieldContainer/Buttons" unique_id=1616603047]
-custom_minimum_size = Vector2(40, 30)
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_5tshs")
-text = "-"
-
 [node name="D10" type="PanelContainer" parent="DiceRollUI/Dice" unique_id=143940124]
 layout_mode = 2
-theme = ExtResource("1_5tshs")
-theme_override_styles/panel = ExtResource("1_bdub2")
 script = ExtResource("2_nb8f3")
 num_sides = 10
 
@@ -221,6 +218,12 @@ drag_and_drop_selection_enabled = false
 [node name="Buttons" type="HBoxContainer" parent="DiceRollUI/Dice/D10/FieldContainer" unique_id=131226401]
 layout_mode = 2
 
+[node name="DecrementButton" type="Button" parent="DiceRollUI/Dice/D10/FieldContainer/Buttons" unique_id=1493702953]
+custom_minimum_size = Vector2(40, 30)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5tshs")
+text = "-"
+
 [node name="IncrementButton" type="Button" parent="DiceRollUI/Dice/D10/FieldContainer/Buttons" unique_id=595922308]
 custom_minimum_size = Vector2(40, 30)
 layout_mode = 2
@@ -228,16 +231,8 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_nb8f3")
 text = "+"
 
-[node name="DecrementButton" type="Button" parent="DiceRollUI/Dice/D10/FieldContainer/Buttons" unique_id=1493702953]
-custom_minimum_size = Vector2(40, 30)
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_5tshs")
-text = "-"
-
 [node name="D12" type="PanelContainer" parent="DiceRollUI/Dice" unique_id=1525040638]
 layout_mode = 2
-theme = ExtResource("1_5tshs")
-theme_override_styles/panel = ExtResource("1_bdub2")
 script = ExtResource("2_nb8f3")
 num_sides = 12
 
@@ -263,6 +258,12 @@ drag_and_drop_selection_enabled = false
 [node name="Buttons" type="HBoxContainer" parent="DiceRollUI/Dice/D12/FieldContainer" unique_id=387155649]
 layout_mode = 2
 
+[node name="DecrementButton" type="Button" parent="DiceRollUI/Dice/D12/FieldContainer/Buttons" unique_id=26256380]
+custom_minimum_size = Vector2(40, 30)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5tshs")
+text = "-"
+
 [node name="IncrementButton" type="Button" parent="DiceRollUI/Dice/D12/FieldContainer/Buttons" unique_id=1482681303]
 custom_minimum_size = Vector2(40, 30)
 layout_mode = 2
@@ -270,16 +271,8 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_nb8f3")
 text = "+"
 
-[node name="DecrementButton" type="Button" parent="DiceRollUI/Dice/D12/FieldContainer/Buttons" unique_id=26256380]
-custom_minimum_size = Vector2(40, 30)
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_5tshs")
-text = "-"
-
 [node name="D20" type="PanelContainer" parent="DiceRollUI/Dice" unique_id=1220786145]
 layout_mode = 2
-theme = ExtResource("1_5tshs")
-theme_override_styles/panel = ExtResource("1_bdub2")
 script = ExtResource("2_nb8f3")
 num_sides = 20
 
@@ -305,6 +298,12 @@ drag_and_drop_selection_enabled = false
 [node name="Buttons" type="HBoxContainer" parent="DiceRollUI/Dice/D20/FieldContainer" unique_id=1252400122]
 layout_mode = 2
 
+[node name="DecrementButton" type="Button" parent="DiceRollUI/Dice/D20/FieldContainer/Buttons" unique_id=1670180749]
+custom_minimum_size = Vector2(40, 30)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5tshs")
+text = "-"
+
 [node name="IncrementButton" type="Button" parent="DiceRollUI/Dice/D20/FieldContainer/Buttons" unique_id=1602103938]
 custom_minimum_size = Vector2(40, 30)
 layout_mode = 2
@@ -312,16 +311,8 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_nb8f3")
 text = "+"
 
-[node name="DecrementButton" type="Button" parent="DiceRollUI/Dice/D20/FieldContainer/Buttons" unique_id=1670180749]
-custom_minimum_size = Vector2(40, 30)
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_5tshs")
-text = "-"
-
 [node name="D100" type="PanelContainer" parent="DiceRollUI/Dice" unique_id=1848082897]
 layout_mode = 2
-theme = ExtResource("1_5tshs")
-theme_override_styles/panel = ExtResource("1_bdub2")
 script = ExtResource("2_nb8f3")
 num_sides = 100
 
@@ -347,18 +338,18 @@ drag_and_drop_selection_enabled = false
 [node name="Buttons" type="HBoxContainer" parent="DiceRollUI/Dice/D100/FieldContainer" unique_id=463500143]
 layout_mode = 2
 
+[node name="DecrementButton" type="Button" parent="DiceRollUI/Dice/D100/FieldContainer/Buttons" unique_id=930837803]
+custom_minimum_size = Vector2(40, 30)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5tshs")
+text = "-"
+
 [node name="IncrementButton" type="Button" parent="DiceRollUI/Dice/D100/FieldContainer/Buttons" unique_id=492777147]
 custom_minimum_size = Vector2(40, 30)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_nb8f3")
 text = "+"
-
-[node name="DecrementButton" type="Button" parent="DiceRollUI/Dice/D100/FieldContainer/Buttons" unique_id=930837803]
-custom_minimum_size = Vector2(40, 30)
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_5tshs")
-text = "-"
 
 [node name="RollButtonContainer" type="MarginContainer" parent="." unique_id=1127682714]
 anchors_preset = 7
@@ -377,7 +368,7 @@ theme_override_constants/margin_bottom = 20
 
 [node name="RollButton" type="Button" parent="RollButtonContainer" unique_id=140606695]
 layout_mode = 2
-theme = ExtResource("1_5tshs")
+theme = ExtResource("4_2ttmj")
 text = "Roll"
 
 [connection signal="pressed" from="RollButtonContainer/RollButton" to="." method="_on_roll_button_pressed"]

@@ -29,7 +29,7 @@ func _on_roll_button_pressed() -> void:
 	#print("DEBUG: DICE ROLL RESULT " + str(sum))
 	print(results_array)
 
-	sum_display.text = str(sum)
+	sum_display.text = "Sum: " + str(sum)
 	if (0 < results_array.size() && results_array.size() <= 20):
 		individual_rolls_display.text = array_to_string(results_array)
 	else:
