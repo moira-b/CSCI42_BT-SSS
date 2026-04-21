@@ -498,8 +498,14 @@ func get_primary_info() -> String:
 	var range = weapon_as_dict.get(primary).get("range")
 	var rollTrait = weapon_as_dict.get(primary).get("trait")
 	var damageDie: int = weapon_as_dict.get(primary).get("damage_die")
+	var damageModifier: int = weapon_as_dict.get(primary).get("damage_modifier")
+	var feature = weapon_as_dict.get(primary).get("feature")
 
 	var info = "%s | %s | %s | d%d" % [damageType, range, rollTrait, damageDie]
+	if damageModifier != 0:
+		info += "+" + str(damageModifier)
+	if feature != "":
+		info += " | " + feature
 	return info
 
 func get_secondary_info() -> String:
