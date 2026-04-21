@@ -3,26 +3,22 @@ extends Control
 
 @onready var bio_edit = $BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/BioPanelContainer/BioMarginContainer/Bio/BioEdit
 @onready var name_edit = $HeaderMargin/Header/HeaderInfo/NamePronouns/NamePanelContainer/NameC/NameEdit
-@onready var agility_field: SpinBox = $TraitModifiers/AgilityPanel/AgilityContainer/Agility/SpinBox
-@onready var strength_field: SpinBox = $TraitModifiers/StrengthPanel/StrengthContainer/Strength/SpinBox
-@onready var finesse_field: SpinBox = $TraitModifiers/FinessePanel/FinesseContainer/Finesse/SpinBox
-@onready var instinct_field: SpinBox = $TraitModifiers/InstinctPanel/InstinctContainer/Instinct/SpinBox
-@onready var presence_field: SpinBox = $TraitModifiers/PrescencePanel/PrescenceContainer/Prescence/SpinBox
-@onready var knowledge_field: SpinBox = $TraitModifiers/KnowledgePanel/KnowledgeContainer/Knowledge/SpinBox
+@onready var agility_field: SpinBox = $TraitModifiers/AgilityPanel/AgilityContainer/AgilitySpinbox
+@onready var strength_field: SpinBox = $TraitModifiers/StrengthPanel/StrengthContainer/StrengthSpinbox
+@onready var finesse_field: SpinBox = $TraitModifiers/FinessePanel/FinesseContainer/FinesseSpinbox
+@onready var instinct_field: SpinBox = $TraitModifiers/InstinctPanel/InstinctContainer/InstinctSpinbox
+@onready var presence_field: SpinBox = $TraitModifiers/PrescencePanel/PrescenceContainer/PresenceSpinbox
+@onready var knowledge_field: SpinBox = $TraitModifiers/KnowledgePanel/KnowledgeContainer/KnowledgeSpinbox
 @onready var pronouns_field: LineEdit = $HeaderMargin/Header/HeaderInfo/NamePronouns/PronounsPanelContainer/Pronouns/PronounsEdit
-@onready var experience1 : LineEdit = $BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/Experiences/Experience1/Experience1
-@onready var experience2 : LineEdit = $BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/Experiences/Experience2/Experience2
-@onready var experience3 : LineEdit = $BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/Experiences/Experience3/Experience3
-@onready var experience4 : LineEdit = $BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/Experiences/Experience4/Experience4
-@onready var experience5 : LineEdit = $BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/Experiences/Experience5/Experience5
+@onready var experience1 : LineEdit = $BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences/Experience1/Experience1
+@onready var experience2 : LineEdit = $BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences/Experience2/Experience2
+@onready var experience3 : LineEdit = $BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences/Experience3/Experience3
+@onready var experience4 : LineEdit = $BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences/Experience4/Experience4
+@onready var experience5 : LineEdit = $BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences/Experience5/Experience5
 
-@onready var health_field = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Health
-@onready var stress_field = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Stress
-@onready var armor_field = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Armor
-@onready var hope_field = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Hope
-@onready var ancestry_field = $HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/AncestryPanelContainer/Ancestry/Ancestry
-@onready var community_field = $HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/CommunityPanelContainer/Community/Community
-@onready var class_field = $HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/ClassPanelContainer/Class/Class
+@onready var ancestry_field = $HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/AncestryPanelContainer/Ancestry
+@onready var community_field = $HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/CommunityPanelContainer/Community
+@onready var class_field = $HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/ClassPanelContainer/Class
 @onready var short_rest_button: Button = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/RestButtons/ShortRest
 @onready var long_rest_button: Button = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/RestButtons/LongRest
 @onready var rest_window: Window = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/RestButtons/RestWindow
@@ -31,8 +27,7 @@ extends Control
 @onready var fh_roll_window: Window = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/DiceButtons/FHRollWindow
 @onready var evasion_value: Label = $BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EvasionProficiencyMargin/HBoxContainer/Evasion/FieldContainer/MarginContainer/FieldValue
 @onready var proficiency_value: Label = $BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EvasionProficiencyMargin/HBoxContainer/Proficiency/FieldContainer/MarginContainer/FieldValue
-@onready var major_threshold_value: Label = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/DamageThresholds/HBoxContainer/MajorThreshold/FieldContainer/MarginContainer/FieldValue
-@onready var severe_threshold_value: Label = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/DamageThresholds/HBoxContainer/SevereThreshold/FieldContainer/MarginContainer/FieldValue
+@onready var damage_threshold_display = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/DamageThresholdDisplay
 
 @onready var advance_window: Window = $AdvanceWindow
 
@@ -78,7 +73,13 @@ extends Control
 @onready var information_popup = $InformationPopup
 
 @onready var equipment_window = $EquipmentWindow
-@onready var experiences_container = $BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/Experiences
+@onready var experiences_vbox = $BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences
+
+@onready var health_checkables = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Health/checkable_buttons
+@onready var stress_checkables = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Stress/checkable_buttons
+@onready var hope_checkables = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Hope/checkable_buttons
+@onready var armor_checkables = $BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/Armor/checkable_buttons
+
 
 var updated = false
 var shortRestCounter = 0
@@ -98,10 +99,15 @@ func enter() -> void:
 	update_equipment_display()
 	connect_signals()
 	
+	health_checkables.initialize("Health", character.max_hp)
+	stress_checkables.initialize("Stress", character.max_stress)
+	hope_checkables.initialize("Hope", character.max_hope)
+	armor_checkables.initialize("Armor", character.max_armor_slots)
+	
 	self.update_markable_fields()
 	
 	ancestry_field.set_text(character.ancestry.ancestry_name)
-	class_field.set_text(character.character_class.name + " \n(" + character.subclass.subclass_name + ")")
+	class_field.set_text(character.character_class.name + " (" + character.subclass.subclass_name + ")")
 	community_field.set_text(character.community.community_name)
 	level_field.text = str(character.level)
 	evasion_value.set_text(str(character.evasion))
@@ -110,9 +116,9 @@ func enter() -> void:
 	save_manager.set_character(character)
 	save_manager.save_character_data()
 
-	experiences_container.set_level_values(character)
-	experiences_container.set_visible_experiences(character)
-
+	experiences_vbox.set_level_values(character)
+	experiences_vbox.set_visible_experiences(character)
+	
 func _process(_delta: float) -> void:
 	if(updated==false and character.character_name!=""):
 		updated=true
@@ -121,32 +127,33 @@ func _process(_delta: float) -> void:
 		
 func update_equipment_display() -> void:
 	# handle display of actual equipment
-	var primaryPanel = $BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentMargin/EquipmentVBox/PrimaryWeapon
-	var secondaryPanel = $BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentMargin/EquipmentVBox/SecondaryWeapon
-	var armorPanel = $BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentMargin/EquipmentVBox/Armor
+	var primaryPanel = $BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentContainer/EquipmentMargin/EquipmentVBox/PrimaryWeapon
+	var secondaryPanel = $BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentContainer/EquipmentMargin/EquipmentVBox/SecondaryWeapon
+	var armorPanel = $BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentContainer/EquipmentMargin/EquipmentVBox/Armor
 	
-	primaryPanel.get_child(0).get_node("EquipmentName").text = character.get_primary_name()
-	primaryPanel.get_child(0).get_node("EquipmentInfo").text = character.get_primary_info()
-	armorPanel.get_child(0).get_node("EquipmentName").text = character.get_armor_name()
-	armorPanel.get_child(0).get_node("EquipmentInfo").text = character.get_armor_info()
+	primaryPanel.get_child(0).get_node("EquipmentInfo").text = character.get_primary_name() + "\n" + character.get_primary_info()
+	armorPanel.get_child(0).get_node("EquipmentInfo").text = character.get_armor_name() + "\n" + character.get_armor_info()
 	
 	if (character.get_secondary_name()==""):
 		secondaryPanel.hide()
 	else:
-		secondaryPanel.get_child(0).get_node("EquipmentName").text = character.get_secondary_name()
-		secondaryPanel.get_child(0).get_node("EquipmentInfo").text = character.get_secondary_info()
+		secondaryPanel.get_child(0).get_node("EquipmentInfo").text = character.get_secondary_name() + "\n" + character.get_secondary_info()
 		secondaryPanel.show()
 	
 	# handle stat changes due to equipment changes
-	major_threshold_value.set_text(str(character.damage_thresholds[0]))
-	severe_threshold_value.set_text(str(character.damage_thresholds[1]))
+	damage_threshold_display.set_major_threshold(character.damage_thresholds[0])
+	damage_threshold_display.set_severe_threshold(character.damage_thresholds[1])
 	evasion_value.set_text(str(character.evasion))
 	
 func update_markable_fields() -> void:
-	health_field.set_current_value(str(character.current_hp))
-	stress_field.set_current_value(str(character.current_stress))
-	hope_field.set_current_value(str(character.current_hope))
-	armor_field.set_current_value(str(character.used_armor_slots))
+	health_checkables.set_amount_toggled(character.current_hp)
+	health_checkables.set_maximum_toggled(character.max_hp)
+	stress_checkables.set_amount_toggled(character.current_stress)
+	stress_checkables.set_maximum_toggled(character.max_stress)
+	hope_checkables.set_amount_toggled(character.current_hope)
+	hope_checkables.set_maximum_toggled(character.max_hope)
+	armor_checkables.set_amount_toggled(character.used_armor_slots)
+	armor_checkables.set_maximum_toggled(character.max_armor_slots)
 
 func update_edit_fields() -> void:
 	name_edit.set_text(str(character.character_name))
@@ -186,17 +193,17 @@ func print_character_details() -> void:
 
 func check_tier_achievements_threshold() -> void:
 	if character.level < 2:
-		experience3.hide()
+		experiences_vbox.set_experience_visibility(3, false)
 	else:
-		experience3.show()
+		experiences_vbox.set_experience_visibility(3, true)
 	if character.level < 5:
-		experience4.hide()
+		experiences_vbox.set_experience_visibility(4, false)
 	else:
-		experience4.show()
+		experiences_vbox.set_experience_visibility(4, true)
 	if character.level < 8:
-		experience5.hide()
+		experiences_vbox.set_experience_visibility(5, false)
 	else:
-		experience5.show()
+		experiences_vbox.set_experience_visibility(5, true)
 
 func _on_bio_text_changed() -> void:
 	character.bio = bio_edit.get_text()
@@ -215,61 +222,42 @@ func _on_name_edit_focus_exited():
 	name_edit.text = character.character_name
 
 func _on_trait_text_submitted(new_val: int, trait_name: String) -> void:
-	if (trait_name == "Agility"):
+	if (trait_name == "AgilitySpinbox"):
 		character.agility = new_val
 		agility_field.value = character.agility
 		print("Agility: " + str(character.agility))
-	if (trait_name == "Strength"):
+	if (trait_name == "StrengthSpinbox"):
 		character.strength = new_val
 		strength_field.value = character.strength
 		print("Strength: " + str(character.strength))
-	if (trait_name == "Finesse"):
+	if (trait_name == "FinesseSpinbox"):
 		character.finesse = new_val
 		finesse_field.value = character.finesse
 		print("Finesse: " + str(character.finesse))
-	if (trait_name == "Instinct"):
+	if (trait_name == "InstinctSpinbox"):
 		character.instinct = new_val
 		instinct_field.value = character.instinct
 		print("Instinct: " + str(character.instinct))
-	if (trait_name == "Prescence"):
+	if (trait_name == "PresenceSpinbox"):
 		character.presence = new_val
 		presence_field.value = character.presence
 		print("Presence: " + str(character.presence))
-	if (trait_name == "Knowledge"):
+	if (trait_name == "KnowledgeSpinbox"):
 		character.knowledge = new_val
 		knowledge_field.value = character.knowledge
 		print("knowledge: " + str(character.knowledge))
 
-
-func _on_stat_increment_pressed(stat_name: String) -> void:
+func _on_markable_stat_pressed(new_value: int, stat_name: String) -> void:
 	if(stat_name=="Health"):
-		if character.set_current_health(character.current_hp+1):
-			health_field.set_current_value(str(character.current_hp))
+		character.set_current_health(new_value)
 	elif(stat_name=="Stress"):
-		if character.set_current_stress(character.current_stress+1):
-			stress_field.set_current_value(str(character.current_stress))
-	elif(stat_name=="Armor"):
-		if character.set_used_armor_slots(character.used_armor_slots+1):
-			armor_field.set_current_value(str(character.used_armor_slots))
+		character.set_current_stress(new_value)
 	elif(stat_name=="Hope"):
-		if character.set_current_hope(character.current_hope+1):
-			hope_field.set_current_value(str(character.current_hope))
-
-
-func _on_stat_decrement_pressed(stat_name: String) -> void:
-	if(stat_name=="Health"):
-		if character.set_current_health(character.current_hp-1):
-			health_field.set_current_value(str(character.current_hp))
-	elif(stat_name=="Stress"):
-		if character.set_current_stress(character.current_stress-1):
-			stress_field.set_current_value(str(character.current_stress))
+		character.set_current_hope(new_value)
 	elif(stat_name=="Armor"):
-		if character.set_used_armor_slots(character.used_armor_slots-1):
-			armor_field.set_current_value(str(character.used_armor_slots))
-	elif(stat_name=="Hope"):
-		if character.set_current_hope(character.current_hope-1):
-			hope_field.set_current_value(str(character.current_hope))
-
+		character.set_used_armor_slots(new_value)
+	elif(stat_name=="Proficiency"):
+			pass
 
 func _on_pronouns_text_changed(new_text):
 	character.pronouns = new_text
@@ -355,12 +343,12 @@ func _on_fh_roll_window_close_requested() -> void:
 	# handle the FH result
 	if fh_roll_window.latest_outcome=="Hope":
 		character.set_current_hope(character.current_hope + 1)
-		hope_field.set_current_value(str(character.current_hope))
+		hope_checkables.set_amount_toggled(character.current_hope)
 	elif fh_roll_window.latest_outcome=="Crit":
 		character.set_current_hope(character.current_hope + 1)
-		hope_field.set_current_value(str(character.current_hope))
+		hope_checkables.set_amount_toggled(character.current_hope)
 		character.set_current_stress(character.current_stress - 1)
-		stress_field.set_current_value(str(character.current_stress))
+		stress_checkables.set_amount_toggled(character.current_stress)
 
 func _on_confirm_button_pressed() -> void:
 	rest_window.hide()
@@ -392,16 +380,7 @@ func _on_levelup_cancel_pressed() -> void:
 
 func connect_signals() -> void:
 	for field in all_traits:
-		field.value_changed.connect(_on_trait_text_submitted.bind(field.get_parent().name))
-	
-	health_field.stat_increment_pressed.connect(_on_stat_increment_pressed)
-	health_field.stat_decrement_pressed.connect(_on_stat_decrement_pressed)
-	stress_field.stat_increment_pressed.connect(_on_stat_increment_pressed)
-	stress_field.stat_decrement_pressed.connect(_on_stat_decrement_pressed)
-	armor_field.stat_increment_pressed.connect(_on_stat_increment_pressed)
-	armor_field.stat_decrement_pressed.connect(_on_stat_decrement_pressed)
-	hope_field.stat_increment_pressed.connect(_on_stat_increment_pressed)
-	hope_field.stat_decrement_pressed.connect(_on_stat_decrement_pressed)
+		field.value_changed.connect(_on_trait_text_submitted.bind(field.get_name()))
 	
 	short_rest_button.pressed.connect(_on_short_rest_pressed)
 	long_rest_button.pressed.connect(_on_long_rest_pressed)
@@ -427,13 +406,18 @@ func connect_signals() -> void:
 	ancestry_panel.mouse_exited.connect(_on_mouse_exit_header_panel)
 	community_panel.mouse_exited.connect(_on_mouse_exit_header_panel)
 
-	var manage_equipment_button = $BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentMargin/EquipmentVBox/ManageEquipment
+	var manage_equipment_button = $BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentContainer/EquipmentMargin/EquipmentVBox/ManageEquipment
 	manage_equipment_button.pressed.connect(_on_equipment_management_button_pressed)
 	
-	experiences_container.exp_level_changed.connect(_on_exp_level_changed)
+	experiences_vbox.exp_level_changed.connect(_on_exp_level_changed)
 
 	name_edit.focus_exited.connect(_on_name_edit_focus_exited)
 	name_edit.text_submitted.connect(_on_name_edit_text_submitted)
+	
+	health_checkables.amount_toggled_updated.connect(_on_markable_stat_pressed.bind("Health"))
+	stress_checkables.amount_toggled_updated.connect(_on_markable_stat_pressed.bind("Stress"))
+	hope_checkables.amount_toggled_updated.connect(_on_markable_stat_pressed.bind("Hope"))
+	armor_checkables.amount_toggled_updated.connect(_on_markable_stat_pressed.bind("Armor"))
 
 func disable_button_selection(b: bool) -> void:
 	short_rest_button.disabled = b

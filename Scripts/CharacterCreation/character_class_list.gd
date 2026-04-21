@@ -24,4 +24,7 @@ func _on_item_selected(_index: int):
 	subclasses_list.clear()
 	for subclass in classes_array[_index].character_subclasses:
 		subclasses_list.add_item(subclass.subclass_name)
+	if character.character_class and character.character_class.name != classes_array[_index].name:
+		character.subclass = null
 	character.character_class = classes_array[_index]
+	

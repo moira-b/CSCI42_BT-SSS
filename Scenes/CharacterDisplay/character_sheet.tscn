@@ -4,33 +4,57 @@
 [ext_resource type="PackedScene" uid="uid://r02yxwfx48hx" path="res://Scenes/SheetManagement/SaveManager.tscn" id="2_56qfy"]
 [ext_resource type="StyleBox" uid="uid://dic645d200g74" path="res://Resources/GUIStyles/character_sheet_stylebox.tres" id="2_c8oo5"]
 [ext_resource type="Script" uid="uid://dfs5rt0xu3vuj" path="res://Scripts/CharacterDisplay/rest.gd" id="4_8iwex"]
-[ext_resource type="StyleBox" uid="uid://iibbyxddwuc5" path="res://Resources/GUIStyles/green_button.tres" id="4_8skux"]
-[ext_resource type="Script" uid="uid://dnjp24h6b6fc2" path="res://Scripts/CharacterDisplay/markable_stat.gd" id="4_qgeia"]
+[ext_resource type="StyleBox" uid="uid://bbokr0uyec1ac" path="res://Resources/GUIStyles/line_edit_normal.tres" id="4_48wf7"]
+[ext_resource type="StyleBox" uid="uid://dhobd2i8q8nhi" path="res://Resources/GUIStyles/purple_panel.tres" id="4_irdes"]
+[ext_resource type="StyleBox" uid="uid://dae1vokrglwgx" path="res://Resources/GUIStyles/class_ancestry_community_panel.tres" id="4_rj3pj"]
+[ext_resource type="StyleBox" uid="uid://duwnobw5p4cl6" path="res://Resources/GUIStyles/line_edit_focus.tres" id="5_asla6"]
 [ext_resource type="PackedScene" uid="uid://dltyc5tel16kj" path="res://Scenes/CharacterDisplay/dice_roll_window.tscn" id="5_glymg"]
 [ext_resource type="Script" uid="uid://wblpjoc7sjgv" path="res://Scripts/CharacterDisplay/save_notification.gd" id="5_n5rmr"]
+[ext_resource type="StyleBox" uid="uid://dh0x1614wwewt" path="res://Resources/GUIStyles/yellow_label.tres" id="5_svvgr"]
 [ext_resource type="PackedScene" uid="uid://b6t3g5gxhwopj" path="res://Scenes/CharacterDisplay/fh_roll_window.tscn" id="6_8iwex"]
 [ext_resource type="Script" uid="uid://b3ypom2uq1exh" path="res://Scripts/CharacterDisplay/advancements.gd" id="7_56qfy"]
+[ext_resource type="PackedScene" uid="uid://b80x84qmywg0k" path="res://Scenes/CharacterDisplay/checkable_buttons.tscn" id="7_rj3pj"]
 [ext_resource type="PackedScene" uid="uid://1un73y3t3x7b" path="res://Scenes/Cards/domain_card_sel_container.tscn" id="8_8skux"]
+[ext_resource type="Theme" uid="uid://tvypmn4kbcjp" path="res://Resources/GUIStyles/daggerheart_theme.tres" id="9_jlx5q"]
 [ext_resource type="Script" uid="uid://by7ahmitbfup2" path="res://Scripts/CharacterDisplay/equipment_window.gd" id="10_7pq50"]
 [ext_resource type="Script" uid="uid://djod0suj342ks" path="res://Scripts/CharacterDisplay/experiences.gd" id="10_rj3pj"]
 [ext_resource type="Script" uid="uid://do0erpc6r8x0r" path="res://Scripts/CharacterDisplay/multiclass_choices.gd" id="11_2cjug"]
+[ext_resource type="PackedScene" uid="uid://blf44ks0qcuqu" path="res://Scenes/CharacterDisplay/damage_threshold_display.tscn" id="11_2ohwh"]
 [ext_resource type="Script" uid="uid://co3dycsyqv6ap" path="res://Scripts/CharacterCreation/armor_list.gd" id="11_7pq50"]
 [ext_resource type="Script" uid="uid://c6daeo616vuo3" path="res://Scripts/CharacterClasses/character_class.gd" id="12_ahdvs"]
 [ext_resource type="Script" uid="uid://mx8mfwor421u" path="res://Scripts/CharacterCreation/p_weapon_list.gd" id="12_rj3pj"]
+[ext_resource type="Theme" uid="uid://ccxm2bwpjuy2p" path="res://Resources/GUIStyles/purple_button.tres" id="12_rllm4"]
 [ext_resource type="Script" uid="uid://cutrjksidwmox" path="res://Scripts/CharacterCreation/s_weapon_list.gd" id="13_48wf7"]
 [ext_resource type="Resource" uid="uid://cyaupb2xa2jvp" path="res://Resources/Classes/Bard/bard.tres" id="13_gjf7o"]
 [ext_resource type="Resource" uid="uid://blgr70q7oa266" path="res://Resources/Classes/Druid/druid.tres" id="14_7xnek"]
+[ext_resource type="StyleBox" uid="uid://ck1deowv8fsse" path="res://Resources/GUIStyles/purple_border_panel.tres" id="15_1vmjr"]
 [ext_resource type="Resource" uid="uid://b77s47x5y88rn" path="res://Resources/Classes/Guardian/guardian.tres" id="15_n4116"]
 [ext_resource type="Resource" uid="uid://cuy8gd8ecs5j2" path="res://Resources/Classes/Ranger/ranger.tres" id="16_kjdj8"]
+[ext_resource type="Theme" uid="uid://dtsueom17lou2" path="res://Resources/GUIStyles/traits_exp_theme.tres" id="17_i1vic"]
+[ext_resource type="Theme" uid="uid://cf6uo4jelunp4" path="res://Resources/GUIStyles/equipment_theme.tres" id="17_jlx5q"]
 [ext_resource type="Resource" uid="uid://bnehy1ghhj8ml" path="res://Resources/Classes/Rogue/rogue.tres" id="17_oxyly"]
 [ext_resource type="Resource" uid="uid://ccwu6ewcynypd" path="res://Resources/Classes/Seraph/seraph.tres" id="18_7pq50"]
 [ext_resource type="Resource" uid="uid://hywukpwyumtp" path="res://Resources/Classes/Sorcerer/sorcerer.tres" id="19_rj3pj"]
 [ext_resource type="Resource" uid="uid://cfbttvs0d6csq" path="res://Resources/Classes/Warrior/warrior.tres" id="20_48wf7"]
 [ext_resource type="Resource" uid="uid://dac4f4ifpjnla" path="res://Resources/Classes/Wizard/wizard.tres" id="21_asla6"]
+[ext_resource type="Theme" uid="uid://cpnp7rqytix60" path="res://Resources/GUIStyles/advancements_window.tres" id="21_dxpx4"]
 [ext_resource type="Script" uid="uid://ddgbhwwl4fam4" path="res://Scripts/CharacterDisplay/information_popup.gd" id="23_gjf7o"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8iwex"]
-bg_color = Color(0.07058824, 0.37254903, 0.007843138, 1)
+[sub_resource type="GDScript" id="GDScript_dg7yu"]
+script/source = "extends LineEdit
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6w3xy"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_6lo7n"]
 
@@ -38,36 +62,22 @@ bg_color = Color(0.07058824, 0.37254903, 0.007843138, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7xnek"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gjf7o"]
-bg_color = Color(0.11764706, 0.11764706, 0.11764706, 1)
-
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n4116"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5rpyy"]
-bg_color = Color(0.07058824, 0.37254903, 0.007843138, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5ih58"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c8oo5"]
-bg_color = Color(0.3487765, 0.10178318, 0.1256189, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gjf7o"]
+bg_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ahdvs"]
-border_width_left = 3
-border_width_top = 3
-border_width_right = 10
-border_width_bottom = 3
-border_color = Color(0.6, 0.6, 0.6, 1)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_svvgr"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ahdvs"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1vmjr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mamue"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_56qfy"]
 font_size = 24
+font_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
 
 [node name="CharacterSheet" type="Control" unique_id=1820753171]
 layout_mode = 3
@@ -95,6 +105,7 @@ theme_override_constants/margin_left = 15
 theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 4
+metadata/_edit_lock_ = true
 
 [node name="Header" type="HBoxContainer" parent="HeaderMargin" unique_id=583286958]
 layout_mode = 2
@@ -103,129 +114,145 @@ theme_override_constants/separation = 10
 [node name="HeaderInfo" type="VBoxContainer" parent="HeaderMargin/Header" unique_id=1580594087]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/separation = 10
+theme_override_constants/separation = 6
 
 [node name="NamePronouns" type="HBoxContainer" parent="HeaderMargin/Header/HeaderInfo" unique_id=746183296]
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="NamePanelContainer" type="PanelContainer" parent="HeaderMargin/Header/HeaderInfo/NamePronouns" unique_id=1901304441]
+[node name="NamePanelContainerOLD" type="PanelContainer" parent="HeaderMargin/Header/HeaderInfo/NamePronouns" unique_id=1901304441]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = ExtResource("2_c8oo5")
 
-[node name="NameC" type="HBoxContainer" parent="HeaderMargin/Header/HeaderInfo/NamePronouns/NamePanelContainer" unique_id=1593906295]
+[node name="NameC" type="HBoxContainer" parent="HeaderMargin/Header/HeaderInfo/NamePronouns/NamePanelContainerOLD" unique_id=1593906295]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 
-[node name="Name" type="Label" parent="HeaderMargin/Header/HeaderInfo/NamePronouns/NamePanelContainer/NameC" unique_id=1793497501]
+[node name="Name" type="Label" parent="HeaderMargin/Header/HeaderInfo/NamePronouns/NamePanelContainerOLD/NameC" unique_id=1793497501]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 text = "Name: "
 
-[node name="NameEdit" type="LineEdit" parent="HeaderMargin/Header/HeaderInfo/NamePronouns/NamePanelContainer/NameC" unique_id=1389927954]
+[node name="NameEdit" type="LineEdit" parent="HeaderMargin/Header/HeaderInfo/NamePronouns/NamePanelContainerOLD/NameC" unique_id=1389927954]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 placeholder_text = "What is your name?"
 
-[node name="PronounsPanelContainer" type="PanelContainer" parent="HeaderMargin/Header/HeaderInfo/NamePronouns" unique_id=619742562]
-layout_mode = 2
-theme_override_styles/panel = ExtResource("2_c8oo5")
-
-[node name="Pronouns" type="HBoxContainer" parent="HeaderMargin/Header/HeaderInfo/NamePronouns/PronounsPanelContainer" unique_id=1818981251]
-layout_mode = 2
-size_flags_vertical = 0
-
-[node name="Label" type="Label" parent="HeaderMargin/Header/HeaderInfo/NamePronouns/PronounsPanelContainer/Pronouns" unique_id=449473121]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-text = "Pronouns:"
-
-[node name="PronounsEdit" type="LineEdit" parent="HeaderMargin/Header/HeaderInfo/NamePronouns/PronounsPanelContainer/Pronouns" unique_id=1102215493]
-custom_minimum_size = Vector2(100, 50)
+[node name="NamePanelContainer" type="PanelContainer" parent="HeaderMargin/Header/HeaderInfo/NamePronouns" unique_id=1078994171]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("4_irdes")
+
+[node name="NameC" type="VBoxContainer" parent="HeaderMargin/Header/HeaderInfo/NamePronouns/NamePanelContainer" unique_id=1121421158]
+layout_mode = 2
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="Name" type="Label" parent="HeaderMargin/Header/HeaderInfo/NamePronouns/NamePanelContainer/NameC" unique_id=993157749]
+layout_mode = 2
+size_flags_horizontal = 0
 size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = ExtResource("5_svvgr")
+text = "Name"
+horizontal_alignment = 1
+
+[node name="NameEdit" type="LineEdit" parent="HeaderMargin/Header/HeaderInfo/NamePronouns/NamePanelContainer/NameC" unique_id=706613170]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+theme_override_styles/normal = ExtResource("4_48wf7")
+theme_override_styles/focus = ExtResource("5_asla6")
+placeholder_text = "What is your name?"
+max_length = 64
+
+[node name="PronounsPanelContainer" type="PanelContainer" parent="HeaderMargin/Header/HeaderInfo/NamePronouns" unique_id=619742562]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("4_irdes")
+
+[node name="Pronouns" type="VBoxContainer" parent="HeaderMargin/Header/HeaderInfo/NamePronouns/PronounsPanelContainer" unique_id=929304455]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="HeaderMargin/Header/HeaderInfo/NamePronouns/PronounsPanelContainer/Pronouns" unique_id=449473121]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = ExtResource("5_svvgr")
+text = "Pronouns"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PronounsEdit" type="LineEdit" parent="HeaderMargin/Header/HeaderInfo/NamePronouns/PronounsPanelContainer/Pronouns" unique_id=1102215493]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+theme_override_styles/normal = ExtResource("4_48wf7")
+theme_override_styles/focus = ExtResource("5_asla6")
 
 [node name="ClassCommunityAncestry" type="HBoxContainer" parent="HeaderMargin/Header/HeaderInfo" unique_id=1686316360]
 layout_mode = 2
 theme_override_constants/separation = 10
 
 [node name="ClassPanelContainer" type="PanelContainer" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry" unique_id=1493424672]
+custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = ExtResource("2_c8oo5")
+theme_override_styles/panel = ExtResource("4_rj3pj")
 
-[node name="Class" type="HBoxContainer" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/ClassPanelContainer" unique_id=1471954437]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/ClassPanelContainer/Class" unique_id=687466068]
-custom_minimum_size = Vector2(100, 0)
+[node name="Class" type="Label" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/ClassPanelContainer" unique_id=1140117280]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Class:"
-vertical_alignment = 1
-
-[node name="Class" type="Label" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/ClassPanelContainer/Class" unique_id=1140117280]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
 theme_override_constants/paragraph_spacing = -5
-text = "ancestry_name
-(subclass)"
+text = "class_name (subclass)"
+horizontal_alignment = 1
 vertical_alignment = 1
 max_lines_visible = 2
 
 [node name="AncestryPanelContainer" type="PanelContainer" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry" unique_id=913894309]
 layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = ExtResource("2_c8oo5")
+theme_override_styles/panel = ExtResource("4_rj3pj")
 
-[node name="Ancestry" type="HBoxContainer" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/AncestryPanelContainer" unique_id=400480339]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/AncestryPanelContainer/Ancestry" unique_id=1081074418]
+[node name="Ancestry" type="Label" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/AncestryPanelContainer" unique_id=705797364]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Ancestry:"
-
-[node name="Ancestry" type="Label" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/AncestryPanelContainer/Ancestry" unique_id=33290907]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 6
+theme_override_constants/paragraph_spacing = -5
 text = "ancestry_name"
+horizontal_alignment = 1
 vertical_alignment = 1
+max_lines_visible = 2
 
 [node name="CommunityPanelContainer" type="PanelContainer" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry" unique_id=1597585474]
 layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = ExtResource("2_c8oo5")
+theme_override_styles/panel = ExtResource("4_rj3pj")
 
-[node name="Community" type="HBoxContainer" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/CommunityPanelContainer" unique_id=743414857]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/CommunityPanelContainer/Community" unique_id=760379478]
-custom_minimum_size = Vector2(100, 0)
+[node name="Community" type="Label" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/CommunityPanelContainer" unique_id=266250659]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Community:"
-vertical_alignment = 1
-
-[node name="Community" type="Label" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/CommunityPanelContainer/Community" unique_id=2021481224]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
+theme_override_constants/paragraph_spacing = -5
 text = "community_name"
+horizontal_alignment = 1
 vertical_alignment = 1
+max_lines_visible = 2
 
 [node name="Level" type="PanelContainer" parent="HeaderMargin/Header" unique_id=1090331652]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
-theme_override_styles/panel = ExtResource("2_c8oo5")
+theme = ExtResource("9_jlx5q")
 
 [node name="FieldContainer" type="VBoxContainer" parent="HeaderMargin/Header/Level" unique_id=379242002]
 layout_mode = 2
+theme_override_constants/separation = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="HeaderMargin/Header/Level/FieldContainer" unique_id=1925828569]
 layout_mode = 2
@@ -255,13 +282,22 @@ vertical_alignment = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="HeaderMargin/Header/Level/FieldContainer" unique_id=1069698842]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_8iwex")
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = ExtResource("12_rllm4")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_6w3xy")
 
 [node name="LevelUpButton" type="Button" parent="HeaderMargin/Header/Level/FieldContainer/PanelContainer" unique_id=1305469132]
-custom_minimum_size = Vector2(30, 30)
+custom_minimum_size = Vector2(140, 30)
 layout_mode = 2
-theme_override_styles/normal = ExtResource("4_8skux")
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("12_rllm4")
 text = "Level Up"
+
+[node name="Spacer" type="Control" parent="HeaderMargin/Header/Level/FieldContainer" unique_id=979303809]
+custom_minimum_size = Vector2(0, 3)
+layout_mode = 2
 
 [node name="LevelUpWindow" type="Window" parent="HeaderMargin/Header/Level/FieldContainer" unique_id=808897413]
 oversampling_override = 1.0
@@ -313,7 +349,7 @@ text = "Cancel"
 
 [node name="PanelContainer" type="PanelContainer" parent="HeaderMargin/Header" unique_id=1051887835]
 layout_mode = 2
-theme_override_styles/panel = ExtResource("2_c8oo5")
+theme = ExtResource("9_jlx5q")
 
 [node name="MarginContainer" type="MarginContainer" parent="HeaderMargin/Header/PanelContainer" unique_id=1588844554]
 layout_mode = 2
@@ -325,20 +361,28 @@ theme_override_constants/margin_bottom = 5
 [node name="RightPanel" type="VBoxContainer" parent="HeaderMargin/Header/PanelContainer/MarginContainer" unique_id=485340797]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
-size_flags_vertical = 4
 
 [node name="Save" type="Button" parent="HeaderMargin/Header/PanelContainer/MarginContainer/RightPanel" unique_id=393625438]
 layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("12_rllm4")
+theme_type_variation = &"LeftAlignButton"
 text = "Save Character"
 alignment = 0
 
 [node name="Delete" type="Button" parent="HeaderMargin/Header/PanelContainer/MarginContainer/RightPanel" unique_id=627249800]
 layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("12_rllm4")
+theme_type_variation = &"LeftAlignButton"
 text = "Delete Character"
 alignment = 0
 
 [node name="MainMenu" type="Button" parent="HeaderMargin/Header/PanelContainer/MarginContainer/RightPanel" unique_id=1062522431]
 layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("12_rllm4")
+theme_type_variation = &"LeftAlignButton"
 text = "Back to Main Menu"
 alignment = 0
 
@@ -416,173 +460,126 @@ vertical_alignment = 1
 [node name="TraitModifiers" type="HBoxContainer" parent="." unique_id=1219526404]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.057725694
+anchor_left = 0.042100694
 anchor_top = 0.22376543
-anchor_right = 0.94227433
-anchor_bottom = 0.30555555
+anchor_right = 0.95789933
+anchor_bottom = 0.29012346
+offset_left = 15.0
+offset_right = -15.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 10
+theme = ExtResource("17_i1vic")
+theme_override_constants/separation = 6
 metadata/_edit_use_anchors_ = true
 
 [node name="AgilityPanel" type="PanelContainer" parent="TraitModifiers" unique_id=845298128]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_styles/panel = ExtResource("2_c8oo5")
 
 [node name="AgilityContainer" type="BoxContainer" parent="TraitModifiers/AgilityPanel" unique_id=1577777243]
 custom_minimum_size = Vector2(145, 0)
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 4
 
 [node name="Label" type="Label" parent="TraitModifiers/AgilityPanel/AgilityContainer" unique_id=282414516]
 layout_mode = 2
 text = "Agility:"
+vertical_alignment = 1
 
-[node name="Agility" type="LineEdit" parent="TraitModifiers/AgilityPanel/AgilityContainer" unique_id=1420901994]
+[node name="AgilitySpinbox" type="SpinBox" parent="TraitModifiers/AgilityPanel/AgilityContainer" unique_id=1306810026]
 layout_mode = 2
-size_flags_vertical = 4
-
-[node name="SpinBox" type="SpinBox" parent="TraitModifiers/AgilityPanel/AgilityContainer/Agility" unique_id=1306810026]
-layout_mode = 0
-offset_right = 86.5
-offset_bottom = 31.0
 min_value = -1.0
 alignment = 1
 
 [node name="StrengthPanel" type="PanelContainer" parent="TraitModifiers" unique_id=1240049060]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_styles/panel = ExtResource("2_c8oo5")
 
 [node name="StrengthContainer" type="BoxContainer" parent="TraitModifiers/StrengthPanel" unique_id=546099669]
 custom_minimum_size = Vector2(164, 0)
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 4
 
 [node name="Label" type="Label" parent="TraitModifiers/StrengthPanel/StrengthContainer" unique_id=270208455]
 layout_mode = 2
 text = "Strength:"
+vertical_alignment = 1
 
-[node name="Strength" type="LineEdit" parent="TraitModifiers/StrengthPanel/StrengthContainer" unique_id=1916158857]
-custom_minimum_size = Vector2(50, 25)
+[node name="StrengthSpinbox" type="SpinBox" parent="TraitModifiers/StrengthPanel/StrengthContainer" unique_id=1298242004]
 layout_mode = 2
-size_flags_vertical = 4
-
-[node name="SpinBox" type="SpinBox" parent="TraitModifiers/StrengthPanel/StrengthContainer/Strength" unique_id=1298242004]
-layout_mode = 0
-offset_right = 86.5
-offset_bottom = 31.0
 min_value = -1.0
 alignment = 1
 
 [node name="FinessePanel" type="PanelContainer" parent="TraitModifiers" unique_id=1146771778]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_styles/panel = ExtResource("2_c8oo5")
 
 [node name="FinesseContainer" type="BoxContainer" parent="TraitModifiers/FinessePanel" unique_id=1194059882]
 custom_minimum_size = Vector2(154, 0)
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 4
 
 [node name="Label" type="Label" parent="TraitModifiers/FinessePanel/FinesseContainer" unique_id=2135928192]
 layout_mode = 2
 text = "Finesse:"
+vertical_alignment = 1
 
-[node name="Finesse" type="LineEdit" parent="TraitModifiers/FinessePanel/FinesseContainer" unique_id=400501315]
-custom_minimum_size = Vector2(50, 25)
+[node name="FinesseSpinbox" type="SpinBox" parent="TraitModifiers/FinessePanel/FinesseContainer" unique_id=667668459]
 layout_mode = 2
-size_flags_vertical = 4
-
-[node name="SpinBox" type="SpinBox" parent="TraitModifiers/FinessePanel/FinesseContainer/Finesse" unique_id=667668459]
-layout_mode = 0
-offset_right = 86.5
-offset_bottom = 31.0
 min_value = -1.0
 alignment = 1
 
 [node name="InstinctPanel" type="PanelContainer" parent="TraitModifiers" unique_id=625353031]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_styles/panel = ExtResource("2_c8oo5")
 
 [node name="InstinctContainer" type="BoxContainer" parent="TraitModifiers/InstinctPanel" unique_id=1848782649]
 custom_minimum_size = Vector2(155, 0)
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 4
 
 [node name="Label" type="Label" parent="TraitModifiers/InstinctPanel/InstinctContainer" unique_id=1221245103]
 layout_mode = 2
 text = "Instinct:"
 
-[node name="Instinct" type="LineEdit" parent="TraitModifiers/InstinctPanel/InstinctContainer" unique_id=711950248]
-custom_minimum_size = Vector2(50, 25)
+[node name="InstinctSpinbox" type="SpinBox" parent="TraitModifiers/InstinctPanel/InstinctContainer" unique_id=1594031626]
 layout_mode = 2
-size_flags_vertical = 4
-
-[node name="SpinBox" type="SpinBox" parent="TraitModifiers/InstinctPanel/InstinctContainer/Instinct" unique_id=1594031626]
-layout_mode = 0
-offset_right = 86.5
-offset_bottom = 31.0
 min_value = -1.0
 alignment = 1
 
 [node name="PrescencePanel" type="PanelContainer" parent="TraitModifiers" unique_id=1242949170]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_styles/panel = ExtResource("2_c8oo5")
 
 [node name="PrescenceContainer" type="BoxContainer" parent="TraitModifiers/PrescencePanel" unique_id=1511671395]
 custom_minimum_size = Vector2(175, 0)
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 4
 
 [node name="Label" type="Label" parent="TraitModifiers/PrescencePanel/PrescenceContainer" unique_id=515719497]
 layout_mode = 2
 text = "Presence"
 
-[node name="Prescence" type="LineEdit" parent="TraitModifiers/PrescencePanel/PrescenceContainer" unique_id=918780444]
-custom_minimum_size = Vector2(50, 25)
+[node name="PresenceSpinbox" type="SpinBox" parent="TraitModifiers/PrescencePanel/PrescenceContainer" unique_id=167506490]
 layout_mode = 2
-size_flags_vertical = 4
-
-[node name="SpinBox" type="SpinBox" parent="TraitModifiers/PrescencePanel/PrescenceContainer/Prescence" unique_id=167506490]
-layout_mode = 0
-offset_right = 86.5
-offset_bottom = 31.0
 min_value = -1.0
 alignment = 1
 
 [node name="KnowledgePanel" type="PanelContainer" parent="TraitModifiers" unique_id=793671647]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_styles/panel = ExtResource("2_c8oo5")
 
 [node name="KnowledgeContainer" type="BoxContainer" parent="TraitModifiers/KnowledgePanel" unique_id=959325206]
 custom_minimum_size = Vector2(182, 0)
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 4
 
 [node name="Label" type="Label" parent="TraitModifiers/KnowledgePanel/KnowledgeContainer" unique_id=14507721]
 layout_mode = 2
 text = "Knowledge:"
 
-[node name="Knowledge" type="LineEdit" parent="TraitModifiers/KnowledgePanel/KnowledgeContainer" unique_id=445053709]
-custom_minimum_size = Vector2(50, 25)
+[node name="KnowledgeSpinbox" type="SpinBox" parent="TraitModifiers/KnowledgePanel/KnowledgeContainer" unique_id=173268576]
 layout_mode = 2
-size_flags_vertical = 4
-
-[node name="SpinBox" type="SpinBox" parent="TraitModifiers/KnowledgePanel/KnowledgeContainer/Knowledge" unique_id=173268576]
-layout_mode = 0
-offset_right = 86.5
-offset_bottom = 31.0
 min_value = -1.0
 alignment = 1
 
@@ -659,84 +656,8 @@ layout_mode = 2
 size_flags_vertical = 8
 theme_override_constants/separation = 10
 
-[node name="DamageThresholds" type="MarginContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer" unique_id=364119110]
+[node name="DamageThresholdDisplay" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer" unique_id=1301891163 instance=ExtResource("11_2ohwh")]
 layout_mode = 2
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 5
-
-[node name="HBoxContainer" type="HBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/DamageThresholds" unique_id=35536270]
-layout_mode = 2
-size_flags_horizontal = 4
-
-[node name="MajorThreshold" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/DamageThresholds/HBoxContainer" unique_id=1441793302]
-custom_minimum_size = Vector2(125, 0)
-layout_mode = 2
-theme_override_styles/panel = ExtResource("2_c8oo5")
-
-[node name="FieldContainer" type="VBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/DamageThresholds/HBoxContainer/MajorThreshold" unique_id=2098797474]
-layout_mode = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/DamageThresholds/HBoxContainer/MajorThreshold/FieldContainer" unique_id=2002611526]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 15
-theme_override_constants/margin_bottom = 5
-
-[node name="FieldValue" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/DamageThresholds/HBoxContainer/MajorThreshold/FieldContainer/MarginContainer" unique_id=1355398323]
-layout_mode = 2
-theme_override_font_sizes/font_size = 24
-text = "0"
-horizontal_alignment = 1
-vertical_alignment = 2
-
-[node name="PanelContainer" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/DamageThresholds/HBoxContainer/MajorThreshold/FieldContainer" unique_id=1443844467]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_gjf7o")
-
-[node name="FieldLabel" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/DamageThresholds/HBoxContainer/MajorThreshold/FieldContainer/PanelContainer" unique_id=345306745]
-custom_minimum_size = Vector2(30, 0)
-layout_mode = 2
-text = "Major Dmg"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="SevereThreshold" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/DamageThresholds/HBoxContainer" unique_id=1103550042]
-custom_minimum_size = Vector2(125, 0)
-layout_mode = 2
-theme_override_styles/panel = ExtResource("2_c8oo5")
-
-[node name="FieldContainer" type="VBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/DamageThresholds/HBoxContainer/SevereThreshold" unique_id=107534197]
-layout_mode = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/DamageThresholds/HBoxContainer/SevereThreshold/FieldContainer" unique_id=1132997976]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 15
-theme_override_constants/margin_bottom = 5
-
-[node name="FieldValue" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/DamageThresholds/HBoxContainer/SevereThreshold/FieldContainer/MarginContainer" unique_id=1448989266]
-layout_mode = 2
-theme_override_font_sizes/font_size = 24
-text = "0"
-horizontal_alignment = 1
-vertical_alignment = 2
-
-[node name="PanelContainer" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/DamageThresholds/HBoxContainer/SevereThreshold/FieldContainer" unique_id=521044599]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_gjf7o")
-
-[node name="FieldLabel" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/DamageThresholds/HBoxContainer/SevereThreshold/FieldContainer/PanelContainer" unique_id=923866396]
-custom_minimum_size = Vector2(30, 0)
-layout_mode = 2
-text = "Severe Dmg"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="MarkableStats" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer" unique_id=1999565809]
 layout_mode = 2
@@ -747,188 +668,57 @@ layout_mode = 2
 
 [node name="Health" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer" unique_id=898166146]
 layout_mode = 2
-theme_override_styles/panel = ExtResource("2_c8oo5")
-script = ExtResource("4_qgeia")
+theme_override_styles/panel = ExtResource("4_irdes")
 
-[node name="FieldContainer" type="HBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Health" unique_id=1675041664]
+[node name="checkable_buttons" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Health" unique_id=1054008189 instance=ExtResource("7_rj3pj")]
 layout_mode = 2
-theme_override_constants/separation = 1
-
-[node name="Labels" type="HBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Health/FieldContainer" unique_id=1411703975]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="FieldName" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Health/FieldContainer/Labels" unique_id=156588636]
-custom_minimum_size = Vector2(150, 0)
-layout_mode = 2
-text = "Marked Health:"
-
-[node name="FieldValue" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Health/FieldContainer/Labels" unique_id=934834431]
-custom_minimum_size = Vector2(50, 0)
-layout_mode = 2
-
-[node name="Buttons" type="HBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Health/FieldContainer" unique_id=788903875]
-layout_mode = 2
-
-[node name="IncrementButton" type="Button" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Health/FieldContainer/Buttons" unique_id=1813164056]
-custom_minimum_size = Vector2(40, 30)
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_5rpyy")
-text = "+"
-
-[node name="DecrementButton" type="Button" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Health/FieldContainer/Buttons" unique_id=1471146276]
-custom_minimum_size = Vector2(40, 30)
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_c8oo5")
-text = "-"
 
 [node name="Stress" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer" unique_id=2030183416]
 layout_mode = 2
-theme_override_styles/panel = ExtResource("2_c8oo5")
-script = ExtResource("4_qgeia")
+theme_override_styles/panel = ExtResource("4_irdes")
 
-[node name="FieldContainer" type="HBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Stress" unique_id=1848188292]
+[node name="checkable_buttons" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Stress" unique_id=1984381611 instance=ExtResource("7_rj3pj")]
 layout_mode = 2
-theme_override_constants/separation = 1
-
-[node name="Labels" type="HBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Stress/FieldContainer" unique_id=781890519]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="FieldName" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Stress/FieldContainer/Labels" unique_id=1888500388]
-custom_minimum_size = Vector2(150, 0)
-layout_mode = 2
-text = "Marked Stress:"
-
-[node name="FieldValue" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Stress/FieldContainer/Labels" unique_id=870010703]
-custom_minimum_size = Vector2(50, 0)
-layout_mode = 2
-
-[node name="Buttons" type="HBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Stress/FieldContainer" unique_id=1839278276]
-layout_mode = 2
-
-[node name="IncrementButton" type="Button" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Stress/FieldContainer/Buttons" unique_id=476777845]
-custom_minimum_size = Vector2(40, 30)
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_5rpyy")
-text = "+"
-
-[node name="DecrementButton" type="Button" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Stress/FieldContainer/Buttons" unique_id=212254171]
-custom_minimum_size = Vector2(40, 30)
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_c8oo5")
-text = "-"
 
 [node name="Hope" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer" unique_id=431121348]
 layout_mode = 2
-theme_override_styles/panel = ExtResource("2_c8oo5")
-script = ExtResource("4_qgeia")
+theme_override_styles/panel = ExtResource("4_irdes")
 
-[node name="FieldContainer" type="HBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Hope" unique_id=135152164]
+[node name="checkable_buttons" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Hope" unique_id=858122431 instance=ExtResource("7_rj3pj")]
 layout_mode = 2
-theme_override_constants/separation = 1
-
-[node name="Labels" type="HBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Hope/FieldContainer" unique_id=1661390057]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="FieldName" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Hope/FieldContainer/Labels" unique_id=1034984974]
-custom_minimum_size = Vector2(150, 0)
-layout_mode = 2
-text = "Current Hope:"
-
-[node name="FieldValue" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Hope/FieldContainer/Labels" unique_id=1200812551]
-custom_minimum_size = Vector2(50, 0)
-layout_mode = 2
-
-[node name="Buttons" type="HBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Hope/FieldContainer" unique_id=101616658]
-layout_mode = 2
-
-[node name="IncrementButton" type="Button" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Hope/FieldContainer/Buttons" unique_id=1858314804]
-custom_minimum_size = Vector2(40, 30)
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_5rpyy")
-text = "+"
-
-[node name="DecrementButton" type="Button" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Hope/FieldContainer/Buttons" unique_id=2041295477]
-custom_minimum_size = Vector2(40, 30)
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_c8oo5")
-text = "-"
-
-[node name="Armor" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer" unique_id=592864428]
-layout_mode = 2
-theme_override_styles/panel = ExtResource("2_c8oo5")
-script = ExtResource("4_qgeia")
-
-[node name="FieldContainer" type="HBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Armor" unique_id=125254012]
-layout_mode = 2
-theme_override_constants/separation = 1
-
-[node name="Labels" type="HBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Armor/FieldContainer" unique_id=249560848]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="FieldName" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Armor/FieldContainer/Labels" unique_id=1844967160]
-custom_minimum_size = Vector2(150, 0)
-layout_mode = 2
-text = "Used Armor:"
-
-[node name="FieldValue" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Armor/FieldContainer/Labels" unique_id=1747823043]
-custom_minimum_size = Vector2(50, 0)
-layout_mode = 2
-
-[node name="Buttons" type="HBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Armor/FieldContainer" unique_id=1367763343]
-layout_mode = 2
-
-[node name="IncrementButton" type="Button" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Armor/FieldContainer/Buttons" unique_id=496211763]
-custom_minimum_size = Vector2(40, 30)
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_5rpyy")
-text = "+"
-
-[node name="DecrementButton" type="Button" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/MarkableStats/VBoxContainer/Armor/FieldContainer/Buttons" unique_id=276716746]
-custom_minimum_size = Vector2(40, 30)
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_c8oo5")
-text = "-"
 
 [node name="LeftPanelButtons" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer" unique_id=1687151303]
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 size_flags_vertical = 8
-theme_override_styles/panel = ExtResource("2_c8oo5")
+theme = ExtResource("12_rllm4")
 
 [node name="MarginContainer" type="MarginContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons" unique_id=1743009752]
 layout_mode = 2
-theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
 [node name="VBoxContainer" type="VBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer" unique_id=766569678]
 layout_mode = 2
+theme_override_constants/separation = 6
 
 [node name="ActionButtons" type="HBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer" unique_id=92466979]
 layout_mode = 2
+theme_override_constants/separation = 6
 
 [node name="RestButtons" type="VBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons" unique_id=1953046344]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_constants/separation = 6
 
 [node name="ShortRest" type="Button" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/RestButtons" unique_id=375690570]
-custom_minimum_size = Vector2(100, 30)
 layout_mode = 2
 size_flags_horizontal = 5
 size_flags_vertical = 4
 text = "Short Rest"
 
 [node name="LongRest" type="Button" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/RestButtons" unique_id=1429046138]
-custom_minimum_size = Vector2(100, 30)
 layout_mode = 2
 size_flags_horizontal = 5
 size_flags_vertical = 4
@@ -1020,17 +810,15 @@ text = "Confirm"
 [node name="DiceButtons" type="VBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons" unique_id=164893220]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/separation = 4
+theme_override_constants/separation = 6
 
 [node name="Dice" type="Button" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/DiceButtons" unique_id=1692544909]
-custom_minimum_size = Vector2(100, 30)
 layout_mode = 2
 size_flags_horizontal = 5
 size_flags_vertical = 4
 text = "Dice Roll"
 
 [node name="FHDice" type="Button" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/DiceButtons" unique_id=272697354]
-custom_minimum_size = Vector2(100, 30)
 layout_mode = 2
 size_flags_horizontal = 5
 size_flags_vertical = 4
@@ -1043,20 +831,20 @@ visible = false
 visible = false
 
 [node name="CardsButton" type="Button" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer" unique_id=2032869381]
-custom_minimum_size = Vector2(200, 30)
 layout_mode = 2
 text = "Domain Cards"
 
 [node name="CenterPanel" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer" unique_id=668516758]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_styles/panel = ExtResource("2_c8oo5")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_5ih58")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel" unique_id=345703533]
 layout_mode = 2
 
 [node name="EvasionProficiencyMargin" type="MarginContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer" unique_id=1068692241]
 layout_mode = 2
+size_flags_vertical = 0
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
@@ -1065,25 +853,27 @@ theme_override_constants/margin_bottom = 5
 [node name="HBoxContainer" type="HBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EvasionProficiencyMargin" unique_id=1174515028]
 layout_mode = 2
 size_flags_horizontal = 4
+size_flags_vertical = 0
 
 [node name="Evasion" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EvasionProficiencyMargin/HBoxContainer" unique_id=288805226]
 custom_minimum_size = Vector2(125, 0)
 layout_mode = 2
-theme_override_styles/panel = ExtResource("2_c8oo5")
+size_flags_vertical = 0
+theme_override_styles/panel = ExtResource("15_1vmjr")
 
 [node name="FieldContainer" type="VBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EvasionProficiencyMargin/HBoxContainer/Evasion" unique_id=1737631886]
 layout_mode = 2
+size_flags_vertical = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EvasionProficiencyMargin/HBoxContainer/Evasion/FieldContainer" unique_id=666988413]
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_vertical = 2
 theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 15
-theme_override_constants/margin_bottom = 5
 
 [node name="FieldValue" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EvasionProficiencyMargin/HBoxContainer/Evasion/FieldContainer/MarginContainer" unique_id=506780720]
 layout_mode = 2
+theme = ExtResource("9_jlx5q")
 theme_override_font_sizes/font_size = 24
 text = "0"
 horizontal_alignment = 1
@@ -1103,21 +893,22 @@ vertical_alignment = 1
 [node name="Proficiency" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EvasionProficiencyMargin/HBoxContainer" unique_id=1168794863]
 custom_minimum_size = Vector2(125, 0)
 layout_mode = 2
-theme_override_styles/panel = ExtResource("2_c8oo5")
+size_flags_vertical = 0
+theme_override_styles/panel = ExtResource("15_1vmjr")
 
 [node name="FieldContainer" type="VBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EvasionProficiencyMargin/HBoxContainer/Proficiency" unique_id=843835469]
 layout_mode = 2
+size_flags_vertical = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EvasionProficiencyMargin/HBoxContainer/Proficiency/FieldContainer" unique_id=1882655637]
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_vertical = 2
 theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 15
-theme_override_constants/margin_bottom = 5
 
 [node name="FieldValue" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EvasionProficiencyMargin/HBoxContainer/Proficiency/FieldContainer/MarginContainer" unique_id=1216961648]
 layout_mode = 2
+theme = ExtResource("9_jlx5q")
 theme_override_font_sizes/font_size = 24
 text = "0"
 horizontal_alignment = 1
@@ -1134,111 +925,143 @@ text = "Proficiency"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ActiveEquipmentLabel" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer" unique_id=9867553]
+[node name="Armor" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer" unique_id=592864428]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("4_irdes")
+
+[node name="checkable_buttons" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/Armor" unique_id=403746211 instance=ExtResource("7_rj3pj")]
+layout_mode = 2
+
+[node name="EquipmentContainer" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer" unique_id=1550373173]
+layout_mode = 2
+theme = ExtResource("17_jlx5q")
+
+[node name="EquipmentMargin" type="MarginContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentContainer" unique_id=925309888]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="EquipmentVBox" type="VBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentContainer/EquipmentMargin" unique_id=1922272708]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="ActiveEquipmentLabel" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentContainer/EquipmentMargin/EquipmentVBox" unique_id=9867553]
 layout_mode = 2
 text = "Active Equipment"
 horizontal_alignment = 1
 
-[node name="EquipmentMargin" type="MarginContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer" unique_id=925309888]
-layout_mode = 2
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_right = 5
-
-[node name="EquipmentVBox" type="VBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentMargin" unique_id=1922272708]
-layout_mode = 2
-theme_override_constants/separation = 8
-
-[node name="PrimaryWeapon" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentMargin/EquipmentVBox" unique_id=772604663]
+[node name="PrimaryWeapon" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentContainer/EquipmentMargin/EquipmentVBox" unique_id=772604663]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ahdvs")
+theme = ExtResource("17_jlx5q")
+theme_type_variation = &"EquipmentItemPanel"
 
-[node name="PrimaryVBox" type="VBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentMargin/EquipmentVBox/PrimaryWeapon" unique_id=2040415458]
+[node name="PrimaryVBox" type="VBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentContainer/EquipmentMargin/EquipmentVBox/PrimaryWeapon" unique_id=2040415458]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 
-[node name="EquipmentName" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentMargin/EquipmentVBox/PrimaryWeapon/PrimaryVBox" unique_id=1948472190]
+[node name="EquipmentLabel" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentContainer/EquipmentMargin/EquipmentVBox/PrimaryWeapon/PrimaryVBox" unique_id=28022259]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = ExtResource("5_svvgr")
+theme_override_styles/focus = ExtResource("5_svvgr")
+text = "Primary Weapon"
+vertical_alignment = 1
+
+[node name="EquipmentInfo" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentContainer/EquipmentMargin/EquipmentVBox/PrimaryWeapon/PrimaryVBox" unique_id=1948472190]
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
-text = "Improved Arcane Gauntlets"
+text = "Sample Primary Weapon
+Trait | Range | Dice"
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="EquipmentInfo" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentMargin/EquipmentVBox/PrimaryWeapon/PrimaryVBox" unique_id=2071509090]
-layout_mode = 2
-text = "trait | range | dice"
-vertical_alignment = 1
-
-[node name="SecondaryWeapon" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentMargin/EquipmentVBox" unique_id=1873584734]
+[node name="SecondaryWeapon" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentContainer/EquipmentMargin/EquipmentVBox" unique_id=1873584734]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ahdvs")
+theme = ExtResource("17_jlx5q")
+theme_type_variation = &"EquipmentItemPanel"
 
-[node name="SecondaryVBox" type="VBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentMargin/EquipmentVBox/SecondaryWeapon" unique_id=518005630]
+[node name="SecondaryVBox" type="VBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentContainer/EquipmentMargin/EquipmentVBox/SecondaryWeapon" unique_id=518005630]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 
-[node name="EquipmentName" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentMargin/EquipmentVBox/SecondaryWeapon/SecondaryVBox" unique_id=1142608982]
+[node name="EquipmentLabel" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentContainer/EquipmentMargin/EquipmentVBox/SecondaryWeapon/SecondaryVBox" unique_id=1607056221]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = ExtResource("5_svvgr")
+theme_override_styles/focus = ExtResource("5_svvgr")
+text = "Secondary Weapon"
+vertical_alignment = 1
+
+[node name="EquipmentInfo" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentContainer/EquipmentMargin/EquipmentVBox/SecondaryWeapon/SecondaryVBox" unique_id=1142608982]
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
-text = "Legendary Arcane Gauntlets"
+text = "Sample Secondary Weapon
+Trait | Range | Dice"
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="EquipmentInfo" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentMargin/EquipmentVBox/SecondaryWeapon/SecondaryVBox" unique_id=636840962]
-layout_mode = 2
-text = "trait | range | dice"
-vertical_alignment = 1
-
-[node name="Armor" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentMargin/EquipmentVBox" unique_id=1331826140]
+[node name="Armor" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentContainer/EquipmentMargin/EquipmentVBox" unique_id=1331826140]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ahdvs")
+theme = ExtResource("17_jlx5q")
+theme_type_variation = &"EquipmentItemPanel"
 
-[node name="ArmorVBox" type="VBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentMargin/EquipmentVBox/Armor" unique_id=952742683]
+[node name="ArmorVBox" type="VBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentContainer/EquipmentMargin/EquipmentVBox/Armor" unique_id=952742683]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 
-[node name="EquipmentName" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentMargin/EquipmentVBox/Armor/ArmorVBox" unique_id=1803456694]
+[node name="EquipmentLabel" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentContainer/EquipmentMargin/EquipmentVBox/Armor/ArmorVBox" unique_id=491978430]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = ExtResource("5_svvgr")
+theme_override_styles/focus = ExtResource("5_svvgr")
+text = "Armor"
+vertical_alignment = 1
+
+[node name="EquipmentInfo" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentContainer/EquipmentMargin/EquipmentVBox/Armor/ArmorVBox" unique_id=1803456694]
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
-text = "Legendary Full Plate Armor"
+text = "Sample Armor Name
+Tier #"
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="EquipmentInfo" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentMargin/EquipmentVBox/Armor/ArmorVBox" unique_id=793626696]
+[node name="ManageEquipment" type="Button" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentContainer/EquipmentMargin/EquipmentVBox" unique_id=1821670160]
 layout_mode = 2
-text = "Tier 3"
-vertical_alignment = 1
-
-[node name="ManageEquipment" type="Button" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentMargin/EquipmentVBox" unique_id=1821670160]
-layout_mode = 2
+theme = ExtResource("12_rllm4")
 text = "Manage Equipment"
 
 [node name="RightPanel" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer" unique_id=1912298009]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_styles/panel = ExtResource("2_c8oo5")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_svvgr")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel" unique_id=215329659]
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_constants/separation = 10
+theme_override_constants/separation = 6
 
 [node name="BioPanelContainer" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer" unique_id=1074177722]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxEmpty_ahdvs")
+theme_override_styles/panel = ExtResource("15_1vmjr")
 metadata/_edit_use_anchors_ = true
 
 [node name="BioMarginContainer" type="MarginContainer" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/BioPanelContainer" unique_id=587499667]
@@ -1251,96 +1074,126 @@ theme_override_constants/margin_bottom = 5
 layout_mode = 2
 
 [node name="Label" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/BioPanelContainer/BioMarginContainer/Bio" unique_id=986580117]
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
-size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
 text = "Bio"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="BioEdit" type="TextEdit" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/BioPanelContainer/BioMarginContainer/Bio" unique_id=1791306647]
 custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
+theme_override_colors/font_placeholder_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1vmjr")
 placeholder_text = "Include a brief description of your character here "
 wrap_mode = 1
 
-[node name="Experiences" type="VBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer" unique_id=2003283091]
+[node name="ExperiencesPanelContainer" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer" unique_id=1172118305]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("15_1vmjr")
+
+[node name="MarginContainer" type="MarginContainer" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer" unique_id=803406521]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 4
+
+[node name="Experiences" type="VBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer" unique_id=2003283091]
 layout_mode = 2
 script = ExtResource("10_rj3pj")
 
-[node name="Label" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/Experiences" unique_id=908732964]
+[node name="Label" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences" unique_id=908732964]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
 text = "Experiences"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Experience1" type="HBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/Experiences" unique_id=1280858404]
+[node name="Experience1" type="HBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences" unique_id=1280858404]
 layout_mode = 2
 
-[node name="Experience1" type="LineEdit" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/Experiences/Experience1" unique_id=1020765395]
+[node name="Experience1" type="LineEdit" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences/Experience1" unique_id=1020765395]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 3
+theme = ExtResource("17_i1vic")
+text = "temp"
 
-[node name="SpinBox" type="SpinBox" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/Experiences/Experience1" unique_id=2107774909]
+[node name="SpinBox" type="SpinBox" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences/Experience1" unique_id=2107774909]
 layout_mode = 2
+theme = ExtResource("17_i1vic")
 min_value = -100.0
 value = 2.0
 allow_greater = true
 allow_lesser = true
 
-[node name="Experience2" type="HBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/Experiences" unique_id=281734232]
+[node name="Experience2" type="HBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences" unique_id=281734232]
 layout_mode = 2
 
-[node name="Experience2" type="LineEdit" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/Experiences/Experience2" unique_id=1768669913]
+[node name="Experience2" type="LineEdit" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences/Experience2" unique_id=1768669913]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 3
+theme = ExtResource("17_i1vic")
 
-[node name="SpinBox" type="SpinBox" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/Experiences/Experience2" unique_id=2060575037]
+[node name="SpinBox" type="SpinBox" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences/Experience2" unique_id=2060575037]
 layout_mode = 2
+theme = ExtResource("17_i1vic")
 min_value = -100.0
 value = 2.0
 allow_greater = true
 allow_lesser = true
 
-[node name="Experience3" type="HBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/Experiences" unique_id=517739238]
+[node name="Experience3" type="HBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences" unique_id=517739238]
 layout_mode = 2
 
-[node name="Experience3" type="LineEdit" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/Experiences/Experience3" unique_id=321112575]
+[node name="Experience3" type="LineEdit" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences/Experience3" unique_id=321112575]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 3
+theme = ExtResource("17_i1vic")
 
-[node name="SpinBox" type="SpinBox" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/Experiences/Experience3" unique_id=8149512]
+[node name="SpinBox" type="SpinBox" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences/Experience3" unique_id=8149512]
 layout_mode = 2
+theme = ExtResource("17_i1vic")
 min_value = -100.0
 value = 2.0
 allow_greater = true
 allow_lesser = true
 
-[node name="Experience4" type="HBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/Experiences" unique_id=1618166217]
+[node name="Experience4" type="HBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences" unique_id=1618166217]
 layout_mode = 2
 
-[node name="Experience4" type="LineEdit" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/Experiences/Experience4" unique_id=57808382]
+[node name="Experience4" type="LineEdit" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences/Experience4" unique_id=57808382]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 3
+theme = ExtResource("17_i1vic")
 
-[node name="SpinBox" type="SpinBox" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/Experiences/Experience4" unique_id=1067876951]
+[node name="SpinBox" type="SpinBox" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences/Experience4" unique_id=1067876951]
 layout_mode = 2
+theme = ExtResource("17_i1vic")
 min_value = -100.0
 value = 2.0
 allow_greater = true
 allow_lesser = true
 
-[node name="Experience5" type="HBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/Experiences" unique_id=1984229138]
+[node name="Experience5" type="HBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences" unique_id=1984229138]
 layout_mode = 2
 
-[node name="Experience5" type="LineEdit" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/Experiences/Experience5" unique_id=1875908754]
+[node name="Experience5" type="LineEdit" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences/Experience5" unique_id=1875908754]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 3
+theme = ExtResource("17_i1vic")
 
-[node name="SpinBox" type="SpinBox" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/Experiences/Experience5" unique_id=986027287]
+[node name="SpinBox" type="SpinBox" parent="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences/Experience5" unique_id=986027287]
 layout_mode = 2
+theme = ExtResource("17_i1vic")
 min_value = -100.0
 value = 2.0
 allow_greater = true
@@ -1352,10 +1205,12 @@ title = "Advancements"
 initial_position = 2
 size = Vector2i(1030, 560)
 visible = false
+min_size = Vector2i(1030, 560)
+max_size = Vector2i(1030, 560)
+theme = ExtResource("21_dxpx4")
 script = ExtResource("7_56qfy")
 
 [node name="ObjectContainer" type="HFlowContainer" parent="AdvanceWindow" unique_id=1685616752]
-visible = false
 anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5
@@ -1369,6 +1224,7 @@ grow_vertical = 2
 
 [node name="Header" type="Label" parent="AdvanceWindow/ObjectContainer" unique_id=970900252]
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mamue")
 text = "Select 2 stats to add a permanent +1 to:"
 label_settings = SubResource("LabelSettings_56qfy")
 horizontal_alignment = 1
@@ -1380,6 +1236,7 @@ layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="AdvanceWindow/ObjectContainer/Traits" unique_id=1921439541]
 layout_mode = 2
+theme = ExtResource("9_jlx5q")
 
 [node name="Label" type="Label" parent="AdvanceWindow/ObjectContainer/Traits/VBoxContainer" unique_id=168523618]
 layout_mode = 2
@@ -1490,6 +1347,7 @@ text = "Extra Domain Card
 "
 
 [node name="MulticlassPanel" type="PanelContainer" parent="AdvanceWindow/ObjectContainer" unique_id=71834697]
+custom_minimum_size = Vector2(195, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -1565,6 +1423,9 @@ title = "Manage Equipment"
 initial_position = 2
 size = Vector2i(1030, 560)
 visible = false
+min_size = Vector2i(1030, 560)
+max_size = Vector2i(1030, 560)
+theme = ExtResource("9_jlx5q")
 script = ExtResource("10_7pq50")
 
 [node name="EquipmentList" type="HBoxContainer" parent="EquipmentWindow" unique_id=1421846324]
@@ -1729,7 +1590,7 @@ theme_override_font_sizes/font_size = 14
 text = "You have advantage on rolls to consort with nobles, negotiate prices, or leverage your reputation to get what you want."
 autowrap_mode = 2
 
-[connection signal="text_submitted" from="HeaderMargin/Header/HeaderInfo/NamePronouns/NamePanelContainer/NameC/NameEdit" to="." method="_on_name_edit_text_submitted"]
+[connection signal="text_submitted" from="HeaderMargin/Header/HeaderInfo/NamePronouns/NamePanelContainerOLD/NameC/NameEdit" to="." method="_on_name_edit_text_submitted"]
 [connection signal="text_changed" from="HeaderMargin/Header/HeaderInfo/NamePronouns/PronounsPanelContainer/Pronouns/PronounsEdit" to="." method="_on_pronouns_text_changed"]
 [connection signal="text_submitted" from="HeaderMargin/Header/HeaderInfo/NamePronouns/PronounsPanelContainer/Pronouns/PronounsEdit" to="." method="_on_pronouns_text_submitted"]
 [connection signal="close_requested" from="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/RestButtons/RestWindow" to="." method="_on_rest_window_close_requested"]
@@ -1737,13 +1598,13 @@ autowrap_mode = 2
 [connection signal="close_requested" from="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/DiceButtons/DiceRollWindow" to="." method="_on_dice_roll_window_close_requested"]
 [connection signal="pressed" from="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/CardsButton" to="." method="_on_cards_button_pressed"]
 [connection signal="text_changed" from="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/BioPanelContainer/BioMarginContainer/Bio/BioEdit" to="." method="_on_bio_text_changed"]
-[connection signal="text_changed" from="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/Experiences/Experience1/Experience1" to="." method="_on_experience_1_text_changed"]
-[connection signal="text_submitted" from="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/Experiences/Experience1/Experience1" to="." method="_on_experience_1_text_submitted"]
-[connection signal="text_changed" from="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/Experiences/Experience2/Experience2" to="." method="_on_experience_2_text_changed"]
-[connection signal="text_submitted" from="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/Experiences/Experience2/Experience2" to="." method="_on_experience_2_text_submitted"]
-[connection signal="text_changed" from="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/Experiences/Experience3/Experience3" to="." method="_on_experience_3_text_changed"]
-[connection signal="text_submitted" from="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/Experiences/Experience3/Experience3" to="." method="_on_experience_3_text_submitted"]
-[connection signal="text_changed" from="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/Experiences/Experience4/Experience4" to="." method="_on_experience_4_text_changed"]
-[connection signal="text_submitted" from="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/Experiences/Experience4/Experience4" to="." method="_on_experience_4_text_submitted"]
-[connection signal="text_changed" from="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/Experiences/Experience5/Experience5" to="." method="_on_experience_5_text_changed"]
-[connection signal="text_submitted" from="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/Experiences/Experience5/Experience5" to="." method="_on_experience_5_text_submitted"]
+[connection signal="text_changed" from="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences/Experience1/Experience1" to="." method="_on_experience_1_text_changed"]
+[connection signal="text_submitted" from="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences/Experience1/Experience1" to="." method="_on_experience_1_text_submitted"]
+[connection signal="text_changed" from="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences/Experience2/Experience2" to="." method="_on_experience_2_text_changed"]
+[connection signal="text_submitted" from="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences/Experience2/Experience2" to="." method="_on_experience_2_text_submitted"]
+[connection signal="text_changed" from="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences/Experience3/Experience3" to="." method="_on_experience_3_text_changed"]
+[connection signal="text_submitted" from="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences/Experience3/Experience3" to="." method="_on_experience_3_text_submitted"]
+[connection signal="text_changed" from="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences/Experience4/Experience4" to="." method="_on_experience_4_text_changed"]
+[connection signal="text_submitted" from="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences/Experience4/Experience4" to="." method="_on_experience_4_text_submitted"]
+[connection signal="text_changed" from="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences/Experience5/Experience5" to="." method="_on_experience_5_text_changed"]
+[connection signal="text_submitted" from="BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences/Experience5/Experience5" to="." method="_on_experience_5_text_submitted"]
