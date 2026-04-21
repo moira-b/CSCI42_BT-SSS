@@ -319,7 +319,7 @@ func equip_armor(armor: String):
 		instinct -= 1
 		presence -= 1
 		knowledge -= 1
-		
+	
 	
 func unequip_armor(armor: String):
 	print("unequipped armor: " + armor)
