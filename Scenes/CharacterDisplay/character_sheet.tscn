@@ -6,7 +6,6 @@
 [ext_resource type="Script" uid="uid://dfs5rt0xu3vuj" path="res://Scripts/CharacterDisplay/rest.gd" id="4_8iwex"]
 [ext_resource type="StyleBox" uid="uid://bbokr0uyec1ac" path="res://Resources/GUIStyles/line_edit_normal.tres" id="4_48wf7"]
 [ext_resource type="StyleBox" uid="uid://dhobd2i8q8nhi" path="res://Resources/GUIStyles/purple_panel.tres" id="4_irdes"]
-[ext_resource type="StyleBox" uid="uid://dae1vokrglwgx" path="res://Resources/GUIStyles/class_ancestry_community_panel.tres" id="4_rj3pj"]
 [ext_resource type="StyleBox" uid="uid://duwnobw5p4cl6" path="res://Resources/GUIStyles/line_edit_focus.tres" id="5_asla6"]
 [ext_resource type="PackedScene" uid="uid://dltyc5tel16kj" path="res://Scenes/CharacterDisplay/dice_roll_window.tscn" id="5_glymg"]
 [ext_resource type="Script" uid="uid://wblpjoc7sjgv" path="res://Scripts/CharacterDisplay/save_notification.gd" id="5_n5rmr"]
@@ -186,65 +185,27 @@ theme_override_styles/focus = ExtResource("5_asla6")
 
 [node name="ClassCommunityAncestry" type="HBoxContainer" parent="HeaderMargin/Header/HeaderInfo" unique_id=1686316360]
 layout_mode = 2
+theme = ExtResource("15_asla6")
 theme_override_constants/separation = 10
 
-[node name="ClassPanelContainer" type="PanelContainer" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry" unique_id=1493424672]
+[node name="Class" type="Button" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry" unique_id=1310818618]
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
-theme_override_styles/panel = ExtResource("4_rj3pj")
+text = "Class (Subclass)"
 
-[node name="Class" type="Label" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/ClassPanelContainer" unique_id=1140117280]
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_constants/paragraph_spacing = -5
-theme_override_font_sizes/font_size = 12
-text = "class_name (subclass)"
-horizontal_alignment = 1
-vertical_alignment = 1
-max_lines_visible = 2
-
-[node name="MulticlassPanelContainer" type="PanelContainer" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry" unique_id=1942449780]
+[node name="Multiclass" type="Button" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry" unique_id=1353815009]
 visible = false
 layout_mode = 2
-theme_override_styles/panel = ExtResource("4_rj3pj")
+text = "Multiclass (Subclass)
+"
 
-[node name="Multiclass" type="Label" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/MulticlassPanelContainer" unique_id=623927426]
+[node name="Ancestry" type="Button" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry" unique_id=32417532]
 layout_mode = 2
-size_flags_horizontal = 4
-theme_override_constants/paragraph_spacing = -5
-theme_override_font_sizes/font_size = 12
-text = "optional multiclass (subclass)"
-horizontal_alignment = 1
-vertical_alignment = 1
-max_lines_visible = 2
+text = "Ancestry"
 
-[node name="AncestryPanelContainer" type="PanelContainer" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry" unique_id=913894309]
+[node name="Community" type="Button" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry" unique_id=1982840422]
 layout_mode = 2
-theme_override_styles/panel = ExtResource("4_rj3pj")
-
-[node name="Ancestry" type="Label" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/AncestryPanelContainer" unique_id=705797364]
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_constants/paragraph_spacing = -5
-theme_override_font_sizes/font_size = 12
-text = "ancestry_name"
-horizontal_alignment = 1
-vertical_alignment = 1
-max_lines_visible = 2
-
-[node name="CommunityPanelContainer" type="PanelContainer" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry" unique_id=1597585474]
-layout_mode = 2
-theme_override_styles/panel = ExtResource("4_rj3pj")
-
-[node name="Community" type="Label" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/CommunityPanelContainer" unique_id=266250659]
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_constants/paragraph_spacing = -5
-theme_override_font_sizes/font_size = 12
-text = "community_name"
-horizontal_alignment = 1
-vertical_alignment = 1
-max_lines_visible = 2
+text = "Community"
 
 [node name="Level" type="PanelContainer" parent="HeaderMargin/Header" unique_id=1090331652]
 custom_minimum_size = Vector2(150, 0)
