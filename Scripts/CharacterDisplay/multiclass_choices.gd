@@ -5,14 +5,23 @@ extends HBoxContainer
 @onready var class_subclass_list = $MulticlassSpecifics/MulticlassSubclassList
 @onready var confirm_button = $"../ConfirmButton"
 
-@export var character_classes : Array[CharacterClass]
-
 var selected_class: CharacterClass
 var selected_domain: Domain
 var character: Character
 var selected_subclass: CharacterSubclass
-
 var domain_choice_array: Array[Domain]
+
+var character_classes = [
+	"res://Resources/Classes/Bard/bard.tres",
+	"res://Resources/Classes/Druid/druid.tres",
+	"res://Resources/Classes/Guardian/guardian.tres",
+	"res://Resources/Classes/Ranger/ranger.tres",
+	"res://Resources/Classes/Rogue/rogue.tres",
+	"res://Resources/Classes/Seraph/seraph.tres",
+	"res://Resources/Classes/Sorcerer/sorcerer.tres",
+	"res://Resources/Classes/Warrior/warrior.tres",
+	"res://Resources/Classes/Wizard/wizard.tres"
+]
 
 func initialize() -> void:
 	_display_multiclass_choices()
@@ -28,8 +37,9 @@ func get_character(c: Character) -> void:
 func _display_multiclass_choices() -> void:
 	var i = 0
 	for character_class in character_classes:
-		class_choice_list.add_item(character_class.name)
-		if character_class == character.character_class || character.multiclass_selection == character_class:
+		var character_class_name = load(character_class).name
+		class_choice_list.add_item(character_class_name)
+		if character_class_name == character.character_class.name:
 			class_choice_list.set_item_disabled(i, true)
 		i+=1
 
@@ -56,7 +66,7 @@ func _display_subclass_choices() -> void:
 
 func _on_multiclass_choice_option_selected(index: int) -> void:
 	confirm_button.disabled = true
-	selected_class = character_classes[index]
+	selected_class = load(character_classes[index])
 	_display_domain_choices()
 	_display_subclass_choices()
 
@@ -73,7 +83,6 @@ func _on_subclass_choice_option_selected(index: int) -> void:
 		confirm_button.disabled = false
 		
 func _on_confirm_button_pressed() -> void:
-	print("AAAAAA")
 	character.multiclass_selection = selected_class
 	character.multiclass_domains.append(selected_domain)
 	character.multiclass_subclass = selected_subclass
