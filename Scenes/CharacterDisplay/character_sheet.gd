@@ -398,13 +398,17 @@ func connect_signals() -> void:
 	advance_window.advancements_confirmed.connect(update_markable_fields)
 	advance_window.advancements_confirmed.connect(update_edit_fields)
 
-	class_panel.mouse_entered.connect(_on_mouse_enter_class_panel)
-	ancestry_panel.mouse_entered.connect(_on_mouse_enter_ancestry_panel)
-	community_panel.mouse_entered.connect(_on_mouse_enter_community_panel)
+	#class_panel.mouse_entered.connect(_on_mouse_enter_class_panel)
+	#ancestry_panel.mouse_entered.connect(_on_mouse_enter_ancestry_panel)
+	#community_panel.mouse_entered.connect(_on_mouse_enter_community_panel)
 	
-	class_panel.mouse_exited.connect(_on_mouse_exit_header_panel)
-	ancestry_panel.mouse_exited.connect(_on_mouse_exit_header_panel)
-	community_panel.mouse_exited.connect(_on_mouse_exit_header_panel)
+	#class_panel.mouse_exited.connect(_on_mouse_exit_header_panel)
+	#ancestry_panel.mouse_exited.connect(_on_mouse_exit_header_panel)
+	#community_panel.mouse_exited.connect(_on_mouse_exit_header_panel)
+	
+	class_panel.gui_input.connect(_on_class_panel_clicked.bind(class_panel.get_child(0).name))
+	ancestry_panel.gui_input.connect(_on_class_panel_clicked.bind(ancestry_panel.get_child(0).name))
+	community_panel.gui_input.connect(_on_class_panel_clicked.bind(community_panel.get_child(0).name))
 
 	var manage_equipment_button = $BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentContainer/EquipmentMargin/EquipmentVBox/ManageEquipment
 	manage_equipment_button.pressed.connect(_on_equipment_management_button_pressed)
@@ -470,31 +474,33 @@ func _on_main_menu_button_pressed() -> void:
 	var main_menu = load("res://Scenes/SheetManagement/main_menu.tscn").instantiate()
 	get_tree().root.add_child(main_menu)
 	self.queue_free()
-
-func _on_mouse_enter_class_panel():
-	information_popup.showClassInformation(
-		character.character_class,
-		character.subclass,
-		class_panel.global_position,
-		class_panel.size
-	)
-
-func _on_mouse_enter_ancestry_panel():
-	information_popup.showAncestryInformation(
-		character.ancestry,
-		ancestry_panel.global_position,
-		ancestry_panel.size
-	)
-
-func _on_mouse_enter_community_panel():
-	information_popup.showCommunityInformation(
-		character.community, 
-		community_panel.global_position,
-		community_panel.size
-	)
-
-func _on_mouse_exit_header_panel():
-	information_popup.hide()
+		
+func _on_class_panel_clicked(input: InputEvent, panel: String):
+	if input is InputEventMouseButton and input.button_index == MOUSE_BUTTON_LEFT:
+		if input.pressed:
+			if information_popup.visible == false:
+				if panel == "Class":
+					information_popup.showClassInformation(
+					character.character_class,
+					character.subclass,
+					class_panel.global_position,
+					class_panel.size
+				)
+				if panel == "Ancestry":
+					information_popup.showAncestryInformation(
+					character.ancestry,
+					ancestry_panel.global_position,
+					ancestry_panel.size
+				)
+				if panel == "Community":
+					information_popup.showCommunityInformation(
+					character.community, 
+					community_panel.global_position,
+					community_panel.size
+				)
+			else:
+				information_popup.hide()
+				return
 
 func _on_equipment_management_button_pressed():
 	equipment_window.showWindow(self.character)
