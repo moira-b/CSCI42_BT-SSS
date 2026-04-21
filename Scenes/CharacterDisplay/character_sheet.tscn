@@ -82,6 +82,8 @@ bg_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
 [sub_resource type="LabelSettings" id="LabelSettings_56qfy"]
 font_size = 24
 
+[sub_resource type="Texture2DRD" id="Texture2DRD_jlx5q"]
+
 [node name="CharacterSheet" type="Control" unique_id=1820753171]
 layout_mode = 3
 anchors_preset = 15
@@ -1397,6 +1399,7 @@ title = "Manage Equipment"
 initial_position = 2
 size = Vector2i(1030, 560)
 visible = false
+theme_override_icons/close = SubResource("Texture2DRD_jlx5q")
 script = ExtResource("10_7pq50")
 
 [node name="EquipmentList" type="HBoxContainer" parent="EquipmentWindow" unique_id=1421846324]
