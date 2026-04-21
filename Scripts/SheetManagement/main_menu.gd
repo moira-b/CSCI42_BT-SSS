@@ -66,7 +66,10 @@ func _on_settings_button_pressed(pk, button_position) -> void:
 	if ((options_popup.visible==true) && (options_popup.pk==pk)):
 		options_popup.disable()
 	else:
-		options_popup.enable(pk, button_position)
+		if(button_position.y < 500):
+			options_popup.enable(pk, button_position)
+		else:
+			options_popup.enable(pk, Vector2(button_position.x, 470))
 
 func _on_popup_option_selected(option: String, pk):
 	if (option=="open"):
@@ -94,5 +97,5 @@ func remove_character_panel(pk):
 			panel.queue_free()
 
 func adjust_grid_size(num):
-	grid_container.set_custom_minimum_size(Vector2(1000, num%4*400))
+	grid_container.set_custom_minimum_size(Vector2(1000, num%4*450))
 	
