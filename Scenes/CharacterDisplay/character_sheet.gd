@@ -397,14 +397,6 @@ func connect_signals() -> void:
 	main_menu_button.pressed.connect(_on_main_menu_button_pressed)
 	advance_window.advancements_confirmed.connect(update_markable_fields)
 	advance_window.advancements_confirmed.connect(update_edit_fields)
-
-	#class_panel.mouse_entered.connect(_on_mouse_enter_class_panel)
-	#ancestry_panel.mouse_entered.connect(_on_mouse_enter_ancestry_panel)
-	#community_panel.mouse_entered.connect(_on_mouse_enter_community_panel)
-	
-	#class_panel.mouse_exited.connect(_on_mouse_exit_header_panel)
-	#ancestry_panel.mouse_exited.connect(_on_mouse_exit_header_panel)
-	#community_panel.mouse_exited.connect(_on_mouse_exit_header_panel)
 	
 	class_panel.gui_input.connect(_on_header_panel_clicked.bind(class_panel.get_child(0).name))
 	ancestry_panel.gui_input.connect(_on_header_panel_clicked.bind(ancestry_panel.get_child(0).name))
