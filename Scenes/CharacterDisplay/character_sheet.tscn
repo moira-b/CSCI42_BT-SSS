@@ -61,6 +61,18 @@ font_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
 
 [sub_resource type="Texture2DRD" id="Texture2DRD_jlx5q"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rj3pj"]
+bg_color = Color(0.14901961, 0.12941177, 0.25490198, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
 [node name="CharacterSheet" type="Control" unique_id=1820753171]
 layout_mode = 3
 anchors_preset = 15
@@ -1485,7 +1497,7 @@ visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-theme_override_styles/panel = ExtResource("2_c8oo5")
+theme_override_styles/panel = SubResource("StyleBoxFlat_rj3pj")
 script = ExtResource("23_gjf7o")
 
 [node name="MarginContainer" type="MarginContainer" parent="InformationPopup" unique_id=1854017691]
