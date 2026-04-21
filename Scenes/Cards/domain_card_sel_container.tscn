@@ -152,3 +152,4 @@ text = "Selected Domain Cards:"
 [node name="SelectedCardsList" type="ItemList" parent="CardInfo" unique_id=361409890]
 custom_minimum_size = Vector2(0, 160)
 layout_mode = 2
+size_flags_vertical = 8
