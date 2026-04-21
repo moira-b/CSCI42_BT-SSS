@@ -204,7 +204,6 @@ vertical_alignment = 1
 max_lines_visible = 2
 
 [node name="MulticlassPanelContainer" type="PanelContainer" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry" unique_id=1942449780]
-visible = false
 layout_mode = 2
 theme_override_styles/panel = ExtResource("4_rj3pj")
 
