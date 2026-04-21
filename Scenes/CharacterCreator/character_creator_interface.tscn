@@ -678,10 +678,13 @@ vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="NotifWindow" type="Window" parent="." unique_id=2130778845]
+gui_embed_subwindows = true
 oversampling_override = 1.0
 initial_position = 1
 size = Vector2i(300, 100)
 visible = false
+unresizable = true
+popup_window = true
 
 [node name="NotifText" type="Label" parent="NotifWindow" unique_id=690906775]
 anchors_preset = 15
@@ -699,6 +702,7 @@ oversampling_override = 1.0
 title = "Clank Feature: Purposeful Design"
 initial_position = 2
 size = Vector2i(800, 560)
+visible = false
 unresizable = true
 script = ExtResource("55_q4mme")
 

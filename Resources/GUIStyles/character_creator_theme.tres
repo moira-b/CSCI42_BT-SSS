@@ -2,6 +2,7 @@
 
 [ext_resource type="StyleBox" uid="uid://dhobd2i8q8nhi" path="res://Resources/GUIStyles/purple_panel.tres" id="1_ywn5i"]
 [ext_resource type="StyleBox" uid="uid://cl1o00l0s5ict" path="res://Resources/GUIStyles/purple_panel_hover.tres" id="2_lmeh2"]
+[ext_resource type="StyleBox" uid="uid://f8rwf4112klm" path="res://window_stylebox.tres" id="3_y1wpl"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qnbmb"]
 content_margin_left = 10.0
@@ -64,6 +65,10 @@ border_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_11ruf"]
 bg_color = Color(0.9372549, 0.9019608, 0.8666667, 1)
 
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_lmeh2"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_y1wpl"]
+
 [resource]
 Button/colors/font_color = Color(0.9372549, 0.9019608, 0.8666667, 1)
 Button/styles/disabled = SubResource("StyleBoxFlat_qnbmb")
@@ -103,3 +108,7 @@ TraitLabel/colors/font_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
 TraitLabel/styles/normal = null
 TraitPanelContainer/base_type = &"PanelContainer"
 TraitPanelContainer/styles/panel = SubResource("StyleBoxFlat_11ruf")
+Window/icons/close = SubResource("PlaceholderTexture2D_lmeh2")
+Window/icons/close_pressed = SubResource("PlaceholderTexture2D_y1wpl")
+Window/styles/embedded_border = ExtResource("3_y1wpl")
+Window/styles/embedded_unfocused_border = ExtResource("3_y1wpl")
