@@ -9,7 +9,7 @@
 [ext_resource type="StyleBox" uid="uid://dae1vokrglwgx" path="res://Resources/GUIStyles/class_ancestry_community_panel.tres" id="4_rj3pj"]
 [ext_resource type="StyleBox" uid="uid://duwnobw5p4cl6" path="res://Resources/GUIStyles/line_edit_focus.tres" id="5_asla6"]
 [ext_resource type="PackedScene" uid="uid://dltyc5tel16kj" path="res://Scenes/CharacterDisplay/dice_roll_window.tscn" id="5_glymg"]
-[ext_resource type="Script" uid="uid://wblpjoc7sjgv" path="res://Scripts/CharacterDisplay/save_notification.gd" id="5_n5rmr"]
+[ext_resource type="Script" path="res://Scripts/CharacterDisplay/save_notification.gd" id="5_n5rmr"]
 [ext_resource type="StyleBox" uid="uid://dh0x1614wwewt" path="res://Resources/GUIStyles/yellow_label.tres" id="5_svvgr"]
 [ext_resource type="PackedScene" uid="uid://b6t3g5gxhwopj" path="res://Scenes/CharacterDisplay/fh_roll_window.tscn" id="6_8iwex"]
 [ext_resource type="Script" uid="uid://b3ypom2uq1exh" path="res://Scripts/CharacterDisplay/advancements.gd" id="7_56qfy"]
@@ -1434,10 +1434,10 @@ title = "Manage Equipment"
 initial_position = 2
 size = Vector2i(1030, 560)
 visible = false
-theme_override_icons/close = SubResource("Texture2DRD_jlx5q")
 min_size = Vector2i(1030, 560)
 max_size = Vector2i(1030, 560)
 theme = ExtResource("9_jlx5q")
+theme_override_icons/close = SubResource("Texture2DRD_jlx5q")
 script = ExtResource("10_7pq50")
 
 [node name="EquipmentList" type="HBoxContainer" parent="EquipmentWindow" unique_id=1421846324]

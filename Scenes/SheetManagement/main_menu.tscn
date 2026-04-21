@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://csr08715qa60f" path="res://Assets/GUI_Icons/icons8-search-480.png" id="3_x2qhb"]
 [ext_resource type="StyleBox" uid="uid://dewju2mxoq348" path="res://Resources/GUIStyles/button_style.tres" id="4_dumt2"]
 [ext_resource type="Script" path="res://Scenes/SheetManagement/main_menu_options_popup.gd" id="4_rkvgt"]
+[ext_resource type="StyleBox" uid="uid://f8rwf4112klm" path="res://window_stylebox.tres" id="8_g07vw"]
+[ext_resource type="Theme" uid="uid://ccxm2bwpjuy2p" path="res://Resources/GUIStyles/purple_button.tres" id="9_tpl4m"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x2qhb"]
 
@@ -127,11 +129,13 @@ layout_mode = 2
 [node name="ConfirmButton" type="Button" parent="CreateCharacterConfirm/VBoxContainer" unique_id=2105291481]
 custom_minimum_size = Vector2(100, 30)
 layout_mode = 2
+theme = ExtResource("9_tpl4m")
 text = "Confirm"
 
 [node name="CancelButton" type="Button" parent="CreateCharacterConfirm/VBoxContainer" unique_id=661236875]
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
+theme = ExtResource("9_tpl4m")
 text = "Cancel"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1345530181]
@@ -183,6 +187,8 @@ oversampling_override = 1.0
 initial_position = 1
 size = Vector2i(500, 150)
 visible = false
+theme_override_styles/embedded_border = ExtResource("8_g07vw")
+theme_override_styles/embedded_unfocused_border = ExtResource("8_g07vw")
 
 [node name="ConfirmDeletionPrompt" type="Label" parent="OptionsPopupMenu/DeletionWindow" unique_id=1072784149]
 anchors_preset = -1
@@ -195,6 +201,7 @@ offset_top = -3.0000038
 offset_right = 200.0
 offset_bottom = 46.0
 grow_horizontal = 2
+theme_override_colors/font_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
 text = "Are you sure that you want to delete this character?
 This action cannot be undone."
 horizontal_alignment = 1
@@ -218,9 +225,11 @@ metadata/_edit_use_anchors_ = true
 [node name="ConfirmButton" type="Button" parent="OptionsPopupMenu/DeletionWindow/Buttons" unique_id=831699243]
 custom_minimum_size = Vector2(75, 40)
 layout_mode = 2
+theme = ExtResource("9_tpl4m")
 text = "Confirm"
 
 [node name="CancelButton" type="Button" parent="OptionsPopupMenu/DeletionWindow/Buttons" unique_id=1368090785]
 custom_minimum_size = Vector2(75, 40)
 layout_mode = 2
+theme = ExtResource("9_tpl4m")
 text = "Cancel"
