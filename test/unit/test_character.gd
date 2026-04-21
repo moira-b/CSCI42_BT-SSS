@@ -30,13 +30,13 @@ func test_invalid_level():
 func test_level_update_proficiency():
 	var valid_lvl = character.set_level(2)
 	assert_true(valid_lvl)
-	assert_eq(character.proficiency_modifier, 1)
+	assert_eq(character.proficiency, 1)
 	valid_lvl = character.set_level(5)
 	assert_true(valid_lvl)
-	assert_eq(character.proficiency_modifier, 2)
+	assert_eq(character.proficiency, 2)
 	valid_lvl = character.set_level(8)
 	assert_true(valid_lvl)
-	assert_eq(character.proficiency_modifier, 3)
+	assert_eq(character.proficiency, 3)
 
 func test_max_hope():
 	var max_hope = character.max_hope

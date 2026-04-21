@@ -3,8 +3,50 @@
 [ext_resource type="Script" uid="uid://cwlkj5m57huwr" path="res://Scripts/SheetManagement/character_select_panel.gd" id="1_7sfn8"]
 [ext_resource type="PackedScene" uid="uid://c76krhgbjyotx" path="res://Scenes/Characters/character.tscn" id="2_ajeve"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wut7y"]
-expand_margin_left = 10.0
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ajeve"]
+bg_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dfra5"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_color = Color(0.13725491, 0.14901961, 0.44313726, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f234s"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xbmtp"]
+bg_color = Color(1, 1, 1, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.10980392, 0.41568628, 0.90588236, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5bybj"]
+bg_color = Color(0.65882355, 0.5372549, 0.09803922, 0)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.7176471, 0.58431375, 0.10980392, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q2hvt"]
+bg_color = Color(0.6, 0.6, 0.6, 0.101960786)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [node name="CharacterSelectPanel" type="PanelContainer" unique_id=989815913]
 custom_minimum_size = Vector2(200, 200)
@@ -19,14 +61,11 @@ offset_right = 99.77599
 offset_bottom = 100.20799
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_styles/panel = SubResource("StyleBoxTexture_wut7y")
+theme_override_styles/panel = SubResource("StyleBoxFlat_ajeve")
 script = ExtResource("1_7sfn8")
 
 [node name="Character" parent="." unique_id=1371470097 instance=ExtResource("2_ajeve")]
-
-[node name="ColorRect" type="ColorRect" parent="." unique_id=77115605]
-layout_mode = 2
-color = Color(0.17997457, 0.17997457, 0.17997457, 1)
+proficiency = 0
 
 [node name="ContentContainer" type="MarginContainer" parent="." unique_id=1261087506]
 layout_mode = 2
@@ -40,6 +79,9 @@ layout_mode = 2
 
 [node name="Name" type="Label" parent="ContentContainer/VBoxContainer" unique_id=637779036]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_dfra5")
 
 [node name="Class" type="Label" parent="ContentContainer/VBoxContainer" unique_id=61619707]
 layout_mode = 2
@@ -58,11 +100,17 @@ layout_mode = 2
 
 [node name="Button" type="Button" parent="." unique_id=121332290]
 layout_mode = 2
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0)
+theme_override_colors/icon_focus_color = Color(1, 1, 1, 0)
+theme_override_styles/normal = SubResource("StyleBoxFlat_f234s")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xbmtp")
 button_mask = 3
 
 [node name="SettingsButton" type="Button" parent="." unique_id=548987942]
-custom_minimum_size = Vector2(50, 50)
+custom_minimum_size = Vector2(40, 30)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_5bybj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_q2hvt")
 text = "..."
