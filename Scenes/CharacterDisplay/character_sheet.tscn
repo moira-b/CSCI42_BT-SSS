@@ -218,7 +218,22 @@ theme_override_styles/panel = ExtResource("4_rj3pj")
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/paragraph_spacing = -5
+theme_override_font_sizes/font_size = 12
 text = "class_name (subclass)"
+horizontal_alignment = 1
+vertical_alignment = 1
+max_lines_visible = 2
+
+[node name="MulticlassPanelContainer" type="PanelContainer" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry" unique_id=1942449780]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("4_rj3pj")
+
+[node name="Multiclass" type="Label" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/MulticlassPanelContainer" unique_id=623927426]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/paragraph_spacing = -5
+theme_override_font_sizes/font_size = 12
+text = "optional multiclass (subclass)"
 horizontal_alignment = 1
 vertical_alignment = 1
 max_lines_visible = 2
@@ -231,6 +246,7 @@ theme_override_styles/panel = ExtResource("4_rj3pj")
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/paragraph_spacing = -5
+theme_override_font_sizes/font_size = 12
 text = "ancestry_name"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -244,6 +260,7 @@ theme_override_styles/panel = ExtResource("4_rj3pj")
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/paragraph_spacing = -5
+theme_override_font_sizes/font_size = 12
 text = "community_name"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -838,6 +855,7 @@ visible = false
 
 [node name="FHRollWindow" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/DiceButtons" unique_id=1979625603 instance=ExtResource("6_8iwex")]
 visible = false
+theme = null
 
 [node name="CardsButton" type="Button" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer" unique_id=2032869381]
 layout_mode = 2

@@ -29,7 +29,9 @@ func _display_multiclass_choices() -> void:
 	var i = 0
 	for character_class in character_classes:
 		class_choice_list.add_item(character_class.name)
-		if character_class == character.character_class || character.multiclass_selections.has(character_class):
+		#if character_class == character.character_class || character.multiclass_selections.has(character_class):
+			#class_choice_list.set_item_disabled(i, true)
+		if character_class == character.character_class || character.multiclass_selections == character_class:
 			class_choice_list.set_item_disabled(i, true)
 		i+=1
 
@@ -73,7 +75,10 @@ func _on_subclass_choice_option_selected(index: int) -> void:
 		confirm_button.disabled = false
 		
 func _on_confirm_button_pressed() -> void:
-	character.multiclass_selections.append(selected_class)
+	#character.multiclass_selections.append(selected_class)
+	character.multiclass_selections = selected_class
 	character.multiclass_domains.append(selected_domain)
 	character.multiclass_subclasses.append(selected_subclass)
+	
+	get_parent().get_parent().show_multiclass()
 	get_parent().set_active_container(2)

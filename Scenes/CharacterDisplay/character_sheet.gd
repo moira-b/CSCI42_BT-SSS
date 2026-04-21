@@ -19,6 +19,7 @@ extends Control
 @onready var ancestry_field = $HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/AncestryPanelContainer/Ancestry
 @onready var community_field = $HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/CommunityPanelContainer/Community
 @onready var class_field = $HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/ClassPanelContainer/Class
+@onready var multiclass_field = $HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/MulticlassPanelContainer/Multiclass
 @onready var short_rest_button: Button = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/RestButtons/ShortRest
 @onready var long_rest_button: Button = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/RestButtons/LongRest
 @onready var rest_window: Window = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/RestButtons/RestWindow
@@ -68,6 +69,7 @@ extends Control
 	presence_field, knowledge_field]
 
 @onready var class_panel = $HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/ClassPanelContainer
+@onready var multiclass_panel = $HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/MulticlassPanelContainer
 @onready var ancestry_panel = $HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/AncestryPanelContainer
 @onready var community_panel = $HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/CommunityPanelContainer
 @onready var information_popup = $InformationPopup
@@ -108,6 +110,15 @@ func enter() -> void:
 	
 	ancestry_field.set_text(character.ancestry.ancestry_name)
 	class_field.set_text(character.character_class.name + " (" + character.subclass.subclass_name + ")")
+	if character.multiclass_selections:
+	#if (len(character.multiclass_selections) > 0):
+		#multiclass_field.set_text(character.multiclass_selections[0].name)
+		multiclass_field.set_text(character.multiclass_selections.name)
+		multiclass_field.get_parent().show()
+	else:
+		print(character.multiclass_selections)
+		print("NO MULTICLASS")
+
 	community_field.set_text(character.community.community_name)
 	level_field.text = str(character.level)
 	evasion_value.set_text(str(character.evasion))
@@ -399,10 +410,12 @@ func connect_signals() -> void:
 	advance_window.advancements_confirmed.connect(update_edit_fields)
 
 	class_panel.mouse_entered.connect(_on_mouse_enter_class_panel)
+	multiclass_panel.mouse_entered.connect(_on_mouse_enter_muliclass_panel)
 	ancestry_panel.mouse_entered.connect(_on_mouse_enter_ancestry_panel)
 	community_panel.mouse_entered.connect(_on_mouse_enter_community_panel)
 	
 	class_panel.mouse_exited.connect(_on_mouse_exit_header_panel)
+	multiclass_panel.mouse_entered.disconnect(_on_mouse_exit_header_panel)
 	ancestry_panel.mouse_exited.connect(_on_mouse_exit_header_panel)
 	community_panel.mouse_exited.connect(_on_mouse_exit_header_panel)
 
@@ -478,6 +491,15 @@ func _on_mouse_enter_class_panel():
 		class_panel.size
 	)
 
+func _on_mouse_enter_muliclass_panel():
+	information_popup.showClassInformation(
+		#character.multiclass_selections[0],
+		character.multiclass_selections.name,
+		character.multiclass_subclasses[0],
+		multiclass_panel.global_position,
+		multiclass_panel.size
+	)
+
 func _on_mouse_enter_ancestry_panel():
 	information_popup.showAncestryInformation(
 		character.ancestry,
@@ -501,3 +523,13 @@ func _on_equipment_management_button_pressed():
 func _on_exp_level_changed(which_exp: int, new_val: int):
 	var current_val = character.experience_levels[which_exp-1]
 	character.update_experience_level(which_exp, new_val-current_val)
+
+func show_multiclass() -> void:
+	#if character.multiclass_selections[0]:
+		#multiclass_field.text = character.multiclass_selections[0].name
+		#multiclass_field.get_parent().show()
+	if character.multiclass_selections:
+		multiclass_field.text = character.multiclass_selections.name
+		multiclass_field.get_parent().show()
+	else:
+		print("ERROR. Want to show multiclass in character display, but character has no multiclass.")

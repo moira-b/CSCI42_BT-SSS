@@ -43,7 +43,8 @@ var character_class: CharacterClass
 var subclass: CharacterSubclass
 var multiclass_domains: Array[Domain]
 var multiclass_subclasses: Array[CharacterSubclass]
-var multiclass_selections: Array[CharacterClass]
+#var multiclass_selections: Array[CharacterClass]
+var multiclass_selections: CharacterClass 
 var primary_key: String
 
 
@@ -228,7 +229,8 @@ func load_data(char_dict: Variant):
 	vaulted_cards.assign(char_dict["vaulted_cards"])
 	multiclass_domains.assign(char_dict["multiclass_domains"])
 	multiclass_subclasses.assign(char_dict["multiclass_subclasses"])
-	multiclass_selections.assign(char_dict["multiclass_selections"])
+	multiclass_selections = char_dict["multiclass_selections"]
+	#multiclass_selections.assign(char_dict["multiclass_selections"])
 	num_downtime_moves = char_dict["num_downtime_moves"]
 	active_domain_card_counters.assign(char_dict["active_domain_card_counters"])
 	
