@@ -74,8 +74,8 @@ func fill_domain_card_list() -> void:
 					display_domain_card_array.append(card)
 					domain_card_list.add_item(card)
 	
-	for multiclass_domain in character.multiclass_domains:
-		var cards_in_multiclass_domain = association_as_dict.get(multiclass_domain.name)
+	if character.multiclass_domains:
+		var cards_in_multiclass_domain = association_as_dict.get(character.multiclass_domains.name)
 		for card in cards_in_multiclass_domain:
 			var card_check = cards_as_dict.get(card)
 			var multiclass_card_level = ceil(character.level/2)

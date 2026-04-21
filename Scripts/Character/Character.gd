@@ -41,7 +41,7 @@ var ancestry: Ancestry
 var community: Community
 var character_class: CharacterClass
 var subclass: CharacterSubclass
-var multiclass_domains: Array[Domain]
+var multiclass_domains: Domain
 var multiclass_subclass: CharacterSubclass
 var multiclass_selection: CharacterClass
 var primary_key: String
@@ -149,6 +149,24 @@ func set_proficiency() -> void:
 	pass
 	
 func serialize_data():
+	var to_save_multiclass_subclass
+	if multiclass_subclass:
+		to_save_multiclass_subclass = multiclass_subclass.resource_path
+	else:
+		to_save_multiclass_subclass = null
+	
+	var to_save_multiclass_selections
+	if multiclass_selection:
+		to_save_multiclass_selections = multiclass_selection.resource_path
+	else:
+		to_save_multiclass_selections = null
+	
+	var to_save_multiclass_domain
+	if multiclass_domains:
+		to_save_multiclass_domain = multiclass_domains.resource_path
+	else:
+		to_save_multiclass_domain = null
+	
 	var save_dict = {
 		"primary_key": primary_key,
 		"character_name": character_name,
@@ -182,9 +200,9 @@ func serialize_data():
 		"max_domain_cards": max_domain_cards,
 		"active_cards" : active_cards,
 		"vaulted_cards": vaulted_cards,
-		"multiclass_domains": multiclass_domains,
-		"multiclass_subclass": multiclass_subclass,
-		"multiclass_selection": multiclass_selection,
+		"multiclass_domains": to_save_multiclass_domain,
+		"multiclass_subclass": to_save_multiclass_subclass,
+		"multiclass_selection": to_save_multiclass_selections,
 		"num_downtime_moves": num_downtime_moves,
 		"active_domain_card_counters": active_domain_card_counters
 	}
@@ -226,9 +244,10 @@ func load_data(char_dict: Variant):
 	max_domain_cards = char_dict["max_domain_cards"]
 	active_cards.assign(char_dict["active_cards"])
 	vaulted_cards.assign(char_dict["vaulted_cards"])
-	multiclass_domains.assign(char_dict["multiclass_domains"])
-	multiclass_subclass = char_dict["multiclass_subclass"]
-	multiclass_selection = char_dict["multiclass_selection"]
+	if multiclass_selection:
+		multiclass_domains = load(char_dict["multiclass_domains"])
+		multiclass_subclass = load(char_dict["multiclass_subclass"])
+		multiclass_selection = load(char_dict["multiclass_selection"])
 	num_downtime_moves = char_dict["num_downtime_moves"]
 	active_domain_card_counters.assign(char_dict["active_domain_card_counters"])
 	

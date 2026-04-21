@@ -52,7 +52,7 @@ func _display_domain_choices() -> void:
 	for domain in selected_class.domains:
 		class_domain_list.add_item(domain.name)
 		domain_choice_array.append(domain)
-		if character.character_class.domains.has(domain) || character.multiclass_domains.has(domain):
+		if character.character_class.domains.has(domain):
 			class_domain_list.set_item_disabled(i, true)
 		
 		i += 1
@@ -84,7 +84,7 @@ func _on_subclass_choice_option_selected(index: int) -> void:
 		
 func _on_confirm_button_pressed() -> void:
 	character.multiclass_selection = selected_class
-	character.multiclass_domains.append(selected_domain)
+	character.multiclass_domains = selected_domain
 	character.multiclass_subclass = selected_subclass
 	
 	get_parent().get_parent().show_multiclass()
