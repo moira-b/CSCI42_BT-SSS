@@ -1,7 +1,81 @@
 [gd_scene format=3 uid="uid://1un73y3t3x7b"]
 
+[ext_resource type="StyleBox" uid="uid://cl1o00l0s5ict" path="res://Resources/GUIStyles/purple_panel_hover.tres" id="1_1a48w"]
 [ext_resource type="Script" uid="uid://dicpfif3vilqk" path="res://Scripts/Cards/domain_card_selector.gd" id="1_txh06"]
+[ext_resource type="StyleBox" uid="uid://dhobd2i8q8nhi" path="res://Resources/GUIStyles/purple_panel.tres" id="2_0v0km"]
 [ext_resource type="PackedScene" uid="uid://cknxpivnpwbxd" path="res://Scenes/Cards/domain_card_base.tscn" id="2_u13nu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wgsmk"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.07663847, 0.060916536, 0.17075494, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.07663847, 0.060916536, 0.17075494, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fwlat"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.14901961, 0.12941177, 0.25490198, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.14901961, 0.12941177, 0.25490198, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y1wpl"]
+bg_color = Color(0.14901961, 0.12941177, 0.25490198, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lmeh2"]
+bg_color = Color(0.14901961, 0.12941177, 0.25490198, 1)
+border_width_bottom = 2
+border_color = Color(0.87058824, 0.78039217, 0.38431373, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pkao1"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1a48w"]
+
+[sub_resource type="Theme" id="Theme_jy7np"]
+Button/styles/disabled = SubResource("StyleBoxFlat_wgsmk")
+Button/styles/hover = ExtResource("1_1a48w")
+Button/styles/hover_pressed = ExtResource("1_1a48w")
+Button/styles/normal = ExtResource("2_0v0km")
+Button/styles/pressed = SubResource("StyleBoxFlat_fwlat")
+ItemList/colors/font_color = Color(0.9372549, 0.9019608, 0.8666667, 1)
+ItemList/colors/font_selected_color = Color(0.9372549, 0.9019608, 0.8666667, 1)
+ItemList/colors/scroll_hint_color = Color(0.87058824, 0.78039217, 0.38431373, 1)
+ItemList/styles/focus = SubResource("StyleBoxFlat_y1wpl")
+ItemList/styles/hovered = SubResource("StyleBoxFlat_y1wpl")
+ItemList/styles/hovered_selected = SubResource("StyleBoxFlat_lmeh2")
+ItemList/styles/hovered_selected_focus = SubResource("StyleBoxFlat_lmeh2")
+ItemList/styles/panel = SubResource("StyleBoxFlat_pkao1")
+ItemList/styles/selected = SubResource("StyleBoxFlat_lmeh2")
+ItemList/styles/selected_focus = SubResource("StyleBoxFlat_lmeh2")
+Label/colors/font_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
+Label/styles/normal = SubResource("StyleBoxEmpty_1a48w")
 
 [node name="DomainCardSelContainer" type="HBoxContainer" unique_id=710034451]
 anchors_preset = 8
@@ -15,7 +89,11 @@ offset_right = 512.0
 offset_bottom = 260.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_jy7np")
 script = ExtResource("1_txh06")
+
+[node name="Spacer" type="Control" parent="." unique_id=1715607692]
+layout_mode = 2
 
 [node name="ToSelectContainer" type="VBoxContainer" parent="." unique_id=826385361]
 custom_minimum_size = Vector2(500, 0)
@@ -41,12 +119,12 @@ size_flags_vertical = 3
 theme_override_constants/separation = 34
 alignment = 1
 
+[node name="Spacer" type="Control" parent="CardInfo/SelectionDisplay" unique_id=582318097]
+layout_mode = 2
+
 [node name="DomainCard" parent="CardInfo/SelectionDisplay" unique_id=1871884780 instance=ExtResource("2_u13nu")]
-visible = false
 custom_minimum_size = Vector2(250, 350)
 layout_mode = 2
-size_flags_horizontal = 1
-size_flags_vertical = 1
 
 [node name="Buttons" type="VBoxContainer" parent="CardInfo/SelectionDisplay" unique_id=66927798]
 layout_mode = 2
