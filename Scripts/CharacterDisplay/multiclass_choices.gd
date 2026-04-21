@@ -86,6 +86,7 @@ func _on_confirm_button_pressed() -> void:
 	character.multiclass_selection = selected_class
 	character.multiclass_domains = selected_domain
 	character.multiclass_subclass = selected_subclass
+	character.has_multiclassed = true
 	
 	get_parent().get_parent().show_multiclass()
 	get_parent().set_active_container(2)
