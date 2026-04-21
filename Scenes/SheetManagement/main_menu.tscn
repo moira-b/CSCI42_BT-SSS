@@ -16,31 +16,20 @@ border_width_bottom = 1
 border_color = Color(0.87058824, 0.78039217, 0.38431373, 1)
 corner_radius_top_left = 5
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g07vw"]
-bg_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6q5gj"]
 bg_color = Color(0.76637274, 0.5602935, 0.088297464, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
+border_color = Color(0.7647059, 0.56078434, 0.09019608, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jif6p"]
 bg_color = Color(0.44250324, 0.33210397, 0.09492508, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [node name="MainMenu" type="Control" unique_id=621885202]
 layout_mode = 3
@@ -104,28 +93,14 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_x2qhb")
 placeholder_text = "Search for a character..."
 caret_blink = true
 
-[node name="PanelContainer2" type="PanelContainer" parent="Header" unique_id=1675154108]
-custom_minimum_size = Vector2(200, 0)
+[node name="Create_Button" type="Button" parent="Header" unique_id=361756707]
+custom_minimum_size = Vector2(130, 50)
 layout_mode = 2
 size_flags_horizontal = 10
-theme_override_styles/panel = SubResource("StyleBoxFlat_g07vw")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Header/PanelContainer2" unique_id=1115322914]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Header/PanelContainer2/HBoxContainer" unique_id=550206716]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "   Add Character"
-
-[node name="Button" type="Button" parent="Header/PanelContainer2/HBoxContainer" unique_id=361756707]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-size_flags_horizontal = 10
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxFlat_6q5gj")
 theme_override_styles/hover = SubResource("StyleBoxFlat_jif6p")
-text = "+"
+text = "Add Character"
 
 [node name="Bottom" type="HBoxContainer" parent="." unique_id=533659469]
 layout_mode = 1

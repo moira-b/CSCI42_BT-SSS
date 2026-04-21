@@ -1,7 +1,7 @@
 class_name MainMenu
 extends Control
 
-@onready var create_new_character_button : Button = $Header/PanelContainer2/HBoxContainer/Button
+@onready var create_new_character_button : Button = $Header/Create_Button
 @onready var create_new_character_confirm: Button = $CreateCharacterConfirm/VBoxContainer/ConfirmButton
 @onready var create_new_character_cancel: Button = $CreateCharacterConfirm/VBoxContainer/CancelButton
 @onready var confirm_window: PanelContainer = $CreateCharacterConfirm
