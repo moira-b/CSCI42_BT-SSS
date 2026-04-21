@@ -4,19 +4,21 @@
 [ext_resource type="StyleBox" uid="uid://cl1o00l0s5ict" path="res://Resources/GUIStyles/purple_panel_hover.tres" id="1_7hymy"]
 [ext_resource type="StyleBox" uid="uid://dh0x1614wwewt" path="res://Resources/GUIStyles/yellow_label.tres" id="1_ug3rf"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7hymy"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wgsmk"]
 content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
 content_margin_bottom = 4.0
-bg_color = Color(1, 0.365, 0.365, 1)
-draw_center = false
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.06894084, 0.054127708, 0.15757886, 1)
-corner_detail = 1
+bg_color = Color(0.07663847, 0.060916536, 0.17075494, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.07663847, 0.060916536, 0.17075494, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fwlat"]
 content_margin_left = 4.0
@@ -48,7 +50,7 @@ expand_margin_right = 10.0
 expand_margin_bottom = 10.0
 
 [resource]
-Button/styles/disabled = SubResource("StyleBoxFlat_7hymy")
+Button/styles/disabled = SubResource("StyleBoxFlat_wgsmk")
 Button/styles/hover = ExtResource("1_7hymy")
 Button/styles/hover_pressed = ExtResource("1_7hymy")
 Button/styles/normal = ExtResource("1_3vxc1")

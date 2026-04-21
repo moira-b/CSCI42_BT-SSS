@@ -4,6 +4,22 @@
 [ext_resource type="StyleBox" uid="uid://cl1o00l0s5ict" path="res://Resources/GUIStyles/purple_panel_hover.tres" id="1_fwlat"]
 [ext_resource type="StyleBox" uid="uid://dhobd2i8q8nhi" path="res://Resources/GUIStyles/purple_panel.tres" id="2_wgsmk"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wgsmk"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.07663847, 0.060916536, 0.17075494, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.07663847, 0.060916536, 0.17075494, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fwlat"]
 content_margin_left = 4.0
 content_margin_top = 4.0
@@ -28,6 +44,7 @@ expand_margin_right = 10.0
 expand_margin_bottom = 10.0
 
 [resource]
+Button/styles/disabled = SubResource("StyleBoxFlat_wgsmk")
 Button/styles/hover = ExtResource("1_fwlat")
 Button/styles/hover_pressed = ExtResource("1_fwlat")
 Button/styles/normal = ExtResource("2_wgsmk")
