@@ -489,6 +489,7 @@ horizontal_alignment = 1
 [node name="ResetButton" type="Button" parent="OptionLists/TraitAssignmentContainer/TraitNameContainer" unique_id=1390461237]
 custom_minimum_size = Vector2(90, 40)
 layout_mode = 2
+size_flags_horizontal = 4
 text = "Reset Selection"
 
 [node name="ModifierContainer" type="VBoxContainer" parent="OptionLists/TraitAssignmentContainer" unique_id=1798246451]
