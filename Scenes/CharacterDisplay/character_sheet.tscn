@@ -836,6 +836,7 @@ layout_mode = 2
 
 [node name="EvasionProficiencyMargin" type="MarginContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer" unique_id=1068692241]
 layout_mode = 2
+size_flags_vertical = 0
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
@@ -844,22 +845,23 @@ theme_override_constants/margin_bottom = 5
 [node name="HBoxContainer" type="HBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EvasionProficiencyMargin" unique_id=1174515028]
 layout_mode = 2
 size_flags_horizontal = 4
+size_flags_vertical = 0
 
 [node name="Evasion" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EvasionProficiencyMargin/HBoxContainer" unique_id=288805226]
 custom_minimum_size = Vector2(125, 0)
 layout_mode = 2
+size_flags_vertical = 0
 theme_override_styles/panel = ExtResource("15_1vmjr")
 
 [node name="FieldContainer" type="VBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EvasionProficiencyMargin/HBoxContainer/Evasion" unique_id=1737631886]
 layout_mode = 2
+size_flags_vertical = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EvasionProficiencyMargin/HBoxContainer/Evasion/FieldContainer" unique_id=666988413]
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_vertical = 2
 theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 15
-theme_override_constants/margin_bottom = 5
 
 [node name="FieldValue" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EvasionProficiencyMargin/HBoxContainer/Evasion/FieldContainer/MarginContainer" unique_id=506780720]
 layout_mode = 2
@@ -883,18 +885,18 @@ vertical_alignment = 1
 [node name="Proficiency" type="PanelContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EvasionProficiencyMargin/HBoxContainer" unique_id=1168794863]
 custom_minimum_size = Vector2(125, 0)
 layout_mode = 2
+size_flags_vertical = 0
 theme_override_styles/panel = ExtResource("15_1vmjr")
 
 [node name="FieldContainer" type="VBoxContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EvasionProficiencyMargin/HBoxContainer/Proficiency" unique_id=843835469]
 layout_mode = 2
+size_flags_vertical = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EvasionProficiencyMargin/HBoxContainer/Proficiency/FieldContainer" unique_id=1882655637]
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_vertical = 2
 theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 15
-theme_override_constants/margin_bottom = 5
 
 [node name="FieldValue" type="Label" parent="BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EvasionProficiencyMargin/HBoxContainer/Proficiency/FieldContainer/MarginContainer" unique_id=1216961648]
 layout_mode = 2
