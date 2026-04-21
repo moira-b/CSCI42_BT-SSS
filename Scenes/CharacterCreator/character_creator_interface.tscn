@@ -75,7 +75,7 @@ bg_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vkfsn"]
 
-[node name="CharacterCreatorInterface" type="Control" unique_id=1505700201]
+[node name="CharacterCreatorInterface" type="Control" unique_id=1505700201 node_paths=PackedStringArray("tab_indicator_array")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -85,6 +85,7 @@ grow_vertical = 2
 size_flags_horizontal = 4
 theme = ExtResource("1_r4lgg")
 script = ExtResource("1_ofddw")
+tab_indicator_array = [NodePath("TabButtons/Class/ProgressIndicator"), NodePath("TabButtons/Subclass/ProgressIndicator"), NodePath("TabButtons/Heritage/ProgressIndicator"), NodePath("TabButtons/Community/ProgressIndicator"), NodePath("TabButtons/DomainCards/ProgressIndicator"), NodePath("TabButtons/Traits/ProgressIndicator"), NodePath("TabButtons/Experiences/ProgressIndicator"), NodePath("TabButtons/Equipment/ProgressIndicator"), NodePath("TabButtons/Name/ProgressIndicator")]
 
 [node name="Character" parent="." unique_id=1371470097 instance=ExtResource("2_foxel")]
 proficiency = 0
@@ -94,10 +95,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -373.5
-offset_top = 8.0
-offset_right = 373.5
-offset_bottom = 48.0
+offset_left = -427.5
+offset_top = 4.0
+offset_right = 427.5
+offset_bottom = 44.0
 grow_horizontal = 2
 theme = ExtResource("4_vkfsn")
 
@@ -107,11 +108,45 @@ size_flags_horizontal = 3
 disabled = true
 text = "Class"
 
+[node name="ProgressIndicator" type="ColorRect" parent="TabButtons/Class" unique_id=1270501941]
+visible = false
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -30.0
+offset_top = 3.0
+offset_right = 30.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.87058824, 0.78039217, 0.38431373, 1)
+
 [node name="Subclass" type="Button" parent="TabButtons" unique_id=1329706564]
 layout_mode = 2
 size_flags_horizontal = 3
 disabled = true
 text = "Subclass"
+
+[node name="ProgressIndicator" type="ColorRect" parent="TabButtons/Subclass" unique_id=871787726]
+visible = false
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -43.5
+offset_top = 3.0
+offset_right = 43.5
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.87058824, 0.78039217, 0.38431373, 1)
 
 [node name="Heritage" type="Button" parent="TabButtons" unique_id=1406435465]
 layout_mode = 2
@@ -119,11 +154,45 @@ size_flags_horizontal = 3
 disabled = true
 text = "Heritage"
 
+[node name="ProgressIndicator" type="ColorRect" parent="TabButtons/Heritage" unique_id=1653634474]
+visible = false
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -43.5
+offset_top = 3.0
+offset_right = 43.5
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.87058824, 0.78039217, 0.38431373, 1)
+
 [node name="Community" type="Button" parent="TabButtons" unique_id=1071396811]
 layout_mode = 2
 size_flags_horizontal = 3
 disabled = true
 text = "Community"
+
+[node name="ProgressIndicator" type="ColorRect" parent="TabButtons/Community" unique_id=62189529]
+visible = false
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -55.5
+offset_top = 3.0
+offset_right = 55.5
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.87058824, 0.78039217, 0.38431373, 1)
 
 [node name="DomainCards" type="Button" parent="TabButtons" unique_id=1215117363]
 layout_mode = 2
@@ -131,11 +200,45 @@ size_flags_horizontal = 3
 disabled = true
 text = "Domain Cards"
 
+[node name="ProgressIndicator" type="ColorRect" parent="TabButtons/DomainCards" unique_id=592834835]
+visible = false
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -64.5
+offset_top = 3.0
+offset_right = 64.5
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.87058824, 0.78039217, 0.38431373, 1)
+
 [node name="Traits" type="Button" parent="TabButtons" unique_id=1773478265]
 layout_mode = 2
 size_flags_horizontal = 3
 disabled = true
 text = "Traits"
+
+[node name="ProgressIndicator" type="ColorRect" parent="TabButtons/Traits" unique_id=192707219]
+visible = false
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = 3.0
+offset_right = 32.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.87058824, 0.78039217, 0.38431373, 1)
 
 [node name="Experiences" type="Button" parent="TabButtons" unique_id=2133570945]
 layout_mode = 2
@@ -143,17 +246,68 @@ size_flags_horizontal = 3
 disabled = true
 text = "Experiences"
 
+[node name="ProgressIndicator" type="ColorRect" parent="TabButtons/Experiences" unique_id=2033813403]
+visible = false
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -56.5
+offset_top = 3.0
+offset_right = 56.5
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.87058824, 0.78039217, 0.38431373, 1)
+
 [node name="Equipment" type="Button" parent="TabButtons" unique_id=516539210]
 layout_mode = 2
 size_flags_horizontal = 3
 disabled = true
 text = "Equipment"
 
+[node name="ProgressIndicator" type="ColorRect" parent="TabButtons/Equipment" unique_id=2026767742]
+visible = false
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -52.5
+offset_top = 3.0
+offset_right = 52.5
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.87058824, 0.78039217, 0.38431373, 1)
+
 [node name="Name" type="Button" parent="TabButtons" unique_id=781964754]
 layout_mode = 2
 size_flags_horizontal = 3
 disabled = true
 text = "Name"
+
+[node name="ProgressIndicator" type="ColorRect" parent="TabButtons/Name" unique_id=93969129]
+visible = false
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -33.5
+offset_top = 3.0
+offset_right = 33.5
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.87058824, 0.78039217, 0.38431373, 1)
 
 [node name="OptionLists" type="Control" parent="." unique_id=1737252042]
 layout_mode = 1
