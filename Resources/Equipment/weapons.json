@@ -913,6 +913,39 @@
 		"burden":"One-Handed",
 		"feature":""
 	},
+	"Spiked Shield":{
+		"tier":2,
+		"category":"Secondary",
+		"damage_type":"Physical",
+		"trait":"Strength",
+		"range":"Melee",
+		"damage_die":6,
+		"damage_modifier":2,
+		"burden":"One-Handed",
+		"feature":"Double Duty"
+	},
+	"Parrying Dagger":{
+		"tier":2,
+		"category":"Secondary",
+		"damage_type":"Physical",
+		"trait":"Finesse",
+		"range":"Melee",
+		"damage_die":6,
+		"damage_modifier":2,
+		"burden":"One-Handed",
+		"feature":"Parry"
+	},
+	"Returning Axe":{
+		"tier":2,
+		"category":"Secondary",
+		"damage_type":"Physical",
+		"trait":"Agility",
+		"range":"Close",
+		"damage_die":6,
+		"damage_modifier":4,
+		"burden":"One-Handed",
+		"feature":"Returning"
+	},
 
 
 
