@@ -830,7 +830,6 @@ size_flags_vertical = 4
 text = "F/H Roll"
 
 [node name="DiceRollWindow" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/DiceButtons" unique_id=292838826 instance=ExtResource("5_glymg")]
-visible = false
 
 [node name="FHRollWindow" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/DiceButtons" unique_id=1979625603 instance=ExtResource("6_8iwex")]
 visible = false
