@@ -524,6 +524,105 @@
 		"burden":"Two-Handed",
 		"feature":"Cumbersome"
 	},
+	"Gilded Falchion":{
+		"tier":2,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Strength",
+		"range":"Melee",
+		"damage_die":10,
+		"damage_modifier":4,
+		"burden":"One-Handed",
+		"feature":"Powerful"
+	},
+	"Knuckle Blades":{
+		"tier":2,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Strength",
+		"range":"Melee",
+		"damage_die":10,
+		"damage_modifier":6,
+		"burden":"One-Handed",
+		"feature":"Brutal"
+	},
+	"Urok Broadsword":{
+		"tier":2,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Finesse",
+		"range":"Melee",
+		"damage_die":8,
+		"damage_modifier":3,
+		"burden":"One-Handed",
+		"feature":"Deadly"
+	},
+	"Bladed Whip":{
+		"tier":2,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Agility",
+		"range":"Very Close",
+		"damage_die":8,
+		"damage_modifier":3,
+		"burden":"One-Handed",
+		"feature":"Quick"
+	},
+	"Steelforged Halberd":{
+		"tier":2,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Strength",
+		"range":"Very Close",
+		"damage_die":8,
+		"damage_modifier":4,
+		"burden":"Two-Handed",
+		"feature":"Scary"
+	},
+	"War Scythe":{
+		"tier":2,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Finesse",
+		"range":"Very Close",
+		"damage_die":8,
+		"damage_modifier":5,
+		"burden":"Two-Handed",
+		"feature":"Reliable"
+	},
+	"Blunderbuss":{
+		"tier":2,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Finesse",
+		"range":"Close",
+		"damage_die":8,
+		"damage_modifier":6,
+		"burden":"Two-Handed",
+		"feature":"Reloading"
+	},
+	"Greatbow":{
+		"tier":2,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Strength",
+		"range":"Far",
+		"damage_die":6,
+		"damage_modifier":6,
+		"burden":"Two-Handed",
+		"feature":"Powerful"
+	},
+	"Finehair Bow":{
+		"tier":2,
+		"category":"Primary",
+		"damage_type":"Physical",
+		"trait":"Agility",
+		"range":"Very Far",
+		"damage_die":6,
+		"damage_modifier":5,
+		"burden":"Two-Handed",
+		"feature":"Reliable"
+	},
 	"Improved Arcane Gauntlets":{
 		"tier":2,
 		"category":"Primary",
@@ -633,6 +732,105 @@
 		"damage_modifier":3,
 		"burden":"Two-Handed",
 		"feature":"Powerful"
+	},
+	"Ego Blade":{
+		"tier":2,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Agility",
+		"range":"Melee",
+		"damage_die":12,
+		"damage_modifier":4,
+		"burden":"One-Handed",
+		"feature":"Pompous"
+	},
+	"Casting Sword":{
+		"tier":2,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Strength",
+		"range":"Melee",
+		"damage_die":10,
+		"damage_modifier":4,
+		"burden":"Two-Handed",
+		"feature":"Versatile"
+	},
+	"Devouring Dagger":{
+		"tier":2,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Finesse",
+		"range":"Melee",
+		"damage_die":8,
+		"damage_modifier":4,
+		"burden":"One-Handed",
+		"feature":"Scary"
+	},
+	"Hammer of Exota":{
+		"tier":2,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Instinct",
+		"range":"Melee",
+		"damage_die":8,
+		"damage_modifier":6,
+		"burden":"Two-Handed",
+		"feature":"Eruptive"
+	},
+	"Yutari Bloodbow":{
+		"tier":2,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Finesse",
+		"range":"Far",
+		"damage_die":6,
+		"damage_modifier":4,
+		"burden":"Two-Handed",
+		"feature":"Brutal"
+	},
+	"Elder Bow":{
+		"tier":2,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Instinct",
+		"range":"Far",
+		"damage_die":6,
+		"damage_modifier":4,
+		"burden":"Two-Handed",
+		"feature":"Powerful"
+	},
+	"Scepter of Elias":{
+		"tier":2,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Presence",
+		"range":"Far",
+		"damage_die":6,
+		"damage_modifier":3,
+		"burden":"One-Handed",
+		"feature":"Invigorating"
+	},
+	"Wand of Enthrallment":{
+		"tier":2,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Presence",
+		"range":"Far",
+		"damage_die":6,
+		"damage_modifier":4,
+		"burden":"One-Handed",
+		"feature":"Persuasive"
+	},
+	"Keeper's Staff":{
+		"tier":2,
+		"category":"Primary",
+		"damage_type":"Magical",
+		"trait":"Knowledge",
+		"range":"Far",
+		"damage_die":6,
+		"damage_modifier":4,
+		"burden":"Two-Handed",
+		"feature":"Reliable"
 	},
 
 
