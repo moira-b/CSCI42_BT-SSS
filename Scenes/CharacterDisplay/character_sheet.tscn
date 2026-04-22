@@ -801,10 +801,10 @@ text = "F/H Roll"
 
 [node name="DiceRollWindow" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/DiceButtons" unique_id=292838826 instance=ExtResource("5_glymg")]
 visible = false
+theme = ExtResource("9_jlx5q")
 
 [node name="FHRollWindow" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/DiceButtons" unique_id=1979625603 instance=ExtResource("6_8iwex")]
 visible = false
-theme = null
 
 [node name="CardsButton" type="Button" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer" unique_id=2032869381]
 layout_mode = 2
