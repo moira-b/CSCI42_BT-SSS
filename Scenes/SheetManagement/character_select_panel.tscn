@@ -82,6 +82,8 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_dfra5")
+clip_text = true
+text_overrun_behavior = 3
 
 [node name="Class" type="Label" parent="ContentContainer/VBoxContainer" unique_id=61619707]
 layout_mode = 2
