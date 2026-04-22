@@ -153,7 +153,7 @@ text = "Roll Again"
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 theme = SubResource("Theme_yxf2p")
-text = "Close"
+text = "Confirm Roll"
 
 [node name="ResultsContainer" type="VBoxContainer" parent="." unique_id=1332614251]
 anchors_preset = -1
