@@ -23,7 +23,7 @@ func showClassInformation(character_class: CharacterClass, character_subclass: C
 	feature2_name.hide()
 	feature2_description.hide()
 	class_description.show()
-	
+	class_description.text=""
 	if class_description.text == "":
 		class_description.append_text("[font_size=16]%s[/font_size]" % [character_class.name] + "\n\n")
 		class_description.append_text("[font_size=16]%s[/font_size]" % 
