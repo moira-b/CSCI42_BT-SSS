@@ -85,7 +85,6 @@ extends Control
 
 
 var updated = false
-var shortRestCounter = 0
 var character: Character 
 var card_scene: PackedScene = load("res://Scenes/Cards/card_vault.tscn")
 var save_manager
@@ -308,16 +307,12 @@ func _on_short_rest_pressed() -> void:
 	rest_window.set_rest_Length("short")
 	rest_window.disable_Project()
 	disable_button_selection(true)
-	if shortRestCounter < 3:
-		long_rest_button.disabled = true
-		shortRestCounter += 1
-		rest_window.visible = true
+
 
 func _on_long_rest_pressed() -> void:
 	rest_window.set_rest_Length("long")
 	disable_button_selection(true)
 	rest_window.enable_Project()
-	shortRestCounter = 0
 	rest_window.visible = true
 
 func _on_dice_button_pressed() -> void:
