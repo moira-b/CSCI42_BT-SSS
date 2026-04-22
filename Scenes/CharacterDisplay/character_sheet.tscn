@@ -803,8 +803,6 @@ text = "F/H Roll"
 visible = false
 
 [node name="FHRollWindow" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/DiceButtons" unique_id=1979625603 instance=ExtResource("6_8iwex")]
-visible = false
-theme = null
 
 [node name="CardsButton" type="Button" parent="BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer" unique_id=2032869381]
 layout_mode = 2
