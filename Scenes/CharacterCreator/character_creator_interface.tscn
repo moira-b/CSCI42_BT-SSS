@@ -85,6 +85,7 @@ grow_vertical = 2
 size_flags_horizontal = 4
 theme = ExtResource("1_r4lgg")
 script = ExtResource("1_ofddw")
+metadata/_edit_lock_ = true
 
 [node name="Character" parent="." unique_id=1371470097 instance=ExtResource("2_foxel")]
 proficiency = 0
@@ -151,7 +152,7 @@ color = Color(0.87058824, 0.78039217, 0.38431373, 1)
 layout_mode = 2
 size_flags_horizontal = 3
 disabled = true
-text = "Heritage"
+text = "Ancestry"
 
 [node name="ProgressIndicator" type="ColorRect" parent="TabButtons/Heritage" unique_id=1653634474]
 visible = false
@@ -488,6 +489,7 @@ horizontal_alignment = 1
 [node name="ResetButton" type="Button" parent="OptionLists/TraitAssignmentContainer/TraitNameContainer" unique_id=1390461237]
 custom_minimum_size = Vector2(90, 40)
 layout_mode = 2
+size_flags_horizontal = 4
 text = "Reset Selection"
 
 [node name="ModifierContainer" type="VBoxContainer" parent="OptionLists/TraitAssignmentContainer" unique_id=1798246451]

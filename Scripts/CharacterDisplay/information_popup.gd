@@ -8,7 +8,7 @@ extends PanelContainer
 @onready var feature2_description = $MarginContainer/VBoxContainer/Feature2Description
 @onready var class_description = $MarginContainer/VBoxContainer/ClassDescription
 
-
+var currently_showing: String = ""
 
 func showClassInformation(character_class: CharacterClass, character_subclass: CharacterSubclass, position_anchor: Vector2, entered_size: Vector2):
 	self.global_position = Vector2(
@@ -123,3 +123,14 @@ func showEquipmentInformation(feature: String, desc:String, position_anchor: Vec
 		position_anchor[1] - entered_size[1] - self.size[1]/2
 	)
 	show()
+
+func set_currently_showing(s: String) -> void:
+	if s not in ["Class", "Multiclass", "Ancestry", "Community"]:
+		print("Error in information_popup.gd. Trying to set to info/attribute it is not prepared for.")
+		return
+	else:
+		currently_showing = s
+
+func hideInformation() -> void:
+	self.currently_showing = ""
+	hide()

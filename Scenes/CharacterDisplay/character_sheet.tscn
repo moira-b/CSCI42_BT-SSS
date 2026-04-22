@@ -6,7 +6,6 @@
 [ext_resource type="Script" uid="uid://dfs5rt0xu3vuj" path="res://Scripts/CharacterDisplay/rest.gd" id="4_8iwex"]
 [ext_resource type="StyleBox" uid="uid://bbokr0uyec1ac" path="res://Resources/GUIStyles/line_edit_normal.tres" id="4_48wf7"]
 [ext_resource type="StyleBox" uid="uid://dhobd2i8q8nhi" path="res://Resources/GUIStyles/purple_panel.tres" id="4_irdes"]
-[ext_resource type="StyleBox" uid="uid://dae1vokrglwgx" path="res://Resources/GUIStyles/class_ancestry_community_panel.tres" id="4_rj3pj"]
 [ext_resource type="StyleBox" uid="uid://duwnobw5p4cl6" path="res://Resources/GUIStyles/line_edit_focus.tres" id="5_asla6"]
 [ext_resource type="PackedScene" uid="uid://dltyc5tel16kj" path="res://Scenes/CharacterDisplay/dice_roll_window.tscn" id="5_glymg"]
 [ext_resource type="Script" uid="uid://wblpjoc7sjgv" path="res://Scripts/CharacterDisplay/save_notification.gd" id="5_n5rmr"]
@@ -61,6 +60,18 @@ font_size = 24
 font_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
 
 [sub_resource type="Texture2DRD" id="Texture2DRD_jlx5q"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rj3pj"]
+bg_color = Color(0.14901961, 0.12941177, 0.25490198, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.10980392, 0.09019608, 0.22745098, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [node name="CharacterSheet" type="Control" unique_id=1820753171]
 layout_mode = 3
@@ -186,65 +197,27 @@ theme_override_styles/focus = ExtResource("5_asla6")
 
 [node name="ClassCommunityAncestry" type="HBoxContainer" parent="HeaderMargin/Header/HeaderInfo" unique_id=1686316360]
 layout_mode = 2
+theme = ExtResource("15_asla6")
 theme_override_constants/separation = 10
 
-[node name="ClassPanelContainer" type="PanelContainer" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry" unique_id=1493424672]
+[node name="Class" type="Button" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry" unique_id=1310818618]
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
-theme_override_styles/panel = ExtResource("4_rj3pj")
+text = "Class (Subclass)"
 
-[node name="Class" type="Label" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/ClassPanelContainer" unique_id=1140117280]
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_constants/paragraph_spacing = -5
-theme_override_font_sizes/font_size = 12
-text = "class_name (subclass)"
-horizontal_alignment = 1
-vertical_alignment = 1
-max_lines_visible = 2
-
-[node name="MulticlassPanelContainer" type="PanelContainer" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry" unique_id=1942449780]
+[node name="Multiclass" type="Button" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry" unique_id=1353815009]
 visible = false
 layout_mode = 2
-theme_override_styles/panel = ExtResource("4_rj3pj")
+text = "Multiclass (Subclass)
+"
 
-[node name="Multiclass" type="Label" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/MulticlassPanelContainer" unique_id=623927426]
+[node name="Ancestry" type="Button" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry" unique_id=32417532]
 layout_mode = 2
-size_flags_horizontal = 4
-theme_override_constants/paragraph_spacing = -5
-theme_override_font_sizes/font_size = 12
-text = "optional multiclass (subclass)"
-horizontal_alignment = 1
-vertical_alignment = 1
-max_lines_visible = 2
+text = "Ancestry"
 
-[node name="AncestryPanelContainer" type="PanelContainer" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry" unique_id=913894309]
+[node name="Community" type="Button" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry" unique_id=1982840422]
 layout_mode = 2
-theme_override_styles/panel = ExtResource("4_rj3pj")
-
-[node name="Ancestry" type="Label" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/AncestryPanelContainer" unique_id=705797364]
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_constants/paragraph_spacing = -5
-theme_override_font_sizes/font_size = 12
-text = "ancestry_name"
-horizontal_alignment = 1
-vertical_alignment = 1
-max_lines_visible = 2
-
-[node name="CommunityPanelContainer" type="PanelContainer" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry" unique_id=1597585474]
-layout_mode = 2
-theme_override_styles/panel = ExtResource("4_rj3pj")
-
-[node name="Community" type="Label" parent="HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/CommunityPanelContainer" unique_id=266250659]
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_constants/paragraph_spacing = -5
-theme_override_font_sizes/font_size = 12
-text = "community_name"
-horizontal_alignment = 1
-vertical_alignment = 1
-max_lines_visible = 2
+text = "Community"
 
 [node name="Level" type="PanelContainer" parent="HeaderMargin/Header" unique_id=1090331652]
 custom_minimum_size = Vector2(150, 0)
@@ -1207,14 +1180,15 @@ theme = ExtResource("21_dxpx4")
 script = ExtResource("7_56qfy")
 
 [node name="ObjectContainer" type="HFlowContainer" parent="AdvanceWindow" unique_id=1685616752]
-anchors_preset = 13
+anchors_preset = -1
 anchor_left = 0.5
+anchor_top = 0.10700001
 anchor_right = 0.5
-anchor_bottom = 1.0
+anchor_bottom = 0.832
 offset_left = -229.5
-offset_top = 5.0
+offset_top = 0.0799942
 offset_right = 229.5
-offset_bottom = 20.0
+offset_bottom = 0.07998657
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -1266,10 +1240,12 @@ text = "Knowledge"
 [node name="Markables" type="VBoxContainer" parent="AdvanceWindow/ObjectContainer" unique_id=292305664]
 custom_minimum_size = Vector2(225, 0)
 layout_mode = 2
+theme = ExtResource("15_asla6")
 
 [node name="HealthPanel" type="PanelContainer" parent="AdvanceWindow/ObjectContainer/Markables" unique_id=1109426991]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("4_irdes")
 
 [node name="Health" type="CheckButton" parent="AdvanceWindow/ObjectContainer/Markables/HealthPanel" unique_id=2046713117]
 layout_mode = 2
@@ -1278,6 +1254,7 @@ text = "Health         "
 [node name="StressPanel" type="PanelContainer" parent="AdvanceWindow/ObjectContainer/Markables" unique_id=126300132]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("4_irdes")
 
 [node name="Stress" type="CheckButton" parent="AdvanceWindow/ObjectContainer/Markables/StressPanel" unique_id=244053893]
 layout_mode = 2
@@ -1286,6 +1263,7 @@ text = "Stress"
 [node name="EvasionPanel" type="PanelContainer" parent="AdvanceWindow/ObjectContainer/Markables" unique_id=389355948]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("4_irdes")
 
 [node name="Evasion" type="CheckButton" parent="AdvanceWindow/ObjectContainer/Markables/EvasionPanel" unique_id=1722831904]
 layout_mode = 2
@@ -1295,6 +1273,7 @@ text = "Evasion
 [node name="ProficiencyPanel" type="PanelContainer" parent="AdvanceWindow/ObjectContainer/Markables" unique_id=1602887370]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("4_irdes")
 
 [node name="Proficiency" type="CheckButton" parent="AdvanceWindow/ObjectContainer/Markables/ProficiencyPanel" unique_id=375489201]
 layout_mode = 2
@@ -1333,23 +1312,26 @@ visible = false
 layout_mode = 2
 
 [node name="DomainCardPanel" type="PanelContainer" parent="AdvanceWindow/ObjectContainer" unique_id=1115123307]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="ExtraDomainCard" type="CheckButton" parent="AdvanceWindow/ObjectContainer/DomainCardPanel" unique_id=253160910]
 layout_mode = 2
+theme = ExtResource("15_asla6")
 text = "Extra Domain Card
 "
 
 [node name="MulticlassPanel" type="PanelContainer" parent="AdvanceWindow/ObjectContainer" unique_id=71834697]
-custom_minimum_size = Vector2(195, 0)
+custom_minimum_size = Vector2(195, 50)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Multiclassing" type="CheckButton" parent="AdvanceWindow/ObjectContainer/MulticlassPanel" unique_id=1713924928]
 layout_mode = 2
+theme = ExtResource("15_asla6")
 disabled = true
 text = "Multiclassing"
 
@@ -1515,7 +1497,7 @@ visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-theme_override_styles/panel = ExtResource("2_c8oo5")
+theme_override_styles/panel = SubResource("StyleBoxFlat_rj3pj")
 script = ExtResource("23_gjf7o")
 
 [node name="MarginContainer" type="MarginContainer" parent="InformationPopup" unique_id=1854017691]
