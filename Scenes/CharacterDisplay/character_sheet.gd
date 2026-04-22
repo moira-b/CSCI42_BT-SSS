@@ -416,6 +416,14 @@ func connect_signals() -> void:
 	multiclass_header_button.pressed.connect(_on_header_panel_clicked.bind(multiclass_header_button.name))
 	ancestry_header_button.pressed.connect(_on_header_panel_clicked.bind(ancestry_header_button.name))
 	community_header_button.pressed.connect(_on_header_panel_clicked.bind(community_header_button.name))
+	
+	primaryPanel.mouse_entered.connect(_on_mouse_enter_primary_panel) 
+	secondaryPanel.mouse_entered.connect(_on_mouse_enter_secondary_panel) 
+	armorPanel.mouse_entered.connect(_on_mouse_enter_armor_panel)
+	
+	primaryPanel.mouse_exited.connect(_on_mouse_exit_header_panel) 
+	secondaryPanel.mouse_exited.connect(_on_mouse_exit_header_panel) 
+	armorPanel.mouse_exited.connect(_on_mouse_exit_header_panel)
 
 	var manage_equipment_button = $BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentContainer/EquipmentMargin/EquipmentVBox/ManageEquipment
 	manage_equipment_button.pressed.connect(_on_equipment_management_button_pressed)
@@ -524,6 +532,60 @@ func _on_header_panel_clicked(panel: String):
 				community_header_button.global_position,
 				community_header_button.size
 			)
+
+func _on_mouse_enter_primary_panel():
+	var weapon_as_text = FileAccess.get_file_as_string("res://Resources/Equipment/weapons.json")
+	var weapon_as_dict = JSON.parse_string(weapon_as_text)
+	
+	var features_as_text = FileAccess.get_file_as_string("res://Resources/Equipment/weapon_features.json")
+	var features_as_dict = JSON.parse_string(features_as_text)
+	
+	var feature = weapon_as_dict.get(character.items[1]).get("feature")
+	if (feature != ""):
+		if not (features_as_dict.get(weapon_as_dict.get(character.items[1]).get("feature"))):
+			return
+		information_popup.showEquipmentInformation(
+			feature,
+			features_as_dict.get(weapon_as_dict.get(character.items[1]).get("feature")), 
+		primaryPanel.global_position, 
+		primaryPanel.size)
+	
+func _on_mouse_enter_secondary_panel():
+	var weapon_as_text = FileAccess.get_file_as_string("res://Resources/Equipment/weapons.json")
+	var weapon_as_dict = JSON.parse_string(weapon_as_text)
+	
+	var features_as_text = FileAccess.get_file_as_string("res://Resources/Equipment/weapon_features.json")
+	var features_as_dict = JSON.parse_string(features_as_text)
+	
+	var feature = weapon_as_dict.get(character.items[2]).get("feature")
+	if (feature != ""):
+		if not (features_as_dict.get(weapon_as_dict.get(character.items[2]).get("feature"))):
+			return
+		information_popup.showEquipmentInformation(
+			feature,
+			features_as_dict.get(weapon_as_dict.get(character.items[2]).get("feature")), 
+		secondaryPanel.global_position, 
+		secondaryPanel.size)
+	
+func _on_mouse_enter_armor_panel():
+	var armor_as_text = FileAccess.get_file_as_string("res://Resources/Equipment/armor.json")
+	var armor_as_dict = JSON.parse_string(armor_as_text)
+	
+	var features_as_text = FileAccess.get_file_as_string("res://Resources/Equipment/armor_features.json")
+	var features_as_dict = JSON.parse_string(features_as_text)
+	
+	var feature = armor_as_dict.get(character.items[0]).get("feature")
+	if (feature != ""):
+		if not (features_as_dict.get(armor_as_dict.get(character.items[0]).get("feature"))):
+			return
+		information_popup.showEquipmentInformation(
+			feature,
+			features_as_dict.get(armor_as_dict.get(character.items[0]).get("feature")), 
+		armorPanel.global_position, 
+		armorPanel.size)
+
+func _on_mouse_exit_header_panel():
+	information_popup.hide()
 
 func _on_equipment_management_button_pressed():
 	equipment_window.showWindow(self.character)
