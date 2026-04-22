@@ -23,7 +23,7 @@ func showClassInformation(character_class: CharacterClass, character_subclass: C
 	feature2_name.hide()
 	feature2_description.hide()
 	class_description.show()
-	
+	class_description.text=""
 	if class_description.text == "":
 		class_description.append_text("[font_size=16]%s[/font_size]" % [character_class.name] + "\n\n")
 		class_description.append_text("[font_size=16]%s[/font_size]" % 
@@ -113,14 +113,20 @@ func showEquipmentInformation(feature: String, desc:String, position_anchor: Vec
 	attribute_name.text = feature
 	feature1_name.text = desc
 	feature1_description.text = ""
-
+	
+	attribute_name.show()
+	spacer.hide()
+	feature1_name.show()
+	feature1_description.hide()
 	feature2_name.hide()
 	feature2_description.hide()
+	class_description.hide()
+	
 
 	set_size(self.get_minimum_size())
 	self.global_position = Vector2(
 		position_anchor[0], 
-		position_anchor[1] - entered_size[1] - self.size[1]/2
+		position_anchor[1] - entered_size[1]/2 - self.size[1]/2
 	)
 	show()
 
