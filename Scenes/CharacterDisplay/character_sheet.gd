@@ -16,9 +16,10 @@ extends Control
 @onready var experience4 : LineEdit = $BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences/Experience4/Experience4
 @onready var experience5 : LineEdit = $BodyMargin/PanelContainer/HBoxContainer/RightPanel/VBoxContainer/ExperiencesPanelContainer/MarginContainer/Experiences/Experience5/Experience5
 
-@onready var ancestry_field = $HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/AncestryPanelContainer/Ancestry
-@onready var community_field = $HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/CommunityPanelContainer/Community
-@onready var class_field = $HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/ClassPanelContainer/Class
+@onready var ancestry_header_button = $HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/Ancestry
+@onready var community_header_button = $HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/Community
+@onready var class_header_button = $HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/Class
+@onready var multiclass_header_button = $HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/Multiclass
 @onready var short_rest_button: Button = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/RestButtons/ShortRest
 @onready var long_rest_button: Button = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/RestButtons/LongRest
 @onready var rest_window: Window = $BodyMargin/PanelContainer/HBoxContainer/LeftPanel/VBoxContainer/LeftPanelButtons/MarginContainer/VBoxContainer/ActionButtons/RestButtons/RestWindow
@@ -68,6 +69,7 @@ extends Control
 	presence_field, knowledge_field]
 
 @onready var class_panel = $HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/ClassPanelContainer
+@onready var multiclass_panel = $HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/MulticlassPanelContainer
 @onready var ancestry_panel = $HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/AncestryPanelContainer
 @onready var community_panel = $HeaderMargin/Header/HeaderInfo/ClassCommunityAncestry/CommunityPanelContainer
 @onready var primaryPanel = $BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentContainer/EquipmentMargin/EquipmentVBox/PrimaryWeapon
@@ -108,9 +110,16 @@ func enter() -> void:
 	
 	self.update_markable_fields()
 	
-	ancestry_field.set_text(character.ancestry.ancestry_name)
-	class_field.set_text(character.character_class.name + " (" + character.subclass.subclass_name + ")")
-	community_field.set_text(character.community.community_name)
+	ancestry_header_button.set_text(character.ancestry.ancestry_name)
+	class_header_button.set_text(character.character_class.name + " (" + character.subclass.subclass_name + ")")
+	if character.multiclass_selection:
+		multiclass_header_button.set_text(character.multiclass_selection.name)
+		multiclass_header_button.show()
+	else:
+		print(character.multiclass_selection)
+		print("NO MULTICLASS")
+
+	community_header_button.set_text(character.community.community_name)
 	level_field.text = str(character.level)
 	evasion_value.set_text(str(character.evasion))
 	proficiency_value.set_text(str(character.proficiency))
@@ -393,9 +402,15 @@ func connect_signals() -> void:
 	advance_window.advancements_confirmed.connect(update_markable_fields)
 	advance_window.advancements_confirmed.connect(update_edit_fields)
 	
-	class_panel.gui_input.connect(_on_header_panel_clicked.bind(class_panel.get_child(0).name))
-	ancestry_panel.gui_input.connect(_on_header_panel_clicked.bind(ancestry_panel.get_child(0).name))
-	community_panel.gui_input.connect(_on_header_panel_clicked.bind(community_panel.get_child(0).name))
+	#class_panel.gui_input.connect(_on_header_panel_clicked.bind(class_panel.get_child(0).name))
+	#multiclass_panel.gui_input.connect(_on_header_panel_clicked.bind(multiclass_panel.get_child(0).name))
+	#ancestry_panel.gui_input.connect(_on_header_panel_clicked.bind(ancestry_panel.get_child(0).name))
+	#community_panel.gui_input.connect(_on_header_panel_clicked.bind(community_panel.get_child(0).name))
+
+	class_header_button.pressed.connect(_on_header_panel_clicked.bind(class_header_button.name))
+	multiclass_header_button.pressed.connect(_on_header_panel_clicked.bind(multiclass_header_button.name))
+	ancestry_header_button.pressed.connect(_on_header_panel_clicked.bind(ancestry_header_button.name))
+	community_header_button.pressed.connect(_on_header_panel_clicked.bind(community_header_button.name))
 
 	var manage_equipment_button = $BodyMargin/PanelContainer/HBoxContainer/CenterPanel/VBoxContainer/EquipmentContainer/EquipmentMargin/EquipmentVBox/ManageEquipment
 	manage_equipment_button.pressed.connect(_on_equipment_management_button_pressed)
@@ -461,32 +476,49 @@ func _on_main_menu_button_pressed() -> void:
 	get_tree().root.add_child(main_menu)
 	self.queue_free()
 		
-func _on_header_panel_clicked(input: InputEvent, panel: String):
-	if input is InputEventMouseButton and input.button_index == MOUSE_BUTTON_LEFT:
-		if input.pressed:
-			if information_popup.visible == false:
-				if panel == "Class":
-					information_popup.showClassInformation(
-					character.character_class,
-					character.subclass,
-					class_panel.global_position,
-					class_panel.size
-				)
-				if panel == "Ancestry":
-					information_popup.showAncestryInformation(
-					character.ancestry,
-					ancestry_panel.global_position,
-					ancestry_panel.size
-				)
-				if panel == "Community":
-					information_popup.showCommunityInformation(
-					character.community, 
-					community_panel.global_position,
-					community_panel.size
-				)
-			else:
-				information_popup.hide()
-				return
+func _on_header_panel_clicked(panel: String):
+	if panel == "Class":
+		if (information_popup.currently_showing==panel):
+			information_popup.hideInformation()
+		else:
+			information_popup.set_currently_showing(panel)
+			information_popup.showClassInformation(
+				character.character_class,
+				character.subclass,
+				class_header_button.global_position,
+				class_header_button.size
+			)
+	elif panel == "Multiclass":
+		if (information_popup.currently_showing==panel):
+			information_popup.hideInformation()
+		else:
+			information_popup.set_currently_showing(panel)
+			information_popup.showClassInformation(
+				character.multiclass_selection,
+				character.multiclass_subclass,
+				multiclass_header_button.global_position,
+				multiclass_header_button.size
+			)
+	elif panel == "Ancestry":
+		if (information_popup.currently_showing==panel):
+			information_popup.hideInformation()
+		else:
+			information_popup.set_currently_showing(panel)
+			information_popup.showAncestryInformation(
+				character.ancestry,
+				ancestry_header_button.global_position,
+				ancestry_header_button.size
+			)
+	elif panel == "Community":
+		if (information_popup.currently_showing==panel):
+			information_popup.hideInformation()
+		else:
+			information_popup.set_currently_showing(panel)
+			information_popup.showCommunityInformation(
+				character.community, 
+				community_header_button.global_position,
+				community_header_button.size
+			)
 
 func _on_equipment_management_button_pressed():
 	equipment_window.showWindow(self.character)
@@ -494,3 +526,10 @@ func _on_equipment_management_button_pressed():
 func _on_exp_level_changed(which_exp: int, new_val: int):
 	var current_val = character.experience_levels[which_exp-1]
 	character.update_experience_level(which_exp, new_val-current_val)
+
+func show_multiclass() -> void:
+	if character.multiclass_selection:
+		multiclass_header_button.text = character.multiclass_selection.name
+		multiclass_header_button.show()
+	else:
+		print("ERROR. Want to show multiclass in character display, but character has no multiclass.")

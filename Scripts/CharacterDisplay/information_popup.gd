@@ -8,8 +8,7 @@ extends PanelContainer
 @onready var feature2_description = $MarginContainer/VBoxContainer/Feature2Description
 @onready var class_description = $MarginContainer/VBoxContainer/ClassDescription
 
-var is_class_info_loaded = false
-var is_class_panel_toggled = false
+var currently_showing: String = ""
 
 func showClassInformation(character_class: CharacterClass, character_subclass: CharacterSubclass, position_anchor: Vector2, entered_size: Vector2):
 	self.global_position = Vector2(
@@ -25,7 +24,7 @@ func showClassInformation(character_class: CharacterClass, character_subclass: C
 	feature2_description.hide()
 	class_description.show()
 	
-	if is_class_info_loaded == false:
+	if class_description.text == "":
 		class_description.append_text("[font_size=16]%s[/font_size]" % [character_class.name] + "\n\n")
 		class_description.append_text("[font_size=16]%s[/font_size]" % 
 			[character_class.hope_feature.feature_name] + "\n")
@@ -35,8 +34,9 @@ func showClassInformation(character_class: CharacterClass, character_subclass: C
 		class_description.append_text(character_class.class_feature[0].get_description() + "\n\n")
 		class_description.append_text("[font_size=16]%s[/font_size]" % 
 			[character_subclass.subclass_name] + "\n\n")
-		class_description.append_text("[font_size=16]Spellcast Trait - %s[/font_size]" % 
-			[character_subclass.spellcast_trait.trait_name] + "\n\n")
+		if character_subclass.spellcast_trait != null:
+			class_description.append_text("[font_size=16]Spellcast Trait - %s[/font_size]" % 
+				[character_subclass.spellcast_trait.trait_name] + "\n\n")
 		class_description.append_text("[font_size=16]Foundation Feature[/font_size]" + "\n")
 		
 		for feature in character_subclass.foundation_feature:
@@ -52,8 +52,6 @@ func showClassInformation(character_class: CharacterClass, character_subclass: C
 		for mast in character_subclass.mastery_feature:
 			class_description.append_text("[u] %s [/u]" % [mast.feature_name] + ": " + mast.get_description() + "\n")
 		class_description.append_text("\n")
-		
-	is_class_info_loaded = true
 	
 	set_size(self.get_minimum_size())
 	show()
@@ -125,3 +123,14 @@ func showEquipmentInformation(feature: String, desc:String, position_anchor: Vec
 		position_anchor[1] - entered_size[1] - self.size[1]/2
 	)
 	show()
+
+func set_currently_showing(s: String) -> void:
+	if s not in ["Class", "Multiclass", "Ancestry", "Community"]:
+		print("Error in information_popup.gd. Trying to set to info/attribute it is not prepared for.")
+		return
+	else:
+		currently_showing = s
+
+func hideInformation() -> void:
+	self.currently_showing = ""
+	hide()
