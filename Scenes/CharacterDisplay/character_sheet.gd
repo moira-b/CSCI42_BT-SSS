@@ -113,7 +113,7 @@ func enter() -> void:
 	ancestry_header_button.set_text(character.ancestry.ancestry_name)
 	class_header_button.set_text(character.character_class.name + " (" + character.subclass.subclass_name + ")")
 	if character.multiclass_selection:
-		multiclass_header_button.set_text(character.multiclass_selection.name)
+		multiclass_header_button.set_text(character.multiclass_selection.name + "(" + character.multiclass_subclass.subclass_name + ")")
 		multiclass_header_button.show()
 	else:
 		print(character.multiclass_selection)
@@ -591,7 +591,7 @@ func _on_exp_level_changed(which_exp: int, new_val: int):
 
 func show_multiclass() -> void:
 	if character.multiclass_selection:
-		multiclass_header_button.text = character.multiclass_selection.name
+		multiclass_header_button.text = character.multiclass_selection.name + "(" + character.multiclass_subclass.subclass_name + ")"
 		multiclass_header_button.show()
 	else:
 		print("ERROR. Want to show multiclass in character display, but character has no multiclass.")
